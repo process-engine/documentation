@@ -50,7 +50,7 @@ The key `uiConfig` is used to specify details for the UI component - in this cas
 
 Now we configured what the user task should look like in the UI - time to execute!
 
-{% video controls="controls"%}images/execute-gsthello-world.mp4{% endvideo %}
+{% video controls="controls"%}images/execute-hello-world.mp4{% endvideo %}
 
 # Consuming a REST API
 
