@@ -50,9 +50,47 @@ Now we configured what the user task should look like in the UI - time to execut
 
 # Consuming an REST API
 
-Create a new diagram, just like in the hello-world example
+Create a new diagram, just like in the hello-world example.
+
+After that, create a service task to fetch some data, and a user-task to display the data:
+
 {% video controls="controls"%}images/consuming-rest-api.mp4{% endvideo %}
+
+With the `Extensions`-panel, we can tell the service-task what to do: In this case, call our API
+
+Next, we tell the flow (the arrow) how the result is to be interpreted and forwarded to the user-task.
+
+At last, we tell the user-task what to display (again, in the `Extensions`-panel)
+
+> TODO: make the video displaying the integration of the rest-api-process
+
+{% video controls="controls"%}images/intergrate-rest-api.mp4{% endvideo %}
+
+Let's test it:
+
+> TODO: make the video displaying the execution of the rest-api-process
+
+{% video controls="controls"%}images/run-rest-api.mp4{% endvideo %}
+
 
 # Sending Mail
 
+> TODO: link to "Consuming an REST API"
 
+Continue with the example from (Consuming an REST API).
+
+We now update the user-task, so that the user will be given a choise to accept or cancel.
+
+Using a Gateway, we will tell the process to end, if the user cancels, or to send a mail, if the user accepts.
+
+To send the mail, we'll use another service-task (like the one for the rest-call), but with different parameters.
+
+> TODO: make the video displaying the creation if the send-email-process
+
+{% video controls="controls"%}images/create-send-email.mp4{% endvideo %}
+
+Now let's try it out:
+
+> TODO: make the video displaying the execution of the send-mail-process
+
+{% video controls="controls"%}images/run-send-email.mp4{% endvideo %}
