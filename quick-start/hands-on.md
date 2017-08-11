@@ -52,9 +52,9 @@ Now we configured what the user task should look like in the UI - time to execut
 
 {% video controls="controls"%}images/execute-hello-world.mp4{% endvideo %}
 
-# Consuming a REST API
+# Consuming an REST API
 
-![Consuming REST API](images/consuming-rest-api.gif)
+{% video controls="controls"%}images/consuming-rest-api.mp4{% endvideo %}
 
 # Sending Mail
 
