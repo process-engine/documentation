@@ -4,7 +4,7 @@ Let's start with the all time classic example `Hello World`.
 
 We want to execute BPMN diagram with a single user task. 
 
-![Hello World](images/hello-world.png)
+<img src="images/hello-world.svg" width="100%" />
 
 This user task is supposed to show us the `Hello World` message as well as a confirm dialog to finish the user task. 
 
@@ -28,7 +28,7 @@ Now you can see the BPMN editor showing your diagram with only a lane and a star
 
 By selecting an element using the context you can create new elements that are directly connected.
 
-![Hello World](images/hello-world.gif)
+{% video loop="loop", autoplay="autplay", controls="controls"%}images/hello-world.mp4{% endvideo %}
 
 Looks fine so far. But we cannot execute the process yet. First we need to integrate the BPMN diagram.
 
