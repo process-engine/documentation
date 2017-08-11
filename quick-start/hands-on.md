@@ -46,7 +46,7 @@ By using the key `uiName` we can decide which kind of UI component we want to us
 
 We`ll use a confirm dialog as an easy first example.
 
-The key `uiConfig` is used to specify details for the UI component - in this case which message and buttons do display in the confirm dialog.
+The key `uiConfig` is used to specify details for the UI component - in this case which message and buttons to display in the confirm dialog.
 
 Now we configured what the user task should look like in the UI - time to execute!
 
