@@ -20,6 +20,6 @@ If you successfully started the process engine you can view the web UI at `http:
 
 ## Process Manager
 
-You can view a list of all processes by clicking on the `Demo`-Dropdown at the top and selecting `ProzessManager`.
+You can view a list of all processes by clicking on the `Demo`-dropdown at the top and selecting `ProzessManager`.
 
 ![Process Manager](images/process-manager.png)
