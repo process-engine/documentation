@@ -2,7 +2,7 @@
 
 Let's start with the all time classic example `Hello World`.
 
-We want to execute BPMN diagram with a single user task. 
+We want to execute a BPMN diagram with a single user task, that will look like this:
 
 <img src="images/hello-world.svg" width="100%" />
 
@@ -12,7 +12,7 @@ This user task is supposed to show us the `Hello World` message as well as a con
 
 First we need to create a new diagram.
 
-![Creating Diagram](images/creating-new-diagram.gif)
+{% video controls="controls"%}images/creating-new-diagram.mp4{% endvideo %}
 
 Open the process manager and click on the `+`-button on the top left to create a new process.
 
@@ -28,13 +28,15 @@ Now you can see the BPMN editor showing your diagram with only a lane and a star
 
 By selecting an element using the context you can create new elements that are directly connected.
 
-{% video loop="loop", autoplay="autplay", controls="controls"%}images/hello-world.mp4{% endvideo %}
+{% video controls="controls"%}images/hello-world.mp4{% endvideo %}
 
 Looks fine so far. But we cannot execute the process yet. First we need to integrate the BPMN diagram.
 
 ## Integrating the diagram
 
-![Integrate Hello World](images/integrate-hello-world.gif)
+> TODO: The role has to be set to guest. This needs to be documented
+
+{% video controls="controls"%}images/integrate-hello-world.mp4{% endvideo %}
 
 If we want the process engine to render a UI for out user task it needs to know what we want the UI to look like.
 
@@ -48,7 +50,7 @@ The key `uiConfig` is used to specify details for the UI component - in this cas
 
 Now we configured what the user task should look like in the UI - time to execute!
 
-![Execute Hello World](images/execute-hello-world.gif)
+{% video controls="controls"%}images/execute-gsthello-world.mp4{% endvideo %}
 
 # Consuming a REST API
 
