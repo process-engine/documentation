@@ -1,8 +1,6 @@
 # Sending Mail
 
-> TODO: link to "Consuming an REST API"
-
-Continue with the example from (Consuming an REST API).
+Continue with the example from [Consuming an HTTP REST API](consuming-rest-api.md).
 
 We now update the user-task, so that the user will be given a choice to accept or cancel.
 
