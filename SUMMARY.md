@@ -6,9 +6,9 @@
 * [Quick Start](quick-start/README.md)
   * [Setup](quick-start/setup.md)
   * [Hands-On](quick-start/hands-on.md)
-    * [Hello World](quick-start/hands-on.md#hello-world)
-    * [Consuming a REST API](quick-start/hands-on.md#consuming-a-rest-api)
-    * [Sending mails](quick-start/hands-on.md#sending-mail)
+    * [Hello World](quick-start/hands-on/hello-world.md)
+    * [Consuming a REST API](quick-start/hands-on/consuming-rest-api.md)
+    * [Sending mails](quick-start/hands-on/sending-mail.md)
 
 ### Resources
 
