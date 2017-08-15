@@ -18,7 +18,7 @@ To achieve this, we'll perform the following steps:
 
 {% video controls="controls"%}../images/create-send-email.mp4{% endvideo %}
 
-The copy-pasted values in the video are:
+These are the copy-pasted values in the video:
 ```JavaScript
 // uiConfig for "Confirm Data"
 ${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
@@ -29,6 +29,4 @@ ${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD
 
 Now let's try it out:
 
-> TODO: make the video displaying the execution of the send-mail-process
-
-{% video controls="controls"%}images/run-send-email.mp4{% endvideo %}
+{% video controls="controls"%}../images/run-send-email.mp4{% endvideo %}
