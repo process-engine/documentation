@@ -12,5 +12,8 @@ Integrating a BPMN process means configuring a regular BPMN process to be execut
 ## inversion of control
 Inversion of control is the idea behind dependency injection. It is used as a synonym to dependency injection.
 
+## addict-ioc
+This is the IoC container we use as a platform for our stack. You can find it on [GitHub](https://github.com/5minds/addict-ioc).
+
 ## IoC
 The abbreviation for inversion of control.

@@ -41,7 +41,8 @@
     * [Datastore](reference/stack/basic-concepts.md#datastore)
     * [Identity & Access Management](reference/stack/basic-concepts.md#identity--access-management)
     * [Extensions](reference/stack/basic-concepts.md#extensions)
-  * [Advanced Concepts](reference/stack/advanced-concepts.md)
+  * [Advanced Concepts](reference/stack/advanced-concepts/README.md)
+    * [Configuration](reference/stack/advanced-concepts/configuration.md)
     
 ---
 * [Community](community/README.md)

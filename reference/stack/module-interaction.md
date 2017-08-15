@@ -19,7 +19,7 @@ That results in cleaner, easy-to-maintain code and enables us to use additional 
 
 ## Dependency Injection
 
-We use [addict-ioc](https://github.com/5minds/addict-ioc) as our IoC container.
+We use addict-ioc as our IoC container.
 
 A detailed documentation can be found on its [GitHub](https://github.com/5minds/addict-ioc) page.
 
