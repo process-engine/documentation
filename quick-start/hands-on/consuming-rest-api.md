@@ -13,7 +13,7 @@ Next, we tell the flow (the arrow) how the result is to be interpreted and forwa
 At last, we tell the user-task what to display (again, in the `Extensions`-panel)
 
 This is the `uiConfig` used in the user-task:
-```
+```JavaScript
 ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm", "label": "OK"}] };
 ```
 
