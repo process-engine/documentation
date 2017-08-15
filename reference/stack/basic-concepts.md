@@ -300,13 +300,13 @@ Type | Naming Convention
  Entity | Suffix `Entity` in the type segment
  Entity Service | Suffix `EntityService` in the type segment
 
-If a segment could not be parsed as a type, it will be parsed as a key (see 4.4.4.4 Key).
+If a segment could not be parsed as a type, it will be parsed as a key (see [Key](#key)).
 
 #### Key
 
 Keys refer to class members (properties or methods).
 
-They are parsed by the segment position inside the claim. (see 4.4.4 Naming Convention) 
+They are parsed by the segment position inside the claim. (see [Naming Convention](#naming-convention)) 
 
 ### Promotion
 
