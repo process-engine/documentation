@@ -1,6 +1,7 @@
 {
   "plugins": [
     "collapsible-menu",
-    "html5-video"
+    "html5-video",
+    "swagger"
   ]
 }

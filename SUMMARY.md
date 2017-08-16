@@ -13,6 +13,7 @@
 ### Resources
 
 * [Cheat Sheet](cheat-sheet/README.md)
+  * [HTTP REST API](cheat-sheet/http-rest-api/README.md)
 
 ### Reference
 
