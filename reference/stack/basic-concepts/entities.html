@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Advanced Concepts · GitBook</title>
+        <title>Entities · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="configuration.html" />
+    <link rel="next" href="entity-services.html" />
     
     
-    <link rel="prev" href="../basic-concepts/identity-access-management.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -529,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3" data-path="../basic-concepts/">
+        <li class="chapter " data-level="3.3.3" data-path="./">
             
-                <a href="../basic-concepts/">
+                <a href="./">
             
                     
                     Basic Concepts
@@ -543,9 +543,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.3.3.1" data-path="../basic-concepts/entities.html">
+        <li class="chapter active" data-level="3.3.3.1" data-path="entities.html">
             
-                <a href="../basic-concepts/entities.html">
+                <a href="entities.html">
             
                     
                     Entities
@@ -556,9 +556,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.2" data-path="../basic-concepts/entity-services.html">
+        <li class="chapter " data-level="3.3.3.2" data-path="entity-services.html">
             
-                <a href="../basic-concepts/entity-services.html">
+                <a href="entity-services.html">
             
                     
                     Entity Services
@@ -569,9 +569,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.3" data-path="../basic-concepts/datastore.html">
+        <li class="chapter " data-level="3.3.3.3" data-path="datastore.html">
             
-                <a href="../basic-concepts/datastore.html">
+                <a href="datastore.html">
             
                     
                     Datastore
@@ -582,9 +582,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.4" data-path="../basic-concepts/identity-access-management.html">
+        <li class="chapter " data-level="3.3.3.4" data-path="identity-access-management.html">
             
-                <a href="../basic-concepts/identity-access-management.html">
+                <a href="identity-access-management.html">
             
                     
                     Identity & Access Management
@@ -600,9 +600,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3.4" data-path="./">
+        <li class="chapter " data-level="3.3.4" data-path="../advanced-concepts/">
             
-                <a href="./">
+                <a href="../advanced-concepts/">
             
                     
                     Advanced Concepts
@@ -614,9 +614,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.3.4.1" data-path="configuration.html">
+        <li class="chapter " data-level="3.3.4.1" data-path="../advanced-concepts/configuration.html">
             
-                <a href="configuration.html">
+                <a href="../advanced-concepts/configuration.html">
             
                     
                     Configuration
@@ -726,7 +726,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >Advanced Concepts</a>
+        <a href="../../.." >Entities</a>
     </h1>
 </div>
 
@@ -741,7 +741,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="advanced-concepts">Advanced Concepts</h1>
+                                <h1 id="entities">Entities</h1>
+<p>An entity is a class used to persist a domain object.</p>
+<p>We use the base class <code>Entity</code> to prevent boilerplate code as much as possible. There&apos;s basic functionality you don&apos;t want to implement yourself for every entity such as access management, lazy loading, serialization, etc.</p>
+<p>By sticking to a small set of patterns and conventions you get this functionality by default.</p>
+<h2 id="entity-logic">Entity Logic</h2>
+<p>The logic implemented in entities should only apply to a single entity.</p>
+<pre><code class="lang-typescript">myEntity.calculateSomething();
+myEntity.applySomething();
+</code></pre>
+<p>As you can see the entity methods are meant to be called on a single entity to modify its state or to execute behavior based on that state.</p>
+<h2 id="entity-properties">Entity Properties</h2>
+<p>A property consists of a getter and a setter function. Both are pretty self explanatory.</p>
+<pre><code class="lang-typescript">  <span class="hljs-keyword">public</span> <span class="hljs-keyword">get</span> name(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getProperty(<span class="hljs-keyword">this</span>, <span class="hljs-string">&apos;name&apos;</span>);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">set</span> name(value: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-keyword">this</span>.setProperty(<span class="hljs-keyword">this</span>, <span class="hljs-string">&apos;name&apos;</span>, value);
+  }
+</code></pre>
+<p>By calling <code>getProperty</code> and <code>setProperty</code> you get all the goodies that lie under the hood.</p>
+<h2 id="entity-schemas">Entity Schemas</h2>
+<p>As mentioned before the stack is database independent and uses its own data model to describe how things can be persisted.</p>
+<p>When we declared the property in 4.1.1 you might have noticed that there is nothing that seems to configure the data model.</p>
+<p>This is done by using ES7 Decorators (a modern JavaScript feature), in this case the <code>schemaAttribute</code>-decorator.</p>
+<pre><code class="lang-typescript">  @schemaAttribute({ <span class="hljs-keyword">type</span>: SchemaAttributeType.string })
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">get</span> name(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getProperty(<span class="hljs-keyword">this</span>, <span class="hljs-string">&apos;name&apos;</span>);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">set</span> name(value: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-keyword">this</span>.setProperty(<span class="hljs-keyword">this</span>, <span class="hljs-string">&apos;name&apos;</span>, value);
+  }
+</code></pre>
+<p>The decorator is placed above the getter function of the property and takes an <code>ISchemaAttribute</code> as its argument. In most cases you only need to specify what type you want to use to represent it in the database. The type can be either one of the options of the enum <code>SchemaAttributeType</code> or a <code>string</code> if you want to use one of your own types (e.g. other entities).</p>
+<h2 id="entity-methods">Entity Methods</h2>
+<p>Each public method you implement (except <code>initialize</code>) should accept the <code>ExecutionContext</code> as one of its parameters. The execution context is used to track information for access management. </p>
+<p>When calling other entities or services you are likely to need the <code>ExecutionContext</code> at some point anyway.</p>
+<p>Technically this is not necessary as long as you don&apos;t use the parameter, but it is considered a best practice to avoid changing method signatures afterwards.</p>
+<p>If you plan to execute a method via our HTTP REST API, it is mandatory to include the <code>ExecutionContext</code> in the method signature.</p>
 
                                 
                                 </section>
@@ -769,12 +808,12 @@
 
             
                 
-                <a href="../basic-concepts/identity-access-management.html" class="navigation navigation-prev " aria-label="Previous page: Identity & Access Management">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Basic Concepts">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="configuration.html" class="navigation navigation-next " aria-label="Next page: Configuration">
+                <a href="entity-services.html" class="navigation navigation-next " aria-label="Next page: Entity Services">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -785,7 +824,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Advanced Concepts","level":"3.3.4","depth":2,"next":{"title":"Configuration","level":"3.3.4.1","depth":3,"path":"reference/stack/advanced-concepts/configuration.md","ref":"reference/stack/advanced-concepts/configuration.md","articles":[]},"previous":{"title":"Identity & Access Management","level":"3.3.3.4","depth":3,"path":"reference/stack/basic-concepts/identity-access-management.md","ref":"reference/stack/basic-concepts/identity-access-management.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/stack/advanced-concepts/README.md","mtime":"2017-08-16T12:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-16T12:09:15.897Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Entities","level":"3.3.3.1","depth":3,"next":{"title":"Entity Services","level":"3.3.3.2","depth":3,"path":"reference/stack/basic-concepts/entity-services.md","ref":"reference/stack/basic-concepts/entity-services.md","articles":[]},"previous":{"title":"Basic Concepts","level":"3.3.3","depth":2,"path":"reference/stack/basic-concepts/README.md","ref":"reference/stack/basic-concepts/README.md","articles":[{"title":"Entities","level":"3.3.3.1","depth":3,"path":"reference/stack/basic-concepts/entities.md","ref":"reference/stack/basic-concepts/entities.md","articles":[]},{"title":"Entity Services","level":"3.3.3.2","depth":3,"path":"reference/stack/basic-concepts/entity-services.md","ref":"reference/stack/basic-concepts/entity-services.md","articles":[]},{"title":"Datastore","level":"3.3.3.3","depth":3,"path":"reference/stack/basic-concepts/datastore.md","ref":"reference/stack/basic-concepts/datastore.md","articles":[]},{"title":"Identity & Access Management","level":"3.3.3.4","depth":3,"path":"reference/stack/basic-concepts/identity-access-management.md","ref":"reference/stack/basic-concepts/identity-access-management.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/stack/basic-concepts/entities.md","mtime":"2017-08-16T12:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-16T12:09:15.897Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

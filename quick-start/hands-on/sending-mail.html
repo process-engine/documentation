@@ -529,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3" data-path="../../reference/stack/basic-concepts.html">
+        <li class="chapter " data-level="3.3.3" data-path="../../reference/stack/basic-concepts/">
             
-                <a href="../../reference/stack/basic-concepts.html">
+                <a href="../../reference/stack/basic-concepts/">
             
                     
                     Basic Concepts
@@ -543,9 +543,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.3.3.1" data-path="../../reference/stack/basic-concepts.html">
+        <li class="chapter " data-level="3.3.3.1" data-path="../../reference/stack/basic-concepts/entities.html">
             
-                <a href="../../reference/stack/basic-concepts.html#entities">
+                <a href="../../reference/stack/basic-concepts/entities.html">
             
                     
                     Entities
@@ -556,9 +556,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.2" data-path="../../reference/stack/basic-concepts.html">
+        <li class="chapter " data-level="3.3.3.2" data-path="../../reference/stack/basic-concepts/entity-services.html">
             
-                <a href="../../reference/stack/basic-concepts.html#entity-services">
+                <a href="../../reference/stack/basic-concepts/entity-services.html">
             
                     
                     Entity Services
@@ -569,9 +569,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.3" data-path="../../reference/stack/basic-concepts.html">
+        <li class="chapter " data-level="3.3.3.3" data-path="../../reference/stack/basic-concepts/datastore.html">
             
-                <a href="../../reference/stack/basic-concepts.html#datastore">
+                <a href="../../reference/stack/basic-concepts/datastore.html">
             
                     
                     Datastore
@@ -582,25 +582,12 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.4" data-path="../../reference/stack/basic-concepts.html">
+        <li class="chapter " data-level="3.3.3.4" data-path="../../reference/stack/basic-concepts/identity-access-management.html">
             
-                <a href="../../reference/stack/basic-concepts.html#identity--access-management">
+                <a href="../../reference/stack/basic-concepts/identity-access-management.html">
             
                     
                     Identity & Access Management
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.3.5" data-path="../../reference/stack/basic-concepts.html">
-            
-                <a href="../../reference/stack/basic-concepts.html#extensions">
-            
-                    
-                    Extensions
             
                 </a>
             
@@ -756,18 +743,29 @@
                                 
                                 <h1 id="sending-mail">Sending Mail</h1>
 <p>Continue with the example from <a href="consuming-rest-api.html">Consuming an HTTP REST API</a>.</p>
-<p>We now update the user-task, so that the user will be given a choice to accept or cancel.</p>
-<p>Using a Gateway, we will tell the process to end, if the user cancels, or to send a mail, if the user accepts.</p>
-<p>To send the mail, we&apos;ll use another service-task (like the one for the rest-call), but with different parameters.</p>
-<blockquote>
-<p>TODO: make the video displaying the creation of the send-email-process</p>
-</blockquote>
-<p><video src="images/create-send-email.mp4" width="100%" height="100%" controls="controls" loop></video></p>
+<p>We will now update the Process, so it will ask for an email-address, ask for confirmation and then send a mail with the conversion-rate to the specified email-address</p>
+<p>To achieve this, we&apos;ll perform the following steps:</p>
+<ul>
+<li><code>0:00 - 0:09</code> Rename the process to <code>Sending mails</code></li>
+<li><code>0:10 - 0:17</code> Increase the lane-size, so we have more playroom</li>
+<li><code>0:18 - 1:14</code> Add a form to ask for an email address</li>
+<li><code>1:17 - 1:20</code> Give the <code>Fetch Data</code> task an id, so we can use its result later</li>
+<li><code>1:22 - 1:27</code> Remove a mapper that we no longer need</li>
+<li><code>1:12 - 1:54</code> Update the <code>Show Data</code> task (<code>Send Data</code> in the Video) to become <code>Confirm Data</code></li>
+<li><code>1:55 - 2:05</code> Add a gateway so we can either send the mail on <code>ok</code> or abort on <code>cancel</code></li>
+<li><code>2:06 - 3:10</code> Add the <code>Send email</code> Service-Task</li>
+<li><code>3:15 - 3:52</code> Configure the gateway-flows, so that <code>ok</code> will send the mail, and <code>cancel</code> will abort</li>
+</ul>
+<p><video src="../images/create-send-email.mp4" width="100%" height="100%" controls="controls" loop></video></p>
+<p>These are the copy-pasted values in the video:</p>
+<pre><code class="lang-JavaScript"><span class="hljs-comment">// uiConfig for &quot;Confirm Data&quot;</span>
+${ <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;1 EUR = &quot;</span> + <span class="hljs-built_in">JSON</span>.parse(token.history.fetch_data.result).rates.USD + <span class="hljs-string">&quot; USD - email: &quot;</span> + token.current.email, <span class="hljs-string">&quot;layout&quot;</span>: [ { <span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;confirm&quot;</span>, <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;OK&quot;</span>}, { <span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;cancel&quot;</span>, <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;cancel&quot;</span>}] };
+
+<span class="hljs-comment">// params for &quot;send mail&quot;</span>
+[<span class="hljs-literal">null</span>, token.history.get_email.email, <span class="hljs-string">&quot;EUR to USD conversion rate&quot;</span>, <span class="hljs-string">&quot;1 EUR = &quot;</span> + <span class="hljs-built_in">JSON</span>.parse(token.history.fetch_data.result).rates.USD + <span class="hljs-string">&quot; USD&quot;</span>]
+</code></pre>
 <p>Now let&apos;s try it out:</p>
-<blockquote>
-<p>TODO: make the video displaying the execution of the send-mail-process</p>
-</blockquote>
-<p><video src="images/run-send-email.mp4" width="100%" height="100%" controls="controls" loop></video></p>
+<p><video src="../images/run-send-email.mp4" width="100%" height="100%" controls="controls" loop></video></p>
 
                                 
                                 </section>
@@ -811,7 +809,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sending mails","level":"1.3.2.3","depth":3,"next":{"title":"Cheat Sheet","level":"2.1","depth":1,"path":"cheat-sheet/README.md","ref":"cheat-sheet/README.md","articles":[{"title":"HTTP REST API","level":"2.1.1","depth":2,"path":"cheat-sheet/http-rest-api/README.md","ref":"cheat-sheet/http-rest-api/README.md","articles":[]}]},"previous":{"title":"Consuming a REST API","level":"1.3.2.2","depth":3,"path":"quick-start/hands-on/consuming-rest-api.md","ref":"quick-start/hands-on/consuming-rest-api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"quick-start/hands-on/sending-mail.md","mtime":"2017-08-15T09:13:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-16T11:27:19.774Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sending mails","level":"1.3.2.3","depth":3,"next":{"title":"Cheat Sheet","level":"2.1","depth":1,"path":"cheat-sheet/README.md","ref":"cheat-sheet/README.md","articles":[{"title":"HTTP REST API","level":"2.1.1","depth":2,"path":"cheat-sheet/http-rest-api/README.md","ref":"cheat-sheet/http-rest-api/README.md","articles":[]}]},"previous":{"title":"Consuming a REST API","level":"1.3.2.2","depth":3,"path":"quick-start/hands-on/consuming-rest-api.md","ref":"quick-start/hands-on/consuming-rest-api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"quick-start/hands-on/sending-mail.md","mtime":"2017-08-16T12:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-16T12:09:15.897Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

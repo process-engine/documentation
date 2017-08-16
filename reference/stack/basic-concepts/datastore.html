@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Advanced Concepts · GitBook</title>
+        <title>Datastore · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="configuration.html" />
+    <link rel="next" href="identity-access-management.html" />
     
     
-    <link rel="prev" href="../basic-concepts/identity-access-management.html" />
+    <link rel="prev" href="entity-services.html" />
     
 
     </head>
@@ -529,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3" data-path="../basic-concepts/">
+        <li class="chapter " data-level="3.3.3" data-path="./">
             
-                <a href="../basic-concepts/">
+                <a href="./">
             
                     
                     Basic Concepts
@@ -543,9 +543,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.3.3.1" data-path="../basic-concepts/entities.html">
+        <li class="chapter " data-level="3.3.3.1" data-path="entities.html">
             
-                <a href="../basic-concepts/entities.html">
+                <a href="entities.html">
             
                     
                     Entities
@@ -556,9 +556,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.2" data-path="../basic-concepts/entity-services.html">
+        <li class="chapter " data-level="3.3.3.2" data-path="entity-services.html">
             
-                <a href="../basic-concepts/entity-services.html">
+                <a href="entity-services.html">
             
                     
                     Entity Services
@@ -569,9 +569,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.3" data-path="../basic-concepts/datastore.html">
+        <li class="chapter active" data-level="3.3.3.3" data-path="datastore.html">
             
-                <a href="../basic-concepts/datastore.html">
+                <a href="datastore.html">
             
                     
                     Datastore
@@ -582,9 +582,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.3.4" data-path="../basic-concepts/identity-access-management.html">
+        <li class="chapter " data-level="3.3.3.4" data-path="identity-access-management.html">
             
-                <a href="../basic-concepts/identity-access-management.html">
+                <a href="identity-access-management.html">
             
                     
                     Identity & Access Management
@@ -600,9 +600,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3.4" data-path="./">
+        <li class="chapter " data-level="3.3.4" data-path="../advanced-concepts/">
             
-                <a href="./">
+                <a href="../advanced-concepts/">
             
                     
                     Advanced Concepts
@@ -614,9 +614,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.3.4.1" data-path="configuration.html">
+        <li class="chapter " data-level="3.3.4.1" data-path="../advanced-concepts/configuration.html">
             
-                <a href="configuration.html">
+                <a href="../advanced-concepts/configuration.html">
             
                     
                     Configuration
@@ -726,7 +726,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >Advanced Concepts</a>
+        <a href="../../.." >Datastore</a>
     </h1>
 </div>
 
@@ -741,7 +741,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="advanced-concepts">Advanced Concepts</h1>
+                                <h1 id="datastore">Datastore</h1>
+<p>If you want to work with entities you will need to load or save them somehow. This is done using the datastore.</p>
+<h2 id="datastore-service">Datastore Service</h2>
+<p>The easiest and recommended way to consume the datastore is to use the <code>DatastoreService</code> directly via dependency injection.</p>
+<p>Because the datastore is generic, the first thing you want to do is get a specialized repository for the entity you want to load or save. We call this the <code>EntityType</code>.</p>
+<p>Now that you have a <code>EntityType</code> you can use it to create a new entity: </p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> processTokenEntityType = await <span class="hljs-keyword">this</span>.datastoreService.getEntityType(<span class="hljs-string">&apos;ProcessToken&apos;</span>);
+
+<span class="hljs-keyword">const</span> processTokenEntity = await processTokenEntityType.createEntity(context);
+processTokenEntity.save();
+</code></pre>
+<p>You can also use the <code>EntityType</code> to get a specific entity (using <code>getById</code>) or to get a collection of entities that match your criteria (using <code>query</code>).</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> processTokenEntityType = await <span class="hljs-keyword">this</span>.datastoreService.getEntityType(<span class="hljs-string">&apos;ProcessToken&apos;</span>);
+
+<span class="hljs-keyword">const</span> processTokenEntity = await processTokenEntityType.getById(id, context);
+
+<span class="hljs-keyword">const</span> queryOptions = {
+  operator: <span class="hljs-string">&apos;and&apos;</span>,
+  queries: [
+    { attribute: <span class="hljs-string">&apos;id&apos;</span>, operator: <span class="hljs-string">&apos;=&apos;</span>, value: myId },
+    { attribute: <span class="hljs-string">&apos;process&apos;</span>, operator: <span class="hljs-string">&apos;=&apos;</span>, value: <span class="hljs-keyword">this</span>.process }
+  ]
+};
+<span class="hljs-keyword">const</span> processTokenEntities = await processTokenEntityType.query(context, queryOptions);
+</code></pre>
+<h2 id="datastore-http-rest-api">Datastore HTTP REST API</h2>
+<p>If you want to consume the datastore from outside the domain you can use the HTTP REST API.</p>
+<p>This is automatically hooked up on your HTTP endpoint (e.g. <a href="http://localhost:8000/datastore" target="_blank">http://localhost:8000/datastore</a>);</p>
+<h2 id="datastore-graphql">Datastore GraphQL</h2>
+<p>If you want to consume the datastore from outside the domain you can use the GraphQL API.</p>
+<p>This is automatically hooked up on your HTTP endpoint (e.g. <a href="http://localhost:8000/graphql" target="_blank">http://localhost:8000/graphql</a>);</p>
 
                                 
                                 </section>
@@ -769,12 +799,12 @@
 
             
                 
-                <a href="../basic-concepts/identity-access-management.html" class="navigation navigation-prev " aria-label="Previous page: Identity & Access Management">
+                <a href="entity-services.html" class="navigation navigation-prev " aria-label="Previous page: Entity Services">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="configuration.html" class="navigation navigation-next " aria-label="Next page: Configuration">
+                <a href="identity-access-management.html" class="navigation navigation-next " aria-label="Next page: Identity & Access Management">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -785,7 +815,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Advanced Concepts","level":"3.3.4","depth":2,"next":{"title":"Configuration","level":"3.3.4.1","depth":3,"path":"reference/stack/advanced-concepts/configuration.md","ref":"reference/stack/advanced-concepts/configuration.md","articles":[]},"previous":{"title":"Identity & Access Management","level":"3.3.3.4","depth":3,"path":"reference/stack/basic-concepts/identity-access-management.md","ref":"reference/stack/basic-concepts/identity-access-management.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/stack/advanced-concepts/README.md","mtime":"2017-08-16T12:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-16T12:09:15.897Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Datastore","level":"3.3.3.3","depth":3,"next":{"title":"Identity & Access Management","level":"3.3.3.4","depth":3,"path":"reference/stack/basic-concepts/identity-access-management.md","ref":"reference/stack/basic-concepts/identity-access-management.md","articles":[]},"previous":{"title":"Entity Services","level":"3.3.3.2","depth":3,"path":"reference/stack/basic-concepts/entity-services.md","ref":"reference/stack/basic-concepts/entity-services.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/stack/basic-concepts/datastore.md","mtime":"2017-08-16T12:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-16T12:09:15.897Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
