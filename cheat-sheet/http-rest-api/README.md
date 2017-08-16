@@ -1,0 +1,1 @@
+<swagger>cheat-sheet/http-rest-api/swagger.json</swagger>
