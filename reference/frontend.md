@@ -10,8 +10,6 @@ In the default setup you can log in with `admin/admin`.
 
 ## Process Explorer
 
-
-
 ### How can I create a new diagram?
 
 You can find an example of the diagram creation in the `Hello World` example of our `Hands-On` section: 
@@ -115,16 +113,22 @@ Key | Value
  widgetName | Form
 
 ##### DropDown
+TODO: document settings (Simon)
 
 ##### CheckBox
+TODO: document settings (Simon)
 
 ##### RadioBox
+TODO: document settings (Simon)
 
 ##### TextField
+TODO: document settings (Simon)
 
 ##### DatePicker
+TODO: document settings (Simon)
 
 ##### AutoComplete
+TODO: document settings (Simon)
 
 ### Roles
 
@@ -146,13 +150,19 @@ A gateway can be used to model conditional execution paths. This includes some k
 
 Each condition can be configured by using a JavaScript expression on the flow following your gateway.
 
-TODO: Video
+TODO: Video Gateway Expression (Heiko/Sebastian)
 
 ### Messages / Signals
 
+Messages and Signals are basically the same - an event.
 
+The emitting part of the event is declared by using a Message Boundary Event or a Signal Boundary Event.
 
+TODO: Video Event Emit (Heiko/Sebastian)
 
+To subscribe to an event you need to declare a Start event (that is a Message Start Event or a Signal Start Event) and choose which event to listen to.
+
+TODO: Video Event Subscribe (Heiko/Sebastian)
 
 ### Mappings
 
@@ -167,3 +177,8 @@ When the diagram execution reaches a user task, the generated UI for that user t
 If there is no frontend application connected to the process engine server when a user task is reached, the diagram execution will be paused until a frontend application is connected.
 
 ## BPMN Implementation
+
+All of the basic BPMN elements are implemented in the process engine. There are some exotic elements though, that don't bring any real new functionality to the table and are more like a syntactic sugar for existing functionality.
+
+Examples for such elements are:
+TODO: find examples
