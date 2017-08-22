@@ -85,7 +85,34 @@ Index | Parameters | Type | Description
 
 #### Execute scripts
 
+Sometimes you might want to directly enter a small script right inside the diagram. You can do this by using a script task.
+
+Inside your script you can access the process token via `this`.
+ 
+TODO: Video ScriptTask
+
+Currently external resources are not supported for script tasks so you have to choose the _inline script_.
+
+#### Execute shell commands
+
+To execute a shell command you can use the built-in `ShellService`.
+
+Key | Value
+---------|----------
+ module | ShellService
+ method | execute
+ params | ['this command will be executed in your local shell']
+
+
 #### Execute domain code
+
+Just like we did when [consuming a HTTP REST API](frontend.md#consuming-a-http-rest-api) or [sending mails](frontend.md#sending-mails), we can use any class registered to the IoC container to execute a method of our choice.
+
+Key | Description
+---------|----------
+ module | The registration key of the class you want to execute a method on
+ method | The method you want to execute
+ params | An array of the parameters supplied to the method
 
 ### User Tasks
 
@@ -181,4 +208,5 @@ If there is no frontend application connected to the process engine server when 
 All of the basic BPMN elements are implemented in the process engine. There are some exotic elements though, that don't bring any real new functionality to the table and are more like a syntactic sugar for existing functionality.
 
 Examples for such elements are:
+
 TODO: find examples
