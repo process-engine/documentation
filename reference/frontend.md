@@ -14,9 +14,12 @@ In the default setup you can log in with `admin/admin`.
 
 ### How can I create a new diagram?
 
-### How can I use an existing diagram?
+You can find an example of the diagram creation in the `Hello World` example of our `Hands-On` section: 
+[Creating a new diagram](../quick-start/hands-on/hello-world.md#creating-a-new-diagram)
 
 ## Editing Diagrams
+
+{% video controls="controls"%}images/edit-process.mp4{% endvideo %}
 
 Regular BPMN diagrams only describe the business process itself. The standard does not include technical specifications (e.g. what server addresses are used or which configuration is needed at certain points).
 
@@ -80,7 +83,7 @@ Index | Parameters | Type | Description
  1 | Recipient | string | The recipients mail address
  2 | Subject | string | The mail subject
  3 | Body | string | The mail content
- 4 | Attachments | Array\<any\> | The mails attachments
+ 4 | Attachments | Array<any> | The mails attachments
 
 #### Execute scripts
 
@@ -133,11 +136,23 @@ We can use this feature to tag elements in our diagram with a role.
 This will cause the process engine to check whether the system currently executing the diagram satisfies these role restrictions.
 If the role is not satisfied by the current system, it will try to find another known system that satisfies the role and continue the diagram execution on that system.
 
-In case 
+Example:
+
+You could tag a user task with the role of a call center agent. If the user task is about to be executed, the process engine will continue the execution on a process engine client where a call center agent is logged in. If you got another role for a call center supervisor you could use that to mark tasks that only a supervisor is allowed to handle and it will only be executed on a client where a supervisor is logged in. 
 
 ### Gateways
 
-### Events / Messages / Signals
+A gateway can be used to model conditional execution paths. This includes some kind of condition for each following execution path.
+
+Each condition can be configured by using a JavaScript expression on the flow following your gateway.
+
+TODO: Video
+
+### Messages / Signals
+
+
+
+
 
 ### Mappings
 

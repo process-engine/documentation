@@ -17,3 +17,6 @@ This is the IoC container we use as a platform for our stack. You can find it on
 
 ## IoC
 The abbreviation for inversion of control.
+
+## flow
+A line connecting BPMN elements.
