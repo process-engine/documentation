@@ -742,13 +742,27 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="consuming-an-http-rest-api">Consuming an HTTP REST API</h1>
-<p>Create a new diagram, just like in the hello-world example.</p>
-<p>After that, create a service task to fetch some data, and a user-task to display the data:</p>
+<p>In this example we&apos;ll fetch data of currency exchange rates from a REST API and display the fetched data.</p>
+<p>Create a new diagram, just like in the <a href="hello-world.html">Hello World</a> example.</p>
+<p>After that, create a service <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> to fetch some data, and a user <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> to display the data:</p>
 <p><video src="../images/consuming-rest-api.mp4" width="100%" height="100%" controls="controls" loop></video></p>
-<p>With the <code>Extensions</code>-panel, we can tell the service-task what to do: In this case, call our API</p>
-<p>Next, we tell the <a href="../../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">flow</a> (the arrow) how the result is to be interpreted and forwarded to the user-task.</p>
-<p>At last, we tell the user-task what to display (again, in the <code>Extensions</code>-panel)</p>
-<p>This is the <code>uiConfig</code> used in the user-task:</p>
+<p>With the <code>Extensions</code>-panel, we can tell the service <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> what to do: In this case, call a HTTP REST API.</p>
+<blockquote>
+<p>You can find a detailed explanation of what those settings do in the <a href="../../reference/frontend.html#consuming-a-http-rest-api">Frontend Documentation</a>.</p>
+</blockquote>
+<hr>
+<p>Next, we tell the <a href="../../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">flow</a> how the result is to be interpreted and forwarded to the user <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a>.</p>
+<p>The <a href="../../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">flow</a> mapping will restructure how the result data of the previous <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> is persisted in the process token.</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">JSON</span>.parse(token.current.result).rates.USD
+</code></pre>
+<p>In this case we don&apos;t want to use all the exchange rates we retrieved, but only the USD rates.
+After the mapping, the next BPMN node after the <a href="../../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">flow</a> can use the USD rate by accessing <code>token.current</code>. </p>
+<blockquote>
+<p>You can find a detailed explanation of the <a href="../../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">flow</a> mappings in the <a href="../../reference/frontend.html#mappings">Frontend Documentation</a>.</p>
+</blockquote>
+<hr>
+<p>At last, we tell the user <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> what to display (again, in the <code>Extensions</code>-panel)</p>
+<p>By using <code>Confirm</code> as the <code>uiName</code> we can choose a confirm dialog and supply a <code>uiConfig</code> to the generated UI:</p>
 <pre><code class="lang-JavaScript">${ <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;1 EUR = &quot;</span> + token.current + <span class="hljs-string">&quot; USD&quot;</span>, <span class="hljs-string">&quot;layout&quot;</span>: [ { <span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;confirm&quot;</span>, <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;OK&quot;</span>}] };
 </code></pre>
 <p><video src="../images/integrate-rest-api.mp4" width="100%" height="100%" controls="controls" loop></video></p>
@@ -797,7 +811,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Consuming a REST API","level":"1.3.2.2","depth":3,"next":{"title":"Sending mails","level":"1.3.2.3","depth":3,"path":"quick-start/hands-on/sending-mail.md","ref":"quick-start/hands-on/sending-mail.md","articles":[]},"previous":{"title":"Hello World","level":"1.3.2.1","depth":3,"path":"quick-start/hands-on/hello-world.md","ref":"quick-start/hands-on/hello-world.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"quick-start/hands-on/consuming-rest-api.md","mtime":"2017-08-22T13:54:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-22T14:01:13.063Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Consuming a REST API","level":"1.3.2.2","depth":3,"next":{"title":"Sending mails","level":"1.3.2.3","depth":3,"path":"quick-start/hands-on/sending-mail.md","ref":"quick-start/hands-on/sending-mail.md","articles":[]},"previous":{"title":"Hello World","level":"1.3.2.1","depth":3,"path":"quick-start/hands-on/hello-world.md","ref":"quick-start/hands-on/hello-world.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"quick-start/hands-on/consuming-rest-api.md","mtime":"2017-08-28T13:49:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-28T07:14:44.544Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

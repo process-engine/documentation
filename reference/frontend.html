@@ -756,8 +756,11 @@
 <p>To execute the BPMN diagram as a software we need to include such data in the diagram somehow.</p>
 <p>The Camunda Modeler makes use of the BPMN XML format and defines extensions to declare these technical specifications.</p>
 <p>We will be using these extensions - which are regular key/value pairs - to define the technical specifications using the process engine frontend.</p>
+<blockquote>
+<p>For more details visit the <a href="https://docs.camunda.org/manual/7.4/modeler/camunda-modeler/bpmn/" target="_blank">official documentation</a> of the Camunda Modeler</p>
+</blockquote>
 <h3 id="service-tasks">Service Tasks</h3>
-<p>A service task represents a task that can be executed without human intervention.</p>
+<p>A service <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> represents a <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> that can be executed without human intervention.</p>
 <p>It is commonly used to</p>
 <ul>
 <li>fetch data from a HTTP REST API</li>
@@ -909,7 +912,7 @@
 </tbody>
 </table>
 <h4 id="execute-scripts">Execute scripts</h4>
-<p>Sometimes you might want to directly enter a small script right inside the diagram. You can do this by using a script task.</p>
+<p>Sometimes you might want to directly enter a small script right inside the diagram. You can do this by using a script <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a>.</p>
 <p>Inside your script you can access the process token via <code>this</code>.</p>
 <p>TODO: Video ScriptTask</p>
 <p>Currently external resources are not supported for script tasks so you have to choose the <em>inline script</em>.</p>
@@ -962,12 +965,12 @@
 </tbody>
 </table>
 <h3 id="user-tasks">User Tasks</h3>
-<p>A user task represents those tasks of your business process that can only be dealt with manually.</p>
+<p>A user <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> represents those tasks of your business process that can only be dealt with manually.</p>
 <p>It is commonly used to:</p>
 <ul>
 <li>get generic user input (form data)</li>
 <li>make decisions based on certain options</li>
-<li>validate data that legally cannot be validated by machines</li>
+<li>validate data that legally has to be reviewed by a person rather than a machine</li>
 </ul>
 <h4 id="widgets">Widgets</h4>
 <h5 id="confirm">Confirm</h5>
@@ -1027,7 +1030,7 @@
 This will cause the process engine to check whether the system currently executing the diagram satisfies these role restrictions.
 If the role is not satisfied by the current system, it will try to find another known system that satisfies the role and continue the diagram execution on that system.</p>
 <p>Example:</p>
-<p>You could tag a user task with the role of a call center agent. If the user task is about to be executed, the process engine will continue the execution on a process engine client where a call center agent is logged in. If you got another role for a call center supervisor you could use that to mark tasks that only a supervisor is allowed to handle and it will only be executed on a client where a supervisor is logged in. </p>
+<p>You could tag a user <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> with the role of a call center agent. If the user <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> is about to be executed, the process engine will continue the execution on a process engine client where a call center agent is logged in. If you got another role for a call center supervisor you could use that to mark tasks that only a supervisor is allowed to handle and it will only be executed on a client where a supervisor is logged in. </p>
 <h3 id="gateways">Gateways</h3>
 <p>A gateway can be used to model conditional execution paths. This includes some kind of condition for each following execution path.</p>
 <p>Each condition can be configured by using a JavaScript expression on the <a href="../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">flow</a> following your gateway.</p>
@@ -1042,8 +1045,8 @@ If the role is not satisfied by the current system, it will try to find another 
 <h2 id="diagram-execution">Diagram Execution</h2>
 <p>When you select a diagram in the process explorer you will get to its detail view.</p>
 <p>In this detail view you can execute the diagram by clicking the start button.</p>
-<p>When the diagram execution reaches a user task, the generated UI for that user task will appear on top of the diagram.</p>
-<p>If there is no frontend application connected to the process engine server when a user task is reached, the diagram execution will be paused until a frontend application is connected.</p>
+<p>When the diagram execution reaches a user <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a>, the generated UI for that user <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> will appear on top of the diagram.</p>
+<p>If there is no frontend application connected to the process engine server when a user <a href="../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> is reached, the diagram execution will be paused until a frontend application is connected.</p>
 <h2 id="bpmn-implementation">BPMN Implementation</h2>
 <p>All of the basic BPMN elements are implemented in the process engine. There are some exotic elements though, that don&apos;t bring any real new functionality to the table and are more like a syntactic sugar for existing functionality.</p>
 <p>Examples for such elements are:</p>
@@ -1091,7 +1094,7 @@ If the role is not satisfied by the current system, it will try to find another 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Frontend","level":"3.1","depth":1,"next":{"title":"Process Explorer","level":"3.1.1","depth":2,"anchor":"#process-explorer","path":"reference/frontend.md","ref":"reference/frontend.md#process-explorer","articles":[]},"previous":{"title":"HTTP REST API","level":"2.1.1","depth":2,"path":"cheat-sheet/http-rest-api/README.md","ref":"cheat-sheet/http-rest-api/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/frontend.md","mtime":"2017-08-22T13:54:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-22T14:01:13.063Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Frontend","level":"3.1","depth":1,"next":{"title":"Process Explorer","level":"3.1.1","depth":2,"anchor":"#process-explorer","path":"reference/frontend.md","ref":"reference/frontend.md#process-explorer","articles":[]},"previous":{"title":"HTTP REST API","level":"2.1.1","depth":2,"path":"cheat-sheet/http-rest-api/README.md","ref":"cheat-sheet/http-rest-api/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/frontend.md","mtime":"2017-08-28T14:14:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-28T07:14:44.544Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
