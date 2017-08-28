@@ -21,3 +21,11 @@ The process engine gives you the power to execute BPMN diagrams of yours as inte
 * use existing infrastructure
 * adapt your BPMN processes on the fly
 * work with an extremly scalable and flexible solution that suits even the most complicated setups
+
+## BPMN
+
+This documentation will try to explain certain aspects of BPMN that are necessary for understanding our implementations.
+
+However BPMN is a large standard and it is not in the scope of this documentation to explain all of that.
+
+You can find extensive materials at its [official standards committee](http://www.bpmn.org/).

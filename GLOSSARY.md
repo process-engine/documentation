@@ -4,7 +4,7 @@ Bridges are used to tie together different technologies in a loosely-coupled fas
 See also: [Bridges](reference/stack/structure.md#bridges).
 
 ## adapter
-See [Adapters](reference/stack/basic-concepts.md#adapters).
+See [Adapters](reference/stack/structure.md#adapters).
 
 ## integrate
 Integrating a BPMN process means configuring a regular BPMN process to be executable by the process engine.
@@ -20,3 +20,14 @@ The abbreviation for inversion of control.
 
 ## flow
 A line connecting BPMN elements.
+
+## isomorphic
+Isomorphic javascript code is code that is shared by backend and frontend. It enables higher consistency throughout implementations in the whole stack.
+
+## domain object
+A domain object is the representation of an object that is used inside of our software stack. Most of the times these domain objects are used for business logic and/or persistance.
+
+Examples of domain objects are: user, process, ...
+
+## task
+https://camunda.org/bpmn/reference/#activities-task

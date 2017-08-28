@@ -27,7 +27,8 @@ export class MyClass {
 
   @requiresClaim({
     actions: [
-      [ClaimActionType.read, ['special_role_a38']]
+      [ClaimActionType.write, ['special_role_a38']],
+      [ClaimActionType.read, ['unspecial_role']]
     ]
   })
   public get myProperty(): string {

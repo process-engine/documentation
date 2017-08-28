@@ -6,9 +6,10 @@ If you want to work with entities you will need to load or save them somehow. Th
 
 The easiest and recommended way to consume the datastore is to use the `DatastoreService` directly via dependency injection.
 
-Because the datastore is generic, the first thing you want to do is get a specialized repository for the entity you want to load or save. We call this the `EntityType`.
+You can get a generic repository for a specific entity by calling `getEntityType('YourEntity')` on the `DatastoreService`.
+We call this repository the `EntityType`. You can create, load and save entities of the type you specified.
 
-Now that you have a `EntityType` you can use it to create a new entity: 
+Now that you have an `EntityType`, you can use it to create a new entity: 
 
 ```typescript
 const processTokenEntityType = await this.datastoreService.getEntityType('ProcessToken');

@@ -8,6 +8,8 @@ While entities contain the logic to work on their own state, entity services hol
 
 An entity service can provide methods that create entities from a given state or work on multiple entities.
 
+In contrast to entities, there are no methods you need to implement by convention.
+
 ## Entity Service Dependency Injection
 
 To keep all responsibilities clean and encapsulated an entity should **NOT** have its own entity service as a dependency.

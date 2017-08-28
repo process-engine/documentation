@@ -42,6 +42,10 @@ Setting `uiName` tells the process engine what kind of UI component we want to u
 
 Setting `uiConfig` specifies the details for the UI component - in this case the message and buttons to display.
 
+```javascript
+${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
+```
+
 {% video controls="controls"%}../images/integrate-hello-world.mp4{% endvideo %}
 
 Now we configured what the user task should look like in the UI - time to execute!

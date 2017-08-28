@@ -27,6 +27,8 @@ The Camunda Modeler makes use of the BPMN XML format and defines extensions to d
 
 We will be using these extensions - which are regular key/value pairs - to define the technical specifications using the process engine frontend.
 
+> For more details visit the [official documentation](https://docs.camunda.org/manual/7.4/modeler/camunda-modeler/bpmn/) of the Camunda Modeler
+
 ### Service Tasks
 
 A service task represents a task that can be executed without human intervention.
@@ -121,7 +123,7 @@ A user task represents those tasks of your business process that can only be dea
 It is commonly used to:
 * get generic user input (form data)
 * make decisions based on certain options
-* validate data that legally cannot be validated by machines
+* validate data that legally has to be reviewed by a person rather than a machine
 
 #### Widgets
 

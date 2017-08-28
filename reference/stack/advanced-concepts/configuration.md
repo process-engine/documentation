@@ -50,7 +50,7 @@ The following sections will explore how these hierarchies are represented across
 
 ### Static Configuration
 
-Most of your application configuration will be static. Static configuration is provided within a single or multiple configuration files.
+Most of your application configuration will be static. Static configuration is provided as a single configuration file OR as multiple configuration files inside a configuration folder.
 
 #### Configuration File
 
@@ -67,6 +67,8 @@ In this example our JSON file could look like this:
   }
 }
 ``` 
+
+> By default the configuration file is expected to be `./config.json` in your project root.
 
 #### Configuration Folder
 
@@ -90,6 +92,8 @@ and the content of `example_service.json` like this:
 ``` 
 
 If you compare this with the [Configuration File](#configuration-file), the difference is that you have smaller, more atomic configuration files that might be easier to maintain for you.
+
+> By default the configuration folder is expected to be `./config` in your project root.
 
 ### Environment Configuration
 
