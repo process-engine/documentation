@@ -2,7 +2,7 @@
 
 When configuring the application you want to be able to do that on different levels.
 
-Imagine you want to use a different port to host the application. You certainly have a static configuration you could change to adjust the port. But especially when your application is controled by another application (e.g. an orchestrator), you want to be able to adjust it without changing the static configuration. Instead you could use environment variables or command-line arguments.
+Imagine you want to use a different port to host the application. You certainly have a static configuration you could change to adjust the port. But especially when your application is controlled by another application (e.g. an orchestrator), you want to be able to adjust it without changing the static configuration. Instead you could use environment variables or command-line arguments.
 
 Our configuration concept uses a configuration hierarchy. All the configuration values inside that hierarchy can be set from multiple configuration sources that overwrite one another in a distinct order.
 

@@ -2,8 +2,7 @@
 
 ## What is the problem at hand?
 
-Many companies document how things are supposed to be done in diagrams. They
-are a great way to plan, define and coordinate procedures.
+Many companies document how things are supposed to be done in diagrams, which are a great way to plan, define and coordinate procedures.
 
 The problem is, that making sure they are actually used costs time and energy,
 so in reality they often vanish in a drawer somewhere.
@@ -12,7 +11,7 @@ so in reality they often vanish in a drawer somewhere.
 
 We want you to view a BPMN process as more than a simple document. It's like a set of instructions, describing what you want a software to do for you. Instead of manually executing a BPMN process you can rely on the process engine to do that for you.
 
-The process engine gives you the power to execute BPMN diagrams of yours as integral part of the software. All you need to do is to feed it some metadata that you can easily configure using our Web UI and you're good to go.
+All you need to do is to feed it some metadata that you can easily configure using our Web UI and you're good to go.
 
 ## What are your benefits of using the process engine?
 

@@ -108,7 +108,7 @@ Entity Type Services are no different in configuration than Entity Types.
 But they are defined in the folder `entity_type_services` instead of `entity_types`.
 The JSON file doesn't contain a suffix as well.
 
-The two block are representing roles defined to fulfill `class level` and `member level` claims.
+The two blocks are representing roles defined to fulfill `class level` and `member level` claims.
 
 ## Usage
 

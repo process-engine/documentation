@@ -2,7 +2,7 @@
 
 In this part, you'll quickly learn the basics of handling the process-engine.
 
-We start with a simple hello-world, then move on to consuming an API, and finally send a mail with a condition.
+We start with a simple hello-world example, then move on to consuming an API and finally sending mails with conditions.
 
 The final process will look like this:
 
