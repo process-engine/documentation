@@ -8,3 +8,4 @@ Our goal with this quick start guide is to create a whole BPMN process step by s
 
 The resulting BPMN process will look something like this:
 
+![Finished Example Process](images/finished-example-process.png)
