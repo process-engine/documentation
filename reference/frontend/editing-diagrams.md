@@ -119,10 +119,7 @@ Key | Value
  confirmLayout | [ { "key": "confirm", "label": "Accept" }, { "key": "decline", "label": "Decline", "isCancel": true } ]
 
 #### Form
-
-Key | Value
----------|----------
- widgetName | Form
+TODO: document settings (Simon)
 
 #### DropDown
 TODO: document settings (Simon)
@@ -177,3 +174,4 @@ To subscribe to an event you need to declare a Start event (that is a Message St
 TODO: Video Event Subscribe (Heiko/Sebastian)
 
 ## Mappings
+TODO: document settings (Simon)

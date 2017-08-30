@@ -181,3 +181,4 @@ They are parsed by the segment position inside the claim. (see [Naming Conventio
 
 ## Promotion
 
+TODO: document promotion and promotion decorator (Sebastian)
