@@ -197,5 +197,13 @@ To subscribe to an event you need to declare a Start event (that is a Message St
 
 TODO: Video Event Subscribe (Heiko/Sebastian)
 
-## Mappings
-TODO: document settings (Patrick)
+## Mappers
+
+Sometimes it could be necessary to convert the process token before it is passed to the next following task. This can be done with a mapper property of a Sequence Flow in the Extensions panel.
+
+Key      | Value
+----------|----------
+ mapper   | {newProperty: token.current.oldProperty}
+
+The new object replaces the current process token. It's passed as JavaScript expression, not as JSON.
+You can use the default variable 'token' to access the current process token or the token history.
