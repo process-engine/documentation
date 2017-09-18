@@ -146,11 +146,11 @@ Use "enum" in the Type-Dropdown. Also use "RadioBox" in an entry within the Prop
 
 Use "boolean" in the Type-Dropdown.
 
-##### TextField <- Type: string or number
+##### TextField
 
 Use "string" or "number" in the Type-Dropdown.
 
-##### DatePicker <- Type: date
+##### DatePicker
 
 Use "date" in the Type-Dropdown.
 
