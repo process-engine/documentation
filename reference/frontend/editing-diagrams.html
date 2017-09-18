@@ -964,7 +964,9 @@
 <li>validate data that legally has to be reviewed by a person rather than a machine</li>
 </ul>
 <h3 id="widgets">Widgets</h3>
+<p>A widget can be referenced by an user <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a> using following possible setups wihtin the ExtensionProperty-Tab</p>
 <h4 id="confirm">Confirm</h4>
+<p>A simple &quot;show some text and choose from a set of buttons&quot; - Scenario can be archieved by using the Confirm-Widget </p>
 <table>
 <thead>
 <tr>
@@ -974,33 +976,68 @@
 </thead>
 <tbody>
 <tr>
-<td> widgetName</td>
+<td> uiName</td>
 <td>Confirm</td>
 </tr>
 <tr>
-<td> confirmMessage</td>
-<td>This is my message.</td>
-</tr>
-<tr>
-<td> confirmLayout</td>
-<td>[ { &quot;key&quot;: &quot;confirm&quot;, &quot;label&quot;: &quot;Accept&quot; }, { &quot;key&quot;: &quot;decline&quot;, &quot;label&quot;: &quot;Decline&quot;, &quot;isCancel&quot;: true } ]</td>
+<td> uiConfig</td>
+<td>${ &quot;message&quot;: &quot;This is my confirm message!&quot;, &quot;layout&quot;: [ { &quot;key&quot;: &quot;confirm&quot;, &quot;label&quot;: &quot;Accept&quot; }, { &quot;key&quot;: &quot;decline&quot;, &quot;label&quot;: &quot;Decline&quot;, &quot;isCancel&quot;: true } ] }</td>
 </tr>
 </tbody>
 </table>
 <h4 id="form">Form</h4>
-<p>TODO: document settings (Simon)</p>
-<h4 id="dropdown">DropDown</h4>
-<p>TODO: document settings (Simon)</p>
-<h4 id="checkbox">CheckBox</h4>
-<p>TODO: document settings (Simon)</p>
-<h4 id="radiobox">RadioBox</h4>
-<p>TODO: document settings (Simon)</p>
-<h4 id="textfield">TextField</h4>
-<p>TODO: document settings (Simon)</p>
-<h4 id="datepicker">DatePicker</h4>
-<p>TODO: document settings (Simon)</p>
-<h4 id="autocomplete">AutoComplete</h4>
-<p>TODO: document settings (Simon)</p>
+<p>A simple form i.e. a set of form items can be archieved by using the Form-Widget.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> uiName</td>
+<td>Form</td>
+</tr>
+<tr>
+<td> uiConfig</td>
+<td>${ &quot;message&quot;: &quot;This is my confirm message!&quot; }</td>
+</tr>
+</tbody>
+</table>
+<p>In order to setup the form items the Forms-Tab has to be used. Within the Forms-Tab the following form items are configurable. To add a form item, click the &quot;+&quot;-Button and enter an unique id within the ID-Field.
+Now, depending on the value choosen in the Type-DropDown a certain widget implementation is used. Each form item should have a &quot;Label&quot; an can have a &quot;Default Value&quot;.</p>
+<h5 id="dropdown">DropDown</h5>
+<p>Use &quot;enum&quot; in the Type-Dropdown. 
+Use the Values-Section in order to add entries for the Dropdown. Make sure to setup an unique key and a value which can be choosen.</p>
+<h5 id="radiobox">RadioBox</h5>
+<p>Use &quot;enum&quot; in the Type-Dropdown. Also use &quot;RadioBox&quot; in an entry within the Property-Section using &quot;uiName&quot; as key. This will overwrite the default behaviour of choosing a DropDown instead.</p>
+<h5 id="checkbox">CheckBox</h5>
+<p>Use &quot;boolean&quot; in the Type-Dropdown.</p>
+<h5 id="textfield">TextField</h5>
+<p>Use &quot;string&quot; or &quot;number&quot; in the Type-Dropdown.</p>
+<h5 id="datepicker">DatePicker</h5>
+<p>Use &quot;date&quot; in the Type-Dropdown.</p>
+<h4 id="selectablelist">SelectableList</h4>
+<p>A simple list from which the user can select a set of elements can be archieved by using the SelectableList-Widget.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> uiName</td>
+<td>SelectableList</td>
+</tr>
+<tr>
+<td> uiConfig</td>
+<td>${ &quot;dataSource&quot;: [ { &quot;id&quot;: &quot;keyOfEntryA&quot;, &quot;label&quot;: &quot;Entry A&quot; }, { &quot;id&quot;: &quot;keyOfEntryB&quot;, &quot;label&quot;: &quot;Entry A&quot; } ], &quot;thcSchema&quot;: [ { &quot;name&quot;: &quot;id&quot;, &quot;thcProps&quot;: { &quot;hidden&quot;: true, &quot;dataField&quot;: &quot;id&quot;, &quot;isKey&quot;: true } }, { &quot;name&quot;: &quot;Label&quot;, &quot;thcProps&quot;: { &quot;dataField&quot;: &quot;label&quot;} } ]}</td>
+</tr>
+</tbody>
+</table>
 <h2 id="roles">Roles</h2>
 <p>Roles are an abstract way to declare who is responsible for something.</p>
 <p>This is not restricted to human users, but also applies to machines that incarnate a certain role.</p>
@@ -1019,8 +1056,24 @@ If the role is not satisfied by the current system, it will try to find another 
 <p>TODO: Video Event Emit (Heiko/Sebastian)</p>
 <p>To subscribe to an event you need to declare a Start event (that is a Message Start Event or a Signal Start Event) and choose which event to listen to.</p>
 <p>TODO: Video Event Subscribe (Heiko/Sebastian)</p>
-<h2 id="mappings">Mappings</h2>
-<p>TODO: document settings (Simon)</p>
+<h2 id="mappers">Mappers</h2>
+<p>Sometimes it could be necessary to convert the process token before it is passed to the next following <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">task</a>. This can be done with a mapper property of a Sequence <a href="../../GLOSSARY.html#flow" class="glossary-term" title="A line connecting BPMN elements.">Flow</a> in the Extensions panel.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> mapper</td>
+<td>{newProperty: token.current.oldProperty}</td>
+</tr>
+</tbody>
+</table>
+<p>The new object replaces the current process token. It&apos;s passed as JavaScript expression, not as JSON.
+You can use the default variable &apos;token&apos; to access the current process token or the token history.</p>
 
                                 
                                 </section>
@@ -1064,7 +1117,7 @@ If the role is not satisfied by the current system, it will try to find another 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Editing Diagrams","level":"3.1.2","depth":2,"next":{"title":"Diagram Execution","level":"3.1.3","depth":2,"path":"reference/frontend/diagram-execution.md","ref":"reference/frontend/diagram-execution.md","articles":[]},"previous":{"title":"Process Explorer","level":"3.1.1","depth":2,"path":"reference/frontend/process-explorer.md","ref":"reference/frontend/process-explorer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/frontend/editing-diagrams.md","mtime":"2017-08-30T20:02:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T20:06:55.529Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Editing Diagrams","level":"3.1.2","depth":2,"next":{"title":"Diagram Execution","level":"3.1.3","depth":2,"path":"reference/frontend/diagram-execution.md","ref":"reference/frontend/diagram-execution.md","articles":[]},"previous":{"title":"Process Explorer","level":"3.1.1","depth":2,"path":"reference/frontend/process-explorer.md","ref":"reference/frontend/process-explorer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/frontend/editing-diagrams.md","mtime":"2017-09-18T13:43:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-18T13:44:47.176Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

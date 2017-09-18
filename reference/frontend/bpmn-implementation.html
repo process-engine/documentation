@@ -742,7 +742,73 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="bpmn-implementation">BPMN Implementation</h1>
-<p>TODO: document implemented elements (Patrick)</p>
+<p>Currently the following elements of the BPMN standard are interpreted by the process engine. They can hold certain parameters to fulfil specific requirements and behaviours during process execution.</p>
+<p>Other elements although can be modeled but are ignored by the process engine if possible.</p>
+<p>Am overview of the BPMN standard and its symbols can be found i.e. here <a href="https://camunda.org/bpmn/reference/" target="_blank">https://camunda.org/bpmn/reference/</a>.</p>
+<h2 id="supported-elements">Supported elements</h2>
+<table>
+<thead>
+<tr>
+<th>Element group</th>
+<th>elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Participants</td>
+<td>Pool, Lane</td>
+</tr>
+<tr>
+<td> Tasks</td>
+<td>Service <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">Task</a>, User <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">Task</a>, Script <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">Task</a></td>
+</tr>
+<tr>
+<td> Subprocesses</td>
+<td>Call Acitivty</td>
+</tr>
+<tr>
+<td> Gateways</td>
+<td>Exclusive Gateway, Parallel Gateway</td>
+</tr>
+<tr>
+<td> Events</td>
+<td>Message, Timer, Error, Conditional, Signal, Cancel</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Currently there is only one Pool possible per model.</li>
+<li>Lanes can&apos;t be nested.</li>
+<li>Manual Tasks describe explicitely an execution without involving a process engine and can therefore be used anyway.</li>
+<li>Events include usage as Intermediate and Boundary Events.</li>
+</ul>
+<h2 id="unsupported-elements">Unsupported elements</h2>
+<table>
+<thead>
+<tr>
+<th>Element group</th>
+<th>elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Tasks</td>
+<td>Send <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">Task</a>, Receive <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">Task</a>, Business Rules <a href="../../GLOSSARY.html#task" class="glossary-term" title="https://camunda.org/bpmn/reference/#activities-task">Task</a></td>
+</tr>
+<tr>
+<td> Subprocesses</td>
+<td>implicite Subprocess</td>
+</tr>
+<tr>
+<td> Gateways</td>
+<td>Inclusive Gateway, Event Based Gateway, Complex Gateway</td>
+</tr>
+<tr>
+<td> Events</td>
+<td>Termination, Link, Compensation, Escalation</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -786,7 +852,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"BPMN Implementation","level":"3.1.4","depth":2,"next":{"title":"Infrastructure","level":"3.2","depth":1,"path":"reference/infrastructure/README.md","ref":"reference/infrastructure/README.md","articles":[{"title":"Components","level":"3.2.1","depth":2,"path":"reference/infrastructure/components.md","ref":"reference/infrastructure/components.md","articles":[]},{"title":"Typical Setups","level":"3.2.2","depth":2,"path":"reference/infrastructure/typical-setups.md","ref":"reference/infrastructure/typical-setups.md","articles":[]},{"title":"Supported Technology","level":"3.2.3","depth":2,"path":"reference/infrastructure/supported-technology.md","ref":"reference/infrastructure/supported-technology.md","articles":[]},{"title":"Unsupported Technology","level":"3.2.4","depth":2,"path":"reference/infrastructure/unsupported-technology.md","ref":"reference/infrastructure/unsupported-technology.md","articles":[]}]},"previous":{"title":"Diagram Execution","level":"3.1.3","depth":2,"path":"reference/frontend/diagram-execution.md","ref":"reference/frontend/diagram-execution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/frontend/bpmn-implementation.md","mtime":"2017-08-30T20:03:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T20:06:55.529Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BPMN Implementation","level":"3.1.4","depth":2,"next":{"title":"Infrastructure","level":"3.2","depth":1,"path":"reference/infrastructure/README.md","ref":"reference/infrastructure/README.md","articles":[{"title":"Components","level":"3.2.1","depth":2,"path":"reference/infrastructure/components.md","ref":"reference/infrastructure/components.md","articles":[]},{"title":"Typical Setups","level":"3.2.2","depth":2,"path":"reference/infrastructure/typical-setups.md","ref":"reference/infrastructure/typical-setups.md","articles":[]},{"title":"Supported Technology","level":"3.2.3","depth":2,"path":"reference/infrastructure/supported-technology.md","ref":"reference/infrastructure/supported-technology.md","articles":[]},{"title":"Unsupported Technology","level":"3.2.4","depth":2,"path":"reference/infrastructure/unsupported-technology.md","ref":"reference/infrastructure/unsupported-technology.md","articles":[]}]},"previous":{"title":"Diagram Execution","level":"3.1.3","depth":2,"path":"reference/frontend/diagram-execution.md","ref":"reference/frontend/diagram-execution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-menu","html5-video","swagger","livereload"],"pluginsConfig":{"collapsible-menu":{},"livereload":{},"search":{},"swagger":{"file":""},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"reference/frontend/bpmn-implementation.md","mtime":"2017-09-18T13:43:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-18T13:44:47.176Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
