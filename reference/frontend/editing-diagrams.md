@@ -110,34 +110,58 @@ It is commonly used to:
 
 ### Widgets
 
+A widget can be referenced by an user task using following possible setups wihtin the ExtensionProperty-Tab
+
 #### Confirm
+
+A simple "show some text and choose from a set of buttons" - Scenario can be archieved by using the Confirm-Widget 
 
 Key | Value
 ---------|----------
- widgetName | Confirm
- confirmMessage | This is my message.
- confirmLayout | [ { "key": "confirm", "label": "Accept" }, { "key": "decline", "label": "Decline", "isCancel": true } ]
-
+ uiName   | Confirm
+ uiConfig | ${ "message": "This is my confirm message!", "layout": [ { "key": "confirm", "label": "Accept" }, { "key": "decline", "label": "Decline", "isCancel": true } ] }
+ 
 #### Form
-TODO: document settings (Simon)
 
-#### DropDown
-TODO: document settings (Simon)
+A simple form i.e. a set of form items can be archieved by using the Form-Widget.
 
-#### CheckBox
-TODO: document settings (Simon)
+Key      | Value
+----------|----------
+ uiName   | Form
+ uiConfig | ${ "message": "This is my confirm message!" }
 
-#### RadioBox
-TODO: document settings (Simon)
+In order to setup the form items the Forms-Tab has to be used. Within the Forms-Tab the following form items are configurable. To add a form item, click the "+"-Button and enter an unique id within the ID-Field.
+Now, depending on the value choosen in the Type-DropDown a certain widget implementation is used. Each form item should have a "Label" an can have a "Default Value".
 
-#### TextField
-TODO: document settings (Simon)
+##### DropDown
 
-#### DatePicker
-TODO: document settings (Simon)
+Use "enum" in the Type-Dropdown. 
+Use the Values-Section in order to add entries for the Dropdown. Make sure to setup an unique key and a value which can be choosen.
 
-#### AutoComplete
-TODO: document settings (Simon)
+##### RadioBox
+
+Use "enum" in the Type-Dropdown. Also use "RadioBox" in an entry within the Property-Section using "uiName" as key. This will overwrite the default behaviour of choosing a DropDown instead.
+
+##### CheckBox
+
+Use "boolean" in the Type-Dropdown.
+
+##### TextField <- Type: string or number
+
+Use "string" or "number" in the Type-Dropdown.
+
+##### DatePicker <- Type: date
+
+Use "date" in the Type-Dropdown.
+
+#### SelectableList
+
+A simple list from which the user can select a set of elements can be archieved by using the SelectableList-Widget.
+
+Key      | Value
+----------|----------
+ uiName   | SelectableList
+ uiConfig | ${ "dataSource": [ { "id": "keyOfEntryA", "label": "Entry A" }, { "id": "keyOfEntryB", "label": "Entry A" } ], "thcSchema": [ { "name": "id", "thcProps": { "hidden": true, "dataField": "id", "isKey": true } }, { "name": "Label", "thcProps": { "dataField": "label"} } ]}
 
 ## Roles
 
@@ -174,4 +198,4 @@ To subscribe to an event you need to declare a Start event (that is a Message St
 TODO: Video Event Subscribe (Heiko/Sebastian)
 
 ## Mappings
-TODO: document settings (Simon)
+TODO: document settings (Patrick)
