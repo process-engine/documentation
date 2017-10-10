@@ -2,10 +2,10 @@
 
 Before we start using the process engine you need to install it on your machine.
 
-You can start by cloning the [skeleton repository](https://github.com/ProcessEngineJS/skeleton). It contains a minimal setup of the process engine that you can use right away.
+You can start by cloning the [skeleton repository](https://github.com/process-engine/skeleton). It contains a minimal setup of the process engine that you can use right away.
 
 ```
-git clone git@github.com:ProcessEngineJS/skeleton.git
+git clone git@github.com:process-engine/skeleton.git
 ```
 
 The repository consists of two parts:
