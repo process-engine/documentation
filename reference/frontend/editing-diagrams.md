@@ -91,7 +91,7 @@ Key | Value
 
 ### Execute domain code
 
-Just like we did when [consuming a HTTP REST API](frontend.md#consuming-a-http-rest-api) or [sending mails](frontend.md#sending-mails), we can use any class registered to the IoC container to execute a method of our choice.
+Just like we did when [consuming a HTTP REST API](../../quick-start/hands-on/hello-world.md#consuming-rest-api) or [sending mails](../../quick-start/hands-on/hello-world.md#sending-mail), we can use any class registered to the IoC container to execute a method of our choice.
 
 Key | Description
 ---------|----------

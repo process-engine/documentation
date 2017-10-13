@@ -10,7 +10,7 @@ After that, create a service task to fetch some data, and a user task to display
 
 With the `Extensions`-panel, we can tell the service task what to do: In this case, call a HTTP REST API.
 
-> You can find a detailed explanation of what those settings do in the [Frontend Documentation](../../reference/frontend.md#consuming-a-http-rest-api).
+> You can find a detailed explanation of what those settings do in the [Frontend Documentation](../../reference/frontend/editing-diagrams.md#consuming-a-http-rest-api).
 
 ---
 
@@ -25,7 +25,7 @@ JSON.parse(token.current.result).rates.USD
 In this case we don't want to use all the exchange rates we retrieved, but only the USD rates.
 After the mapping, the next BPMN node after the flow can use the USD rate by accessing `token.current`. 
 
-> You can find a detailed explanation of the flow mappings in the [Frontend Documentation](../../reference/frontend.md#mappings).
+> You can find a detailed explanation of the flow mappings in the [Frontend Documentation](../../reference/frontend/editing-diagrams.md#mappers).
 
 ---
 

@@ -29,7 +29,7 @@ class ExampleService {
 
 ## Declaration
 
-The declaration of a configuration object is done during registration of classes on the IoC container (see [Dependency Injection](module-interaction.md#dependency-injection)).
+The declaration of a configuration object is done during registration of classes on the IoC container (see [Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript
 container.register('ExampleService', ExampleService)

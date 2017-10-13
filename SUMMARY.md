@@ -2,7 +2,6 @@
 
 ### Getting Started
 
-* [See it in action](see-it-in-action.md)
 * [Quick Start](quick-start/README.md)
   * [Setup](quick-start/setup.md)
   * [Hands-On](quick-start/hands-on/README.md)
@@ -46,6 +45,5 @@
     
 ---
 * [Community](community/README.md)
-* [Roadmap](roadmap.md)
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
