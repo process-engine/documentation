@@ -1,0 +1,291 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Process Engine HTTP REST API",
+    "description": "This is the static part of the BPMN Process Engine HTTP REST API.",
+    "termsOfService": "terms"
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "UserCredentials": {
+      "description": "user credentials",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "the user name"
+        },
+        "password": {
+          "type": "string",
+          "description": "the users password"
+        }
+      }
+    },
+    "MessagebusPublication": {
+      "description": "a message that can be published on the messagebus",
+      "properties": {
+        "channel": {
+          "type": "string",
+          "description": "the channel the message will be published on"
+        },
+        "msg": {
+          "description": "the content of your message",
+          "type": "object"
+        },
+        "options": {
+          "description": "additional query options for your message publication",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "applicationId": {
+              "type": "string"
+            },
+            "token": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "StartProcessMessage": {
+      "description": "the message to start a BPMN process",
+      "properties": {
+        "msg": {
+          "properties": {
+            "key": {
+              "type": "string"
+            }
+          }
+        },
+        "options": {
+          "description": "additional query options for the process you want to start",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "applicationId": {
+              "type": "string"
+            },
+            "token": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/process_engine/start": {
+      "post": {
+        "tags": [
+          "process engine"
+        ],
+        "summary": "Starts the execution of a BPMN process",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "start message",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/StartProcessMessage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns the id of the process instance you started",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/messagebus/publish": {
+      "post": {
+        "tags": [
+          "messagebus"
+        ],
+        "summary": "Authenticates and returns a token",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user credentials",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/MessagebusPublication"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/iam/login": {
+      "post": {
+        "tags": [
+          "iam"
+        ],
+        "summary": "Authenticates and returns a token",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user credentials",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UserCredentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/iam/logout": {
+      "get": {
+        "tags": [
+          "iam"
+        ],
+        "summary": "Logs the user out",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/getidentity": {
+      "get": {
+        "tags": [
+          "iam"
+        ],
+        "summary": "Returns the user identity",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/getidentityentity": {
+      "get": {
+        "tags": [
+          "iam"
+        ],
+        "summary": "Returns the entity for the user identity",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/validatecredentials": {
+      "post": {
+        "tags": [
+          "iam"
+        ],
+        "summary": "Validates user credentials",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user credentials",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UserCredentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gitbookdoku",
+  "version": "1.0.0",
+  "description": "## What is the problem at hand?",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "gitbook serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-collapsible-menu": "^1.0.3",
+    "gitbook-plugin-html5-video": "^1.0.0",
+    "gitbook-plugin-swagger": "^0.1.1"
+  }
+}
