@@ -25,8 +25,9 @@
 ### BPMN-Studio
 
 * [Beschreibung der Dialoge](bpmn-studio/beschreibung-dialoge.md)
-* [Prozess erstellen (hands-on)](bpmn-studio/prozess-erstellen.md)
-* [Process parametrieren (hands-on)](bpmn-studio/prozess-paramentieren.md)
+* [Hands-On](bpmn-studio/hands-on/README.md)
+  * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md)
+  * [Process parametrieren](bpmn-studio/hands-on/prozess-paramentieren.md)
 
 ### Integration (in "Dritt-Systemen")
 
