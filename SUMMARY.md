@@ -43,13 +43,13 @@
 
 ### Ideen zum Betrieb
 
-* [Cluster-Setup](cheat-sheet/http-rest-api/README.md)
-* [Browser-Setup](cheat-sheet/http-rest-api/README.md)
+* [Cluster-Setup](ideen-für-den-betrieb/browser-setup.md)
+* [Browser-Setup](ideen-für-den-betrieb/cluster-setup.md)
 
 ### Anhang
-    
+
 * [Glossar](anhang/GLOSSARY.md)
-* [Literaturverweise](cheat-sheet/http-rest-api/README.md)
+* [Literaturverweise](anhang/literaturverweise.md)
 ---
 * [Community](community/README.md)
 * [FAQ](faq.md)
