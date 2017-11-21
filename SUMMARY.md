@@ -47,9 +47,9 @@
 * [Browser-Setup](cheat-sheet/http-rest-api/README.md)
 
 ### Anhang
-    
+
 * [Glossar](anhang/GLOSSARY.md)
-* [Literaturverweise](cheat-sheet/http-rest-api/README.md)
+* [Literaturverweise](anhang/literaturverweise.md)
 ---
 * [Community](community/README.md)
 * [FAQ](faq.md)
