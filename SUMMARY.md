@@ -31,21 +31,21 @@
 
 ### Integration (in "Dritt-Systemen")
 
-* [ConsumerClientApi](cheat-sheet/http-rest-api/README.md)
-  * [Ziel und Aufgabe](cheat-sheet/http-rest-api/README.md)
-  * [Einbinden in](cheat-sheet/http-rest-api/README.md)
-    * [dotnet-core WebAPI](cheat-sheet/http-rest-api/README.md)
-    * [Express-Anwendungen](cheat-sheet/http-rest-api/README.md)
-* ["in Prozess"-Verwendung](cheat-sheet/http-rest-api/README.md)
+* [ConsumerClientApi](integration/consumer-client-API/README.md)
+  * [Ziel und Aufgabe](integration/consumer-client-API/ziel-und-aufgaben.md)
+  * [Einbinden in](integration/consumer-client-API/einbinden-in/README.md)
+    * [dotnet-core WebAPI](integration/consumer-client-API/einbinden-in/dotnet-core-webAPI.md)
+    * [Express-Anwendungen](integration/consumer-client-API/einbinden-in/express-anwendungen.md)
+* ["in Prozess"-Verwendung](integration/in-prozess-verwendung.md)
 
-### Tutorial
+### Tutorials
 
-* [Erweitertes Setup](cheat-sheet/http-rest-api/README.md)
+* [Erweitertes Setup](tutorial/erweitertes-setup.md)
 
 ### Ideen zum Betrieb
 
-* [Cluster-Setup](ideen-für-den-betrieb/browser-setup.md)
-* [Browser-Setup](ideen-für-den-betrieb/cluster-setup.md)
+* [Cluster-Setup](ideen-fuer-den-betrieb/cluster-setup.md)
+* [Browser-Setup](ideen-fuer-den-betrieb/browser-setup.md)
 
 ### Anhang
 
