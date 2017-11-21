@@ -1,48 +1,55 @@
 # Summary
 
-### Getting Started
+### Introduction
 
-* [Quick Start](quick-start/README.md)
-  * [Setup](quick-start/setup.md)
-  * [Hands-On](quick-start/hands-on/README.md)
-    * [Hello World](quick-start/hands-on/hello-world.md)
-    * [Consuming a REST API](quick-start/hands-on/consuming-rest-api.md)
-    * [Sending mails](quick-start/hands-on/sending-mail.md)
+* [Installation der Anwendung](quick-start/README.md)
+* [Setup](quick-start/setup.md)
+  * [Konfiguration des Stacks (skateboard)](quick-start/hands-on/README.md)
+  * [Hello BPMN-World](quick-start/hands-on/hello-world.md)
 
-### Resources
+### Basics
 
-* [Cheat Sheet](cheat-sheet/README.md)
-  * [HTTP REST API](cheat-sheet/http-rest-api/README.md)
+* [Architektur](cheat-sheet/README.md)
+  * [Diagramm](cheat-sheet/http-rest-api/README.md)
+  * [Komponenten beschreiben](cheat-sheet/http-rest-api/README.md)
+    * [Abgrenzung](cheat-sheet/http-rest-api/README.md)
+* [Erweterte Architektur](cheat-sheet/http-rest-api/README.md)
 
-### Reference
+### BPMN
 
-* [Frontend](reference/frontend/README.md)
-  * [Process Explorer](reference/frontend/process-explorer.md)
-  * [Editing Diagrams](reference/frontend/editing-diagrams.md)
-  * [Diagram Execution](reference/frontend/diagram-execution.md)
-  * [BPMN Implementation](reference/frontend/bpmn-implementation.md)
-* [Infrastructure](reference/infrastructure/README.md)
-  * [Components](reference/infrastructure/components.md)
-  * [Typical Setups](reference/infrastructure/typical-setups.md)
-  * [Supported Technology](reference/infrastructure/supported-technology.md)
-  * [Unsupported Technology](reference/infrastructure/unsupported-technology.md)
-* [Stack](reference/stack/README.md)
-  * [Structure](reference/stack/structure/README.md)
-    * [Contracts](reference/stack/structure/contracts.md)
-    * [Bridges](reference/stack/structure/bridges.md)
-    * [Adapters](reference/stack/structure/adapters.md)
-    * [Extensions](reference/stack/structure/extensions.md)
-  * [Module Interaction](reference/stack/module-interaction/README.md)
-    * [Dependency Injection](reference/stack/module-interaction/dependency-injection.md)
-    * [Discovery](reference/stack/module-interaction/discovery.md)
-  * [Basic Concepts](reference/stack/basic-concepts/README.md)
-    * [Entities](reference/stack/basic-concepts/entities.md)
-    * [Entity Services](reference/stack/basic-concepts/entity-services.md)
-    * [Datastore](reference/stack/basic-concepts/datastore.md)
-    * [Identity & Access Management](reference/stack/basic-concepts/identity-access-management.md)
-  * [Advanced Concepts](reference/stack/advanced-concepts/README.md)
-    * [Configuration](reference/stack/advanced-concepts/configuration.md)
+* [Styleguide](reference/frontend/README.md)
+* [BPMN Basics](cheat-sheet/http-rest-api/README.md)
+  * [typisierte Tasks](cheat-sheet/http-rest-api/README.md)
+* [Beispiel-Prozesse](cheat-sheet/http-rest-api/README.md)
+
+### BPMN-Studio
+
+* [Beschreiben welche Dialoge](cheat-sheet/http-rest-api/README.md)
+* [Prozess erstellen (hands-on)](cheat-sheet/http-rest-api/README.md)
+* [Process parametrieren (hands-on)](cheat-sheet/http-rest-api/README.md)
+
+### Integration (in "Dritt-Systemen")
+
+* [ConsumerClientApi](cheat-sheet/http-rest-api/README.md)
+  * [Ziel und Aufgabe](cheat-sheet/http-rest-api/README.md)
+  * [Einbinden in](cheat-sheet/http-rest-api/README.md)
+    * [dotnet-core WebAPI](cheat-sheet/http-rest-api/README.md)
+    * [Express-Anwendungen](cheat-sheet/http-rest-api/README.md)
+* ["in Prozess"-Verwendung](cheat-sheet/http-rest-api/README.md)
+
+### Tutorial
+
+* [Erweitertes Setup](cheat-sheet/http-rest-api/README.md)
+
+### Ideen zum Betrieb
+
+* [Cluster-Setup](cheat-sheet/http-rest-api/README.md)
+* [Browser-Setup](cheat-sheet/http-rest-api/README.md)
+
+### Anhang
     
+* [Glossar](anhang/GLOSSARY.md)
+* [Literaturverweise](cheat-sheet/http-rest-api/README.md)
 ---
 * [Community](community/README.md)
 * [FAQ](faq.md)
