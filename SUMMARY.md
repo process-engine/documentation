@@ -2,31 +2,31 @@
 
 ### Introduction
 
-* [Installation der Anwendung](quick-start/README.md)
-* [Setup](quick-start/setup.md)
-  * [Konfiguration des Stacks (skateboard)](quick-start/hands-on/README.md)
-  * [Hello BPMN-World](quick-start/hands-on/hello-world.md)
+* [Installation der Anwendung](introduction/installation.md)
+* [Getting started](introduction/getting-started/README.md)
+  * [Konfiguration des Stacks (skateboard)](introduction/getting-started/skateboard.md)
+  * [Hello BPMN-World](introduction/getting-started/hello-bpmn-world.md)
 
 ### Basics
 
-* [Architektur](cheat-sheet/README.md)
-  * [Diagramm](cheat-sheet/http-rest-api/README.md)
-  * [Komponenten beschreiben](cheat-sheet/http-rest-api/README.md)
-    * [Abgrenzung](cheat-sheet/http-rest-api/README.md)
-* [Erweterte Architektur](cheat-sheet/http-rest-api/README.md)
+* [Architektur](basics/README.md)
+  * [Diagramm](basics/architektur/diagramm.md)
+  * [Komponenten beschreiben](basics/architektur/komponenten/README.md)
+    * [Abgrenzung](basics/architektur/komponenten/abgrenzung.md)
+* [Erweiterte Architektur](basics/erweiterte-architektur.md)
 
 ### BPMN
 
-* [Styleguide](reference/frontend/README.md)
-* [BPMN Basics](cheat-sheet/http-rest-api/README.md)
-  * [typisierte Tasks](cheat-sheet/http-rest-api/README.md)
-* [Beispiel-Prozesse](cheat-sheet/http-rest-api/README.md)
+* [Styleguide](bpmn/styleguide.md)
+* [BPMN Basics](bpmn/bpmn-basics/README.md)
+  * [typisierte Tasks](bpmn/bpmn-basics/typisierte-tasks.md)
+* [Beispiel-Prozesse](bpmn/beispiel-prozesse.md)
 
 ### BPMN-Studio
 
-* [Beschreiben welche Dialoge](cheat-sheet/http-rest-api/README.md)
-* [Prozess erstellen (hands-on)](cheat-sheet/http-rest-api/README.md)
-* [Process parametrieren (hands-on)](cheat-sheet/http-rest-api/README.md)
+* [Beschreibung der Dialoge](bpmn-studio/beschreibung-dialoge.md)
+* [Prozess erstellen (hands-on)](bpmn-studio/prozess-erstellen.md)
+* [Process parametrieren (hands-on)](bpmn-studio/prozess-paramentieren.md)
 
 ### Integration (in "Dritt-Systemen")
 
