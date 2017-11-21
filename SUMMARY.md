@@ -19,7 +19,7 @@
 
 * [Styleguide](bpmn/styleguide.md)
 * [BPMN Basics](bpmn/bpmn-basics/README.md)
-  * [typisierte Tasks](bpmn/bpmn-basics/typisierte-tasks.md)
+  * [Typisierte Tasks](bpmn/bpmn-basics/typisierte-tasks.md)
 * [Beispiel-Prozesse](bpmn/beispiel-prozesse.md)
 
 ### BPMN-Studio

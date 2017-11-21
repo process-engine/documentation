@@ -1,1 +1,1 @@
-# typisierte Tasks
+# Typisierte Tasks
