@@ -43,8 +43,8 @@
 
 ### Ideen zum Betrieb
 
-* [Cluster-Setup](ideen-für-den-betrieb/browser-setup.md)
-* [Browser-Setup](ideen-für-den-betrieb/cluster-setup.md)
+* [Cluster-Setup](ideen-fuer-den-betrieb/browser-setup.md)
+* [Browser-Setup](ideen-fuer-den-betrieb/cluster-setup.md)
 
 ### Anhang
 
