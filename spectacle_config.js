@@ -4,11 +4,11 @@ var fs = require('fs');
 module.exports = function(grunt, options, spec) {
   
   grunt.registerTask('load-minified-files', null, () => {
-    grunt.file.write(`${options.targetDir}/sources.json`, JSON.stringify({
-      foundation_css: grunt.file.read(`${options.targetDir}/stylesheets/foundation.min.css`),
-      spectacle_css: grunt.file.read(`${options.targetDir}/stylesheets/spectacle.min.css`),
-      spectacle_js: grunt.file.read(`${options.targetDir}/stylesheets/foundation.min.css`),
-    }));
+    grunt.file.write(`${options.targetDir}/sources.json`, JSON.stringify(Object.assign(spec, {
+      foundation_css: grunt.file.read(`${options.targetDir}/stylesheets/foundation.min.css`).replace('@charset "UTF-8";', ''),
+      spectacle_css: grunt.file.read(`${options.targetDir}/stylesheets/spectacle.min.css`).replace('@charset "UTF-8";', ''),
+      spectacle_js: grunt.file.read(`${options.targetDir}/javascripts/spectacle.min.js`).replace('@charset "UTF-8";', ''),
+    })));
   });
 
   return {
@@ -98,7 +98,7 @@ module.exports = function(grunt, options, spec) {
                   src: options.appDir + '/views/' + (options.embeddable ? 'embedded.hbs' : 'main.hbs'),
                   dest: options.cacheDir + '/' + options.targetFile
               }],
-              templateData: [`${options.targetDir}/sources.json`, spec],
+              templateData: `${options.targetDir}/sources.json`,
               helpers: options.appDir + '/helpers/*.js',
               partials: options.appDir + '/views/partials/**/*.hbs'
           },

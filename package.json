@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "gitbook serve",
-    "render_api_doc": "node spectacle.js --app-dir spectacle_app --config-file spectacle_config.js --embeddable swagger.json"
+    "render_api_doc": "node spectacle.js --app-dir spectacle_app --config-file spectacle_config.js swagger.json"
   },
   "author": "",
   "license": "ISC",
