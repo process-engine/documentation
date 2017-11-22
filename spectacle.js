@@ -14,6 +14,7 @@ _ = require('lodash')
 var program = require('commander');
 
 program.usage('[options] <specfile>')
+        .option('-e, --embeddable', 'omit the HTML <body/> and generate the documentation content only (default: false)')
         .option('-t, --target-dir <dir>', 'the target build directory (default: public)', String)
         .option('-f, --target-file <file>', 'the target build HTML file (default: index.html)', String)
         .option('-a, --app-dir <dir>', 'the application source directory (default: app)', String)
