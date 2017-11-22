@@ -13,7 +13,7 @@ Zeit und Aufwand verbunden ist. Deshalb verschwinden solche Richtilinien meist
 ## Was tun wir dagegen?
 
 Wir wollen in einem BPMN Prozess mehr sehen als ein einfaches Dokument.
-Vielmehr soll es eine Sammlung an Anweisungen sein die beschreiben wie sich
+Vielmehr soll es eine Sammlung an Anweisungen sein, die beschreiben wie sich
 eine Software verhalten soll. Statt den Prozess manuel zu Implemntieren
 verlassen wir uns dabei auf die Process Engine.
 
@@ -24,9 +24,9 @@ und schon kann es losgehen.
 ## Was sind die Vorteile der Process Engine
 
 - erstelle einen Plan zur Ausführung eines Prozesses in kürzester Zeit
-- starte mehrere Version des selben Prozesses parallel
+- starte mehrere Versionen des selben Prozesses parallel
 - nutze die vorhandene Infrastruktur
-- passe deine BPMN Prozesses "on the fly" an
+- passe deine BPMN Prozesse "on the fly" an
 - arbeite mit einer extrem gut skaliebaren und flexibelen Lösung die dich dennoch
 die meisten komplizierten Szenarien lösen lässt
 
