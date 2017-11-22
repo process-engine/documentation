@@ -1,0 +1,1 @@
+# Konfiguration des Stacks (skateboard)
