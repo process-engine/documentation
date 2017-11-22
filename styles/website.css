@@ -1,0 +1,7 @@
+.markdown-section iframe {
+  table-layout: fixed;
+  display:block;
+  overflow-x: auto;
+  width: 100%;
+  border: none;
+}
