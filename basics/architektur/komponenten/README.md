@@ -18,12 +18,12 @@ Diese werden genutzt um:
 
 - Nutzerdaten aufzunehmen
 - Entscheidungen zu treffen
-- Daten zu verifizieren und aufgrund von Gesetzen von einem Menschen geprüft
-werden muss
+- Daten zu verifizieren die aufgrund von Gesetzen von einem Menschen geprüft
+werden müssen
 
 ## Roles
 
-"Roles" oder "Rollen" sind eine abstrakte Möglichkeit und Zustädigkeiten
+"Roles" oder "Rollen" sind eine abstrakte Möglichkeit und Zuständigkeiten
 aufzuzeigen.
 Dies ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen, die verschiedene
 Rollen übernehmen, mit ein.
@@ -32,13 +32,13 @@ Wir können einem Element in einem Diagramm also einer Rolle zuordnen. Wenn wir 
 wird die Process Engine überprüfen ob das System, das gerade das Diagramm ausführt,
 die Forderungen der Rolle erfüllt.
 Sollte dies nicht der Fall sein wird die Process Engine versuchen ein anderes System,
-das diese Forderungen erfüllt, zu finden und dies zum weiteren ausführen des Diagramms
+das diese Forderungen erfüllt, zu finden und zur weiteren Ausführung des Diagramms
 zu nutzen.
 
 Ein Beispiel:
 
-Du kannst einem "User Task" der Rolle "Call Center Agent" zuordnen. Wenn dieser Task
-zur Ausführung bereit ist, wird die er nur auf einem client ausgeführt an dem ein
+Du kannst einem "User Task" die Rolle "Call Center Agent" zuordnen. Wenn dieser Task
+zur Ausführung bereit ist, wird er nur auf einem client ausgeführt an dem ein
 "Call Center Agent" eingeloggt ist.
 
 ## Gateways
@@ -47,7 +47,7 @@ zur Ausführung bereit ist, wird die er nur auf einem client ausgeführt an dem 
 
 ## Messages / Signals
 
-"Messages" und "Signals" sind im Grznde nichts anderes als ein Event.
+"Messages" und "Signals" sind im Grunde nichts anderes als ein Event.
 
 ## Mappers
 
