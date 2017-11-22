@@ -84,7 +84,7 @@
     }
   },
   "paths": {
-    "/process_engine/start": {
+    "/processengine/start": {
       "post": {
         "tags": [
           "process engine"
@@ -114,7 +114,7 @@
         }
       }
     },
-    "/messagebus/publish": {
+    "/mb/publish": {
       "post": {
         "tags": [
           "messagebus"
@@ -252,7 +252,7 @@
         ]
       }
     },
-    "/validatecredentials": {
+    "/iam/validatecredentials": {
       "post": {
         "tags": [
           "iam"
