@@ -1,6 +1,16 @@
-var path = require('path')
+var path = require('path');
+var fs = require('fs');
 
 module.exports = function(grunt, options, spec) {
+  
+  grunt.registerTask('load-minified-files', null, () => {
+    grunt.file.write(`${options.targetDir}/sources.json`, JSON.stringify({
+      foundation_css: grunt.file.read(`${options.targetDir}/stylesheets/foundation.min.css`),
+      spectacle_css: grunt.file.read(`${options.targetDir}/stylesheets/spectacle.min.css`),
+      spectacle_js: grunt.file.read(`${options.targetDir}/stylesheets/foundation.min.css`),
+    }));
+  });
+
   return {
 
       // Compile SCSS source files into the cache directory
@@ -88,7 +98,7 @@ module.exports = function(grunt, options, spec) {
                   src: options.appDir + '/views/' + (options.embeddable ? 'embedded.hbs' : 'main.hbs'),
                   dest: options.cacheDir + '/' + options.targetFile
               }],
-              templateData: spec,
+              templateData: [`${options.targetDir}/sources.json`, spec],
               helpers: options.appDir + '/helpers/*.js',
               partials: options.appDir + '/views/partials/**/*.hbs'
           },
@@ -102,7 +112,7 @@ module.exports = function(grunt, options, spec) {
               // wrap_line_length: 500,
               // brace_style: 'end-expand',
               preserve_newlines: false,
-              unformatted: ['code', 'pre']
+              unformatted: ['code', 'pre', 'style', 'script']
           },
           index: {
             src: options.cacheDir + '/' + options.targetFile,
