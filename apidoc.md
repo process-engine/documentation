@@ -58,7 +58,7 @@ mit installiert werden, ohne dass wir diese 27 Dependencies in unsere package.js
 
 **TL;DR:**
 - `npm run render_api_doc`
-- Inhalt von `public/index.html` in `reference/apidoc.html` kopieren
+- Inhalt von `public/index.html` in `reference/apidoc.html` kopieren (Datei anlegen wenn sie nicht existiert)
 - gitbook neu rendern
 
 um aus der `swagger.js` die API-Doku zu rendern `npm run render_api_doc` ausführen. Das erstellt

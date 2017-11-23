@@ -21,11 +21,7 @@
           {{#each operations}}
             <li>
               <a href="#operation-{{htmlId path}}-{{htmlId method}}">
-                {{#if summary}}
-                  {{summary}}
-                {{else}}
-                  {{toUpperCase method}} {{path}}
-                {{/if}}
+                {{toUpperCase method}} {{path}}
               </a>
             </li>
           {{/each}}
@@ -41,11 +37,7 @@
           {{#each .}}
             <!-- <li> -->
               <a href="#operation-{{htmlId path}}-{{htmlId method}}">
-                {{#if summary}}
-                  {{summary}}
-                {{else}}
-                  {{toUpperCase method}} {{path}}
-                {{/if}}
+                {{toUpperCase method}} {{path}}
               </a>
             <!-- </li> -->
           {{/each}}
