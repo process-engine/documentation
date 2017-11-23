@@ -48,34 +48,37 @@
                     {% if page.content.indexOf('<iframe') === 0 %} <div class="page-wrapper fullsize" tabindex="-1" role="main">
                     {% else %} <div class="page-wrapper" tabindex="-1" role="main"> {% endif %}
 
-                      {% if page.content.indexOf('<iframe') !== 0 %} <div class="page-inner"> {% endif %}
+                      {% if page.content.indexOf('<iframe') !== 0 %} <div class="page-inner">
+                      {% else %} <div> {% endif %}
                             {% block search_results %}
 
 
-                                {% if page.content.indexOf('<iframe') === 0 %} <section class="normal markdown-section fullsize">
-                                {% else %} <section class="normal markdown-section"> {% endif %}
+                            {% if page.content.indexOf('<iframe') === 0 %} <section class="normal markdown-section fullsize">
+                            {% else %} <section class="normal markdown-section"> {% endif %}
                                 {% block page %}
                                 {{ page.content|safe }}
                                 {% endblock %}
                                 </section>
                             {% endblock %}
                         </div>
-                      {% if page.content.indexOf("<iframe>") !== 0 %} </div> {% endif %}
+                      </div>
                 {% endblock %}
             </div>
 
-            {% block book_navigation %}
-                {% if page.previous and page.previous.path %}
-                <a href="{{ page.previous.path|resolveFile }}{{ page.previous.anchor }}" class="navigation navigation-prev {% if not (page.next and page.next.path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ page.previous.title }}">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                {% endif %}
-                {% if page.next and page.next.path %}
-                <a href="{{ page.next.path|resolveFile }}{{ page.next.anchor }}" class="navigation navigation-next {% if not (page.previous and page.previous.path) %}navigation-unique{% endif %}" aria-label="Next page: {{ page.next.title }}">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                {% endif %}
-            {% endblock %}
+            {% if page.content.indexOf('<iframe') !== 0 %}
+              {% block book_navigation %}
+                  {% if page.previous and page.previous.path %}
+                  <a href="{{ page.previous.path|resolveFile }}{{ page.previous.anchor }}" class="navigation navigation-prev {% if not (page.next and page.next.path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ page.previous.title }}">
+                      <i class="fa fa-angle-left"></i>
+                  </a>
+                  {% endif %}
+                  {% if page.next and page.next.path %}
+                  <a href="{{ page.next.path|resolveFile }}{{ page.next.anchor }}" class="navigation navigation-next {% if not (page.previous and page.previous.path) %}navigation-unique{% endif %}" aria-label="Next page: {{ page.next.title }}">
+                      <i class="fa fa-angle-right"></i>
+                  </a>
+                  {% endif %}
+              {% endblock %}
+            {% endif %}
         {% endblock %}
     </div>
 

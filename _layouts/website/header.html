@@ -6,6 +6,7 @@
     {% if glossary.path %}
     <a href="{{ ('/' + glossary.path)|resolveFile }}" class="btn pull-left" aria-label="{{ "GLOSSARY_OPEN"|t }}"><i class="fa fa-sort-alpha-asc"></i></a>
     {% endif %}
+    {{glossary.path}}
 
     <!-- Title -->
     {% if page.content.indexOf('<iframe') !== 0 %}
