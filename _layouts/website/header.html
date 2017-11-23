@@ -1,0 +1,18 @@
+{% block book_header %}
+
+
+{% if page.content.indexOf('<iframe') === 0 %} <div class="book-header inline-header" role="navigation">
+{% else %} <div class="book-header" role="navigation"> {% endif %}
+    {% if glossary.path %}
+    <a href="{{ ('/' + glossary.path)|resolveFile }}" class="btn pull-left" aria-label="{{ "GLOSSARY_OPEN"|t }}"><i class="fa fa-sort-alpha-asc"></i></a>
+    {% endif %}
+
+    <!-- Title -->
+    {% if page.content.indexOf('<iframe') !== 0 %}
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="{{ "/"|resolveFile }}" >{{ page.title }}</a>
+    </h1>
+    {% endif %}
+</div>
+{% endblock %}
