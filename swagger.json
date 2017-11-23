@@ -236,12 +236,12 @@
       "get": {
         "tags": ["iam"],
         "summary": "Logs the user out",
-        "description": "",
+        "description": "This invalidates your token which effectively logs you out",
         "responses": {
           "200": {
             "description": "successful operation",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/SuccessObject"
             }
           }
         },
@@ -254,9 +254,7 @@
     },
     "/getidentity": {
       "get": {
-        "tags": [
-          "iam"
-        ],
+        "tags": ["iam"],
         "summary": "Returns the user identity",
         "description": "",
         "responses": {
