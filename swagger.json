@@ -20,6 +20,10 @@
     {
       "name": "messagebus",
       "description": "Endpoints to put messages on the messagebus"
+    },
+    {
+      "name": "datastore",
+      "description": "Endpoints to interact with the datastore"
     }
   ],
   "securityDefinitions": {
@@ -47,6 +51,23 @@
         }
       }
     },
+    "EntityMetadata": {
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "isRef": {
+          "type": "boolean"
+        },
+        "isNew": {
+          "type": "boolean"
+        }
+      }
+    },
     "IUserEntity": {
       "type": "object",
       "properties": {
@@ -66,21 +87,119 @@
           }
         },
         "_meta": {
-          "type": "object",
-          "properties": {
-            "namespace": {
-              "type": "string"
-            },
-            "type": {
-              "type": "string"
-            },
-            "isRef": {
-              "type": "boolean"
-            },
-            "isNew": {
-              "type": "boolean"
-            }
-          }
+          "$ref": "#/definitions/EntityMetadata"
+        }
+      }
+    },
+    "IUserTaskMessageData": {
+      "type": "object",
+      "properties": {
+        "userTaskEntity": {
+          "$ref": "#/definitions/IUserTaskEntity"
+        },
+        "uiName": {
+          "type": "string"
+        },
+        "uiData": {},
+        "uiConfig": {}
+      }
+    },
+    "IProcessEntity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "_meta": {
+          "$ref": "#/definitions/EntityMetadata"
+        }
+      }
+    },
+    "IProcessTokenEntity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "data": {},
+        "process": {
+          "$ref": "#/definitions/IProcessEntity"
+        },
+        "_meta": {
+          "$ref": "#/definitions/EntityMetadata"
+        }
+      }
+    },
+    "INodeDefEntity": {
+      "type": "object",
+      "properties": {
+        "lane": {
+          "$ref": "#/definitions/ILaneEntity"
+        },
+        "extensions": {},
+        "id": {
+          "type": "string"
+        },
+        "_meta": {
+          "$ref": "#/definitions/EntityMetadata"
+        }
+      }
+    },
+    "BpmnType": {
+      "enum": [
+        "bpmn:BoundaryEvent",
+        "bpmn:CallActivity",
+        "bpmn:EndEvent",
+        "bpmn:ExclusiveGateway",
+        "bpmn:IntermediateCatchEvent",
+        "bpmn:IntermediateThrowEvent",
+        "bpmn:ParallelGateway",
+        "bpmn:ScriptTask",
+        "bpmn:ServiceTask",
+        "bpmn:StartEvent",
+        "bpmn:SubProcess",
+        "bpmn:UserTask"
+      ],
+      "type": "string"
+    },
+    "IUserTaskEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "process": {
+          "$ref": "#/definitions/IProcessEntity"
+        },
+        "nodeDef": {
+          "$ref": "#/definitions/INodeDefEntity"
+        },
+        "type": {
+          "$ref": "#/definitions/BpmnType"
+        },
+        "state": {
+          "type": "string"
+        },
+        "participant": {
+          "type": "string"
+        },
+        "application": {
+          "type": "string"
+        },
+        "processToken": {
+          "$ref": "#/definitions/IProcessTokenEntity"
+        },
+        "instanceCounter": {
+          "type": "number"
+        },
+        "id": {
+          "type": "string"
+        },
+        "_meta": {
+          "$ref": "#/definitions/EntityMetadata"
         }
       }
     },
@@ -231,6 +350,69 @@
         }
       }
     },
+    "/processengine/user_task_data/{user_task_id}": {
+      "parameters": [
+        {
+          "name": "user_task_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the userTask."
+        }
+      ],
+      "get": {
+        "tags": ["process engine"],
+        "summary": "Get Information about a userTask",
+        "description": "UserTasks can have dynamic parts that depend on the current process. Because of this, they need to be interpreted before they can be displayed, and you can't just get them from the datastore. This route gives you the fully interpreted and processed information you need to display a userTask.",
+        "responses": {
+          "200": {
+            "description": "Fetching the userTask information was successful",
+            "schema": {
+              "$ref": "#/definitions/IUserTaskMessageData"
+            }
+          }
+        }
+      }
+    },
+    "/processengine/execute": {
+      "post": {
+        "tags": ["process engine"],
+        "summary": "Execute a process",
+        "description": "This orders the process engine to execute a process. The difference to `/processengine/start` is, that the process engine will only respond once the porcess has finished executing. The Response will contain the last state of the processToken, or in other words: The result of the proccess.",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The key of the process that should be executed. Either this or the id has to be set."
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The id of the process that should be executed. Either this or the key has to be set."
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The version of the process taht should be executed. If not set, the latest version will be run"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Executing the process was successful. This does not mean, that the process didn't fail. It only means, that ordering the process to start, and waiting for it to end was successful. This does not indicate why the process ended.",
+            "schema": {
+              "description": "The last state of the process token when the process ended. This in an arbitrary object, that represents the result of the process.",
+              "properties": {}
+            }
+          }
+        }
+      }
+    },
     "/messagebus/publish": {
       "post": {
         "tags": ["messagebus"],
@@ -363,6 +545,40 @@
             }
           }
         }
+      }
+    },
+    "/datastore": {
+      "get": {
+        "tags": ["datastore"]
+      }
+    },
+    "/datastore/{className}": {
+      "get": {
+        "tags": ["datastore"]
+      },
+      "post": {
+        "tags": ["datastore"]
+      }
+    },
+    "/datastore/{className}/{id}": {
+      "get": {
+        "tags": ["datastore"]
+      },
+      "put": {
+        "tags": ["datastore"]
+      },
+      "delete": {
+        "tags": ["datastore"]
+      }
+    },
+    "/datastore/{className}/service/{method}": {
+      "post": {
+        "tags": ["datastore"]
+      }
+    },
+    "/datastore/{className}/{id}/{method}": {
+      "post": {
+        "tags": ["datastore"]
       }
     }
   }
