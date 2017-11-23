@@ -8,16 +8,20 @@
   },
   "consumes": ["application/json"],
   "produces": ["application/json"],
-  "tags": [{
-    "name": "iam",
-    "description": "Endpoints to authenticate and manage rights"
-  }, {
-    "name": "process engine",
-    "description": "Endpoints to execute and manage of processes"
-  }, {
-    "name": "messagebus",
-    "description": "Endpoints to put messages on the messagebus"
-  }],
+  "tags": [
+    {
+      "name": "iam",
+      "description": "Endpoints to authenticate and manage rights"
+    },
+    {
+      "name": "process engine",
+      "description": "Endpoints to execute and manage of processes"
+    },
+    {
+      "name": "messagebus",
+      "description": "Endpoints to put messages on the messagebus"
+    }
+  ],
   "securityDefinitions": {
     "Bearer": {
       "type": "apiKey",
