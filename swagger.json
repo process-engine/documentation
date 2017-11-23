@@ -321,8 +321,6 @@
           "type": "string"
         }
       }
-    },
-    "EntityTypeServiceData": {
     }
   },
   "paths": {
@@ -608,14 +606,14 @@
               "type": "object",
               "properties": {}
             },
-            "description": "An arbitrary object that contains the parameters that should be passed to the method. IF a schema for the method is found, whatever value has the name of the parameter as key will be passed as that parameter.\nFor example when the request-body looks like `{hello: 'world', test: 123}`, and the method-definition like `myMethod(hello, test, options){ }`, then `hello` will be `'world'` and `test` will be `123` in that method. If no schema is found, the the body will just be passed as the first paramter. In that case `hello` would be `{hello: 'world', test: 123}` and `test` would be `undefined`. The Only parameter you can not define this way is `options`. It will always be parsed from the query-parameter called `query`"
+            "description": "An arbitrary object that contains the parameters that should be passed to the method. IF a schema for the method is found, whatever value has the name of the parameter as key will be passed as that parameter. For example when the request-body looks like `{\"hello\": \"world\", \"test\": 123}`, and the method-definition like `myMethod(hello, test, options){ }`, then `hello` will be `'world'` and `test` will be `123` in that method. If no schema is found, the the body will just be passed as the first paramter. In that case `hello` would be `{hello: 'world', test: 123}` and `test` would be `undefined`. The Only parameter you can not define this way is `options`. It will always be parsed from the query-parameter called `query`"
           },
           {
             "name": "query",
             "in": "query",
             "type": "IPublicGetOptions",
             "required": false,
-            "description": "Whatever is defined here will be passed to the called function as the parameter with the name `options`. This is "
+            "description": "Whatever is defined here will be passed to the called function as the parameter with the name `options`."
           }
         ]
       }
@@ -624,7 +622,48 @@
       "post": {
         "tags": ["datastore"],
         "summary": "Execute a method on an entity-instance",
-        "description": "Execute an arbitrary method on a specific instance of an entity"
+        "description": "Execute an arbitrary method on a specific instance of an entity",
+        "parameters": [
+          {
+            "name": "className",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the Entity that has the method that should be executed. This could for example be `\"ProcessDef\"`, `\"ScriptTask\"`, `\"BoundaryEvent\"`, `\"UserTask\"` etc."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The id of the entity that the method should be executed on"
+          },
+          {
+            "name": "method",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the method that should be executed"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "type": "object",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "An arbitrary object that contains the parameters that should be passed to the method. IF a schema for the method is found, whatever value has the name of the parameter as key will be passed as that parameter. For example when the request-body looks like `{\"hello\": \"world\", \"test\": 123}`, and the method-definition like `myMethod(hello, test, options){ }`, then `hello` will be `'world'` and `test` will be `123` in that method. If no schema is found, the the body will just be passed as the first paramter. In that case `hello` would be `{hello: 'world', test: 123}` and `test` would be `undefined`. The Only parameter you can not define this way is `options`. It will always be parsed from the query-parameter called `query`"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicGetOptions",
+            "required": false,
+            "description": "Whatever is defined here will be passed to the called function as the parameter with the name `options`."
+          }
+        ]
       }
     }
   }
