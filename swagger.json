@@ -321,7 +321,8 @@
           "type": "string"
         }
       }
-    }
+    },
+    "EntityTypeServiceData": {}
   },
   "paths": {
     "/processengine/start": {
@@ -549,36 +550,72 @@
     },
     "/datastore": {
       "get": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Get the datastore catalog"
       }
     },
     "/datastore/{className}": {
       "get": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Get a collenction of entities"
       },
       "post": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Create a new entity"
       }
     },
     "/datastore/{className}/{id}": {
       "get": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Create an entity by id"
       },
       "put": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Update an entity"
       },
       "delete": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Delete an entity"
       }
     },
     "/datastore/{className}/service/{method}": {
       "post": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Execute a method on an entity-type-service",
+        "description": "Execute an arbitrary method on an entity-type-service. Entity-type-services are support-classes to manage entities of a certain type. Currently there are only the `NodeInstanceEntityTypeService` and the `ProcessDefEntityTypeService`",
+        "parameters": [
+          {
+            "name": "className",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the EntityTypeService that has the method that should be executed. The currently valid values are `NodeInstance` and `ProcessDef`"
+          },
+          {
+            "name": "method",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the method that should be executed"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "type": "object",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/EntityTypeServiceData"
+            },
+            "description": "An arbitrary object that contains the parameters that should be passed to the method. IF a schema for the method is found, whatever value has the name of the parameter as key will be passed as that parameter. If no schema is found, the the body will just be passed as the first paramter."
+          }
+        ]
       }
     },
     "/datastore/{className}/{id}/{method}": {
       "post": {
-        "tags": ["datastore"]
+        "tags": ["datastore"],
+        "summary": "Execute a method on an entity-instance",
+        "description": "Execute an arbitrary method on a specific instance of an entity"
       }
     }
   }
