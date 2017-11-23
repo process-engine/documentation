@@ -27,16 +27,76 @@
     }
   },
   "definitions": {
-    "UserCredentials": {
-      "description": "user credentials",
+    "IIdentity": {
       "properties": {
-        "username": {
-          "type": "string",
-          "description": "the user name"
+        "id": {
+          "type": "string"
         },
-        "password": {
-          "type": "string",
-          "description": "the users password"
+        "name": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ClaimActionType": {
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "number"
+    },
+    "IExpand": {
+      "properties": {
+        "attribute": {
+          "type": "string"
+        },
+        "childAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IExpand"
+          }
+        }
+      }
+    },
+    "IPublicGetOptions": {
+      "description": "options to query data from the datastore",
+      "properties": {
+        "select": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expandEntity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IExpand"
+          }
+        },
+        "query": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/IQueryObject"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IQueryObject"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       }
     },
@@ -48,12 +108,10 @@
           "description": "the channel the message will be published on"
         },
         "msg": {
-          "description": "the content of your message",
-          "type": "object"
+          "description": "the content of your message"
         },
         "options": {
           "description": "additional query options for your message publication",
-          "type": "object",
           "properties": {
             "id": {
               "type": "string"
@@ -80,19 +138,8 @@
           }
         },
         "options": {
-          "type": "object",
-          "description": "additional query options for the process you want to start, like the token that acs as input-data for the process",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "applicationId": {
-              "type": "string"
-            },
-            "token": {
-              "type": "string"
-            }
-          }
+          "description": "Additional query options for the process you want to start. These options are passed through to the start-method of the processEntity, but aren't used there.",
+          "$ref": "#/definitions/IPublicGetOptions"
         }
       }
     }
