@@ -301,7 +301,7 @@
         ]
       }
     },
-    "/getidentity": {
+    "/iam/getidentity": {
       "get": {
         "tags": ["iam"],
         "summary": "Get the users identity",
@@ -321,7 +321,7 @@
         ]
       }
     },
-    "/getidentityentity": {
+    "/iam/getidentityentity": {
       "get": {
         "tags": ["iam"],
         "summary": "Get the entity to the users identity",
@@ -341,7 +341,7 @@
         ]
       }
     },
-    "/validatecredentials": {
+    "/iam/validatecredentials": {
       "post": {
         "tags": ["iam"],
         "summary": "Validate user credentials",
