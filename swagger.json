@@ -1,16 +1,29 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0.0",
+    "version": "0.1.0",
     "title": "Process Engine HTTP REST API",
-    "description": "This is the static part of the BPMN Process Engine HTTP REST API.",
+    "description": "",
     "termsOfService": "terms"
   },
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "tags": [{
+    "name": "iam",
+    "description": "Endpoints to authenticate and manage rights"
+  }, {
+    "name": "process engine",
+    "description": "Endpoints to execute and manage of processes"
+  }, {
+    "name": "messagebus",
+    "description": "Endpoints to put messages on the messagebus"
+  }],
   "securityDefinitions": {
     "Bearer": {
       "type": "apiKey",
       "name": "Authorization",
-      "in": "header"
+      "in": "header",
+      "description": "after logging in via `/iam/login` provide the resulting bearer-token as Authorization-header in the form of `'Bearer ' + bearer_token`"
     }
   },
   "definitions": {
@@ -56,9 +69,10 @@
       }
     },
     "StartProcessMessage": {
-      "description": "the message to start a BPMN process",
+      "description": "An object describing the process to start and its initial state",
       "properties": {
         "msg": {
+          "description": "An object with the necessary information to identify the process that should be started",
           "properties": {
             "key": {
               "type": "string"
@@ -66,8 +80,8 @@
           }
         },
         "options": {
-          "description": "additional query options for the process you want to start",
           "type": "object",
+          "description": "additional query options for the process you want to start, like the token that acs as input-data for the process",
           "properties": {
             "id": {
               "type": "string"
@@ -84,21 +98,17 @@
     }
   },
   "paths": {
-    "/process_engine/start": {
+    "/processengine/start": {
       "post": {
-        "tags": [
-          "process engine"
-        ],
-        "summary": "Starts the execution of a BPMN process",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["process engine"],
+        "summary": "Start the execution of a process",
+        "description": "This orders the process engine to start executing a process",
         "parameters": [
           {
             "name": "start message",
+            "description": "The message describing the process to start and its initial state",
             "in": "body",
+            "required": true,
             "schema": {
               "$ref": "#/definitions/StartProcessMessage"
             }
@@ -106,7 +116,7 @@
         ],
         "responses": {
           "200": {
-            "description": "returns the id of the process instance you started",
+            "description": "ID of the newly started process instance",
             "schema": {
               "type": "string"
             }
@@ -116,15 +126,9 @@
     },
     "/messagebus/publish": {
       "post": {
-        "tags": [
-          "messagebus"
-        ],
-        "summary": "Authenticates and returns a token",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["messagebus"],
+        "summary": "Publish a message on the messagebus",
+        "description": "This makes the process engine send the given message to the given channel on its messagebus.",
         "parameters": [
           {
             "name": "user credentials",
@@ -151,10 +155,6 @@
         ],
         "summary": "Authenticates and returns a token",
         "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "user credentials",
@@ -181,10 +181,6 @@
         ],
         "summary": "Logs the user out",
         "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
           "200": {
             "description": "successful operation",
@@ -207,10 +203,6 @@
         ],
         "summary": "Returns the user identity",
         "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
           "200": {
             "description": "successful operation",
@@ -233,10 +225,6 @@
         ],
         "summary": "Returns the entity for the user identity",
         "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
           "200": {
             "description": "successful operation",
@@ -260,9 +248,6 @@
         "summary": "Validates user credentials",
         "description": "",
         "operationId": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "user credentials",
