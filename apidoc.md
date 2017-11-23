@@ -56,6 +56,8 @@ mit installiert werden, ohne dass wir diese 27 Dependencies in unsere package.js
 
 # Verwendung:
 
+## API-Docs neu rendern und einbinden
+
 **TL;DR:**
 - `npm run render_api_doc`
 - Inhalt von `public/index.html` in `reference/apidoc.html` kopieren (Datei anlegen wenn sie nicht existiert)
@@ -66,6 +68,14 @@ einen `public` ordner, mit (zurzeit) ein paar weiteren (leeren) Ordnern, einer `
 vor allem einer `index.html`. Diese `index.html` stellt die gerenderte API-Doku dar.
 Der Inhalt davon muss dann kopiert, und in die `reference/apidoc.html` eingefügt werden. Wenn dann
 anschließend das gitbook neu gerendert wird, ist die API-Doku darin ebenfalls aktualisiert.
+
+## API-Doc Erscheinung anpassen
+
+- handlebar-templates sind in `spectacle_app/views`
+- sass-styles sind in `spectacle_app/stylesheets`
+- Die in den Templates verfügbaren variablen sind die aus der `swagger.json`
+- Falls mehr Variablen benötigt werden können die in der `spectacle_config.js` in dem Objekt in
+  dem `load-minified-files`-task hinzugefügt werden
 
 # Anmerkung:
 Das ist eine POC-version. Es geht darum zu zeigen wie man eine Dokumentation im OpenAPI-Format rendern
