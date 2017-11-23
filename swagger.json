@@ -43,6 +43,43 @@
         }
       }
     },
+    "IUserEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "_meta": {
+          "type": "object",
+          "properties": {
+            "namespace": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "isRef": {
+              "type": "boolean"
+            },
+            "isNew": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
     "ClaimActionType": {
       "enum": [
         0,
@@ -134,6 +171,14 @@
         }
       }
     },
+    "ResultObject": {
+      "description": "An object indicating the success or failure of an action.",
+      "properties": {
+        "result": {
+          "type": "boolean"
+        }
+      }
+    },
     "SuccessObject": {
       "description": "An object indicating the success of an action.",
       "properties": {
@@ -210,7 +255,7 @@
     "/iam/login": {
       "post": {
         "tags": ["iam"],
-        "summary": "Authenticates a user",
+        "summary": "Authenticate a user",
         "description": "Given some correct credentials, this will get you a token you can use to authenticate yourself to the process engine.",
         "parameters": [
           {
@@ -235,7 +280,7 @@
     "/iam/logout": {
       "get": {
         "tags": ["iam"],
-        "summary": "Logs the user out",
+        "summary": "Log the user out",
         "description": "This invalidates your token which effectively logs you out",
         "responses": {
           "200": {
@@ -255,13 +300,13 @@
     "/getidentity": {
       "get": {
         "tags": ["iam"],
-        "summary": "Returns the user identity",
-        "description": "",
+        "summary": "Get the users identity",
+        "description": "This will give you the Identity of the user that is authenticated with your Token",
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetching the users identity was successful.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/IIdentity"
             }
           }
         },
@@ -274,16 +319,14 @@
     },
     "/getidentityentity": {
       "get": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Returns the entity for the user identity",
-        "description": "",
+        "tags": ["iam"],
+        "summary": "Get the entity to the users identity",
+        "description": "This will give you the entity to the identity of the user that is authenticated with your token. This is like `/iam/getidentity`, but with a little more information.",
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetching the Entity to the users Identity was successful.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/IUserEntity"
             }
           }
         },
@@ -296,12 +339,9 @@
     },
     "/validatecredentials": {
       "post": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Validates user credentials",
-        "description": "",
-        "operationId": "",
+        "tags": ["iam"],
+        "summary": "Validate user credentials",
+        "description": "This Checks if the given user credentials are valid.",
         "parameters": [
           {
             "name": "user credentials",
@@ -313,17 +353,12 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "`true`: The given credentials are valid. `false`: The given credentials are not valid.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/ResultObject"
             }
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     }
   }
