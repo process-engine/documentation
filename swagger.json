@@ -62,7 +62,8 @@
         "childAttributes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/IExpand"
+            "type": "IExpand",
+            "description": "not linked to prevent infinite loop"
           }
         }
       }
@@ -83,46 +84,25 @@
           }
         },
         "query": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/IQueryObject"
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/IQueryObject"
-              }
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "type": "IQueryObject | Array<IQueryObject> | string",
+          "description": "not linked because OpenAPI doesn't allow mutli-types, see [swagger-api-issue #236](https://github.com/swagger-api/swagger-parser/issues/236)"
         }
       }
     },
     "MessagebusPublication": {
-      "description": "a message that can be published on the messagebus",
       "properties": {
         "channel": {
           "type": "string",
           "description": "the channel the message will be published on"
         },
         "msg": {
-          "description": "the content of your message"
+          "description": "the content of your message. This in an arbitrary object",
+          "properties": {}
         },
         "options": {
-          "description": "additional query options for your message publication",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "applicationId": {
-              "type": "string"
-            },
-            "token": {
-              "type": "string"
-            }
-          }
+          "required": false,
+          "description": "Arbitrary object with additional metadata-options that will be attached to the message",
+          "properties": {}
         }
       }
     },
@@ -178,7 +158,8 @@
         "description": "This makes the process engine send the given message to the given channel on its messagebus.",
         "parameters": [
           {
-            "name": "user credentials",
+            "name": "message",
+            "description": "a message that can be published on the messagebus",
             "in": "body",
             "schema": {
               "$ref": "#/definitions/MessagebusPublication"
