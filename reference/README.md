@@ -1,1 +1,1 @@
-<iframe src="./apidoc.html" onload="resizeIframe(this)"></iframe>
+<iframe src="./apidoc.html"></iframe>
