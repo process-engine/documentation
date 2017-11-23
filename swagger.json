@@ -54,6 +54,17 @@
       ],
       "type": "number"
     },
+    "IAuthObject": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "identity": {
+          "$ref": "#/definitions/IIdentity"
+        }
+      }
+    },
     "IExpand": {
       "properties": {
         "attribute": {
@@ -122,6 +133,26 @@
           "$ref": "#/definitions/IPublicGetOptions"
         }
       }
+    },
+    "SuccessObject": {
+      "description": "An object indicating the success of an action.",
+      "properties": {
+        "result": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "UserCredentials": {
+      "description": "User credentials",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
     }
   },
   "paths": {
@@ -170,7 +201,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/SuccessObject"
             }
           }
         }
@@ -178,14 +209,13 @@
     },
     "/iam/login": {
       "post": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Authenticates and returns a token",
-        "description": "",
+        "tags": ["iam"],
+        "summary": "Authenticates a user",
+        "description": "Given some correct credentials, this will get you a token you can use to authenticate yourself to the process engine.",
         "parameters": [
           {
             "name": "user credentials",
+            "description": "The credentials of the user you want to login as.",
             "in": "body",
             "schema": {
               "$ref": "#/definitions/UserCredentials"
@@ -194,9 +224,9 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "The Login was successful",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/IAuthObject"
             }
           }
         }
@@ -204,9 +234,7 @@
     },
     "/iam/logout": {
       "get": {
-        "tags": [
-          "iam"
-        ],
+        "tags": ["iam"],
         "summary": "Logs the user out",
         "description": "",
         "responses": {
