@@ -1,7 +1,7 @@
 # Stack
 
-When we refer to the stack we're talking about a collection of loosely coupled modules.
+Wenn wir uns auf den Stack beziehen, sprechen wir von einer Sammlung von einzelnen gekoppelten Modulen.
 
-Each module has a certain topic and should only have responsibilities for tasks associated with that topic.
+Jedes Modul hat ein bestimmtes Thema und sollte nur für Aufgaben zuständig sein, die diesem Thema zugeordnet sind.
 
-These modules are regular npm packages that can be dependent from one another.
+Diese Module sind NPM-Pakete, die voneinander abhängig sein können.
