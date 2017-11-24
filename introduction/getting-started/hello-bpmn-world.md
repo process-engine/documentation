@@ -48,7 +48,7 @@ Jetzt ist festgelegt, wie der User Task aussehen soll. Zeit den Prozess auszufü
 
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und dargestellt.
 
-Erstelle dazu ein neues Diagramm, wie bei dem [Hello World](LINK EINFÜGEN) Beispiel.
+Erstelle dazu ein neues Diagramm, wie bei dem Hello World Beispiel.
 
 Erstelle dann einen Service Task, um Daten zu laden und einen User Task, um die Daten anzuzeigen:
 
@@ -66,11 +66,11 @@ Das Flow Mapping restrukturiert, wie die im vorherigen Task empfangenen Daten im
 JSON.parse(token.current.result).rates.USD 
 ```
 
-In diesem Fall wollen wir nicht alle Wechselkurse anzeigen, sondern lediglich den USD Kurs. Nach dem Mapping, kann das nöchste BPMN node nach dem Flow den USD Kurs durch `token.current` nutzen.
+In diesem Fall wollen wir nicht alle Wechselkurse anzeigen, sondern lediglich den USD Kurs. Nach dem Mapping kann das nächste BPMN Node nach dem Flow den USD Kurs durch `token.current` nutzen.
 
-Zum Schluss mpssen wir dem User Task nur noch sagen was er anzeigen soll. Dies geschieht wieedr über den `Extensions`-Reiter.
+Zum Schluss müssen wir dem User Task nur noch sagen was er anzeigen soll. Dies geschieht wieder über den `Extensions`-Reiter.
 
-Dazu setzen wir `Confirm`als `uiName`, um einen Bestätigungsdialog zu verwenden und konfigurieren diese mit `uiConfig` folgendermaßen:
+Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu verwenden und konfigurieren diese mit `uiConfig` folgendermaßen:
 
 ```
 ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm", "label": "OK"}] };
@@ -78,18 +78,18 @@ ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm
 
 > Hier Video einfügen
 
-Dies sind dann folgendermaßen aus:
+Dies sieht dann folgendermaßen aus:
 
 > Hier Video einfügen
  
  
 ## E-Mails versenden
 
-Nun erweitern wir das Beispiel [Nutzung einer REST API](LINK EINFÜGEN), sodass die geladenen Daten per E-Mail versendet werden.
+Nun erweitern wir das Beispiel Nutzung einer REST API, sodass die geladenen Daten per E-Mail versendet werden.
 
 Dazu updaten wir den Prozess so, dass dieser nach einer E-Mail-Adresse fragt, eine Bestätigung anfordert und dann eine E-Mail mit dem Wechselkurs an die entsprechende E-Mail versendet.
 
-Um das zu erreichen müssen wir folgendes tun:
+Um das zu erreichen, müssen wir Folgendes tun:
 
 * `ZEIT` Den Prozess zu `E-Mails versenden` umbenennen
 * `ZEIT` Die Lane vergrößern, um mehr Platz zu schaffen
