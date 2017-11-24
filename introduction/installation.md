@@ -19,4 +19,9 @@ Wenn die Prozessengine erfolgreich gestartet ist, kann Charon gestartet werden.
 
 # Charon
 
-> TODO: Charon Installation erklären
+Zunächst muss das [Charon Repository](https://github.com/process-engine/charon) geklont werden. 
+```
+git clone git@github.com:process-engine/charon.git
+```
+Auch das Charon Repository besitzt eine `REAMDME.md`, welche das starten von Charon genau erklärt.
+Sobald Charon erfolgreich gestartet ist, kann es über `http://localhost:9000/` aufgerufen werden.
