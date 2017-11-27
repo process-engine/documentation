@@ -2,7 +2,7 @@
 
 Entity Services sind eine Ergänzung zu Entitäten. Im Gegensatz zur Entität gibt es keine Basisklasse für Entity Services.
 
-## Entity Service Logic
+## Entity Service Logik
 
 Während Entitäten die Logik enthalten, um an ihrem eigenen Zustand zu arbeiten, besitzen Entity Services überhaupt keinen Zustand.
 

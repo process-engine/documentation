@@ -110,8 +110,6 @@ Entity Type Services unterscheiden sich in der Konfiguration nicht von Entity Ty
 Sie sind jedoch im Ordner `entity_type_services` anstelle von` entity_types` definiert.
 Die JSON-Datei enthält ebenfalls kein Suffix.
 
-The two blocks are representing roles defined to fulfill `class level` and `member level` claims.
-
 Die zwei Blöcke repräsentieren Rollen, die definiert sind, um Ansprüche der `class level` und `member level` zu erfüllen.
 
 ## Benutzung
@@ -157,7 +155,6 @@ Wenn ein Segment keine solche spezielle Art ist, wird es nur verwendet, um einen
 
 ### Action
 
-An action is an optional element of the claim and has to be the last segment of the claim.
 Eine Aktion ist ein optionales Element des Claims und muss das letzte Segment des Claims sein.
 
 Es kann einer der folgenden Werte sein:

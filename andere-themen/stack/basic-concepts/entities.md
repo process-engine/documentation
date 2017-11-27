@@ -32,7 +32,7 @@ Eine Eigenschaft besteht aus einer Getter- und einer Setter-Funktion. Beide sind
 ```
 
 Durch den Aufruf von `getProperty` und` setProperty` erhalten Sie alle Goodies, die unter der Haube liegen wie z.B.
-* überprüfungen, um unnötige Operationen zu vermeiden
+* Überprüfungen, um unnötige Operationen zu vermeiden
 * anspruchsbasiertes Rechtemanagement
 * erweiterte Abfrageszenarien auf angehängten Entitäten
 
