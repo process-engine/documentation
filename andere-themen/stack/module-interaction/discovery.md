@@ -6,7 +6,7 @@ Wann immer es einen dynamischen Zweig in unserem Dependency Graph gibt, verwende
 
 In diesem Beispiel hat das `DataModel` eine Abhängigkeit vom `Container` (welches die IoC-Containerinstanz selbst ist) und unter anderem hat es eine dynamische Abhängigkeit von Entitäten. Dem Dependency Graph ist nicht bewusst, dass das "DataModel" Entitäten verwendet, das `DataModel` fragt nur den `Container` für alle Registrierungen, die als eine Entität markiert sind.
 
-Mit diesem Mechanismus kann die Anzahl der Entitäten zwischen Anwendungen variieren, ohne dass der zugrunde liegende Code geändert werden muss.
+Mit diesem Mechanismus kann die Anzahl der Entitäten zwischen Anwendungen variieren, ohne dass der zugrundeliegende Code geändert werden muss.
 
 Die aktuellen Discoveries sind:
 

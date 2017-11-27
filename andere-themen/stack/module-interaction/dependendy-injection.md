@@ -16,7 +16,7 @@ Wenn Sie nicht an die Umkehrung des Kontrollmusters gewöhnt sind, sehen Sie die
 
 Außer an Orten, an denen Sie mit sehr dynamischen Abhängigkeiten zu tun haben, werden alle Klassen instanziiert, da sie eine Abhängigkeit von einer anderen Klasse sind.
 
-Das führt zu einem sauberen, einfach zu pflegenen Code und ermöglicht es uns, zusätzliche Funktionen basierend auf dem Dependency Graph zu verwenden.
+Das führt zu einem sauberen, einfach zu pflegenden Code und ermöglicht es uns, zusätzliche Funktionen basierend auf dem Dependency Graph zu verwenden.
 
 ## IoC Modules
 

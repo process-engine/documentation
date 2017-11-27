@@ -16,7 +16,7 @@ Dies ist die Überschreibungsreihenfolge, **absteigend** nach Priorität:
 
 Jede von Ihnen deklarierte Konfiguration wird automatisch in die `config`-Eigenschaft der entsprechenden Klasse eingefügt.
 
-Diese Injection erfolgt direkt nach der Klasseninstanziierung, so dass Sie das Konfigurationsobjekt überall erwarten und verwenden können, außer im `Konstruktor`.
+Diese Injektion erfolgt direkt nach der Klasseninstanziierung, so dass Sie das Konfigurationsobjekt überall erwarten und verwenden können, außer im `Konstruktor`.
 
 ```typescript
 class ExampleService {
