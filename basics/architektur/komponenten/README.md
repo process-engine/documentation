@@ -23,10 +23,9 @@ werden müssen
 
 ## Roles
 
-"Roles" oder "Rollen" sind eine abstrakte Möglichkeit und Zuständigkeiten
-aufzuzeigen.
-Dies ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen, die verschiedene
-Rollen übernehmen, mit ein.
+"Roles" oder "Rollen" sind eine abstrakte Möglichkeit Zuständigkeiten
+definieren.
+Das ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen mit ein.
 
 Wir können einem Element in einem Diagramm also einer Rolle zuordnen. Wenn wir dies tun,
 wird die Process Engine überprüfen, ob das System, das gerade das Diagramm ausführt,
@@ -43,11 +42,13 @@ zur Ausführung bereit ist, wird er nur auf einem Client ausgeführt, an dem ein
 
 ## Gateways
 
-"Gateways" werden genutzt um bedingte Pfade zu modellieren.
+"Gateways" werden genutzt, um Fallunterscheidungen zu modellieren. Dabei kann
+der aktuelle Ausführungspfad in mehrere Pfade aufgeteilt werden, oder mehrere Pfade
+zu einem zusammengeführt werden
 
 ## Messages / Signals
 
-"Messages" und "Signals" sind im Grunde nichts anderes als ein Event.
+"Messages" und "Signals" sind im Grunde nichts anderes als Events.
 
 ## Mappers
 
