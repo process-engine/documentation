@@ -25,3 +25,5 @@ git clone git@github.com:process-engine/charon.git
 ```
 Auch das Charon Repository besitzt eine `REAMDME.md`, welche das starten von Charon genau erklärt.
 Sobald Charon erfolgreich gestartet ist, kann es über `http://localhost:9000/` aufgerufen werden.
+
+![Charon](images/charon.png)

@@ -3,7 +3,7 @@
 Zunächst setzen wir den absoluten Klassiker `Hello World` auf.
 Wir wollen ein BPMN-Diagramm mit einer Single User Task erstellen, welches folgendermaßen aussieht:
 
-> Hier Bild einfügen
+<img src="../images/hello-world.svg" width="100%" />
 
 Dieser User Task wird die `Hello World` Nachricht und einen Bestätigungsknopf, um den Task zu beenden.
 
@@ -14,14 +14,14 @@ Nun muss dem Prozessmodell einen Namen und einen Schlüssel gegeben werden.
 In diesem Fall kann bei beidem `Hello World` gewählt werden.
 Danach kann das Diagramm über den `Details`-Knopf angezeigt und bearbeitet werden
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/creating-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
 
 Nun kann man einen BPMN Editor mit einer Lane und einem Start Event sehen.
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü, durch welches nun neue Elemente hinzugefügt werden können, die dann direkt mit dem ausgewählten Element verbunden sind.
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/hello-world.mp4{% endvideo %}
 
 So weit, so gut. Nun muss der Prozess noch ausführbar gemacht werden.
 
@@ -38,11 +38,11 @@ In diesem Fall die Nachricht und die Knöpfe, die angezeigt werden sollen.
 ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
 ```
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/integrate-hello-world.mp4{% endvideo %}
 
 Jetzt ist festgelegt, wie der User Task aussehen soll. Zeit den Prozess auszuführen.
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/execute-hello-world.mp4{% endvideo %}
 
 ## Nutzung einer REST API
 
@@ -52,8 +52,7 @@ Erstelle dazu ein neues Diagramm, wie bei dem Hello World Beispiel.
 
 Erstelle dann einen Service Task, um Daten zu laden und einen User Task, um die Daten anzuzeigen:
 
-> Hier Video einfügen
-
+{% video controls="controls"%}../images/consuming-rest-api.mp4{% endvideo %}
 
 Unter dem `Extensions`-Reiter können wir dem Service Task nun sagen, was er tun soll:
 In diesem Fall eine HTTP REST API abzurufen.
@@ -76,11 +75,11 @@ Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu verwende
 ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm", "label": "OK"}] };
 ```
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/integrate-rest-api.mp4{% endvideo %}
 
 Dies sieht dann folgendermaßen aus:
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/run-rest-api.mp4{% endvideo %}
  
  
 ## E-Mails versenden
@@ -91,18 +90,17 @@ Dazu updaten wir den Prozess so, dass dieser nach einer E-Mail-Adresse fragt, ei
 
 Um das zu erreichen, müssen wir Folgendes tun:
 
-* `ZEIT` Den Prozess zu `E-Mails versenden` umbenennen
-* `ZEIT` Die Lane vergrößern, um mehr Platz zu schaffen
-* `ZEIT` Füge eine Form hinzu, die nach der Email fragt
-* `ZEIT` Gib der `Fetch Data` Task eine ID, damit man später auf ihre Daten zugreifen kann
-* `ZEIT` Lösche den nicht mehr benötigten Mapper
-* `ZEIT` Bennene die `Show Data` Task zu `Confirm Data` um
-* `ZEIT` Füge ein Gateway hinzu, damit wir später bei einem `ok` eine E-Mail versenden und bei einem `cancel` abbrechen können
-* `ZEIT` Füge einen `Send email` Service-Task hinzu
-* `ZEIT` Stelle die Gateway-Flows so ein, dass `ok` eine E-Mail versendet und `cancel` den Prozess abbricht.
+* `0:00 - 0:09` Den Prozess zu `E-Mails versenden` umbenennen
+* `0:10 - 0:17` Die Lane vergrößern, um mehr Platz zu schaffen
+* `0:18 - 1:14` Füge eine Form hinzu, die nach der Email fragt
+* `1:17 - 1:20` Gib der `Fetch Data` Task eine ID, damit man später auf ihre Daten zugreifen kann
+* `1:22 - 1:27` Lösche den nicht mehr benötigten Mapper
+* `1:27 - 1:54` Bennene die `Show Data` Task zu `Confirm Data` um
+* `1:55 - 2:05` Füge ein Gateway hinzu, damit wir später bei einem `ok` eine E-Mail versenden und bei einem `cancel` abbrechen können
+* `2:06 - 3:10` Füge einen `Send email` Service-Task hinzu
+* `3:15 - 3:52` Stelle die Gateway-Flows so ein, dass `ok` eine E-Mail versendet und `cancel` den Prozess abbricht.
 
->  Hier ein Video einfügen und die Zeiten anpassen
-
+{% video controls="controls"%}../images/create-send-email.mp4{% endvideo %}
 
 Hier noch einmal die im Video kopierten Werte:
 
@@ -116,4 +114,4 @@ ${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD
 
 Nun nur noch ausprobieren:
 
-> Hier Video einfügen
+{% video controls="controls"%}../images/run-send-email.mp4{% endvideo %}
