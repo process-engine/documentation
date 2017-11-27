@@ -1,7 +1,7 @@
 # Diagramm
 
 Reguläre BPMN Diagramme beschreiben lediglich den Geschäftsprozess selbst.
-Der Standard an sich enthält keine technischen Spezifikationen z.B. welche
+Der Standard an sich enthält keine technischen Spezifikationen, z.B. welche
 Serveradresse verwendet wird oder wie die Konfiguration an bestimmten
 Punkten aussieht.
 
