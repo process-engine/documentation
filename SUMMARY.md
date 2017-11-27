@@ -49,6 +49,9 @@
 
 * [Glossar](anhang/GLOSSARY.md)
 * [Literaturverweise](anhang/literaturverweise.md)
+* [messagebus](messagebus/README.md)
+  * [internal](messagebus/internal/README.md)
+  * [external](messagebus/external/README.md)
 
 ---
 
