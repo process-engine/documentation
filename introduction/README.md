@@ -12,7 +12,7 @@ Zeit und Aufwand verbunden ist. Deshalb verschwinden solche Richtlinien meist
 
 ## Was tun wir dagegen?
 
-Wir wollen in einem BPMN Prozess mehr sehen als ein einfaches Dokument.
+Wir sehen in einem BPMN Prozess mehr als ein einfaches Dokument.
 Vielmehr soll es eine Sammlung von Anweisungen sein, die beschreiben wie sich
 eine Software verhalten soll. Statt den Prozess selbst zu Implementieren
 verlassen wir uns dabei auf die Process Engine.
