@@ -1,4 +1,4 @@
-# Structure
+# Struktur
 
 Jedes Modul kann innerhalb einer Kategorie platziert werden. Aus Gründen der Konsistenz wenden wir eine Benennungskonvention auf diese Kategorien an:
 
