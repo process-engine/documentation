@@ -7,37 +7,31 @@ Dazu updaten wir den Prozess so, dass dieser nach einer E-Mail-Adresse fragt, ei
 Um das zu erreichen, müssen erst ein paar Vorbereitungen getroffen.
 Dazu wir der Pool und der Startpunkt zu `Emails versenden` umbenannt und die Lane vergrößert, da mehr Platz benötigt wird.
 
-> Video
+{% video controls="controls"%}../images/preparation-send-email.mp4{% endvideo %}
 
+Als nächstes erstellt man eine `Get email address`-Task, in welcher der User per UI dazu aufgefordert wird eine Email anzugeben.
 
+{% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
 
-
-
-
-          * `0:00 - 0:09` Den Prozess zu `E-Mails versenden` umbenennen                                                     x
-          * `0:10 - 0:17` Die Lane vergrößern, um mehr Platz zu schaffen                                                    x
-          * `0:18 - 1:14` Füge eine Form hinzu, die nach der Email fragt
-          * `1:17 - 1:20` Gib der `Fetch Data` Task eine ID, damit man später auf ihre Daten zugreifen kann
-          * `1:22 - 1:27` Lösche den nicht mehr benötigten Mapper
-          * `1:27 - 1:54` Bennene die `Show Data` Task zu `Confirm Data` um                                                 x
-          * `1:55 - 2:05` Füge ein Gateway hinzu, damit wir später bei einem `ok` eine E-Mail versenden und bei einem      x `cancel` abbrechen können
-          * `2:06 - 3:10` Füge einen `Send email` Service-Task hinzu                                                        x
-          * `3:15 - 3:52` Stelle die Gateway-Sequenzflüsse so ein, dass `ok` eine E-Mail versendet und `cancel` den Prozess abbricht.
-
-         
-{% video controls="controls"%}../images/create-send-email.mp4{% endvideo %}
-
-
-Hier noch einmal die im Video kopierten Werte:
+Dann muss die `Show Data`-Task zu `Confirm Data`-Task umbenannt werden und den Wert der `uiConfig`-Property zu den Folgenden abgeändert werden. Dabei ist auch wichtig, dass der `Fetch Data`-Task die ID `fetch_data` bekommt.
 
 ```
-// uiConfig for "Confirm Data"
 ${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
-
-// params for "send mail"
-[null, token.history.get_email_address.email, "EUR to USD conversion rate", "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD"]
 ```
 
-Nun nur noch ausprobieren:
+{% video controls="controls"%}../images/confirm_data-send-email.mp4{% endvideo %}
+
+Als nächstes muss noch eine Überprüfung, ob in der `Confirm Data`-Task confirm oder cancel ausgewählt wurde, eingebaut werden. Diese soll dann dementsprechend den Prozess beenden oder in die noch zu erstellende `Send email`-Task weiterleiten.
+Schlussendlich wird dann die `Send email`-Task erstellt. Dieser muss dann nur noch die folgenden Eigenschaften mitgegeben werden. Nach dieser Task muss der Prozess nur noch beendet werden.
+
+```
+module  MailService
+method	send
+params	[null, token.history.get_email.email, "EUR to USD conversion rate", "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD"]
+```
+
+{% video controls="controls"%}../images/send_email-send-email.mp4{% endvideo %}
+
+Dann kann das ganze getestet werden:
 
 {% video controls="controls"%}../images/run-send-email.mp4{% endvideo %}
