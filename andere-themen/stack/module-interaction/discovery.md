@@ -1,6 +1,6 @@
 # Discovery
 
-Wann immer es einen dynamischen Zweig in unserem Dependency Graph gibt, verwenden wir einen Ermittlungsmechanismus, der auf den Registrierungen des IoC-Container basiert.
+Wann immer es einen dynamischen Zweig im Dependency Graph gibt, wird ein Ermittlungsmechanismus verwendet, der auf den Registrierungen des IoC-Container basiert.
 
 ![Discovery](images/discovery.png)
 
