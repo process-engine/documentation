@@ -19,7 +19,7 @@ Die [Sequenzflusszuordnung](../../anhang/Glossary.md)  definiert, wie die im vor
 JSON.parse(token.current.result).rates.USD 
 ```
 
-In diesem Fall wollen wir nicht alle Wechselkurse anzeigen, sondern lediglich den USD Kurs. Nach dem Mapping kann das nächste BPMN Node nach dem [Sequenzfluss](../../anhang/Glossary.md) den USD Kurs durch `token.current` nutzen.
+In diesem Fall wollen wir nicht alle Wechselkurse anzeigen, sondern lediglich den USD Kurs. Nach dem Mapping kann die nächste BPMN Node nach dem [Sequenzfluss](../../anhang/Glossary.md) den USD Kurs durch `token.current` nutzen.
 
 Zum Schluss müssen wir dem User [Task](../../anhang/Glossary.md) nur noch sagen was er anzeigen soll. Dies geschieht wieder über den `Extensions`-Reiter.
 
