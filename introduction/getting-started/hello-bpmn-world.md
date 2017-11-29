@@ -1,11 +1,11 @@
 # Hello BPMN-World
 
 Wir beginnen mit einem einfachen “Hello-World”-Beispiel.
-Dabei wollen wir ein BPMN-Diagramm mit einer Single User Task erstellen, welches folgendermaßen aussieht:
+Dabei wollen wir ein BPMN-Diagramm mit einer Single User [Task](../../anhang/Glossary.md) erstellen, welches folgendermaßen aussieht:
 
 <img src="../images/hello-world.svg" width="100%" />
 
-Dieser User Task wird die `Hello World` Nachricht und einen Bestätigungsbutton, der den Task beendet, anzeigen.
+Dieser User [Task](../../anhang/Glossary.md) wird die `Hello World` Nachricht und einen Bestätigungsbutton, der den [Task](../../anhang/Glossary.md) beendet, anzeigen.
 
 ## Erstellung eines neuen Diagramms
 
@@ -15,7 +15,7 @@ In diesem Fall kann bei beidem `Hello World` gewählt werden.
 Danach kann das Diagramm über den `Details`-Button angezeigt und bearbeitet werden.
 Den `Details`-Button findet man in der Tabelle in der jeweiligen Zeile des Prozessmodels in der rechten Spalte.
 
-{% video controls="controls"%}../images/creating-new-diagram.mp4{% endvideo %}
+{% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
 
@@ -23,8 +23,6 @@ Nun kann man einen BPMN Editor mit einer Lane und einem Start Event sehen.
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü, durch welches nun neue Elemente hinzugefügt werden können, die dann direkt mit dem ausgewählten Element verbunden sind.
 
 {% video controls="controls"%}../images/create-hello-world.mp4{% endvideo %}
-
-So weit, so gut. Nun muss der Prozess noch ausführbar gemacht werden.
 
 ## Integrierung eines Diagramms
 
@@ -41,7 +39,7 @@ ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] 
 
 {% video controls="controls"%}../images/integrate-hello-world.mp4{% endvideo %}
 
-Jetzt ist festgelegt, wie der User Task aussehen soll. Zeit den Prozess auszuführen.
+Jetzt ist festgelegt, wie der User [Task](../../anhang/Glossary.md) aussehen soll. Zeit den Prozess auszuführen.
 
 {% video controls="controls"%}../images/run-hello-world.mp4{% endvideo %}
 
