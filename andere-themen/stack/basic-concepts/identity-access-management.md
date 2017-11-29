@@ -2,11 +2,11 @@
 
 ## Dekoratoren
 
-Sie können Ihre Implementierung und Daten schützen, indem Sie mögliche Aktionen mit einer Rolle verknüpfen, die für ihre Ausführung erforderlich ist.
+Um Implementierungen und Daten zu schützen, kann man mögliche Aktionen mit einer Rolle verknüpfen, die für die Ausführung erforderlich ist.
 
 Der Dekorator, der verwendet wird, um diese zu definieren, kann auf Klassen, Eigenschaften und Methoden platziert werden.
 
-_Hinweis: Sie können den Klassendekorierer mit Methoden- und Eigenschaftsdekoratoren überschreiben. Dies überschreibt es nur für die dekorierten Methoden und Eigenschaften. Nichtdekorierte Eigenschaften werden weiterhin die Klasseneinstellungen anwenden._
+_Hinweis: Man kann den Klassendekorator mit Methoden- und Eigenschaftsdekoratoren überschreiben. Dies überschreibt es nur für die dekorierten Methoden und Eigenschaften. Nichtdekorierte Eigenschaften werden weiterhin die Klasseneinstellungen anwenden._
 
 ```typescript
 @requiresClaim({
@@ -51,8 +51,8 @@ Claims werden unter dem folgenden Pfad konfiguriert:
                     +-- <<namespace>>
 ```
 
-Der `namespace` ist der Namespace der Claims, die Sie konfigurieren möchten.
-Wenn Sie den Standardnamespace verwenden, heißt der Namespace in der Konfigurationsstruktur `default_namespace`.
+Der `namespace` ist der Namespace der Claims, die man konfigurieren möchten.
+Wenn man den Standardnamespace verwendet, heißt der Namespace in der Konfigurationsstruktur `default_namespace`.
 
 ### Default
 
