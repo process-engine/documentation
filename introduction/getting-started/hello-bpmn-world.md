@@ -1,37 +1,62 @@
 # Hello BPMN-World
 
-Wir beginnen mit einem einfachen “Hello-World”-Beispiel.
-Dabei wollen wir ein BPMN-Diagramm mit einer Single User [Task](../../anhang/Glossary.md) erstellen, welches folgendermaßen aussieht:
+Wir beginnen mit einem “Hello-World” Beispiel.
+
+Ziel ist es ein BPMN-Diagramm mit einem [Single User Task](../../anhang/Glossary.md) erstellen.
+Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/hello-world.svg" width="100%" />
 
-Dieser User [Task](../../anhang/Glossary.md) wird die `Hello World` Nachricht und einen Bestätigungsbutton, der den [Task](../../anhang/Glossary.md) beendet, anzeigen.
+[Dieser User Task](../../anhang/Glossary.md) wird folgende Elemente enthalten:
+
+1. die Nachricht `Hello World`
+1. einen Bestätigungsbutton
+
+   Dieser dient dazu den [Task](../../anhang/Glossary.md) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
-Um ein neues Prozessmodell zu erstellen, öffne Charon und klicke auf den `Create Process Definition`-Button.
-Nun öffnet sich eine neue Ansicht, in der man einenNamen und einen Schlüssel für das Prozessmodell eingegeben werden kann.
-In diesem Fall kann bei beidem `Hello World` gewählt werden.
-Danach kann das Diagramm über den `Details`-Button angezeigt und bearbeitet werden.
-Den `Details`-Button findet man in der Tabelle in der jeweiligen Zeile des Prozessmodels in der rechten Spalte.
+Der Knopf `Create Process Definition` dient zum Erstellen eines neuen Diagramms.
 
+Es öffnet sich ein neuer Dialog;
+dort geben wir den Namen und einen Schlüssel für das Prozessmodell ein;
+in diesem Fall kann bei beiden `Hello World` gewählt werden.
+
+Die Schaltfläche `Details` dient zur Angezeige und Bearbeitung von Diagrammen;
+Er befindet sich in der Tabelle, in der jeweiligen Zeile des Prozessmodels, in der rechten Spalte.
+ 
 {% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
 
-Nun kann man einen BPMN Editor mit einer Lane und einem Start Event sehen.
-Durch das Auswählen eines Elements öffnet sich ein Kontextmenü, durch welches nun neue Elemente hinzugefügt werden können, die dann direkt mit dem ausgewählten Element verbunden sind.
+Der BPMN Editor zeigt uns eine Ansicht mit einer Lane und einem Startevent.
+
+Durch das Auswählen eines Elements öffnet sich ein Kontextmenü;
+Dieses Menü erlaubt es neue Elemente hinzuzufügen;
+diese werden direkt mit dem ausgewählten Element verbunden sind.
 
 {% video controls="controls"%}../images/create-hello-world.mp4{% endvideo %}
 
-## Integrierung eines Diagramms
+## Integrieration eines Diagramms
 
-Damit die Prozessengine weiß, wie sie eine UI rendern soll, muss sie wissen, wie die UI aussehen soll.
-Dies kann mit Hilfe der key/value-pairs im `Extensions`-Reiter auf der rechten Seite des Editors eingestellt werden.
+Damit die ProzessEngine weiß, wie sie eine UI rendern soll, muss sie wissen, wie die UI aussehen soll.
+
+Im `Extensions`-Reiter kann das durch Key-Value-Paare eingestellt werden;
+Der Reiter befindet sich auf der rechten Seite des Editors.
+
+Es gibt zwei Felder:
+
+1. `uiName`
+1. `uiConfig`
+
 Mit Hilfe von `uiName` wird die Art der UI Komponente festgelegt.
-In diesem Fall nutzen wir einen Bestätigungdialog.
+
+In diesem Fall benutzen wir einen Bestätigungdialog.
+
 Mit Hilfe von `uiConfig` werden die Details der UI Komponente bestimmt.
-In diesem Fall die Nachricht und die Knöpfe, die angezeigt werden sollen.
+
+In diesem Fall die Nachricht und die Knöpfe, die angezeigt werden sollen;
+Bitte folgendes in das Feld `uiConfig` eintragen:
 
 ```javascript
 ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
@@ -39,9 +64,9 @@ ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] 
 
 {% video controls="controls"%}../images/integrate-hello-world.mp4{% endvideo %}
 
-Jetzt ist festgelegt, wie der User [Task](../../anhang/Glossary.md) aussehen soll. Zeit den Prozess auszuführen.
+**Zusammenfassung**
+
+Wir haben den User Task festgelegt, die Konfiguration der UI hinterlegt und die Komponenten korrekt verschaltet.
+Zeit den Prozess auszuführen:
 
 {% video controls="controls"%}../images/run-hello-world.mp4{% endvideo %}
-
-
- 
