@@ -1,29 +1,33 @@
 # Entitäten
 
 Eine Entität ist eine Klasse zur Beibehaltung von Domänenobjekten.
-Die Basisklasse `Entity` wird verwendet, um so viel Code wie möglich zu
-vermeiden. 
 
-Es gibt grundlegende Funktionen, die man nicht für jede Entität
-selbst implementieren sollte. Hierzu zählen unter anderem die Zugriffsverwaltung und die Serialisierung.
-Um diese Funktionalitäten standardmäßig zu erhalten, muss sich der Nutzer an wenige Muster und Konventionen halten. Diese werden nachfolgend beschrieben.
+Spezielle Entitäten leiten von der Basisklasse `Entity` ab.
+
+Die Klasse `Entity` beinhaltet folgende Methoden, Felder:
+
+```js
+class 
+(...)
+```
+
+Die Verwendung der Basisklasse soll es dem Nutzer erleichtern, mit der ProcessEngine zu arbeiten.
 
 ## Entitätslogik
 
 Die in Entitäten implementierte Logik sollte nur für eine einzelne Entität gelten.
 
 ```typescript
-myEntity.calculateSomething();
-myEntity.applySomething();
+myEntity.calculate();
+myEntity.apply();
 ```
 
 Wie dargestellt, sollen die Entitätsmethoden in einer einzelnen Entität
-aufgerufen werden, um ihren Zustand zu ändern oder ein auf diesem Zustand
-basierendes Verhalten auszuführen.
+aufgerufen werden, um ihren Zustand zu ändern oder Verhalten auszuführen.
 
 ## Entitätseigenschaften
 
-Eine Eigenschaft besteht aus einer Getter- und einer Setter-Funktion.
+Eine Eigenschaft besteht aus einer Getter- und einer Setter-Methoden.
 
 ```typescript
   public get name(): string {
@@ -35,18 +39,13 @@ Eine Eigenschaft besteht aus einer Getter- und einer Setter-Funktion.
   }
 ```
 
-Durch den Aufruf von `getProperty` und `setProperty` erhält man alle verfügbaren Features wie z.B.
-* Überprüfungen, um unnötige Operationen zu vermeiden
-* ein anspruchsbasiertes Rechtemanagement
-* erweiterte Abfrageszenarien auf angehängten Entitäten
+## Entitätsschemata
 
-## Entitätsschemas
-
-Der Stack ist datenbankunabhängig und verwendet ein eigenes
-Datenmodell, das zur Beschreibung der Persistierung von Daten dient.
+Der Stack ist datenbankunabhängig und verwendet ein eigenes Datenmodell.
 
 Die Konfiguration des Datenmodells erfolgt mit Hilfe von ES7 Decorators.
-In diesem Fall ist es der `schemaAttribute`-Dekorator.
+
+Die Verwendung von Decorators sieht so aus:
 
 ```typescript
   @schemaAttribute({ type: SchemaAttributeType.string })
@@ -59,26 +58,28 @@ In diesem Fall ist es der `schemaAttribute`-Dekorator.
   }
 ```
 
-Der Dekorator wird oberhalb der Getter-Funktion der Eigenschaft platziert und
-nimmt ein `ISchemaAttribute` als Argument an. Für die Darstellung in der Datenbank muss in den meisten Fällen nur angeben werden, welcher Typ verwendet werden soll. Der Typ kann entweder eine der Optionen der Enumeration
-`SchemaAttributeType` oder ein `String` (in Pascal-Case) sein, wenn man einen
-eigenen Typ verwenden möchte.
+Der Dekorator wird oberhalb der Eigenschaft platziert;
+der Decorator nimmt ein `ISchemaAttribute` als Argument an;
+für die Speicherung in der Datenbank muss angeben werden, welcher Typ verwendet werden soll;
+
+Der Typ kann eine der Optionen der Enumeration `SchemaAttributeType` sein;
+Der Typ kann ein `String` (in Pascal-Case) sein;
+Das erlaubt die Verwendung eigener Datentypen.
 
 ## Entitätsmethoden
 
-Jede öffentliche Methode, die implementiert wird (außer `initialize`), sollte
-den `ExecutionContext` als einen seiner Parameter akzeptieren.
+Jede öffentliche Methode, die implementiert wird - außer `initialize` -, soll
+dem `ExecutionContext` als einen seiner Parameter akzeptieren.
 
 Der `ExecutionContext` wird verwendet, um Informationen über die
 Zugriffsverwaltung zu verfolgen und den Zugriff auf den Benutzersitzungsspeicher
 zu gewähren.
 
-Wenn andere Entitäten oder Dienste aufgerufen werden, wird oft 
-nach absehbarer Zeit der `ExecutionContext` benötigt.
+Wenn andere Entitäten oder Dienste aufgerufen werden, wird der `ExecutionContext` benötigt.
 
 Technisch ist dies nicht erforderlich, solange man den Parameter nicht
 verwendet. Es wird jedoch als bewährte Methode angesehen, nachträgliche
 Änderungen der Methodensignaturen zu vermeiden.
 
-Wenn man eine Methode über unsere HTTP-REST-API ausführen möchte, muss
-unbedingt der `ExecutionContext` in die Methodensignatur aufgenommen werden.
+Wenn man eine Methode über die API ausführen möchte, muss der `ExecutionContext`
+in die Methodensignatur aufgenommen werden.
