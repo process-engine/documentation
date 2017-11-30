@@ -210,7 +210,3 @@ mehreren Layern zur Verfügung zu stellen, die sich in dieser Reihenfolge
 überschreiben:
 
 `eine Klasse > mehrere Klassen > alle Klassen, die im IoC-Container registriert sind`
-
-Mit einer "factory" können diese sogar zur Laufzeit übrschrieben werden.
-Dazu wird sie als zusätzlicher Parameter der `resolve` Methode des IoC-Containers
-zur Verfügung gestellt.
