@@ -6,7 +6,7 @@ basiert.
 
 ![Discovery](images/discovery.png)
 
-In diesem Beispiel hat das `DataModel` eine Abhängigkeit vom `Container`
+In diesem Beispiel ist das `DataModel` abhängig vom `Container`
 (welches die IoC-Containerinstanz selbst ist) und unter anderem hat es eine
 dynamische Abhängigkeit von Entitäten. Dem Dependency Graph ist nicht bewusst,
 dass das "DataModel" Entitäten verwendet, das `DataModel` fragt nur den

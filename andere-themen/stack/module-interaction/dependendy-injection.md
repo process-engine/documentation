@@ -12,7 +12,7 @@ Es wird die Konstruktorinjektion verwendet, um Abhängigkeiten in Instanzen zu i
 ![Dependency Graph](images/dependency-graph.png)
 
 Wann immer eine Klasseninstanz benötigt wird, wird der IoC-Container dafür
-sorgen, dass er seine Abhängigkeiten instanziiert und auflöst.
+sorgen, dass er seine Abhängigkeiten instanziiert.
 
 Wenn man nicht an die Umkehrung des Kontrollmusters gewohnt ist, wird dies
 möglicherweise als Overhead gesehen, aber es ist das genaue Gegenteil.
@@ -27,9 +27,8 @@ Funktionen, basierend auf dem Dependency Graph, zu verwenden.
 
 Der gesamte Stack ist in Module aufgeteilt.
 
-Um eine klare Trennung der Module zu erreichen haben wir entschieden, jede
-Modulregistrierung innerhalb eines eigenen Moduls auf den IoC-Container zu
-organisieren.
+Um eine klare Trennung der Module zu erreichen wird jede Modulregistrierung
+innerhalb eines eigenen Moduls auf den IoC-Container oragnisiert.
 
 Konventionell wird dieses Modul im Stammordner als `ioc_module.js` gefunden.
 
@@ -38,11 +37,11 @@ Konventionell wird dieses Modul im Stammordner als `ioc_module.js` gefunden.
 Wenn das Modul (`ioc_module.js`) am IoC-Container registriert ist, wird
 erwartet, dass es alles registriert, was das Modul bereitstellt.
 
-Es gibt jedoch Anwendungsfälle, in denen bestimmte Modulklassen mit eigenen
-Klassen überschrieben werden. In solchen Fällen steuert man, welche
-Registrierungen des Moduls geladen werden.
+In Fällen, in denen bestimmte Modulklasse mit eigenen Klasse überschrieben
+werden müssen, kann genau bestimmt werden welche Registrierung des Modules
+geladen wird.
 
-Neben dem `ioc_module.js` gibt es Dateien wie` ioc.services.js` oder `ioc.entity_types.js`.
-Diese Dateien (IoC-Teile) enthalten nur eine bestimmte Kategorie von Registrierungen.
+Die Dateien `ioc.services.js` und/oder `ioc.entity_types.js` enthalten nur eine
+bestimmte Kategorie von Registrierungen.
 
-Das `ioc_module.js` ist dafür verantwortlich, alle IoC-Teile zu laden.
+Die `ioc_module.js` ist dafür verantwortlich, alle IoC-Teile zu laden.
