@@ -6,7 +6,7 @@ Discovery hat der `ExtensionBootstrapper` zwei Phasen. Zuerst initialisiert er
 alle Erweiterungen, indem er die `initialize`-Methode aufruft. Dann startet er
 sie durch Aufruf der `start`-Methode.
 
-Wenn die beiden Phasen abgeschlossensind wird die Anwendung als gestartet angesehen.
+Wenn die beiden Phasen abgeschlossen sind wird die Anwendung als gestartet angesehen.
 
 Obwohl sich Erweiterungen technisch für alle Arten von Anwendungen eignen,
 verwenden wir sie ausschließlich um die Kommunikationsendpunkte einer Anwendung
