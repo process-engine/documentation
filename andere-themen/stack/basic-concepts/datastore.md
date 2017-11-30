@@ -1,53 +1,160 @@
 # Datenspeicher
-Wenn mit Entitäten gearbeitet werden soll, müssen diese irgendwie geladen oder
-gespeichert werden. Dies geschieht mithilfe des Datenspeichers.
+
+Der Datenspeicher ist ein allgemeingültiges Modul zum interagieren mit
+[Entitäten](./entities.md). Mit ihm können:
+
+- [Entitäten](./entities.md) erstellt, geladen und gespeichert werden.
+- Methoden auf den Entitäten und [Entitäten-Service](./entity-services.md)
+  aufgerufen werden.
+- Entitäten-Definitionen (sogenannte `EntityTypes`) angefragt werden.
 
 ## Datenspeicher Service
 
-Die einfachste und empfohlene Methode zur Verwendung des Datenspeichers besteht
-darin, den `DatastoreService` direkt per Dependency Injection zu verwenden.
+Der `DatastoreService` implementiert die Logik des Datenspeichermoduls.
+Er bietet Methoden zum:
 
-Man kann ein generisches Repository für eine bestimmte Entität abrufen, indem
-`getEntityType ('YourEntity')` im `DatastoreService` aufgerufen wird. Dieses
-Repository wird `EntityType` genannt. Es ist möglich Entitäten des angegebenen
-Typs zu erstellen, zu laden und zu speichern.
+- Anfragen der bekannten Entitäten-Definitionen
+  ```TypeScript
+  // getCatalog(context: ExecutionContext): any;
+  const catalog = this.datastoreService.getCatalog();
 
-Folgendes Codebeispiel zeigt wie eine neue Entität erstellt und gespeichert wird:
+  /*
+  catalog = {  
+    "catalog":{  
+      "classes":[  
+        "BoundaryEvent",
+        "CatchEvent",
+        "FlowDef",
+        "Lane",
+        "NodeDef",
+        ...
+      ]
+    }
+  }
+  */
+  ```
 
-```typescript
-const processTokenEntityType = await this.datastoreService.getEntityType('ProcessToken');
+- Anfragen der Entitäten zu einer Definition
+  ```TypeScript
+  /*
+  getCollection<T extends IEntity>(typeName: TypeKey,
+                                   context: ExecutionContext,
+                                   options?: IPublicGetOptions): Promise<IEntityCollection<T>>;
+  */
+  const flowDefCollection = this.datastoreService.getCollection('FlowDef', context);
 
-const processTokenEntity = await processTokenEntityType.createEntity(context);
-processTokenEntity.save();
-```
 
-Es ist auch möglich den `EntityType` zu verwenden, um eine bestimmte Entität zu
-erhalten (mit `getById`), oder um eine ganze Sammlung von Entitäten zu erhalten,
-die Ihren Kriterien entspricht (mit `query`).
+  /*
+  flowDefCollection = {  
+    "count": 12,
+    "offset":0,
+    "limit":40,
+    "data":[  
+      FlowDefEntity {},
+      FlowDefEntity {},
+      FlowDefEntity {},
+      ...
+    ],
+    _options: {
+      orderBy: undefined,
+      query: undefined,
+      expandEntity: [],
+      expandCollection: []
+    },
+    _entityType: EntityType {}
+  }
+  */
+  ```
 
-```typescript
-const processTokenEntityType = await this.datastoreService.getEntityType('ProcessToken');
+- Eine Entität erstellen
+  ```TypeScript
+  /*
+  saveNewEntity<T extends IEntity>(typeName: TypeKey,
+                                   data: any,
+                                   context: ExecutionContext,
+                                   options?: IPublicSaveOptions): Promise<T>;
+  */
+  const newEntity = this.datastoreService.saveNewEntity('flowDef', {
+    name: 'test',
+  }, context);
+  ```
 
-const processTokenEntity = await processTokenEntityType.getById(id, context);
+- Eine Entität anhand seiner ID anfragen
+  ```TypeScript
+  /*
+  getById<T extends IEntity>(typeName: TypeKey,
+                             id: string, context: ExecutionContext,
+                             options?: IPublicGetOptions): Promise<T>;
+  */
+  const flowEntity = this.datastoreService.getById('747c095e-0461-43b5-a052-ad8842253577', context);
+  ```
 
-const queryOptions = {
-  operator: 'and',
-  queries: [
-    { attribute: 'id', operator: '=', value: myId },
-    { attribute: 'process', operator: '=', value: this.process }
-  ]
-};
-const processTokenEntities = await processTokenEntityType.query(context, queryOptions);
-```
+- Eine Entität aktualisieren
+  ```TypeScript
+  /*
+  updateEntity<T extends IEntity>(typeName: TypeKey,
+                                  id: string,
+                                  data: any,
+                                  context: ExecutionContext,
+                                  options?: IPublicSaveOptions): Promise<T>;
+  */
+  const updatedEntity = this.datastoreService.updateEntity('flowDef', '747c095e-0461-43b5-a052-ad8842253577', {
+    name: 'test',
+  }, context);
+  ```
+
+- Eine Entität löschen
+  ```TypeScript
+  /*
+  removeEntity(typeName: TypeKey,
+               id: string,
+               context: ExecutionContext, 
+               ptions?: IPublicRemoveOptions): Promise<void>;
+  */
+  this.datastoreService.removeEntity('flowDef', '747c095e-0461-43b5-a052-ad8842253577', context);
+  ```
+
+- Eine Methode auf einer Entität ausführen
+  ```TypeScript
+  /*
+  executeEntityMethod(typeName: TypeKey,
+                      id: string,
+                      method: string,
+                      data: any,
+                      context: ExecutionContext,
+                      options?: IPublicGetOptions): Promise<any>;
+  */
+  const userTaskData = this.datastoreService.executeEntityMethod('UserTask', '7aca65af-a4df-496f-998c-a17ec21c0da8', 'getUserTaskData', {}, context);
+
+  /*
+  userTaskData = {
+    userTaskEntity: UserTaskEntity {},
+    uiName: 'Form',
+    uiData: { history: {} },
+    uiConfig: undefined
+  }
+  */
+  ```
+
+- Eine Methode auf einem [Entitäten-Service](./entity-services.md) ausführen
+  ```TypeScript
+  /*
+  executeEntityTypeMethod(typeName: TypeKey,
+                          method: string,
+                          data: any,
+                          context: ExecutionContext,
+                          options?: IPublicGetOptions): Promise<any>;
+  */
+  const entityType = this.datastoreService.executeEntityTypeMethod('NodeInstance', 'getEntityTypeFromBpmnType', {
+    bpmnType: 'bpmn:CallActivity'
+  }, context);
+
+  // entityType = SubprocessExternalEntityType {};
+  ```
 
 ## Datenspeicher HTTP REST API
 
-Der Datenspeicher ist auch über eine HTTP-REST-API verfügbar.
+Der Datenspeicher ist auch über eine [HTTP-REST-API](http://dev.wtf/pe_apidoc.html#tag-datastore) verfügbar.
 
-Diese wird automatisch an Ihrem HTTP-Endpunkt angeschlossen (z. B. http://localhost:8000/datastore).
+> TODO: Korrekten API-Link verwenden. Dieser hier ist temporär
 
-## Datenspeicher GraphQL
-
-Zusätzlich ist es möglich den Datenspeicher über eine GraphQL-API zu verwenden.
-
-Diese wird auch automatisch an Ihrem HTTP-Endpunkt angeschlossen (z. B. http://localhost:8000/graphql);
