@@ -2,11 +2,16 @@
 
 ## Dekoratoren
 
-Um Implementierungen und Daten zu schützen, kann man mögliche Aktionen mit einer Rolle verknüpfen, die für die Ausführung erforderlich ist.
+Um Implementierungen und Daten zu schützen, kann man mögliche Aktionen mit einer
+Rolle verknüpfen, die für die Ausführung erforderlich ist.
 
-Der Dekorator, der verwendet wird, um diese zu definieren, kann auf Klassen, Eigenschaften und Methoden platziert werden.
+Der Dekorator, der verwendet wird, um diese zu definieren, kann auf Klassen,
+Eigenschaften und Methoden platziert werden.
 
-_Hinweis: Man kann den Klassendekorator mit Methoden- und Eigenschaftsdekoratoren überschreiben. Dies überschreibt es nur für die dekorierten Methoden und Eigenschaften. Nichtdekorierte Eigenschaften werden weiterhin die Klasseneinstellungen anwenden._
+_Hinweis: Man kann den Klassendekorator mit Methoden- und
+Eigenschaftsdekoratoren überschreiben. Dies überschreibt es nur für die
+dekorierten Methoden und Eigenschaften. Nichtdekorierte Eigenschaften werden
+weiterhin die Klasseneinstellungen anwenden._
 
 ```typescript
 @requiresClaim({
@@ -52,11 +57,13 @@ Claims werden unter dem folgenden Pfad konfiguriert:
 ```
 
 Der `namespace` ist der Namespace der Claims, die man konfigurieren möchten.
-Wenn man den Standardnamespace verwendet, heißt der Namespace in der Konfigurationsstruktur `default_namespace`.
+Wenn man den Standardnamespace verwendet, heißt der Namespace in der
+Konfigurationsstruktur `default_namespace`.
 
 ### Default
 
-Die Standardberechtigungen für einen Namespace können in der Datei `default_permissions.json` direkt im Namespace-Ordner konfiguriert werden.
+Die Standardberechtigungen für einen Namespace können in der Datei
+`default_permissions.json` direkt im Namespace-Ordner konfiguriert werden.
 
 Die Datei sieht wie folgt aus:
 ```
@@ -110,7 +117,8 @@ Entity Type Services unterscheiden sich in der Konfiguration nicht von Entity Ty
 Sie sind jedoch im Ordner `entity_type_services` anstelle von` entity_types` definiert.
 Die JSON-Datei enthält ebenfalls kein Suffix.
 
-Die zwei Blöcke repräsentieren Rollen, die definiert sind, um Ansprüche der `class level` und `member level` zu erfüllen.
+Die zwei Blöcke repräsentieren Rollen, die definiert sind, um Ansprüche der
+`class level` und `member level` zu erfüllen.
 
 ## Benutzung
 
@@ -141,7 +149,8 @@ Vor dem Typ können mehrere Segmente definiert werden.
 
 ## Naming Convention
 
-Claims bestehen aus mehreren Segmenten, die durch einen Punkt als Abstandhalter zwischen den Segmenten getrennt sind.
+Claims bestehen aus mehreren Segmenten, die durch einen Punkt als Abstandhalter
+zwischen den Segmenten getrennt sind.
 
 ```
 something.something.something
@@ -151,11 +160,14 @@ something.something.something
 
 Es gibt spezielle Arten von Segmenten.
 
-Wenn ein Segment keine solche spezielle Art ist, wird es nur verwendet, um einen Namespace zu definieren, der leicht zu verstehen ist und mit der Ordnerstruktur des Codes korreliert.
+Wenn ein Segment keine solche spezielle Art ist, wird es nur verwendet, um einen
+Namespace zu definieren, der leicht zu verstehen ist und mit der Ordnerstruktur
+des Codes korreliert.
 
 ### Action
 
-Eine Aktion ist ein optionales Element des Claims und muss das letzte Segment des Claims sein.
+Eine Aktion ist ein optionales Element des Claims und muss das letzte Segment
+des Claims sein.
 
 Es kann einer der folgenden Werte sein:
 * create
@@ -169,7 +181,8 @@ Es kann einer der folgenden Werte sein:
 
 Typen beziehen sich auf einen Klassentyp in der Implementierung.
 
-Da Typen aus einem String geparst werden müssen, können nur bekannte Typen, die durch eine Benennungskonvention identifizierbar sind, als Typ verwendet werden.
+Da Typen aus einem String geparst werden müssen, können nur bekannte Typen, die
+durch eine Benennungskonvention identifizierbar sind, als Typ verwendet werden.
 
 Derzeit werden die folgenden Typen unterstützt:
 
