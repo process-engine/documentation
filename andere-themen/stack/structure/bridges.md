@@ -1,9 +1,9 @@
-# Bridges
+# Bridge-Module
 
-Wenn ein Basismodul an ein anderes gebunden wird, sind die Implementierungen
+Wenn ein Basismodul an ein anderes gebunden wird, bleiben die Implementierungen
 völlig unabhängig voneinander.
 
-Ein Beispiel sind `http`-Bridges.
+Ein Beispiel dazu sind die `http`-Bridges.
 
 Wenn Servicelogik über einen HTTP-Endpunkt verfügbar sein soll, muss
 definiert werden über welche HTTP-Routen und -Methoden sie zu erreichen ist.

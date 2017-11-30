@@ -2,8 +2,7 @@
 
 Es wurde bereits erläutert, dass Module reguläre NPM-Pakete mit Abhängigkeiten
 sind. Wenn mit einem Stack dieser Größe gearbeitet wird, muss sichergestellt
-werden, dass jede Komponente durch Dependency Injection austauschbar ist, ohne
-den Code zu ändern.
+werden, dass jede Komponente durch Dependency Injection austauschbar ist.
 
 Beispielsweise gibt es eine Klasse `ReportingService` in einem Modul
 `reporting`, das von der Klasse `LoggingService` des Moduls `logging` abhängt.
@@ -18,4 +17,4 @@ von` logging_contracts`.
 
 Da das `reporting`-Modul keine Referenzen auf die Implementierung hat, kann die
 Implementierung vollständig durch Dependency Injcetion geändert werden, solange
-unser Ersatz den Vertrag erfüllt (die Schnittstelle implementiert).
+unser Ersatz die Schnittstelle implementiert.
