@@ -4,17 +4,17 @@
 
 ![Process Definition List](./Process Definition List.png)
 
-Der "Process Definition List"-Dialog zeigt alle Prozessdefinitionen, die zurzeit
+Der "Process Definition List"-Dialog zeigt alle Prozessmodelle, die zurzeit
 in der Datenbank vorhanden sind.
 Die drei, schon beim ersten Start der Anwendung vorhandenen, Prozesse sind vorgefertigt
 und sind bereits in der Datenbank enthalten.
 
 Oben links befindet sich der "Create Process Definition"-Button.
-Dieser öffnet einen Dialog zum Erstellen einer neuen Prozessdefinition.
-Diese, neue Prozessdefinition, kann nach dem erstellen mit dem entsprechenden
+Dieser öffnet einen Dialog zum Erstellen eines neuen Prozessmodells.
+Dieses neue Prozessmodell kann nach dem erstellen mit dem entsprechenden
 "Details"-Button, rechts in der Tabelle, bearbeitet werden.
 
-Der "Start"-Button links neben dem "Details"-Button dient lediglich zum starten
+Der "Start"-Button links neben dem "Details"-Button dient lediglich zum Starten
 der entsprechenden Prozessdefinition.
 
 ## Task List
@@ -46,7 +46,7 @@ Dessen Funktionen sind hier aufgeführt:
 
 - Start - Startet eine Instanz dieses Prozesses
 - Processes - Zeigt eine Liste der Prozessinstanzen von diesem Prozess
-- Tasks - Zeigt eine Liste von Tasks die mit diesem Prozess zusammenhängen
+- Tasks - Zeigt eine Liste von Tasks, die mit diesem Prozess zusammenhängen
 - Save - Speichert die Änderungen an diesem Prozess
 - Delete Process - Löscht diesen Prozess
 - Export Diagramm - Exportiert dieses Diagramm als .bpmn-Datei
