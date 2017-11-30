@@ -1,16 +1,12 @@
 # Bridges
 
-Wenn ein Basismodul an ein anderes gebunden werden soll, wird es so sein, dass
-die Implementierungen völlig unabhängig voneinander sind.
+Wenn ein Basismodul an ein anderes gebunden wird, sind die Implementierungen
+völlig unabhängig voneinander.
 
-Ein Beispiel sind `http`-Bridges. Normalerweise enthalten Basismodule meist
-Dienste, die Logik kapseln.
+Ein Beispiel sind `http`-Bridges.
 
-Wenn die Service-Logik über einen HTTP-Endpunkt verfügbar sein soll, muss
-definiert sein, welche HTTP-Routen und -Methoden verwendet werden können, um die
-Service-Logik auszuführen. Der Code, der dies bewirkt, befindet sich im
-Bride-Modul.
+Wenn Servicelogik über einen HTTP-Endpunkt verfügbar sein soll, muss
+definiert werden über welche HTTP-Routen und -Methoden sie zu erreichen ist.
+Dieser Code befindet sich im Bridge-Modul.
 
 ![Bridge](images/bridges.png)
-
-Üblicherweise werden Bridge-Module mit _Inversion of Control_ (siehe 3.1) gefunden.
