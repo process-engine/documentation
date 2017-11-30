@@ -7,7 +7,7 @@ das anfragende Modul.
 
 Der Vorteil:
 
-Die Methode, welche die Verbindung zur Software des Dritt-Anbieters herstellt, ist lediglich im Adapter implementiert; bei einem Wechsel der Software muss nur das Adapter-Modul ausgetauscht werden.
+Die Methode, welche die Verbindung zur Software des Drittanbieters herstellt, ist lediglich im Adapter implementiert; bei einem Wechsel der Software muss nur das Adaptermodul ausgetauscht werden.
 Somit wird sichergestellt, dass keine Änderungen an dem anfragenden Modul vorgenommen werden müssen.
 
 Die besten Beispiele hierfür sind die in dem Stack verwendeten `data source adapter`.
