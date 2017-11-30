@@ -85,8 +85,8 @@ class ExampleService {
 ## Deklaration
 
 Die Deklaration eines Konfigurationsobjekts erfolgt während der Registrierung
-der Klassen auf dem IoC-Container (siehe [Dependency
-Injection](../module-interaction/dependency-injection.md)).
+der Klassen auf dem IoC-Container (siehe
+[Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript
 container.register('ExampleService', ExampleService)
@@ -108,14 +108,20 @@ verschiedenen Konfigurationsquellen dargestellt werden.
 
 ### Statische Konfiguration
 
-Die statische Konfiguration wird als einzelne Konfigurationsdatei ODER als
-mehrere Konfigurationsdateien in einem Konfigurationsordner bereitgestellt.
+Die statische Konfiguration kann:
+
+1. als einzelne Konfigurationsdatei
+1. als mehrere Konfigurationsdateien
+
+in einem Konfigurationsordner bereitgestellt werden.
 
 #### Konfigurationsdatei
 
 Wenn die statische Konfiguration innerhalb einer einzelnen JSON-Datei
 bereitgestellt wird, werden die Hierarchieebenen als Knoten dieser JSON-Datei
-dargestellt:
+dargestellt.
+
+Ein möglicher Aufbau der JSON-Konfigurationsdatei ist:
 
 ```javascript
 {
@@ -167,7 +173,8 @@ export development__example__example_service__myValue=test
 ```
 
 Hinweis: So würde die Umgebungsvariable in einer **Linux**-Umgebung festgelegt
-werden. Die Syntax ist in allen Betriebssystemen unterschiedlich.
+werden. Der Befehl zum Anlegen einer Umgebungsvariable ist abhängig vom
+Betriebssystem.
 
 ### Kommandozeilenargumente
 
@@ -181,13 +188,19 @@ node myApp --example:example_service:myValue test
 Zusätzliche Argumente können einfach durch Anhängen eines anderen Arguments
 unter Verwendung derselben Syntax bereitgestellt werden.
 
+```
+node myApp \
+      --example:example_service:myValue \
+      --example2:example_service2:myValueBla \
+      test
+```
+
 ### Dynamische Konfiguration
 
-Im Gegensatz zu allen anderen Konfigurationsquellen ist die dynamische
-Konfiguration die einzige Quelle, die zur Laufzeit ausgewertet wird.
-
-Dies erzeugt die Flexibilität für erweiterte Szenarien wie das Abrufen der Konfiguration
-von einer Netzwerkquelle oder von bedingten Konfigurationselementen.
+Grundsätzlich ist die Konfiguration statisch;
+wir unterscheiden vier Quellen für die Konfiguration;
+drei statische, eine dynamische;
+die Dynamische Konfiguration ist die einzige Quelle, die zur Laufzeit geändert werden kann.
 
 Die dynamische Konfiguration wird mit einem `Resolver` von addict-ioc
 implementiert.
@@ -197,7 +210,3 @@ mehreren Layern zur Verfügung zu stellen, die sich in dieser Reihenfolge
 überschreiben:
 
 `eine Klasse > mehrere Klassen > alle Klassen, die im IoC-Container registriert sind`
-
-Mit einer "factory" können diese sogar zur Laufzeit übrschrieben werden.
-Dazu wird sie als zusätzlicher Parameter der `resolve` Methode des IoC-Containers
-zur Verfügung gestellt.
