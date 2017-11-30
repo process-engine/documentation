@@ -25,6 +25,7 @@ werden müssen
 
 "Roles" oder "Rollen" sind eine abstrakte Möglichkeit Zuständigkeiten
 definieren.
+
 Das ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen mit ein.
 
 Wir können einem Element in einem Diagramm also einer Rolle zuordnen. Wenn wir dies tun,
