@@ -43,7 +43,7 @@ Durch den Aufruf von `getProperty` und `setProperty` erhält man alle verfügbar
 ## Entitätsschemas
 
 Der Stack ist datenbankunabhängig und verwendet ein eigenes
-Datenmodell, dass zur Beschreibung der Persistierung von Daten dient.
+Datenmodell, das zur Beschreibung der Persistierung von Daten dient.
 
 Die Konfiguration des Datenmodells erfolgt mit Hilfe von ES7 Decorators.
 In diesem Fall ist es der `schemaAttribute`-Dekorator.
@@ -62,7 +62,7 @@ In diesem Fall ist es der `schemaAttribute`-Dekorator.
 Der Dekorator wird oberhalb der Getter-Funktion der Eigenschaft platziert und
 nimmt ein `ISchemaAttribute` als Argument an. Für die Darstellung in der Datenbank muss in den meisten Fällen nur angeben werden, welcher Typ verwendet werden soll. Der Typ kann entweder eine der Optionen der Enumeration
 `SchemaAttributeType` oder ein `String` (in Pascal-Case) sein, wenn man einen
-eigenen Typ verwenden möchten.
+eigenen Typ verwenden möchte.
 
 ## Entitätsmethoden
 
