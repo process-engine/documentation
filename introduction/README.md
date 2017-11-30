@@ -3,7 +3,7 @@
 ## Das Problem
 
 Viele Firmen besitzen Dokumentationen darüber, wie etwas in einem Diagramm dargestellt
-werden soll. Dies ist ein guter Weg um ein einheitliches Verständnis für Koordination
+werden soll. Das ist ein guter Weg um ein einheitliches Verständnis für die Koordination
 von Prozessen zu schaffen.
 
 Das große Problem ist, dass die Einhaltung dieser Richtlinien meist mit sehr viel
