@@ -1,9 +1,9 @@
 # Datenspeicher
 
 Der Datenspeicher ist ein allgemeingültiges Modul zum interagieren mit
-[Entitäten](./entities.md). Mit ihm können:
+Entitäten. Mit ihm können:
 
-- [Entitäten](./entities.md) erstellt, geladen und gespeichert werden.
+- Entitäten erstellt, geladen und gespeichert werden.
 - Methoden auf den Entitäten und [Entitäten-Service](./entity-services.md)
   aufgerufen werden.
 - Entitäten-Definitionen (sogenannte `EntityTypes`) angefragt werden.

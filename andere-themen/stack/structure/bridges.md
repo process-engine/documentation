@@ -1,6 +1,7 @@
 # Bridge-Module
 
-Wenn ein Basismodul an ein anderes gebunden wird, bleiben die Implementierungen
+Wenn ein Basismodul an ein anderes gebunden wird,
+bleiben mit Hilfe eines Brückenmoduls die Implementierungen 
 völlig unabhängig voneinander.
 
 Ein Beispiel dazu sind die `http`-Bridges.

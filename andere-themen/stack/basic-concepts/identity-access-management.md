@@ -5,13 +5,11 @@
 Um Implementierungen und Daten zu schützen, kann man mögliche Aktionen mit einer
 Rolle verknüpfen, die für die Ausführung erforderlich ist.
 
-Der Dekorator, der verwendet wird, um diese zu definieren, kann auf Klassen,
+Der Dekorator, der dazu verwendet wird, kann an Klassen,
 Eigenschaften und Methoden platziert werden.
 
-_Hinweis: Man kann den Klassendekorator mit Methoden- und
-Eigenschaftsdekoratoren überschreiben. Dies überschreibt es nur für die
-dekorierten Methoden und Eigenschaften. Nichtdekorierte Eigenschaften werden
-weiterhin die Klasseneinstellungen anwenden._
+_Hinweis: Dekoratoren an Methoden und Eigenschaften überschreiben für diese 
+Methode/Eigenschaft den Klassendekorator._
 
 ```typescript
 @requiresClaim({
@@ -86,8 +84,6 @@ Die Datei sieht wie folgt aus:
         +-- <<type>>.json
 ```
 
-Der `type` ist der Name der Entität, die ohne Entity-Suffix beschrieben wurde.
-
 In der JSON-Datei sieht die Struktur wie folgt aus:
 
 ```
@@ -114,7 +110,7 @@ In der JSON-Datei sieht die Struktur wie folgt aus:
 
 Entity Type Services unterscheiden sich in der Konfiguration nicht von Entity Types.
 
-Sie sind jedoch im Ordner `entity_type_services` anstelle von` entity_types` definiert.
+Sie sind im Ordner `entity_type_services` anstelle von `entity_types` definiert.
 Die JSON-Datei enthält ebenfalls kein Suffix.
 
 Die zwei Blöcke repräsentieren Rollen, die definiert sind, um Ansprüche der
@@ -133,7 +129,7 @@ Optionale Elemente sind mit Klammern markiert.
 
 #### Member Level
 
-Ein Mitglied kann entweder eine Eigenschaft oder eine Methode sein.
+Ein Member kann entweder eine Eigenschaft oder eine Methode sein.
 
 ```
 (namespace.)type.member(.action)
@@ -150,7 +146,7 @@ Vor dem Typ können mehrere Segmente definiert werden.
 ## Naming Convention
 
 Claims bestehen aus mehreren Segmenten, die durch einen Punkt als Abstandhalter
-zwischen den Segmenten getrennt sind.
+getrennt sind.
 
 ```
 something.something.something
