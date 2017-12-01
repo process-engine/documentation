@@ -1,4 +1,4 @@
-# E-Mails versenden
+# Emails versenden
 
 Das Beispiel "Nutzung einer REST API" wird um den Versand von Emails erweitert.
 Dabei werden die geladenen Daten versendet.
