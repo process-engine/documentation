@@ -1,8 +1,10 @@
 ## E-Mails versenden
 
-Nun erweitern wir das Beispiel Nutzung einer REST API, sodass die geladenen Daten per E-Mail versendet werden.
+Das Beispiel "Nutzung einer REST API" wird um den Versand von EMails erweitert.
+Dabei werden die geladenen Daten versendet.
 
-Dazu updaten wir den Prozess so, dass dieser nach einer E-Mail-Adresse fragt, eine Bestätigung anfordert und dann eine E-Mail mit dem Wechselkurs an die entsprechende E-Mail versendet.
+Dazu updaten wir den Prozess so, dass dieser nach einer E-Mail-Adresse fragt, eine
+Bestätigung anfordert und dann eine E-Mail mit dem Wechselkurs an die entsprechende E-Mail versendet.
 
 Um das zu erreichen, müssen erst ein paar Vorbereitungen getroffen werden.
 Dazu wir der Pool und der Startpunkt zu `Emails versenden` umbenannt und die Lane vergrößert, da mehr Platz benötigt wird.
