@@ -2,21 +2,21 @@
 
 ## Das Problem
 
-Viele Firmen besitzen Dokumentationen darüber, wie etwas in einem Diagramm dargestellt
-werden soll. Das ist ein guter Weg, um ein einheitliches Verständnis für die Koordination
-von Prozessen zu schaffen.
+Viele Firmen Dokumentieren in Diagrammen, wie Geschäftsprozesse ablaufen sollen.
+Das ist ein guter Weg um ein einheitliches Verständnis für die Koordination
+der Prozesse zu schaffen.
 
-Ein Problem dabei ist, dass die exakte Einhaltung dieser Prozesse meist mit sehr viel
-Zeit und Aufwand verbunden ist. Deshalb verschwinden solche Prozesse meist
+Ein Problem dabei ist, dass die exakte Einhaltung dieser Prozesse meist mit viel
+Zeit und Aufwand verbunden ist. Deshalb verschwinden solche Prozesse häufig
 "im Schreibtisch".
 
 ## Was tun wir dagegen?
 
 Wir sehen in einem BPMN Prozess mehr als ein einfaches Dokument.
 
-Vielmehr soll es eine Sammlung von Anweisungen sein, die beschreiben wie sich
-eine Software verhalten soll. Statt den Prozess selbst zu Implementieren
-verlassen wir uns dabei auf die Process Engine.
+Diese Sammlung von Anweisungen kann verwendet werden, um zu beschreiben wie
+eine Software sich verhalten soll. Die Process Engine hilft uns dabei, große
+Teile der Geschäftsprozesse zu automatisieren.
 
 Alles was wir dazu tun müssen, ist das Diagramm mit einigen technischen
 Informationen anzureichern.
