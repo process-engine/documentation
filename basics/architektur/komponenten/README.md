@@ -12,7 +12,7 @@ Es wird häufig genutzt um:
 
 ## User Task
 
-Ein "User Task" repräsentiert einen "Tasks" oder ein "Aufgaben" die nur manuell
+Ein "User Task" repräsentiert einen Task oder eine Aufgabe die nur manuell
 erledigt werden kann.
 Diese werden genutzt um:
 
