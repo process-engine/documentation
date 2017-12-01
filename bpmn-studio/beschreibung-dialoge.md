@@ -2,52 +2,64 @@
 
 ## Process Definition List
 
-![Process Definition List](./Process Definition List.png)
+![Process Definition List](./process-definition-list.png)
 
 Der "Process Definition List"-Dialog zeigt alle Prozessmodelle, die zurzeit
 in der Datenbank vorhanden sind.
-Die drei, schon beim ersten Start der Anwendung vorhandenen, Prozesse sind vorgefertigt
-und sind bereits in der Datenbank enthalten.
+
+Bei Start der Anwendung sind zwei Prozesse vorhanden:
+
+1.  Prozess löschen
+1.  Prozess erstellen
 
 Oben links befindet sich der "Create Process Definition"-Button.
-Dieser öffnet einen Dialog zum Erstellen eines neuen Prozessmodells.
+Er öffnet einen Dialog zum Erstellen eines neuen Prozessmodells.
 Dieses neue Prozessmodell kann nach dem erstellen mit dem entsprechenden
 "Details"-Button, rechts in der Tabelle, bearbeitet werden.
 
-Der "Start"-Button links neben dem "Details"-Button dient lediglich zum Starten
-der entsprechenden Prozessdefinition.
+Der "Start"-Button links neben dem "Details"-Button dient zum Starten einer
+Prozessinstanz anhand des Prozessmodells.
 
 ## Task List
 
-![Task List](./Task List.png)
+![Task List](./task-list.png)
 
-Der "Task List"-Dialog zeigt alle Tasks, die für den angemeldeten User verfügbar sind.
-Oben im Bild wird ein Task, des "Prozess erstellen"-Prozesses, angezeigt.
-Nun wartet dieser Task auf eine weitere Eingabe von diesem Benutzer.
-Mit einem Klick auf den "Continue"-Button, rechts in der Tabelle, wird
-der Nutzer zu dem entsprechenden Dialog geführt.
+Der "Task List"-Dialog zeigt alle Tasks, die für den angemeldeten Benutzer
+verfügbar sind.
+
+Im Bild wird ein Task des "Prozess erstellen"-Prozesses angezeigt. Der Task
+wartet darauf, von einem Benutzer bearbeitet zu werden. Mit einem Klick auf den
+"Continue"-Button wird der Nutzer zu einer Overfläche zum bearbeiten des Task
+geführt.
 
 ## Process Instance List
 
-![Process Instance List](./Process Instance List.png)
+![Process Instance List](./process-instance-list.png)
 
-Der "Process Instance List"-Dialog zeigt alle Prozessinstanzen, die entweder
-gerade ausgeführt werden, oder schon ausgeführt wurden. Mit dem Dropdown, in
-der Spalte "State", kann man die Tabelle nach dem sog. "State" sortieren.
+Der "Process Instance List"-Dialog zeigt die Prozessinstanzen die:
+
+- gerade ausgeführt werden.
+- schon ausgeführt wurden.
+
+Insgesamt stellt der Dialog eine Liste aller Prozessinstanzen dar.
+
+Mit dem Dropdown, in der Spalte "State", kann man die Tabelle nach dem Status
+der Prozessinstanz sortieren.
 
 ## Der Prozess Editor
 
-![Prozess Editor](./Prozess Editor.png)
+![Prozess Editor](./process-editor.png)
 
 In der Mitte des Bildschirms wird der Prozess Editor angezeigt.
-Links finden sich alle Werkzeuge, die zum Bearbeiten eines Prozesses
+Am linken Bildschirmrand finden sich alle Werkzeuge, die zum Bearbeiten eines Prozesses
 notwendig sind. Eine weitere Toolbar befindet sich oberhalb des Editors.
-Dessen Funktionen sind hier aufgeführt:
 
-- Start - Startet eine Instanz dieses Prozesses
-- Processes - Zeigt eine Liste der Prozessinstanzen von diesem Prozess
-- Tasks - Zeigt eine Liste von Tasks, die mit diesem Prozess zusammenhängen
-- Save - Speichert die Änderungen an diesem Prozess
-- Delete Process - Löscht diesen Prozess
-- Export Diagramm - Exportiert dieses Diagramm als .bpmn-Datei
+Diese bietet die folgenden Funktionen:
+
+- Start - Startet eine neue Prozessinstanz anhand des Prozessmodells.
+- Processes - Zeigt eine Liste von Prozessinstanzen zu dem Prozessmodell.
+- Tasks - Zeigt eine Liste von Tasks, die zu dem Prozessmodell gehören.
+- Save - peichert die Änderungen am Prozessmodell.
+- Delete Process - Löscht das Prozessmodell.
+- Export Diagramm - Exportiert das Diagramm als .bpmn-Datei
 - Import Diagramm - Importiert ein Diagramm aus einer .bpmn-Datei
