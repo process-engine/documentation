@@ -13,7 +13,7 @@ Die Konfiguration einer Applikation soll in vier Stufen erfolgen:
 
 Die Konfigurationsdatei der Anwedung beinhaltet:
 
-```
+```json
 [config]
   port=8000
 ```
@@ -48,7 +48,7 @@ man folgende Aussage treffen:
 An unserem Beispiel sieht das wie folgt aus:
 
 ```
-$ cat config.txt
+$ cat config.json
 [config]
   port=8000
 
@@ -84,8 +84,7 @@ class ExampleService {
 
 ## Deklaration
 
-Die Deklaration eines Konfigurationsobjekts erfolgt während der Registrierung
-der Klassen auf dem IoC-Container (siehe
+Wo eine Klasse ihre Konfiguration her bekommt, wird entschieden, wenn die Klasse am IoC-Container registriert wird (siehe
 [Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript
@@ -93,17 +92,16 @@ container.register('ExampleService', ExampleService)
   .configure('example:example_service');
 ```
 
-In diesem Beispiel lautet die Konfigurationsdeklaration `example:example_service`.
+In diesem Beispiel würde die Konfiguration z.B: aus einer Datei `example_service.json` aus einem Ordner `example` geladen.
 
 ## Namenskonvention
 
-Mit der Namenskonvention kann man die Objekthierarchie der Konfigurationsobjekte
-durch einen Spacer getrennt angeben - in diesem Fall `:`.
+Eine Namenskonvention besagt, dass die Ebenen der Konfigurations-Quellen-Angabe mit einem `:` getrennt werden.
 
 Das Beispiel von vorher hat zwei Schichten, die seine Hierarchie bilden -
 `example` und `example_service`.
 
-In den folgenden Abschnitten wird untersucht, wie diese Hierarchien in
+In den folgenden Abschnitten wird beschrieben, wie diese Hierarchien in
 verschiedenen Konfigurationsquellen dargestellt werden.
 
 ### Statische Konfiguration
@@ -133,7 +131,7 @@ Ein möglicher Aufbau der JSON-Konfigurationsdatei ist:
 }
 ```
 
-Standardmäßig lautet die Konfigurationsdatei `./config.json` im Projektstammverzeichnis.
+Standardmäßig ist der Name der Konfigurationsdatei `./config.json` im Projektstammverzeichnis.
 
 #### Konfigurationsordner
 
@@ -141,7 +139,7 @@ Der Konfigurationsordner verwendet die gleiche Struktur wie die
 Konfigurationsdatei. Die Knoten der JSON-Datei werden hier als Dateien und
 Ordner dargestellt.
 
-In diesem Beispiel würde die Dateistruktur so aussehen:
+In dem Beispiel würde die Dateistruktur so aussehen:
 
 ```
 .
@@ -150,9 +148,9 @@ In diesem Beispiel würde die Dateistruktur so aussehen:
         +-- example_service.json
 ```
 
-und der Inhalt von 'example_service.json` so:
+und der Inhalt von `example_service.json` so:
 
-```
+```json
 {
   "myValue": "test"
 }
@@ -178,8 +176,10 @@ Betriebssystem.
 
 ### Kommandozeilenargumente
 
-Bei Verwendung von Befehlszeilenargumenten werden die Hierarchieebenen wie in
+Bei Verwendung von Kommandozeilenargumenten werden die Hierarchieebenen wie in
 der [Deklaration](#Deklaration) verwendet.
+
+Hier wird der Umgebungsvariable `myValue` aus der Datei `example_service`, aus dem Ordner `example`, der Wert `test` zugewiesen.
 
 ```
 node myApp --example:example_service:myValue test
@@ -202,11 +202,6 @@ wir unterscheiden vier Quellen für die Konfiguration;
 drei statische, eine dynamische;
 die Dynamische Konfiguration ist die einzige Quelle, die zur Laufzeit geändert werden kann.
 
-Die dynamische Konfiguration wird mit einem `Resolver` von addict-ioc
-implementiert.
+Wenn man den IoC-container beauftragt, eine neue Instanz einer Klasse zu erzeugen, kann dabei ein Konfigurationsobjekt mitgegeben werden.
 
-Resolver können verwendet werden, um eine dynamische Konfiguration auf
-mehreren Layern zur Verfügung zu stellen, die sich in dieser Reihenfolge
-überschreiben:
-
-`eine Klasse > mehrere Klassen > alle Klassen, die im IoC-Container registriert sind`
+Mehr Informationen dazu sind in der [Dokumentation von addict-ioc](https://www.npmjs.com/package/addict-ioc) zu finden. Da addict-ioc hier auf viele verschiedene Weisen verwendet werden kann, und diese Art der Konfiguration nur selten benötigt wird, würde eine detailreiche Beschreibung hier zu weit gehen.
