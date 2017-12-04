@@ -135,7 +135,7 @@ Ein Member kann entweder eine Eigenschaft oder eine Methode sein.
 (namespace.)type.member(.action)
 ```
 
-### Custom
+### Custom Segmentss
 
 Vor dem Typ können mehrere Segmente definiert werden.
 
