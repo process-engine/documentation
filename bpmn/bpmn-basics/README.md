@@ -34,3 +34,24 @@ Modelliert werden können:
    - Diese Prozesse sind in Teilen oder als Ganzes automatisierbar.
 
 ## BPMN-Elemente
+
+### Aktivität
+
+Eine Aktivität symbolisiert, dass etwas getan werden soll. Das Symbol sieht so
+aus:
+
+![](./activity.svg)
+
+#### Spezialformen der Aktivität:
+
+Name        |         Symbol          |                                                  Beschreibung
+----------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------
+Benutzeraktivität | <img width="200px" src="./user_task.svg"/> | Stellt eine Aktivität dar, die eine Benutzerinteraktion erfordert.
+Serviceaktivität  | <img width="200px" src="./service_task.svg"/> | Stellt eine Aktivität dar, die einen Dienst wie einen Webdienst oder eine automatisierte Anwendung verwendet.
+Skriptaktivität   | <img width="200px" src="./script_task.svg"/>  | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer Process Engine ausgeführt werden soll.
+Aufrufaktivität | <img width="200px" src="./call_activity.svg"/> | Stellt eine Aktivität dar, die einen anderen Prozess aufruft. Sobald der aufgerufene Prozess beendet ist, ist auch die Aufrufaktivität beendet
+
+### Ereignis
+
+![](./event.svg)
+
