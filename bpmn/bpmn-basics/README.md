@@ -42,7 +42,7 @@ aus:
 
 ![](./activity.svg)
 
-#### Spezialformen der Aktivität:
+#### Spezialformen der Aktivität
 
 |       Name        |                     Symbol                     |                                                                  Beschreibung                                                                  |
 | ----------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ Ein Ereignis symbolisiert, dass etwas passiert. Das Symbol sieht so aus:
 
 ![](./event.svg)
 
-#### Eintrittszeitpunkte von Ereignissen:
+#### Eintrittszeitpunkte von Ereignissen
 
 |       Name       |                      Symbolbeispiel                      |                                         Beschreibung                                         |
 | ---------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -78,3 +78,5 @@ Ein Ereignis symbolisiert, dass etwas passiert. Das Symbol sieht so aus:
 | ----------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Empfangendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Ein nicht-ausgefülltes Ereignissymbol stellt ein empfangendes Ereignis dar. Hier angekommen wird der Prozess erst weiter ausgeführt, wenn das Ereignis eintritt  |
 | Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ein ausgefülltes Ereignissymbol stellt ein auslösendes Ereignis dar. Hier angekommen wird das Ereignis ausgelöst, und der Prozess wird sofort weiter ausgeführt. |
+
+#### Symbole von Ereignissen
