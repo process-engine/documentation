@@ -90,6 +90,6 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 | Nachricht | <img width="50px" src="./message_event.svg"> <img width="50px" src="./message_receive_event.svg"> | Empfang und Versand von Nachrichten.                             |
 | Zeit      | <img width="50px" src="./timer_event.svg">                                                        | Periodisch zeitliche Ereignisse, Zeitpunkte oder Zeitspannen.    |
 | Signal    | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Sendet oder reagiert auf ein Signal.                             |
-| Bedingung | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln |
-| Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln |
+| Bedingung | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln. |
+| Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Auslösen und Behandeln von Fehlern. |
 
