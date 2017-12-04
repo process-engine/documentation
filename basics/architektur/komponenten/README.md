@@ -2,29 +2,28 @@
 
 ## Service Task
 
-Ein "Service Task" repräsentiert einen "Task" oder eine "Aufgabe", die ohne
-menschliches hinzutun erledigt werden kann.
+Eine "Service Task" repräsentiert eine Aufgabe, die ohne
+menschliches Hinzutun erledigt werden kann.
 Es wird häufig genutzt um:
 
-- Daten von einer REST API zu empfangen.
-- Eine Mail zu versenden.
-- Ein Script auszuführen.
+- Daten von einer REST-API zu empfangen
+- Eine Mail zu versenden
+- Ein Script auszuführen
 
 ## User Task
 
-Ein "User Task" repräsentiert einen Task oder eine Aufgabe die nur manuell
+Eine "User Task" repräsentiert eine Aufgabe, die nur manuell
 erledigt werden kann.
 Diese werden genutzt um:
 
-- Nutzerdaten aufzunehmen.
-- Entscheidungen zu treffen.
-- Daten zu verifizieren, die aufgrund von Gesetzen von einem Menschen geprüft
-werden müssen.
+- Nutzerdaten aufzunehmen
+- Informationen dem Nutzer präsentieren
+
 
 ## Roles
 
-"Roles" oder "Rollen" sind eine abstrakte Möglichkeit Zuständigkeiten
-definieren.
+"Roles" (Rollen) sind eine abstrakte Möglichkeit Zuständigkeiten
+zu definieren.
 
 Das ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen mit ein.
 
@@ -43,11 +42,12 @@ ausgeführt werden soll, wird er nur auf einem [Client]() ausgeführt, an dem ei
 ## Gateways
 
 "Gateways" werden genutzt, um Fallunterscheidungen zu modellieren. Dabei kann
-der aktuelle Ausführungspfad in mehrere Pfade aufgeteilt werden, oder mehrere Pfade
-zu einem zusammengeführt werden
+der aktuelle Ausführungspfad in mehrere Pfade aufgeteilt, oder mehrere Pfade
+zu einem zusammengeführt werden.
 
 ## Messages / Signals
 
-"Messages" und "Signals" sind im Grunde nichts anderes als Events.
+"Messages" und "Signals" sind spezielle Formen von Ereignissen im Kontext
+eines Prozesses.
 
 ## Mappers
