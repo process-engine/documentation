@@ -70,7 +70,7 @@ Ein Ereignis symbolisiert, dass etwas passiert. Das Symbol sieht so aus:
 |              Name              |                     Symbolbeispiel                     |                                                                              Beschreibung                                                                               |
 | ------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Unterbrechendes Ereignis       | <img width="50px" src="./event.svg">                   | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>           |
-| Nicht unterbrechendes Ereignis | <img width="150px" src="./non_interrupting_event.svg"> | Gestrichelte Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess nicht abbricht</li><li>Die zugehörige Aktivität nicht abbricht.</li></ul> |
+| Nicht unterbrechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess nicht abbricht</li><li>Die zugehörige Aktivität nicht abbricht.</li></ul> |
 
 #### Empfangen/Auslösen von Ereignissen
 
@@ -80,3 +80,5 @@ Ein Ereignis symbolisiert, dass etwas passiert. Das Symbol sieht so aus:
 | Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ein ausgefülltes Ereignissymbol stellt ein auslösendes Ereignis dar. Hier angekommen wird das Ereignis ausgelöst, und der Prozess wird sofort weiter ausgeführt. |
 
 #### Symbole von Ereignissen
+
+| 
