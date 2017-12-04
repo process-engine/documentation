@@ -2,8 +2,8 @@
 
 ## Das Problem
 
-Viele Firmen Dokumentieren in Diagrammen, wie Geschäftsprozesse ablaufen sollen.
-Das ist ein guter Weg um ein einheitliches Verständnis für die Koordination
+Viele Firmen dokumentieren in Diagrammen, wie Geschäftsprozesse ablaufen sollen.
+Das ist ein guter Weg, um ein einheitliches Verständnis für die Koordination
 der Prozesse zu schaffen.
 
 Ein Problem dabei ist, dass die exakte Einhaltung dieser Prozesse meist mit viel
@@ -26,7 +26,7 @@ Informationen anzureichern.
 - Erstelle einen Plan zur Ausführung eines Prozesses.
 - Starte mehrere Versionen desselben Prozesses parallel.
 - Nutze die bereits vorhandene Infrastruktur.
-- Passe deine BPMN Prozesse "on the fly" an.
+- Passe deine BPMN-Prozesse "on the fly" an.
 - Arbeite mit einer extrem gut skalierbaren und flexibelen Lösung
 
 ## BPMN
