@@ -2,11 +2,11 @@
 
 ## Definition von BPMN
 
-Die Verwendung der **B**usiness **P**rocess **M**odel and **N**otation (**BPMN**) erlaubt die 
-Modellierung von Geschäftsprozessmodellen.
+Die Verwendung der **B**usiness **P**rocess **M**odel and **N**otation
+(**BPMN**) erlaubt die Modellierung von Geschäftsprozessen.
 
-BPMN ist ein Standard, der die Modellierung von Geschäftsprozessen beschreibt.
-Dazu werden in dem Standard grafische Symbole und deren Verwendung definiert.
+BPMN ist ein Standard, der dazu grafische Symbole und deren Verwendung
+definiert.
 
 Ein Beispiel für einen Prozessmodell ist im folgenden Bild abgebildet:
 
