@@ -57,28 +57,36 @@ Ein Ereignis symbolisiert, dass etwas passiert. Das Symbol sieht so aus:
 
 ![](./event.svg)
 
-#### Eintrittszeitpunkte von Ereignissen
+#### Spezialformen des Ereignisses
 
-|       Name       |                      Symbolbeispiel                      |                                         Beschreibung                                         |
+Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargestellt:
+
+##### 1. Art der Linie des Kreises
+
+|       Name       |                          Symbol                          |                                         Beschreibung                                         |
 | ---------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | Startereignis    | <img width="50px" src="./event.svg"/>                    | Eine einzelne, dünne Linie stellt ein Ereignis dar, welches den Prozess startet.             |
 | Zwischenereignis | <img width="50px" src="./intermediate_throw_event.svg"/> | Doppelte dünne Linien stellen ein Ereignis dar, welches Während des Prozessablaufs auftritt. |
 | Endereignis      | <img width="50px" src="./end_event.svg"/>                | Eine einzelne, dicke Linie stellt ein Ereignis dar, welches den Prozess beendet.             |
 
-#### Unterbrechungsart von Ereignissen
+##### 2. Durchgezogene oder gestrichelte Linie
 
-|              Name              |                     Symbolbeispiel                     |                                                                              Beschreibung                                                                               |
-| ------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unterbrechendes Ereignis       | <img width="50px" src="./event.svg">                   | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>           |
+|              Name              |                        Symbol                         |                                                                              Beschreibung                                                                               |
+| ------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unterbrechendes Ereignis       | <img width="50px" src="./event.svg">                  | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>           |
 | Nicht unterbrechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess nicht abbricht</li><li>Die zugehörige Aktivität nicht abbricht.</li></ul> |
 
-#### Empfangen/Auslösen von Ereignissen
+##### 3. Ausgefülltes oder nicht ausgefülltes Symbol
 
-|          Name           |                 Symbolbeispiel                 |                                                                           Beschreibung                                                                           |
+|          Name           |                     Symbol                     |                                                                           Beschreibung                                                                           |
 | ----------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Empfangendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Ein nicht-ausgefülltes Ereignissymbol stellt ein empfangendes Ereignis dar. Hier angekommen wird der Prozess erst weiter ausgeführt, wenn das Ereignis eintritt  |
 | Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ein ausgefülltes Ereignissymbol stellt ein auslösendes Ereignis dar. Hier angekommen wird das Ereignis ausgelöst, und der Prozess wird sofort weiter ausgeführt. |
 
-#### Symbole von Ereignissen
+##### 4. Gewähltes Symbol
 
-| 
+|   Name    |                     Symbol                     |                         Beschreibung                         |
+| --------- | ---------------------------------------------- | ------------------------------------------------------------ |
+| Nachricht | <img width="50px" src="./receiving_event.svg"> | Empfang und Versand von Nachrichten                          |
+| Zeit      | <img width="50px" src="./time_event.svg">      | Periodisch zeitliche Ereignisse, Zeitpunkte oder Zeitspannen |
+
