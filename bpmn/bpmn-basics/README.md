@@ -8,9 +8,7 @@ Die Verwendung der **B**usiness **P**rocess **M**odel and **N**otation
 BPMN ist ein Standard, der dazu grafische Symbole und deren Verwendung
 definiert.
 
-Ein Beispiel für einen Prozessmodell ist im folgenden Bild abgebildet:
-
-<img src="./muedigkeit.svg" width="100%" />
+<img title="Beispiel für ein Prozessmodell" src="./muedigkeit.svg" width="100%" />
 
 ## Überblick über die Verwendung von BPMN
 
@@ -37,10 +35,9 @@ Modelliert werden können:
 
 ### Aktivität
 
-Eine Aktivität symbolisiert, dass etwas getan werden soll. Das Symbol sieht so
-aus:
+Eine Aktivität symbolisiert, dass etwas getan werden soll.
 
-![](./activity.svg)
+![Symbol einer Aktivität](./activity.svg)
 
 #### Spezialformen der Aktivität
 
@@ -53,9 +50,14 @@ aus:
 
 ### Ereignis
 
-Ein Ereignis symbolisiert, dass etwas passiert. Das Symbol sieht so aus:
+Ein Ereignis symbolisiert, dass etwas passiert. Ereignisse können:
+- Ein eigenes Element im Diagramm sein.
 
-![](./event.svg)
+  ![](./event.svg)
+
+- An eine Aktivität gebunden sein.
+
+  ![](./activity_event.svg)
 
 #### Spezialformen des Ereignisses
 
@@ -71,25 +73,31 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ##### 2. Durchgezogene oder gestrichelte Linie
 
-|              Name              |                        Symbol                         |                                                                              Beschreibung                                                                               |
-| ------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unterbrechendes<br>Ereignis       | <img width="50px" src="./event.svg">                  | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>           |
+|                Name                 |                        Symbol                         |                                                                               Beschreibung                                                                               |
+| ----------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Unterbrechendes<br>Ereignis         | <img width="50px" src="./event.svg">                  | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>            |
 | Nicht unter-<br>brechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess nicht abbricht.</li><li>Die zugehörige Aktivität nicht abbricht.</li></ul> |
 
 ##### 3. Ausgefülltes oder nicht ausgefülltes Symbol
 
 |          Name           |                     Symbol                     |                                                                           Beschreibung                                                                           |
 | ----------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Empfangendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Ein nicht-ausgefülltes Ereignissymbol stellt ein empfangendes Ereignis dar. Hier angekommen wird der Prozess erst weiter ausgeführt, wenn das Ereignis eintritt. |
+| Eintretendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Ein nicht-ausgefülltes Ereignissymbol stellt ein eintretendes Ereignis dar. Hier angekommen wird der Prozess erst weiter ausgeführt, wenn das Ereignis eintritt. |
 | Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ein ausgefülltes Ereignissymbol stellt ein auslösendes Ereignis dar. Hier angekommen wird das Ereignis ausgelöst, und der Prozess wird sofort weiter ausgeführt. |
 
 ##### 4. Gewähltes Symbol
 
-|   Name    |                                              Symbol                                               |                           Beschreibung                           |
-| --------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Nachricht | <img width="50px" src="./message_event.svg"> <img width="50px" src="./message_receive_event.svg"> | Empfang und Versand von Nachrichten.                             |
-| Zeit      | <img width="50px" src="./timer_event.svg">                                                        | Periodisch zeitliche Ereignisse, Zeitpunkte oder Zeitspannen.    |
-| Signal    | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Sendet oder reagiert auf ein Signal.                             |
+|   Name    |                                              Symbol                                               |                           Beschreibung                            |
+| --------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Nachricht | <img width="50px" src="./message_event.svg"> <img width="50px" src="./message_receive_event.svg"> | Empfang und Versand von Nachrichten.                              |
+| Zeit      | <img width="50px" src="./timer_event.svg">                                                        | Periodisch zeitliche Ereignisse, Zeitpunkte oder Zeitspannen.     |
+| Signal    | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Sendet oder reagiert auf ein Signal.                              |
 | Bedingung | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln. |
-| Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Auslösen und Behandeln von Fehlern. |
+| Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Auslösen oder Behandeln von Fehlern.                              |
 
+### Gateway
+
+Ein Gateway teilt den Prozessfluss in mehrere Pfade auf, oder führt mehrere
+Pfade wieder zusammen.
+
+![Symbol eines Gateways](./gateway.svg)

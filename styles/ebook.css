@@ -1,0 +1,13 @@
+figure {
+  margin: 0px 0px;
+  margin-bottom: 0.8em;
+  padding: 0px 0px;
+}
+
+figcaption {
+  clear: left;
+  margin: 0px 0px;
+  text-align: center;
+  font-style: normal;
+  line-height: 1.5em;
+}
