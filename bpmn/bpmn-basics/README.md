@@ -97,7 +97,14 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ### Gateway
 
-Ein Gateway teilt den Prozessfluss in mehrere Pfade auf, oder führt mehrere
-Pfade wieder zusammen.
+Ein Gateway teilt den Prozessfluss in mehrere Flüsse auf, oder führt mehrere
+Flüsse wieder zusammen.
 
 ![Symbol eines Gateways](./gateway.svg)
+
+#### Spezialformen des Gateways
+
+|         Name          |                      Symbol                       |                                                                 Beschreibung                                                                 |
+| --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
+| Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
