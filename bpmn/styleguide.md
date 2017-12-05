@@ -2,11 +2,11 @@
 
 ## Sprache in Modellen
 
-Allgemein gilt: In Modellen ist immer die Sprache des Anwenders zu verwenden.
+In Modellen ist immer die Sprache des Anwenders zu verwenden.
 
 ### Aktivitäten bezeichnen
 
-Es wird das **Objekt-Verrichtungsprinzip** verwendet.
+Verwenden das **Objekt-Verrichtungsprinzip**.
 
 [Objekt] + [Verb] - Pattern
 
@@ -20,7 +20,7 @@ Lieber:
 
 ### Ereignisse bezeichnen
 
-Es wird das **Objekt-Zustandsprinzip** verwendet.
+Verwende das **Objekt-Zustandsprinzip**.
 
 [Objekt] + [Zustand] - Pattern
 
@@ -34,7 +34,7 @@ Lieber:
 
 ## Graphisches Design
 
-Der Prozessfluss wird immer von links(oben) nach rechts(unten) modelliert.
+Der Prozessfluss wird immer von links (oben) nach rechts (unten) modelliert.
 
 Es gibt keine kreuzende oder überlappende Pfade.
 
@@ -74,7 +74,7 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 ![Beispiel Service](./assets/example_service.svg)
 
 - Der Benutzer erstellt eine Einkaufsliste.
-- Die Preise der Positionen ermittelt.
+- Die Preise der Positionen werden von einem Service ermittelt.
 
 #### Skriptaktivität
 
@@ -85,17 +85,17 @@ Die Process Engine unterstützt JavaScript als Skriptsprache.
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Skript Task](./assets/task_skript.svg) | Das Ausgeben von Text auf einer Konsole oder generell alle Aufgaben die mit JavaScript eledigt werden können. |
+| ![Skript Task](./assets/task_skript.svg) | Das Ausgeben von Text auf einer Konsole oder generell alle Aufgaben, die mit JavaScript erledigt werden können. |
 
 ![Beispiel Skript](./assets/example_skript.svg)
 
 - Der Benutzer erstellt eine Einkaufsliste.
-- Die Preise der Positionen ermittelt.
-- Der Gesamtpreis wird ausgegeben.
+- Die Preise der Positionen werden von einem Service ermittelt.
+- Der Gesamtpreis wird von einem Skript ausgegeben.
 
 #### Aufrufaktivität
 
-Die Aufrufaktivität ist die einzige Möglichkeit in einen anderen Prozess in
+Die Aufrufaktivität ist die einzige Möglichkeit einen anderen Prozess in
 einem Prozess aufzurufen.
 
 | Symbol | Beispiel |
@@ -104,14 +104,14 @@ einem Prozess aufzurufen.
 
 ![Beispiel Aufruf](./assets/example_aufruf.svg)
 
-Der gesamte Prozess wird aufgerufen.
+Der gesamte Prozess wird durch die Aufrufaktivität aufgerufen.
 
 ## Verwendung von Gateways
 
-Viele Prozesse laufen nicht immer gleich ab. Um Variationen zu entwickeln
-nutzen wir Gateways.
+Viele Prozesse laufen nicht immer gleich ab. Wir nutzen Gateways, um diese
+Variationen abzubilden.
 
-Beachte folgende Regeln zum korrekten modelieren von Gateways:
+Beachte folgende Regeln, zum korrekten modellieren von Gateways:
 
 - Split-Gateways haben immer einen eingehenden und mehrere ausgehende Pfeile
 
