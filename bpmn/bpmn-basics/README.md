@@ -33,6 +33,15 @@ Modelliert werden können:
 
 ## BPMN-Elemente
 
+Die vier wichtigsten BPMN-Elemente sind:
+
+- Aktivität (grün)
+- Sequenzfluss (orange)
+- Gateway (Blau)
+- Ereignis (Lila)
+
+![](./overview.svg)
+
 ### Aktivität
 
 Eine Aktivität symbolisiert, dass etwas getan werden soll.
@@ -86,14 +95,13 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ##### 1. Art der Linie des Kreises
 
-|       Name       |                          Symbol                          |                                         Beschreibung                                         |
-| ---------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Startereignis    | <img width="50px" src="./event.svg"/>                    | Eine einzelne, dünne Linie bedeutet: Das Ereignis startet den Prozess.             |
+|       Name       |                          Symbol                          |                                    Beschreibung                                     |
+| ---------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Startereignis    | <img width="50px" src="./event.svg"/>                    | Eine einzelne, dünne Linie bedeutet: Das Ereignis startet den Prozess.              |
 | Zwischenereignis | <img width="50px" src="./intermediate_throw_event.svg"/> | Doppelte, dünne Linien bedeuten: Das Ereignis tritt während des Prozessablaufs auf. |
-| Endereignis      | <img width="50px" src="./end_event.svg"/>                | Eine einzelne, dicke Linie bedeutet: Das Ereignis beendet den Prozess.             |
+| Endereignis      | <img width="50px" src="./end_event.svg"/>                | Eine einzelne, dicke Linie bedeutet: Das Ereignis beendet den Prozess.              |
 
 ##### 2. Durchgezogene oder gestrichelte Linie
-
 
 |                Name                 |                        Symbol                         |                                                                               Beschreibung                                                                               |
 | ----------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -116,3 +124,11 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 | Signal    | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Sendet oder reagiert auf ein Signal.                              |
 | Bedingung | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln. |
 | Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Auslösen oder Behandeln von Fehlern.                              |
+
+### Pool
+
+> This is work in progress
+
+### Lane
+
+> This is work in progress
