@@ -48,6 +48,27 @@ Eine Aktivität symbolisiert, dass etwas getan werden soll.
 | Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer Process Engine ausgeführt werden soll.                                 |
 | Aufrufaktivität   | <img width="200px" src="./call_activity.svg"/> | Stellt eine Aktivität dar, die einen anderen Prozess aufruft. Sobald der aufgerufene Prozess beendet ist, ist auch die Aufrufaktivität beendet |
 
+### Sequenzfluss
+
+Ein Sequenzfluss wird verwendet, um die Ablauf-Reihenfolge der Prozesselemente
+darzustellen.
+
+![Symbol eines Sequenzflusses](./flow.svg)
+
+### Gateway
+
+Ein Gateway teilt den Prozessfluss in mehrere Flüsse auf, oder führt mehrere
+Flüsse wieder zusammen.
+
+![Symbol eines Gateways](./gateway.svg)
+
+#### Spezialformen des Gateways
+
+|         Name          |                      Symbol                       |                                                                 Beschreibung                                                                 |
+| --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
+| Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
+
 ### Ereignis
 
 Ein Ereignis symbolisiert, dass etwas passiert. Ereignisse können:
@@ -95,25 +116,3 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 | Signal    | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Sendet oder reagiert auf ein Signal.                              |
 | Bedingung | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln. |
 | Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Auslösen oder Behandeln von Fehlern.                              |
-
-### Gateway
-
-Ein Gateway teilt den Prozessfluss in mehrere Flüsse auf, oder führt mehrere
-Flüsse wieder zusammen.
-
-![Symbol eines Gateways](./gateway.svg)
-
-#### Spezialformen des Gateways
-
-|         Name          |                      Symbol                       |                                                                 Beschreibung                                                                 |
-| --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
-| Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
-
-### Sequenzfluss
-
-Ein Sequenzfluss wird verwendet, um die Ablauf-Reihenfolge der Prozesselemente
-darzustellen.
-
-![Symbol eines Sequenzflusses](./flow.svg)
-
