@@ -3,7 +3,7 @@
 ## Dekoratoren
 
 Um Implementierungen und Daten zu schützen, kann man mögliche Aktionen mit einer
-Rolle verknüpfen, die für die Ausführung erforderlich ist.
+Claims verknüpfen, die für die Ausführung erforderlich ist.
 
 Der Dekorator, der dazu verwendet wird, kann an Klassen,
 Eigenschaften und Methoden platziert werden.

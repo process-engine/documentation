@@ -106,7 +106,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Gibt die Id der von Ihnen gestarteten Prozessinstanz zurück",
+            "description": "Gibt die Id der gestarteten Prozessinstanz zurück",
             "schema": {
               "type": "string"
             }
@@ -149,7 +149,7 @@
         "tags": [
           "iam"
         ],
-        "summary": "Meldet an und gibt einen Token zurück",
+        "summary": "Authentifiziert den anfragenden User und gibt ein Authentifizierungsobjekt zurück",
         "description": "",
         "operationId": "",
         "produces": [

@@ -84,7 +84,7 @@ class ExampleService {
 
 ## Deklaration
 
-Wo eine Klasse ihre Konfiguration her bekommt, wird entschieden, wenn die Klasse am IoC-Container registriert wird (siehe
+Von wo eine Klasse ihre Konfiguration bezieht, wird entschieden, wenn die Klasse am IoC-Container registriert wird (siehe
 [Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript
@@ -92,13 +92,13 @@ container.register('ExampleService', ExampleService)
   .configure('example:example_service');
 ```
 
-In diesem Beispiel würde die Konfiguration z.B: aus einer Datei `example_service.json` aus einem Ordner `example` geladen.
+In diesem Beispiel würde die Konfiguration z.B. aus einer Datei `example_service.json` aus einem Ordner `example` geladen.
 
 ## Namenskonvention
 
 Eine Namenskonvention besagt, dass die Ebenen der Konfigurations-Quellen-Angabe mit einem `:` getrennt werden.
 
-Das Beispiel von vorher hat zwei Schichten, die seine Hierarchie bilden -
+Das vorige Beispiel hat zwei Schichten, die seine Hierarchie bilden -
 `example` und `example_service`.
 
 In den folgenden Abschnitten wird beschrieben, wie diese Hierarchien in
@@ -202,6 +202,6 @@ wir unterscheiden vier Quellen für die Konfiguration;
 drei statische, eine dynamische;
 die Dynamische Konfiguration ist die einzige Quelle, die zur Laufzeit geändert werden kann.
 
-Wenn man den IoC-container beauftragt, eine neue Instanz einer Klasse zu erzeugen, kann dabei ein Konfigurationsobjekt mitgegeben werden.
+Wenn man den IoC-Container beauftragt, eine neue Instanz einer Klasse zu erzeugen, kann dabei ein Konfigurationsobjekt mitgegeben werden.
 
 Mehr Informationen dazu sind in der [Dokumentation von addict-ioc](https://www.npmjs.com/package/addict-ioc) zu finden. Da addict-ioc hier auf viele verschiedene Weisen verwendet werden kann, und diese Art der Konfiguration nur selten benötigt wird, würde eine detailreiche Beschreibung hier zu weit gehen.

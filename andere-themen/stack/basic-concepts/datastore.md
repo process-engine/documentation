@@ -1,6 +1,6 @@
-# Datenspeicher
+# Datastore
 
-Der Datenspeicher ist ein allgemeingültiges Modul zum interagieren mit
+Der Datenspeicher (Datastore) ist ein allgemeingültiges Modul zum Interagieren mit
 Entitäten. Mit ihm können:
 
 - Entitäten erstellt, geladen und gespeichert werden.
