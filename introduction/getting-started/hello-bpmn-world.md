@@ -15,7 +15,7 @@ Das Diagramm sieht folgendermaßen aus:
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
 
-Dieser dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
+Diesee dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
@@ -36,7 +36,7 @@ Der BPMN Editor zeigt uns eine Ansicht mit einer Lane und einem Startevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü;
 dieses Menü erlaubt es neue Elemente hinzuzufügen;
-diese werden direkt mit dem ausgewählten Element verbunden sind.
+diese werden direkt mit dem ausgewählten Element verbunden.
 
 {% video controls="controls"%}../images/create-hello-world.mp4{% endvideo %}
 
@@ -55,11 +55,11 @@ Es gibt zwei Felder:
 
 Mit Hilfe von `uiName` wird die Art der UI Komponente festgelegt.
 
-In diesem Fall benutzen wir einen Bestätigungdialog.
+In diesem Fall benutzen wir einen Bestätigungsdialog.
 
 Mit Hilfe von `uiConfig` werden die Details der UI Komponente bestimmt.
 
-In diesem Fall die Nachricht und die Knöpfe, die angezeigt werden sollen;
+In diesem Fall die Nachricht und die Bedienelemente, die angezeigt werden sollen;
 bitte folgendes in das Feld `uiConfig` eintragen:
 
 ```javascript

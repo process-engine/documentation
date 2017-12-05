@@ -23,8 +23,8 @@ der den User per UI dazu auffordert eine Email anzugeben.
 {% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
 
 Dann muss der `Show Data` [Task](../../anhang/Glossary.md) zu `Confirm Data`
-[Task](../../anhang/Glossary.md) umbenannt werden und den Wert der
-`uiConfig` Property zu den folgenden Wert abgeändert werden.
+[Task](../../anhang/Glossary.md) umbenannt werden und der Wert der
+`uiConfig` Property zu folgendem Wert abgeändert werden.
 
 Dabei ist zu beachten, dass der `Fetch Data` [Task](../../anhang/Glossary.md)
 die ID `fetch_data` bekommt.

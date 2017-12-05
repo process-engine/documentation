@@ -14,7 +14,7 @@ Das Repository besteht aus:
 * einem Docker Container mit der Datenbank der Prozessengine
 * dem Server der Prozessengine
 
-Als erstes muss die Datenbank gestartet werden. 
+Als Erstes muss die Datenbank gestartet werden. 
 Dazu navigiert man in den `database`-Ordner und führt 
 die `postgres_docker.js` mit folgenden Befehl aus.
 
@@ -22,7 +22,7 @@ die `postgres_docker.js` mit folgenden Befehl aus.
 node postgres_docker.js start
 ``` 
 
-Sobald dieser gestartet ist geht man in den `process-engine-server`-Ordner.
+Sobald diese gestartet ist geht man in den `process-engine-server`-Ordner.
 Dort installiert man zunächst alle Dependencies und startet dann den Server.
 
 ```
@@ -40,7 +40,7 @@ Zunächst muss das [Charon Repository](https://github.com/process-engine/charon)
 git clone git@github.com:process-engine/charon.git
 ```
 
-In dem geklonten Projekt installiert mam alle Dependencies;
+In dem geklonten Projekt installiert man alle Dependencies;
 sobald das abgeschlossen ist, kann man Charon starten.
 
 Diese Befehle erledigen die Aufgaben:

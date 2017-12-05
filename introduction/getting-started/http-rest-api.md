@@ -37,7 +37,7 @@ Zum Schluss müssen wir dem [User Task](../../anhang/Glossary.md) nur noch sagen
 was er anzeigen soll. Dies geschieht wieder über den `Extensions`-Reiter.
 
 Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu
-verwenden und konfigurieren diese mit `uiConfig` folgendermaßen:
+verwenden und konfigurieren diesen mit folgender `uiConfig`:
 
 ```
 ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm", "label": "OK"}] };
