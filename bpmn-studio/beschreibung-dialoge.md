@@ -7,7 +7,7 @@
 Der "Process Definition List"-Dialog zeigt alle Prozessmodelle, die zurzeit
 in der Datenbank vorhanden sind.
 
-Bei Start der Anwendung sind zwei Prozesse vorhanden:
+Beim Start der Anwendung sind zwei Prozesse vorhanden:
 
 1.  Prozess löschen
 1.  Prozess erstellen
@@ -29,7 +29,7 @@ verfügbar sind.
 
 Im Bild wird ein Task des "Prozess erstellen"-Prozesses angezeigt. Der Task
 wartet darauf, von einem Benutzer bearbeitet zu werden. Mit einem Klick auf den
-"Continue"-Button wird der Nutzer zu einer Overfläche zum bearbeiten des Task
+"Continue"-Button wird der Nutzer zu einer Oberfläche zum bearbeiten des Task
 geführt.
 
 ## Process Instance List
@@ -59,7 +59,7 @@ Diese bietet die folgenden Funktionen:
 - Start - Startet eine neue Prozessinstanz anhand des Prozessmodells.
 - Processes - Zeigt eine Liste von Prozessinstanzen zu dem Prozessmodell.
 - Tasks - Zeigt eine Liste von Tasks, die zu dem Prozessmodell gehören.
-- Save - speichert die Änderungen am Prozessmodell.
+- Save - Speichert die Änderungen am Prozessmodell.
 - Delete Process - Löscht das Prozessmodell.
 - Export Diagramm - Exportiert das Diagramm als .bpmn-Datei
 - Import Diagramm - Importiert ein Diagramm aus einer .bpmn oder .xml-Datei
