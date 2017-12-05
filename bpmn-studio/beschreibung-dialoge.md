@@ -14,7 +14,7 @@ Bei Start der Anwendung sind zwei Prozesse vorhanden:
 
 Oben links befindet sich der "Create Process Definition"-Button.
 Er öffnet einen Dialog zum Erstellen eines neuen Prozessmodells.
-Dieses neue Prozessmodell kann nach dem erstellen mit dem entsprechenden
+Dieses neue Prozessmodell kann nach dem Erstellen mit dem entsprechenden
 "Details"-Button, rechts in der Tabelle, bearbeitet werden.
 
 Der "Start"-Button links neben dem "Details"-Button dient zum Starten einer
@@ -36,14 +36,14 @@ geführt.
 
 ![Process Instance List](./process-instance-list.png)
 
-Der "Process Instance List"-Dialog zeigt die Prozessinstanzen die:
+Der "Process Instance List"-Dialog zeigt die Prozessinstanzen, die:
 
 - gerade ausgeführt werden.
 - schon ausgeführt wurden.
 
 Insgesamt stellt der Dialog eine Liste aller Prozessinstanzen dar.
 
-Mit dem Dropdown, in der Spalte "State", kann man die Tabelle nach dem Status
+Mit dem Dropdown in der Spalte "State" kann man die Tabelle nach dem Status
 der Prozessinstanz sortieren.
 
 ## Der Prozess Editor
@@ -59,7 +59,7 @@ Diese bietet die folgenden Funktionen:
 - Start - Startet eine neue Prozessinstanz anhand des Prozessmodells.
 - Processes - Zeigt eine Liste von Prozessinstanzen zu dem Prozessmodell.
 - Tasks - Zeigt eine Liste von Tasks, die zu dem Prozessmodell gehören.
-- Save - peichert die Änderungen am Prozessmodell.
+- Save - speichert die Änderungen am Prozessmodell.
 - Delete Process - Löscht das Prozessmodell.
 - Export Diagramm - Exportiert das Diagramm als .bpmn-Datei
-- Import Diagramm - Importiert ein Diagramm aus einer .bpmn-Datei
+- Import Diagramm - Importiert ein Diagramm aus einer .bpmn oder .xml-Datei
