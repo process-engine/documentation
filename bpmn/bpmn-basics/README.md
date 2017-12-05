@@ -109,3 +109,11 @@ Flüsse wieder zusammen.
 | --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
 | Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
+
+### Sequenzfluss
+
+Ein Sequenzfluss wird verwendet, um die Ablauf-Reihenfolge der Prozesselemente
+darzustellen.
+
+![Symbol eines Sequenzflusses](./flow.svg)
+
