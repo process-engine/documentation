@@ -13,9 +13,9 @@ Das Diagramm sieht folgendermaßen aus:
 [Dieser User Task](../../anhang/Glossary.md) wird folgende Elemente enthalten:
 
 1. die Nachricht `Hello World`
-1. eine Schaltfläche zum Bestätigen
+2. eine Schaltfläche zum Bestätigen
 
-   Dieser dient dazu den [Task](../../anhang/Glossary.md) zu beenden.
+Dieser dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
@@ -25,8 +25,8 @@ Es öffnet sich ein neuer Dialog;
 dort können ein Name und ein Schlüssel für das Prozessmodell angegeben werden;
 in diesem Fall kann bei beiden `Hello World` gewählt werden.
 
-Die Schaltfläche `Details` dient zur Angezeige und Bearbeitung von Diagrammen;
-Diese befindet sich in der Tabelle, in der jeweiligen Zeile des Prozessmodels, auf der rechten Spalte.
+Die Schaltfläche `Details` dient zur Anzeige und Bearbeitung von Diagrammen;
+Diese befindet sich in der Tabelle, in der jeweiligen Zeile des Prozessmodells, auf der rechten Spalte.
  
 {% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 

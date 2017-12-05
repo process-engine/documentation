@@ -5,7 +5,7 @@ Dabei werden die geladenen Daten versendet.
 
 Dazu updaten wir den Prozess folgendermaßen:
 
-1. Abfrage der Email Adresse
+1. Abfrage der Email-Adresse
 1. Bestätigung anfordern
 1. Versand einer Email mit dem Wechselkurs
 
