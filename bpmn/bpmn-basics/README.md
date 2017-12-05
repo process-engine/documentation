@@ -75,15 +75,15 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 |                Name                 |                        Symbol                         |                                                                               Beschreibung                                                                               |
 | ----------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Unterbrechendes<br>Ereignis         | <img width="50px" src="./event.svg">                  | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>            |
+| Unterbrechendes<br>Ereignis         | <img width="50px" src="./event.svg">                  | Durchgezogene Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Der Oberprozess abbricht.</li><li>Die zugehörige Aktivität abbricht.</li></ul>            |
 | Nicht unter-<br>brechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien stellen ein Ereignis dar, welches je nach Kontext:<ul><li>Den Oberprozess nicht abbricht.</li><li>Die zugehörige Aktivität nicht abbricht.</li></ul> |
 
 ##### 3. Ausgefülltes oder nicht ausgefülltes Symbol
 
-|          Name           |                     Symbol                     |                                                                           Beschreibung                                                                           |
-| ----------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Eintretendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Ein nicht-ausgefülltes Ereignissymbol stellt ein eintretendes Ereignis dar. Hier angekommen wird der Prozess erst weiter ausgeführt, wenn das Ereignis eintritt. |
-| Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ein ausgefülltes Ereignissymbol stellt ein auslösendes Ereignis dar. Hier angekommen wird das Ereignis ausgelöst, und der Prozess wird sofort weiter ausgeführt. |
+|          Name           |                     Symbol                     |                                                 Beschreibung                                                  |
+| ----------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Eintretendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Nicht ausgefülltes Symbol = eintretendes Ereignis.<br>Der Prozess läuft weiter, sobald das Ereignis eintritt. |
+| Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ausgefülltes Symbol = auslösendes Ereignis.<br>Das Ereignis wird ausgelöst und der Prozess läuft weiter.      |
 
 ##### 4. Gewähltes Symbol
 
