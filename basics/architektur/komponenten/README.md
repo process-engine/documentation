@@ -42,7 +42,7 @@ ausgeführt werden soll, wird er nur auf einem [Client]() ausgeführt, an dem ei
 ## Gateways
 
 "Gateways" werden genutzt, um Fallunterscheidungen zu modellieren. Dabei kann
-der aktuelle Ausführungspfad in mehrere Pfade aufgeteilt, oder mehrere Pfade
+der aktuelle Ausführungspfad in mehrere Pfade aufgeteilt oder mehrere Pfade
 zu einem zusammengeführt werden.
 
 ## Messages / Signals
