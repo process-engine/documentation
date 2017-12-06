@@ -6,7 +6,7 @@ In Modellen ist immer die Sprache des Anwenders zu verwenden.
 
 ### Aktivitäten bezeichnen
 
-Verwenden das **Objekt-Verrichtungsprinzip**.
+Verwende das **Objekt-Verrichtungsprinzip**.
 
 [Objekt] + [Verb] - Pattern
 
@@ -26,7 +26,7 @@ Verwende das **Objekt-Zustandsprinzip**.
 
 Statt:
 
-“Die Lebensmittel würden zuerst eingekauft.”
+“Die Lebensmittel wurden zuerst eingekauft.”
 
 Lieber:
 
@@ -69,7 +69,7 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Service Task](./assets/task_service.svg) | Das Abfragen von Daten einer API; die automatische Verbuchung einer Rechnung oder das generieren eines Angebots für einen Kunden. |
+| ![Service Task](./assets/task_service.svg) | Das Abfragen von Daten einer API; die automatische Verbuchung einer Rechnung oder das Generieren eines Angebots für einen Kunden. |
 
 ![Beispiel Service](./assets/example_service.svg)
 
@@ -113,26 +113,24 @@ Variationen abzubilden.
 
 Beachte folgende Regeln, zum korrekten modellieren von Gateways:
 
-- Split-Gateways haben immer einen eingehenden und mehrere ausgehende Pfeile
+- Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende Pfeile.
 
 ![Beispiel Split Gateway](./assets/example_split_gateway.svg)
 
-- Join-Gateways haben immer mehrere eingehende und einen ausgehenden Pfeil
+- Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden Pfeil.
 
 ![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
 
-- Split- und Join-Gateways sollten korrespondieren (z.B. XOR-Split-Gateway mit
-  XOR-Join-Gateway)
+- Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit
+  XOR-Join-Gateway).
 
 ## Weitere Regeln
 
 - Es sollte immer ein **Pool** verwendet werden.
-- Es sollte immer eine oder mehrere **Lanes** verwendet geben, auch wenn es nur
-  eine gibt.
-
+- Es sollte immer eine oder mehrere **Lanes** verwendet geben.
 ![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
 
-- Ein Prozess muss immer ein Startevent und mindestens ein Endevent haben.
-- Eine Aktivität muss immer einen eingehenden und einen ausgehenden Pfeil haben.
-- Zum Teilen und Zusammenführen von Prozessflüssen werden nur Gateways verwendet.
-- Boundary-Ereignisse müssen einen ausgehenden Pfeil haben.
+- Ein Prozess hat ein Startevent und mindestens ein Endevent.
+- Eine Aktivität hat einen eingehenden und einen ausgehenden Pfeil.
+- Zum Teilen und Zusammenführen von Prozessflüssen werden Gateways verwendet.
+- Boundary-Ereignisse haben einen ausgehenden Pfeil.
