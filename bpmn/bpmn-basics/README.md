@@ -147,8 +147,8 @@ Beschriftung dargestellt, hat aber keinen weiteren Inhalt.
 Sequenzflüsse können über mehrere Lanes gehen, aber nicht über mehrere Pools.
 
 Die Process Engine hat zurzeit noch folgende Einschränkunen:
-- Es wird nur ein Pool pro Diagramm unterstützt
-- ein Pool muss immer eine Lane haben
+- Es wird nur ein Pool pro Diagramm unterstützt.
+- Ein Pool muss immer eine Lane haben.
 
 ## Weitere BPMN-Elemente
 
