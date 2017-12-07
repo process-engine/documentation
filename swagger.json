@@ -1,104 +1,432 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0.0",
+    "version": "0.1.0",
     "title": "Process Engine HTTP REST API",
-    "description": "This is the static part of the BPMN Process Engine HTTP REST API.",
+    "description": "",
     "termsOfService": "terms"
   },
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "tags": [
+    {
+      "name": "iam",
+      "description": "Endpoints to manage authentication and authorization"
+    },
+    {
+      "name": "process engine",
+      "description": "Endpoints to execute and manage processes"
+    },
+    {
+      "name": "messagebus",
+      "description": "Endpoints to put messages on the messagebus"
+    },
+    {
+      "name": "datastore",
+      "description": "Endpoints to interact with the datastore"
+    }
+  ],
   "securityDefinitions": {
     "Bearer": {
       "type": "apiKey",
       "name": "Authorization",
-      "in": "header"
+      "in": "header",
+      "description": "after logging in via `/iam/login` provide the resulting bearer-token as Authorization-header in the form of `'Bearer ' + bearer_token`"
     }
   },
   "definitions": {
-    "UserCredentials": {
-      "description": "user credentials",
-      "properties": {
-        "username": {
-          "type": "string",
-          "description": "the user name"
-        },
-        "password": {
-          "type": "string",
-          "description": "the users password"
-        }
-      }
+    "BpmnType":{
+      "enum":[
+        "bpmn:BoundaryEvent",
+        "bpmn:CallActivity",
+        "bpmn:EndEvent",
+        "bpmn:ExclusiveGateway",
+        "bpmn:IntermediateCatchEvent",
+        "bpmn:IntermediateThrowEvent",
+        "bpmn:ParallelGateway",
+        "bpmn:ScriptTask",
+        "bpmn:ServiceTask",
+        "bpmn:StartEvent",
+        "bpmn:SubProcess",
+        "bpmn:UserTask"
+      ],
+      "type":"string"
     },
-    "MessagebusPublication": {
-      "description": "a message that can be published on the messagebus",
-      "properties": {
-        "channel": {
-          "type": "string",
-          "description": "the channel the message will be published on"
-        },
-        "msg": {
-          "description": "the content of your message",
-          "type": "object"
-        },
-        "options": {
-          "description": "additional query options for your message publication",
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "applicationId": {
-              "type": "string"
-            },
-            "token": {
-              "type": "string"
-            }
-          }
-        }
-      }
+    "ClaimActionType":{
+      "enum":[
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type":"number"
     },
-    "StartProcessMessage": {
-      "description": "the message to start a BPMN process",
-      "properties": {
-        "msg": {
-          "properties": {
-            "key": {
-              "type": "string"
+    "DatastoreCatalog":{
+      "properties":{
+        "catalog":{
+          "properties":{
+            "classes":{
+              "items":{
+                "type":"string"
+              },
+              "type":"array"
+            }
+          },
+          "type":"object"
+        }
+      },
+      "type":"object"
+    },
+    "EntityMetadata":{
+      "properties":{
+        "isNew":{
+          "type":"boolean"
+        },
+        "isRef":{
+          "type":"boolean"
+        },
+        "namespace":{
+          "type":"string"
+        },
+        "type":{
+          "type":"string"
+        }
+      },
+      "type":"object"
+    },
+    "IAuthObject":{
+      "properties":{
+        "identity":{
+          "$ref":"#/definitions/IIdentity"
+        },
+        "token":{
+          "type":"string"
+        }
+      },
+      "type":"object"
+    },
+    "IEntity":{
+      "desciption":"The base class for all entities. Depending on the specific entity-type you're dealing with, your entity-object may have a lot more properties.",
+      "properties":{
+        "id":{
+          "type":"string"
+        }
+      },
+      "type":"object"
+    },
+    "IEntityCollection":{
+      "properties":{
+        "count":{
+          "description":"The total number of entries in the collection",
+          "type":"number"
+        },
+        "data":{
+          "items":{
+            "$ref":"#/definitions/IEntity"
+          },
+          "type":"array"
+        },
+        "limit":{
+          "description":"The maximum number of entities in this collection",
+          "type":"number"
+        },
+        "offset":{
+          "description":"The offset that was used to query the resulting collection of entities. A higher offset means you'll get entities that apper later in the datastore.",
+          "type":"number"
+        }
+      },
+      "type":"object"
+    },
+    "IExpand":{
+      "properties":{
+        "attribute":{
+          "type":"string"
+        },
+        "childAttributes":{
+          "items":{
+            "description":"not linked to prevent infinite loop",
+            "type":"IExpand"
+          },
+          "type":"array"
+        }
+      },
+      "type":"object"
+    },
+    "IIdentity":{
+      "properties":{
+        "id":{
+          "type":"string"
+        },
+        "name":{
+          "type":"string"
+        },
+        "roles":{
+          "items":{
+            "type":"string"
+          },
+          "type":"array"
+        }
+      },
+      "type":"object"
+    },
+    "INodeDefEntity":{
+      "properties":{
+        "_meta":{
+          "$ref":"#/definitions/EntityMetadata"
+        },
+        "extensions":{
+  
+        },
+        "id":{
+          "type":"string"
+        },
+        "lane":{
+          "$ref":"#/definitions/ILaneEntity"
+        }
+      },
+      "type":"object"
+    },
+    "IProcessEntity":{
+      "properties":{
+        "_meta":{
+          "$ref":"#/definitions/EntityMetadata"
+        },
+        "id":{
+          "type":"string"
+        }
+      },
+      "type":"object"
+    },
+    "IProcessTokenEntity":{
+      "properties":{
+        "_meta":{
+          "$ref":"#/definitions/EntityMetadata"
+        },
+        "data":{
+  
+        },
+        "id":{
+          "type":"string"
+        },
+        "process":{
+          "$ref":"#/definitions/IProcessEntity"
+        }
+      },
+      "type":"object"
+    },
+    "IPublicGetOptions":{
+      "description":"options to query data from the datastore",
+      "properties":{
+        "expandEntity":{
+          "items":{
+            "$ref":"#/definitions/IExpand"
+          },
+          "type":"array"
+        },
+        "query":{
+          "description":"not linked because OpenAPI doesn't allow mutli-types, see [swagger-api-issue #236](https://github.com/swagger-api/swagger-parser/issues/236)",
+          "type":"IQueryObject | Array<IQueryObject> | string"
+        },
+        "select":{
+          "items":{
+            "type":"string"
+          },
+          "type":"array"
+        }
+      },
+      "type":"object"
+    },
+    "IPublicRemoveOptions":{
+      "description":"This interface is defined as `any`. It describes options for removing entities. Although passed down to the datasource_adapter, this object is currently not in use",
+      "properties":{
+  
+      },
+      "type":"object"
+    },
+    "IPublicSaveOptions":{
+      "description":"This interface is defined as `any`. It describes options for saving entities. Although passed down to the datasource_adapter, the values in this object are currently not in use",
+      "properties":{
+        "expandEntity":{
+          "items":{
+            "$ref":"#/definitions/IExpand"
+          },
+          "type":"array"
+        },
+        "reloadAfterSave":{
+          "description":"sets wether the entity should be reloaded after it was saved. If it was a new entity, this would make it be not new, because it now has an id.",
+          "required":false,
+          "type":"boolean"
+        }
+      },
+      "type":"object"
+    },
+    "IUserEntity":{
+      "properties":{
+        "_meta":{
+          "$ref":"#/definitions/EntityMetadata"
+        },
+        "id":{
+          "type":"string"
+        },
+        "name":{
+          "type":"string"
+        },
+        "password":{
+          "type":"string"
+        },
+        "roles":{
+          "items":{
+            "type":"string"
+          },
+          "type":"array"
+        }
+      },
+      "type":"object"
+    },
+    "IUserTaskEntity":{
+      "properties":{
+        "_meta":{
+          "$ref":"#/definitions/EntityMetadata"
+        },
+        "application":{
+          "type":"string"
+        },
+        "id":{
+          "type":"string"
+        },
+        "instanceCounter":{
+          "type":"number"
+        },
+        "key":{
+          "type":"string"
+        },
+        "name":{
+          "type":"string"
+        },
+        "nodeDef":{
+          "$ref":"#/definitions/INodeDefEntity"
+        },
+        "participant":{
+          "type":"string"
+        },
+        "process":{
+          "$ref":"#/definitions/IProcessEntity"
+        },
+        "processToken":{
+          "$ref":"#/definitions/IProcessTokenEntity"
+        },
+        "state":{
+          "type":"string"
+        },
+        "type":{
+          "$ref":"#/definitions/BpmnType"
+        }
+      },
+      "type":"object"
+    },
+    "IUserTaskMessageData":{
+      "properties":{
+        "uiConfig":{
+  
+        },
+        "uiData":{
+  
+        },
+        "uiName":{
+          "type":"string"
+        },
+        "userTaskEntity":{
+          "$ref":"#/definitions/IUserTaskEntity"
+        }
+      },
+      "type":"object"
+    },
+    "MessagebusPublication":{
+      "properties":{
+        "channel":{
+          "description":"the channel the message will be published on",
+          "type":"string"
+        },
+        "msg":{
+          "description":"the content of your message. This in an arbitrary object",
+          "properties":{
+  
+          }
+        },
+        "options":{
+          "description":"Arbitrary object with additional metadata-options that will be attached to the message",
+          "properties":{
+  
+          },
+          "required":false
+        }
+      },
+      "type":"object"
+    },
+    "ResultObject":{
+      "description":"An object indicating the success or failure of an action.",
+      "properties":{
+        "result":{
+          "type":"boolean"
+        }
+      },
+      "type":"object"
+    },
+    "StartProcessMessage":{
+      "description":"An object describing the process to start and its initial state",
+      "properties":{
+        "msg":{
+          "description":"An object with the necessary information to identify the process that should be started",
+          "properties":{
+            "key":{
+              "type":"string"
             }
           }
         },
-        "options": {
-          "description": "additional query options for the process you want to start",
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "applicationId": {
-              "type": "string"
-            },
-            "token": {
-              "type": "string"
-            }
-          }
+        "options":{
+          "$ref":"#/definitions/IPublicGetOptions",
+          "description":"Additional query options for the process you want to start. These options are passed through to the start-method of the processEntity, but aren't used there."
         }
-      }
+      },
+      "type":"object"
+    },
+    "SuccessObject":{
+      "description":"An object indicating the success of an action.",
+      "properties":{
+        "result":{
+          "example":true,
+          "type":"boolean"
+        }
+      },
+      "type":"object"
+    },
+    "UserCredentials":{
+      "description":"User credentials",
+      "properties":{
+        "password":{
+          "type":"string"
+        },
+        "username":{
+          "type":"string"
+        }
+      },
+      "type":"object"
     }
   },
   "paths": {
-    "/process_engine/start": {
+    "/processengine/start": {
       "post": {
-        "tags": [
-          "process engine"
-        ],
-        "summary": "Starts the execution of a BPMN process",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["process engine"],
+        "summary": "Start the execution of a process",
+        "description": "This orders the process engine to start executing a process",
         "parameters": [
           {
             "name": "start message",
+            "description": "The message describing the process to start and its initial state",
             "in": "body",
+            "required": true,
             "schema": {
               "$ref": "#/definitions/StartProcessMessage"
             }
@@ -106,7 +434,7 @@
         ],
         "responses": {
           "200": {
-            "description": "returns the id of the process instance you started",
+            "description": "ID of the newly started process instance",
             "schema": {
               "type": "string"
             }
@@ -114,20 +442,78 @@
         }
       }
     },
-    "/messagebus/publish": {
+    "/processengine/user_task_data/{user_task_id}": {
+      "parameters": [
+        {
+          "name": "user_task_id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the userTask."
+        }
+      ],
+      "get": {
+        "tags": ["process engine"],
+        "summary": "Get information about a userTask",
+        "description": "This route gives you the fully interpreted and processed information you need to display a userTask.",
+        "responses": {
+          "200": {
+            "description": "Fetching the userTask information was successful",
+            "schema": {
+              "$ref": "#/definitions/IUserTaskMessageData"
+            }
+          }
+        }
+      }
+    },
+    "/processengine/execute": {
       "post": {
-        "tags": [
-          "messagebus"
-        ],
-        "summary": "Authenticates and returns a token",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["process engine"],
+        "summary": "Execute a process",
+        "description": "This orders the process engine to execute a process. The difference to `/processengine/start` is, that the process engine will only respond once the process has finished executing. The Response will contain the last state of the processToken, or in other words: The result of the proccess.",
         "parameters": [
           {
-            "name": "user credentials",
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The key of the process that should be executed. Either this or the id has to be set."
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The id of the process that should be executed. Either this or the key has to be set."
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The version of the process that should be executed. If not set, the latest version will be run"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Executing the process was successful. This does not mean, that the process didn't fail. It only means, that ordering the process to start, and waiting for it to end was successful. This does not indicate why the process ended.",
+            "schema": {
+              "description": "The last state of the process token when the process ended. This in an arbitrary object, that represents the result of the process.",
+              "properties": {}
+            }
+          }
+        }
+      }
+    },
+    "/messagebus/publish": {
+      "post": {
+        "tags": ["messagebus"],
+        "summary": "Publish a message on the messagebus",
+        "description": "This makes the process engine send the given message to the given channel on its messagebus.",
+        "parameters": [
+          {
+            "name": "message",
+            "description": "a message that can be published on the messagebus",
             "in": "body",
             "schema": {
               "$ref": "#/definitions/MessagebusPublication"
@@ -136,9 +522,9 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "The message was successfully published.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/SuccessObject"
             }
           }
         }
@@ -146,18 +532,13 @@
     },
     "/iam/login": {
       "post": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Authenticates and returns a token",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["iam"],
+        "summary": "Authenticate a user",
+        "description": "Given some correct credentials, this will get you a token you can use to authenticate yourself to the process engine.",
         "parameters": [
           {
             "name": "user credentials",
+            "description": "The credentials of the user you want to login as.",
             "in": "body",
             "schema": {
               "$ref": "#/definitions/UserCredentials"
@@ -166,9 +547,9 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "The Login was successful",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/IAuthObject"
             }
           }
         }
@@ -176,20 +557,14 @@
     },
     "/iam/logout": {
       "get": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Logs the user out",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["iam"],
+        "summary": "Log the user out",
+        "description": "This invalidates your token which effectively logs you out",
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "You were successfully logged out.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/SuccessObject"
             }
           }
         },
@@ -200,22 +575,16 @@
         ]
       }
     },
-    "/getidentity": {
+    "/iam/getidentity": {
       "get": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Returns the user identity",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["iam"],
+        "summary": "Get the users identity",
+        "description": "This will give you the Identity of the user that is authenticated with your Token",
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetching the users identity was successful.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/IIdentity"
             }
           }
         },
@@ -226,22 +595,16 @@
         ]
       }
     },
-    "/getidentityentity": {
+    "/iam/getidentityentity": {
       "get": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Returns the entity for the user identity",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["iam"],
+        "summary": "Get the entity to the users identity",
+        "description": "This will give you the entity to the identity of the user that is authenticated with your token. This is like `/iam/getidentity`, but with a little more information.",
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Fetching the Entity to the users Identity was successful.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/IUserEntity"
             }
           }
         },
@@ -252,17 +615,11 @@
         ]
       }
     },
-    "/validatecredentials": {
+    "/iam/validatecredentials": {
       "post": {
-        "tags": [
-          "iam"
-        ],
-        "summary": "Validates user credentials",
-        "description": "",
-        "operationId": "",
-        "produces": [
-          "application/json"
-        ],
+        "tags": ["iam"],
+        "summary": "Validate user credentials",
+        "description": "This checks if the given user credentials are valid.",
         "parameters": [
           {
             "name": "user credentials",
@@ -274,17 +631,297 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "`true`: The given credentials are valid. `false`: The given credentials are not valid.",
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/ResultObject"
             }
           }
-        },
-        "security": [
-          {
-            "Bearer": []
+        }
+      }
+    },
+    "/datastore": {
+      "get": {
+        "tags": ["datastore"],
+        "summary": "Get the datastore catalog",
+        "description": "Fetches a list of entity-types known to the datastore, for example `ProcessDef` or `UserTask`",
+        "responses": {
+          "200": {
+            "description": "Fetching the entity-type-list was successful.",
+            "schema": {
+              "$ref": "#/definitions/DatastoreCatalog"
+            }
           }
-        ]
+        }
+      }
+    },
+    "/datastore/{className}": {
+      "parameters": [
+        {
+          "name": "className",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the EntityType. This could for example be `\"ProcessDef\"`, `\"ScriptTask\"`, `\"BoundaryEvent\"`, `\"UserTask\"` etc."
+        }
+      ],
+      "get": {
+        "tags": ["datastore"],
+        "summary": "Get a collection of entities",
+        "description": "Fetches a collection of entities from the datastore",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicGetOptions",
+            "required": false,
+            "description": "Options to specify the query used to get the entity-collection"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fetching the entity-collection was successful.",
+            "schema": {
+              "$ref": "#/definitions/IEntityCollection"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["datastore"],
+        "summary": "Create a new entity",
+        "description": "Creates a new entity in the datastore",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicSaveOptions",
+            "required": false,
+            "description": "Options for saving entities."
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "type": "object",
+            "description": "The body is an object containing all the properties needed to save the entity based on the className in the path. Because the only property all entities have in common (which is `id`) is generated by the datastore when the entity is created, the properties of the request-body are completely dependend on what type of entity you want to create.",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Creting the entity was successful.",
+            "schema": {
+              "$ref": "#/definitions/IEntity"
+            }
+          }
+        }
+      }
+    },
+    "/datastore/{className}/{id}": {
+      "parameters": [
+        {
+          "name": "className",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the EntityType. This could for example be `\"ProcessDef\"`, `\"ScriptTask\"`, `\"BoundaryEvent\"`, `\"UserTask\"` etc."
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The id of the entity"
+        }
+      ],
+      "get": {
+        "tags": ["datastore"],
+        "summary": "Get an entity",
+        "description": "Fetches an entity from the datastore",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicGetOptions",
+            "required": false,
+            "description": "Options to specify the query used to get the entity"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fetching the entity was successful",
+            "schema": {
+              "$ref": "#/definitions/IEntity"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["datastore"],
+        "summary": "Update an entity",
+        "description": "Updates an entity in the datastore",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicSaveOptions",
+            "required": false,
+            "description": "Options for saving entities. Although passed down to the datasource_adapter, the values in this object are currently not in use"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "type": "object",
+            "description": "The body is an object containing all the properties needed to save the entity based on the className in the path. Because the only property all entities have in common (which is `id`) is already in the path, the properties of the request-body are completely dependend on what type of entity you want to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The entity was successfully updated",
+            "schema": {
+              "$ref": "#/definitions/IEntity"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["datastore"],
+        "summary": "Delete an entity",
+        "description": "Removes an entity from the datastore",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicRemoveOptions",
+            "required": false,
+            "description": "Options for removing entities. Although passed down to the datasource_adapter, this object is currently not in use"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The entity was successfully deleted",
+            "schema": {
+              "$ref": "#/definitions/SuccessObject"
+            }
+          }
+        }
+      }
+    },
+    "/datastore/{className}/service/{method}": {
+      "post": {
+        "tags": ["datastore"],
+        "summary": "Execute a method on an entity-type-service",
+        "description": "Execute an arbitrary method on an entity-type-service. Entity-type-services are support-classes to manage entities of a certain type. Currently there are only the `NodeInstanceEntityTypeService` and the `ProcessDefEntityTypeService`",
+        "parameters": [
+          {
+            "name": "className",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the EntityTypeService that has the method that should be executed. The currently valid values are `NodeInstance` and `ProcessDef`"
+          },
+          {
+            "name": "method",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the method that should be executed"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "type": "object",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "An arbitrary object that contains the parameters that should be passed to the method. IF a schema for the method is found, whatever value has the name of the parameter as key will be passed as that parameter. For example when the request-body looks like `{\"hello\": \"world\", \"test\": 123}`, and the method-definition like `myMethod(hello, test, options){ }`, then `hello` will be `'world'` and `test` will be `123` in that method. If no schema is found, the the body will just be passed as the first paramter. In that case `hello` would be `{hello: 'world', test: 123}` and `test` would be `undefined`. The Only parameter you can not define this way is `options`. It will always be parsed from the query-parameter called `query`"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicGetOptions",
+            "required": false,
+            "description": "Whatever is defined here will be passed to the called function as the parameter with the name `options`."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The value returned by the called method",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      }
+    },
+    "/datastore/{className}/{id}/{method}": {
+      "post": {
+        "tags": ["datastore"],
+        "summary": "Execute a method on an entity-instance",
+        "description": "Execute an arbitrary method on a specific instance of an entity",
+        "parameters": [
+          {
+            "name": "className",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the EntityType that has the method that should be executed. This could for example be `\"ProcessDef\"`, `\"ScriptTask\"`, `\"BoundaryEvent\"`, `\"UserTask\"` etc."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The id of the entity that the method should be executed on"
+          },
+          {
+            "name": "method",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "The name of the method that should be executed"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "type": "object",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "An arbitrary object that contains the parameters that should be passed to the method. IF a schema for the method is found, whatever value has the name of the parameter as key will be passed as that parameter. For example when the request-body looks like `{\"hello\": \"world\", \"test\": 123}`, and the method-definition like `myMethod(hello, test, options){ }`, then `hello` will be `'world'` and `test` will be `123` in that method. If no schema is found, the the body will just be passed as the first paramter. In that case `hello` would be `{hello: 'world', test: 123}` and `test` would be `undefined`. The Only parameter you can not define this way is `options`. It will always be parsed from the query-parameter called `query`"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "type": "IPublicGetOptions",
+            "required": false,
+            "description": "Whatever is defined here will be passed to the called function as the parameter with the name `options`."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The value returned by the called method",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
       }
     }
   }
