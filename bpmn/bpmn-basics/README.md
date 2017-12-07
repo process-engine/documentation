@@ -141,12 +141,12 @@ oder ein System sein.
 #### Eigenschaften des Pools
 
 Falls der Inhalt eines Pools nicht bekannt oder für den Prozess nicht von
-bedeutung ist, kann er zugeklappt werden. Der Pool wird dann als Rechteck mit
+Bedeutung ist, kann er zugeklappt werden. Der Pool wird dann als Rechteck mit
 Beschriftung dargestellt, hat aber keinen weiteren Inhalt.
 
 Sequenzflüsse können über mehrere Lanes gehen, aber nicht über mehrere Pools.
 
-Die Process Engine hat zurzeit noch folgende Einschränkunen:
+Die Process Engine hat zurzeit noch folgende Einschränkungen:
 - Es wird nur ein Pool pro Diagramm unterstützt.
 - Ein Pool muss immer eine Lane haben.
 
