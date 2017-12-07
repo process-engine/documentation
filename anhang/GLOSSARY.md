@@ -31,3 +31,44 @@ Examples of domain objects are: user, process, ...
 
 ## task
 https://camunda.org/bpmn/reference/#activities-task
+
+## BPMN
+
+BPMN steht für Business Process Model and Notation. Es ist ein Standard der
+die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert ergrafische
+Symbole und deren Verwendung.
+
+## Aktivität
+
+Eine Aktivität ist ein BPMN-Symbol, welches symbolisiert, dass etwas getan
+werden soll.
+
+## Sequenzfluss
+
+Ein Sequenzfluss wird verwendet, um die Ablauf-Reihenfolge der Prozesselemente
+in einem BPMN-Diagramm darzustellen.
+
+## Gateway
+
+Ein Gateway teilt den Prozessfluss in einem BPMN-Diagramm in mehrere Flüsse auf,
+oder führt mehrere Flüsse wieder zusammen.
+
+## Ereignis
+
+Ein Ereignis ist ein BPMN-Symbol, welches symbolisiert, dass etwas passiert.
+
+## Pool
+
+Ein Prozess besteht aus einem oder mehreren Pools. Jeder Pool stellt einen
+Prozessbeteiligten dar, z.B. ein Unternehmen, einen Kunden, eine Abteilung oder
+ein System.
+
+## Lane
+
+Ein Pool kann in Lanes unterteilt sein, um genauer zu beschreiben, wer für die
+Erledigung von Aktivitäten zuständig ist. Eine Lane kann z.B. eine Benutzerrolle
+oder ein System sein.
+
+## Anmerkung
+
+Eine Anmerkung ist ein Kommentar im BPMN-Diagramm.
