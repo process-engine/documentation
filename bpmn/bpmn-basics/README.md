@@ -31,14 +31,15 @@ Modelliert werden können:
      Ausführung des Prozesses.
    - Diese Prozesse sind in Teilen oder als Ganzes automatisierbar.
 
-## BPMN-Elemente
+## Grundlegende BPMN-Elemente
 
-Die vier wichtigsten BPMN-Elemente sind:
+Hier werden die wichtigsten BPMN-Elemente beschrieben:
 
-- Aktivität (grün)
-- Sequenzfluss (orange)
-- Gateway (Blau)
-- Ereignis (Lila)
+- [Aktivität](#aktivität) (grün)
+- [Sequenzfluss](#sequenzfluss) (orange)
+- [Gateway](#gateway) (Blau)
+- [Ereignis](#ereignis) (Lila)
+- [Pools und Lanes](#pools-und-lanes) (hier nicht dargestellt)
 
 ![](./overview.svg)
 
@@ -125,10 +126,34 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 | Bedingung | <img width="50px" src="./signal_event.svg"> <img width="50px" src="./signal_receive_event.svg">   | Reagiert auf veränderte Bedingungen im Bezug auf Geschäftsregeln. |
 | Fehler    | <img width="50px" src="./error_event.svg"> <img width="50px" src="./error_receive_event.svg">     | Auslösen oder Behandeln von Fehlern.                              |
 
-### Pool
+### Pools und Lanes
 
-> This is work in progress
+Ein Prozess besteht aus einem oder mehreren Pools. Jeder Pool stellt einen
+Prozessbeteiligten dar, z.B. ein Unternehmen, einen Kunden, eine Abteilung oder
+ein System.
 
-### Lane
+Ein Pool kann in Lanes unterteilt sein, um genauer zu beschreiben, wer für die
+Erledigung von Aktivitäten zuständig ist. Eine Lane kann z.B. eine Benutzerrolle
+oder ein System sein.
 
-> This is work in progress
+![Beispielprozess zum demonstrieren von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.](./pool_mit_lanes.svg)
+
+#### Eigenschaften des Pools
+
+Falls der Inhalt eines Pools nicht bekannt oder für den Prozess nicht von
+bedeutung ist, kann er zugeklappt werden. Der Pool wird dann als Rechteck mit
+Beschriftung dargestellt, hat aber keinen weiteren Inhalt.
+
+Sequenzflüsse können über mehrere Lanes gehen, aber nicht über mehrere Pools.
+
+Die Process Engine hat zurzeit noch folgende Einschränkunen:
+- Es wird nur ein Pool pro Diagramm unterstützt
+- ein Pool muss immer eine Lane haben
+
+## Weitere BPMN-Elemente
+
+### 
+
+BPMN definiert neben den Basiselementen weitere Elemente. Sie werden von der
+Process Engine noch nicht unterstützt, und sind hier deshalb nicht genauer
+beschrieben. Die Elemente können 
