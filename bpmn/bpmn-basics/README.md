@@ -165,5 +165,3 @@ Engine nicht beachtet.
 ![Eine alleinstehende Anmerkung](./comment.svg)
 
 ![Eine Anmerkung zu einer Aktivität](./comment_on_activity.svg)
-
-
