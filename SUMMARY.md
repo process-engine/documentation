@@ -49,10 +49,10 @@
 
 * [Glossar](anhang/GLOSSARY.md)
 * [Literaturverweise](anhang/literaturverweise.md)
+* [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
 
 ---
 
 * [Community](community/README.md)
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
-* [reference](reference/README.md)
