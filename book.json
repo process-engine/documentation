@@ -2,8 +2,7 @@
   "plugins": [
     "collapsible-menu",
     "html5-video",
-    "image-captions-extended",
-    "swagger"
+    "image-captions-extended"
   ],
   "pluginsConfig": {
     "image-captions": {

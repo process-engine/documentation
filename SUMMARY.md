@@ -54,3 +54,4 @@
 
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
+* [reference](reference/README.md)

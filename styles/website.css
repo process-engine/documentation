@@ -11,3 +11,35 @@ figcaption {
   font-style: normal;
   line-height: 1.5em;
 }
+
+.markdown-section iframe {
+  table-layout: fixed;
+  display:block;
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.fullsize {
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.book-header {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  overflow: visible;
+  height: 50px;
+  padding: 0 8px;
+  z-index: 2;
+  font-size: .85em;
+  position: relative;
+  color: #7e888b;
+  background: 0 0;
+}
+
+.book-header.inline-header {
+  display: inline-block;
+}
