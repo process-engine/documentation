@@ -51,12 +51,12 @@ Eine Aktivität symbolisiert, dass etwas getan werden soll.
 
 #### Spezialformen der Aktivität
 
-|       Name        |                     Symbol                     |                                                                  Beschreibung                                                                  |
-| ----------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Benutzeraktivität | <img width="200px" src="./user_task.svg"/>     | Stellt eine Aktivität dar, die eine Benutzerinteraktion erfordert.                                                                             |
-| Serviceaktivität  | <img width="200px" src="./service_task.svg"/>  | Stellt eine Aktivität dar, die einen Dienst wie einen Webdienst oder eine automatisierte Anwendung verwendet.                                  |
-| Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer Process Engine ausgeführt werden soll.                                 |
-| Aufrufaktivität   | <img width="200px" src="./call_activity.svg"/> | Stellt eine Aktivität dar, die einen anderen Prozess aufruft. Sobald der aufgerufene Prozess beendet ist, ist auch die Aufrufaktivität beendet |
+|       Name        |                     Symbol                     |                                                                  Beschreibung                                                                   |
+| ----------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Benutzeraktivität | <img width="200px" src="./user_task.svg"/>     | Stellt eine Aktivität dar, die eine Benutzerinteraktion erfordert.                                                                              |
+| Serviceaktivität  | <img width="200px" src="./service_task.svg"/>  | Stellt eine Aktivität dar, die einen Dienst wie einen Webdienst oder eine automatisierte Anwendung verwendet.                                   |
+| Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer Process Engine ausgeführt werden soll.                                  |
+| Aufrufaktivität   | <img width="200px" src="./call_activity.svg"/> | Stellt eine Aktivität dar, die einen anderen Prozess aufruft. Sobald der aufgerufene Prozess beendet ist, ist auch die Aufrufaktivität beendet. |
 
 ### Sequenzfluss
 
@@ -152,8 +152,18 @@ Die Process Engine hat zurzeit noch folgende Einschränkunen:
 
 ## Weitere BPMN-Elemente
 
-### 
+BPMN definiert neben den Basiselementen weitere Elemente. BPMN-Elemente die hier
+nicht beschrieben werden, werden von der Process Engine noch nicht unterstützt.
 
-BPMN definiert neben den Basiselementen weitere Elemente. Sie werden von der
-Process Engine noch nicht unterstützt, und sind hier deshalb nicht genauer
-beschrieben. Die Elemente können 
+Die [Anmerkung](#anmerkung) ist zurzeit das einzige Element in dieser Kategorie.
+
+### Anmerkung
+
+Eine Anmerkung ist ein Kommentar im BPMN-Diagramm. Sie wird von der Process
+Engine nicht beachtet.
+
+![Eine alleinstehende Anmerkung](./comment.svg)
+
+![Eine Anmerkung zu einer Aktivität](./comment_on_activity.svg)
+
+
