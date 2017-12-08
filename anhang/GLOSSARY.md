@@ -29,19 +29,15 @@ A domain object is the representation of an object that is used inside of our so
 
 Examples of domain objects are: user, process, ...
 
-## task
-https://camunda.org/bpmn/reference/#activities-task
-
 ## BPMN
 
 BPMN steht für Business Process Model and Notation. Es ist ein Standard der
-die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert ergrafische
-Symbole und deren Verwendung.
+die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert er grafische
+Symbole und spezifiziert deren Verwendung.
 
 ## Aktivität
 
-Eine Aktivität ist ein BPMN-Symbol, welches symbolisiert, dass etwas getan
-werden soll.
+Eine Aktivität zeit an, dass etwas getan werden soll.
 
 ## Sequenzfluss
 
@@ -55,7 +51,7 @@ oder führt mehrere Flüsse wieder zusammen.
 
 ## Ereignis
 
-Ein Ereignis ist ein BPMN-Symbol, welches symbolisiert, dass etwas passiert.
+Ein Ereignis symbolisiert, dass etwas passiert.
 
 ## Pool
 

@@ -5,30 +5,29 @@
 Die Verwendung der **B**usiness **P**rocess **M**odel and **N**otation
 (**BPMN**) erlaubt die Modellierung von Geschäftsprozessen.
 
-BPMN ist ein Standard, der dazu grafische Symbole und deren Verwendung
-definiert.
+BPMN ist ein Standard, der grafische Symbole und deren Verwendung spezifiziert.
 
 <img title="Beispiel für ein Prozessmodell" src="./muedigkeit.svg" width="100%" />
 
 ## Überblick über die Verwendung von BPMN
 
 Man unterscheidet zwischen zwei Arten von Prozessmodellen, die beide mit BPMN
-Modelliert werden können:
+modelliert werden können:
 
 1. **Strategische** Prozessmodelle:
 
    - Sie beschreiben einen Ablauf so kompakt wie möglich.
    - Man erhält schnell einen Überblick über den gesamten Prozess.
-   - Die Sprache ist abstrakt und logisch, und dient dem schnellen Verständnis
-     des ganzen Prozesses.
+   - Die Sprache ist abstrakt, logisch und dient dem schnellen Verständnis des
+     ganzen Prozesses.
    - Diese Prozesse sind nicht automatisierbar.
 
 1. **Operative** Prozessmodelle:
 
    - Sie beschreiben einen Ablauf so konkret wie möglich.
    - Es ist genau definiert, was wann wie geschehen muss.
-   - Die Sprache ist physisch und konkret, und dient der tatsächlichen
-     Ausführung des Prozesses.
+   - Die Semantik ist physisch, konkret und dient der tatsächlichen Ausführung
+     des Prozesses.
    - Diese Prozesse sind in Teilen oder als Ganzes automatisierbar.
 
 ## Grundlegende BPMN-Elemente
@@ -74,10 +73,10 @@ Flüsse wieder zusammen.
 
 #### Spezialformen des Gateways
 
-|         Name          |                      Symbol                       |                                                                 Beschreibung                                                                 |
-| --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
-| Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
+|         Name          |                      Symbol                       |                                                                 Beschreibung                                                                  |
+| --------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort, sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
+| Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort, sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
 
 ### Ereignis
 
@@ -104,10 +103,10 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ##### 2. Durchgezogene oder gestrichelte Linie
 
-|                Name                 |                        Symbol                         |                                                                               Beschreibung                                                                               |
-| ----------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Unterbrechendes<br>Ereignis         | <img width="50px" src="./event.svg">                  | Durchgezogenen Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess abgebrochen.</li><li>Die zugehörige Aktivität abgebrochen.</li></ul>            |
-| Nicht unter-<br>brechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelten Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess nicht abgebrochen.</li><li>Die zugehörige Aktivität nicht abgebrochen.</li></ul> |
+|                Name                 |                        Symbol                         |                                                                              Beschreibung                                                                               |
+| ----------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unterbrechendes<br>Ereignis         | <img width="50px" src="./event.svg">                  | Durchgezogene Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess abgebrochen.</li><li>Die zugehörige Aktivität abgebrochen.</li></ul>            |
+| Nicht unter-<br>brechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess nicht abgebrochen.</li><li>Die zugehörige Aktivität nicht abgebrochen.</li></ul> |
 
 ##### 3. Ausgefülltes oder nicht ausgefülltes Symbol
 
@@ -136,7 +135,7 @@ Ein Pool kann in Lanes unterteilt sein, um genauer zu beschreiben, wer für die
 Erledigung von Aktivitäten zuständig ist. Eine Lane kann z.B. eine Benutzerrolle
 oder ein System sein.
 
-![Beispielprozess zum demonstrieren von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.](./pool_mit_lanes.svg)
+![Beispielprozess zur Demonstration von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.](./pool_mit_lanes.svg)
 
 #### Eigenschaften des Pools
 
@@ -152,8 +151,8 @@ Die Process Engine hat zurzeit noch folgende Einschränkungen:
 
 ## Weitere BPMN-Elemente
 
-BPMN definiert neben den Basiselementen weitere Elemente. BPMN-Elemente die hier
-nicht beschrieben werden, werden von der Process Engine noch nicht unterstützt.
+BPMN definiert neben den Basiselementen weitere Elemente. Hier nicht
+beschriebene BPMN-Elemente werden von der Process Engine noch nicht unterstützt.
 
 Die [Anmerkung](#anmerkung) ist zurzeit das einzige Element in dieser Kategorie.
 

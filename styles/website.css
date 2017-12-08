@@ -22,7 +22,7 @@ figcaption {
 }
 
 .fullsize {
-  top: 0px;
+  top: 0;
   position: absolute;
   width: 100%;
   height: 100%;
