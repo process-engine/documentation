@@ -64,7 +64,7 @@ Ein Ereignis symbolisiert, dass etwas passiert.
 
 ## Pool
 
-Ein Pool ist ein Symbol zur Darstellungen der Grenzen eines Geschäftsprozesses.
+Ein Pool ist ein Symbol zur Darstellung der Grenzen eines Geschäftsprozesses.
 Ein Geschäftsprozess muss in sich abgeschlossen sein; er kann sich nicht über
 mehrere Pools erstrecken. Mehrere Prozesse können über Nachrichten miteinander
 kollaborieren.

@@ -38,7 +38,7 @@ Kollaboration bezeichnet die Zusammenarbeit mehrerer unabhängiger Prozesse. Die
 Zusammenarbeit wird über den Austausch von Nachrichten zwischen den Prozessen
 realisiert.
 
-Das Diagramm, dass diese Prozesse und ihre Nachrichten darstellt, heißt
+Das Diagramm, das diese Prozesse und ihre Nachrichten darstellt, heißt
 Kollaborationsdiagramm.
 
 ## Grundlegende BPMN-Elemente
@@ -138,7 +138,7 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ### Pools und Lanes
 
-Ein Pool ist ein Symbol zur Darstellungen der Grenzen eines Geschäftsprozesses.
+Ein Pool ist ein Symbol zur Darstellung der Grenzen eines Geschäftsprozesses.
 Ein Geschäftsprozess muss in sich abgeschlossen sein; er kann sich nicht über
 mehrere Pools erstrecken. Mehrere Prozesse können über Nachrichten miteinander
 kollaborieren.
