@@ -41,7 +41,7 @@ Kollaboration bezeichnet die Zusammenarbeit mehrerer unabhängiger Prozesse. Die
 Zusammenarbeit wird über den Austausch von Nachrichten zwischen den Prozessen
 realisiert.
 
-Das Diagramm, dass diese Prozesse und ihre Nachrichten darstellt, heißt
+Das Diagramm, das diese Prozesse und ihre Nachrichten darstellt, heißt
 Kollaborationsdiagramm.
 
 ## Aktivität
@@ -64,9 +64,10 @@ Ein Ereignis symbolisiert, dass etwas passiert.
 
 ## Pool
 
-Ein Prozess besteht aus einem oder mehreren Pools. Jeder Pool stellt einen
-Prozessbeteiligten dar, z.B. ein Unternehmen, einen Kunden, eine Abteilung oder
-ein System.
+Ein Pool ist ein Symbol zur Darstellungen der Grenzen eines Geschäftsprozesses.
+Ein Geschäftsprozess muss in sich abgeschlossen sein; er kann sich nicht über
+mehrere Pools erstrecken. Mehrere Prozesse können über Nachrichten miteinander
+kollaborieren.
 
 ## Lane
 
