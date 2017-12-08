@@ -138,9 +138,10 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ### Pools und Lanes
 
-Ein Pool umfasst einen Geschäftsprozess. Ein Geschäftsprozess muss in sich
-abgeschlossen sein; er kann sich nicht über mehrere Pools erstrecken. Mehrere
-Pools können über Nachrichten miteinander Kollaborieren.
+Ein Pool ist ein Symbol zur Darstellungen der Grenzen eines Geschäftsprozesses.
+Ein Geschäftsprozess muss in sich abgeschlossen sein; er kann sich nicht über
+mehrere Pools erstrecken. Mehrere Prozesse können über Nachrichten miteinander
+kollaborieren.
 
 Ein Pool kann in Lanes unterteilt sein. Eine Lane beschreibt, wer für die
 Erledigung von Aktivitäten zuständig ist. Eine Lane kann z.B. eine Benutzerrolle
