@@ -30,6 +30,17 @@ modelliert werden können:
      des Prozesses.
    - Diese Prozesse sind in Teilen oder als Ganzes automatisierbar.
 
+## Begrifssdefinitionen
+
+### Kollaboration
+
+Kollaboration bezeichnet die Zusammenarbeit mehrerer unabhängiger Prozesse. Die
+Zusammenarbeit wird über den Austausch von Nachrichten zwischen den Prozessen
+realisiert.
+
+Das Diagramm, dass diese Prozesse und ihre Nachrichten darstellt, heißt
+Kollaborationsdiagramm.
+
 ## Grundlegende BPMN-Elemente
 
 Hier werden die wichtigsten BPMN-Elemente beschrieben:
@@ -127,13 +138,13 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ### Pools und Lanes
 
-Ein Prozess besteht aus einem oder mehreren Pools. Jeder Pool stellt einen
-Prozessbeteiligten dar, z.B. ein Unternehmen, einen Kunden, eine Abteilung oder
-ein System.
+Ein Pool umfasst einen Geschäftsprozess. Ein Geschäftsprozess muss in sich
+abgeschlossen sein; er kann sich nicht über mehrere Pools erstrecken. Mehrere
+Pools können über Nachrichten miteinander Kollaborieren.
 
-Ein Pool kann in Lanes unterteilt sein, um genauer zu beschreiben, wer für die
+Ein Pool kann in Lanes unterteilt sein. Eine Lane beschreibt, wer für die
 Erledigung von Aktivitäten zuständig ist. Eine Lane kann z.B. eine Benutzerrolle
-oder ein System sein.
+oder ein System repräsentieren.
 
 ![Beispielprozess zur Demonstration von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.](./pool_mit_lanes.svg)
 
