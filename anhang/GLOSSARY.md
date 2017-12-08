@@ -35,6 +35,15 @@ BPMN steht für Business Process Model and Notation. Es ist ein Standard der
 die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert er grafische
 Symbole und spezifiziert deren Verwendung.
 
+### Kollaboration
+
+Kollaboration bezeichnet die Zusammenarbeit mehrerer unabhängiger Prozesse. Die
+Zusammenarbeit wird über den Austausch von Nachrichten zwischen den Prozessen
+realisiert.
+
+Das Diagramm, dass diese Prozesse und ihre Nachrichten darstellt, heißt
+Kollaborationsdiagramm.
+
 ## Aktivität
 
 Eine Aktivität zeit an, dass etwas getan werden soll.
