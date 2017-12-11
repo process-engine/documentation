@@ -27,7 +27,7 @@ Fertig sieht es so aus:
 
 Als nächstes erstellt man einen User[task](../../anhang/Glossary.md)
 mit dem Namen `Get Email Address`,
-der den User per UI dazu auffordert eine Email anzugeben.
+der den User per UI dazu auffordert eine E-Mail anzugeben.
 
 {% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
 
