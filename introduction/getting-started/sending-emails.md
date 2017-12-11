@@ -1,23 +1,32 @@
-# Emails versenden
+# E-Mails versenden
 
-Das Beispiel "Nutzung einer REST API" wird um den Versand von Emails erweitert.
-Dabei werden die geladenen Daten versendet.
+Das Beispiel "Nutzung einer REST API" wird um den Versand von Emails erweitert,
+um die geladenen Daten zu versenden.
 
-Dazu updaten wir den Prozess folgendermaßen:
+Dazu muss der Prozess nur mit folgenden drei Schritten abegändert werden:
 
-1. Abfrage der Email-Adresse
-1. Bestätigung anfordern
-1. Versand einer Email mit dem Wechselkurs
+1. Die Abfrage der Email-Adresse
+1. Eine Bestätigung anfordern
+1. Der Versand einer Email mit dem Wechselkurs
 
 Um das zu erreichen, müssen ein paar Vorbereitungen getroffen werden.
 
-Der Pool und der Startpunkt zu `Emails versenden` umbenennen;
+Den Pool und das Startevent zu `Sending mails` umbenennen und
 die Lane vergrößern, da mehr Platz benötigt wird.
+
+Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
+
+<img src="../images/poolname.png" width="35%" />
+
+Das selbe auch bei dem Startevent.
+Fertig sieht es so aus:
+
+<img src="../images/renamed_poolname_startevent.png" width="35%" />
 
 {% video controls="controls"%}../images/preparation-send-email.mp4{% endvideo %}
 
-Als nächstes erstellt man einen `Get Email Address`
-[Task](../../anhang/Glossary.md),
+Als nächstes erstellt man einen User[task](../../anhang/Glossary.md)
+mit dem Namen `Get Email Address`,
 der den User per UI dazu auffordert eine Email anzugeben.
 
 {% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
