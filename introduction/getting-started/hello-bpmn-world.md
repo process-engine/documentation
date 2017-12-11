@@ -48,6 +48,8 @@ werden eine HTML Ansicht zu rendern. Diese wird auf folgende Art und Weise defin
 Im `Extensions` Reiter kann das durch Key-Value-Paare eingestellt werden;
 der Reiter befindet sich auf der rechten Seite des Editors.
 
+<img src="../images/integration-extension.png" width="100%" />
+
 Es gibt zwei Felder:
 
 1. `uiName`
@@ -65,6 +67,8 @@ bitte folgendes in das Feld `uiConfig` eintragen:
 ```javascript
 ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
 ```
+
+<img src="../images/integration-property.png" width="100%" />
 
 {% video controls="controls"%}../images/integrate-hello-world.mp4{% endvideo %}
 
