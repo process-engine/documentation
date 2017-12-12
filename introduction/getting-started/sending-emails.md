@@ -11,6 +11,8 @@ Dazu muss der Prozess nur mit folgenden drei Schritten abegändert werden:
 
 Um das zu erreichen, müssen ein paar Vorbereitungen getroffen werden.
 
+{% video controls="controls"%}../images/preparation-send-email.mp4{% endvideo %}
+
 Den Pool und das Startevent zu `Sending mails` umbenennen und
 die Lane vergrößern, da mehr Platz benötigt wird.
 
@@ -23,26 +25,32 @@ Fertig sieht es so aus:
 
 <img src="../images/renamed_poolname_startevent.png" width="35%" />
 
-{% video controls="controls"%}../images/preparation-send-email.mp4{% endvideo %}
-
 Als nächstes erstellt man einen User[task](../../anhang/Glossary.md)
 mit dem Namen `Get Email Address`,
 der den User per UI dazu auffordert eine E-Mail anzugeben.
 
 {% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
 
+<img src="../images/email_task_creation.png" width="50%" />
+
+<img src="../images/email_task_general.png" width="35%" />
+
+<img src="../images/email_task_forms.png" width="35%" />
+
+<img src="../images/email_task_extesions.png" width="35%" />
+
+
+
 Dann muss der `Show Data` [Task](../../anhang/Glossary.md) zu `Confirm Data`
-[Task](../../anhang/Glossary.md) umbenannt werden und der Wert der
+umbenannt werden und der Wert der
 `uiConfig` Property zu folgendem Wert abgeändert werden.
-
-Dabei ist zu beachten, dass der `Fetch Data` [Task](../../anhang/Glossary.md)
-die ID `fetch_data` bekommt.
-
-Folgendes ist in das Feld `uiConfig` einzutragen:
 
 ```
 ${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
 ```
+
+Dabei ist zu beachten, dass der `Fetch Data` [Task](../../anhang/Glossary.md)
+die ID `fetch_data` bekommt.
 
 {% video controls="controls"%}../images/confirm_data-send-email.mp4{% endvideo %}
 
