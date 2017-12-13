@@ -15,19 +15,27 @@ Das Diagramm sieht folgendermaßen aus:
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
 
-Diesee dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
+Diese dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
-Der Knopf `Create Process Definition` dient zum Erstellen eines neuen Diagramms.
+Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen Diagramms. Alternativ kann auch der `Prozess erstellen` Prozess ausgeführt werden.
+
+<img src="../images/create-process-buttons.png" width="100%" />
 
 Es öffnet sich ein neuer Dialog;
 dort können ein Name und ein Schlüssel für das Prozessmodell angegeben werden;
 in diesem Fall kann bei beiden `Hello World` gewählt werden.
 
-Die Schaltfläche `Details` dient zur Anzeige und Bearbeitung von Diagrammen;
-Diese befindet sich in der Tabelle, in der jeweiligen Zeile des Prozessmodells, auf der rechten Spalte.
- 
+<img src="../images/initial-processdata-create-new-diagram.png" width="100%" />
+
+Sobald die Task List erscheint und der UserTaskName des `Prozess erstellen` Prozess auf `Prozess erstellt` umspringt kann die `Continue` Schaltfläche betätigt werden und die folgende Nachricht mit der `OK` Schaltfläche geschlossen werden.
+
+Nun kann über dem `Process Definition List` Reiter die Liste der Prozessmodelle angezeigt werden und über die `Details` Schaltfläche des gerade erstellten Prozesses der Prozesseditor geöffnet werden.
+
+<img src="../images/process-definition-list-create-new-diagram.png" width="100%" />
+
+So sollte das ganze dann aussehen:
 {% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
