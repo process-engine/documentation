@@ -31,15 +31,21 @@ der den User per UI dazu auffordert eine E-Mail anzugeben.
 
 {% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
 
-<img src="../images/email_task_creation.png" width="50%" />
+Erstellung eines neuen Usertask:
+
+<img src="../images/email_task_creation.png" width="60%" />
+
+Hinzufügen einer ID:
 
 <img src="../images/email_task_general.png" width="35%" />
 
+Hinzufügen eines Formfields:
+
 <img src="../images/email_task_forms.png" width="35%" />
 
+Hinzufügen einer Property:
+
 <img src="../images/email_task_extesions.png" width="35%" />
-
-
 
 Dann muss der `Show Data` [Task](../../anhang/Glossary.md) zu `Confirm Data`
 umbenannt werden und der Wert der
@@ -54,12 +60,24 @@ die ID `fetch_data` bekommt.
 
 {% video controls="controls"%}../images/confirm_data-send-email.mp4{% endvideo %}
 
-Als nächstes wird eine Überprüfung angelegt;
-es ist zu prüfen, ob in der `Confirm Data` [Task](../../anhang/Glossary.md)
-Confirm oder Cancel ausgewählt wurde;
+Umbenennen des `Show Data Task`:
 
-Diese Auswahl hat Einfluss auf den weiteren Prozessweg; Cancel beendet den
-Prozess; Confirm löst den `Send email` [Task](../../anhang/Glossary.md) aus.
+<img src="../images/rename_to_confirm_task.png" width="60%" />
+
+Anpassen der `uiConfig`:
+
+<img src="../images/change_config_confirm_task.png" width="35%" />
+
+Setzen einer ID beim `Fetch Data Task`:
+
+<img src="../images/set_id_fetch_data_task.png" width="35%" />
+
+Als nächstes wird eine Überprüfung angelegt.
+Es ist zu prüfen, ob in dem `Confirm Data` [Task](../../anhang/Glossary.md)
+Confirm oder Cancel ausgewählt wurde. Dazu wird ein `Gateway` benutzt.
+
+Diese Auswahl hat Einfluss auf den weiteren Prozessweg. Cancel beendet den
+Prozess und Confirm löst den `Send email` [Task](../../anhang/Glossary.md) aus.
 
 Der letzte Prozessschritt ist der `Send email`
 [Task](../../anhang/Glossary.md). Dieser muss die folgenden Eigenschaften
@@ -73,9 +91,30 @@ params	[null, token.history.get_email.email, "EUR to USD conversion rate", "1 EU
 
 Nach diesem [Task](../../anhang/Glossary.md) muss der Prozess beendet werden.
 
-
 {% video controls="controls"%}../images/send_email-send-email.mp4{% endvideo %}
+
+Hinzufügen eines Gateways:
+
+<img src="../images/add_gateway.png" width="35%" />
+
+Hinzufügen von Flows und einem Servicetask(`Send email`):
+
+<img src="../images/add_flows_with_names.png" width="35%" />
+
+Hinzufügen der entsprechenden Überprüfungen:
+
+<img src="../images/add_condition_ok.png" width="60%" />
+
+<img src="../images/add_condition_cancel.png" width="60%" />
+
+Setzen der Propertys für den Servicetask:
+
+<img src="../images/add_service_task_and_its_propertys.png" width="60%" />
 
 Dann kann das ganze getestet werden:
 
 {% video controls="controls"%}../images/run-sending-mails.mp4{% endvideo %}
+
+Das fertige Prozessmodell sieht wie folgt aus:
+
+<img src="../images/finished_process_diagram.png" width="100%" />
