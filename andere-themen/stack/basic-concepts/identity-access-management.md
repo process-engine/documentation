@@ -1,5 +1,23 @@
 # Identitäts- und Zugriffsverwaltung (IAM)
 
+Das IAM innerhalb der Process Engine bedient sich der Interfaces aus
+[iam_contracts](https://github.com/essential-projects/iam_contracts)
+und den zugehörigen Implementierungen in
+[iam](https://github.com/essential-projects/iam).
+
+Die Process Engine verwendet Claims, um die Beschränkung auf 
+Ressourcen zu erlauben. Ein Claim ist in der Regel einer Rolle
+zugeordnet. Zwei unterschiedliche Rollen, können dem Benutzer denselben
+Claim zuordnen.
+
+**Anmerkung**:
+
+Die Process Engine ist kein Identity Provider!
+
+Es sollte immer ein externer Provider bereitgestellt werden.
+Beispielsweise kann der [IdentityServer](https://identityserver.io/)
+dafür verwendet werden.
+
 ## Dekoratoren
 
 Um Implementierungen und Daten zu schützen, kann man mögliche Aktionen mit einer
