@@ -10,9 +10,10 @@ und einen [User Task](../../anhang/Glossary.md), um die Daten anzuzeigen:
 
 {% video controls="controls"%}../images/consuming-rest-api.mp4{% endvideo %}
 
-Unter dem `Extensions`-Reiter kann dem
-[Service Task](../../anhang/Glossary.md) `Fetch Data` nun gesagt werden, was er tun soll: In diesem
-Fall eine HTTP REST API abzurufen. Dazu muss im `Extension`-Reiter die folgenden Properties hinzugefügt werden:
+Unter dem `Extensions`-Reiter kann dem [Service Task](../../anhang/Glossary.md)
+`Fetch Data` nun gesagt werden, was er tun soll: In diesem Fall eine HTTP REST
+API abzurufen. Dazu müssen im `Extension`-Reiter die folgenden Properties
+hinzugefügt werden:
 
 ```
 module   HttpService

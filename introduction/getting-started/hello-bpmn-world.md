@@ -58,11 +58,12 @@ diese werden direkt mit dem ausgewählten Element verbunden.
 
 ## Integration eines Diagramms
 
-Um dem User eine UI präsentieren zu können, kann die ProcessEngine konfiguriert 
-werden eine HTML Ansicht zu rendern. Diese wird auf folgende Art und Weise definiert:
+Ein UserTask kann so eingestellt werden, dass dem Benutzer eine grafische
+Oberfläche dargestellt wird. Die Konfiguration kann wie folgt geschehen:
 
-Im `Extensions`-Reiter kann das durch Key-Value-Paare eingestellt werden;
-der Reiter befindet sich auf der rechten Seite des Editors.
+Über den `Extensions`-Reiter wird mit Hilfe von Key-Value-Paare eingestellt, wie
+die Oberfläche aussehen soll. Der Reiter befindet sich auf der rechten Seite des
+Editors.
 
 <img src="../images/integration-extension.png" width="100%" />
 

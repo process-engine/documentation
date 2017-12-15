@@ -6,7 +6,7 @@
 * [Getting started](introduction/getting-started/README.md)
   * [Konfiguration des Stacks (skateboard)](introduction/getting-started/skateboard.md)
   * [Hello BPMN-World](introduction/getting-started/hello-bpmn-world.md)
-  * [Nutzung einer REST API](introduction/getting-started/http-rest-api.md)
+  * [Verwendung einer REST API](introduction/getting-started/http-rest-api.md)
   * [Versenden von Emails](introduction/getting-started/sending-emails.md)
 
 ## Grundlagen
