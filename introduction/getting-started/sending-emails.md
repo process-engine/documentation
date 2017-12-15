@@ -3,7 +3,7 @@
 Das Beispiel "Nutzung einer REST API" wird um den Versand von Emails erweitert,
 um die geladenen Daten zu versenden.
 
-Dazu muss der Prozess nur mit folgenden drei Schritten abegändert werden:
+Dazu muss der Prozess nur mit folgenden drei Schritten abgeändert werden:
 
 1. Die Abfrage der Email-Adresse
 1. Eine Bestätigung anfordern
@@ -20,7 +20,7 @@ Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
 
 <img src="../images/poolname.png" width="35%" />
 
-Das selbe auch bei dem Startevent.
+Dasselbe wird auch bei dem Startevent gemacht.
 
 Fertig sieht es so aus:
 
@@ -73,8 +73,8 @@ Setzen einer ID beim `Fetch Data`-Task:
 
 <img src="../images/set_id_fetch_data_task.png" width="35%" />
 
-Als nächstes wird eine Überprüfung angelegt,
-es ist zu prüfen, ob in dem `Confirm Data`-[Task](../../anhang/Glossary.md)
+Als nächstes wird eine Überprüfung angelegt.
+Es ist zu prüfen, ob in dem `Confirm Data`-[Task](../../anhang/Glossary.md)
 Confirm oder Cancel ausgewählt wurde; wir benutzen ein `Gateway` dafür.
 
 Diese Auswahl hat Einfluss auf den weiteren Prozessweg. Cancel beendet den
@@ -108,7 +108,7 @@ Hinzufügen der entsprechenden Überprüfungen:
 
 <img src="../images/add_condition_cancel.png" width="60%" />
 
-Setzen der Propertys für den Service Task:
+Setzen der Properties für den Service Task:
 
 <img src="../images/add_service_task_and_its_propertys.png" width="60%" />
 
