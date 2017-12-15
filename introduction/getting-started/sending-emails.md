@@ -1,6 +1,6 @@
 # Emails versenden
 
-Das Beispiel "Nutzung einer REST API" wird um den Versand von Emails erweitert,
+Das Beispiel "Verwenden einer REST API" wird um den Versand von Emails erweitert,
 um die geladenen Daten zu versenden.
 
 Dazu muss der Prozess nur mit folgenden drei Schritten abgeändert werden:
@@ -16,6 +16,7 @@ Um das zu erreichen, müssen ein paar Vorbereitungen getroffen werden.
 Den Pool und das Startevent zu `Sending mails` umbenennen und
 die Lane vergrößern, da mehr Platz benötigt wird.
 
+#### 1.1  Vorbereitungen
 Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
 
 <img src="../images/poolname.png" width="35%" />
@@ -32,7 +33,7 @@ der den User per UI dazu auffordert eine E-Mail anzugeben.
 
 {% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
 
-Erstellung eines neuen User Task:
+#### 1.2 Usertask erstellen und konfigurieren
 
 <img src="../images/email_task_creation.png" width="60%" />
 
@@ -48,6 +49,7 @@ Hinzufügen einer Property:
 
 <img src="../images/email_task_extesions.png" width="35%" />
 
+#### 1.3 Abändern vorhandener Tasks
 Dann muss der `Show Data`-[Task](../../anhang/Glossary.md) zu `Confirm Data`
 umbenannt werden und der Wert der
 `uiConfig` Property zu folgendem Wert abgeändert werden:
@@ -73,6 +75,7 @@ Setzen einer ID beim `Fetch Data`-Task:
 
 <img src="../images/set_id_fetch_data_task.png" width="35%" />
 
+#### 2.1 Bestätigungsüberprüfung
 Als nächstes wird eine Überprüfung angelegt.
 Es ist zu prüfen, ob in dem `Confirm Data`-[Task](../../anhang/Glossary.md)
 Confirm oder Cancel ausgewählt wurde; wir benutzen ein `Gateway` dafür.
