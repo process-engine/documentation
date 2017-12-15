@@ -19,7 +19,9 @@ Diese dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
-Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen Diagramms. Alternativ kann auch der `Prozess erstellen` Prozess ausgeführt werden.
+Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen
+Diagramms. Alternativ kann auch der `Prozess erstellen` Prozess ausgeführt
+werden.
 
 <img src="../images/create-process-buttons.png" width="100%" />
 
@@ -29,13 +31,19 @@ in diesem Fall kann bei beiden `Hello World` gewählt werden.
 
 <img src="../images/initial-processdata-create-new-diagram.png" width="100%" />
 
-Sobald die Task List erscheint und der UserTaskName des `Prozess erstellen` Prozess auf `Prozess erstellt` umspringt kann die `Continue` Schaltfläche betätigt werden und die folgende Nachricht mit der `OK` Schaltfläche geschlossen werden.
+Die Task List erscheint;
+in der Liste befindet sich der Eintrag: `Prozess erstellen`;
+nach Beendigung der Arbeiten im Backend, springt der UserTaskName auf `Prozess erstellt` um;
+die `Continue` Schaltfläche kann betätigt werden;
+die folgende Nachricht können über die `OK` Schaltfläche geschlossen werden.
 
-Nun kann über dem `Process Definition List` Reiter die Liste der Prozessmodelle angezeigt werden und über die `Details` Schaltfläche des gerade erstellten Prozesses der Prozesseditor geöffnet werden.
+Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an;
+die `Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
 
 <img src="../images/process-definition-list-create-new-diagram.png" width="100%" />
 
 So sollte das ganze dann aussehen:
+
 {% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
@@ -53,7 +61,7 @@ diese werden direkt mit dem ausgewählten Element verbunden.
 Um dem User eine UI präsentieren zu können, kann die ProcessEngine konfiguriert 
 werden eine HTML Ansicht zu rendern. Diese wird auf folgende Art und Weise definiert:
 
-Im `Extensions` Reiter kann das durch Key-Value-Paare eingestellt werden;
+Im `Extensions`-Reiter kann das durch Key-Value-Paare eingestellt werden;
 der Reiter befindet sich auf der rechten Seite des Editors.
 
 <img src="../images/integration-extension.png" width="100%" />
