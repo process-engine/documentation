@@ -53,7 +53,7 @@ ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm
 
 ![ShowData](../images/show-data-rest-api.png)
 
-So sollte das ganze dann aussehen:
+So sieht das Ganze dann aus:
 
 {% video controls="controls"%}../images/integrate-rest-api.mp4{% endvideo %}
 
