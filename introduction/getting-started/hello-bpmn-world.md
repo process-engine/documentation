@@ -10,7 +10,7 @@ Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/hello-world.svg" width="100%" />
 
-[Dieser User Task](../../anhang/Glossary.md) wird folgende Elemente enthalten:
+Dieser [User Task](../../anhang/Glossary.md) wird folgende Elemente enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
@@ -20,7 +20,7 @@ Diese dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
 ## Erstellung eines neuen Diagramms
 
 Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen
-Diagramms. Alternativ kann auch der `Prozess erstellen` Prozess ausgeführt
+Diagramms. Alternativ kann auch der `Prozess erstellen`-Prozess ausgeführt
 werden.
 
 <img src="../images/create-process-buttons.png" width="100%" />
@@ -42,7 +42,7 @@ die `Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesse
 
 <img src="../images/process-definition-list-create-new-diagram.png" width="100%" />
 
-So sollte das Ganze dann aussehen:
+So sieht das Ganze dann aus:
 
 {% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 
@@ -53,6 +53,15 @@ Der BPMN Editor zeigt uns eine Ansicht mit einer Lane und einem Startevent.
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü;
 dieses Menü erlaubt es neue Elemente hinzuzufügen;
 diese werden direkt mit dem ausgewählten Element verbunden.
+
+An dem Startpunkt wird dann ein [User Task]() mit dem Namen `Hello Word` verbunden;
+an diesem dann ein Endpunkt.
+
+Das ganze sollte dann so aussehen:
+
+<img src="../images/hello-world-diagram.png" width="100%" />
+
+Und so wird es gemacht:
 
 {% video controls="controls"%}../images/create-hello-world.mp4{% endvideo %}
 
@@ -74,7 +83,8 @@ Es gibt zwei Felder:
 
 Mit Hilfe von `uiName` wird die Art der UI Komponente festgelegt.
 
-In diesem Fall benutzen wir einen Bestätigungsdialog.
+In diesem Fall benutzen wir einen Bestätigungsdialog. Als Wert für das Feld
+`uiName` wählen wir dazu `Confirm`.
 
 Mit Hilfe von `uiConfig` werden die Details der UI Komponente bestimmt.
 
@@ -91,7 +101,7 @@ ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] 
 
 **Zusammenfassung**
 
-Wir haben den User Task festgelegt, die Konfiguration der UI hinterlegt und die Komponenten korrekt verschaltet.
+Wir haben den User Task festgelegt, die Konfiguration der Oberfläche hinterlegt und die Komponenten korrekt verschaltet.
 
 Zeit den Prozess auszuführen:
 
