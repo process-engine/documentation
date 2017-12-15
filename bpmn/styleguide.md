@@ -95,8 +95,8 @@ Die Process Engine unterstützt JavaScript als Skriptsprache.
 
 #### Aufrufaktivität
 
-Die Aufrufaktivität ist die einzige Möglichkeit einen anderen Prozess in
-einem Prozess aufzurufen.
+Die Aufrufaktivität erlaubt das Aufrufen eines anderen Prozesses in einem
+Prozess.
 
 | Symbol | Beispiel |
 | :----: | -------- |
@@ -108,8 +108,8 @@ Der gesamte Prozess wird durch die Aufrufaktivität aufgerufen.
 
 ## Verwendung von Gateways
 
-Viele Prozesse laufen nicht immer gleich ab. Wir nutzen Gateways, um diese
-Variationen abzubilden.
+Gateways teilen den Prozessfluss in einem BPMN-Diagramm in mehrere Flüsse auf,
+oder führen mehrere Flüsse wieder zusammen.
 
 Beachte folgende Regeln, zum korrekten modellieren von Gateways:
 
