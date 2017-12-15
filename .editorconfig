@@ -1,0 +1,39 @@
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.(cs,vb)]
+indent_size = 4
+
+# Prefer all non-static fields, properties, methods and events used in non-static methods to be prefaced with this.
+dotnet_style_qualification_for_field = true:suggestion
+dotnet_style_qualification_for_property = true:suggestion
+dotnet_style_qualification_for_method = true:suggestion
+dotnet_style_qualification_for_event = true:suggestion
+# Prefer objects to be initialized using object initializers when possible.
+dotnet_style_object_initializer = true:suggestion
+# Prefer collections to be initialized using collection initializers when possible.
+dotnet_style_collection_initializer = true:suggestion
+
+[*.cs]
+# Prefer var is used for built-in system types such as int.
+csharp_style_var_for_built_in_types = true:suggestion
+# Prefer var when the type is already mentioned on the right-hand side of a declaration expression.
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+[*.js,*.jsx,*.ts,*.tsx]
+indent_size = 2
+
+[*.json]
+indent_size = 2;
+
+[*.sh]
+indent_size = 2;
+
+[*.md]
+trim_trailing_whitespace = true
