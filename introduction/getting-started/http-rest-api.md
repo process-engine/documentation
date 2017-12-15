@@ -1,4 +1,4 @@
-# Nutzung einer REST API
+# Verwendung einer REST API
 
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
