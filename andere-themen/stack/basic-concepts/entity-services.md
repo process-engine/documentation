@@ -1,14 +1,14 @@
 # Entity Services
 
-Entity Services sind Klassen zur Verwaltung von bestimmten Entitäten.
+Entity Services dienen zur Verwaltung von bestimmten Entitäten.
 
 ## Entity Service Logik
-
-Ein Entity Service:
-
-- ist zustandslos
-- kann Entitäten verwalten
 
 Eine Entity soll nicht direkt den Zustand anderer Entities beeinflussen.
 Deshalb gibt es keine Notwendikeit, einen EntityTypeService als
 Dependency zum zugehörigen EntityType anzugeben.
+
+Über den Entity Service können folgende Aussagen getroffen werden:
+
+- ist zustandslos
+- kann Entitäten verwalten

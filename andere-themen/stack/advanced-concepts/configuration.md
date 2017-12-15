@@ -48,7 +48,7 @@ man folgende Aussage treffen:
 An unserem Beispiel sieht das wie folgt aus:
 
 ```
-$ cat config.json
+$ cat config.ini
 [config]
   port=8000
 
@@ -143,9 +143,10 @@ In dem Beispiel würde die Dateistruktur so aussehen:
 
 ```
 .
-+-- config
-    +-- example
-        +-- example_service.json
+$ tree config 
+basics
+└── example
+   └── example_service.json
 ```
 
 und der Inhalt von `example_service.json` so:
@@ -157,7 +158,7 @@ und der Inhalt von `example_service.json` so:
 ```
 
 Standardmäßig wird erwartet, dass der Konfigurationsordner `./config` im
-Projektstammverzeichnis ist.
+Projektstammverzeichnis liegt.
 
 ### Umgebungskonfiguration
 
@@ -179,11 +180,20 @@ Betriebssystem.
 Bei Verwendung von Kommandozeilenargumenten werden die Hierarchieebenen wie in
 der [Deklaration](#Deklaration) verwendet.
 
-Hier wird der Umgebungsvariable `myValue` aus der Datei `example_service`, aus dem Ordner `example`, der Wert `test` zugewiesen.
+**Beispiel**
+
+Überschreiben einer statischen Variable der Konfiguration über die Kommandozeile.
+
+Befehl: 
 
 ```
 node myApp --example:example_service:myValue test
 ```
+
+Bedeutung:
+
+Der Umgebungsvariable `myValue` aus der Datei `example_service`,
+aus dem Ordner `example`, wird der Wert `test` zugewiesen.
 
 Zusätzliche Argumente können einfach durch Anhängen eines anderen Arguments
 unter Verwendung derselben Syntax bereitgestellt werden.
@@ -200,8 +210,7 @@ node myApp \
 Grundsätzlich ist die Konfiguration statisch;
 wir unterscheiden vier Quellen für die Konfiguration;
 drei statische, eine dynamische;
-die Dynamische Konfiguration ist die einzige Quelle, die zur Laufzeit geändert werden kann.
+die dynamische Konfiguration ist die einzige Quelle, die zur Laufzeit geändert werden kann.
 
-Wenn man den IoC-Container beauftragt, eine neue Instanz einer Klasse zu erzeugen, kann dabei ein Konfigurationsobjekt mitgegeben werden.
-
-Mehr Informationen dazu sind in der [Dokumentation von addict-ioc](https://www.npmjs.com/package/addict-ioc) zu finden. Da addict-ioc hier auf viele verschiedene Weisen verwendet werden kann, und diese Art der Konfiguration nur selten benötigt wird, würde eine detailreiche Beschreibung hier zu weit gehen.
+Wenn man den IoC-Container beauftragt, eine neue Instanz einer Klasse zu
+erzeugen, kann dabei ein Konfigurationsobjekt mitgegeben werden.

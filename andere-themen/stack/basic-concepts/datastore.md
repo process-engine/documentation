@@ -14,11 +14,12 @@ Der `DatastoreService` implementiert die Logik des Datenspeichermoduls.
 Er bietet Methoden zum:
 
 - Anfragen der bekannten Entitäten-Definitionen
+
   ```TypeScript
   // getCatalog(context: ExecutionContext): any;
   const catalog = this.datastoreService.getCatalog();
 
-  /*
+  /* Das ist der Inhalt von catalog:
   catalog = {  
     "catalog":{  
       "classes":[  
@@ -35,6 +36,7 @@ Er bietet Methoden zum:
   ```
 
 - Anfragen der Entitäten zu einer Definition
+
   ```TypeScript
   /*
   getCollection<T extends IEntity>(typeName: TypeKey,
@@ -44,7 +46,7 @@ Er bietet Methoden zum:
   const flowDefCollection = this.datastoreService.getCollection('FlowDef', context);
 
 
-  /*
+  /* Das ist der Inhalt der flowDefCollection
   flowDefCollection = {  
     "count": 12,
     "offset":0,
@@ -67,6 +69,7 @@ Er bietet Methoden zum:
   ```
 
 - Eine Entität erstellen
+
   ```TypeScript
   /*
   saveNewEntity<T extends IEntity>(typeName: TypeKey,
@@ -80,6 +83,7 @@ Er bietet Methoden zum:
   ```
 
 - Eine Entität anhand seiner ID anfragen
+
   ```TypeScript
   /*
   getById<T extends IEntity>(typeName: TypeKey,
@@ -90,6 +94,7 @@ Er bietet Methoden zum:
   ```
 
 - Eine Entität aktualisieren
+
   ```TypeScript
   /*
   updateEntity<T extends IEntity>(typeName: TypeKey,
@@ -104,6 +109,7 @@ Er bietet Methoden zum:
   ```
 
 - Eine Entität löschen
+
   ```TypeScript
   /*
   removeEntity(typeName: TypeKey,
@@ -115,6 +121,7 @@ Er bietet Methoden zum:
   ```
 
 - Eine Methode auf einer Entität ausführen
+
   ```TypeScript
   /*
   executeEntityMethod(typeName: TypeKey,
@@ -137,6 +144,7 @@ Er bietet Methoden zum:
   ```
 
 - Eine Methode auf einem [Entitäten-Service](./entity-services.md) ausführen
+
   ```TypeScript
   /*
   executeEntityTypeMethod(typeName: TypeKey,
@@ -152,7 +160,7 @@ Er bietet Methoden zum:
   // entityType = SubprocessExternalEntityType {};
   ```
 
-## Datenspeicher HTTP REST API
+## Datenspeicher API
 
 Der Datenspeicher ist auch über eine [HTTP-REST-API](http://dev.wtf/pe_apidoc.html#tag-datastore) verfügbar.
 

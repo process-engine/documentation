@@ -8,8 +8,8 @@ Claims verknüpfen, die für die Ausführung erforderlich ist.
 Der Dekorator, der dazu verwendet wird, kann an Klassen,
 Eigenschaften und Methoden platziert werden.
 
-_Hinweis: Dekoratoren an Methoden und Eigenschaften überschreiben für diese 
-Methode/Eigenschaft den Klassendekorator._
+Hinweis: Dekoratoren an Methoden und Eigenschaften überschreiben für diese 
+Methode/Eigenschaft den Klassendekorator.
 
 ```typescript
 @requiresClaim({
@@ -46,12 +46,12 @@ Claims werden unter dem folgenden Pfad konfiguriert:
 
 ```
 .
-+-- config
-    +-- development
-        +-- iam
-            +-- claim_service
-                +-- claims
-                    +-- <<namespace>>
+$ tree config 
+  └── development
+      └── iam
+          └── claim_service
+              └── claims
+                  └── <<namespace>>
 ```
 
 Der `namespace` ist der Namespace der Claims, die man konfigurieren möchten.
@@ -64,6 +64,7 @@ Die Standardberechtigungen für einen Namespace können in der Datei
 `default_permissions.json` direkt im Namespace-Ordner konfiguriert werden.
 
 Die Datei sieht wie folgt aus:
+
 ```
 {
   "permissions": {
@@ -116,23 +117,16 @@ Die JSON-Datei enthält ebenfalls kein Suffix.
 Die zwei Blöcke repräsentieren Rollen, die definiert sind, um Ansprüche der
 `class level` und `member level` zu erfüllen.
 
-## Benutzung
+## Verwendung von Claims
 
 ### Entity Types / Entity Type Services
 
-Optionale Elemente sind mit Klammern markiert.
+Optionale Elemente sind von ()-Klammern umschlossen.
 
 #### Class Level
+
 ```
 (namespace.)type(.action)
-```
-
-#### Member Level
-
-Ein Member kann entweder eine Eigenschaft oder eine Methode sein.
-
-```
-(namespace.)type.member(.action)
 ```
 
 ### Custom Segmentss
@@ -152,20 +146,20 @@ getrennt sind.
 something.something.something
 ```
 
-### Segments
+### Segmente
 
-Es gibt spezielle Arten von Segmenten.
+Es gibt zwei Arten von Segmenten:
 
-Wenn ein Segment keine solche spezielle Art ist, wird es nur verwendet, um einen
-Namespace zu definieren, der leicht zu verstehen ist und mit der Ordnerstruktur
-des Codes korreliert.
+1. Allgemeine: den Namespace definierende
+1. Spezielle: die Aktion beschreibende
 
 ### Action
 
-Eine Aktion ist ein optionales Element des Claims und muss das letzte Segment
-des Claims sein.
+Eine Aktion ist ein optionaler Teil des Claims;
+eine Aktion muss das letzte Segment des Claims sein.
 
-Es kann einer der folgenden Werte sein:
+Das letzte Segment, kann einer der folgenden sechs Werte sein:
+
 * create
 * read
 * write
