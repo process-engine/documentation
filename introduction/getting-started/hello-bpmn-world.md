@@ -35,14 +35,14 @@ Die Task List erscheint;
 in der Liste befindet sich der Eintrag: `Prozess erstellen`;
 nach Beendigung der Arbeiten im Backend, springt der UserTaskName auf `Prozess erstellt` um;
 die `Continue` Schaltfläche kann betätigt werden;
-die folgende Nachricht können über die `OK` Schaltfläche geschlossen werden.
+die folgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
 
 Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an;
 die `Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
 
 <img src="../images/process-definition-list-create-new-diagram.png" width="100%" />
 
-So sollte das ganze dann aussehen:
+So sollte das Ganze dann aussehen:
 
 {% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
 
