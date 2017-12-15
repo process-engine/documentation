@@ -11,7 +11,7 @@ Die Konfiguration einer Applikation soll in vier Stufen erfolgen:
 
 Ändern des Ports zum Hosten einer Anwendung.
 
-Die Konfigurationsdatei der Anwedung beinhaltet:
+Die Konfigurationsdatei der Anwendung beinhaltet:
 
 ```json
 [config]

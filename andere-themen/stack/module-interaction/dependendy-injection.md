@@ -12,7 +12,7 @@ Es wird die `constructorinjection` verwendet, um Abhängigkeiten in Instanzen zu
 ![Dependency Graph](images/dependency-graph.png)
 
 Wann immer eine Klasseninstanz benötigt wird, wird der IoC-Container dafür
-sorgen, dass dessen Abhängigkeiten aufgelöst werden.
+sorgen, dass deren Abhängigkeiten aufgelöst werden.
 
 ## IoC Modules
 
