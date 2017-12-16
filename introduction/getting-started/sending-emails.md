@@ -61,4 +61,4 @@ Nach diesem [Task](../../anhang/Glossary.md) muss der Prozess beendet werden.
 
 Dann kann das ganze getestet werden:
 
-{% video controls="controls"%}../images/run-send-email.mp4{% endvideo %}
+{% video controls="controls"%}../images/run-sending-mails.mp4{% endvideo %}
