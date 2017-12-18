@@ -8,7 +8,7 @@ In Modellen ist immer die Sprache des Anwenders zu verwenden.
 
 Verwende das **Objekt-Verrichtungsprinzip**.
 
-[Objekt] + [Verb] - Pattern
+Die Beschreibung der Aktivitäten ergibt sich aus der Formel `[Objekt] + [Verb]`.
 
 
 | Schlecht 👎                        | Gut 👍                   |
@@ -20,7 +20,7 @@ Verwende das **Objekt-Verrichtungsprinzip**.
 
 Verwende das **Objekt-Zustandsprinzip**.
 
-[Objekt] + [Zustand] - Pattern
+Die Beschreibung der Aktivitäten ergibt sich aus der Formel `[Objekt] + [Zustand]`.
 
 | Schlecht 👎                        | Gut 👍                   |
 |------------------------------------|-------------------------|
@@ -61,7 +61,7 @@ Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
  - Gurke
  - Sägespäne
 
-#### Service Aktitvät
+#### Service Aktivität
 
 Eine Serviceaktivität wird von einer Software ausgeführt.
 
