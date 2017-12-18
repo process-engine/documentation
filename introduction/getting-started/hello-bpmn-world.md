@@ -57,7 +57,7 @@ diese werden direkt mit dem ausgewählten Element verbunden.
 An dem Startpunkt wird dann ein [User Task]() mit dem Namen `Hello Word` verbunden;
 an diesem dann ein Endpunkt.
 
-Das ganze sollte dann so aussehen:
+Das Ganze sollte dann so aussehen:
 
 <img src="../images/hello-world-diagram.png" width="100%" />
 
