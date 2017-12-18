@@ -16,9 +16,9 @@ API abzurufen. Dazu müssen im `Extension`-Reiter die folgenden Properties
 hinzugefügt werden:
 
 ```
-module   HttpService
-method   get
-params   ['http://api.fixer.io/latest]
+module    HttpService
+method    get
+params    ['http://api.fixer.io/latest]
 ```
 ![FetchData](../images/fetch-data-rest-api.png)
 
@@ -33,7 +33,9 @@ aufbewahrt werden.
 In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern lediglich
 der USD Kurs.
 
-Um das zu erreichen wird ihm - wieder im `Extensions`-Reiter - die Property `mapper | JSON.parse(token.current.result).rates.USD` mitgegeben.
+Um das zu erreichen wird ihm - wieder im `Extensions`-Reiter - die Property
+```mapper   JSON.parse(token.current.result).rates.USD```
+mitgegeben.
 
 ![Flow](../images/flow-rest-api.png)
 
