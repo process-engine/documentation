@@ -1,6 +1,6 @@
 # Emails versenden
 
-Das Beispiel "Verwenden einer REST API" wird um den Versand von Emails erweitert,
+Das Beispiel "Verwendung einer REST API" wird um den Versand von Emails erweitert,
 um die geladenen Daten zu versenden.
 
 Dazu muss der Prozess nur mit folgenden drei Schritten abgeändert werden:

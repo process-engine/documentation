@@ -2,6 +2,7 @@
 
 ## Einleitung
 
+* [Motivation](README.md)
 * [Installation der Anwendung](introduction/installation.md)
 * [Getting started](introduction/getting-started/README.md)
   * [Konfiguration des Stacks (skateboard)](introduction/getting-started/skateboard.md)
