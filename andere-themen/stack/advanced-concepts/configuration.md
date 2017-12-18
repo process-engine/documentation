@@ -1,6 +1,6 @@
 # Konfiguration
 
-Die Konfiguration einer Applikation soll in vier Stufen erfolgen:
+Die Konfiguration einer Applikation kann in vier Stufen erfolgen:
 
 1. statische Konfigurationsdatei
 2. Umgebungsvariablen
@@ -40,8 +40,7 @@ $ my_program --port 9999
 Started to listen on Port 9999
 ```
 
-Baut man die Konfiguration der Applikation nach dem obigen Schema auf, dann kann
-man folgende Aussage treffen:
+Die Priorisierung sich überdeckender Konfigurationen kann man mit folgender Aussage beschreiben:
 
 `Befehlszeilenargumente > statisch Umgebungsvariablen > statische Konfigurationsdatei`
 
@@ -84,7 +83,7 @@ class ExampleService {
 
 ## Deklaration
 
-Von wo eine Klasse ihre Konfiguration bezieht, wird entschieden, wenn die Klasse am IoC-Container registriert wird (siehe
+Die Konfiguration einer Klasse kann über den IoC-Container registriert werden (siehe
 [Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript

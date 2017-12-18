@@ -12,10 +12,7 @@ dynamische Abhängigkeit von Entitäten. Dem Dependency Graph ist nicht bewusst,
 dass das "DataModel" Entitäten verwendet, das `DataModel` fragt nur den
 `Container` für alle Registrierungen, die als eine Entität markiert sind.
 
-Mit diesem Mechanismus kann die Anzahl der Entitäten zwischen Anwendungen
-variieren, ohne dass der zugrundeliegende Code geändert werden muss.
-
-Die aktuellen Discoveries sind:
+Die aktuellen Discovery Tags sind:
 
 Discovery Tag | Beschreibung
 ---------|----------

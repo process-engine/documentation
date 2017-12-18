@@ -1,7 +1,5 @@
 # Entity Services
 
-Entity Services dienen zur Verwaltung von bestimmten Entitäten.
-
 ## Entity Service Logik
 
 Eine Entity soll nicht direkt den Zustand anderer Entities beeinflussen.
