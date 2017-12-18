@@ -32,7 +32,7 @@ Lieber:
 
 “Lebensmittel eingekauft”
 
-## Graphisches Design
+## Grafisches Design
 
 Der Prozessfluss wird immer von links (oben) nach rechts (unten) modelliert.
 
@@ -61,7 +61,10 @@ dabei um eine von der Process Engine zugewiesene Aufgabe.
 
 ![Beispiel Benutzer](./assets/example_benutzer.svg)
 
-- Der Benutzer erstellt eine Einkaufsliste.
+Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
+ - Tomate
+ - Gurke
+ - Sägespähne
 
 #### Service Aktitvät
 
@@ -69,12 +72,15 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Service Task](./assets/task_service.svg) | Das Abfragen von Daten einer API; die automatische Verbuchung einer Rechnung oder das Generieren eines Angebots für einen Kunden. |
+| ![Service Task](./assets/task_service.svg) | Das Abfragen von Daten einer API, die automatische Verbuchung einer Rechnung oder das Generieren eines Angebots für einen Kunden. |
 
 ![Beispiel Service](./assets/example_service.svg)
 
-- Der Benutzer erstellt eine Einkaufsliste.
-- Die Preise der Positionen werden von einem Service ermittelt.
+1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
+ - Tomate
+ - Gurke
+ - Sägespähne
+2. Die Preise der Positionen werden von einem Service ermittelt.
 
 #### Skriptaktivität
 
@@ -89,9 +95,12 @@ Die Process Engine unterstützt JavaScript als Skriptsprache.
 
 ![Beispiel Skript](./assets/example_skript.svg)
 
-- Der Benutzer erstellt eine Einkaufsliste.
-- Die Preise der Positionen werden von einem Service ermittelt.
-- Der Gesamtpreis wird von einem Skript ausgegeben.
+1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
+ - Tomate
+ - Gurke
+ - Sägespähne
+2. Die Preise der Positionen werden von einem Service ermittelt.
+3. Der Gesamtpreis wird von einem Skript ausgegeben.
 
 #### Aufrufaktivität
 
@@ -111,26 +120,25 @@ Der gesamte Prozess wird durch die Aufrufaktivität aufgerufen.
 Gateways teilen den Prozessfluss in einem BPMN-Diagramm in mehrere Flüsse auf,
 oder führen mehrere Flüsse wieder zusammen.
 
-Beachte folgende Regeln, zum korrekten modellieren von Gateways:
+Beachte folgende Regeln zum korrekten Modellieren von Gateways:
 
-- Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende Pfeile.
+1. Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende Pfeile.
 
 ![Beispiel Split Gateway](./assets/example_split_gateway.svg)
 
-- Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden Pfeil.
+2. Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden Pfeil.
 
 ![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
 
-- Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit
-  XOR-Join-Gateway).
+3. Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit XOR-Join-Gateway).
 
 ## Weitere Regeln
 
-- Es sollte immer ein **Pool** verwendet werden.
-- Es sollte immer eine oder mehrere **Lanes** verwendet geben.
+1. Es sollte immer ein **Pool** verwendet werden.
+2. Es sollte immer eine oder mehrere **Lanes** verwendet geben.
 ![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
 
-- Ein Prozess hat ein Startevent und mindestens ein Endevent.
-- Eine Aktivität hat einen eingehenden und einen ausgehenden Pfeil.
-- Zum Teilen und Zusammenführen von Prozessflüssen werden Gateways verwendet.
-- Boundary-Ereignisse haben einen ausgehenden Pfeil.
+3. Ein Prozess hat ein Startevent und mindestens ein Endevent.
+4. Eine Aktivität hat einen eingehenden und einen ausgehenden Pfeil.
+5. Zum Teilen und Zusammenführen von Prozessflüssen werden Gateways verwendet.
+6. Boundary-Ereignisse haben einen ausgehenden Pfeil.
