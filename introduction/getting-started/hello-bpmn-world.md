@@ -1,5 +1,5 @@
 # Hello BPMN-World
- 
+
 Um die Möglichkeiten der ProcessEngine zu demonstrieren, wird ein Beispiel Diagramm erstellt.
 
 Ziel ist es ein BPMN-Diagramm mit einem
@@ -10,12 +10,12 @@ Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/hello-world.svg" width="100%" />
 
-Dieser [User Task](../../anhang/Glossary.md) wird folgende Elemente enthalten:
+Dieser [User Task](../../anhang/Glossary.md) wird die folgenden zwei Elemente enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
 
-Diese dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
+Letzteres dient dazu, den [Task](../../anhang/Glossary.md) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
@@ -27,7 +27,7 @@ werden.
 
 Es öffnet sich ein neuer Dialog;
 dort können ein Name und ein Schlüssel für das Prozessmodell angegeben werden;
-in diesem Fall kann bei beiden `Hello World` gewählt werden.
+in diesem Fall wird bei beiden `Hello World` gewählt.
 
 <img src="../images/initial-processdata-create-new-diagram.png" width="100%" />
 
@@ -35,7 +35,7 @@ Die Task List erscheint;
 in der Liste befindet sich der Eintrag: `Prozess erstellen`;
 nach Beendigung der Arbeiten im Backend, springt der UserTaskName auf `Prozess erstellt` um;
 die `Continue` Schaltfläche kann betätigt werden;
-die folgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
+die darauffolgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
 
 Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an;
 die `Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
@@ -48,14 +48,14 @@ So sieht das Ganze dann aus:
 
 ## Modellierung eines Diagramms
 
-Der BPMN Editor zeigt uns eine Ansicht mit einer Lane und einem Startevent.
+Der BPMN-Editor zeigt uns eine Ansicht mit einer Lane und einem Startevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü;
 dieses Menü erlaubt es neue Elemente hinzuzufügen;
 diese werden direkt mit dem ausgewählten Element verbunden.
 
 An dem Startpunkt wird dann ein [User Task]() mit dem Namen `Hello Word` verbunden;
-an diesem dann ein Endpunkt.
+an diesem dann ein Endevent.
 
 Das Ganze sollte dann so aussehen:
 
@@ -67,7 +67,7 @@ Und so wird es gemacht:
 
 ## Integration eines Diagramms
 
-Ein UserTask kann so eingestellt werden, dass dem Benutzer eine grafische
+Ein User Task kann so eingestellt werden, dass dem Benutzer eine grafische
 Oberfläche dargestellt wird. Die Konfiguration kann wie folgt geschehen:
 
 Über den `Extensions`-Reiter wird mit Hilfe von Key-Value-Paare eingestellt, wie

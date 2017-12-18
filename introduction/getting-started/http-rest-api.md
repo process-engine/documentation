@@ -11,7 +11,7 @@ und einen [User Task](../../anhang/Glossary.md), um die Daten anzuzeigen:
 {% video controls="controls"%}../images/consuming-rest-api.mp4{% endvideo %}
 
 Unter dem `Extensions`-Reiter kann dem [Service Task](../../anhang/Glossary.md)
-`Fetch Data` nun gesagt werden, was er tun soll: In diesem Fall eine HTTP REST
+(`Fetch Data`) nun gesagt werden, was er tun soll: In diesem Fall eine HTTP REST
 API abzurufen. Dazu müssen im `Extension`-Reiter die folgenden Properties
 hinzugefügt werden:
 
@@ -22,7 +22,7 @@ params    ['http://api.fixer.io/latest]
 ```
 ![FetchData](../images/fetch-data-rest-api.png)
 
-Als Nächstes wird dem [Sequenzfluss](../../anhang/Glossary.md) von der `Fetch Data` zur `Show Data` Task mitgeteilt, wie
+Als Nächstes wird dem [Sequenzfluss](../../anhang/Glossary.md) von dem `Fetch Data` zum `Show Data` Task mitgeteilt, wie
 das Ergebnis interpretiert und an den User [Task](../../anhang/Glossary.md)
 weitergegeben werden soll.
 
@@ -39,11 +39,11 @@ mitgegeben.
 
 ![Flow](../images/flow-rest-api.png)
 
-Nach dem Mapping kann der nächste BPMN Knoten nach dem
+Nach dem Mapping kann der nächste BPMN-Knoten nach dem
 [Sequenzfluss](../../anhang/Glossary.md) den USD Kurs durch den Zugriff auf
 `token.current` nutzen.
 
-Zum Schluss muss dem [User Task](../../anhang/Glossary.md) `Show Data` nur noch gesagt werden,
+Zum Schluss muss dem [User Task](../../anhang/Glossary.md) (`Show Data`) nur noch gesagt werden,
 was er anzeigen soll. Dies geschieht wieder über den `Extensions`-Reiter.
 
 Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu
