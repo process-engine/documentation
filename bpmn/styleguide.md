@@ -10,13 +10,11 @@ Verwende das **Objekt-Verrichtungsprinzip**.
 
 [Objekt] + [Verb] - Pattern
 
-Statt:
 
-"Zuerst muss der Einkauf der Lebensmittel erledigt werden"
+| Schlecht 👎                        | Gut 👍                   |
+|------------------------------------|-------------------------|
+| Zuerst muss der Einkauf der Lebensmittel erledigt werden | Lebensmittel einkaufen |
 
-Lieber:
-
-"Lebensmittel einkaufen"
 
 ### Ereignisse bezeichnen
 
@@ -24,13 +22,10 @@ Verwende das **Objekt-Zustandsprinzip**.
 
 [Objekt] + [Zustand] - Pattern
 
-Statt:
+| Schlecht 👎                        | Gut 👍                   |
+|------------------------------------|-------------------------|
+| Die Lebensmittel wurden zuerst eingekauft. | Lebensmittel eingekauft |
 
-“Die Lebensmittel wurden zuerst eingekauft.”
-
-Lieber:
-
-“Lebensmittel eingekauft”
 
 ## Grafisches Design
 
@@ -64,7 +59,7 @@ dabei um eine von der Process Engine zugewiesene Aufgabe.
 Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
  - Tomate
  - Gurke
- - Sägespähne
+ - Sägespäne
 
 #### Service Aktitvät
 
@@ -79,7 +74,7 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
  - Tomate
  - Gurke
- - Sägespähne
+ - Sägespäne
 2. Die Preise der Positionen werden von einem Service ermittelt.
 
 #### Skriptaktivität
@@ -98,7 +93,7 @@ Die Process Engine unterstützt JavaScript als Skriptsprache.
 1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
  - Tomate
  - Gurke
- - Sägespähne
+ - Sägespäne
 2. Die Preise der Positionen werden von einem Service ermittelt.
 3. Der Gesamtpreis wird von einem Skript ausgegeben.
 
