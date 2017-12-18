@@ -27,7 +27,7 @@ Informationen anzureichern.
 - Starte mehrere Versionen desselben Prozesses parallel.
 - Nutze die bereits vorhandene Infrastruktur.
 - Passe deine BPMN-Prozesse "on the fly" an.
-- Arbeite mit einer extrem gut skalierbaren und flexibelen Lösung
+- Arbeite mit einer extrem gut skalierbaren und flexiblen Lösung
 
 ## BPMN
 
