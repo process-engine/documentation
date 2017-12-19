@@ -25,13 +25,13 @@ Diese werden genutzt um:
 "Roles" (Rollen) sind eine abstrakte Möglichkeit Zuständigkeiten
 zu definieren.
 
-Das ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen mit ein.
+Das ist nicht auf Nutzer begrenzt, sondern bezieht auch Maschinen mit ein.
 
 Wir können einem Element in einem Diagramm also eine Rolle zuordnen. Wenn wir
 das tun, wird die ProcessEngine überprüfen, ob die Instanz, die gerade das
 Diagramm ausführt, die Anforderungen der Rolle erfüllt. Sollte das nicht der
-fall sein, wird die ProcessEngine versuchen eine Instanz zu finden, die die
-Anforderungen erfüllt und die weitere Diagrammausführung an sie delegieren.
+Fall sein, wird die ProcessEngine versuchen eine Instanz zu finden, die die
+Anforderungen erfüllt, und die weitere Diagrammausführung an sie delegieren.
 
 Ein Beispiel:
 
