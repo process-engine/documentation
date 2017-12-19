@@ -2,7 +2,7 @@
 
 ## Service Task
 
-Eine "Service Task" repräsentiert eine Aufgabe, die ohne
+Ein "Service Task" repräsentiert eine Aufgabe, die ohne
 menschliches Hinzutun erledigt werden kann.
 Es wird häufig genutzt um:
 
@@ -12,12 +12,12 @@ Es wird häufig genutzt um:
 
 ## User Task
 
-Eine "User Task" repräsentiert eine Aufgabe, die nur manuell
+Ein "User Task" repräsentiert eine Aufgabe, die nur manuell
 erledigt werden kann.
 Diese werden genutzt um:
 
 - Nutzerdaten aufzunehmen
-- Informationen dem Nutzer präsentieren
+- dem Nutzer Informationen zu präsentieren
 
 
 ## Roles
@@ -28,9 +28,9 @@ zu definieren.
 Das ist nicht auf Nutzer begrenzt sondern bezieht auch Maschinen mit ein.
 
 Wir können einem Element in einem Diagramm also eine Rolle zuordnen. Wenn wir
-das tun, wird die Process Engine überprüfen, ob die Instanz, die gerade das
+das tun, wird die ProcessEngine überprüfen, ob die Instanz, die gerade das
 Diagramm ausführt, die Anforderungen der Rolle erfüllt. Sollte das nicht der
-fall sein, wird die Process Engine versuchen eine Instanz zu finden, die die
+fall sein, wird die ProcessEngine versuchen eine Instanz zu finden, die die
 Anforderungen erfüllt und die weitere Diagrammausführung an sie delegieren.
 
 Ein Beispiel:
