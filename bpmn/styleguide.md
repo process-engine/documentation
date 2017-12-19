@@ -48,7 +48,7 @@ dadurch erkennt der Betrachter sofort den Fokus der Aktivität.
 #### Benutzeraktivität
 
 Eine Benutzeraktivität wird immer von einem Menschen erledigt; es handelt sich
-dabei um eine von der ProzessEngine zugewiesene Aufgabe.
+dabei um eine von der ProcessEngine zugewiesene Aufgabe.
 
 | Symbol | Beispiel |
 | :----: | -------- |
@@ -79,10 +79,10 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 
 #### Skriptaktivität
 
-Eine Skriptaktivität enthält ein Skript, das von der ProzessEngine ausgeführt
+Eine Skriptaktivität enthält ein Skript, das von der ProcessEngine ausgeführt
 wird.
 
-Die ProzessEngine unterstützt JavaScript als Skriptsprache.
+Die ProcessEngine unterstützt JavaScript als Skriptsprache.
 
 | Symbol | Beispiel |
 | :----: | -------- |
