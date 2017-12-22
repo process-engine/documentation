@@ -1,30 +1,36 @@
-# Introduction
+# Motivation
 
-## What is the problem at hand?
+## Das Problem
 
-Many companies document how things are supposed to be done in diagrams, which are a great way to plan, define and coordinate procedures.
+Viele Firmen dokumentieren in Diagrammen, wie Geschäftsprozesse ablaufen sollen.
+Das ist ein guter Weg, um ein einheitliches Verständnis für die Koordination
+der Prozesse zu schaffen.
 
-The problem is, that making sure they are actually used costs time and energy,
-so in reality they often vanish in a drawer somewhere.
+Ein Problem dabei ist, dass die exakte Einhaltung dieser Prozesse meist mit viel
+Zeit und Aufwand verbunden ist. Deshalb verschwinden solche Prozesse häufig
+"im Schreibtisch".
 
-## What do we do about it?
+## Was tun wir dagegen?
 
-We want you to view a BPMN process as more than a simple document. It's like a set of instructions, describing what you want a software to do for you. Instead of manually executing a BPMN process you can rely on the process engine to do that for you.
+Wir sehen in einem BPMN Prozess mehr als ein einfaches Dokument.
 
-All you need to do is to feed it some metadata that you can easily configure using our Web UI and you're good to go.
+Diese Sammlung von Anweisungen kann verwendet werden, um zu beschreiben wie
+eine Software sich verhalten soll. Die Process Engine hilft uns dabei, große
+Teile der Geschäftsprozesse zu automatisieren.
 
-## What are your benefits of using the process engine?
+Alles was wir dazu tun müssen, ist das Diagramm mit einigen technischen
+Informationen anzureichern.
 
-* get from plan to execution in a fraction of the usual time
-* run multiple versions of the same process in parallel
-* use existing infrastructure
-* adapt your BPMN processes on the fly
-* work with an extremly scalable and flexible solution that suits even the most complicated setups
+## Was sind die Vorteile der Process Engine
+
+- Erstelle einen Plan zur Ausführung eines Prozesses.
+- Starte mehrere Versionen desselben Prozesses parallel.
+- Nutze die bereits vorhandene Infrastruktur.
+- Passe deine BPMN-Prozesse "on the fly" an.
+- Arbeite mit einer extrem gut skalierbaren und flexiblen Lösung
 
 ## BPMN
 
-This documentation will try to explain certain aspects of BPMN that are necessary for understanding our implementations.
-
-However BPMN is a large standard and it is not in the scope of this documentation to explain all of that.
-
-You can find extensive materials at its [official standards committee](http://www.bpmn.org/).
+Diese Dokumentation soll einen Überblick über alle wichtigen Themen im Bereich
+BPMN geben und es Dir so ermöglichen, einfache bis komplexe Prozesse selbst zu
+erstellen und ausführbar zu machen.

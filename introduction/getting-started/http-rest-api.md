@@ -1,4 +1,4 @@
-# Nutzung einer REST API
+# Verwendung einer REST API
 
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
@@ -10,11 +10,19 @@ und einen [User Task](../../anhang/Glossary.md), um die Daten anzuzeigen:
 
 {% video controls="controls"%}../images/consuming-rest-api.mp4{% endvideo %}
 
-Unter dem `Extensions` Reiter können wir dem
-[Service Task](../../anhang/Glossary.md) nun sagen, was er tun soll: In diesem
-Fall eine HTTP REST API abzurufen.
+Unter dem `Extensions`-Reiter kann dem [Service Task](../../anhang/Glossary.md)
+(`Fetch Data`) nun gesagt werden, was er tun soll: In diesem Fall eine HTTP REST
+API abzurufen. Dazu müssen im `Extension`-Reiter die folgenden Properties
+hinzugefügt werden:
 
-Als Nächstes teilen wir dem [Sequenzfluss](../../anhang/Glossary.md) mit, wie
+```
+module    HttpService
+method    get
+params    ['http://api.fixer.io/latest]
+```
+![FetchData](../images/fetch-data-rest-api.png)
+
+Als Nächstes wird dem [Sequenzfluss](../../anhang/Glossary.md) von dem `Fetch Data` zum `Show Data` Task mitgeteilt, wie
 das Ergebnis interpretiert und an den User [Task](../../anhang/Glossary.md)
 weitergegeben werden soll.
 
@@ -22,18 +30,20 @@ Die [Sequenzflusszuordnung](../../anhang/Glossary.md) definiert, wie die im
 vorherigen [Task](../../anhang/Glossary.md) empfangenen Daten im Token
 aufbewahrt werden.
 
-```javascript
-JSON.parse(token.current.result).rates.USD
-```
+In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern lediglich
+der USD Kurs.
 
-In diesem Fall wollen wir nicht alle Wechselkurse anzeigen, sondern lediglich
-den USD Kurs.
+Um das zu erreichen wird ihm - wieder im `Extensions`-Reiter - die Property
+```mapper   JSON.parse(token.current.result).rates.USD```
+mitgegeben.
 
-Nach dem Mapping kann der nächste BPMN Knoten nach dem
+![Flow](../images/flow-rest-api.png)
+
+Nach dem Mapping kann der nächste BPMN-Knoten nach dem
 [Sequenzfluss](../../anhang/Glossary.md) den USD Kurs durch den Zugriff auf
 `token.current` nutzen.
 
-Zum Schluss müssen wir dem [User Task](../../anhang/Glossary.md) nur noch sagen
+Zum Schluss muss dem [User Task](../../anhang/Glossary.md) (`Show Data`) nur noch gesagt werden,
 was er anzeigen soll. Dies geschieht wieder über den `Extensions`-Reiter.
 
 Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu
@@ -43,9 +53,12 @@ verwenden und konfigurieren diesen mit folgender `uiConfig`:
 ${ "message": "1 EUR = " + token.current + " USD", "layout": [ { "key": "confirm", "label": "OK"}] };
 ```
 
+![ShowData](../images/show-data-rest-api.png)
+
+So sieht das Ganze dann aus:
+
 {% video controls="controls"%}../images/integrate-rest-api.mp4{% endvideo %}
 
 Das sieht dann folgendermaßen aus:
 
 {% video controls="controls"%}../images/run-rest-api.mp4{% endvideo %}
-
