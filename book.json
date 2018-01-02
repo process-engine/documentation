@@ -1,6 +1,13 @@
 {
   "plugins": [
     "collapsible-menu",
-    "html5-video"
-  ]
+    "html5-video",
+    "image-captions-extended"
+  ],
+  "pluginsConfig": {
+    "image-captions": {
+      "caption": "_CAPTION_",
+      "align": "left"
+    }
+  }
 }
