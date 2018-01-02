@@ -55,7 +55,6 @@
 
 ---
 
-* [Community](community/README.md)
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
-* [reference](reference/README.md)
+* [Reference](reference/README.md)
