@@ -45,13 +45,17 @@ ein User mit dem Namen `admin` und dem Passwort `admin` erstellt werden. Dazu
 erweitert man den Eintrag des Servers in der Liste und rechtsklickt auf
 `Login/Group Roles`. Dann klickt man auf `Create` -> `Login/Group Role...`. In
 dem nun erscheinenden Fenster wählt man im `General`-Reiter als Name `admin` und
-im `Definition`-Reiter als Password `admin`.. Außerdem aktiviert man im `Privileges`-Reiter die Option `Can Login?` und klickt dann auf `Save`.
+im `Definition`-Reiter als Password `admin`.. Außerdem aktiviert man im
+`Privileges`-Reiter die Option `Can Login?` und klickt dann auf `Save`.
 
 ![Server hinzufügen](images/pgAdmin-add_User.png)
 
 ![Server hinzufügen](images/pgAdmin-add_privileges.png)
 
-Des Weiteren wird eine Datenbank mit dem Namen `processengine` benötigt. Dazu rechtsklickt man auf `Database` und klickt dann auf `Create` -> `Database...`. Bei Database trägt man `processengine` ein und als Owner wählt man `admin`. Dies bestätigt man erneut mit `Save`.
+Des Weiteren wird eine Datenbank mit dem Namen `processengine` benötigt. Dazu
+klickt man rechts auf `Database` und klickt dann auf `Create` -> `Database...`.
+Bei Database trägt man `processengine` ein; als Owner wählt man `admin`.
+Dies bestätigt man erneut mit `Save`.
 
 ![Server hinzufügen](images/pgAdmin-add_Database.png)
 
@@ -67,7 +71,8 @@ Dann kann Charon gestartet werden.
 
 # Charon
 
-Zunächst muss das [Charon Repository](https://github.com/process-engine/charon) geklont werden.
+Zunächst muss das [Charon Repository](https://github.com/process-engine/charon)
+geklont werden.
 
 ```
 git clone git@github.com:process-engine/charon.git
@@ -83,7 +88,8 @@ npm install
 npm start
 ```
 
-Sobald Charon gestartet ist, kann es über `http://localhost:9000/` aufgerufen werden.
+Sobald Charon gestartet ist, kann es über `http://localhost:9000/` aufgerufen
+werden.
 
 Das Ergebnis sieht so aus:
 
