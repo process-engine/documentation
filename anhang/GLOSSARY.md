@@ -46,7 +46,7 @@ Kollaborationsdiagramm.
 
 ## Aktivität
 
-Eine Aktivität zeit an, dass etwas getan werden soll.
+Eine Aktivität zeigt an, dass etwas getan werden soll.
 
 ## Sequenzfluss
 
@@ -71,9 +71,9 @@ kollaborieren.
 
 ## Lane
 
-Ein Pool kann in Lanes unterteilt sein, um genauer zu beschreiben, wer für die
-Erledigung von Aktivitäten zuständig ist. Eine Lane kann z.B. eine Benutzerrolle
-oder ein System sein.
+Ein Pool kann in Lanes unterteilt sein; damit kann genauer beschrieben werden
+wer für die Erledigung von Aktivitäten zuständig ist; eine Lane kann z.B. eine
+Benutzerrolle oder ein System repräsentieren.
 
 ## Anmerkung
 

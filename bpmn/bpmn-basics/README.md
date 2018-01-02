@@ -30,7 +30,18 @@ modelliert werden können:
      des Prozesses.
    - Diese Prozesse sind in Teilen oder als Ganzes automatisierbar.
 
-## Begrifssdefinitionen
+### Zusammenfassung
+
+| Strategische Prozessmodelle | Operative Prozessmodelle |
+| --------------------------- | ------------------------ |
+| kompakte Ablaufbeschreibung  | konkrete Ablaufbeschreibung |
+| schneller Überblick | genaue Definition (was, wann, wie) |
+| abstrakte, logische Sprache | physisch-konkrete Semantik |
+| nicht automatisierbar | automatisierbar (in Teilen oder als Ganzes) |
+
+
+
+## Begriffsdefinitionen
 
 ### Kollaboration
 
@@ -45,8 +56,8 @@ Kollaborationsdiagramm.
 
 Hier werden die wichtigsten BPMN-Elemente beschrieben:
 
-- [Aktivität](#aktivität) (grün)
-- [Sequenzfluss](#sequenzfluss) (orange)
+- [Aktivität](#aktivität) (Grün)
+- [Sequenzfluss](#sequenzfluss) (Orange)
 - [Gateway](#gateway) (Blau)
 - [Ereignis](#ereignis) (Lila)
 - [Pools und Lanes](#pools-und-lanes) (hier nicht dargestellt)
@@ -65,7 +76,7 @@ Eine Aktivität symbolisiert, dass etwas getan werden soll.
 | ----------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Benutzeraktivität | <img width="200px" src="./user_task.svg"/>     | Stellt eine Aktivität dar, die eine Benutzerinteraktion erfordert.                                                                              |
 | Serviceaktivität  | <img width="200px" src="./service_task.svg"/>  | Stellt eine Aktivität dar, die einen Dienst wie einen Webdienst oder eine automatisierte Anwendung verwendet.                                   |
-| Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer Process Engine ausgeführt werden soll.                                  |
+| Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer ProcessEngine ausgeführt werden soll.                                  |
 | Aufrufaktivität   | <img width="200px" src="./call_activity.svg"/> | Stellt eine Aktivität dar, die einen anderen Prozess aufruft. Sobald der aufgerufene Prozess beendet ist, ist auch die Aufrufaktivität beendet. |
 
 ### Sequenzfluss
@@ -80,7 +91,6 @@ darzustellen.
 Ein Gateway teilt den Prozessfluss in mehrere Flüsse auf, oder führt mehrere
 Flüsse wieder zusammen.
 
-![Symbol eines Gateways](./gateway.svg)
 
 #### Spezialformen des Gateways
 
@@ -92,6 +102,7 @@ Flüsse wieder zusammen.
 ### Ereignis
 
 Ein Ereignis symbolisiert, dass etwas passiert. Ereignisse können:
+
 - Ein eigenes Element im Diagramm sein.
 
   ![](./event.svg)
@@ -151,18 +162,21 @@ oder ein System repräsentieren.
 
 #### Eigenschaften des Pools
 
-Falls der Inhalt eines Pools nicht bekannt oder für die Kollaboration nicht von
-Bedeutung ist, kann er zugeklappt werden. Der Pool wird dann als Rechteck mit
-Beschriftung dargestellt, hat aber keinen weiteren Inhalt.
+Falls der Inhalt eines Pools nicht bekannt ist, für die Kollaboration nicht von
+Bedeutung ist oder die Übersichtlichkeit erhöht wird, kann er zugeklappt werden.
+Ist ein Pool zugeklappt, spricht man von einem Black-Box-Pool.
+Ein Black-Box-Pool wird als Rechteck mit Beschriftung dargestellt, hat aber keinen
+weiteren Inhalt.
 
-Die Process Engine hat zurzeit noch folgende Einschränkungen:
+Die ProcessEngine hat zurzeit noch folgende Einschränkungen:
+
 - Es wird nur ein Pool pro Diagramm unterstützt.
 - Ein Pool muss immer eine Lane haben.
 
 ## Weitere BPMN-Elemente
 
 BPMN definiert neben den Basiselementen weitere Elemente. Hier nicht
-beschriebene BPMN-Elemente werden von der Process Engine noch nicht unterstützt.
+beschriebene BPMN-Elemente werden von der ProcessEngine noch nicht unterstützt.
 
 Die [Anmerkung](#anmerkung) ist zurzeit das einzige Element in dieser Kategorie.
 
