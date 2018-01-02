@@ -60,13 +60,13 @@ mit installiert werden, ohne dass wir diese 27 Dependencies in unsere package.js
 
 **TL;DR:**
 - `npm run render_api_doc`
-- Inhalt von `public/index.html` in `reference/apidoc.html` kopieren (Datei anlegen wenn sie nicht existiert)
+- Inhalt von `public/index.html` in `andere-themen/cheat-sheet/http-rest-api/apidoc.html` kopieren (Datei anlegen wenn sie nicht existiert)
 - gitbook neu rendern
 
 um aus der `swagger.js` die API-Doku zu rendern `npm run render_api_doc` ausführen. Das erstellt
 einen `public` ordner, mit (zurzeit) ein paar weiteren (leeren) Ordnern, einer `sources.json` und
 vor allem einer `index.html`. Diese `index.html` stellt die gerenderte API-Doku dar.
-Der Inhalt davon muss dann kopiert, und in die `reference/apidoc.html` eingefügt werden. Wenn dann
+Der Inhalt davon muss dann kopiert, und in die `andere-themen/cheat-sheet/http-rest-api/apidoc.html` eingefügt werden. Wenn dann
 anschließend das gitbook neu gerendert wird, ist die API-Doku darin ebenfalls aktualisiert.
 
 ## API-Doc Erscheinung anpassen

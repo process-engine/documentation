@@ -15,7 +15,7 @@
 * [Architektur](basics/README.md)
   * [Diagramm](basics/architektur/diagramm.md)
   * [Komponenten beschreiben](basics/architektur/komponenten/README.md)
-    * [Abgrenzung](basics/architektur/komponenten/abgrenzung.md)
+  * [Abgrenzung](basics/architektur/komponenten/abgrenzung.md)
 * [Erweiterte Architektur](basics/erweiterte-architektur.md)
 
 ## BPMN
@@ -52,6 +52,7 @@
 
 * [Glossar](anhang/GLOSSARY.md)
 * [Literaturverweise](anhang/literaturverweise.md)
+* [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
 
 ---
 
