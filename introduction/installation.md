@@ -22,6 +22,31 @@ die `postgres_docker.js` mit folgenden Befehl aus:
 node postgres_docker.js start
 ```
 
+Alternativ kann man die Datenbank auch ohne Docker ausführen:
+
+Dazu benötigt man PostgreSQL. Dies kann man von folgendem Link runterladen und
+wie beschrieben installieren.
+
+```
+https://www.postgresql.org/download/
+```
+
+Nun wird eine Datenbank mit dem Namen `processengine` benötigt. Via Doppelklick
+auf eine bestehende Datenbank öffnet man ein Terminal. In diesem führt man dann
+den folgenden Befehl aus:
+
+```
+CREATE DATABASE processengine;
+```
+
+Dann muss ein User mit dem Namen `admin` und dem Passwort `admin` erstellt
+werden:
+
+```
+CREATE USER admin PASSWORD 'admin';
+```
+
+
 Sobald diese gestartet ist geht man in den `process-engine-server`-Ordner.
 Dort installiert man zunächst alle Dependencies; dann startet man den Server:
 
