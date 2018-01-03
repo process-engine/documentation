@@ -10,7 +10,7 @@ Siehe [Adapter](../andere-themen/stack/structure/adapters.md).
 ## Integration
 
 Integration eines BPMN-Prozesses bedeutet, dass ein regulärer BPMN-Prozess so
-konfiguriert wird, dass er von der Process Engine ausgeführt werden kann.
+konfiguriert wird, dass er von der ProcessEngine ausgeführt werden kann.
 
 ## Inversion of Control
 Inversion of Control ist die Idee hinter Dependency Injection. Es ist also
@@ -18,11 +18,12 @@ lediglich ein Synonym für Dependency Injection.
 
 ## Addict-ioc
 
-Addict-ioc ist der IoC Container den wir als Platform für unseren Stack
+Addict-ioc ist der IoC Container den wir als Plattform für unseren Stack
 verwenden. Man kann diesen auf [GitHub](https://github.com/5minds/addict-ioc)
 finden.
 
 ## IoC
+
 Die Abkürzung für Inversion of Control.
 
 ## Isomorphismus
@@ -32,6 +33,7 @@ genutzt wird. Das ermöglicht eine höhere Konsistenz bei allen Implementierunge
 im gesamten Stack.
 
 ## Domain Object
+
 Ein Domain Object ist die Darstellung eines Objekts, dasinnerhalb unseres
 Software Stacks genutzt wird. Meistens werden diese Domain Objects für
 Businesslogik und/oder Persistenz verwendet.
@@ -90,7 +92,7 @@ Eine Anmerkung ist ein Kommentar im BPMN-Diagramm.
 
 ## Task
 
-Ein Task ist eine Aufgabe eines Prozesses. Dabei git es verschiedene Typen von
+Ein Task ist eine Aufgabe eines Prozesses. Dabei gibt es verschiedene Typen von
 Tasks, die unterschiedliche Anforderungen erfüllen. Für eine Erklärung der
 verschiedenen Typen siehe: https://camunda.com/bpmn/reference/#activities-task
 
@@ -101,5 +103,5 @@ werden muss. Das kann zum Beispiel eine Bestätigung oder eine Eingabe sein.
 
 ## Service Task
 
-Ein Service Task ist eine Aufgabe, die keine Eingabe eines Nutzers benötigt,
-sondern durch Software erledigt wird.
+Ein Service Task ist eine Aufgabe, die keine Eingabe eines Nutzers benötigt.
+Stattdessen wird diese durch Software erledigt wird.
