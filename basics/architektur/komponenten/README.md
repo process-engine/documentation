@@ -41,13 +41,13 @@ einem [Client]() ausgeführt, an dem ein "Call Center Agent" eingeloggt ist.
 
 ## Gateways
 
-"[Gateways](../../anhang/GLOSSARY.md#gateway)" werden genutzt, um
+"[Gateways](../../../anhang/GLOSSARY.md#gateway)" werden genutzt, um
 Fallunterscheidungen zu modellieren. Dabei kann der aktuelle Ausführungspfad in
 mehrere Pfade aufgeteilt oder mehrere Pfade zu einem zusammengeführt werden.
 
 ## Messages / Signals
 
 "Messages" und "Signals" sind spezielle Formen von
-[Ereignissen](../../anhang/GLOSSARY.md#ereignis) im Kontext eines Prozesses.
+[Ereignissen](../../../anhang/GLOSSARY.md#ereignis) im Kontext eines Prozesses.
 
 ## Mappers

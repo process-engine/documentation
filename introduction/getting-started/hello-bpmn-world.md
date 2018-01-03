@@ -50,7 +50,7 @@ So sieht das Ganze dann aus:
 ## Modellierung eines Diagramms
 
 Der BPMN-Editor zeigt uns eine Ansicht mit einer
-[Lane](../../anhang/GLOSSSARY.md#lane) und einem Startevent.
+[Lane](../../anhang/GLOSSARY.md#lane) und einem Startevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü; dieses Menü
 erlaubt es neue Elemente hinzuzufügen; diese werden direkt mit dem ausgewählten
