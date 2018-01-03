@@ -84,7 +84,7 @@ class ExampleService {
 ## Deklaration
 
 Die Konfiguration einer Klasse kann über den
-[IoC](../../../anhang/GLOSSARY.md#ioc)-Container registriert werden (siehe
+[IoC-Container](../../../anhang/GLOSSARY.md#ioc) registriert werden (siehe
 [Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript
