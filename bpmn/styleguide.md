@@ -73,10 +73,12 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 ![Beispiel Service](./assets/example_service.svg)
 
 1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
- - Tomate
- - Gurke
- - Sägespäne
-2. Die Preise der Positionen werden von einem Service ermittelt.
+
+   - Tomate
+   - Gurke
+   - Sägespäne
+
+1. Die Preise der Positionen werden von einem Service ermittelt.
 
 #### Skriptaktivität
 
@@ -95,8 +97,8 @@ Die ProcessEngine unterstützt JavaScript als Skriptsprache.
  - Tomate
  - Gurke
  - Sägespäne
-2. Die Preise der Positionen werden von einem Service ermittelt.
-3. Der Gesamtpreis wird von einem Skript ausgegeben.
+1. Die Preise der Positionen werden von einem Service ermittelt.
+1. Der Gesamtpreis wird von einem Skript ausgegeben.
 
 #### Aufrufaktivität
 
@@ -122,27 +124,32 @@ Beachte folgende Regeln zum korrekten Modellieren von
 1. Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende
    Pfeile.
 
-![Beispiel Split Gateway](./assets/example_split_gateway.svg)
+   ![Beispiel Split Gateway](./assets/example_split_gateway.svg)
 
-2. Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden
+1. Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden
    Pfeil.
 
-![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
+   ![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
 
-3. Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit
+1. Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit
    XOR-Join-Gateway).
 
 ## Weitere Regeln
 
 1. Es sollte immer ein [**Pool**](../anhang/GLOSSARY.md#pool) verwendet werden.
-2. Es sollte immer eine oder mehrere [**Lanes**](../anhang/GLOSSARY.md#lane)
-   verwendet geben. ![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
+1. Es sollte immer eine oder mehrere [**Lanes**](../anhang/GLOSSARY.md#lane)
+   verwendet geben.
+   
+   ![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
 
-3. Ein Prozess hat ein Startevent und mindestens ein Endevent.
-4. Eine [Aktivität](../anhang/GLOSSARY.md#aktivität) hat einen eingehenden und
+1. Ein Prozess hat ein Startevent und mindestens ein Endevent.
+
+1. Eine [Aktivität](../anhang/GLOSSARY.md#aktivität) hat einen eingehenden und
    einen ausgehenden Pfeil.
-5. Zum Teilen und Zusammenführen von
+
+1. Zum Teilen und Zusammenführen von
    [Sequenzflüssen](../anhang/GLOSSARY.md#sequenzfluss) werden Gateways
    verwendet.
-6. Boundary-[Ereignisse](../anhang/GLOSSARY.md#ereignis) haben einen ausgehenden
+
+1. Boundary-[Ereignisse](../anhang/GLOSSARY.md#ereignis) haben einen ausgehenden
    Pfeil.
