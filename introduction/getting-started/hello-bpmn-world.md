@@ -67,7 +67,7 @@ Und so wird es gemacht:
 
 {% video controls="controls"%}../images/create-hello-world.mp4{% endvideo %}
 
-## [Integration](../../anhang/GLOSSARY.md#integration) eines Diagramms
+## Integration eines Diagramms
 
 Ein [User Task](../../anhang/GLOSSARY.md#user-task) kann so eingestellt werden,
 dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
