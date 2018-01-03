@@ -1,10 +1,13 @@
 ## Bridge
+
 Bridges werden verwendet, um verschiedene Technologien lose miteinander zu
 verbinden.
 
 Siehe auch: [Bridges](../andere-themen/stack/structure/bridges.md).
 
+
 ## Adapter
+
 Siehe [Adapter](../andere-themen/stack/structure/adapters.md).
 
 ## Integration
@@ -13,6 +16,7 @@ Integration eines BPMN-Prozesses bedeutet, dass ein regulärer BPMN-Prozess so
 konfiguriert wird, dass er von der ProcessEngine ausgeführt werden kann.
 
 ## Inversion of Control
+
 Inversion of Control ist die Idee hinter Dependency Injection. Es ist also
 lediglich ein Synonym für Dependency Injection.
 
