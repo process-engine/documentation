@@ -2,9 +2,9 @@
 
 ## Service Task
 
-Ein "Service Task" repräsentiert eine Aufgabe, die ohne
-menschliches Hinzutun erledigt werden kann.
-Es wird häufig genutzt um:
+Ein "[Service Task](../../../anhang/GLOSSARY.md#service-task)" repräsentiert
+eine Aufgabe, die ohne menschliches Hinzutun erledigt werden kann. Es wird
+häufig genutzt um:
 
 - Daten von einer REST-API zu empfangen
 - Eine Mail zu versenden
@@ -12,9 +12,8 @@ Es wird häufig genutzt um:
 
 ## User Task
 
-Ein "User Task" repräsentiert eine Aufgabe, die nur manuell
-erledigt werden kann.
-Diese werden genutzt um:
+Ein "[User Task](../../../anhang/GLOSSARY.md#user-task)" repräsentiert eine
+Aufgabe, die nur manuell erledigt werden kann. Diese werden genutzt um:
 
 - Nutzerdaten aufzunehmen
 - dem Nutzer Informationen zu präsentieren
@@ -35,19 +34,20 @@ Anforderungen erfüllt, und die weitere Diagrammausführung an sie delegieren.
 
 Ein Beispiel:
 
-Du kannst einem "User Task" die Rolle "Call Center Agent" zuordnen. Wenn dieser Task
-ausgeführt werden soll, wird er nur auf einem [Client]() ausgeführt, an dem ein
-"Call Center Agent" eingeloggt ist.
+Du kannst einem "[User Task](../../../anhang/GLOSSARY.md#user-task)" die Rolle
+"Call Center Agent" zuordnen. Wenn dieser
+[Task](../../../anhang/GLOSSARY.md#task) ausgeführt werden soll, wird er nur auf
+einem [Client]() ausgeführt, an dem ein "Call Center Agent" eingeloggt ist.
 
 ## Gateways
 
-"Gateways" werden genutzt, um Fallunterscheidungen zu modellieren. Dabei kann
-der aktuelle Ausführungspfad in mehrere Pfade aufgeteilt oder mehrere Pfade
-zu einem zusammengeführt werden.
+"[Gateways](../../anhang/GLOSSARY.md#gateway)" werden genutzt, um
+Fallunterscheidungen zu modellieren. Dabei kann der aktuelle Ausführungspfad in
+mehrere Pfade aufgeteilt oder mehrere Pfade zu einem zusammengeführt werden.
 
 ## Messages / Signals
 
-"Messages" und "Signals" sind spezielle Formen von Ereignissen im Kontext
-eines Prozesses.
+"Messages" und "Signals" sind spezielle Formen von
+[Ereignissen](../../anhang/GLOSSARY.md#ereignis) im Kontext eines Prozesses.
 
 ## Mappers

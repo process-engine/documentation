@@ -1,39 +1,48 @@
-## bridge
-Bridges are used to tie together different technologies in a loosely-coupled fashion.
+## Bridge
+Bridges werden verwendet, um verschiedene Technologien lose miteinander zu
+verbinden.
 
-See also: [Bridges](reference/stack/structure.md#bridges).
+Siehe auch: [Bridges](../andere-themen/stack/structure/bridges.md).
 
-## adapter
-See [Adapters](reference/stack/structure.md#adapters).
+## Adapter
+Siehe [Adapter](../andere-themen/stack/structure/adapters.md).
 
-## integrate
-Integrating a BPMN process means configuring a regular BPMN process to be executable by the process engine.
+## Integration
 
-## inversion of control
-Inversion of control is the idea behind dependency injection. It is used as a synonym to dependency injection.
+Integration eines BPMN-Prozesses bedeutet, dass ein regulärer BPMN-Prozess so
+konfiguriert wird, dass er von der Process Engine ausgeführt werden kann.
 
-## addict-ioc
-This is the IoC container we use as a platform for our stack. You can find it on [GitHub](https://github.com/5minds/addict-ioc).
+## Inversion of Control
+Inversion of Control ist die Idee hinter Dependency Injection. Es ist also
+lediglich ein Synonym für Dependency Injection.
+
+## Addict-ioc
+
+Addict-ioc ist der IoC Container den wir als Platform für unseren Stack
+verwenden. Man kann diesen auf [GitHub](https://github.com/5minds/addict-ioc)
+finden.
 
 ## IoC
-The abbreviation for inversion of control.
+Die Abkürzung für Inversion of Control.
 
-## flow
-A line connecting BPMN elements.
+## Isomorphismus
 
-## isomorphic
-Isomorphic javascript code is code that is shared by backend and frontend. It enables higher consistency throughout implementations in the whole stack.
+Isomorpher Javascript Code ist Code der vom Backend und Frontend gemeinsam
+genutzt wird. Das ermöglicht eine höhere Konsistenz bei allen Implementierungen
+im gesamten Stack.
 
-## domain object
-A domain object is the representation of an object that is used inside of our software stack. Most of the times these domain objects are used for business logic and/or persistance.
+## Domain Object
+Ein Domain Object ist die Darstellung eines Objekts, dasinnerhalb unseres
+Software Stacks genutzt wird. Meistens werden diese Domain Objects für
+Businesslogik und/oder Persistenz verwendet.
 
-Examples of domain objects are: user, process, ...
+Beispiele für Domain Objects sind: user, process, ...
 
 ## BPMN
 
-BPMN steht für Business Process Model and Notation. Es ist ein Standard der
-die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert er grafische
-Symbole und spezifiziert deren Verwendung.
+BPMN steht für **B**usiness **P**rocess **M**odel and **N**otation. Es ist ein
+Standard, der die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert er
+grafische Symbole und spezifiziert deren Verwendung.
 
 ### Kollaboration
 
@@ -78,3 +87,19 @@ Benutzerrolle oder ein System repräsentieren.
 ## Anmerkung
 
 Eine Anmerkung ist ein Kommentar im BPMN-Diagramm.
+
+## Task
+
+Ein Task ist eine Aufgabe eines Prozesses. Dabei git es verschiedene Typen von
+Tasks, die unterschiedliche Anforderungen erfüllen. Für eine Erklärung der
+verschiedenen Typen siehe: https://camunda.com/bpmn/reference/#activities-task
+
+## User Task
+
+Ein User Task ist eine Aufgabe, die von einem bestimmten Benutzer erledigt
+werden muss. Das kann zum Beispiel eine Bestätigung oder eine Eingabe sein.
+
+## Service Task
+
+Ein Service Task ist eine Aufgabe, die keine Eingabe eines Nutzers benötigt,
+sondern durch Software erledigt wird.

@@ -20,7 +20,8 @@ Die Beschreibung der Aktivitäten ergibt sich aus der Formel `[Objekt] + [Verb]`
 
 Verwende das **Objekt-Zustandsprinzip**.
 
-Die Beschreibung der Aktivitäten ergibt sich aus der Formel `[Objekt] + [Zustand]`.
+Die Beschreibung der Aktivitäten ergibt sich aus der Formel `[Objekt] +
+[Zustand]`.
 
 | Schlecht 👎                        | Gut 👍                   |
 |------------------------------------|-------------------------|
@@ -37,9 +38,9 @@ Es gibt keine kreuzende oder überlappende Pfade.
 
 ## Aktivitäten typisieren
 
-Wir verwenden keine untypisierten Aktivitäten (rot);
-stattdessen typisieren wir alle Aktivitäten sinnvoll (grün);
-dadurch erkennt der Betrachter sofort den Fokus der Aktivität.
+Wir verwenden keine untypisierten Aktivitäten (rot); stattdessen typisieren wir
+alle Aktivitäten sinnvoll (grün); dadurch erkennt der Betrachter sofort den
+Fokus der Aktivität.
 
 ![Typisierte Aktivitäten](./assets/typisierung.svg)
 
@@ -112,28 +113,36 @@ Der gesamte Prozess wird durch die Aufrufaktivität aufgerufen.
 
 ## Verwendung von Gateways
 
-Gateways teilen den Prozessfluss in einem BPMN-Diagramm in mehrere Flüsse auf,
-oder führen mehrere Flüsse wieder zusammen.
+[Gateways](../anhang/GLOSSARY.md#gateway) teilen den Prozessfluss in einem
+BPMN-Diagramm in mehrere Flüsse auf, oder führen mehrere Flüsse wieder zusammen.
 
-Beachte folgende Regeln zum korrekten Modellieren von Gateways:
+Beachte folgende Regeln zum korrekten Modellieren von
+[Gateways](../anhang/GLOSSARY.md#gateway):
 
-1. Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende Pfeile.
+1. Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende
+   Pfeile.
 
 ![Beispiel Split Gateway](./assets/example_split_gateway.svg)
 
-2. Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden Pfeil.
+2. Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden
+   Pfeil.
 
 ![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
 
-3. Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit XOR-Join-Gateway).
+3. Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit
+   XOR-Join-Gateway).
 
 ## Weitere Regeln
 
-1. Es sollte immer ein **Pool** verwendet werden.
-2. Es sollte immer eine oder mehrere **Lanes** verwendet geben.
-![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
+1. Es sollte immer ein [**Pool**](../anhang/GLOSSARY.md#pool) verwendet werden.
+2. Es sollte immer eine oder mehrere [**Lanes**](../anhang/GLOSSARY.md#lane)
+   verwendet geben. ![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
 
 3. Ein Prozess hat ein Startevent und mindestens ein Endevent.
-4. Eine Aktivität hat einen eingehenden und einen ausgehenden Pfeil.
-5. Zum Teilen und Zusammenführen von Prozessflüssen werden Gateways verwendet.
-6. Boundary-Ereignisse haben einen ausgehenden Pfeil.
+4. Eine [Aktivität](../anhang/GLOSSARY.md#aktivität) hat einen eingehenden und
+   einen ausgehenden Pfeil.
+5. Zum Teilen und Zusammenführen von
+   [Sequenzflüssen](../anhang/GLOSSARY.md#sequenzfluss) werden Gateways
+   verwendet.
+6. Boundary-[Ereignisse](../anhang/GLOSSARY.md#ereignis) haben einen ausgehenden
+   Pfeil.
