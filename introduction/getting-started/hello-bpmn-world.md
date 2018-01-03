@@ -3,8 +3,8 @@
 Um die Möglichkeiten der ProcessEngine zu demonstrieren, wird ein Beispiel
 Diagramm erstellt.
 
-Ziel ist es ein BPMN-Diagramm mit einem [Single User
-Task](../../anhang/GLOSSARY.md#user-task) zu erstellen.
+Ziel ist es ein BPMN-Diagramm mit einem
+[Single User Task](../../anhang/GLOSSARY.md#user-task) zu erstellen.
 
 Das Diagramm sieht folgendermaßen aus:
 
@@ -40,8 +40,7 @@ darauffolgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
 Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an; die
 `Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
 
-<img src="../images/process-definition-list-create-new-diagram.png" width="100%"
-/>
+<img src="../images/process-definition-list-create-new-diagram.png" width="100%"/>
 
 So sieht das Ganze dann aus:
 

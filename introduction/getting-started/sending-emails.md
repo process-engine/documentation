@@ -113,8 +113,8 @@ Hinzufügen eines Gateways:
 
 <img src="../images/add_gateway.png" width="35%" />
 
-Hinzufügen von Flows und einem [Service
-Task](../../anhang/GLOSSARY.md#service-task)(`Send email`):
+Hinzufügen von Flows und einem
+[Service Task](../../anhang/GLOSSARY.md#service-task)(`Send email`):
 
 <img src="../images/add_flows_with_names.png" width="35%" />
 
@@ -124,8 +124,8 @@ Hinzufügen der entsprechenden Überprüfungen:
 
 <img src="../images/add_condition_cancel.png" width="60%" />
 
-Setzen der Properties für den [Service
-Task](../../anhang/GLOSSARY.md#service-task):
+Setzen der Properties für den
+[Service Task](../../anhang/GLOSSARY.md#service-task):
 
 <img src="../images/add_service_task_and_its_propertys.png" width="60%" />
 

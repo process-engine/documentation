@@ -11,16 +11,17 @@ Daten anzuzeigen:
 
 {% video controls="controls"%}../images/consuming-rest-api.mp4{% endvideo %}
 
-Unter dem `Extensions`-Reiter kann dem [Service
-Task](../../anhang/GLOSSARY.md#service-task) (`Fetch Data`) nun gesagt werden,
-was er tun soll: In diesem Fall eine HTTP REST API abzurufen. Dazu müssen im
-`Extension`-Reiter die folgenden Properties hinzugefügt werden:
+Unter dem `Extensions`-Reiter kann dem
+[Service Task](../../anhang/GLOSSARY.md#service-task) (`Fetch Data`) nun gesagt
+werden, was er tun soll: In diesem Fall eine HTTP REST API abzurufen. Dazu
+müssen im `Extension`-Reiter die folgenden Properties hinzugefügt werden:
 
 ```
 module    HttpService
 method    get
 params    ['http://api.fixer.io/latest]
 ```
+
 ![FetchData](../images/fetch-data-rest-api.png)
 
 Als Nächstes wird dem [Sequenzfluss](../../anhang/GLOSSARY.md#sequenzfluss) von
