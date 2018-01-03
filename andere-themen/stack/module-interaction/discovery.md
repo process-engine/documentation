@@ -6,10 +6,10 @@ basiert.
 
 ![Discovery](images/discovery.png)
 
-In diesem Beispiel ist das `DataModel` abhängig vom `Container`
-(welches die IoC-Containerinstanz selbst ist) und es hat eine
-dynamische Abhängigkeit von Entitäten. Dem Dependency Graph ist nicht bewusst,
-dass das "DataModel" Entitäten verwendet, das `DataModel` fragt nur den
+In diesem Beispiel ist das `DataModel` abhängig vom `Container` (welches die
+[IoC](../../../anhang/GLOSSARY.md#ioc)-Containerinstanz selbst ist) und es hat
+eine dynamische Abhängigkeit von Entitäten. Dem Dependency Graph ist nicht
+bewusst, dass das "DataModel" Entitäten verwendet, das `DataModel` fragt nur den
 `Container` für alle Registrierungen, die als eine Entität markiert sind.
 
 Die aktuellen Discovery Tags sind:

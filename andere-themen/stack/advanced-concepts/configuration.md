@@ -83,7 +83,8 @@ class ExampleService {
 
 ## Deklaration
 
-Die Konfiguration einer Klasse kann über den IoC-Container registriert werden (siehe
+Die Konfiguration einer Klasse kann über den
+[IoC-Container](../../../anhang/GLOSSARY.md#ioc) registriert werden (siehe
 [Dependency Injection](../module-interaction/dependency-injection.md)).
 
 ```typescript
@@ -91,11 +92,13 @@ container.register('ExampleService', ExampleService)
   .configure('example:example_service');
 ```
 
-In diesem Beispiel würde die Konfiguration z.B. aus einer Datei `example_service.json` aus einem Ordner `example` geladen.
+In diesem Beispiel würde die Konfiguration z.B. aus einer Datei
+`example_service.json` aus einem Ordner `example` geladen.
 
 ## Namenskonvention
 
-Eine Namenskonvention besagt, dass die Ebenen der Konfigurations-Quellen-Angabe mit einem `:` getrennt werden.
+Eine Namenskonvention besagt, dass die Ebenen der Konfigurations-Quellen-Angabe
+mit einem `:` getrennt werden.
 
 Das vorige Beispiel hat zwei Schichten, die seine Hierarchie bilden -
 `example` und `example_service`.
@@ -130,7 +133,8 @@ Ein möglicher Aufbau der JSON-Konfigurationsdatei ist:
 }
 ```
 
-Standardmäßig ist der Name der Konfigurationsdatei `./config.json` im Projektstammverzeichnis.
+Standardmäßig ist der Name der Konfigurationsdatei `./config.json` im
+Projektstammverzeichnis.
 
 #### Konfigurationsordner
 
@@ -142,7 +146,7 @@ In dem Beispiel würde die Dateistruktur so aussehen:
 
 ```
 .
-$ tree config 
+$ tree config
 basics
 └── example
    └── example_service.json
@@ -183,7 +187,7 @@ der [Deklaration](#Deklaration) verwendet.
 
 Überschreiben einer statischen Variable der Konfiguration über die Kommandozeile.
 
-Befehl: 
+Befehl:
 
 ```
 node myApp --example:example_service:myValue test
@@ -206,10 +210,10 @@ node myApp \
 
 ### Dynamische Konfiguration
 
-Grundsätzlich ist die Konfiguration statisch;
-wir unterscheiden vier Quellen für die Konfiguration;
-drei statische, eine dynamische;
-die dynamische Konfiguration ist die einzige Quelle, die zur Laufzeit geändert werden kann.
+Grundsätzlich ist die Konfiguration statisch; wir unterscheiden vier Quellen für
+die Konfiguration; drei statische, eine dynamische; die dynamische Konfiguration
+ist die einzige Quelle, die zur Laufzeit geändert werden kann.
 
-Wenn man den IoC-Container beauftragt, eine neue Instanz einer Klasse zu
-erzeugen, kann dabei ein Konfigurationsobjekt mitgegeben werden.
+Wenn man den [IoC-Container](../../../anhang/GLOSSARY.md#ioc) beauftragt, eine
+neue Instanz einer Klasse zu erzeugen, kann dabei ein Konfigurationsobjekt
+mitgegeben werden.

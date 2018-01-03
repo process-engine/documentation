@@ -1,9 +1,10 @@
 # Emails versenden
 
-Das Beispiel "Verwendung einer REST API" wird um den Versand von Emails erweitert,
-um die geladenen Daten zu versenden.
+Das Beispiel "Verwendung einer REST API" wird um den Versand von Emails
+erweitert, um die geladenen Daten zu versenden.
 
-Dazu muss der Prozess um die folgenden drei [Tasks](../../anhang/Glossary.md) erweitert werden:
+Dazu muss der Prozess um die folgenden drei
+[Tasks](../../anhang/GLOSSARY.md#task) erweitert werden:
 
 1. Die Abfrage der Email-Adresse
 1. Die Anforderung einer Bestätigung
@@ -15,8 +16,9 @@ Vorweg müssen ein paar Vorbereitungen getroffen werden.
 
 {% video controls="controls"%}../images/preparation-send-email.mp4{% endvideo %}
 
-Den Pool und das Startevent zu `Sending mails` umbenennen;
-die Lane vergrößern, da mehr Platz benötigt wird.
+Den [Pool](../../anhang/GLOSSARY.md#pool) und das Startevent zu `Sending mails`
+umbenennen; die [Lane](../../anhang/GLOSSARY.md#lane) vergrößern, da mehr Platz
+benötigt wird.
 
 Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
 
@@ -28,11 +30,12 @@ Fertig sieht es so aus:
 
 <img src="../images/renamed_poolname_startevent.png" width="35%" />
 
-Als nächstes erstellt man einen [User Task](../../anhang/Glossary.md)
-mit dem Namen `Get Email Address`.
-Dieser fordert den User per UI dazu auf eine E-Mail anzugeben.
+Als nächstes erstellt man einen [User Task](../../anhang/GLOSSARY.md#user-task)
+mit dem Namen `Get Email Address`. Dieser fordert den User per UI dazu auf eine
+E-Mail anzugeben.
 
-{% video controls="controls"%}../images/get_email_address-send-email.mp4{% endvideo %}
+{% video controls="controls"%}../images/get_email_address-send-email.mp4{%
+endvideo %}
 
 #### 1.2 User Task erstellen und konfigurieren
 
@@ -54,18 +57,19 @@ Hinzufügen einer Property:
 
 #### 1.3 Abändern vorhandener Tasks
 
-Dann muss der `Show Data`-[Task](../../anhang/Glossary.md) zu `Confirm Data`
-umbenannt werden.
-Der Wert der `uiConfig` Property muss zu folgendem Wert abgeändert werden:
+Dann muss der `Show Data`-[Task](../../anhang/GLOSSARY.md#task) zu `Confirm
+Data` umbenannt werden. Der Wert der `uiConfig` Property muss zu folgendem Wert
+abgeändert werden:
 
 ```
 ${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
 ```
 
-Dabei ist zu beachten, dass der `Fetch Data`-[Task](../../anhang/Glossary.md)
-die ID `fetch_data` bekommt.
+Dabei ist zu beachten, dass der `Fetch
+Data`-[Task](../../anhang/GLOSSARY.md#task) die ID `fetch_data` bekommt.
 
-{% video controls="controls"%}../images/confirm_data-send-email.mp4{% endvideo %}
+{% video controls="controls"%}../images/confirm_data-send-email.mp4{% endvideo
+%}
 
 Umbenennen des `Show Data`-Task:
 
@@ -83,14 +87,16 @@ Setzen einer ID beim `Fetch Data`-Task:
 
 Als Nächstes wird eine Überprüfung angelegt.
 
-Es ist zu prüfen, ob in dem `Confirm Data`-[Task](../../anhang/Glossary.md)
+Es ist zu prüfen, ob in dem `Confirm Data`-[Task](../../anhang/GLOSSARY.md#task)
 Confirm oder Cancel ausgewählt wurde; wir benutzen ein `Gateway` dafür.
 
 Diese Auswahl hat Einfluss auf den weiteren Prozessweg. Cancel beendet den
-Prozess; Confirm löst den `Send email`-[Task](../../anhang/Glossary.md) aus.
+Prozess; Confirm löst den `Send email`-[Task](../../anhang/GLOSSARY.md#task)
+aus.
 
-Der letzte Prozessschritt ist der `Send email`-[Task](../../anhang/Glossary.md).
-Dieser muss die folgenden Eigenschaften erhalten:
+Der letzte Prozessschritt ist der `Send
+email`-[Task](../../anhang/GLOSSARY.md#task). Dieser muss die folgenden
+Eigenschaften erhalten:
 
 ```
 module  MailService
@@ -98,7 +104,8 @@ method  send
 params  [null, token.history.get_email.email, "EUR to USD conversion rate", "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD"]
 ```
 
-Nach diesem [Task](../../anhang/Glossary.md) muss der Prozess beendet werden.
+Nach diesem [Task](../../anhang/GLOSSARY.md#task) muss der Prozess beendet
+werden.
 
 {% video controls="controls"%}../images/send_email-send-email.mp4{% endvideo %}
 
@@ -106,7 +113,8 @@ Hinzufügen eines Gateways:
 
 <img src="../images/add_gateway.png" width="35%" />
 
-Hinzufügen von Flows und einem [Service Task](../../anhang/Glossary.md)(`Send email`):
+Hinzufügen von Flows und einem
+[Service Task](../../anhang/GLOSSARY.md#service-task)(`Send email`):
 
 <img src="../images/add_flows_with_names.png" width="35%" />
 
@@ -116,7 +124,8 @@ Hinzufügen der entsprechenden Überprüfungen:
 
 <img src="../images/add_condition_cancel.png" width="60%" />
 
-Setzen der Properties für den [Service Task](../../anhang/Glossary.md):
+Setzen der Properties für den
+[Service Task](../../anhang/GLOSSARY.md#service-task):
 
 <img src="../images/add_service_task_and_its_propertys.png" width="60%" />
 
