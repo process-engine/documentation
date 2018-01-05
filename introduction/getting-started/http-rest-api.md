@@ -22,7 +22,7 @@ method    get
 params    ['http://api.fixer.io/latest]
 ```
 
-![FetchData](../images/fetch-data-rest-api.png)
+![FetchData](../images/fetch-data-rest-api.png')
 
 Als Nächstes wird dem [Sequenzfluss](../../anhang/GLOSSARY.md#sequenzfluss) von
 dem `Fetch Data` zum `Show Data` Task mitgeteilt, wie das Ergebnis interpretiert
