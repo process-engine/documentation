@@ -19,7 +19,7 @@ müssen im `Extension`-Reiter die folgenden Properties hinzugefügt werden:
 ```
 module    HttpService
 method    get
-params    ['http://api.fixer.io/latest]
+params    ['http://api.fixer.io/latest']
 ```
 
 ![FetchData](../images/fetch-data-rest-api.png)
