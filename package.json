@@ -9,7 +9,7 @@
     "render_api_doc": "node spectacle.js --app-dir spectacle_app --config-file spectacle_config.js swagger.json"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-collapsible-menu": "^1.0.3",
