@@ -1,3 +1,8 @@
+git checkout develop
+git pull
+git checkout gh-pages
+git pull
+git merge develop
 npm install
 npm run render_api_doc
 mv -f ./public/index.html ./andere-themen/cheat-sheet/http-rest-api/apidoc.html
