@@ -1,3 +1,4 @@
+npm install
 npm run render_api_doc
 mv -f ./public/index.html ./andere-themen/cheat-sheet/http-rest-api/apidoc.html
 ./node_modules/.bin/gitbook build
