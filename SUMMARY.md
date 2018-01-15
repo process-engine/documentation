@@ -39,6 +39,23 @@
   <!-- * [Einbinden in](integration/consumer-client-API/einbinden-in.md) -->
 <!-- * ["in Prozess"-Verwendung](integration/in-prozess-verwendung.md) -->
 
+## Stack
+
+* [Grundkonzepte](andere-themen/stack/basic-concepts/README.md)
+  * [Datenspeicher](andere-themen/stack/basic-concepts/datastore.md)
+  * [Entitäten-Service](andere-themen/stack/basic-concepts/entity-services.md)
+  * [Identitäts- und Zugriffsverwaltung](andere-themen/stack/basic-concepts/identity-access-management.md)
+* [Fortgeschrittene Konzepte](andere-themen/stack/advanced-concepts/README.md)
+  * [Konfiguration](andere-themen/stack/advanced-concepts/configuration.md)
+* [Modul Interaktion](andere-themen/stack/module-interaction/README.md)
+  * [Dependency Injection](andere-themen/stack/module-interaction/dependendy-injection.md)
+  * [Discovery](andere-themen/stack/module-interaction/discovery.md)
+* [Struktur](andere-themen/stack/structure/README.md)
+  * [Adapter](andere-themen/stack/structure/adapters.md)
+  * [Bridges](andere-themen/stack/structure/bridges.md)
+  * [Contracts](andere-themen/stack/structure/contracts.md)
+  * [Extensions](andere-themen/stack/structure/extensions.md)
+
 <!-- ## Tutorials -->
 
 <!-- * [Erweitertes Setup](tutorial/erweitertes-setup.md) -->

@@ -1,4 +1,4 @@
-# Datastore
+# Datenspeicher
 
 Der Datenspeicher (Datastore) ist ein allgemeingültiges Modul zum Interagieren mit
 Entitäten. Mit ihm können:
@@ -20,9 +20,9 @@ Er bietet Methoden zum:
   const catalog = this.datastoreService.getCatalog();
 
   /* Das ist der Inhalt von catalog:
-  catalog = {  
-    "catalog":{  
-      "classes":[  
+  catalog = {
+    "catalog":{
+      "classes":[
         "BoundaryEvent",
         "CatchEvent",
         "FlowDef",
@@ -45,13 +45,12 @@ Er bietet Methoden zum:
   */
   const flowDefCollection = this.datastoreService.getCollection('FlowDef', context);
 
-
   /* Das ist der Inhalt der flowDefCollection
-  flowDefCollection = {  
+  flowDefCollection = {
     "count": 12,
     "offset":0,
     "limit":40,
-    "data":[  
+    "data":[
       FlowDefEntity {},
       FlowDefEntity {},
       FlowDefEntity {},
@@ -114,7 +113,7 @@ Er bietet Methoden zum:
   /*
   removeEntity(typeName: TypeKey,
                id: string,
-               context: ExecutionContext, 
+               context: ExecutionContext,
                ptions?: IPublicRemoveOptions): Promise<void>;
   */
   this.datastoreService.removeEntity('flowDef', '747c095e-0461-43b5-a052-ad8842253577', context);
@@ -162,7 +161,4 @@ Er bietet Methoden zum:
 
 ## Datenspeicher API
 
-Der Datenspeicher ist auch über eine [HTTP-REST-API](http://dev.wtf/pe_apidoc.html#tag-datastore) verfügbar.
-
-> TODO: Korrekten API-Link verwenden. Dieser hier ist temporär
-
+Der Datenspeicher ist auch über eine [HTTP-REST-API](../../cheat-sheet/http-rest-api/README.md) verfügbar.

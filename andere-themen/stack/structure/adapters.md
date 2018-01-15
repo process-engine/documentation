@@ -16,4 +16,4 @@ das Adaptermodul ausgetauscht werden. Somit wird sichergestellt, dass keine
 Die besten Beispiele hierfür sind die in dem Stack verwendeten `data source
 adapter`.
 
-![Adapter](images/adapters.png)
+![](images/adapters.png)
