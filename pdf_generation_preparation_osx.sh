@@ -8,7 +8,7 @@ npm install -g svgexport
 curl --location --output calibre.dmg https://calibre-ebook.com/dist/osx
 
 ## mount the calibre.dmg to a random temporary folder
-TEMP_DIR=`mktemp -d`
+TEMP_DIR=$(mktemp -d)
 hdiutil attach -mountpoint $TEMP_DIR calibre.dmg
 
 ## copy the calibre.app to the Applications-folder
