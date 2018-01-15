@@ -1,8 +1,8 @@
-# How to Render the Documentation as pdf
+# How to Render the Documentation as PDF
 
-## Install required software
+## Install Required Software
 
-For the pdf-generation to work, you need to have `svgexport` and `ebook-convert`
+For the PDF-generation to work, you need to have `svgexport` and `ebook-convert`
 installed. To install them:
 
 - Be on OS X.
