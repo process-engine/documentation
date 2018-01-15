@@ -20,7 +20,7 @@ mv -f ./public/index.html ./andere-themen/cheat-sheet/http-rest-api/apidoc.html
 ./node_modules/.bin/gitbook build
 
 # make the root contain only the built gitbook and nothing else
-TEMP_DIR=`mktemp -d`
+TEMP_DIR=$(mktemp -d)
 mv ./* $TEMP_DIR/
 mv $TEMP_DIR/_book/* ./
 rm -rf $TEMP_DIR
