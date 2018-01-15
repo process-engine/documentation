@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # make the gh-pages-branch be identical to develop
 git checkout gh-pages
 git pull
