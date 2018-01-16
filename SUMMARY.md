@@ -77,8 +77,8 @@
 ## Anlagen
 
 1. [Glossar](anhang/GLOSSARY.md)
-<!-- * [Literaturverweise](anhang/literaturverweise.md) -->
 1. [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
+<!-- * [Literaturverweise](anhang/literaturverweise.md) -->
 
 ---
 
