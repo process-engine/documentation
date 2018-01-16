@@ -13,7 +13,7 @@
 
 ## Grundlagen
 
-* [Architektur](basics/README.md)
+1. [Architektur](basics/README.md)
 
    * [Diagramm](basics/architektur/diagramm.md)
    * [Komponenten beschreiben](basics/architektur/komponenten/README.md)
@@ -22,14 +22,14 @@
 
 ## BPMN
 
-* [Styleguide](bpmn/styleguide.md)
-* [BPMN Basics](bpmn/bpmn-basics/README.md)
+1. [Styleguide](bpmn/styleguide.md)
+1. [BPMN Basics](bpmn/bpmn-basics/README.md)
   <!-- * [Typisierte Tasks](bpmn/bpmn-basics/typisierte-tasks.md) -->
 <!-- * [Beispiel-Prozesse](bpmn/beispiel-prozesse.md) -->
 
 ## BPMN-Studio
 
-* [Beschreibung der Dialoge](bpmn-studio/beschreibung-dialoge.md)
+1. [Beschreibung der Dialoge](bpmn-studio/beschreibung-dialoge.md)
 <!-- * [Hands-On](bpmn-studio/hands-on/README.md) -->
   <!-- * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md) -->
   <!-- * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md) -->
@@ -76,9 +76,9 @@
 
 ## Anlagen
 
-* [Glossar](anhang/GLOSSARY.md)
+1. [Glossar](anhang/GLOSSARY.md)
 <!-- * [Literaturverweise](anhang/literaturverweise.md) -->
-* [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
+1. [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
 
 ---
 
