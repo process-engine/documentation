@@ -54,9 +54,9 @@
 
 <!-- * [Literaturverweise](anhang/literaturverweise.md) -->
 * [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
-* [messagebus](messagebus/README.md)
-  * [internal](messagebus/internal/README.md)
-  * [external](messagebus/external/README.md)
+* [messagebus](andere-themen/cheat-sheet/messagebus/README.md)
+  * [internal](andere-themen/cheat-sheet/messagebus/internal/README.md)
+  * [external](andere-themen/cheat-sheet/messagebus/external/README.md)
 
 ---
 
