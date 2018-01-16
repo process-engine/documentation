@@ -8,19 +8,13 @@ want to use the process-engine, refer to the [external messagebus communication]
 
 ## Publishing
 
-**/processengine/node/{node_id}**
+**/processengine/node/{node\_id}**
 
 Sends messages regarding that node.
 
 - check-message
 
-checks if any other process-engine-isntance is already handling this node
-
-```TypeScript
-{
-  action: 'checkResponsibleInstance',
-}
-```
+  see `checkResponsibleInstance-message` under `Subscribing`
 
 - event-message
 
@@ -32,9 +26,43 @@ checks if any other process-engine-isntance is already handling this node
 
   see `process-end-message` under `Subscribing`
 
+**/processengine/signal/{signal\_name}**
+
+Dispatches a bpmn-signal.
+
+```TypeScript
+{
+  process: this.process.getEntityReference().toPojo(),
+  token: this.processToken.data.current,
+}
+```
+
+**/processengine/message/{message\_name}**
+
+Dispatches a bpmn-message.
+
+```TypeScript
+{
+  process: this.process.getEntityReference().toPojo(),
+  token: this.processToken.data.current,
+}
+```
+
+**/processengine/{application\_id}**
+
+see the same route under `Subscribing`
+
+**/processengine/{application\_instance\_id}**
+
+see the same route under `Subscribing`
+
+**/{application\_id}/datastore**
+
+see the same route under `Subscribing`
+
 ## Subscribing
 
-**/processengine/node/{node_id}**
+**/processengine/node/{node\_id}**
 
 Listens for messages regarding that node.
 
@@ -75,7 +103,7 @@ Listens for messages regarding that node.
 
 - checkResponsibleInstance-message
 
-  asks the process-engine if it is responsibel for that node
+  Asks the process-engine if it is responsible for that node.
 
   ```TypeScript
   {
@@ -96,20 +124,81 @@ Listens for messages regarding that node.
     token: processToken.data.current,
   }
   ```
-**/processengine/signal/{signal}**
+
+**/processengine/signal/{signal\_name}**
+
+Informs the process-engine, that a bpmn-signal was dispatched
+
+```TypeScript
+{
+  process: this.process.getEntityReference().toPojo(),
+  token: this.processToken.data.current,
+}
+```
+
+**/processengine/message/{message\_name}**
+
+Informs the process-engine, that a bpmn-message was dispatched
+
+```TypeScript
+{
+  process: this.process.getEntityReference().toPojo(),
+  token: this.processToken.data.current,
+}
+```
+
+**/processengine/{application\_id}**
+
+Orders all process-engines with that application-id to do something
+
+- getInstanceId
+
+  Answers with the application-instance-id of the process-engine.
+  The answer is send on the result-channel given in the messages metadata.
+
+  ```TypeScript
+  {
+    event: 'getInstanceId',
+  }
+  ```
+
+  Answer:
+  ```TypeScript
+  {
+    instanceId: this.applicationService.instanceId,
+  }
+  ```
+
+- executeProcess
+
+  Executes a process and answers with the result of the process-execution.
+  The answer is send on the result-channel given in the messages metadata.
+
+  ```TypeScript
+  {
+    event: 'executeProcess',
+    id: process_model_id, // optional, if key is set
+    key: process_model_key, // optional, if id is set
+    initialToken: initial_token, // optional
+    version: process_version, // otional
+  }
+  ```
+
+**/processengine/{application\_instance\_id}**
+
+Orders the process-engine with that application-instance-id to do something
+
+The possible messages are identical to the messages for the channel
+`/processengine/{application\_id}`
+
+**/{application\_id}/datastore**
+
+Tells all process-engines with that application-id to execute a
+datastore-method.
 
 
-'/processengine/signal/' + signal -> execute (throw_event.ts z38)
-'/processengine/message/' + message -> execute (throw_event z51)
 
-'/participant/' + this.participant -> execute (user_task.ts z46)
-`/role/${flatRole}` -> execute (user_task.ts z54)
 
-`/processengine/node/${node.id}` -> \_nodeAlreadyBelongsToOtherProcessEngine (process\_engine\_service z377)
-`/processengine/${possibleRemoteTargets[0]}` -> executeProcessRemotely (process\_engine\_service z509)
-`/processengine/${target.data.instanceId}` -> executeProcessRemotely (process\_engine\_service z511)
-
-`/${targetApplicationId}/datastore` -> request (messagebus.ts (routing) z23)
 
 
 
