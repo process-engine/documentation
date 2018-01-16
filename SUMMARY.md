@@ -2,19 +2,21 @@
 
 ## Einleitung
 
-* [Motivation](README.md)
-* [Installation der Anwendung](introduction/installation.md)
-* [Getting started](introduction/getting-started/README.md)
+1. [Motivation](README.md)
+1. [Installation der Anwendung](introduction/installation.md)
+1. [Getting started](introduction/getting-started/README.md)
+
+   * [Hello BPMN-World](introduction/getting-started/hello-bpmn-world.md)
+   * [Verwendung einer REST API](introduction/getting-started/http-rest-api.md)
+   * [Versenden von Emails](introduction/getting-started/sending-emails.md)
   <!-- * [Konfiguration des Stacks (skateboard)](introduction/getting-started/skateboard.md) -->
-  * [Hello BPMN-World](introduction/getting-started/hello-bpmn-world.md)
-  * [Verwendung einer REST API](introduction/getting-started/http-rest-api.md)
-  * [Versenden von Emails](introduction/getting-started/sending-emails.md)
 
 ## Grundlagen
 
 * [Architektur](basics/README.md)
-  * [Diagramm](basics/architektur/diagramm.md)
-  * [Komponenten beschreiben](basics/architektur/komponenten/README.md)
+
+   * [Diagramm](basics/architektur/diagramm.md)
+   * [Komponenten beschreiben](basics/architektur/komponenten/README.md)
   <!-- * [Abgrenzung](basics/architektur/komponenten/abgrenzung.md) -->
 <!-- * [Erweiterte Architektur](basics/erweiterte-architektur.md) -->
 
@@ -41,20 +43,27 @@
 
 ## Stack
 
-* [Grundkonzepte](andere-themen/stack/basic-concepts/README.md)
-  * [Datenspeicher](andere-themen/stack/basic-concepts/datastore.md)
-  * [Entitäten-Service](andere-themen/stack/basic-concepts/entity-services.md)
-  * [Identitäts- und Zugriffsverwaltung](andere-themen/stack/basic-concepts/identity-access-management.md)
-* [Fortgeschrittene Konzepte](andere-themen/stack/advanced-concepts/README.md)
-  * [Konfiguration](andere-themen/stack/advanced-concepts/configuration.md)
-* [Modul Interaktion](andere-themen/stack/module-interaction/README.md)
-  * [Dependency Injection](andere-themen/stack/module-interaction/dependendy-injection.md)
-  * [Discovery](andere-themen/stack/module-interaction/discovery.md)
-* [Struktur](andere-themen/stack/structure/README.md)
-  * [Adapter](andere-themen/stack/structure/adapters.md)
-  * [Bridges](andere-themen/stack/structure/bridges.md)
-  * [Contracts](andere-themen/stack/structure/contracts.md)
-  * [Extensions](andere-themen/stack/structure/extensions.md)
+1. [Grundkonzepte](andere-themen/stack/basic-concepts/README.md)
+
+   * [Datenspeicher](andere-themen/stack/basic-concepts/datastore.md)
+   * [Entitäten-Service](andere-themen/stack/basic-concepts/entity-services.md)
+   * [Identitäts- und Zugriffsverwaltung](andere-themen/stack/basic-concepts/identity-access-management.md)
+
+1. [Fortgeschrittene Konzepte](andere-themen/stack/advanced-concepts/README.md)
+
+   * [Konfiguration](andere-themen/stack/advanced-concepts/configuration.md)
+
+1. [Modul Interaktion](andere-themen/stack/module-interaction/README.md)
+
+   * [Dependency Injection](andere-themen/stack/module-interaction/dependendy-injection.md)
+   * [Discovery](andere-themen/stack/module-interaction/discovery.md)
+
+1. [Struktur](andere-themen/stack/structure/README.md)
+
+   * [Adapter](andere-themen/stack/structure/adapters.md)
+   * [Bridges](andere-themen/stack/structure/bridges.md)
+   * [Contracts](andere-themen/stack/structure/contracts.md)
+   * [Extensions](andere-themen/stack/structure/extensions.md)
 
 <!-- ## Tutorials -->
 
