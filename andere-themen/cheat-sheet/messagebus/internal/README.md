@@ -10,6 +10,8 @@ want to use the process-engine, refer to the [external messagebus communication]
 
 **/processengine/node/{node_id}**
 
+Sends messages regarding that node.
+
 - check-message
 
 checks if any other process-engine-isntance is already handling this node
@@ -20,9 +22,21 @@ checks if any other process-engine-isntance is already handling this node
 }
 ```
 
+- event-message
+
+  see `event-message` under `Subscribing`
+
+**/processengine/process/{process\_instance\_id}**
+
+- process-end-message
+
+  see `process-end-message` under `Subscribing`
+
 ## Subscribing
 
 **/processengine/node/{node_id}**
+
+Listens for messages regarding that node.
 
 - proceed-message
 
@@ -69,13 +83,21 @@ checks if any other process-engine-isntance is already handling this node
   }
   ```
 
+**/processengine/process/{process\_instance\_id}**
 
+- process-end-message
 
+  Tells the process-engine, that a process finished executing and is now
+  terminated.
 
+  ```TypeScript
+  {
+    event: 'end',
+    token: processToken.data.current,
+  }
+  ```
+**/processengine/signal/{signal}**
 
-'/processengine/node/' + callerId -> end (process.ts z258)
-`/processengine/process/${this.id}` -> end (process.ts z268)
-'/processengine/node/' + callerId -> error (proces.ts z284)
 
 '/processengine/signal/' + signal -> execute (throw_event.ts z38)
 '/processengine/message/' + message -> execute (throw_event z51)

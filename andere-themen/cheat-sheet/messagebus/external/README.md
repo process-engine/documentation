@@ -56,9 +56,11 @@ notifies about boundaryEvents that got triggered
 
 **/processengine/node/{node_id}**
 
+Sends messages regarding that node.
+
 - proceed-message
 
-  Tells the process-engine that this node is finished and it should proceed
+  Tells the process-engine that this node is finished and it should proceed.
   executing
 
   ```TypeScript
