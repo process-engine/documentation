@@ -2,6 +2,12 @@
   "plugins": [
     "collapsible-menu",
     "html5-video",
-    "swagger"
-  ]
+    "image-captions-extended"
+  ],
+  "pluginsConfig": {
+    "image-captions": {
+      "caption": "_CAPTION_",
+      "align": "left"
+    }
+  }
 }

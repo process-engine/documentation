@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- created with bpmn-js / http://bpmn.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="13" viewBox="4 3 80 13" version="1.1"><defs><marker id="sequenceflow-end-white-black" viewBox="0 0 20 20" refX="11" refY="10" markerWidth="10" markerHeight="10" orient="auto"><path d="M 1 5 L 12 10 L 1 15 Z" style="fill: black; stroke-width: 1px; stroke-linecap: round; stroke-dasharray: 10000, 1; stroke: black;"/></marker></defs><g class="djs-group"><g class="djs-element djs-connection" data-element-id="SequenceFlow_1vtnrry" style="display: block;"><g class="djs-visual"><path d="m  9,9L77,9 " style="fill: none;stroke-width: 2px;stroke: black;stroke-linejoin: round;marker-end: url('#sequenceflow-end-white-black');"/></g></g></g></svg>
