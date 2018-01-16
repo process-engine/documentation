@@ -194,9 +194,30 @@ The possible messages are identical to the messages for the channel
 **/{application\_id}/datastore**
 
 Tells all process-engines with that application-id to execute a
-datastore-method.
+datastore-method. The answer is send on the result-channel given in the messages
+metadata.
 
+- If the action is `POST`, and `method` and `id` have values, then this message
+will make the process-engine execute the given method on the entity identified
+by `typeName` and `id`.
 
+- If the action is `POST`, and `method` has a value, but `id` does not, then
+this message will make the process-engine execute the given method on the
+entityType identified by `typeName`.
+
+- In all other cases a regular CRUD-operation (depending on the `action`) will
+be performed on the entity.
+
+```TypeScript
+{
+  data: any,
+  action: 'POST' | 'PUT' | 'DELETE' | 'GET';
+  typeName?: string;
+  method?: string;
+  id?: string;
+  options?: any;
+}
+```
 
 
 
@@ -204,15 +225,6 @@ datastore-method.
 
 ## Subscribing
 
-**/processengine/node/{node_id}**
-
-**/processengine/signal/{signal}**
-
-**/processengine/message/{message}**
-
-**/processengine/{application_id}**
-
-**/processengine/{application\_instance\_id}**
 
 **/processengine**
 
@@ -221,14 +233,7 @@ datastore-method.
 **/processengine/process/{process\_instance\_id}**
 
 subscribes
-`/processengine/node/${node.id}` -> subscibeToNodeChannels (node_instance.ts z221)
 
-'/processengine/signal/' + signal -> initializeSignal (event.ts z115)
-
-'/processengine/message/' + message -> initializeMessage (event.ts z162)
-
-`/processengine/${this.applicationService.id}` -> \_initializeMessageBus (process\_engine\_service z235)
-`/processengine/${this.applicationService.instanceId}` -> \_initializeMessageBus (process\_engine\_service z239)
 `/processengine` -> \_initializeMessageBus (process\_engine\_service z246)
 `/processengine/bootup` -> _waitForMessagebus (process\_engine\_service z424)
 `/processengine/process/${processInstance.id}` -> executeProcessLocally (process\_engine\_service z469)
