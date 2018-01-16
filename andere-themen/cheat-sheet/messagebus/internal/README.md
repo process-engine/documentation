@@ -6,7 +6,73 @@ talk to other parts of itself or other instances of the process engine.
 These messages are only interesting if you develop the process-engine stack itself. If you just
 want to use the process-engine, refer to the [external messagebus communication](../external/README.md)
 
-publishes
+## Publishing
+
+**/processengine/node/{node_id}**
+
+- check-message
+
+checks if any other process-engine-isntance is already handling this node
+
+```TypeScript
+{
+  action: 'checkResponsibleInstance',
+}
+```
+
+## Subscribing
+
+**/processengine/node/{node_id}**
+
+- proceed-message
+
+  Tells the process-engine that this node is finished and it should proceed
+  executing
+
+  ```TypeScript
+  {
+    action: 'proceed',
+    token: userTaskResult,
+  }
+  ```
+
+- event-message
+
+  Tells the process-engine to trigger an event on that node. This means
+  republishing that event-message on the internal eventAggregator. This
+  in turn triggers the `event`-method of that node.
+  This event-method checks if there are any boundary-events on that node
+  that correspond to the event-type:
+
+  - error = bpmn:ErrorEventDefinition
+  - cancel = bpmn:CancelEventDefinition
+  - data = bpmn:ConditionalEventDefinition
+
+  all matching boundary-events get triggered. If no matching boundary-event
+  is found, and the eventType is 'error' or 'cancel', the node gets canceled
+
+  ```TypeScript
+  {
+    action: 'event',
+    eventType: 'error '| 'cancel' | 'data',
+    data: data,
+  }
+  ```
+
+- checkResponsibleInstance-message
+
+  asks the process-engine if it is responsibel for that node
+
+  ```TypeScript
+  {
+    action: 'checkResponsibleInstance',
+  }
+  ```
+
+
+
+
+
 '/processengine/node/' + callerId -> end (process.ts z258)
 `/processengine/process/${this.id}` -> end (process.ts z268)
 '/processengine/node/' + callerId -> error (proces.ts z284)
@@ -22,3 +88,36 @@ publishes
 `/processengine/${target.data.instanceId}` -> executeProcessRemotely (process\_engine\_service z511)
 
 `/${targetApplicationId}/datastore` -> request (messagebus.ts (routing) z23)
+
+
+
+## Subscribing
+
+**/processengine/node/{node_id}**
+
+**/processengine/signal/{signal}**
+
+**/processengine/message/{message}**
+
+**/processengine/{application_id}**
+
+**/processengine/{application\_instance\_id}**
+
+**/processengine**
+
+**/processengine/bootup**
+
+**/processengine/process/{process\_instance\_id}**
+
+subscribes
+`/processengine/node/${node.id}` -> subscibeToNodeChannels (node_instance.ts z221)
+
+'/processengine/signal/' + signal -> initializeSignal (event.ts z115)
+
+'/processengine/message/' + message -> initializeMessage (event.ts z162)
+
+`/processengine/${this.applicationService.id}` -> \_initializeMessageBus (process\_engine\_service z235)
+`/processengine/${this.applicationService.instanceId}` -> \_initializeMessageBus (process\_engine\_service z239)
+`/processengine` -> \_initializeMessageBus (process\_engine\_service z246)
+`/processengine/bootup` -> _waitForMessagebus (process\_engine\_service z424)
+`/processengine/process/${processInstance.id}` -> executeProcessLocally (process\_engine\_service z469)
