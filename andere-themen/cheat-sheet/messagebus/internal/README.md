@@ -8,3 +8,17 @@ want to use the process-engine, refer to the [external messagebus communication]
 
 publishes
 '/processengine/node/' + callerId -> end (process.ts z258)
+`/processengine/process/${this.id}` -> end (process.ts z268)
+'/processengine/node/' + callerId -> error (proces.ts z284)
+
+'/processengine/signal/' + signal -> execute (throw_event.ts z38)
+'/processengine/message/' + message -> execute (throw_event z51)
+
+'/participant/' + this.participant -> execute (user_task.ts z46)
+`/role/${flatRole}` -> execute (user_task.ts z54)
+
+`/processengine/node/${node.id}` -> \_nodeAlreadyBelongsToOtherProcessEngine (process\_engine\_service z377)
+`/processengine/${possibleRemoteTargets[0]}` -> executeProcessRemotely (process\_engine\_service z509)
+`/processengine/${target.data.instanceId}` -> executeProcessRemotely (process\_engine\_service z511)
+
+`/${targetApplicationId}/datastore` -> request (messagebus.ts (routing) z23)
