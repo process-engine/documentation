@@ -19,6 +19,9 @@
  */
 pipeline {
   agent any
+  tools {
+    nodejs "node-lts"
+  }
 
   stages {
     stage('test') {
