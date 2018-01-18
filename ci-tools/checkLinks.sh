@@ -1,3 +1,5 @@
+#!/bin/bash
+
 REMOTE_LINK_REGEX="^http.*$"
 PARSE_AND_PREPARE_LINKS_SCRIPT="parseAndPrepareLinks.js"
 
