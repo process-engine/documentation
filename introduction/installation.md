@@ -71,11 +71,11 @@ Dann kann Charon gestartet werden.
 
 # Charon
 
-Zunächst muss das [Charon Repository](https://github.com/process-engine/charon)
+Zunächst muss das [Charon Repository](https://github.com/process-engine/bpmn-studio)
 geklont werden.
 
 ```
-git clone git@github.com:process-engine/charon.git
+git clone git@github.com:process-engine/bpmn-studio.git
 ```
 
 In dem geklonten Projekt installiert man alle Dependencies;
@@ -93,4 +93,4 @@ werden.
 
 Das Ergebnis sieht so aus:
 
-![Charon](images/charon.png)
+![Charon](images/bpmn-studio.png)
