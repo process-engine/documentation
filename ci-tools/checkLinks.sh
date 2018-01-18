@@ -22,29 +22,31 @@ function main()
   done
   # }}}
 
-  FAILED_CHECKS_COUNT=0
 
   # check remote links for HTTP 200 status code {{{
+  FAILED_REMOTE_CHECKS_COUNT=0
   for link in ${CHECK_REMOTE_LINKS[@]}; do
     statusCode=$(curl -s -o /dev/null -w '%{http_code}' "${link}")
     if [[ $statusCode -ne 200 ]]; then
       echo "Error: Link is invalid: '${link}' Status Code: '${statusCode}'"
-      FAILED_CHECKS_COUNT=$((FAILED_CHECKS_COUNT + 1))
+      FAILED_REMOTE_CHECKS_COUNT=$((FAILED_REMOTE_CHECKS_COUNT + 1))
     fi
   done
   # }}}
 
   # check local file links for existence {{{
+  FAILED_LOCAL_CHECKS_COUNT=0
   for file in ${CHECK_LOCAL_LINKS[@]}; do
     if [[ ! -a "${file}" ]]; then
       echo "Error: File not found: '${file}'"
-      FAILED_CHECKS_COUNT=$((FAILED_CHECKS_COUNT + 1))
+      FAILED_LOCAL_CHECKS_COUNT=$((FAILED_LOCAL_CHECKS_COUNT + 1))
     fi
   done
   # }}}
 
-  if [[ $FAILED_CHECKS_COUNT -ne 0 ]]; then
-    echo "${FAILED_CHECKS_COUNT} Links are not valid."
+  if [[ $FAILED_REMOTE_CHECKS_COUNT -ne 0 || $FAILED_LOCAL_CHECKS_COUNT -ne 0 ]]; then
+    echo "${FAILED_LOCAL_CHECKS_COUNT} Local links are not valid."
+    echo "${FAILED_REMOTE_CHECKS_COUNT} Remote links are not valid."
     exit 1
   fi
 
