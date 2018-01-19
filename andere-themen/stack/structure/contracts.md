@@ -13,7 +13,7 @@ Auch die Klasse `ReportingService` verweist nicht auf die Klasse
 `LoggingService`. Stattdessen verwendet es die Schnittstelle `ILoggingService`
 von` logging_contracts`.
 
-![Contract](images/contracts.png)
+![](images/contracts.png)
 
 Da das `reporting`-Modul keine Referenzen auf die Implementierung von `logging` hat, kann die
 Implementierung vollständig durch Dependency Injcetion geändert werden, solange

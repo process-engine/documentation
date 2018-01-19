@@ -1,1 +1,1 @@
-# Advanced Concepts
+# Fortgeschrittene Konzepte
