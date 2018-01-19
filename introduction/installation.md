@@ -67,19 +67,19 @@ npm install
 npm start
 ```
 
-Dann kann Charon gestartet werden.
+Dann kann BPMN-Studio gestartet werden.
 
-# Charon
+# BPMN-Studio
 
-Zunächst muss das [Charon Repository](https://github.com/process-engine/charon)
+Zunächst muss das [BPMN-Studio Repository](https://github.com/process-engine/bpmn-studio)
 geklont werden.
 
 ```
-git clone git@github.com:process-engine/charon.git
+git clone git@github.com:process-engine/bpmn-studio.git
 ```
 
 In dem geklonten Projekt installiert man alle Dependencies;
-danach kann Charon gestartet werden.
+danach kann BPMN-Studio gestartet werden.
 
 Diese Befehle erledigen die beiden Aufgaben:
 
@@ -88,9 +88,9 @@ npm install
 npm start
 ```
 
-Sobald Charon gestartet ist, kann es über `http://localhost:9000/` aufgerufen
+Sobald BPMN-Studio gestartet ist, kann es über `http://localhost:9000/` aufgerufen
 werden.
 
 Das Ergebnis sieht so aus:
 
-![Charon](images/charon.png)
+![BPMN-Studio](images/bpmn-studio.png)
