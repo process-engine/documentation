@@ -10,9 +10,11 @@ Dazu muss der Prozess um die folgenden drei
 1. Die Anforderung einer Bestätigung
 1. Den Versand einer Email mit dem Wechselkurs
 
-#### 1.1  Vorbereitungen
+## Vorbereitungen
 
 Vorweg müssen ein paar Vorbereitungen getroffen werden.
+
+### Prozess-Rahmenbedingungen
 
 {% video controls="controls"%}../images/getting-started/sending-emails/preparation-send-email.mp4{% endvideo %}
 
@@ -22,68 +24,81 @@ benötigt wird.
 
 Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
 
-<img src="../images/getting-started/sending-emails/poolname.png" width="35%" />
+<img src="../images/getting-started/sending-emails/rename_poolname.png" width="35%" />
 
 Dasselbe wird auch bei dem Startevent gemacht.
 
-Fertig sieht es so aus:
+Fertig sieht das Ganze so aus:
 
-<img src="../images/getting-started/sending-emails/renamed_poolname_startevent.png" width="35%" />
+<img src="../images/getting-started/sending-emails/renamed_poolname_and_startevent.png" width="35%" />
 
-#### 1.2 User Task erstellen und konfigurieren
-
-Als nächstes erstellt man einen [User Task](../../anhang/GLOSSARY.md#user-task)
-mit dem Namen `Get Email Address`. Dieser fordert den User per UI dazu auf eine
-E-Mail anzugeben.
-
-{% video controls="controls"%}../images/getting-started/sending-emails/get_email_address-send-email.mp4{%
-endvideo %}
-
-Auswählen der User Task:
-
-<img src="../images/getting-started/sending-emails/email_task_creation.png" width="60%" />
-
-Hinzufügen einer ID:
-
-<img src="../images/getting-started/sending-emails/email_task_general.png" width="35%" />
-
-Hinzufügen eines Formfields:
-
-<img src="../images/getting-started/sending-emails/email_task_forms.png" width="35%" />
-
-Hinzufügen einer Property:
-
-<img src="../images/getting-started/sending-emails/email_task_extensions.png" width="35%" />
-
-#### 1.3 Abändern vorhandener Tasks
+### Aus "Show Data" wird "Confirm Data"
 
 Dann muss der `Show Data`-[Task](../../anhang/GLOSSARY.md#task) zu `Confirm
 Data` umbenannt werden. Der Wert der `uiConfig` Property muss zu folgendem Wert
 abgeändert werden:
 
 ```
-${ "message": "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
+${ "message": "1 EUR = " + token.current.rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
 ```
 
-Dabei ist zu beachten, dass der `Fetch
-Data`-[Task](../../anhang/GLOSSARY.md#task) die ID `fetch_data` bekommt.
-
-{% video controls="controls"%}../images/getting-started/sending-emails/confirm_data-send-email.mp4{% endvideo
+{% video controls="controls"%}../images/getting-started/sending-emails/rename_show_data_to_confirm_data.mp4{% endvideo
 %}
 
-Umbenennen des `Show Data`-Task:
+So sieht der Task `Confirm Data` dann am Ende aus:
 
-<img src="../images/getting-started/sending-emails/rename_to_confirm_task.png" width="60%" />
+<img src="../images/getting-started/sending-emails/rename_show_data_to_confirm_data.png" width="80%" />
 
-Anpassen der `uiConfig`:
+## Neue Prozessschritte anlegen
 
-<img src="../images/getting-started/sending-emails/change_config_confirm_task.png" width="35%" />
+Nun, da die Vorbereitungen erledigt sind, können die weiteren notwendigen
+Prozessschritte modelliert werden.
 
-Setzen einer ID beim `Fetch Data`-Task:
+### User Task erstellen und konfigurieren
 
-<img src="../images/getting-started/sending-emails/set_id_fetch_data_task.png" width="35%" />
+Als nächstes erstellt man einen [User Task](../../anhang/GLOSSARY.md#user-task)
+mit dem Namen `Get Email Address`. Dieser fordert den User per UI dazu auf eine
+E-Mail anzugeben.
 
-#### 2.1 Bestätigungsüberprüfung
+{% video controls="controls"%}../images/getting-started/sending-emails/create_task_get_email_address.mp4{%
+endvideo %}
+
+Zusammengefasst ergibt sich daraus ein `User Task` namens `Get Email Address`
+mit folgender Konfiguration:
+
+General:
+
+<img src="../images/getting-started/sending-emails/create_task_get_email_address_general.png" width="80%" />
+
+Forms:
+
+<img src="../images/getting-started/sending-emails/create_task_get_email_address_forms.png" width="80%" />
+
+Extension Properties:
+
+<img src="../images/getting-started/sending-emails/create_task_get_email_address_extensions.png" width="80%" />
+
+### Task Resultate in Mapper zusammenführen
+
+Bevor wir mit dem eigentlichen Modellieren weitermachen können, stellt sich
+uns noch ein kleines Problem in den Weg.
+
+**Situation**
+Ein `User Task` hat **niemals** Zugriff auf den Parameter `token.history`!
+Das hat zur Folge, dass der User Task `Confirm Data` keinen direkten Zugriff
+auf die Daten des Service Tasks `Fetch Data` haben kann!
+
+**Lösung**:
+Wie der `ServiceTask`, hat ein `UserTask` immer Zugriff auf den Parameter
+`token.current`.
+
+Mit dieser Information im Hinterkopf, können wir einen Mapper definieren,
+der uns die Ergebnisse aus den beiden vorangegangenen Tasks zusammengefasst
+bereitstellt.
+
+> WIP
+
+### Bestätigungsüberprüfung
 
 Als Nächstes wird eine Überprüfung angelegt.
 
@@ -108,6 +123,10 @@ Nach diesem [Task](../../anhang/GLOSSARY.md#task) muss der Prozess beendet
 werden.
 
 {% video controls="controls"%}../images/getting-started/sending-emails/send-email.mp4{% endvideo %}
+
+
+> TODO: Bild- & Videomaterial aktualisieren, Textstellen anpassen, falls nötig
+
 
 Hinzufügen eines Gateways:
 
