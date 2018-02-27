@@ -103,8 +103,10 @@ ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] 
 
 **Zusammenfassung**
 
-Wir haben den [User Task](../../anhang/GLOSSARY.md#user-task) festgelegt, die
-Konfiguration der Oberfläche hinterlegt und die Komponenten korrekt verschaltet.
+Was wir getan haben:
+- einen [User Task](../../anhang/GLOSSARY.md#user-task) namens `Hello World` definiert
+- den Task mit einer Konfiguration für die Oberfläche versehen
+- die verschiedenen Ausführungsschritte miteinander verdrahtet
 
 Zeit den Prozess auszuführen:
 
