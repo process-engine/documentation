@@ -8,7 +8,7 @@ Ziel ist es ein BPMN-Diagramm mit einem
 
 Das Diagramm sieht folgendermaßen aus:
 
-<img src="../images/hello-world.svg" width="100%" />
+<img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
 
 Dieser [User Task](../../anhang/GLOSSARY.md#user-task) wird die folgenden zwei
 Elemente enthalten:
@@ -24,13 +24,13 @@ Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen
 Diagramms. Alternativ kann auch der `Prozess erstellen`-Prozess ausgeführt
 werden.
 
-<img src="../images/create-process-buttons.png" width="100%" />
+<img src="../images/getting-started/hello-world/create-process-1-process-definition-button.png" width="100%" />
 
 Es öffnet sich ein neuer Dialog; dort können ein Name und ein Schlüssel für das
 Prozessmodell angegeben werden; in diesem Fall wird bei beiden `Hello World`
 gewählt.
 
-<img src="../images/initial-processdata-create-new-diagram.png" width="100%" />
+<img src="../images/getting-started/hello-world/create-process-2-initial-processdata.png" width="100%" />
 
 Die Task List erscheint; in der Liste befindet sich der Eintrag: `Prozess
 erstellen`; nach Beendigung der Arbeiten im Backend, springt der UserTaskName
@@ -40,11 +40,11 @@ darauffolgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
 Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an; die
 `Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
 
-<img src="../images/process-definition-list-create-new-diagram.png" width="100%"/>
+<img src="../images/getting-started/hello-world/create-process-3-finished.png" width="100%"/>
 
 So sieht das Ganze dann aus:
 
-{% video controls="controls"%}../images/create-new-diagram.mp4{% endvideo %}
+{% video controls="controls"%}../images/getting-started/hello-world/create-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
 
@@ -60,11 +60,11 @@ mit dem Namen `Hello Word` verbunden; an diesem dann ein Endevent.
 
 Das Ganze sollte dann so aussehen:
 
-<img src="../images/hello-world-diagram.png" width="100%" />
+<img src="../images/getting-started/hello-world/hello-world-diagram.png" width="100%" />
 
 Und so wird es gemacht:
 
-{% video controls="controls"%}../images/create-hello-world.mp4{% endvideo %}
+{% video controls="controls"%}../images/getting-started/hello-world/create-hello-world.mp4{% endvideo %}
 
 ## Integration eines Diagramms
 
@@ -76,7 +76,7 @@ kann wie folgt geschehen:
 - Hier kann nun mit Hilfe von Key-Value-Paare eingestellt werden, wie die
 Oberfläche aussehen soll
 
-<img src="../images/integration-extension.png" width="100%" />
+<img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 
 Es gibt zwei Felder:
 
@@ -97,9 +97,9 @@ sollen; bitte folgendes in das Feld `uiConfig` eintragen:
 ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
 ```
 
-<img src="../images/integration-property.png" width="100%" />
+<img src="../images/getting-started/hello-world/extensions-properties.png" width="100%" />
 
-{% video controls="controls"%}../images/integrate-hello-world.mp4{% endvideo %}
+{% video controls="controls"%}../images/getting-started/hello-world/configure-hello-world-task.mp4{% endvideo %}
 
 **Zusammenfassung**
 
@@ -108,4 +108,4 @@ Konfiguration der Oberfläche hinterlegt und die Komponenten korrekt verschaltet
 
 Zeit den Prozess auszuführen:
 
-{% video controls="controls"%}../images/run-hello-world.mp4{% endvideo %}
+{% video controls="controls"%}../images/getting-started/hello-world/run-hello-world.mp4{% endvideo %}
