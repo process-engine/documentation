@@ -11,10 +11,11 @@ Daten anzuzeigen:
 
 {% video controls="controls"%}../images/consuming-rest-api.mp4{% endvideo %}
 
-Unter dem `Extensions`-Reiter kann dem
-[Service Task](../../anhang/GLOSSARY.md#service-task) (`Fetch Data`) nun gesagt
-werden, was er tun soll: In diesem Fall eine HTTP REST API abzurufen. Dazu
-müssen im `Extension`-Reiter die folgenden Properties hinzugefügt werden:
+In der `Extensions`-Ansicht kann dem
+[Service Task](../../anhang/GLOSSARY.md#service-task) mit dem Namen `Fetch Data` nun gesagt
+werden, was er tun soll: In diesem Fall eine HTTP REST API abzurufen.
+
+Dazu müssen in der `Extensions`-Ansicht die folgenden Properties hinzugefügt werden:
 
 ```
 module    HttpService
@@ -35,7 +36,7 @@ Token aufbewahrt werden.
 In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern
 lediglich der USD Kurs.
 
-Um das zu erreichen wird ihm - wieder im `Extensions`-Reiter - die Property
+Um das zu erreichen wird ihm - wieder in der `Extensions`-Ansicht - die Property
 ```mapper   JSON.parse(token.current.result).rates.USD```
 mitgegeben.
 
@@ -47,7 +48,7 @@ Nach dem Mapping kann der nächste BPMN-Knoten nach dem
 
 Zum Schluss muss dem [User Task](../../anhang/GLOSSARY.md#user-task)
 (`Show Data`) nur noch gesagt werden, was er anzeigen soll. Dies geschieht
-wieder über den `Extensions`-Reiter.
+wieder über die `Extensions`-Ansicht.
 
 Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu
 verwenden und konfigurieren diesen mit folgender `uiConfig`:

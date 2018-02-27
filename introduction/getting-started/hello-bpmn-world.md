@@ -72,9 +72,9 @@ Ein [User Task](../../anhang/GLOSSARY.md#user-task) kann so eingestellt werden,
 dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
 kann wie folgt geschehen:
 
-Über den `Extensions`-Reiter wird mit Hilfe von Key-Value-Paare eingestellt, wie
-die Oberfläche aussehen soll. Der Reiter befindet sich auf der rechten Seite des
-Editors.
+- Über die rechts befindliche Dropdown-Liste zur Ansicht `Extensions` wechseln
+- Hier kann nun mit Hilfe von Key-Value-Paare eingestellt werden, wie die
+Oberfläche aussehen soll
 
 <img src="../images/integration-extension.png" width="100%" />
 
