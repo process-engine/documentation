@@ -65,7 +65,7 @@ Zusammengefasst sieht der Konfigurationsvorgang so aus:
 
 **Zusammenfassung**
 
-Zusammengefasst haben wir
+In diesem Tutorial haben wir:
 - einen [Service Task](../../anhang/GLOSSARY.md#service-task) zum Ausführen des
 HTTP GET Requests definiert
 - einen Mapper definiert, der uns den gewünschten Umrechnungskurs aus dem

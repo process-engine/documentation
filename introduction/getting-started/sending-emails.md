@@ -96,7 +96,15 @@ Mit dieser Information im Hinterkopf, können wir einen Mapper definieren,
 der uns die Ergebnisse aus den beiden vorangegangenen Tasks zusammengefasst
 bereitstellt.
 
-> WIP
+Was nun zu tun ist:
+An der Sequenz **nach** dem UserTask `Get Email Address` muss unter `Extensions`
+ein Property `mapper` mit folgendem Wert angelegt werden:
+```
+{rates: JSON.parse(token.history.ServiceTask_FetchData.result).rates, email: token.history.UserTask_GetEmailAddress}
+```
+
+{% video controls="controls"%}../images/getting-started/sending-emails/add_result_mapper_to_sequence_flow.mp4{% endvideo %}
+
 
 ### Bestätigungsüberprüfung
 
@@ -116,13 +124,13 @@ Eigenschaften erhalten:
 ```
 module  MailService
 method  send
-params  [null, token.history.get_email.email, "EUR to USD conversion rate", "1 EUR = " + JSON.parse(token.history.fetch_data.result).rates.USD + " USD"]
+params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + JSON.parse(token.history.ServiceTask_FetchData.result).rates.USD + " USD"]
 ```
 
 Nach diesem [Task](../../anhang/GLOSSARY.md#task) muss der Prozess beendet
 werden.
 
-{% video controls="controls"%}../images/getting-started/sending-emails/send-email.mp4{% endvideo %}
+{% video controls="controls"%}../images/getting-started/sending-emails/confirm-and-send-email.mp4{% endvideo %}
 
 
 > TODO: Bild- & Videomaterial aktualisieren, Textstellen anpassen, falls nötig
@@ -150,7 +158,7 @@ Setzen der Properties für den
 
 Dann kann das ganze getestet werden:
 
-{% video controls="controls"%}../images/getting-started/sending-emails/run-sending-mails.mp4{% endvideo %}
+{% video controls="controls"%}../images/getting-started/sending-emails/run-full-process.mp4{% endvideo %}
 
 Das fertige Prozessmodell sieht wie folgt aus:
 
