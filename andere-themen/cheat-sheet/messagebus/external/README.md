@@ -4,6 +4,7 @@ The external messagebus communication describes what messages you can send and r
 a process-engine. These messages can be used to for example start a process or listen for an event.
 
 ## Channels the Process Engine publishes on
+
 **/participant/{participant_id}**
 
 if no participantId exists, these messages are sent to `/role/{user_role}`
@@ -110,7 +111,6 @@ Listens for messages regarding that node.
     data: any,
   }
   ```
-
 
 **/{application\_id}/datastore**
 
