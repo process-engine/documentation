@@ -78,6 +78,9 @@
 
 1. [Glossar](anhang/GLOSSARY.md)
 1. [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md)
+1. [Messagebus-API](andere-themen/cheat-sheet/messagebus/README.md)
+  * [internal](andere-themen/cheat-sheet/messagebus/internal/README.md)
+  * [external](andere-themen/cheat-sheet/messagebus/external/README.md)
 <!-- * [Literaturverweise](anhang/literaturverweise.md) -->
 
 ---
