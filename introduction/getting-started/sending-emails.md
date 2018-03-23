@@ -100,7 +100,7 @@ Was nun zu tun ist:
 An der Sequenz **nach** dem UserTask `Get Email Address` muss unter `Extensions`
 ein Property `mapper` mit folgendem Wert angelegt werden:
 ```
-{rates: JSON.parse(token.history.ServiceTask_FetchData.result).rates, email: token.history.UserTask_GetEmailAddress}
+{rates: token.history.ServiceTask_FetchData.result.rates, email: token.history.UserTask_GetEmailAddress}
 ```
 
 {% video controls="controls"%}../images/getting-started/sending-emails/add_result_mapper_to_sequence_flow.mp4{% endvideo %}
@@ -124,7 +124,7 @@ Eigenschaften erhalten:
 ```
 module  MailService
 method  send
-params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + JSON.parse(token.history.ServiceTask_FetchData.result).rates.USD + " USD"]
+params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + token.history.ServiceTask_FetchData.result.rates.USD + " USD"]
 ```
 
 Nach diesem [Task](../../anhang/GLOSSARY.md#task) muss der Prozess beendet

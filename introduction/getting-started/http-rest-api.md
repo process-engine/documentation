@@ -37,7 +37,7 @@ In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern
 lediglich der USD Kurs.
 
 Um das zu erreichen wird ihm - wieder in der `Extensions`-Ansicht - die Property
-```mapper   JSON.parse(token.current.result).rates.USD```
+```mapper   token.current.result.rates.USD```
 mitgegeben.
 
 <img src="../images/getting-started/http-rest-api/configure-sequence-flow-after-task.png" width="100%" />
