@@ -18,7 +18,7 @@ Sobald das Update heruntergeladen wurde, wird ein Dialog angezeigt, der darüber
 Informiert. Nun kann entweder BPMN Studio direkt neugestartet werden oder auf
 einen manuellen Neustart gewartet werden.
 
-![Benachrichtigung zeigt an, dass das Update heruntergeladen ist](auto-updater_update-downloaded.png)
+![Benachrichtigung zeigt an, dass das Update heruntergeladen ist]()
 
 Falls ein Fehler während des gesamten Vorgangs auftritt wird eine Fehlermeldung
 angezeigt:
