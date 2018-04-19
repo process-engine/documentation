@@ -1,16 +1,16 @@
 # Auto Updater
 
-Die Funktion zur automatischen Aktualisierung in BPMN Studio gibt den Benutzer
+Die Funktion zur automatischen Aktualisierung in BPMN Studio gibt dem Benutzer
 die Möglichkeit BPMN Studio einfach zu aktualisieren.
 
 ## Funktionsweise
 
 Bei jedem Start von BPMN Studio wird im Hintergrund nach Aktualisierungen
-gesucht. Die Suche nach neuen Versionen passiert automatisch auf den gleichen
+gesucht. Die Suche nach neuen Versionen passiert automatisch auf dem gleichen
 Release Channel der installierten Version.
 
-Wenn eine neue Version von BPMN Studio gefunden wurde, wird diese
-automatisch heruntergeladen:
+Wenn eine neue Version von BPMN Studio gefunden wurde, wird diese automatisch
+heruntergeladen:
 
 ![Benachrichtigung zeigt an, dass ein Update verfügbar ist und heruntergeladen wird](auto-updater_update-available.png)
 
@@ -31,7 +31,7 @@ Es gibt aktuell zwei Release Channels.
 
 **Stable**:
 
-Versionen aus diesen Channel wurden getestet und sind für den produktivien
+Versionen aus diesen Channel wurden getestet und sind für den produktiven
 Einsatz bestimmt.
 
 **Prerelease**:
