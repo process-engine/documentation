@@ -11,8 +11,8 @@ Das `TerminateEndEvent` wird für die Modellierung von Fehlern verwendet, die so
 gravierend sind, dass sie das sofortige Ende des **gesamten** Prozesses
 zur Folge haben.
 
-Der Ausführungsstatus anderer laufender Activities ist dabei irrelevant.
-Ein `TerminateEndEvent` terminiert stehts **alle** laufenden Activities und
+Der Ausführungsstatus anderer laufender Aktivitäten ist dabei irrelevant.
+Ein `TerminateEndEvent` terminiert stets **alle** laufenden Aktivitäten und
 letztendlich den gesamten Prozess.
 
 Beispiel:
@@ -25,18 +25,31 @@ sofortiges Prozessende herbeizuführen.
 
 Das bedeutet, sollte dieses Event ausgelöst werden, dann wird auch der zweite
 parallel ausgeführte Prozesspfad komplett abgebrochen, ungeachtet dessen,
-welche dort definierte Activity gerade ausgeführt wird und ob die bisherige
+welche dort definierte Aktivität gerade ausgeführt wird und ob die bisherige
 Ausführung dieses Pfades erfolgreich war.
 
-## Verhalten in der Process Engine
+## Verhalten in der ProcessEngine
 
-Wird ein `TerminateEndEvent` erreicht, ermittelt die Process Engine sämtliche
-Instanzen von laufenden Activities und erzwingt ihr sofortiges Ende.
-Diese bekommen dann als den Status `terminate` zugewiesen.
+Wird ein `TerminateEndEvent` erreicht, ermittelt die ProcessEngine sämtliche
+Instanzen von laufenden Aktivitäten und erzwingt ihr sofortiges Ende.
+Diese werden dann in den Status `terminate` versetzt.
 
-Nachdem sämtliche Activities beendet wurden, wird auch der Prozess selbst in
+Nachdem sämtliche Aktivitäten beendet wurden, wird auch der Prozess selbst in
 den Status `terminate` versetzt und beendet.
 
 Da es sich beim `TerminateEndEvent` um ein irreguläres Prozessende handelt,
-wird die Process Engine beim Auftreten eines solchen Events einen Fehler
+wird die ProcessEngine beim Auftreten eines solchen Events einen Fehler
 werfen.
+
+Diese Fehler können über ein reguläres `try/catch` gefangen werden:
+
+```js
+try {
+  return processEngineService.executeProcess(executionContext,
+                                             processModelId,
+                                             processModelKey,
+                                             initialToken);
+} catch (error) {
+  // Do something with the error
+}
+```
