@@ -114,7 +114,7 @@ function main()
 
   npm install
 
-  move_index_to_apidoc
+  build_gitbook
 
   move_gitbook_to_root
 
