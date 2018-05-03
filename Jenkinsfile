@@ -32,8 +32,8 @@ pipeline {
           checkout([
             $class: 'GitSCM',
             branches: [
-              [name: '*/master'],
-              [name: '*/target_branch']
+              [name: '*/develop'],
+              [name: '*/gh-pages-test']
             ],
             doGenerateSubmoduleConfigurations: false,
             extensions: [
@@ -44,11 +44,12 @@ pipeline {
             userRemoteConfigs: [
               [
                 credentialsId: 'ci-process-engine_ssh_key',
-                url: 'git@github.com:process-engine-pro/ci-test.git'
+                url: 'git@github.com:process-engine/documentation.git'
               ]
             ]
           ]);
           sshagent(['ci-process-engine_ssh_key']) {
+            sh('ls -l')
             sh('bash build_prod.sh')
             sh('git status')
           }
