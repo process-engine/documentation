@@ -29,31 +29,33 @@ pipeline {
     stage('build and publish') {
       steps {
         script {
-          checkout([
-            $class: 'GitSCM',
-            branches: [
-              [name: '*/develop'],
-              [name: '*/gh-pages-test']
-            ],
-            doGenerateSubmoduleConfigurations: false,
-            extensions: [
-              [$class: 'WipeWorkspace'],
-              [$class: 'CleanBeforeCheckout']
-            ],
-            submoduleCfg: [],
-            userRemoteConfigs: [
-              [
-                credentialsId: 'ci-process-engine_ssh_key',
-                url: 'git@github.com:process-engine/documentation.git'
+          dir('work') {
+            checkout([
+              $class: 'GitSCM',
+              branches: [
+                [name: '*/develop'],
+                [name: '*/gh-pages-test']
+              ],
+              doGenerateSubmoduleConfigurations: false,
+              extensions: [
+                [$class: 'WipeWorkspace'],
+                [$class: 'CleanBeforeCheckout']
+              ],
+              submoduleCfg: [],
+              userRemoteConfigs: [
+                [
+                  credentialsId: 'ci-process-engine_ssh_key',
+                  url: 'git@github.com:process-engine/documentation.git'
+                ]
               ]
-            ]
-          ]);
-          sshagent(['ci-process-engine_ssh_key']) {
-            sh('ls -l')
-            sh('git clean -xdf')
-            sh('bash build_prod.sh')
-            sh('ls -l')
-            sh('git status')
+            ]);
+            sshagent(['ci-process-engine_ssh_key']) {
+              sh('ls -l')
+              sh('git clean -xdf')
+              sh('bash build_prod.sh')
+              sh('ls -l')
+              sh('git status')
+            }
           }
         }
       }
