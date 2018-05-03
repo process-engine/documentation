@@ -50,7 +50,7 @@ pipeline {
           ]);
           sshagent(['ci-process-engine_ssh_key']) {
             sh('ls -l')
-            sh('git -xdf')
+            sh('git clear -xdf')
             sh('bash build_prod.sh')
             sh('ls -l')
             sh('git status')
