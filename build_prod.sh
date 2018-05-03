@@ -12,7 +12,7 @@ __script_version="$MAJOR.$MINOR.$PATCH"
 
 # {{{ Global Variables
 GIT_SOURCE_BRANCH='develop'
-GIT_TARGET_BRANCH='gh-pages'
+GIT_TARGET_BRANCH='gh-pages-test'
 # }}}
 
 function usage ()
