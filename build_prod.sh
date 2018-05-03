@@ -110,12 +110,16 @@ function main()
   shift $(($OPTIND-1))
   # }}}
 
+  echo "prepare_git.."
   prepare_git
 
+  echo "npm install"
   npm install
 
+  echo "build gitbook"
   build_gitbook
 
+  echo "move gitbook to root"
   move_gitbook_to_root
 
   return 0
