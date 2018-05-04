@@ -53,7 +53,7 @@ pipeline {
               ]
             ]);
             sshagent(['ci-process-engine_ssh_key']) {
-              sh('git checkout develop')
+              sh('git checkout master')
               sh('git clean -xdf')
               sh('bash build_prod.sh')
               sh('git add --all .')
