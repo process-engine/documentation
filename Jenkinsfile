@@ -73,7 +73,8 @@ pipeline {
   post {
     always {
       script {
-        cleanup_workspace();
+        echo "a"
+        // cleanup_workspace();
       }
     }
   }
