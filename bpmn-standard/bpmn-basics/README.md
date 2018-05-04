@@ -127,7 +127,7 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 |                Name                 |                        Symbol                         |                                                                              Beschreibung                                                                               |
 | ----------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unterbrechendes<br>Ereignis         | <img width="50px" src="./event.svg">                  | Durchgezogene Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess abgebrochen.</li><li>Die zugehörige Aktivität abgebrochen.</li></ul>            |
+| Unterbrechendes<br>Ereignis         | <img width="50px" src="./receiving_event.svg">                  | Durchgezogene Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess abgebrochen.</li><li>Die zugehörige Aktivität abgebrochen.</li></ul>            |
 | Nicht unter-<br>brechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess nicht abgebrochen.</li><li>Die zugehörige Aktivität nicht abgebrochen.</li></ul> |
 
 ##### 3. Ausgefülltes oder nicht ausgefülltes Symbol
