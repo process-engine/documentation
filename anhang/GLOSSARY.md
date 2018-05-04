@@ -3,12 +3,12 @@
 Bridges werden verwendet, um verschiedene Technologien lose miteinander zu
 verbinden.
 
-Siehe auch: [Bridges](../andere-themen/stack/structure/bridges.md).
+Siehe auch: [Bridges](../processengine/ts/stack/structure/bridges.md).
 
 
 ## Adapter
 
-Siehe [Adapter](../andere-themen/stack/structure/adapters.md).
+Siehe [Adapter](../processengine/ts/stack/structure/adapters.md).
 
 ## Integration
 
