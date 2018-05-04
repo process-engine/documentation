@@ -27,6 +27,9 @@ pipeline {
     }
 
     stage('build and publish') {
+      when {
+        branch 'develop'
+      }
       steps {
         script {
           dir('work') {
