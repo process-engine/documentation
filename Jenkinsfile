@@ -74,8 +74,7 @@ pipeline {
   post {
     always {
       script {
-        echo "a"
-        // cleanup_workspace();
+        cleanup_workspace();
       }
     }
   }
