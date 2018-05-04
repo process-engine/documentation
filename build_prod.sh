@@ -11,7 +11,7 @@ __script_version="$MAJOR.$MINOR.$PATCH"
 # }}}
 
 # {{{ Global Variables
-GIT_SOURCE_BRANCH='develop'
+GIT_SOURCE_BRANCH='master'
 GIT_TARGET_BRANCH='gh-pages'
 # }}}
 
@@ -36,7 +36,7 @@ function on_exit()
 
 function prepare_git()
 {
-  # make the gh-pages-branch be identical to develop
+  # make the gh-pages-branch be identical to master
   git checkout ${GIT_TARGET_BRANCH}
   git pull
   git checkout ${GIT_SOURCE_BRANCH}

@@ -28,7 +28,7 @@ pipeline {
 
     stage('build and publish') {
       when {
-        branch 'develop'
+        branch 'master'
       }
       steps {
         script {
@@ -36,7 +36,7 @@ pipeline {
             checkout([
               $class: 'GitSCM',
               branches: [
-                [name: '*/develop'],
+                [name: '*/master'],
                 [name: '*/gh-pages']
               ],
               doGenerateSubmoduleConfigurations: false,
@@ -53,11 +53,11 @@ pipeline {
               ]
             ]);
             sshagent(['ci-process-engine_ssh_key']) {
-              sh('git checkout develop')
+              sh('git checkout master')
               sh('git clean -xdf')
               sh('bash build_prod.sh')
               sh('git add --all .')
-              sh('git commit --message ":rocket: Automatic Build And Deploy"')
+              sh('git commit --message ":rocket: Automatic Build and Deploy"')
               sh('git push origin gh-pages')
             }
           }
