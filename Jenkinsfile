@@ -51,15 +51,12 @@ pipeline {
               ]
             ]);
             sshagent(['ci-process-engine_ssh_key']) {
+              sh('git branch | grep \*')
               sh('git checkout feature/auto_deploy_gh_pages')
-              sh('ls -l')
-              sh('cat package.json')
-              sh('cat build_prod.sh')
-
               sh('git clean -xdf')
               sh('bash build_prod.sh')
-              sh('ls -l')
-              sh('git status')
+              sh('git commit -A -m ":rocket: Automatic Build And Deploy"')
+              sh('git push')
             }
           }
         }
