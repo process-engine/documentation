@@ -1,90 +1,76 @@
 # Summary
 
-## Einleitung
+## Getting Started
 
-1. [Motivation](README.md)
-1. [Installation der Anwendung](introduction/installation.md)
-1. [Getting started](introduction/getting-started/README.md)
+1. [Anforderungen](getting-started/conditions.md)
+1. [Installation](getting-started/installation.md)
+1. [Beispiele](getting-started/examples/README.md)
 
-   * [Hello BPMN-World](introduction/getting-started/hello-bpmn-world.md)
-   * [Verwendung einer REST API](introduction/getting-started/http-rest-api.md)
-   * [Versenden von Emails](introduction/getting-started/sending-emails.md)
-  <!-- * [Konfiguration des Stacks (skateboard)](introduction/getting-started/skateboard.md) -->
+  * [Hello BPMN World](getting-started/examples/hello-bpmn-world.md)
+  * [http-rest-api](getting-started/examples/http-rest-api.md)
+  * [sending-emails](getting-started/examples/sending-emails.md)
+  * [skateboard](getting-started/examples/skateboard.md)
 
-## Grundlagen
+## BPMN - Standard
 
-1. [Architektur](basics/README.md)
+1. [Styleguide](bpmn-standard/styleguide.md)
+1. [BPMN Basics](bpmn-standard/bpmn-basics/README.md)
 
-   * [Diagramm](basics/architektur/diagramm.md)
-   * [Komponenten beschreiben](basics/architektur/komponenten/README.md)
-  <!-- * [Abgrenzung](basics/architektur/komponenten/abgrenzung.md) -->
-<!-- * [Erweiterte Architektur](basics/erweiterte-architektur.md) -->
-
-## BPMN
-
-1. [Styleguide](bpmn/styleguide.md)
-1. [BPMN Basics](bpmn/bpmn-basics/README.md)
-  <!-- * [Typisierte Tasks](bpmn/bpmn-basics/typisierte-tasks.md) -->
-<!-- * [Beispiel-Prozesse](bpmn/beispiel-prozesse.md) -->
+  * [BPMN ProcessEngine](bpmn-standard/bpmn-process-engine/terminate-end-event.md)
+  * [typisierte-tasks](bpmn-standard/bpmn-basics/typisierte-tasks.md)
 
 ## BPMN-Studio
 
 1. [Beschreibung der Dialoge](bpmn-studio/beschreibung-dialoge.md)
-<!-- * [Hands-On](bpmn-studio/hands-on/README.md) -->
-  <!-- * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md) -->
-  <!-- * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md) -->
+1. [Auto Updater](bpmn-studio/auto-updater.md)
+1. [Hands-On](bpmn-studio/hands-on/README.md)
 
-<!-- ## Integration -->
+  * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md)
+  * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md)
 
-<!-- * [ConsumerClientApi](integration/consumer-client-API/README.md) -->
-  <!-- * [Ziel und Aufgabe](integration/consumer-client-API/ziel-und-aufgaben.md) -->
-  <!-- * [Einbinden in](integration/consumer-client-API/einbinden-in.md) -->
-<!-- * ["in Prozess"-Verwendung](integration/in-prozess-verwendung.md) -->
+## API
 
-## Stack
+1. [Consumer API](api/consumer-api.md)
+1. [Management API](api/management-api.md)
 
-1. [Grundkonzepte](andere-themen/stack/basic-concepts/README.md)
+## ProcessEngine
 
-   * [Datenspeicher](andere-themen/stack/basic-concepts/datastore.md)
-   * [Entitäten-Service](andere-themen/stack/basic-concepts/entity-services.md)
-   * [Identitäts- und Zugriffsverwaltung](andere-themen/stack/basic-concepts/identity-access-management.md)
+1. [TS](processengine/ts/README.md)
 
-1. [Fortgeschrittene Konzepte](andere-themen/stack/advanced-concepts/README.md)
+  1. [Messagebus-API](processengine/ts/cheat-sheet/messagebus/README.md)
 
-   * [Konfiguration](andere-themen/stack/advanced-concepts/configuration.md)
+    * [internal](processengine/ts/cheat-sheet/messagebus/internal/README.md)
+    * [external](processengine/ts/cheat-sheet/messagebus/external/README.md)
 
-1. [Modul Interaktion](andere-themen/stack/module-interaction/README.md)
+  1. [Architektur](processengine/ts/basics/README.md)
 
-   * [Dependency Injection](andere-themen/stack/module-interaction/dependendy-injection.md)
-   * [Discovery](andere-themen/stack/module-interaction/discovery.md)
+    * [Diagramm](processengine/ts/basics/architektur/diagramm.md)
+    * [Komponenten beschreiben](processengine/ts/basics/architektur/komponenten/README.md)
+    * [Abgrenzung](processengine/ts/basics/architektur/komponenten/abgrenzung.md)
+    * [Erweiterte Architektur](processengine/ts/basics/erweiterte-architektur.md)
 
-1. [Struktur](andere-themen/stack/structure/README.md)
+  1. [Grundkonzepte](processengine/ts/stack/basic-concepts/README.md)
 
-   * [Adapter](andere-themen/stack/structure/adapters.md)
-   * [Bridges](andere-themen/stack/structure/bridges.md)
-   * [Contracts](andere-themen/stack/structure/contracts.md)
-   * [Extensions](andere-themen/stack/structure/extensions.md)
+    * [Datenspeicher](processengine/ts/stack/basic-concepts/datastore.md)
+    * [Entitäten-Service](processengine/ts/stack/basic-concepts/entity-services.md)
+    * [Identitäts- und Zugriffsverwaltung](processengine/ts/stack/basic-concepts/identity-access-management.md)
 
-<!-- ## Tutorials -->
+  1. [Fortgeschrittene Konzepte](processengine/ts/stack/advanced-concepts/README.md)
 
-<!-- * [Erweitertes Setup](tutorial/erweitertes-setup.md) -->
+    * [Konfiguration](processengine/ts/stack/advanced-concepts/configuration.md)
 
-<!-- ## Betrieb -->
+  1. [Modul Interaktion](processengine/ts/stack/module-interaction/README.md)
 
-<!-- * [Cluster-Setup](ideen-fuer-den-betrieb/cluster-setup.md) -->
-<!-- * [Browser-Setup](ideen-fuer-den-betrieb/browser-setup.md) -->
+    * [Dependency Injection](processengine/ts/stack/module-interaction/dependendy-injection.md)
+    * [Discovery](processengine/ts/stack/module-interaction/discovery.md)
+
+  1. [Struktur](processengine/ts/stack/structure/README.md)
+
+    * [Adapter](processengine/ts/stack/structure/adapters.md)
+    * [Bridges](processengine/ts/stack/structure/bridges.md)
+    * [Contracts](processengine/ts/stack/structure/contracts.md)
+    * [Extensions](processengine/ts/stack/structure/extensions.md)
 
 ## Anlagen
 
 1. [Glossar](anhang/GLOSSARY.md)
-<!-- 1. [HTTP-REST-API](andere-themen/cheat-sheet/http-rest-api/README.md) -->
-1. [Messagebus-API](andere-themen/cheat-sheet/messagebus/README.md)
-  * [internal](andere-themen/cheat-sheet/messagebus/internal/README.md)
-  * [external](andere-themen/cheat-sheet/messagebus/external/README.md)
-<!-- * [Literaturverweise](anhang/literaturverweise.md) -->
-
----
-
-<!-- * [FAQ](faq.md) -->
-<!-- * [Troubleshooting](troubleshooting.md) -->
-<!-- * [Reference](reference/README.md) -->
