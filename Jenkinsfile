@@ -34,7 +34,6 @@ pipeline {
               $class: 'GitSCM',
               branches: [
                 [name: '*/develop'],
-                [name: '*/feature/auto_deploy_gh_pages'],
                 [name: '*/gh-pages-test']
               ],
               doGenerateSubmoduleConfigurations: false,
@@ -51,17 +50,12 @@ pipeline {
               ]
             ]);
             sshagent(['ci-process-engine_ssh_key']) {
-              sh('git checkout feature/auto_deploy_gh_pages')
+              sh('git checkout develop')
               sh('git clean -xdf')
               sh('bash build_prod.sh')
               sh('git add --all .')
               sh('git commit --message ":rocket: Automatic Build And Deploy"')
               sh('git push origin gh-pages-test')
-              sh('git checkout feature/auto_deploy_gh_pages')
-              sh('git status')
-              sh('git checkout develop')
-              sh('git push')
-              sh('git status')
             }
           }
         }
