@@ -51,7 +51,7 @@ pipeline {
               ]
             ]);
             sshagent(['ci-process-engine_ssh_key']) {
-              sh('git branch | grep \*')
+              sh('git branch | grep \\*')
               sh('git checkout feature/auto_deploy_gh_pages')
               sh('git clean -xdf')
               sh('bash build_prod.sh')
