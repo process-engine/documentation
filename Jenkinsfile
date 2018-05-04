@@ -57,7 +57,7 @@ pipeline {
               sh('git clean -xdf')
               sh('bash build_prod.sh')
               sh('git add --all .')
-              sh('git commit --message ":rocket: Automatic Build And Deploy"')
+              sh('git commit --message ":rocket: Automatic Build and Deploy"')
               sh('git push origin gh-pages')
             }
           }
