@@ -22,7 +22,7 @@ pipeline {
   stages {
     stage('test links') {
       steps {
-        sh 'bash ci-tools/checkLinks.sh'
+        sh 'bash .ci-tools/checkLinks.sh'
       }
     }
 
