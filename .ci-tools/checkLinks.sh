@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTE_LINK_REGEX="^http.*$"
-PARSE_AND_PREPARE_LINKS_SCRIPT="ci-tools/parseAndPrepareLinks.js"
+PARSE_AND_PREPARE_LINKS_SCRIPT=".ci-tools/parseAndPrepareLinks.js"
 
 function main()
 {
