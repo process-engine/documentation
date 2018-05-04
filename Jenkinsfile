@@ -60,6 +60,7 @@ pipeline {
               sh('git checkout feature/auto_deploy_gh_pages')
               sh('git status')
               sh('git checkout develop')
+              sh('git push')
               sh('git status')
             }
           }
