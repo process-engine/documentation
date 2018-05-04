@@ -28,7 +28,7 @@ pipeline {
 
     stage('build and publish') {
       when {
-        branch 'develop'
+        branch 'master'
       }
       steps {
         script {
@@ -36,7 +36,7 @@ pipeline {
             checkout([
               $class: 'GitSCM',
               branches: [
-                [name: '*/develop'],
+                [name: '*/master'],
                 [name: '*/gh-pages']
               ],
               doGenerateSubmoduleConfigurations: false,
