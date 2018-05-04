@@ -34,7 +34,7 @@ pipeline {
               $class: 'GitSCM',
               branches: [
                 [name: '*/develop'],
-                [name: '*/gh-pages-test']
+                [name: '*/gh-pages']
               ],
               doGenerateSubmoduleConfigurations: false,
               extensions: [
@@ -55,7 +55,7 @@ pipeline {
               sh('bash build_prod.sh')
               sh('git add --all .')
               sh('git commit --message ":rocket: Automatic Build And Deploy"')
-              sh('git push origin gh-pages-test')
+              sh('git push origin gh-pages')
             }
           }
         }
