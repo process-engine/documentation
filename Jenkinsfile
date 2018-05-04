@@ -55,8 +55,9 @@ pipeline {
               sh('git checkout feature/auto_deploy_gh_pages')
               sh('git clean -xdf')
               sh('bash build_prod.sh')
-              sh('git commit --all --message ":rocket: Automatic Build And Deploy"')
-              sh('git push')
+              sh('git add --all .')
+              sh('git commit --message ":rocket: Automatic Build And Deploy"')
+              sh('git push origin gh-pages-test')
             }
           }
         }
