@@ -9,20 +9,19 @@ Eine Sammlung der wichtigsten ConsumerAPI Begriffe findet sich [hier](./consumer
 
 ## Anwendung
 
-Zusammengefasst lässt sich sagen, dass es Zwei Anwendungsmöglichkeiten
-für die Consumer API gibt:
+Es gibt zwei Anwendungsmöglichkeiten für die Consumer API:
 
 1. Mit *integrierter* Process Engine:
 Benutzt eine Anwendung eine integrierte Process Engine,
 kann diese über das `ConsumerApiCore` Paket direkt angesteuert werden.
 
 2. Mit *externer* Process Engine:
-Wenn ein externe Process Engine angesteuert werden soll,
-dann muss dazu das `ConsumerApiClient` bentutzt werden.
+Wenn eine externe Process Engine angesteuert werden soll (z.B. auf einem
+zentralen Server), dann muss dazu das `ConsumerApiClient` bentutzt werden.
 Das funktioniert natürlich nur dann, wenn die verwendete Version der
 externen Process Engine ebenfalls die Consumer API implementiert.
 
-In Funktionen und Anwendung sind die beiden Pakete identisch, da sie die
+In Funktionen und Anwendung sind die beiden Module identisch, da sie die
 gleichen Interfaces benutzen.
 
 Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](./consumer_api/consumer-api-structure.md).
