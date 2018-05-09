@@ -7,6 +7,18 @@ resultierende Interaktion mit der ProcessEngine.
 
 Eine Sammlung der wichtigsten ConsumerAPI Begriffe findet sich [hier](./consumer_api/glossary.md).
 
+## Vorraussetzungen
+
+Um die Consumer API zu benutzen, muss eine Process Engine installiert sein.
+Dabei kann es sich um eine lokal, direkt in der Anwendung integrierten
+Process Engine handeln, oder um eine externe, die z.B. auf einem Server läuft.
+
+Wichtig ist, dass diese das `@process-engine/process-engine` Paket in der
+Version `2.2.0` oder höher benutzt.
+
+Bei einer externen Process Engine muss ebenfalls sichergestellt sein, dass
+diese das `ConsumerApiHttp` Paket mit eingebunden hat.
+
 ## Anwendung
 
 Es gibt zwei Anwendungsmöglichkeiten für die Consumer API:
