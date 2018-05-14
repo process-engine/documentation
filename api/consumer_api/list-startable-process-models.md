@@ -8,10 +8,10 @@
 ### Ziel/UseCase
 
 Bezieht eine Liste aller Prozessmodelle, welche über mindestens ein
-StartEvent verfügen welches der aktuell eingeloggte Benutzer sehen darf.
+StartEvent verfügen, auf das der anfragende Benutzer Zugriff hat.
 
 Ziel ist es, dem Benutzer zu ermöglichen, Prozesse zu starten. Dafür muss er
-wissen, welche Prozesse er starten kann
+wissen, welche Prozesse er starten kann.
 
 ### Berechtigungen
 
@@ -60,9 +60,11 @@ Daraus ergibt sich folgende Response:
 ### Was passiert in der Process Engine
 
 - Es werden alle Prozessmodelle angefragt.
-- Davon werden alle übernommen, die Lanes haben auf die der Verwender zugriff
-  hat. Lanes ohne StartEvents werden dabei behandlet, als hätte der Verwender
-  keinen Zugriff auf die Lane.
+- Prozessmodelle, die das `isExecutable` Flag nicht oder auf `false` gesetzt
+  haben, werden rausgefiltert
+- Es werden alle Prozessmodelle ausgegeben, welche über Lanes verfügen, auf die
+  der User Zugriff hat. Lanes ohne StartEvents werden dabei behandelt,
+  als hätte der Verwender keinen Zugriff auf die Lane.
 - Jedem verbleibenden Prozessmodell werden die so bestimmten zugehörigen
   StartEvents zugeteilt.
 - Die Prozessmodelle werden als Ergebnis zurückgegeben.
@@ -119,11 +121,6 @@ export interface IConsumerApiService {
 }
 ```
 
-### Berechtigungen
-
-Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
-Berechtigungen auch sehen dürfen.
-
 ## Einzelnes Prozessmodell abfragen
 
 ### Ziel/UseCase
@@ -173,10 +170,12 @@ zurückgegeben wird.
 ### Was passiert in der Process Engine
 
 - Es wird anhand des `process_model_key` das Prozessmodell angefragt.
+- Ist das Prozessmodell nicht als `isExecutable` markiert, gilt das
+  Prozessmodell als nicht aufrufbar
 - Alle StartEvents, die in Lanes liegen, auf die der Verwender zugriff hat
   werden dem Prozessmodell zugeteilt.
 - Sollten keine StartEvents vorhanden sein, auf die der Verwender zugriff hat,
-  wird ein ForbiddenError geworfen.
+  wird ein `Forbidden` Error geworfen.
 - Das Prozessmodell wird als Ergebnis zurückgegeben.
 
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
