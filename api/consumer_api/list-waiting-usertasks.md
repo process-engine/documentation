@@ -4,6 +4,11 @@
 
 Holt `UserTasks`, die darauf warten bearbeitet zu werden.
 
+### Berechtigungen
+
+Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
+bearbeiten darf.
+
 ### Erforderliche und Optionale Parameter
 
 Die Schnittstelle erfordert die folgenden Parameter:
@@ -36,51 +41,6 @@ bearbeitet zu werden:
         "form_fields": [
           {
             "id": "someFormFieldId",
-            "type": "string",
-            "label": "someFormFieldLabel",
-            "default_value": "someTestDefaultValue"
-          }
-        ]
-      }
-    },
-    {
-      "process_instance_id": "d8dc8881-dea2-4de6-9bdc-4f861908c5a5",
-      "user_task_key": "SomeUserTask1",
-      "user_task_id": "bad7bbbe-c984-4f38-8313-fb6efd0dc8f5",
-      "user_task_data": {
-        "form_fields": [
-          {
-            "id": "someFormFieldId2",
-            "type": "string",
-            "label": "someFormFieldLabel",
-            "default_value": "someTestDefaultValue"
-          }
-        ]
-      }
-    },
-    {
-      "process_instance_id": "d8dc8881-dea2-4de6-9bdc-4f861908c5a5",
-      "user_task_key": "SomeUserTask1",
-      "user_task_id": "3269d275-58fd-42da-a8cd-926b5fd18cc8",
-      "user_task_data": {
-        "form_fields": [
-          {
-            "id": "someFormFieldId3",
-            "type": "string",
-            "label": "someFormFieldLabel",
-            "default_value": "someTestDefaultValue"
-          }
-        ]
-      }
-    },
-    {
-      "process_instance_id": "d8dc8881-dea2-4de6-9bdc-4f861908c5a5",
-      "user_task_key": "SomeUserTask2",
-      "user_task_id": "0f833425-0318-43ff-8f78-44226949f16a",
-      "user_task_data": {
-        "form_fields": [
-          {
-            "id": "someFormFieldId4",
             "type": "string",
             "label": "someFormFieldLabel",
             "default_value": "someTestDefaultValue"
@@ -121,7 +81,9 @@ Mögliche auftretende Fehler sind:
 ### Codebeispiel
 
 ```TypeScript
-import {ConsumerContext, UserTaskList} from '@process-engine/consumer_api_contracts';
+import {ConsumerContext, IConsumerApiService, UserTaskList} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
 
 // start a process
 const processModelKey: string = 'consumer_api_lane_test';
@@ -147,48 +109,30 @@ userTaskList = await consumerApiService.getUserTasksForProcessModelInCorrelation
 ### TypeScript API
 
 ```TypeScript
-class ConsumerContext {
+export class ConsumerContext {
   public identity: string;
   public Internationalization?: string;
   public localization?: string;
 }
 
-class UserTaskConfig {
+export class UserTaskConfig {
   public form_fields: Array<UserTaskFormField>;
 }
 
-class UserTask {
+export class UserTask {
   public key: string;
   public id: string;
   public process_instance_id: string;
   public data: UserTaskConfig;
 }
 
-class UserTaskList {
+export class UserTaskList {
   public user_tasks: Array<UserTask>;
 }
 
-interface getUserTasksForCorrelation {
-  (context: ConsumerContext, processModelKey: string): Promise<UserTaskList>;
+export interface IConsumerApiService {
+  getUserTasksForProcessModel(context: ConsumerContext, processModelKey: string): Promise<UserTaskList>;
+  getUserTasksForCorrelation(context: ConsumerContext, correlationId: string): Promise<UserTaskList>;
+  getUserTasksForProcessModelInCorrelation(context: ConsumerContext, processModelKey: string, correlationId: string): Promise<UserTaskList>;
 }
 ```
-
-### REST/Messagebus API
-
-Die HTTP-Routen für die Schnittstelle sehen so aus:
-
-```JavaScript
-// Holen aller wartenden UserTasks
-GET /user_tasks
-
-// Holen aller wartenden UserTasks zu einem ProzessModell
-GET /process_models/{process_model_key}/user_tasks
-
-// Holen aller wartenden UserTasks zu einem Vorgang
-GET /process_models/{process_model_key}/correlations/{correlation_id}/user_tasks
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
-
-Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
-bearbeiten darf.

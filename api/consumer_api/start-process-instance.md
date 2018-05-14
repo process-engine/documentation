@@ -8,7 +8,7 @@
 ### Ziel/UseCase
 
 Startet einen Prozess durch das Auslösen eines Start-Events. Die Schnittstelle
-antwortet je nach Verwendung der Parameter entweder sofort nach dem
+antwortet, je nach Verwendung der Parameter, entweder sofort nach dem
 erfolgreichen Start des Prozesses, oder nachdem er beendet wurde.
 
 ### Erforderliche und Optionale Parameter
@@ -30,13 +30,13 @@ Die Schnittstelle bietet die folgenden optionalen Parameter:
 
 * `input_values` - Eingabewerte, mit denen der Prozess gestartet wird.
 
-* `return_on` - Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind: 
-  * `on_process_instance_started` - Die Schnittstelle antwortet, wenn die 
+* `startCallbackType` - Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
+  * `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
     Prozessinstanz **gestartet**  wurde.
-  * `on_process_instance_finished` - Die Schnittstelle antwortet, wenn die
-    Prozessinstanz **beendet** wurde.
+  * `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
+    Prozessinstanz durch ein EndEvent **beendet** wurde.
 
-  Wenn nicht angegeben, wird implizit `on_process_instance_started` verwendet.
+  Wenn nicht angegeben, wird implizit `CallbackOnProcessInstanceCreated` verwendet.
 
 ### Ergebnis/Rückgabewerte
 
@@ -55,22 +55,22 @@ Der Response body enthält die correlation_id des gestarteten Vorgangs:
 - Es wird anhand des Prozessmodells eine neue Prozessinstanz erstellt.
 - Wenn keine correlation_id vorgegeben ist, wird eine generiert.
 - Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet.
-- Je nach Wert von `return_on` wird entweder direkt nach dem erfolgreichen Start
-  geantwortet, oder sobald der Prozess beendet wurde.
+- Je nach Wert von `startCallbackType` wird entweder direkt nach dem
+  erfolgreichen Start geantwortet, oder sobald der Prozess beendet wurde.
 
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
-- `400`: 
-    - Die bereitgestellten `input_values` sind ungültig 
-    - Der bereitgestellte Wert für `return_on` ist ungültig 
+- `400`:
+    - Die bereitgestellten `input_values` sind ungültig
+    - Der bereitgestellte Wert für `return_on` ist ungültig
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
 - `403`: Der anfragende Benutzer hat auf den angegebenen Prozess keinen Zugriff
 - `404`:
   - Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
     gefunden werden
   - Das Prozessmodell hat kein Startevent mit dem angegebenen `start_event_key`
-- `500`: 
+- `500`:
   - Der Prozess konnte wegen eines internen Fehlers nicht gestartet werden
   - Der Prozess brach vor erreichen des angegebenen `return_on` Events wegen
     eines Fehlers vorzeitig ab
@@ -81,10 +81,13 @@ Mögliche auftretende Fehler sind:
 ```TypeScript
 import {
   ConsumerContext,
-  returnOnOptions,
+  IConsumerApiService,
   ProcessStartResponsePayload,
-  ProcessStartResponsePayload
+  ProcessStartResponsePayload,
+  StartCallbackType,
 } from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
 
 const processModelKey = 'test_consumer_api_process_start';
 const context: ConsumerContext = {
@@ -95,70 +98,50 @@ const payload: ProcessStartRequestPayload = {
   correlation_id: 'randomcorrelationid',
 };
 
-const returnOn: returnOnOptions = returnOnOptions.onProcessInstanceStarted;
+const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
 
-const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModelKey, startEventKey, payload, returnOn);
+const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModelKey, startEventKey, payload, startCallbackType);
 ```
 
 ### TypeScript API
 
 ```TypeScript
-class ConsumerContext {
+export class ConsumerContext {
   public identity: string;
   public Internationalization?: string;
   public localization?: string;
 }
 
-class ProcessStartRequestPayload {
+export class ProcessStartRequestPayload {
   public correlation_id: string;
   public input_values: any;
 }
 
-enum ProcessStartReturnOnOptions {
-  onProcessInstanceStarted = 'on_process_instance_started',
-  onProcessInstanceFinished = 'on_process_instance_finished',
+export enum StartCallbackType {
+    CallbackOnProcessInstanceCreated = 1,
+    CallbackOnEndEventReached = 3,
 }
 
 export class ProcessStartResponsePayload {
   public correlation_id: string;
 }
 
-interface startProcess {
-  (context: ConsumerContext, processModelKey: string, startEventKey: string, payload: ProcessStartRequestPayload, returnOn: ProcessStartReturnOnOptions): Promise<ProcessStartResponsePayload>;
+export interface IConsumerApiService {
+  startProcess(context: ConsumerContext,
+               processModelKey: string,
+               startEventKey: string,
+               payload: ProcessStartRequestPayload,
+               returnOn: ProcessStartReturnOnOptions
+              ): Promise<ProcessStartResponsePayload>;
 }
 ```
-
-### REST/Messagebus API
-
-Die HTTP-Routen für die Schnittstelle sehen so aus:
-
-```JavaScript
-// starten und implizit nach erfolgreichem Start antworten
-POST /process_models/{process_model_key}/start_events/{start_event_key}/start
-
-// starten und explizit nach erfolgreichem Start antworten
-POST /process_models/{process_model_key}/start_events/{start_event_key}/start?return_on=on_process_instance_started
-
-// starten und nach dem beenden des Prozesses antworten
-POST /process_models/{process_model_key}/start_events/{start_event_key}/start?return_on=on_process_instance_finished
-
-// body (für alle varianten)
-{
-  "correlation_id": "d44c820a-9a78-44b4-af64-5968625cffad",
-  "input_values": {}
-}
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
-
-> TODO: Zusätzliche Infos zu der Schnittstelle aufschreiben.
 
 ## Starten und auf ein bestimmtes EndEvent warten
 
 ### Ziel/UseCase
 
 Startet einen Prozess durch das Auslösen eines Start-Events. Die Schnittstelle
-antwortet sobald ein gegebenes BPMN-EndEvent erreicht wurde
+antwortet, sobald ein gegebenes BPMN-EndEvent erreicht wurde
 
 ### Erforderliche und Optionale Parameter
 
@@ -212,7 +195,7 @@ Mögliche auftretende Fehler sind:
     gefunden werden
   - Das Prozessmodell hat kein StartEvent mit dem gegebenen `start_event_key`
   - Das Prozessmodell hat kein EndEvent mit dem gegebenen `end_event_key`
-- `500`: 
+- `500`:
   - Der Prozess konnte wegen eines internen Fehlers nicht gestartet werden
   - Der Prozess brach vor erreichen des angegebenen `return_on` Events wegen
     eines Fehlers vorzeitig ab
@@ -223,10 +206,12 @@ Mögliche auftretende Fehler sind:
 ```TypeScript
 import {
   ConsumerContext,
-  returnOnOptions,
+  IConsumerApiService,
   ProcessStartResponsePayload,
-  ProcessStartResponsePayload
+  ProcessStartResponsePayload,
 } from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
 
 const context: ConsumerContext = {
   identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
@@ -243,13 +228,13 @@ const result = await consumerApiService.startProcessAndAwaitEndEvent(consumerCon
 ### TypeScript API
 
 ```TypeScript
-class ConsumerContext {
+export class ConsumerContext {
   public identity: string;
   public Internationalization?: string;
   public localization?: string;
 }
 
-class ProcessStartRequestPayload {
+export class ProcessStartRequestPayload {
   public correlation_id: string;
   public input_values: any;
 }
@@ -258,22 +243,13 @@ export class ProcessStartResponsePayload {
   public correlation_id: string;
 }
 
-interface startProcessAndAwaitEndEvent{
-  (context: ConsumerContext, processModelKey: string, startEventKey: string, endEventKey: string, payload: ProcessStartRequestPayload): Promise<ProcessStartResponsePayload>;
-}
-```
-
-### REST/Messagebus API
-
-Die HTTP-Route für die Schnittstelle sieht so aus:
-
-```JavaScript
-POST /process_models/{process_model_key}/start_events/{start_event_key}/end_event/{end_event_key}/start_and_resolve_by_end_event
-
-// body
-{
-  "correlation_id": "d44c820a-9a78-44b4-af64-5968625cffad",
-  "input_values": {}
+export interface IConsumerApiService {
+  startProcessAndAwaitEndEvent(context: ConsumerContext,
+                               processModelKey: string,
+                               startEventKey: string,
+                               endEventKey: string,
+                               payload: ProcessStartRequestPayload
+                              ): Promise<ProcessStartResponsePayload>;
 }
 ```
 

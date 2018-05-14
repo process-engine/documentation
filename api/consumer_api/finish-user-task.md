@@ -6,6 +6,11 @@ Wenn ein UserTask fertig bearbeitet wurde, wird der Process Engine über diese
 Schnittstelle das Ergebnis des UserTasks mitgeteilt. Das hat zur Folge, dass
 der dazugehörige Prozesspfad weiter ausgeführt wird.
 
+### Berechtigungen
+
+Benutzer können nur die UserTasks abschließen, die sie auch berechtigt
+sind zu sehen.
+
 ### Erforderliche und Optionale Parameter
 
 Die Schnittstelle erfordert die folgenden Parameter:
@@ -51,7 +56,9 @@ Mögliche auftretende Fehler sind:
 ### Codebeispiel
 
 ```TypeScript
-import {ConsumerContext, UserTaskResult} from '@process-engine/consumer_api_contracts';
+import {ConsumerContext, IConsumerApiService, UserTaskResult} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
 
 // start a process
 const context: ConsumerContext = {
@@ -73,42 +80,24 @@ const userTaskResult: UserTaskResult = {
   },
 };
 
-consumerApiClientService.finishUserTask(context, processModelKey, correlationId, userTaskId, userTaskResult);
+consumerApiService.finishUserTask(context, processModelKey, correlationId, userTaskId, userTaskResult);
 ```
 
 ### TypeScript API
 ```TypeScript
-class ConsumerContext {
+export class ConsumerContext {
   public identity: string;
   public Internationalization?: string;
   public localization?: string;
 }
 
-class UserTaskResult {
+export class UserTaskResult {
   public form_fields: {
     [fieldId: string]: any,
   };
 }
 
-interface finishUserTask {
-  (context: ConsumerContext, process_model_key: string, correlation_id: string, user_task_id: string, result: UserTaskResult): Promise<void>
+export interface IConsumerApiService {
+  finishUserTask(context: ConsumerContext, process_model_key: string, correlation_id: string, user_task_id: string, result: UserTaskResult): Promise<void>
 }
 ```
-
-### REST/Messagebus API
-
-Die HTTP-Route für die Schnittstelle sieht so aus:
-
-```JavaScript
-POST /process_models/{process_model_key}/correlations/{correlation_id}/user_tasks/{user_task_id}/finish
-
-// body
-{
-  "form_fields": {
-    "Form_XGSVBgio": true
-  }
-}
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
-

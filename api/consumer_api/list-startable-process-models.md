@@ -13,6 +13,11 @@ StartEvent verfügen welches der aktuell eingeloggte Benutzer sehen darf.
 Ziel ist es, dem Benutzer zu ermöglichen, Prozesse zu starten. Dafür muss er
 wissen, welche Prozesse er starten kann
 
+### Berechtigungen
+
+Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
+Berechtigungen auch sehen dürfen.
+
 ### Erforderliche und Optionale Parameter
 
 Die Schnittstelle erfordert die folgenden Parameter:
@@ -47,16 +52,6 @@ Daraus ergibt sich folgende Response:
           "data": {}
         }
       ]
-    },
-    {
-      "key": "ProductTest",
-      "start_events": [
-        {
-          "key": "TestStart",
-          "id": "yetAnOtherStartEventId",
-          "data": {}
-        }
-      ]
     }
   ]
 }
@@ -77,13 +72,15 @@ Daraus ergibt sich folgende Response:
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
 - `403`: Der anfragende Benutzer ist nicht berechtigt diesen Request
-auszuführen 
+auszuführen
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
 ### Codebeispiel
 
 ```TypeScript
-import {ConsumerContext, ProcessModelList} from '@process-engine/consumer_api_contracts';
+import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
 
 const context: ConsumerContext = {
   identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
@@ -95,42 +92,34 @@ const processModelList: ProcessModelList = await consumerApiService.getProcessMo
 ### TypeScript API
 
 ```TypeScript
-class ConsumerContext {
+export class ConsumerContext {
   public identity: string;
   public Internationalization?: string;
   public localization?: string;
 }
 
-class Event {
+export class Event {
   public key: string;
   public id: string;
   public process_instance_id: string;
   public data: any; // TODO: Define event-payload
 }
 
-class ProcessModel {
+export class ProcessModel {
   public key: string;
   public startEvents: Array<Event> = [];
 }
 
-class ProcessModelList {
+export class ProcessModelList {
   public process_models: Array<ProcessModel> = [];
 }
 
-interface getProcessModels {
-  (context: ConsumerContext): Promise<ProcessModelList>;
+export interface IConsumerApiService {
+  getProcessModels(context: ConsumerContext): Promise<ProcessModelList>;
 }
 ```
 
-### REST/Messagebus API
-
-Die HTTP-Route für die Schnittstelle sieht so aus:
-
-```
-GET /process_models
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+### Berechtigungen
 
 Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
 Berechtigungen auch sehen dürfen.
@@ -142,6 +131,11 @@ Berechtigungen auch sehen dürfen.
 Unter Angabe eines `process_model_keys` kann ein einzelnes Prozessmodell direkt
 abgefragt werden. Das dient dazu zu erfahren, welche StartEvents der eingeloggte
 Benutzer zu diesem Prozess auslösen kann.
+
+### Berechtigungen
+
+Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
+Berechtigungen auch sehen dürfen.
 
 ### Erforderliche und Optionale Parameter
 
@@ -197,7 +191,9 @@ gefunden werden
 ### Codebeispiel
 
 ```TypeScript
-import {ConsumerContext, ProcessModelList} from '@process-engine/consumer_api_contracts';
+import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
 
 const context: ConsumerContext = {
   identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
@@ -211,42 +207,29 @@ const processModelList: ProcessModelList = await consumerApiService.getProcessMo
 ### TypeScript API
 
 ```TypeScript
-class ConsumerContext {
+export class ConsumerContext {
   public identity: string;
   public Internationalization?: string;
   public localization?: string;
 }
 
-class Event {
+export class Event {
   public key: string;
   public id: string;
   public process_instance_id: string;
   public data: any; // TODO: Define event-payload
 }
 
-class ProcessModel {
+export class ProcessModel {
   public key: string;
   public startEvents: Array<Event> = [];
 }
 
-class ProcessModelList {
+export class ProcessModelList {
   public process_models: Array<ProcessModel> = [];
 }
 
-interface getProcessModelByKey {
-  (context: ConsumerContext, processModelKey: string): Promise<ProcessModelList>;
+export interface IConsumerApiService {
+  getProcessModelByKey(context: ConsumerContext, processModelKey: string): Promise<ProcessModelList>;
 }
 ```
-
-### REST/Messagebus API
-
-Die HTTP-Route für die Schnittstelle sieht so aus:
-
-```
-GET /process_models/{process_model_key}
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
-
-Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
-Berechtigungen auch sehen dürfen.
