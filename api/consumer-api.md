@@ -20,9 +20,9 @@ Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](.
 ## Vorraussetzungen und Installation
 
 Es gibt zwei Anwendungsszenarien für die Consumer API:
-1. Eine Anwendung hat eine ProcessEngine direkt in sich integriert
+1. Eine Anwendung benutzt eine integrierte ProcessEngine
 2. Eine Anwendung steuert eine ProcessEngine an, die in einer externen
-Anwendung liegt (z.B. auf einem Server)
+Anwendung liegt (z.B. auf einem zentralen Server)
 
 Je nach Anwendungsfall unterscheidet sich auch der Einrichtungsvorgang
 für die ConsumerAPI.
@@ -33,24 +33,24 @@ für die ConsumerAPI.
 
 Anwendungen, die eine integrierte ProcessEngine verwenden,
 benötigen folgende Pakete:
-- `@process-engine/consumer_api_client`
+- `@process-engine/consumer_api_core`
 - `@process-engine/process-engine` - Version 2.2.0 oder höher
 
 Ebenfalls muss sichergestellt sein, dass das IoC Module des
-`@process-engine/consumer_api_client` Pakets am IoC Container registriert wird.
-Das Modul kann über den Pfad `@process-engine/consumer_api_client/ioc_module`
+`@process-engine/consumer_api_core` Pakets am IoC Container registriert wird.
+Das Modul kann über den Pfad `@process-engine/consumer_api_core/ioc_module`
 angesteuert werden.
 
 #### Konfiguration
 
-Das `ConsumerApiCore` Paket benötigt eine Konfigurationsdatei, die innerhalb
+Das `@process-engine/consumer_api_core` Paket benötigt eine Konfigurationsdatei, die innerhalb
 des Konfigurationsordners unter dem Pfad
 `consumer_api_core/consumer_api_iam_service.json` abgelegt werden muss.
 
 In dieser Datei werden die Claims konfiguriert, mit denen die Benutzer Zugriff
 auf die Lanes eines Prozesses erhalten sollen.
 
-Die Claims werden dabei stehts dem jeweiligen konrekten Benutzer zugeordnet.
+Die Claims werden dabei stehts einem konkreten Benutzer zugeordnet.
 Ebenfalls ist zu beachten, dass die zugeordneten Claims dem Namen einer `Lane`
 entsprechen müssen.
 
@@ -60,15 +60,13 @@ Beispiel Config:
 {
   "claimConfig": {
     "userA": [
-      "can_start_process",
-      "can_view_usertask",
-      "Lane A",
-      "Lane B"
+      "Lane_A",
+      "Lane_B"
     ],
     "userB": [
-      "Lane A",
-      "Lane C",
-      "Lane D"
+      "Lane_A",
+      "Lane_C",
+      "Lane_D"
     ]
   }
 }
@@ -77,7 +75,7 @@ Beispiel Config:
 
 ### Einrichtung mit externer ProcessEngine:
 
-##### Setup
+#### Setup
 
 Die externe Anwendung, welche die ProcessEngine implementiert, muss folgende
 Pakete installiert haben:
@@ -91,12 +89,13 @@ benötigt folgende Pakete:
 - `@process-engine/process-engine` - Version 2.2.0 oder höher
 
 In beiden Anwendungen muss sichergestellt werden,
-dass die enthaltenen IoC Module am IoC Container registriert werden.
+dass die jeweiligen IoC Module am IoC Container registriert werden.
 
 #### Konfiguration
 
-In der externen Anwendung muss, wie weiter oben beschrieben, eine Konfiguration
+In der Anwendung, welche die ProcessEngine enthält, muss eine Konfiguration
 für das `@process-engine/consumer_api_core` Paket eingerichtet werden.
+Siehe weiter oben für Details.
 
 Die Anwendung, welche mit der externen ProcessEngine kommunizieren soll,
 benötigt folgende Konfiguration für `@process-engine/consumer_api_client`:
