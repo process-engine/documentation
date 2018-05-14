@@ -3,58 +3,131 @@
 Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
 resultierende Interaktion mit der ProcessEngine.
 
-## Glossar
+## Pakete
 
-Eine Sammlung der wichtigsten ConsumerAPI Begriffe findet sich [hier](./consumer_api/glossary.md).
-
-## Vorraussetzungen
-
-Um die Consumer API zu benutzen, muss eine Process Engine installiert sein.
-Dabei kann es sich um eine lokal, direkt in der Anwendung integrierten
-Process Engine handeln, oder um eine externe, die z.B. auf einem Server läuft.
-
-Wichtig ist, dass diese das `@process-engine/process-engine` Paket in der
-Version `2.2.0` oder höher benutzt.
-
-Bei einer externen Process Engine muss ebenfalls sichergestellt sein, dass
-diese das `ConsumerApiHttp` Paket mit eingebunden hat.
-
-## Anwendung
-
-Es gibt zwei Anwendungsmöglichkeiten für die Consumer API:
-
-1. Mit *integrierter* Process Engine:
-Benutzt eine Anwendung eine integrierte Process Engine,
-kann diese über das `ConsumerApiCore` Paket direkt angesteuert werden.
-
-2. Mit *externer* Process Engine:
-Wenn eine externe Process Engine angesteuert werden soll (z.B. auf einem
-zentralen Server), dann muss dazu das `ConsumerApiClient` bentutzt werden.
-Das funktioniert natürlich nur dann, wenn die verwendete Version der
-externen Process Engine ebenfalls die Consumer API implementiert.
-
-In Funktionen und Anwendung sind die beiden Module identisch, da sie die
-gleichen Interfaces benutzen.
+Die ConsumerAPI umfasst folgende Pakete
+- `@process-engine/consumer_api_contracts` - Definiert die Schnittstellen
+für `consumer_api_core` und `consumer_api_client`
+- `@process-engine/consumer_api_core` - Steuert die Interaktion mit einer
+internen ProcessEngine
+- `@process-engine/consumer_api_client` - Steuert die Kommunikation mit einer
+externen ProcessEngine
+- `@process-engine/consumer_api_http` - Dient als Kommunikations-Endpunkt
+für `consumer_api_client`
 
 Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](./consumer_api/consumer-api-structure.md).
+
+## Vorraussetzungen und Installation
+
+Es gibt zwei Anwendungsszenarien für die Consumer API:
+1. Eine Anwendung hat eine ProcessEngine direkt in sich integriert
+2. Eine Anwendung steuert eine ProcessEngine an, die in einer externen
+Anwendung liegt (z.B. auf einem Server)
+
+Je nach Anwendungsfall unterscheidet sich auch der Einrichtungsvorgang
+für die ConsumerAPI.
+
+### Einrichtung mit integrierter ProcessEngine:
+
+#### Setup
+
+Anwendungen, die eine integrierte ProcessEngine verwenden,
+benötigen folgende Pakete:
+- `@process-engine/consumer_api_client`
+- `@process-engine/process-engine` - Version 2.2.0 oder höher
+
+Ebenfalls muss sichergestellt sein, dass das IoC Module des
+`@process-engine/consumer_api_client` Pakets am IoC Container registriert wird.
+Das Modul kann über den Pfad `@process-engine/consumer_api_client/ioc_module`
+angesteuert werden.
+
+#### Konfiguration
+
+Das `ConsumerApiCore` Paket benötigt eine Konfigurationsdatei, die innerhalb
+des Konfigurationsordners unter dem Pfad
+`consumer_api_core/consumer_api_iam_service.json` abgelegt werden muss.
+
+In dieser Datei werden die Claims konfiguriert, mit denen die Benutzer Zugriff
+auf die Lanes eines Prozesses erhalten sollen.
+
+Die Claims werden dabei stehts dem jeweiligen konrekten Benutzer zugeordnet.
+Ebenfalls ist zu beachten, dass die zugeordneten Claims dem Namen einer `Lane`
+entsprechen müssen.
+
+Beispiel Config:
+
+```js
+{
+  "claimConfig": {
+    "userA": [
+      "can_start_process",
+      "can_view_usertask",
+      "Lane A",
+      "Lane B"
+    ],
+    "userB": [
+      "Lane A",
+      "Lane C",
+      "Lane D"
+    ]
+  }
+}
+
+```
+
+### Einrichtung mit externer ProcessEngine:
+
+##### Setup
+
+Die externe Anwendung, welche die ProcessEngine implementiert, muss folgende
+Pakete installiert haben:
+- `@process-engine/consumer_api_core`
+- `@process-engine/consumer_api_http`
+- `@process-engine/process-engine` - Version 2.2.0 oder höher
+
+Die Anwendung, welche mit der externen Process Engine kommunizieren soll,
+benötigt folgende Pakete:
+- `@process-engine/consumer_api_client`
+- `@process-engine/process-engine` - Version 2.2.0 oder höher
+
+In beiden Anwendungen muss sichergestellt werden,
+dass die enthaltenen IoC Module am IoC Container registriert werden.
+
+#### Konfiguration
+
+In der externen Anwendung muss, wie weiter oben beschrieben, eine Konfiguration
+für das `@process-engine/consumer_api_core` Paket eingerichtet werden.
+
+Die Anwendung, welche mit der externen ProcessEngine kommunizieren soll,
+benötigt folgende Konfiguration für `@process-engine/consumer_api_client`:
+
+```js
+{
+  "url": "http://address-to-external-application/api/consumer/v1"
+}
+
+```
+
+`url` bezeichnet dabei die HTTP Adresse, unter der die externe Anwendung
+erreichbar ist.
+Das Suffix `/api/consumer/v1` ist zwingend erforderlich.
+
+Diese Config muss im Konfigurationsordner unter dem Pfad
+`consumer_api_client/consumer_api_client_service.json` abgelegt sein.
 
 ## Aufgaben der ConsumerAPI
 
 Die Consumer API erfüllt die folgenden Aufgaben:
 
-* [Auflisten startbarer Prozessmodelle](./consumer_api/list-startable-process-models.md) **(Done)**
-  * [Alle Prozessmodelle abfragen](./consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen) **(Done)**
-  * [Einzelnes Prozessmodell abfragen](./consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen) **(Done)**
-* [Starten eines Prozessmodells](./consumer_api/start-process-instance.md) **(Done)**
-  * [Starten und auf ein `System Event` warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-system-event-warten) **(Done)**
-  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten) **(Done)**
-* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./consumer_api/list-executable-process-instance-events.md)
-* [Auslösen von Ereignissen](./consumer_api/execute-process-instance-event.md)
-* [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md) **(Done)**
-* [Abschließen eines UserTasks](./consumer_api/finish-user-task.md) **(Done)**
-* [Erhalten von Prozessbenachrichtigungen](./consumer_api/receive-process-notifications.md)
-  * [Arten von Prozessbenachrichtigungen](./consumer_api/receive-process-notifications.md#arten-von-prozessbenachrichtigungen)
-  * [Erhalten von BPMN-Events](./consumer_api/receive-process-notifications.md#erhalten-von-bpmn-events)
-  * [Erhalten von Infos zu start und ende von Aktivitäten](./consumer_api/receive-process-notifications.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
-  * [Erhalten von System-Events](./consumer_api/receive-process-notifications.md#erhalten-von-system-events)
-  * [Erhalten von BPMN-Signalen](./consumer_api/receive-process-notifications.md#erhalten-von-bpmn-signalen)
+* [Auflisten startbarer Prozessmodelle](./consumer_api/list-startable-process-models.md)
+  * [Alle Prozessmodelle abfragen](./consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](./consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+* [Starten eines Prozessmodells](./consumer_api/start-process-instance.md)
+  * [Starten und auf ein `System Event` warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-system-event-warten)
+  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
+* [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md)
+* [Abschließen eines UserTasks](./consumer_api/finish-user-task.md)
+
+## Glossar
+
+Eine Sammlung der wichtigsten ConsumerAPI Begriffe findet sich [hier](./consumer_api/glossary.md).
