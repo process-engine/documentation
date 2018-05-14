@@ -12,7 +12,7 @@ zu, der dann wiederum mit den Services der Process Engine kommuniziert.
 ### Anwendung mit _externer_ Process Engine
 
 Hier kommt zusätzlich ein **ConsumerClient** mit ins Spiel.
-Dieser kommuniziert über HTTP-Routen und Messagebus-Kanäle mit der ConsumerAPI
+Dieser kommuniziert über HTTP-Routen und Messagebus-Kanälen mit der ConsumerAPI
 der externen Process Engine.
 
 ### Module
@@ -22,21 +22,22 @@ ihre Schnittstellen aus dem `IConsumerAPI` Interface ab, wodurch sichergestellt
 ist, dass sich beide Komponenten auf die exakt gleiche Art verwenden lassen.
 
 Das gewährleistet auch eine sehr leichte Austauschbarkeit, da es mit nur wenig
-Aufwand möglich ist z.B. eine Process Engine, die in einer Anwendung intern
-verwendet wird, gegen eine externe Process Engine auszutauschen, die z.B.
-auf einem zentralen Server liegt.
+Aufwand möglich ist zwischen einer internen ProcessEngine und einer externen
+zu wechseln.
 
 #### ConsumerAPI-Core
 
 Das ConsumerAPI-Core Paket dient der Kommunikation mit der Process Engine.
 
-In einer Anwendung mit integrierter Process Engine wird die ConsumerAPI
-als Service direkt verwendet.
+In einer Anwendung mit integrierter Process Engine, wird über dieses Paket
+die ConsumerAPI als Service direkt verwendet.
 
-#### ConsumerAPI-Client-Paket
+#### ConsumerAPI-Client
 
 Der ConsumerAPI-Client dient der Kommunikation mit der ConsumerAPI
 einer **externen** Process Engine.
+
+Die Verwendung entspricht 1:1 der Verwendung des ConsumerAPI-Core Pakets.
 
 #### ConsumerAPI-Http
 
