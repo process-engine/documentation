@@ -3,6 +3,34 @@
 Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
 resultierende Interaktion mit der ProcessEngine.
 
+```TypeScript
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  ProcessStartRequestPayload,
+  ProcessStartResponsePayload,
+  StartCallbackType,
+} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
+
+const context: ConsumerContext = {
+  identity: 'insertJwtTokenHere',
+};
+
+const processModelKey: string = 'process_model_key';
+const startEventKey: string = 'StartEvent_1';
+const payload: ProcessStartRequestPayload = {
+  // Use a specific correlationId, instead of a generated one
+  correlation_id: 'randomcorrelationid',
+};
+
+const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
+
+// Start the process model, using the given processModelKey, startEventKey and payload.
+const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModelKey, startEventKey, payload, startCallbackType);
+```
+
 ## Pakete
 
 Die ConsumerAPI umfasst folgende Pakete
@@ -128,6 +156,61 @@ Die Consumer API erfüllt die folgenden Aufgaben:
   * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
 * [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md)
 * [Abschließen eines UserTasks](./consumer_api/finish-user-task.md)
+
+## Vollständiges Codebeispiel
+
+```TypeScript
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  ProcessModel,
+  ProcessModelList,
+  ProcessStartRequestPayload,
+  ProcessStartResponsePayload,
+  StartCallbackType,
+  UserTask,
+  UserTaskList,
+  UserTaskResult,
+} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
+
+const context: ConsumerContext = {
+  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
+}
+
+// Get list of process models you are allowed to access
+const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
+
+// Pick the first available process model
+const processModel: ProcessModel = processModelList[0];
+
+// Start the process model, using the given start event and payload.
+const startEventKey = 'StartEvent_1';
+const payload: ProcessStartRequestPayload = {
+  // Use a specific correlationId, instead of a generated one
+  correlation_id: 'randomcorrelationid',
+};
+
+const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
+
+const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModel.key, startEventKey, payload, startCallbackType);
+
+const correlationId: string = result.correlation_id;
+
+// get the user tasks for the correlation
+const userTaskList: UserTaskList = await consumerApiService.getUserTasksForCorrelation(context, correlationId);
+
+// pick the first one
+const userTask: UserTask = userTaskList[0];
+
+// finish the user task, using the given result set
+const userTaskResult: UserTaskResult = {
+  success: true
+};
+
+consumerApiService.finishUserTask(context, processModel.key, correlationId, userTask.id, userTaskResult);
+```
 
 ## Glossar
 
