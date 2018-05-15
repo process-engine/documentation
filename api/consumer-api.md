@@ -58,20 +58,21 @@ für `consumer_api_client`
 
 Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](./consumer_api/consumer-api-structure.md).
 
-## Vorraussetzungen und Installation
+## Vorraussetzungen
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
 - Eine ProcessEngine in der Version 2.2.0 oder höher
 - Node Version 8.x
 
+## Installation
+
 Es gibt zwei Anwendungsszenarien für die Consumer API:
 1. Eine Anwendung benutzt eine integrierte ProcessEngine
 2. Eine Anwendung steuert eine ProcessEngine an, die in einer externen
 Anwendung liegt (z.B. auf einem zentralen Server)
 
-Je nach Anwendungsfall unterscheidet sich auch der Einrichtungsvorgang
-für die ConsumerAPI.
+Je nach Anwendungsfall sind unterschiedliche Installationsschritte auszuführen.
 
 Für eine detaillierte Installationsanleitung, siehe:
 - [Einrichtung mit interner ProcessEngine](./consumer_api/setup_internal_process_engine.md)
