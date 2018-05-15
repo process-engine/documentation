@@ -20,28 +20,35 @@ export interface IConsumerApiService {
                        processModelKey: string,
                        startEventKey: string,
                        payload: ProcessStartRequestPayload,
-                       startCallbackType: StartCallbackType): Promise<ProcessStartResponsePayload>;
+                       startCallbackType: StartCallbackType
+                      ): Promise<ProcessStartResponsePayload>;
   startProcessInstanceAndAwaitEndEvent(context: ConsumerContext,
                                        processModelKey: string,
                                        startEventKey: string,
                                        endEventKey: string,
-                                       payload: ProcessStartRequestPayload): Promise<ProcessStartResponsePayload>;
+                                       payload: ProcessStartRequestPayload
+                                      ): Promise<ProcessStartResponsePayload>;
   // Manage UserTasks
   getUserTasksForProcessModel(context: ConsumerContext, processModelKey: string): Promise<UserTaskList>;
   getUserTasksForCorrelation(context: ConsumerContext, correlationId: string): Promise<UserTaskList>;
-  getUserTasksForProcessModelInCorrelation(context: ConsumerContext, processModelKey: string, correlationId: string): Promise<UserTaskList>;
+  getUserTasksForProcessModelInCorrelation(context: ConsumerContext,
+                                           processModelKey: string,
+                                           correlationId: string
+                                          ): Promise<UserTaskList>;
   finishUserTask(context: ConsumerContext,
                  processModelKey: string,
                  correlationId: string,
                  userTaskId: string,
-                 userTaskResult: UserTaskResult): Promise<void>;
+                 userTaskResult: UserTaskResult
+                ): Promise<void>;
 }
 ```
 
 ## ConsumerContext
 
-Der ConsumerContext enthält die Identity des Benutzers, welche benutzt wird
-um die Berechtigungen eines Benutzers zu verifizieren.
+Der ConsumerContext enthält die Identity des aktuellen Benutzers.
+Diese wird verwendet, um die Berechtigungen eines Benutzers zu verifizieren,
+z.B. wenn versucht wird eine Prozessinstanz zu starten.
 
 ```TypeScript
 export class ConsumerContext {
@@ -53,7 +60,8 @@ export class ConsumerContext {
 
 ## Prozessmodelle
 
-Die folgenden Schnittstellen beschreiben ein Prozessmodell.
+Die folgenden Schnittstellen beschreiben ein Prozessmodell,
+bzw. eine Liste von Prozessmodellen.
 
 ```TypeScript
 
@@ -76,9 +84,9 @@ export class Event {
 
 ## Starten von Prozessinstanzen
 
-Die folgenden Schnittstellen beschreiben Parameter, welche für das Starten
+Die folgenden Schnittstellen beschreiben die Parameter, welche für das Starten
 von Prozessinstanzen verwendet werden.
-Diese werden in den folgenden Methoden der ConsumerAPI services verwendet:
+Diese werden von den folgenden Methoden der ConsumerAPI services erwartet:
 - `startProcessInstance`
 - `startProcessInstanceAndAwaitEndEvent`
 
@@ -96,7 +104,6 @@ export class ProcessStartRequestPayload {
 export class ProcessStartResponsePayload {
   public correlation_id: string;
 }
-
 ```
 
 ## UserTasks
