@@ -2,6 +2,8 @@
 
 Nachfolgend wird die öffentliche API der ConsumerAPI erläutert.
 
+Die Schnittstellen sind im Paket `@process-engine/consumer_api_contracts` definiert.
+
 ## IConsumerApiService
 
 Das IConsumerApiService Interface stellt die Schnittstellen bereit, die sowohl

@@ -48,7 +48,7 @@ Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](.
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
 - Eine ProcessEngine in der Version 2.2.0
-- Node Version 8.x
+- Node Version 8.9.x
 
 ## Installation
 
