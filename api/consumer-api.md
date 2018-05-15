@@ -29,7 +29,7 @@ const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcess
 const result: ProcessStartResponsePayload = await consumerApiService.startProcess(context, processModelKey, startEventKey, payload, startCallbackType);
 ```
 
-## Pakete
+# Pakete
 
 Die ConsumerAPI umfasst folgende Pakete
 - `@process-engine/consumer_api_contracts` - Definiert die Schnittstellen
@@ -43,14 +43,14 @@ für `consumer_api_client`
 
 Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](./consumer_api/consumer-api-structure.md).
 
-## Vorraussetzungen
+# Vorraussetzungen
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
 - Eine ProcessEngine in der Version 2.2.0
 - Node Version 8.9.x
 
-## Installation
+# Installation
 
 Es gibt zwei Anwendungsszenarien für die Consumer API:
 1. Eine Anwendung benutzt eine integrierte ProcessEngine
@@ -63,7 +63,7 @@ Für eine detaillierte Installationsanleitung, siehe:
 - [Einrichtung mit interner ProcessEngine](./consumer_api/setup_internal_process_engine.md)
 - [Einrichtung mit externer ProcessEngine](./consumer_api/setup_external_process_engine.md)
 
-## Features
+# Features
 
 Die Consumer API umfasst derzeit folgende Features:
 
@@ -72,13 +72,13 @@ Die Consumer API umfasst derzeit folgende Features:
 * Wartende UserTasks ermitteln
 * UserTasks abschließen
 
-## Dokumentation
+# Dokumentation
 
-Allgemein:
+## Allgemein
 * [Glossar](./consumer_api/glossary.md)
 * [Public API](./consumer_api/public_api.md)
 
-Funktionsdokumentation:
+## Funktionsdokumentation
 * [Abfragen startbarer Prozessmodelle](./consumer_api/list-startable-process-models.md)
   * [Alle Prozessmodelle abfragen](./consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
   * [Einzelnes Prozessmodell abfragen](./consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
@@ -88,7 +88,7 @@ Funktionsdokumentation:
 * [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md)
 * [Abschließen eines UserTasks](./consumer_api/finish-user-task.md)
 
-## Vollständiges Codebeispiel
+# Codebeispiel
 
 Im nachfolgenden Codebeispiel wird folgende Befehlskette durchlaufen:
 - Wähle ein startbares Prozessmodell aus einer angefragten Liste
@@ -170,3 +170,7 @@ async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, corr
                                           userTask.id, userTaskResult);
 }
 ```
+
+# License
+
+[MIT](../LICENSE)
