@@ -1,22 +1,41 @@
 # Auflisten wartender UserTasks
 
+```TypeScript
+import {ConsumerContext, IConsumerApiService, UserTaskList} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
+
+// Required parameters
+const processModelKey: string = 'consumer_api_lane_test';
+const correlationId: string = 'someCorrelationId';
+const context: ConsumerContext = {
+  identity: 'insertJwtTokenHere',
+};
+
+// Get the user tasks for the correlation
+let userTaskList: UserTaskList = await consumerApiService.getUserTasksForCorrelation(context, correlationId);
+
+// Get the user tasks for the process model
+userTaskList = await consumerApiService.getUserTasksForProcessModel(context, processModelKey);
+
+// Get the user tasks for the process model within the correlation
+userTaskList = await consumerApiService.getUserTasksForProcessModelInCorrelation(context, processModelKey, correlationId);
+```
+
 ### Ziel/UseCase
 
 Holt `UserTasks`, die darauf warten bearbeitet zu werden.
 
-### Berechtigungen
-
 Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
 bearbeiten darf.
 
-### Erforderliche und Optionale Parameter
+### Parameter
 
-Die Schnittstelle erfordert die folgenden Parameter:
+#### Erforderliche Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
+* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
 
-Die Schnittstelle bietet die folgenden optionalen Parameter:
+#### Optionale Parameter
 
 * `process_model_key` - Wenn angegeben werden nur `UserTasks` angefragt, die zu
   dem ProzessModell gehören, das durch diesen Key identifiziert wird.
@@ -25,10 +44,14 @@ Die Schnittstelle bietet die folgenden optionalen Parameter:
   erfordert, dass auch der `process_model_key` Parameter angegeben wird.
 
 
-### Ergebnis/Rückgabewerte
+### Rückgabewerte
 
-Als Rückgabewert erhält man eine Liste mit `UserTasks`, die darauf warten
-bearbeitet zu werden:
+Die Rückgabe ist vom Typ [UserTasksList](./public_api#usertasklist) und beinhaltet
+eine Liste aller gefundenen UserTasks, die darauf warten bearbeitet zu werden.
+
+Diese wiederum werden durch den Typ [UserTask](./public_api#usertask) dargestellt.
+
+Beispielausgabe:
 
 ```JSON
 {
@@ -52,19 +75,7 @@ bearbeitet zu werden:
 }
 ```
 
-### Was passiert in der Process Engine
-
-- Wenn ein `process_model_key` angegeben wurde, werden alle UserTasks angefragt,
-  die zu dem Prozessmodell gehören
-- Wenn eine `correlation_id` angegeben wurde, werden alle UserTasks angefragt,
-  die zu einer der Prozessinstanzen gehören, die zu der Correlation gehören
-- Wenn ein `process_model_key` UND eine `correlation_id` angegeben wurde, wird
-  geprüft ob das Prozessmodell zu einer Prozessinstanz gehört, die zu der
-  Correlation gehört. Anschließend werden alle UserTasks angefragt, die zu einer
-  der Prozessinstanzen gehören, die zu der Correlation gehören. Davon werden
-  alle übernommen, die zu dem Prozessmodell gehören
-
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
@@ -77,31 +88,3 @@ Mögliche auftretende Fehler sind:
   - Es konnte keine Correlation mit der gegebenen `correlation_id`
     gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
-
-### Codebeispiel
-
-```TypeScript
-import {ConsumerContext, IConsumerApiService, UserTaskList} from '@process-engine/consumer_api_contracts';
-
-const consumerApiService: IConsumerApiService; // Get via IoC
-
-// start a process
-const processModelKey: string = 'consumer_api_lane_test';
-const context: ConsumerContext = {
-  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
-};
-
-const {correlation_id: correlationId} = await consumerApiService.startProcess(context, processModelKey, 'StartEvent_0yfvdj3');
-
-// Wait for the process to reach a user task
-// ...
-
-// get the user tasks for the correlation
-let userTaskList: UserTaskList = await consumerApiService.getUserTasksForCorrelation(context, correlationId);
-
-// get the user tasks for the process model
-userTaskList = await consumerApiService.getUserTasksForProcessModel(context, processModelKey);
-
-// get the user tasks for the process model within the correlation
-userTaskList = await consumerApiService.getUserTasksForProcessModelInCorrelation(context, processModelKey, correlationId);
-```

@@ -5,35 +5,45 @@
 
 ## Alle Prozessmodelle abfragen
 
+```TypeScript
+import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
+
+const context: ConsumerContext = {
+  identity: 'insertJwtTokenHere',
+}
+
+const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
+```
+
 ### Ziel/UseCase
 
-Bezieht eine Liste aller Prozessmodelle, welche über mindestens ein
-StartEvent verfügen, auf das der anfragende Benutzer Zugriff hat.
+Bezieht eine Liste aller Prozessmodelle.
 
-Ziel ist es, dem Benutzer zu ermöglichen, Prozesse zu starten. Dafür muss er
-wissen, welche Prozesse er starten kann.
+Es werden nur Prozessmodelle angezeigt, auf die folgendes zutrifft:
+- Der Benutzer hat die Berechtigung den Prozess zu sehen
+- Der Prozess ist als ausführbar markiert (`isExecutable` Flag ist gesetzt)
+- Es existiert mindestens ein `StartEvent` auf das der Benutzer Zugriff hat
 
-### Berechtigungen
+### Parameter
 
-Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
-Berechtigungen auch sehen dürfen.
+#### Erforderliche Parameter
 
-### Erforderliche und Optionale Parameter
+* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
 
-Die Schnittstelle erfordert die folgenden Parameter:
+#### Optionale Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
+Die Funktion hat keine optionalen Parameter.
 
-### Ergebnis/Rückgabewerte
+### Rückgabewerte
 
-Die ermittelten Prozessmodelle werden als JSON-Array zurückgeben.
-Jedes JSON Objekt in diesem Array beinhaltet dabei folgende Informationen:
+Die Rückgabe ist vom Typ [ProcessModelList](./public_api#processmodellist) und beinhaltet
+eine Liste aller gefundenen Prozessmodelle.
 
-* Den Key des Prozessmodells
-* Eine Auflistung der Keys aller im Prozessmodell enthaltenen StartEvents
+Diese wiederum werden durch den Typ [ProcessModel](./public_api#processmodel) dargestellt.
 
-Daraus ergibt sich folgende Response:
+Beispielausgabe:
 
 ```JSON
 {
@@ -43,12 +53,10 @@ Daraus ergibt sich folgende Response:
       "start_events": [
         {
           "key": "FancyProccessStart1",
-          "id": "someStartEventId",
           "data": {}
         },
         {
           "key": "FancyProccessStart2",
-          "id": "someOtherStartEventId",
           "data": {}
         }
       ]
@@ -56,20 +64,7 @@ Daraus ergibt sich folgende Response:
   ]
 }
 ```
-
-### Was passiert in der Process Engine
-
-- Es werden alle Prozessmodelle angefragt.
-- Prozessmodelle, die das `isExecutable` Flag nicht oder auf `false` gesetzt
-  haben, werden rausgefiltert
-- Es werden alle Prozessmodelle ausgegeben, welche über Lanes verfügen, auf die
-  der User Zugriff hat. Lanes ohne StartEvents werden dabei behandelt,
-  als hätte der Verwender keinen Zugriff auf die Lane.
-- Jedem verbleibenden Prozessmodell werden die so bestimmten zugehörigen
-  StartEvents zugeteilt.
-- Die Prozessmodelle werden als Ergebnis zurückgegeben.
-
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
@@ -77,7 +72,7 @@ Mögliche auftretende Fehler sind:
 auszuführen
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
-### Codebeispiel
+## Einzelnes Prozessmodell abfragen
 
 ```TypeScript
 import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
@@ -85,39 +80,38 @@ import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-e
 const consumerApiService: IConsumerApiService; // Get via IoC
 
 const context: ConsumerContext = {
-  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
+  identity: 'insertJwtTokenHere',
 }
 
-const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
-```
+const processModelKey: string = 'test_consumer_api_process_start';
 
-## Einzelnes Prozessmodell abfragen
+const processModelList: ProcessModelList = await consumerApiService.getProcessModelByKey(context, processModelKey);
+```
 
 ### Ziel/UseCase
 
 Unter Angabe eines `process_model_keys` kann ein einzelnes Prozessmodell direkt
-abgefragt werden. Das dient dazu zu erfahren, welche StartEvents der eingeloggte
-Benutzer zu diesem Prozess auslösen kann.
+abgefragt werden. Das dient dazu zu erfahren ob der Benutzer auf das
+Prozessmodell zugreifen darf und welche StartEvents des Prozesses er auslösen
+kann.
 
-### Berechtigungen
+### Parameter
 
-Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
-Berechtigungen auch sehen dürfen.
+#### Erforderliche Parameter
 
-### Erforderliche und Optionale Parameter
+* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `process_model_key` - Der Key des Prozessmodells, welches der Benutzer
+  abfragen möchte
 
-Die Schnittstelle erfordert die folgenden Parameter:
+#### Optionale Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
-* `process_model_key` - Der Key der das ProzessModell identifiziert, um das es
-  geht
+Die Funktion hat keine optionalen Parameter.
 
-### Ergebnis/Rückgabewerte
+### Rückgabewerte
 
-Die zugehörige Response gleicht der von `Alle Prozessmodelle abfragen`,
-mit dem Unterschied, dass hier kein Array, sondern ein einzelnes JSON-Objekt
-zurückgegeben wird.
+Die Rückgabe der Methode entspricht dem Typen [ProcessModel](./public_api#processmodel).
+
+Beispielausgabe:
 
 ```JSON
 {
@@ -125,30 +119,17 @@ zurückgegeben wird.
   "start_events": [
     {
       "key": "FancyProccessStart1",
-      "id": "someStartEventId",
       "data": {}
     },
     {
       "key": "FancyProccessStart2",
-      "id": "someOtherStartEventId",
       "data": {}
     }
   ]
 }
 ```
 
-### Was passiert in der Process Engine
-
-- Es wird anhand des `process_model_key` das Prozessmodell angefragt.
-- Ist das Prozessmodell nicht als `isExecutable` markiert, gilt das
-  Prozessmodell als nicht aufrufbar
-- Alle StartEvents, die in Lanes liegen, auf die der Verwender zugriff hat
-  werden dem Prozessmodell zugeteilt.
-- Sollten keine StartEvents vorhanden sein, auf die der Verwender zugriff hat,
-  wird ein `Forbidden` Error geworfen.
-- Das Prozessmodell wird als Ergebnis zurückgegeben.
-
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
@@ -156,19 +137,3 @@ Mögliche auftretende Fehler sind:
 - `404`: Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
 gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
-
-### Codebeispiel
-
-```TypeScript
-import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
-
-const consumerApiService: IConsumerApiService; // Get via IoC
-
-const context: ConsumerContext = {
-  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
-}
-
-const processModelKey: string = 'test_consumer_api_process_start';
-
-const processModelList: ProcessModelList = await consumerApiService.getProcessModelByKey(context, processModelKey);
-```

@@ -48,7 +48,7 @@ export interface IConsumerApiService {
 
 Der ConsumerContext enthält die Identity des aktuellen Benutzers.
 Diese wird verwendet, um die Berechtigungen eines Benutzers zu verifizieren,
-z.B. wenn versucht wird eine Prozessinstanz zu starten.
+wenn der Benutzer Funktionen der ConsumerAPI aufruft.
 
 ```TypeScript
 export class ConsumerContext {
@@ -63,17 +63,26 @@ export class ConsumerContext {
 Die folgenden Schnittstellen beschreiben ein Prozessmodell,
 bzw. eine Liste von Prozessmodellen.
 
-```TypeScript
+### ProcessModelList
 
+```TypeScript
 export class ProcessModelList {
   public process_models: Array<ProcessModel> = [];
 }
+```
 
+### ProcessModel
+
+```TypeScript
 export class ProcessModel {
   public key: string;
   public startEvents: Array<Event> = [];
 }
+```
 
+### Event
+
+```TypeScript
 export class Event {
   public key: string;
   public id: string;
@@ -90,17 +99,33 @@ Diese werden von den folgenden Methoden der ConsumerAPI services erwartet:
 - `startProcessInstance`
 - `startProcessInstanceAndAwaitEndEvent`
 
+### StartCallbackType
+
+Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
+* `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz **gestartet**  wurde.
+* `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz durch ein EndEvent **beendet** wurde.
+
 ```TypeScript
 export enum StartCallbackType {
   CallbackOnProcessInstanceCreated = 1,
   CallbackOnEndEventReached = 3,
 }
+```
 
+### ProcessStartRequestPayload
+
+```TypeScript
 export class ProcessStartRequestPayload {
   public correlation_id: string;
   public input_values: any;
 }
+```
 
+### ProcessStartResponsePayload
+
+```TypeScript
 export class ProcessStartResponsePayload {
   public correlation_id: string;
 }
@@ -111,26 +136,39 @@ export class ProcessStartResponsePayload {
 Die folgenden Schnittstellen beschreiben einen UserTask,
 bzw. eine Liste von UserTasks.
 
-`UserTaskResult` beschreibt den Payload, den man einem UserTask bei dessen
-Abschluss mitgeben kann (Siehe `finishUserTask` in `IConsumerApiService`).
+### UserTaskList
 
 ```TypeScript
-
 export class UserTaskList {
   public user_tasks: Array<UserTask>;
 }
+```
 
+### UserTask
+
+```TypeScript
 export class UserTask {
   public key: string;
   public id: string;
   public process_instance_id: string;
   public data: UserTaskConfig;
 }
+```
 
+### UserTaskConfig
+
+```TypeScript
 export class UserTaskConfig {
   public form_fields: Array<UserTaskFormField>;
 }
+```
 
+### UserTaskResult
+
+`UserTaskResult` beschreibt den Payload, den man einem UserTask bei dessen
+Abschluss mitgeben kann (Siehe `finishUserTask` in `IConsumerApiService`).
+
+```TypeScript
 export class UserTaskResult {
   public form_fields: {
     [fieldId: string]: any,

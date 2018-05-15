@@ -5,24 +5,52 @@
 
 ## Starten und auf ein `System Event` warten
 
+```TypeScript
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  ProcessStartResponsePayload,
+  ProcessStartResponsePayload,
+  StartCallbackType,
+} from '@process-engine/consumer_api_contracts';
+
+const consumerApiService: IConsumerApiService; // Get via IoC
+
+const context: ConsumerContext = {
+  identity: 'insertJwtTokenHere',
+}
+
+// Required paramters
+const processModelKey = 'test_consumer_api_process_start';
+const startEventKey = 'StartEvent_1';
+
+// Optional parameters
+const payload: ProcessStartRequestPayload = {
+  correlation_id: 'randomcorrelationid',
+  input_values: {},
+};
+const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
+
+// Start the process instance
+const result: ProcessStartResponsePayload = await consumerApiService.startProcessInstance(consumerContext, processModelKey, startEventKey, payload, startCallbackType);
+```
+
 ### Ziel/UseCase
 
-Startet einen Prozess durch das Auslösen eines Start-Events. Die Schnittstelle
-antwortet, je nach Verwendung der Parameter, entweder sofort nach dem
-erfolgreichen Start des Prozesses, oder nachdem er beendet wurde.
+Startet eine Prozessinstanz durch das Auslösen eines Start-Events. Die Schnittstelle
+antwortet, sobald ein gegebenes System-EndEvent erreicht wurde.
 
-### Erforderliche und Optionale Parameter
+### Parameter
 
-Die Schnittstelle erfordert die folgenden Parameter:
+#### Erforderliche Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
+* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
   gestartet werden soll.
 * `start_event_key` - Der Key des StartEvents, Das zum starten des Prozesses
   ausgelöst werden soll.
 
-Die Schnittstelle bietet die folgenden optionalen Parameter:
+#### Optionale Parameter
 
 * `correlation_id` - Eine ID, anhand derer der gestartete Vorgang identifiziert
   werden kann. Wenn nicht angegeben, wird die Process Engine eine correlation_id
@@ -30,17 +58,19 @@ Die Schnittstelle bietet die folgenden optionalen Parameter:
 
 * `input_values` - Eingabewerte, mit denen der Prozess gestartet wird.
 
-* `startCallbackType` - Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
+* `startCallbackType` - Gibt an, wann die Schnittstelle antwortet.
   * `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
     Prozessinstanz **gestartet**  wurde.
   * `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
     Prozessinstanz durch ein EndEvent **beendet** wurde.
+  * Siehe: [StartCallbackType](./public_api#startcallbacktype)
 
   Wenn nicht angegeben, wird implizit `CallbackOnProcessInstanceCreated` verwendet.
 
-### Ergebnis/Rückgabewerte
+### Rückgabewerte
 
-Der Response body enthält die correlation_id des gestarteten Vorgangs:
+Die Rückgabe der Methode entspricht dem Typen [ProcessStartResponsePayload](./public_api#processstartresponsepayload)
+und enthält die correlation_id des gestarteten Vorgangs:
 
 ```JSON
 {
@@ -48,17 +78,7 @@ Der Response body enthält die correlation_id des gestarteten Vorgangs:
 }
 ```
 
-### Was passiert in der Process Engine
-
-- Es werden alle StartEvents zu dem Prozessmodell angefragt, die in Lanes
-  liegen, auf die der Verwender Zugriff hat.
-- Es wird anhand des Prozessmodells eine neue Prozessinstanz erstellt.
-- Wenn keine correlation_id vorgegeben ist, wird eine generiert.
-- Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet.
-- Je nach Wert von `startCallbackType` wird entweder direkt nach dem
-  erfolgreichen Start geantwortet, oder sobald der Prozess beendet wurde.
-
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`:
@@ -76,7 +96,7 @@ Mögliche auftretende Fehler sind:
     eines Fehlers vorzeitig ab
   - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
-### Codebeispiel
+## Starten und auf ein bestimmtes EndEvent warten
 
 ```TypeScript
 import {
@@ -84,38 +104,36 @@ import {
   IConsumerApiService,
   ProcessStartResponsePayload,
   ProcessStartResponsePayload,
-  StartCallbackType,
 } from '@process-engine/consumer_api_contracts';
 
 const consumerApiService: IConsumerApiService; // Get via IoC
 
-const processModelKey = 'test_consumer_api_process_start';
 const context: ConsumerContext = {
-  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
+  identity: 'insertJwtTokenHere',
 }
+
+// Required parameters
+const processModelKey = 'test_consumer_api_process_start';
 const startEventKey = 'StartEvent_1';
-const payload: ProcessStartRequestPayload = {
-  correlation_id: 'randomcorrelationid',
-};
+const endEventKey = 'EndEvent_Success';
 
-const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
+// optional parameters
+const payload = {};
 
-const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModelKey, startEventKey, payload, startCallbackType);
+// Start the process instance
+const result = await consumerApiService.startProcessInstanceAndAwaitEndEvent(consumerContext, processModelKey, startEventKey, endEventKey, payload);
 ```
-
-## Starten und auf ein bestimmtes EndEvent warten
 
 ### Ziel/UseCase
 
 Startet einen Prozess durch das Auslösen eines Start-Events. Die Schnittstelle
-antwortet, sobald ein gegebenes BPMN-EndEvent erreicht wurde
+antwortet, sobald ein gegebenes BPMN-EndEvent erreicht wurde.
 
-### Erforderliche und Optionale Parameter
+### Parameter
 
-Die Schnittstelle erfordert die folgenden Parameter:
+#### Erforderliche Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
+* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
   gestartet werden soll.
 * `start_event_key` - Der Key des StartEvents, Das zum starten des Prozesses
@@ -123,7 +141,7 @@ Die Schnittstelle erfordert die folgenden Parameter:
 * `end_event_key` - Der Key des EndEvents, bei dessen erreichen die
   Schnittstelle antwortet
 
-Die Schnittstelle bietet die folgenden optionalen Parameter:
+#### Optionale Parameter
 
 * `correlation_id` - Eine ID, anhand derer der gestartete Vorgang identifiziert
   werden kann. Wenn nicht angegeben, wird die Process Engine eine correlation_id
@@ -131,10 +149,10 @@ Die Schnittstelle bietet die folgenden optionalen Parameter:
 
 * `input_values` - Eingabewerte, mit denen der Prozess gestartet wird.
 
-### Ergebnis/Rückgabewerte
+### Rückgabewerte
 
-Als Rückgabewert erhält man die correlation_id zu dem Vorgang den man gestartet
-hat:
+Die Rückgabe der Methode entspricht dem Typen [ProcessStartResponsePayload](./public_api#processstartresponsepayload)
+und enthält die correlation_id des gestarteten Vorgangs:
 
 ```JSON
 {
@@ -142,16 +160,7 @@ hat:
 }
 ```
 
-### Was passiert in der Process Engine
-
-- Es werden alle StartEvents und EndEvents zu dem Prozessmodell angefragt, die
-  in Lanes liegen, auf die der Verwender Zugriff hat.
-- Es wird anhand des Prozessmodells eine neue Prozessinstanz erstellt.
-- Wenn keine correlation_id vorgegeben ist, wird eine generiert.
-- Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet.
-- Sobald das vorgegebene EndEvent erreicht ist, wird geantwortet.
-
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`: Der bereitgestellte request body ist ungültig
@@ -167,30 +176,6 @@ Mögliche auftretende Fehler sind:
   - Der Prozess brach vor erreichen des angegebenen `return_on` Events wegen
     eines Fehlers vorzeitig ab
   - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
-
-### Codebeispiel
-
-```TypeScript
-import {
-  ConsumerContext,
-  IConsumerApiService,
-  ProcessStartResponsePayload,
-  ProcessStartResponsePayload,
-} from '@process-engine/consumer_api_contracts';
-
-const consumerApiService: IConsumerApiService; // Get via IoC
-
-const context: ConsumerContext = {
-  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
-}
-
-const processModelKey = 'test_consumer_api_process_start';
-const startEventKey = 'StartEvent_1';
-const endEventKey = 'EndEvent_Success';
-const payload = {};
-
-const result = await consumerApiService.startProcessAndAwaitEndEvent(consumerContext, processModelKey, startEventKey, endEventKey, payload);
-```
 
 ### Besonderheiten bei Prozessabbruch
 
