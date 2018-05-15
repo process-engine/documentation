@@ -12,7 +12,7 @@ import {
   StartCallbackType,
 } from '@process-engine/consumer_api_contracts';
 
-const consumerApiService: IConsumerApiService; // Get via IoC
+const consumerApiService: IConsumerApiService; // Retrieve through IoC
 
 const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
@@ -21,14 +21,12 @@ const context: ConsumerContext = {
 const processModelKey: string = 'process_model_key';
 const startEventKey: string = 'StartEvent_1';
 const payload: ProcessStartRequestPayload = {
-  // Use a specific correlationId, instead of a generated one
-  correlation_id: 'randomcorrelationid',
+  correlation_id: 'correlationIdToUseForProcessInstanceStart',
 };
 
 const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
 
-// Start the process model, using the given processModelKey, startEventKey and payload.
-const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModelKey, startEventKey, payload, startCallbackType);
+const result: ProcessStartResponsePayload = await consumerApiService.startProcess(context, processModelKey, startEventKey, payload, startCallbackType);
 ```
 
 ## Features
@@ -80,6 +78,12 @@ Für eine detaillierte Installationsanleitung, siehe:
 
 ## Vollständiges Codebeispiel
 
+Im nachfolgenden Codebeispiel wird folgende Befehlskette durchlaufen:
+- Wähle ein startbares Prozessmodell aus einer angefragten Liste
+- Starte eine Instanz des ausgewählten Prozessmodells
+- Frage alle UserTasks ab, auf welche die laufende Prozessinstanz wartet
+- Schließe einen ausgewählten UserTask ab
+
 ```TypeScript
 import {
   ConsumerContext,
@@ -97,40 +101,69 @@ import {
 const consumerApiService: IConsumerApiService; // Get via IoC
 
 const context: ConsumerContext = {
-  identity: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJiOWU3MjFjYS0yYmFkLTQzNzUtOGQ3OC0xMmFlNmUyOGUyNjQiLCJpYXQiOjE1MjE1NDg2ODR9.PLa5U6m5lrko3tD_3XLse5OfH93qXyBZgm22PKPqxCc',
+  identity: 'insertJwtTokenHere',
 }
 
-// Get list of process models you are allowed to access
-const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
+const processModel: ProcessModel = await getStartableProcessModelFromList();
+const correlationId: string = await startProcessInstanceAndReturnCorrelationId(processModel);
+const waitingUserTask: UserTask = await getWaitingUserTaskForCorrelation(correlationId);
+await finishGivenUserTaskWithResultSet(processModel, correlationId, waitingUserTask);
 
-// Pick the first available process model
-const processModel: ProcessModel = processModelList[0];
+// Get list of process models you are allowed to access and pick the first one available
+async function getStartableProcessModelFromList(): Promise<ProcessModel> {
 
-// Start the process model, using the given start event and payload.
-const startEventKey = 'StartEvent_1';
-const payload: ProcessStartRequestPayload = {
-  // Use a specific correlationId, instead of a generated one
-  correlation_id: 'randomcorrelationid',
-};
+  const processModelList: ProcessModelList =
+    await consumerApiService.getProcessModels(context);
 
-const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
+  return processModelList[0];
+}
 
-const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModel.key, startEventKey, payload, startCallbackType);
+// Start the given process model, and provide a start event key and payload.
+async function startProcessInstanceAndReturnCorrelationId(processModel: ProcessModel): Promise<string> {
 
-const correlationId: string = result.correlation_id;
+  const startEventKey = 'StartEvent_1';
+  const payload: ProcessStartRequestPayload = {
+    // If not provided, a correlationId will be generated
+    correlation_id: 'randomcorrelationid',
+  };
 
-// get the user tasks for the correlation
-const userTaskList: UserTaskList = await consumerApiService.getUserTasksForCorrelation(context, correlationId);
+  const startCallbackType: StartCallbackType =
+    StartCallbackType.CallbackOnProcessInstanceCreated;
 
-// pick the first one
-const userTask: UserTask = userTaskList[0];
+  const result: ProcessStartResponsePayload =
+    await consumerApiService.startProcess(context,
+                                          processModel.key,
+                                          startEventKey,
+                                          payload,
+                                          startCallbackType);
 
-// finish the user task, using the given result set
-const userTaskResult: UserTaskResult = {
-  success: true
-};
+  const correlationId: string = result.correlation_id;
 
-consumerApiService.finishUserTask(context, processModel.key, correlationId, userTask.id, userTaskResult);
+  return correlationId;
+}
+
+// get the user tasks for the correlation and pick the first from the list
+async function getWaitingUserTaskForCorrelation(correlationId: string): Promise<UserTask> {
+
+  const userTaskList: UserTaskList =
+    await consumerApiService.getUserTasksForCorrelation(context, correlationId);
+
+  return userTaskList[0];
+}
+
+// finish the given user task, using a sample result set
+async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, correlationId, userTask: UserTask): Promise<void> {
+
+  const userTaskResult: UserTaskResult = {
+    success: true
+  };
+
+  await consumerApiService.finishUserTask(context,
+                                          processModel.key,
+                                          correlationId,
+                                          userTask.id,
+                                          userTaskResult);
+}
 ```
 
 ## Public API
