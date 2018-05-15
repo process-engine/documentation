@@ -36,13 +36,13 @@ sind zu sehen.
 
 #### Erforderliche Parameter
 
-* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
   den abzuschließenden UserTask beinhaltet.
 * `correlation_id` - Die ID die den Vorgang identifiziert, zu dem der wartende
   UserTask gehört.
 * `user_task_id` - Die ID des UserTasks der abgeschlossen werden soll.
-* `userTaskResult` -  Das Ergebnis des UserTasks, siehe [UserTaskResult](./public_api#usertaskresult)
+* `userTaskResult` -  Das Ergebnis des UserTasks, siehe [UserTaskResult](./public_api.md#usertaskresult)
 
 #### Optionale Parameter
 

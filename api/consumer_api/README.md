@@ -41,7 +41,7 @@ externen ProcessEngine
 - `@process-engine/consumer_api_http` - Dient als Kommunikations-Endpunkt
 für `consumer_api_client`
 
-Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](./consumer_api/consumer-api-structure.md).
+Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](consumer-api-structure.md).
 
 # Vorraussetzungen
 
@@ -60,8 +60,8 @@ Anwendung liegt (z.B. auf einem zentralen Server)
 Je nach Anwendungsfall sind unterschiedliche Installationsschritte auszuführen.
 
 Für eine detaillierte Installationsanleitung, siehe:
-- [Einrichtung mit interner ProcessEngine](./consumer_api/setup_internal_process_engine.md)
-- [Einrichtung mit externer ProcessEngine](./consumer_api/setup_external_process_engine.md)
+- [Einrichtung mit integrierter ProcessEngine](setup_internal_process_engine.md)
+- [Einrichtung mit externer ProcessEngine](setup_external_process_engine.md)
 
 # Features
 
@@ -75,18 +75,18 @@ Die Consumer API umfasst derzeit folgende Features:
 # Dokumentation
 
 ## Allgemein
-* [Glossar](./consumer_api/glossary.md)
-* [Public API](./consumer_api/public_api.md)
+* [Glossar](glossary.md)
+* [Public API](public_api.md)
 
 ## Funktionsdokumentation
-* [Abfragen startbarer Prozessmodelle](./consumer_api/list-startable-process-models.md)
-  * [Alle Prozessmodelle abfragen](./consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
-  * [Einzelnes Prozessmodell abfragen](./consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
-* [Starten von Prozessinstanzen](./consumer_api/start-process-instance.md)
-  * [Starten und auf ein System Event warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-system-event-warten)
-  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
-* [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md)
-* [Abschließen eines UserTasks](./consumer_api/finish-user-task.md)
+* [Abfragen startbarer Prozessmodelle](list-startable-process-models.md)
+  * [Alle Prozessmodelle abfragen](list-startable-process-models.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+* [Starten von Prozessinstanzen](start-process-instance.md)
+  * [Starten und auf ein System Event warten](start-process-instance.md#starten-und-auf-ein-system-event-warten)
+  * [Starten und auf ein bestimmtes EndEvent warten](start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
+* [Auflisten wartender UserTasks](list-waiting-usertasks.md)
+* [Abschließen eines UserTasks](finish-user-task.md)
 
 # Codebeispiel
 
@@ -170,7 +170,3 @@ async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, corr
                                           userTask.id, userTaskResult);
 }
 ```
-
-# License
-
-[MIT](../LICENSE)

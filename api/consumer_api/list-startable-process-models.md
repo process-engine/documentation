@@ -30,7 +30,7 @@ Es werden nur Prozessmodelle angezeigt, auf die folgendes zutrifft:
 
 #### Erforderliche Parameter
 
-* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 
 #### Optionale Parameter
 
@@ -38,10 +38,10 @@ Die Funktion hat keine optionalen Parameter.
 
 ### Rückgabewerte
 
-Die Rückgabe ist vom Typ [ProcessModelList](./public_api#processmodellist) und beinhaltet
+Die Rückgabe ist vom Typ [ProcessModelList](./public_api.md#processmodellist) und beinhaltet
 eine Liste aller gefundenen Prozessmodelle.
 
-Diese wiederum werden durch den Typ [ProcessModel](./public_api#processmodel) dargestellt.
+Diese wiederum werden durch den Typ [ProcessModel](./public_api.md#processmodel) dargestellt.
 
 Beispielausgabe:
 
@@ -99,7 +99,7 @@ kann.
 
 #### Erforderliche Parameter
 
-* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key des Prozessmodells, welches der Benutzer
   abfragen möchte
 
@@ -109,7 +109,7 @@ Die Funktion hat keine optionalen Parameter.
 
 ### Rückgabewerte
 
-Die Rückgabe der Methode entspricht dem Typen [ProcessModel](./public_api#processmodel).
+Die Rückgabe der Methode entspricht dem Typen [ProcessModel](./public_api.md#processmodel).
 
 Beispielausgabe:
 

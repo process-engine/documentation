@@ -1,9 +1,9 @@
 # Starten eines Prozessmodells
 
-* [Starten und auf ein `System Event` warten](#starten-und-auf-ein-system-event-warten)
+* [Starten und auf ein System Event warten](#starten-und-auf-ein-system-event-warten)
 * [Starten und auf ein bestimmtes EndEvent warten](#starten-und-auf-ein-bestimmtes-endevent-warten)
 
-## Starten und auf ein `System Event` warten
+## Starten und auf ein System Event warten
 
 ```TypeScript
 import {
@@ -44,7 +44,7 @@ antwortet, sobald ein gegebenes System-EndEvent erreicht wurde.
 
 #### Erforderliche Parameter
 
-* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
   gestartet werden soll.
 * `start_event_key` - Der Key des StartEvents, Das zum starten des Prozesses
@@ -63,13 +63,13 @@ antwortet, sobald ein gegebenes System-EndEvent erreicht wurde.
     Prozessinstanz **gestartet**  wurde.
   * `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
     Prozessinstanz durch ein EndEvent **beendet** wurde.
-  * Siehe: [StartCallbackType](./public_api#startcallbacktype)
+  * Siehe: [StartCallbackType](./public_api.md#startcallbacktype)
 
   Wenn nicht angegeben, wird implizit `CallbackOnProcessInstanceCreated` verwendet.
 
 ### Rückgabewerte
 
-Die Rückgabe der Methode entspricht dem Typen [ProcessStartResponsePayload](./public_api#processstartresponsepayload)
+Die Rückgabe der Methode entspricht dem Typen [ProcessStartResponsePayload](./public_api.md#processstartresponsepayload)
 und enthält die correlation_id des gestarteten Vorgangs:
 
 ```JSON
@@ -133,7 +133,7 @@ antwortet, sobald ein gegebenes BPMN-EndEvent erreicht wurde.
 
 #### Erforderliche Parameter
 
-* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
   gestartet werden soll.
 * `start_event_key` - Der Key des StartEvents, Das zum starten des Prozesses
@@ -151,7 +151,7 @@ antwortet, sobald ein gegebenes BPMN-EndEvent erreicht wurde.
 
 ### Rückgabewerte
 
-Die Rückgabe der Methode entspricht dem Typen [ProcessStartResponsePayload](./public_api#processstartresponsepayload)
+Die Rückgabe der Methode entspricht dem Typen [ProcessStartResponsePayload](./public_api.md#processstartresponsepayload)
 und enthält die correlation_id des gestarteten Vorgangs:
 
 ```JSON

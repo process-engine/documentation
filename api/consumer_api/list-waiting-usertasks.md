@@ -33,7 +33,7 @@ bearbeiten darf.
 
 #### Erforderliche Parameter
 
-* `context` - Der [ConsumerContext](./public_api#consumercontext) des aufrufenden Benutzers
+* `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 
 #### Optionale Parameter
 
@@ -46,10 +46,10 @@ bearbeiten darf.
 
 ### Rückgabewerte
 
-Die Rückgabe ist vom Typ [UserTasksList](./public_api#usertasklist) und beinhaltet
+Die Rückgabe ist vom Typ [UserTasksList](./public_api.md#usertasklist) und beinhaltet
 eine Liste aller gefundenen UserTasks, die darauf warten bearbeitet zu werden.
 
-Diese wiederum werden durch den Typ [UserTask](./public_api#usertask) dargestellt.
+Diese wiederum werden durch den Typ [UserTask](./public_api.md#usertask) dargestellt.
 
 Beispielausgabe:
 
