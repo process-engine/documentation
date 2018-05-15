@@ -105,34 +105,3 @@ userTaskList = await consumerApiService.getUserTasksForProcessModel(context, pro
 // get the user tasks for the process model within the correlation
 userTaskList = await consumerApiService.getUserTasksForProcessModelInCorrelation(context, processModelKey, correlationId);
 ```
-
-### TypeScript API
-
-```TypeScript
-export class ConsumerContext {
-  public identity: string;
-  public Internationalization?: string;
-  public localization?: string;
-}
-
-export class UserTaskConfig {
-  public form_fields: Array<UserTaskFormField>;
-}
-
-export class UserTask {
-  public key: string;
-  public id: string;
-  public process_instance_id: string;
-  public data: UserTaskConfig;
-}
-
-export class UserTaskList {
-  public user_tasks: Array<UserTask>;
-}
-
-export interface IConsumerApiService {
-  getUserTasksForProcessModel(context: ConsumerContext, processModelKey: string): Promise<UserTaskList>;
-  getUserTasksForCorrelation(context: ConsumerContext, correlationId: string): Promise<UserTaskList>;
-  getUserTasksForProcessModelInCorrelation(context: ConsumerContext, processModelKey: string, correlationId: string): Promise<UserTaskList>;
-}
-```

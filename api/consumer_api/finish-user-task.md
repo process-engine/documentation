@@ -82,22 +82,3 @@ const userTaskResult: UserTaskResult = {
 
 consumerApiService.finishUserTask(context, processModelKey, correlationId, userTaskId, userTaskResult);
 ```
-
-### TypeScript API
-```TypeScript
-export class ConsumerContext {
-  public identity: string;
-  public Internationalization?: string;
-  public localization?: string;
-}
-
-export class UserTaskResult {
-  public form_fields: {
-    [fieldId: string]: any,
-  };
-}
-
-export interface IConsumerApiService {
-  finishUserTask(context: ConsumerContext, process_model_key: string, correlation_id: string, user_task_id: string, result: UserTaskResult): Promise<void>
-}
-```

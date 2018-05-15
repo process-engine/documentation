@@ -133,6 +133,10 @@ const userTaskResult: UserTaskResult = {
 consumerApiService.finishUserTask(context, processModel.key, correlationId, userTask.id, userTaskResult);
 ```
 
+## Public API
+
+Eine Übersicht über die Public API der ConsumerAPI findet sich [hier](./consumer_api/public_api.md).
+
 ## Glossar
 
 Eine Sammlung der wichtigsten ConsumerAPI Begriffe findet sich [hier](./consumer_api/glossary.md).

@@ -103,39 +103,6 @@ const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcess
 const result: ProcessStartResponsePayload = await consumerApiService.startProcess(consumerContext, processModelKey, startEventKey, payload, startCallbackType);
 ```
 
-### TypeScript API
-
-```TypeScript
-export class ConsumerContext {
-  public identity: string;
-  public Internationalization?: string;
-  public localization?: string;
-}
-
-export class ProcessStartRequestPayload {
-  public correlation_id: string;
-  public input_values: any;
-}
-
-export enum StartCallbackType {
-    CallbackOnProcessInstanceCreated = 1,
-    CallbackOnEndEventReached = 3,
-}
-
-export class ProcessStartResponsePayload {
-  public correlation_id: string;
-}
-
-export interface IConsumerApiService {
-  startProcess(context: ConsumerContext,
-               processModelKey: string,
-               startEventKey: string,
-               payload: ProcessStartRequestPayload,
-               returnOn: ProcessStartReturnOnOptions
-              ): Promise<ProcessStartResponsePayload>;
-}
-```
-
 ## Starten und auf ein bestimmtes EndEvent warten
 
 ### Ziel/UseCase
@@ -225,35 +192,7 @@ const payload = {};
 const result = await consumerApiService.startProcessAndAwaitEndEvent(consumerContext, processModelKey, startEventKey, endEventKey, payload);
 ```
 
-### TypeScript API
-
-```TypeScript
-export class ConsumerContext {
-  public identity: string;
-  public Internationalization?: string;
-  public localization?: string;
-}
-
-export class ProcessStartRequestPayload {
-  public correlation_id: string;
-  public input_values: any;
-}
-
-export class ProcessStartResponsePayload {
-  public correlation_id: string;
-}
-
-export interface IConsumerApiService {
-  startProcessAndAwaitEndEvent(context: ConsumerContext,
-                               processModelKey: string,
-                               startEventKey: string,
-                               endEventKey: string,
-                               payload: ProcessStartRequestPayload
-                              ): Promise<ProcessStartResponsePayload>;
-}
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+### Besonderheiten bei Prozessabbruch
 
 Wenn der Prozess aufgrund eines Fehlers beendet wird, ohne dass das angegebene
 EndEvent erreicht wird, wird die Fehlernachricht keine Details dazu beinhalten,

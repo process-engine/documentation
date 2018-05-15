@@ -91,36 +91,6 @@ const context: ConsumerContext = {
 const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
 ```
 
-### TypeScript API
-
-```TypeScript
-export class ConsumerContext {
-  public identity: string;
-  public Internationalization?: string;
-  public localization?: string;
-}
-
-export class Event {
-  public key: string;
-  public id: string;
-  public process_instance_id: string;
-  public data: any; // TODO: Define event-payload
-}
-
-export class ProcessModel {
-  public key: string;
-  public startEvents: Array<Event> = [];
-}
-
-export class ProcessModelList {
-  public process_models: Array<ProcessModel> = [];
-}
-
-export interface IConsumerApiService {
-  getProcessModels(context: ConsumerContext): Promise<ProcessModelList>;
-}
-```
-
 ## Einzelnes Prozessmodell abfragen
 
 ### Ziel/UseCase
@@ -201,34 +171,4 @@ const context: ConsumerContext = {
 const processModelKey: string = 'test_consumer_api_process_start';
 
 const processModelList: ProcessModelList = await consumerApiService.getProcessModelByKey(context, processModelKey);
-```
-
-### TypeScript API
-
-```TypeScript
-export class ConsumerContext {
-  public identity: string;
-  public Internationalization?: string;
-  public localization?: string;
-}
-
-export class Event {
-  public key: string;
-  public id: string;
-  public process_instance_id: string;
-  public data: any; // TODO: Define event-payload
-}
-
-export class ProcessModel {
-  public key: string;
-  public startEvents: Array<Event> = [];
-}
-
-export class ProcessModelList {
-  public process_models: Array<ProcessModel> = [];
-}
-
-export interface IConsumerApiService {
-  getProcessModelByKey(context: ConsumerContext, processModelKey: string): Promise<ProcessModelList>;
-}
 ```
