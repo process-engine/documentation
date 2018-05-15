@@ -112,8 +112,7 @@ await finishGivenUserTaskWithResultSet(processModel, correlationId, waitingUserT
 // Get list of process models you are allowed to access and pick the first one available
 async function getStartableProcessModelFromList(): Promise<ProcessModel> {
 
-  const processModelList: ProcessModelList =
-    await consumerApiService.getProcessModels(context);
+  const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
 
   return processModelList[0];
 }
@@ -127,15 +126,10 @@ async function startProcessInstanceAndReturnCorrelationId(processModel: ProcessM
     correlation_id: 'randomcorrelationid',
   };
 
-  const startCallbackType: StartCallbackType =
-    StartCallbackType.CallbackOnProcessInstanceCreated;
+  const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
 
   const result: ProcessStartResponsePayload =
-    await consumerApiService.startProcess(context,
-                                          processModel.key,
-                                          startEventKey,
-                                          payload,
-                                          startCallbackType);
+    await consumerApiService.startProcess(context, processModel.key, startEventKey, payload, startCallbackType);
 
   const correlationId: string = result.correlation_id;
 
@@ -158,11 +152,8 @@ async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, corr
     success: true
   };
 
-  await consumerApiService.finishUserTask(context,
-                                          processModel.key,
-                                          correlationId,
-                                          userTask.id,
-                                          userTaskResult);
+  await consumerApiService.finishUserTask(context, processModel.key, correlationId,
+                                          userTask.id, userTaskResult);
 }
 ```
 
