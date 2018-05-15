@@ -29,19 +29,6 @@ const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcess
 const result: ProcessStartResponsePayload = await consumerApiService.startProcess(context, processModelKey, startEventKey, payload, startCallbackType);
 ```
 
-## Features
-
-Die Consumer API umfasst folgende Features:
-
-* [Auflisten startbarer Prozessmodelle](./consumer_api/list-startable-process-models.md)
-  * [Alle Prozessmodelle abfragen](./consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
-  * [Einzelnes Prozessmodell abfragen](./consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
-* [Starten eines Prozessmodells](./consumer_api/start-process-instance.md)
-  * [Starten und auf ein `System Event` warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-system-event-warten)
-  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
-* [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md)
-* [Abschließen eines UserTasks](./consumer_api/finish-user-task.md)
-
 ## Pakete
 
 Die ConsumerAPI umfasst folgende Pakete
@@ -60,7 +47,7 @@ Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](.
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
-- Eine ProcessEngine in der Version 2.2.0 oder höher
+- Eine ProcessEngine in der Version 2.2.0
 - Node Version 8.x
 
 ## Installation
@@ -75,6 +62,31 @@ Je nach Anwendungsfall sind unterschiedliche Installationsschritte auszuführen.
 Für eine detaillierte Installationsanleitung, siehe:
 - [Einrichtung mit interner ProcessEngine](./consumer_api/setup_internal_process_engine.md)
 - [Einrichtung mit externer ProcessEngine](./consumer_api/setup_external_process_engine.md)
+
+## Features
+
+Die Consumer API umfasst derzeit folgende Features:
+
+* Abfragen startbarer Prozessmodelle
+* Starten von Prozessinstanzen
+* Wartende UserTasks ermitteln
+* UserTasks abschließen
+
+## Dokumentation
+
+Allgemein:
+* [Glossar](./consumer_api/glossary.md)
+* [Public API](./consumer_api/public_api.md)
+
+Funktionsdokumentation:
+* [Abfragen startbarer Prozessmodelle](./consumer_api/list-startable-process-models.md)
+  * [Alle Prozessmodelle abfragen](./consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](./consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+* [Starten von Prozessinstanzen](./consumer_api/start-process-instance.md)
+  * [Starten und auf ein System Event warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-system-event-warten)
+  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
+* [Auflisten wartender UserTasks](./consumer_api/list-waiting-usertasks.md)
+* [Abschließen eines UserTasks](./consumer_api/finish-user-task.md)
 
 ## Vollständiges Codebeispiel
 
@@ -129,7 +141,7 @@ async function startProcessInstanceAndReturnCorrelationId(processModel: ProcessM
   const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
 
   const result: ProcessStartResponsePayload =
-    await consumerApiService.startProcess(context, processModel.key, startEventKey, payload, startCallbackType);
+    await consumerApiService.startProcessInstance(context, processModel.key, startEventKey, payload, startCallbackType);
 
   const correlationId: string = result.correlation_id;
 
@@ -149,18 +161,12 @@ async function getWaitingUserTaskForCorrelation(correlationId: string): Promise<
 async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, correlationId, userTask: UserTask): Promise<void> {
 
   const userTaskResult: UserTaskResult = {
-    success: true
+    form_fields: {
+      Form_XGSVBgio: true,
+    },
   };
 
   await consumerApiService.finishUserTask(context, processModel.key, correlationId,
                                           userTask.id, userTaskResult);
 }
 ```
-
-## Public API
-
-Eine Übersicht über die Public API der ConsumerAPI findet sich [hier](./consumer_api/public_api.md).
-
-## Glossar
-
-Eine Sammlung der wichtigsten ConsumerAPI Begriffe findet sich [hier](./consumer_api/glossary.md).
