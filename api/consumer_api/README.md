@@ -4,13 +4,7 @@ Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
 resultierende Interaktion mit der ProcessEngine.
 
 ```TypeScript
-import {
-  ConsumerContext,
-  IConsumerApiService,
-  ProcessStartRequestPayload,
-  ProcessStartResponsePayload,
-  StartCallbackType,
-} from '@process-engine/consumer_api_contracts';
+import {ConsumerContext, IConsumerApiService, StartCallbackType} from '@process-engine/consumer_api_contracts';
 
 const consumerApiService: IConsumerApiService; // Retrieve through IoC
 
@@ -18,15 +12,7 @@ const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
 };
 
-const processModelKey: string = 'process_model_key';
-const startEventKey: string = 'StartEvent_1';
-const payload: ProcessStartRequestPayload = {
-  correlation_id: 'correlationIdToUseForProcessInstanceStart',
-};
-
-const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
-
-const result: ProcessStartResponsePayload = await consumerApiService.startProcess(context, processModelKey, startEventKey, payload, startCallbackType);
+await consumerApiService.startProcessInstance(context, 'processModelKey', 'startEventKey', {}, StartCallbackType.CallbackOnProcessInstanceCreated);
 ```
 
 # Pakete
