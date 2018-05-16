@@ -32,8 +32,10 @@
 
 1. [Consumer API](api/consumer_api/README.md)
 
-  * [Aufbau](api/consumer_api/consumer-api-structure.md)
+  * [Einrichtung mit integrierter ProcessEngine](api/consumer_api/setup_internal_process_engine.md)
+  * [Einrichtung mit externer ProcessEngine](api/consumer_api/setup_external_process_engine.md)
   * [Glossar](api/consumer_api/glossary.md)
+  * [Technischer Aufbau](api/consumer_api/consumer-api-structure.md)
   * [Public API](api/consumer_api/public_api.md)
     * [IConsumerApiService](api/consumer_api/public_api.md#iconsumerapiservice)
     * [ConsumerContext](api/consumer_api/public_api.md#consumercontext)
@@ -48,8 +50,6 @@
     * [UserTask](api/consumer_api/public_api.md#usertask)
     * [UserTaskConfig](api/consumer_api/public_api.md#usertaskconfig)
     * [UserTaskResult](api/consumer_api/public_api.md#usertaskresult)
-  * [Einrichtung mit interner ProcessEngine](api/consumer_api/setup_internal_process_engine.md)
-  * [Einrichtung mit externer ProcessEngine](api/consumer_api/setup_external_process_engine.md)
   * [Abfragen startbarer Prozessmodelle](api/consumer_api/list-startable-process-models.md)
     * [Alle Prozessmodelle abfragen](api/consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
     * [Einzelnes Prozessmodell abfragen](api/consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
