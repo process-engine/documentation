@@ -27,8 +27,6 @@ externen ProcessEngine
 - `@process-engine/consumer_api_http` - Dient als Kommunikations-Endpunkt
 für `consumer_api_client`
 
-Eine detaillierte Beschreibung des Aufbaus der Consumer API findet sich [hier](consumer-api-structure.md).
-
 # Vorraussetzungen
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
@@ -62,6 +60,7 @@ Die Consumer API umfasst derzeit folgende Features:
 
 ## Allgemein
 * [Glossar](glossary.md)
+* [Technischer Aufbau](consumer-api-structure.md)
 * [Public API](public_api.md)
 
 ## Funktionsdokumentation
