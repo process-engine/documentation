@@ -18,9 +18,55 @@ dass die jeweiligen IoC Module am IoC Container registriert werden.
 
 ## Konfiguration
 
-In der Anwendung, welche die ProcessEngine enthält, muss eine Konfiguration
-für das `@process-engine/consumer_api_core` Paket eingerichtet werden.
-Siehe weiter oben für Details.
+Die Konfiguration der Consumer API Pakete erfolgt über JSON Dateien.
+Standardmäßig müssen sich diese in einem Ordner namens `config` befinden,
+welcher im Hauptverzeichnius der Anwendung liegen muss.
+
+Über die Umgebungsvariable `CONFIG_PATH` kann ein alternativer Pfad
+angegben werden.
+
+### Externe Anwendung
+
+In der Anwendung, welche die ProcessEngine implementiert, muss eine
+Konfiguration für das `@process-engine/consumer_api_core` Paket eingerichtet
+werden.
+
+Diese muss unter dem Konfigurationspfad
+`consumer_api_core:consumer_api_iam_service` abgelegt werden.
+
+In dieser Datei werden die Claims konfiguriert, mit denen die Benutzer Zugriff
+auf die Lanes eines Prozesses erhalten sollen.
+
+Die Claims werden dabei stehts einem konkreten Benutzer zugeordnet.
+Ebenfalls ist zu beachten, dass die zugeordneten Claims dem Namen einer `Lane`
+entsprechen müssen.
+
+Beispiel Config:
+
+```js
+{
+  "claimConfig": {
+    "userA": [
+      "Lane_A"
+    ],
+    "userB": [
+      "Lane_A",
+      "Lane_B"
+    ]
+  }
+}
+
+```
+
+In diesem Beispiel haben wir 2 Benutzer:
+- `UserA`: Hat auf alle Lanes mit dem Namen `Lane_A` und `Lane_B` Zugriff
+- `UserB`: Hat auf alle Lanes mit dem Namen `Lane_A`, `Lane_C` und `Lane_D` Zugriff
+
+Wichtig ist: Die Consumer API selbst besitzt keinerlei Benutzerverwaltung.
+Um sich an der Consumer API zu authentifizeren, ist ein gültiger JWT Token
+erforderlich, der einem [ConsumerContext](./public_api.md#consumercontext) mitgegeben wird.
+
+### Client Anwendung
 
 Die Anwendung, welche mit der externen ProcessEngine kommunizieren soll,
 benötigt folgende Konfiguration für `@process-engine/consumer_api_client`:
@@ -36,5 +82,5 @@ benötigt folgende Konfiguration für `@process-engine/consumer_api_client`:
 erreichbar ist.
 Das Suffix `/api/consumer/v1` ist zwingend erforderlich.
 
-Diese Config muss im Konfigurationsordner unter dem Pfad
-`consumer_api_client/consumer_api_client_service.json` abgelegt sein.
+Die Konfiguration muss unter dem Konfigurationspfad
+`consumer_api_client:consumer_api_client_service` abgelegt sein.

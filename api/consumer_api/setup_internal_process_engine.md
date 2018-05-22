@@ -14,9 +14,16 @@ angesteuert werden.
 
 ## Konfiguration
 
-Das `@process-engine/consumer_api_core` Paket benötigt eine Konfigurationsdatei, die innerhalb
-des Konfigurationsordners unter dem Pfad
-`consumer_api_core/consumer_api_iam_service.json` abgelegt werden muss.
+Die Konfiguration der Consumer API Pakete erfolgt über JSON Dateien.
+Standardmäßig müssen sich diese in einem Ordner namens `config` befinden,
+welcher im Hauptverzeichnius der Anwendung liegen muss.
+
+Über die Umgebungsvariable `CONFIG_PATH` kann ein alternativer Pfad
+angegben werden.
+
+Das `@process-engine/consumer_api_core` Paket benötigt eine eigene Konfiguration,
+die unter dem Konfigurationspfad `consumer_api_core:consumer_api_iam_service`
+abgelegt werden muss.
 
 In dieser Datei werden die Claims konfiguriert, mit denen die Benutzer Zugriff
 auf die Lanes eines Prozesses erhalten sollen.
@@ -31,15 +38,21 @@ Beispiel Config:
 {
   "claimConfig": {
     "userA": [
-      "Lane_A",
-      "Lane_B"
+      "Lane_A"
     ],
     "userB": [
       "Lane_A",
-      "Lane_C",
-      "Lane_D"
+      "Lane_B"
     ]
   }
 }
 
 ```
+
+In diesem Beispiel haben wir 2 Benutzer:
+- `UserA`: Hat auf alle Lanes mit dem Namen `Lane_A` Zugriff
+- `UserB`: Hat auf alle Lanes mit dem Namen `Lane_A` und `Lane_B` Zugriff
+
+Wichtig ist: Die Consumer API selbst besitzt keinerlei Benutzerverwaltung.
+Um sich an der Consumer API zu authentifizeren, ist ein gültiger JWT Token
+erforderlich, der einem [ConsumerContext](./public_api.md#consumercontext) mitgegeben wird.
