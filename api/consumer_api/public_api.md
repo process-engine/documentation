@@ -30,6 +30,7 @@ export interface IConsumerApiService {
                                        endEventKey: string,
                                        payload: ProcessStartRequestPayload
                                       ): Promise<ProcessStartResponsePayload>;
+  getProcessResultForCorrelation(context: ConsumerContext, correlationId: string, processModelKey: string): Promise<ICorrelationResult>;
   // Manage UserTasks
   getUserTasksForProcessModel(context: ConsumerContext, processModelKey: string): Promise<UserTaskList>;
   getUserTasksForCorrelation(context: ConsumerContext, correlationId: string): Promise<UserTaskList>;
@@ -55,7 +56,7 @@ wenn der Benutzer Funktionen der ConsumerAPI aufruft.
 ```TypeScript
 export class ConsumerContext {
   public identity: string;
-  public Internationalization?: string;
+  public internationalization?: string;
   public localization?: string;
 }
 ```
@@ -103,12 +104,6 @@ Diese werden von den folgenden Methoden der ConsumerAPI services erwartet:
 
 ### StartCallbackType
 
-Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
-* `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
-  Prozessinstanz **gestartet**  wurde.
-* `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
-  Prozessinstanz durch ein EndEvent **beendet** wurde.
-
 ```TypeScript
 export enum StartCallbackType {
   CallbackOnProcessInstanceCreated = 1,
@@ -116,20 +111,39 @@ export enum StartCallbackType {
 }
 ```
 
+Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
+* `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz **gestartet**  wurde.
+* `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz durch ein EndEvent **beendet** wurde.
+
 ### ProcessStartRequestPayload
 
 ```TypeScript
 export class ProcessStartRequestPayload {
   public correlation_id: string;
+  public callerId?: string;
   public input_values: any;
 }
 ```
+
+`callerId` wird nur in Zusammenhang mit Subprozessen verwendet.
+Wenn ein Subprozess gestartet werden soll, enthält das Feld die Instanz ID
+des aufrufenden Prozesses.
 
 ### ProcessStartResponsePayload
 
 ```TypeScript
 export class ProcessStartResponsePayload {
   public correlation_id: string;
+}
+```
+
+### ICorrelationResult
+
+```TypeScript
+export interface ICorrelationResult {
+  [field: string]: any;
 }
 ```
 

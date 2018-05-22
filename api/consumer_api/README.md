@@ -70,6 +70,7 @@ Die Consumer API umfasst derzeit folgende Features:
 * [Starten von Prozessinstanzen](start-process-instance.md)
   * [Starten und auf ein System Event warten](start-process-instance.md#starten-und-auf-ein-system-event-warten)
   * [Starten und auf ein bestimmtes EndEvent warten](start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
+  * [Ergebnis einer Prozesskorrelation abfragen](start-process-instance.md#ergebnis-einer-prozesskorrelation-abfragen)
 * [Auflisten wartender UserTasks](list-waiting-usertasks.md)
 * [Abschließen eines UserTasks](finish-user-task.md)
 
