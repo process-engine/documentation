@@ -1,6 +1,6 @@
 ## Technischer Aufbau der Consumer API
 
-![Aufbau](images/ConsumerApiStructure.png)
+![Aufbau](images/consumer-api-structure.png)
 
 Wie im Diagramm zu erkennen, unterscheidet man zwischen zwei Anwendungsfällen:
 
