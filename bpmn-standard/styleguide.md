@@ -57,10 +57,7 @@ dabei um eine von der ProcessEngine zugewiesene Aufgabe.
 
 ![Beispiel Benutzer](./assets/example_benutzer.svg)
 
-Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
- - Tomate
- - Gurke
- - Sägespäne
+In dem obigen Beispiel erstellt der Benutzer eine Einkaufsliste.
 
 #### Service Aktivität
 
@@ -72,12 +69,7 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 
 ![Beispiel Service](./assets/example_service.svg)
 
-1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
-
-   - Tomate
-   - Gurke
-   - Sägespäne
-
+1. Der Benutzer erstellt eine Einkaufsliste.
 1. Die Preise der Positionen werden von einem Service ermittelt.
 
 #### Skriptaktivität
@@ -93,10 +85,7 @@ Die ProcessEngine unterstützt JavaScript als Skriptsprache.
 
 ![Beispiel Skript](./assets/example_skript.svg)
 
-1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
- - Tomate
- - Gurke
- - Sägespäne
+1. Der Benutzer erstellt eine Einkaufsliste.
 1. Die Preise der Positionen werden von einem Service ermittelt.
 1. Der Gesamtpreis wird von einem Skript ausgegeben.
 
