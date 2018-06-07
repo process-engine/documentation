@@ -45,7 +45,7 @@ Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegebe
 
 # Installation
 
-Es gibt zwei Anwendungsszenarien für die Consumer API:
+Es gibt zwei Anwendungsszenarien für die ConsumerAPI:
 1. Eine Anwendung benutzt eine integrierte ProcessEngine
 2. Eine Anwendung steuert eine ProcessEngine an, die in einer externen
 Anwendung liegt (z.B. auf einem zentralen Server)
@@ -58,7 +58,7 @@ Für eine detaillierte Installationsanleitung, siehe:
 
 # Features
 
-Die Consumer API umfasst derzeit folgende Features:
+Die ConsumerAPI umfasst derzeit folgende Features:
 
 * Abfragen startbarer Prozessmodelle
 * Starten von Prozessinstanzen

@@ -1,4 +1,4 @@
-## Technischer Aufbau der Consumer API
+## Technischer Aufbau der ConsumerAPI
 
 ![Aufbau](images/consumer_api_architecture_full.png)
 

@@ -1,6 +1,6 @@
 # Glossar
 
-Nachfolgend sind die wichtigsten Begriffe definiert, die in der Consumer API
+Nachfolgend sind die wichtigsten Begriffe definiert, die in der ConsumerAPI
 Dokumentation benutzt werden:
 
 ## 'Consumer'

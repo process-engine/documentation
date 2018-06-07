@@ -1,6 +1,6 @@
 # Einrichtung mit externer ProcessEngine:
 
-Dieser Abschnitt beschreibt die Einrichtung einer Consumer API, bei Verwendung
+Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI, bei Verwendung
 einer ProcessEngine, die außerhalb der Anwendung liegt.
 
 ![Aufbau](images/consumer_api_architecture_external.png)
@@ -23,7 +23,7 @@ dass die jeweiligen IoC Module am IoC Container registriert werden.
 
 ## Konfiguration
 
-Die Konfiguration der Consumer API Pakete erfolgt über JSON Dateien.
+Die Konfiguration der ConsumerAPI Pakete erfolgt über JSON Dateien.
 Standardmäßig müssen sich diese in einem Ordner namens `config` befinden,
 welcher im Hauptverzeichnius der Anwendung liegen muss.
 
@@ -67,8 +67,8 @@ In diesem Beispiel haben wir 2 Benutzer:
 - `UserA`: Hat auf alle Lanes mit dem Namen `Lane_A` und `Lane_B` Zugriff
 - `UserB`: Hat auf alle Lanes mit dem Namen `Lane_A`, `Lane_C` und `Lane_D` Zugriff
 
-Wichtig ist: Die Consumer API selbst besitzt keinerlei Benutzerverwaltung.
-Um sich an der Consumer API zu authentifizeren, ist ein gültiger JWT Token
+Wichtig ist: Die ConsumerAPI selbst besitzt keinerlei Benutzerverwaltung.
+Um sich an der ConsumerAPI zu authentifizeren, ist ein gültiger JWT Token
 erforderlich, der einem [ConsumerContext](./public_api.md#consumercontext) mitgegeben wird.
 
 ### Client Anwendung
