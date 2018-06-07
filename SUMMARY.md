@@ -37,39 +37,29 @@
 
 1. [TS](processengine/ts/README.md)
 
-  1. [Messagebus-API](processengine/ts/cheat-sheet/messagebus/README.md)
+  1. [Setup](processengine/ts/setup/README.md)
+    * [Konfiguration](processengine/ts/setup/konfiguration.md)
 
-    * [internal](processengine/ts/cheat-sheet/messagebus/internal/README.md)
-    * [external](processengine/ts/cheat-sheet/messagebus/external/README.md)
+  1. [Konzepte](processengine/ts/konzepte/README.md)
 
-  1. [Architektur](processengine/ts/basics/README.md)
+    * [Konfiguration](processengine/ts/konzepte/configuration.md)
+    * [Datenspeicher](processengine/ts/konzepte/datastore.md)
+    * [Entitäten-Service](processengine/ts/konzepte/entity-services.md)
+    * [Identitäts- und Zugriffsverwaltung](processengine/ts/konzepte/identity-access-management.md)
 
-    * [Diagramm](processengine/ts/basics/architektur/diagramm.md)
-    * [Komponenten beschreiben](processengine/ts/basics/architektur/komponenten/README.md)
-    * [Abgrenzung](processengine/ts/basics/architektur/komponenten/abgrenzung.md)
-    * [Erweiterte Architektur](processengine/ts/basics/erweiterte-architektur.md)
+  1. [Architektur](processengine/ts/architektur/README.md)
 
-  1. [Grundkonzepte](processengine/ts/stack/basic-concepts/README.md)
+    * [Dependency Injection](processengine/ts/architektur/dependendy-injection.md)
+    * [Discovery](processengine/ts/architektur/discovery.md)
+    * [Struktur](processengine/ts/architektur/structure.md)
+    * [Adapter](processengine/ts/architektur/adapters.md)
+    * [Bridges](processengine/ts/architektur/bridges.md)
+    * [Contracts](processengine/ts/architektur/contracts.md)
+    * [Extensions](processengine/ts/architektur/extensions.md)
 
-    * [Datenspeicher](processengine/ts/stack/basic-concepts/datastore.md)
-    * [Entitäten-Service](processengine/ts/stack/basic-concepts/entity-services.md)
-    * [Identitäts- und Zugriffsverwaltung](processengine/ts/stack/basic-concepts/identity-access-management.md)
+  1. [APIs](processengine/ts/api/README.md)
 
-  1. [Fortgeschrittene Konzepte](processengine/ts/stack/advanced-concepts/README.md)
-
-    * [Konfiguration](processengine/ts/stack/advanced-concepts/configuration.md)
-
-  1. [Modul Interaktion](processengine/ts/stack/module-interaction/README.md)
-
-    * [Dependency Injection](processengine/ts/stack/module-interaction/dependendy-injection.md)
-    * [Discovery](processengine/ts/stack/module-interaction/discovery.md)
-
-  1. [Struktur](processengine/ts/stack/structure/README.md)
-
-    * [Adapter](processengine/ts/stack/structure/adapters.md)
-    * [Bridges](processengine/ts/stack/structure/bridges.md)
-    * [Contracts](processengine/ts/stack/structure/contracts.md)
-    * [Extensions](processengine/ts/stack/structure/extensions.md)
+    * [Messagebus](processengine/ts/api/messagebus.md)
 
 ## Anlagen
 
