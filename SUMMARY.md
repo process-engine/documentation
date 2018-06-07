@@ -43,9 +43,9 @@
   1. [Konzepte](processengine/ts/konzepte/README.md)
 
     * [Konfiguration](processengine/ts/konzepte/configuration.md)
-    * [Datenspeicher](processengine/ts/konzepte/datastore.md)
-    * [Entitäten-Service](processengine/ts/konzepte/entity-services.md)
-    * [Identitäts- und Zugriffsverwaltung](processengine/ts/konzepte/identity-access-management.md)
+    * [ !!!deprecated!!! Datenspeicher](processengine/ts/konzepte/datastore.md)
+    * [ !!!deprecated!!! Entitäten-Service](processengine/ts/konzepte/entity-services.md)
+    * [ !!!deprecated!!! Identitäts- und Zugriffsverwaltung](processengine/ts/konzepte/identity-access-management.md)
 
   1. [Architektur](processengine/ts/architektur/README.md)
 
@@ -59,7 +59,7 @@
 
   1. [APIs](processengine/ts/api/README.md)
 
-    * [Messagebus](processengine/ts/api/messagebus.md)
+    * [ !!!deprecated!!! Messagebus](processengine/ts/api/messagebus.md)
 
 ## Anlagen
 

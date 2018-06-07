@@ -1,4 +1,4 @@
-# Messagebus
+#  !!!deprecated!!! Messagebus
 
 The messagebus-API describes what messages are published on the messagebus by the process-engine,
 and what messages can be published on the messagebus by you.
