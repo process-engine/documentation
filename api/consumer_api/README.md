@@ -4,7 +4,11 @@ Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
 resultierende Interaktion mit der ProcessEngine.
 
 ```TypeScript
-import {ConsumerContext, IConsumerApiService, StartCallbackType} from '@process-engine/consumer_api_contracts';
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  StartCallbackType
+} from '@process-engine/consumer_api_contracts';
 
 const consumerApiService: IConsumerApiService; // Retrieve through IoC
 
@@ -12,7 +16,12 @@ const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
 };
 
-await consumerApiService.startProcessInstance(context, 'processModelKey', 'startEventKey', {}, StartCallbackType.CallbackOnProcessInstanceCreated);
+await consumerApiService
+  .startProcessInstance(context,
+                        'processModelKey',
+                        'startEventKey',
+                        {},
+                        StartCallbackType.CallbackOnProcessInstanceCreated);
 ```
 
 # Pakete
@@ -31,7 +40,7 @@ für `consumer_api_client`
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
-- Eine ProcessEngine in der Version 2.2.0
+- Das Paket `@process-engine/process-engine` in der Version 5.1.0
 - Node Version 8.9.x
 
 # Installation
@@ -102,21 +111,33 @@ const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
 }
 
-const processModel: ProcessModel = await getStartableProcessModelFromList();
-const correlationId: string = await startProcessInstanceAndReturnCorrelationId(processModel);
-const waitingUserTask: UserTask = await getWaitingUserTaskForCorrelation(correlationId);
-await finishGivenUserTaskWithResultSet(processModel, correlationId, waitingUserTask);
+const processModel: ProcessModel =
+  await getStartableProcessModelFromList();
 
-// Get list of process models you are allowed to access and pick the first one available
+const correlationId: string =
+  await startProcessInstanceAndReturnCorrelationId(processModel);
+
+const waitingUserTask: UserTask =
+  await getWaitingUserTaskForCorrelation(correlationId);
+
+await finishGivenUserTaskWithResultSet(processModel,
+                                       correlationId,
+                                       waitingUserTask);
+
+// Get list of process models you are allowed to access
+// and pick the first one available
 async function getStartableProcessModelFromList(): Promise<ProcessModel> {
 
-  const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
+  const processModelList: ProcessModelList =
+    await consumerApiService.getProcessModels(context);
 
   return processModelList[0];
 }
 
 // Start the given process model, and provide a start event key and payload.
-async function startProcessInstanceAndReturnCorrelationId(processModel: ProcessModel): Promise<string> {
+async function startProcessInstanceAndReturnCorrelationId(
+    processModel: ProcessModel
+  ): Promise<string> {
 
   const startEventKey = 'StartEvent_1';
   const payload: ProcessStartRequestPayload = {
@@ -124,10 +145,15 @@ async function startProcessInstanceAndReturnCorrelationId(processModel: ProcessM
     correlation_id: 'randomcorrelationid',
   };
 
-  const startCallbackType: StartCallbackType = StartCallbackType.CallbackOnProcessInstanceCreated;
+  const startCallbackType: StartCallbackType =
+    StartCallbackType.CallbackOnProcessInstanceCreated;
 
   const result: ProcessStartResponsePayload =
-    await consumerApiService.startProcessInstance(context, processModel.key, startEventKey, payload, startCallbackType);
+    await consumerApiService.startProcessInstance(context,
+                                                  processModel.key,
+                                                  startEventKey,
+                                                  payload,
+                                                  startCallbackType);
 
   const correlationId: string = result.correlation_id;
 
@@ -135,16 +161,22 @@ async function startProcessInstanceAndReturnCorrelationId(processModel: ProcessM
 }
 
 // get the user tasks for the correlation and pick the first from the list
-async function getWaitingUserTaskForCorrelation(correlationId: string): Promise<UserTask> {
+async function getWaitingUserTaskForCorrelation(
+    correlationId: string
+  ): Promise<UserTask> {
 
   const userTaskList: UserTaskList =
-    await consumerApiService.getUserTasksForCorrelation(context, correlationId);
+    await consumerApiService.getUserTasksForCorrelation(context,
+                                                        correlationId);
 
   return userTaskList[0];
 }
 
 // finish the given user task, using a sample result set
-async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, correlationId, userTask: UserTask): Promise<void> {
+async function finishGivenUserTaskWithResultSet(processModel: ProcessModel,
+                                                correlationId,
+                                                userTask: UserTask
+                                               ): Promise<void> {
 
   const userTaskResult: UserTaskResult = {
     form_fields: {
@@ -152,7 +184,10 @@ async function finishGivenUserTaskWithResultSet(processModel: ProcessModel, corr
     },
   };
 
-  await consumerApiService.finishUserTask(context, processModel.key, correlationId,
-                                          userTask.id, userTaskResult);
+  await consumerApiService.finishUserTask(context,
+                                          processModel.key,
+                                          correlationId,
+                                          userTask.id,
+                                          userTaskResult);
 }
 ```
