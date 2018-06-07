@@ -1,5 +1,10 @@
 # Einrichtung mit integrierter ProcessEngine:
 
+Dieser Abschnitt beschreibt die Einrichtung einer Consumer API, bei Verwendung
+einer ProcessEngine, die direkt in die Anwendung integriert ist.
+
+![Aufbau](images/consumer_api_architecture_internal.png)
+
 ## Setup
 
 Anwendungen, die eine integrierte ProcessEngine verwenden,
