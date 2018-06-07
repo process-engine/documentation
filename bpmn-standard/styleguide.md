@@ -115,11 +115,11 @@ Der gesamte Prozess wird durch die Aufrufaktivität aufgerufen.
 
 ## Verwendung von Gateways
 
-[Gateways](../anhang/GLOSSARY.md#gateway) teilen den Prozessfluss in einem
+[Gateways](../GLOSSARY.md#gateway) teilen den Prozessfluss in einem
 BPMN-Diagramm in mehrere Flüsse auf, oder führen mehrere Flüsse wieder zusammen.
 
 Beachte folgende Regeln zum korrekten Modellieren von
-[Gateways](../anhang/GLOSSARY.md#gateway):
+[Gateways](../GLOSSARY.md#gateway):
 
 1. Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende
    Pfeile.
@@ -136,20 +136,20 @@ Beachte folgende Regeln zum korrekten Modellieren von
 
 ## Weitere Regeln
 
-1. Es sollte immer ein [**Pool**](../anhang/GLOSSARY.md#pool) verwendet werden.
-1. Es sollte immer eine oder mehrere [**Lanes**](../anhang/GLOSSARY.md#lane)
+1. Es sollte immer ein [**Pool**](../GLOSSARY.md#pool) verwendet werden.
+1. Es sollte immer eine oder mehrere [**Lanes**](../GLOSSARY.md#lane)
    verwendet geben.
-   
+
    ![Beispiel Pool und Lanes](./assets/example_pool_lanes.svg)
 
 1. Ein Prozess hat ein Startevent und mindestens ein Endevent.
 
-1. Eine [Aktivität](../anhang/GLOSSARY.md#aktivität) hat einen eingehenden und
+1. Eine [Aktivität](../GLOSSARY.md#aktivität) hat einen eingehenden und
    einen ausgehenden Pfeil.
 
 1. Zum Teilen und Zusammenführen von
-   [Sequenzflüssen](../anhang/GLOSSARY.md#sequenzfluss) werden Gateways
+   [Sequenzflüssen](../GLOSSARY.md#sequenzfluss) werden Gateways
    verwendet.
 
-1. Boundary-[Ereignisse](../anhang/GLOSSARY.md#ereignis) haben einen ausgehenden
+1. Boundary-[Ereignisse](../GLOSSARY.md#ereignis) haben einen ausgehenden
    Pfeil.

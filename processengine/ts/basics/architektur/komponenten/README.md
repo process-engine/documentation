@@ -2,7 +2,7 @@
 
 ## Service Task
 
-Ein "[Service Task](../../../anhang/GLOSSARY.md#service-task)" repräsentiert
+Ein "[Service Task](../../../GLOSSARY.md#service-task)" repräsentiert
 eine Aufgabe, die ohne menschliches Hinzutun erledigt werden kann. Es wird
 häufig genutzt um:
 
@@ -12,7 +12,7 @@ häufig genutzt um:
 
 ## User Task
 
-Ein "[User Task](../../../anhang/GLOSSARY.md#user-task)" repräsentiert eine
+Ein "[User Task](../../../GLOSSARY.md#user-task)" repräsentiert eine
 Aufgabe, die nur manuell erledigt werden kann. Diese werden genutzt um:
 
 - Nutzerdaten aufzunehmen
@@ -34,20 +34,20 @@ Anforderungen erfüllt, und die weitere Diagrammausführung an sie delegieren.
 
 Ein Beispiel:
 
-Du kannst einem "[User Task](../../../anhang/GLOSSARY.md#user-task)" die Rolle
+Du kannst einem "[User Task](../../../GLOSSARY.md#user-task)" die Rolle
 "Call Center Agent" zuordnen. Wenn dieser
-[Task](../../../anhang/GLOSSARY.md#task) ausgeführt werden soll, wird er nur auf
+[Task](../../../GLOSSARY.md#task) ausgeführt werden soll, wird er nur auf
 einem [Client]() ausgeführt, an dem ein "Call Center Agent" eingeloggt ist.
 
 ## Gateways
 
-"[Gateways](../../../anhang/GLOSSARY.md#gateway)" werden genutzt, um
+"[Gateways](../../../GLOSSARY.md#gateway)" werden genutzt, um
 Fallunterscheidungen zu modellieren. Dabei kann der aktuelle Ausführungspfad in
 mehrere Pfade aufgeteilt oder mehrere Pfade zu einem zusammengeführt werden.
 
 ## Messages / Signals
 
 "Messages" und "Signals" sind spezielle Formen von
-[Ereignissen](../../../anhang/GLOSSARY.md#ereignis) im Kontext eines Prozesses.
+[Ereignissen](../../../GLOSSARY.md#ereignis) im Kontext eines Prozesses.
 
 ## Mappers

@@ -4,19 +4,19 @@ Um die Möglichkeiten der ProcessEngine zu demonstrieren, wird ein Beispiel
 Diagramm erstellt.
 
 Ziel ist es ein BPMN-Diagramm mit einem
-[Single User Task](../../anhang/GLOSSARY.md#user-task) zu erstellen.
+[Single User Task](../../GLOSSARY.md#user-task) zu erstellen.
 
 Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
 
-Dieser [User Task](../../anhang/GLOSSARY.md#user-task) wird die folgenden zwei
+Dieser [User Task](../../GLOSSARY.md#user-task) wird die folgenden zwei
 Elemente enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
 
-Letzteres dient dazu, den [Task](../../anhang/GLOSSARY.md#task) zu beenden.
+Letzteres dient dazu, den [Task](../../GLOSSARY.md#task) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
@@ -49,13 +49,13 @@ So sieht das Ganze dann aus:
 ## Modellierung eines Diagramms
 
 Der BPMN-Editor zeigt uns eine Ansicht mit einer
-[Lane](../../anhang/GLOSSARY.md#lane) und einem Startevent.
+[Lane](../../GLOSSARY.md#lane) und einem Startevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü; dieses Menü
 erlaubt es neue Elemente hinzuzufügen; diese werden direkt mit dem ausgewählten
 Element verbunden.
 
-An dem Startpunkt wird dann ein [User Task](../../anhang/GLOSSARY.md#user-task)
+An dem Startpunkt wird dann ein [User Task](../../GLOSSARY.md#user-task)
 mit dem Namen `Hello Word` verbunden; an diesem dann ein Endevent.
 
 Das Ganze sollte dann so aussehen:
@@ -68,7 +68,7 @@ Und so wird es gemacht:
 
 ## Integration eines Diagramms
 
-Ein [User Task](../../anhang/GLOSSARY.md#user-task) kann so eingestellt werden,
+Ein [User Task](../../GLOSSARY.md#user-task) kann so eingestellt werden,
 dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
 kann wie folgt geschehen:
 
@@ -104,7 +104,7 @@ ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] 
 **Zusammenfassung**
 
 Was wir getan haben:
-- einen [User Task](../../anhang/GLOSSARY.md#user-task) namens `Hello World` definiert
+- einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` definiert
 - den Task mit einer Konfiguration für die Oberfläche versehen
 - die verschiedenen Ausführungsschritte miteinander verdrahtet
 
