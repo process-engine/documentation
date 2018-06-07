@@ -101,4 +101,4 @@
 
 ## Anlagen
 
-1. [Glossar](anhang/GLOSSARY.md)
+1. [Glossar](GLOSSARY.md)
