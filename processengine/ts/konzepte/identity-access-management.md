@@ -1,11 +1,11 @@
-# Identitäts- und Zugriffsverwaltung (IAM)
+# !!!deprecated!!! Identitäts- und Zugriffsverwaltung (IAM)
 
 Das IAM innerhalb der Process Engine bedient sich der Interfaces aus
 [iam_contracts](https://github.com/essential-projects/iam_contracts)
 und den zugehörigen Implementierungen in
 [iam](https://github.com/essential-projects/iam).
 
-Die Process Engine verwendet Claims, um die Beschränkung auf 
+Die Process Engine verwendet Claims, um die Beschränkung auf
 Ressourcen zu erlauben. Ein Claim ist in der Regel einer Rolle
 zugeordnet. Zwei unterschiedliche Rollen, können dem Benutzer denselben
 Claim zuordnen.
@@ -26,7 +26,7 @@ Claims verknüpfen, die für die Ausführung erforderlich ist.
 Der Dekorator, der dazu verwendet wird, kann an Klassen,
 Eigenschaften und Methoden platziert werden.
 
-Hinweis: Dekoratoren an Methoden und Eigenschaften überschreiben für diese 
+Hinweis: Dekoratoren an Methoden und Eigenschaften überschreiben für diese
 Methode/Eigenschaft den Klassendekorator.
 
 ```typescript
@@ -64,7 +64,7 @@ Claims werden unter dem folgenden Pfad konfiguriert:
 
 ```
 .
-$ tree config 
+$ tree config
   └── development
       └── iam
           └── claim_service

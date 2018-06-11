@@ -1,4 +1,4 @@
-# Datenspeicher
+# !!!deprecated!!! Datenspeicher
 
 Der Datenspeicher (Datastore) ist ein allgemeingültiges Modul zum Interagieren mit
 Entitäten. Mit ihm können:
