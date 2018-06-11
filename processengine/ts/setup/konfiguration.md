@@ -1,6 +1,6 @@
 # Konfiguration
 
-Die Einstellungen des Process Engine Server können über die [Konfiguration](./../konzepte/configuration.md) angepasst werden.
+Die Einstellungen des Process Engine Servers können über die [Konfiguration](./../konzepte/configuration.md) angepasst werden.
 
 Wenn das [Entwicklersetup](./README.md#entwickler) verwendet wird, können Anpassungen der Konfiguration unter `process-engine-server/config/development` vorgenommen werden.
 
@@ -33,7 +33,7 @@ Der Port, unter dem der HTTP-Endpunkt des Process Engine Server bereit steht, ka
 
 Die Datenbank, die der Process Engine Server zur Persistenz nutzt, kann in der Datei `process-engine-server/config/development/data_sources/postgres.json` geändert werden.
 
-Aktuell wird als Datenbank nur PostgreSQL unterstützt.
+Aktuell wird nur PostgreSQL unterstützt.
 
 ```
 {
