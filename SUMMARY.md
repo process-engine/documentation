@@ -28,6 +28,10 @@
   * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md)
   * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md)
 
+## Konzepte
+
+1. [Konfiguration](konzepte/configuration.md)
+
 ## API
 
 1. [Consumer API](api/consumer-api.md)
@@ -39,13 +43,6 @@
 
   1. [Setup](processengine/ts/setup/README.md)
     * [Konfiguration](processengine/ts/setup/konfiguration.md)
-
-  1. [Konzepte](processengine/ts/konzepte/README.md)
-
-    * [Konfiguration](processengine/ts/konzepte/configuration.md)
-    * [ !!!deprecated!!! Datenspeicher](processengine/ts/konzepte/datastore.md)
-    * [ !!!deprecated!!! Entitäten-Service](processengine/ts/konzepte/entity-services.md)
-    * [ !!!deprecated!!! Identitäts- und Zugriffsverwaltung](processengine/ts/konzepte/identity-access-management.md)
 
   1. [Architektur](processengine/ts/architektur/README.md)
 

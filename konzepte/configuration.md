@@ -84,8 +84,8 @@ class ExampleService {
 ## Deklaration
 
 Die Konfiguration einer Klasse kann über den
-[IoC-Container](../../../anhang/GLOSSARY.md#ioc) registriert werden (siehe
-[Dependency Injection](../module-interaction/dependency-injection.md)).
+[IoC-Container](./../anhang/GLOSSARY.md#ioc) registriert werden (siehe
+[Dependency Injection](./../processengine/ts/architektur/dependendy-injection.md)).
 
 ```typescript
 container.register('ExampleService', ExampleService)
@@ -214,6 +214,6 @@ Grundsätzlich ist die Konfiguration statisch; wir unterscheiden vier Quellen f�
 die Konfiguration; drei statische, eine dynamische; die dynamische Konfiguration
 ist die einzige Quelle, die zur Laufzeit geändert werden kann.
 
-Wenn man den [IoC-Container](../../../anhang/GLOSSARY.md#ioc) beauftragt, eine
+Wenn man den [IoC-Container](../anhang/GLOSSARY.md#ioc) beauftragt, eine
 neue Instanz einer Klasse zu erzeugen, kann dabei ein Konfigurationsobjekt
 mitgegeben werden.
