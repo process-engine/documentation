@@ -72,9 +72,6 @@
   1. [Konzepte](processengine/ts/konzepte/README.md)
 
     * [Konfiguration](processengine/ts/konzepte/configuration.md)
-    * [ !!!deprecated!!! Datenspeicher](processengine/ts/konzepte/datastore.md)
-    * [ !!!deprecated!!! Entitäten-Service](processengine/ts/konzepte/entity-services.md)
-    * [ !!!deprecated!!! Identitäts- und Zugriffsverwaltung](processengine/ts/konzepte/identity-access-management.md)
 
   1. [Architektur](processengine/ts/architektur/README.md)
 
@@ -88,7 +85,7 @@
 
   1. [APIs](processengine/ts/api/README.md)
 
-    * [ !!!deprecated!!! Messagebus](processengine/ts/api/messagebus.md)
+    * Consumer API (TODO)
 
 ## Anlagen
 
