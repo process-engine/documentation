@@ -38,6 +38,9 @@ Für eine detaillierte Installationsanleitung, siehe:
 - [Einrichtung mit integrierter ProcessEngine](setup_internal_process_engine.md)
 - [Einrichtung mit externer ProcessEngine](setup_external_process_engine.md)
 
+Die Konfiguration der Consumer API Komponenten erfolgt nach dem
+[Konfigurationskonzept](../../konzepte/configuration.md).
+
 # Features
 
 Die ConsumerAPI umfasst derzeit folgende Features:

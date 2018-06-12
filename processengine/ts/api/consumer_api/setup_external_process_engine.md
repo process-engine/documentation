@@ -1,6 +1,6 @@
 # Einrichtung mit externer ProcessEngine:
 
-Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI, bei Verwendung
+Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI, unter Verwendung
 einer ProcessEngine, die außerhalb der Anwendung liegt.
 
 ![Aufbau](images/consumer_api_architecture_external.png)
@@ -11,24 +11,17 @@ Die externe Anwendung, welche die ProcessEngine implementiert, muss folgende
 Pakete installiert haben:
 - `@process-engine/consumer_api_core`
 - `@process-engine/consumer_api_http`
-- `@process-engine/process-engine` - Version 2.2.0 oder höher
+- `@process-engine/process-engine` - Version 6.0.2 oder höher
 
 Die Anwendung, welche mit der externen Process Engine kommunizieren soll,
 benötigt folgende Pakete:
 - `@process-engine/consumer_api_client`
-- `@process-engine/process-engine` - Version 2.2.0 oder höher
+- `@process-engine/process-engine` - Version 6.0.2 oder höher
 
 In beiden Anwendungen muss sichergestellt werden,
 dass die jeweiligen IoC Module am IoC Container registriert werden.
 
 ## Konfiguration
-
-Die Konfiguration der ConsumerAPI Pakete erfolgt über JSON Dateien.
-Standardmäßig müssen sich diese in einem Ordner namens `config` befinden,
-welcher im Hauptverzeichnius der Anwendung liegen muss.
-
-Über die Umgebungsvariable `CONFIG_PATH` kann ein alternativer Pfad
-angegben werden.
 
 ### Externe Anwendung
 
