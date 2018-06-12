@@ -1,3 +1,12 @@
 # APIs
 
-// TODO: Beschreiben der TypeScript-Implementierung von High-Level-APIs (e.g. Consumer API, Management API), sofern dort Eigenheiten bestehen, die erwähnenswert sind.
+## Consumer API
+
+Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
+resultierende Interaktion mit der ProcessEngine.
+
+Eine detaillierte Anleitung zur Einrichtung der Consumer API findet sich [hier](./consumer_api/README.md).
+
+## Management API
+
+TODO

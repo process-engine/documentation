@@ -1,5 +1,8 @@
 # Architektur
 
+Die nachfolgenden Architekturmuster werden sowohl durch die ProcessEngine,
+als auch durch die Consumer API implementiert.
+
 ## Dependency Injection
 
 Eine wichtige Grundlage zum Verständnis der Architekturmuster, ist die [Dependency Injection](./dependency-injection.md).
