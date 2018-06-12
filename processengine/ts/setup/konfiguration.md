@@ -1,6 +1,6 @@
 # Konfiguration
 
-Die Einstellungen des Process Engine Servers können über die [Konfiguration](./../../../konzepte/configuration.md) angepasst werden.
+Die Einstellungen des Process Engine Servers können über die [Konfiguration](./../konzepte/configuration.md) angepasst werden.
 
 Wenn das [Entwicklersetup](./README.md#entwickler) verwendet wird, können Anpassungen der Konfiguration unter `process-engine-server/config/development` vorgenommen werden.
 
