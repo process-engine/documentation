@@ -31,6 +31,22 @@
 ## API
 
 1. [Consumer API](api/consumer-api.md)
+  * [Auflisten startbarer Prozessmodelle](api/consumer_api/aufgaben/auflisten-startbarer-prozessmodelle.md)
+      * [Alle Prozessmodelle abfragen](api/consumer_api/aufgaben/auflisten-startbarer-prozessmodelle.md#alle-prozessmodelle-abfragen)
+      * [Einzelnes Prozessmodell abfragen](api/consumer_api/aufgaben/auflisten-startbarer-prozessmodelle.md#einzelnes-prozessmodell-abfragen)
+  * [Starten eines Prozessmodells](api/consumer_api/aufgaben/starten-eines-prozessmodells.md)
+      * [Starten und auf ein `System Event` warten](api/consumer_api/aufgaben/starten-eines-prozessmodells.md#starten-und-auf-ein-system-event-warten)
+      * [Starten und auf ein bestimmtes EndEvent warten](api/consumer_api/aufgaben/starten-eines-prozessmodells.md#starten-und-auf-ein-bestimmtes-endevent-warten)
+  * [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](api/consumer_api/aufgaben/abfragen-von-bpmn-ereignissen-auf-die-der-prozess-wartet.md)
+  * [Auslösen von Ereignissen](api/consumer_api/aufgaben/ausloesen-von-ereignissen.md)
+  * [Auflisten wartender UserTasks](api/consumer_api/aufgaben/auflisten-wartender-usertasks.md)
+  * [Abschließen eines UserTasks](api/consumer_api/aufgaben/abschließen-eines-usertasks.md)
+  * [Erhalten von Prozessbenachrichtigungen](api/consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md)
+      * [Arten von Prozessbenachrichtigungen](api/consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#arten-von-prozessbenachrichtigungen)
+      * [Erhalten von BPMN-Events](api/consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-bpmn-events)
+      * [Erhalten von Infos zu start und ende von Aktivitäten](api/consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
+      * [Erhalten von System-Events](api/consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-system-events)
+      * [Erhalten von BPMN-Signalen](api/consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-bpmn-signalen)
 1. [Management API](api/management-api.md)
 
 ## ProcessEngine
