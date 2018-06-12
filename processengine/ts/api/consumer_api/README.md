@@ -1,28 +1,10 @@
-# Schnittstelle: ConsumerAPI
+# ConsumerAPI
 
 Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
 resultierende Interaktion mit der ProcessEngine.
 
-```TypeScript
-import {
-  ConsumerContext,
-  IConsumerApiService,
-  StartCallbackType
-} from '@process-engine/consumer_api_contracts';
-
-const consumerApiService: IConsumerApiService; // Retrieve through IoC
-
-const context: ConsumerContext = {
-  identity: 'insertJwtTokenHere',
-};
-
-await consumerApiService
-  .startProcessInstance(context,
-                        'processModelKey',
-                        'startEventKey',
-                        {},
-                        StartCallbackType.CallbackOnProcessInstanceCreated);
-```
+Dabei werden die gleichen [Konzepte](../../konzepte/README.md) und [Architekturmuster](../../architektur/README.md) verwendet,
+wie sie von der ProcessEngine selbst benutzt werden.
 
 # Pakete
 
@@ -40,7 +22,7 @@ für `consumer_api_client`
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
-- Das Paket `@process-engine/process-engine` in der Version 5.1.0
+- Das Paket `@process-engine/process-engine` in der Version 6.0.2
 - Node Version 8.9.x
 
 # Installation
@@ -64,13 +46,14 @@ Die ConsumerAPI umfasst derzeit folgende Features:
 * Starten von Prozessinstanzen
 * Wartende UserTasks ermitteln
 * UserTasks abschließen
+* Ergebnis einer Prozesskorrelation abfragen
 
 # Dokumentation
 
 ## Allgemein
-* [Glossar](glossary.md)
 * [Technischer Aufbau](consumer-api-structure.md)
 * [Public API](public_api.md)
+* [Glossar](glossary.md)
 
 ## Funktionsdokumentation
 * [Abfragen startbarer Prozessmodelle](list-startable-process-models.md)
@@ -83,111 +66,29 @@ Die ConsumerAPI umfasst derzeit folgende Features:
 * [Abschließen eines UserTasks](finish-user-task.md)
 * [Ergebnis einer Prozesskorrelation abfragen](get-correlation-result.md)
 
-# Codebeispiel
-
-Im nachfolgenden Codebeispiel wird folgende Befehlskette durchlaufen:
-- Wähle ein startbares Prozessmodell aus einer angefragten Liste
-- Starte eine Instanz des ausgewählten Prozessmodells
-- Frage alle UserTasks ab, auf welche die laufende Prozessinstanz wartet
-- Schließe einen ausgewählten UserTask ab
+# Codebeispiel - Starten eines Prozesses
 
 ```TypeScript
 import {
   ConsumerContext,
   IConsumerApiService,
-  ProcessModel,
-  ProcessModelList,
-  ProcessStartRequestPayload,
-  ProcessStartResponsePayload,
-  StartCallbackType,
-  UserTask,
-  UserTaskList,
-  UserTaskResult,
+  StartCallbackType
 } from '@process-engine/consumer_api_contracts';
 
-const consumerApiService: IConsumerApiService; // Get via IoC
+// Retrieve through dependency injection
+const consumerApiService: IConsumerApiService;
 
+// The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
-}
+};
 
-const processModel: ProcessModel =
-  await getStartableProcessModelFromList();
-
-const correlationId: string =
-  await startProcessInstanceAndReturnCorrelationId(processModel);
-
-const waitingUserTask: UserTask =
-  await getWaitingUserTaskForCorrelation(correlationId);
-
-await finishGivenUserTaskWithResultSet(processModel,
-                                       correlationId,
-                                       waitingUserTask);
-
-// Get list of process models you are allowed to access
-// and pick the first one available
-async function getStartableProcessModelFromList(): Promise<ProcessModel> {
-
-  const processModelList: ProcessModelList =
-    await consumerApiService.getProcessModels(context);
-
-  return processModelList[0];
-}
-
-// Start the given process model, and provide a start event key and payload.
-async function startProcessInstanceAndReturnCorrelationId(
-    processModel: ProcessModel
-  ): Promise<string> {
-
-  const startEventKey = 'StartEvent_1';
-  const payload: ProcessStartRequestPayload = {
-    // If not provided, a correlationId will be generated
-    correlation_id: 'randomcorrelationid',
-  };
-
-  const startCallbackType: StartCallbackType =
-    StartCallbackType.CallbackOnProcessInstanceCreated;
-
-  const result: ProcessStartResponsePayload =
-    await consumerApiService.startProcessInstance(context,
-                                                  processModel.key,
-                                                  startEventKey,
-                                                  payload,
-                                                  startCallbackType);
-
-  const correlationId: string = result.correlation_id;
-
-  return correlationId;
-}
-
-// get the user tasks for the correlation and pick the first from the list
-async function getWaitingUserTaskForCorrelation(
-    correlationId: string
-  ): Promise<UserTask> {
-
-  const userTaskList: UserTaskList =
-    await consumerApiService.getUserTasksForCorrelation(context,
-                                                        correlationId);
-
-  return userTaskList[0];
-}
-
-// finish the given user task, using a sample result set
-async function finishGivenUserTaskWithResultSet(processModel: ProcessModel,
-                                                correlationId,
-                                                userTask: UserTask
-                                               ): Promise<void> {
-
-  const userTaskResult: UserTaskResult = {
-    form_fields: {
-      Form_XGSVBgio: true,
-    },
-  };
-
-  await consumerApiService.finishUserTask(context,
-                                          processModel.key,
-                                          correlationId,
-                                          userTask.id,
-                                          userTaskResult);
-}
+await consumerApiService
+  .startProcessInstance(context,
+                        'processModelKey',
+                        'startEventKey',
+                        {},
+                        StartCallbackType.CallbackOnProcessInstanceCreated);
 ```
+
+Für weitere Beispiele, siehe Funktionsdokumentation.
