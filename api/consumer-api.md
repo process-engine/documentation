@@ -18,71 +18,73 @@ Das hier vorgestellte Konzept gilt für **sämtliche** technischen Implementieru
 egal ob TypeScript, .NET, oder anderen Implementierungen, die in Zukunft einmal
 folgen könnten.
 
-> ## TODOs und allgemeine offene Fragen
->
-> * Spezifikation des EventTrigger-Payloads
-> * Werden bei der Rest-API die Validierungen geliefert?
-> * Auflistung der IConsumerAPI-Methoden zu den REST-APIs
-
 ## Technischer Aufbau
 
 ![Aufbau](./consumer_api/images/consumer_api_architecture.png)
 
 Wie im Diagramm zu erkennen, unterscheidet man zwischen zwei Anwendungsfällen:
 
-### Anwendung mit _integrierter_ Process Engine
+### Anwendung mit _integrierter_ ProcessEngine
 
 In diesem Fall greifen externe Anwendungsservices auf den **ConsumerAPI-core**
-zu, der dann wiederum mit den Services der Process Engine kommuniziert.
+zu, der dann wiederum mit den Services der ProcessEngine kommuniziert.
 
-### Anwendung mit _externer_ Process Engine
+### Anwendung mit _externer_ ProcessEngine
 
-Hier kommt zusätzlich ein **ConsumerClient** mit ins Spiel.
+Hier kommt zusätzlich ein `ConsumerClient` mit ins Spiel.
 Dieser kommuniziert über HTTP-Routen und Messagebus-Kanäle mit der ConsumerAPI
-der externen Process Engine.
+der externen ProcessEngine.
 
-Sowohl der **consumer-api_client** als auch der **consumer-api_core** leiten
-ihre Schnittstellen aus dem `IConsumerAPI` Interface ab, wodurch sichergestellt
+Sowohl der `ConsumerApiClient` als auch der `ConsumerApiCore` leiten
+ihre Schnittstellen aus dem `IConsumerApiService` Interface ab, wodurch sichergestellt
 ist, dass sich beide Komponenten auf die exakt gleiche Art verwenden lassen.
 
-Das gewährleistet auch eine sehr leichte Austauschbarkeit, da es mit nur wenig
-Aufwand möglich ist z.B. eine Process Engine, die in einer Anwendung intern
-verwendet wird, gegen eine externe Process Engine auszutauschen, die z.B.
-auf einem zentralen Server liegt.
+Dieser Aufbau gewährleistet auch die geforderte Austauschbarkeit, da es durch
+diese Architektur mit nur wenig Aufwand möglich ist eine interne ProcessEngine
+gegen eine ausgelagerte zu tauschen, oder umgekehrt.
+Dadurch dass sie die ConsumerAPI verwendet, wird die implementierende Anwendung
+von dem Austausch nichts mitbekommen.
 
-### consumer-api_core und consumer-api_http
+### ConsumerApiContracts
 
-Das consumer-api_core Paket dient der Kommunikation mit der Process Engine.
+Dieses Paket definiert die gemeinsam genutzten Schnittstellen.
+Neben einem `IConsumerApiService` Interface, welches die Funktionen für die
+`ConsumerApiCore` und `ConsumerApiClient` Pakete definiert, sind hier auch die
+Messagebuspfade und REST-Routen definiert, über welche die ConsumerAPI Pakete
+kommunizieren.
 
-In einer Anwendung mit integrierter Process Engine wird die ConsumerAPI
-als Service direkt verwendet.
+### ConsumerApiCore
 
-Wird eine externe Process Engine verwendet, dient das consumer-api_http-Paket
-als Schnittstelle für den consumer-api_client um mit dem
-consumer-api_core zu kommunizieren.
+Das `ConsumerApiCore` Paket dient der direkten Kommunikation mit der
+ProcessEngine.
 
-### consumer-api_client-Paket
+In einer Anwendung mit integrierter ProcessEngine, wird dieses Paket direkt
+verwendet.
 
-Der consumer-api_client dient der Kommunikation mit der ConsumerAPI
-einer **externen** Process Engine.
+Wenn eine ProcessEngine in einer externen Anwendung angesteuert werden soll,
+wird dieses paket in die Anwendung implementiert, in welcher sich die
+ProcessEngine befindet.
 
-Das Paket besteht aus folgenden Komponenten:
+### ConsumerApiClient
 
-* Einem _Service_, den die implementierende Anwendung verwenden kann
-* Einem _Repository_, welches über HTTP, bzw. Messagebus mit der ConsumerAPI
-  der externen Process Engine kommuniziert
+Der `ConsumerApiClient` dient der Kommunikation mit der ConsumerAPI
+einer **externen** ProcessEngine.
+
+### ConsumerApiHttp
+
+Wird eine externe ProcessEngine verwendet, dient das Paket `ConsumerApiHttp`
+als Schnittstelle für den `ConsumerApiClient` um mit dem
+`ConsumerApiCore` zu kommunizieren.
 
 ### REST/Messagebus-Schnittstelle
 
-consumer-api_client und consumer-api_core kommunizieren über eine REST- und eine
+`ConsumerApiClient` und `ConsumerApiCore` kommunizieren über eine REST- und eine
 Messagebus-Schnittstelle.
 
-Diese Schittstellen dienen keinem anderen Zweck und sollten dementsprechend
-auch niemals über eine andere Komponente als dem consumer-api_client verwendet
-werden.
+Die REST-Schnittstelle wird durch `ConsumerApiHttp` bereitgestellt.
 
-Durch die gemeinsame Verwendung des `IConsumerApi` Interfaces leiten sich
-die Routen und Pfade der Schnittstellen direkt aus diesem ab.
+Diese Schittstellen dienen keinem anderen Zweck und sollten niemals über
+eine andere Komponente als dem `ConsumerApiClient` verwendet werden.
 
 #### HTTP-Routen
 
@@ -94,20 +96,25 @@ Bei einer API-Version 1 würde dies folgendermaßen aussehen:
 /api/consumer/v1
 ```
 
-So ergibt sich z.B. folgende URL für das Starten von Prozessinstanzen:
+So ergibt sich z.B. folgende URL für das Abfragen wartender UserTasks in einer Correlation:
 
 ```REST
-
+GET /api/consumer/v1/correlations/:correlation_id/user_tasks
 ```
-
 
 Eine Erklärung zur Routenbenennung kann [hier](./consumer_api/dealing_with_events.md#auslösen-eines-prozessinstanz-events) eingesehen werden.
 
-Die Aufgaben der jeweiligen Routen wird im folgenden Abschnitt genauer erklärt.
+Welche Routen es gibt und was deren Funktionen sind,
+wird im folgenden Abschnitt genauer erklärt.
 
 ## Aufgaben der ConsumerAPI
 
 Über die ConsumerAPI müssen folgende Aufgaben erledigt werden können:
+
+> ## TODO
+>
+> * Spezifikation des EventTrigger-Payloads
+> * Auflistung der IConsumerApiService-Methoden zu den REST-APIs
 
 * [Auflisten startbarer Prozessmodelle](./consumer_api/tasks/list-startable-process-models.md)
   * [Alle Prozessmodelle abfragen](./consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
