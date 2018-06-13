@@ -1,83 +1,28 @@
 # Schnittstelle: ConsumerAPI
 
-Die ConsumerAPI dient zur Ausführung von Prozessmodellen und der daraus
-resultierenden Interaktion mit der ProcessEngine.
+Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
+resultierende Interaktion mit der ProcessEngine.
 
-Die fachliche Stabilität ist eines der wichtigsten Merkmale der ConsumerAPI.
+Sie ermöglicht es einem Consumer mit einer ProcessEngine zu kommunizieren,
+unabhängig davon, wo diese sich befindet.
+Es kann sich um eine ProcessEngine handeln, die remote auf einem Server liegt,
+oder um eine ProcessEngine, die direkt in die Anwendung integriert ist.
 
-> ## TODOs und allgemeine Fragen
+Dadurch wird eine lose Kopplung zwischen ProcessEngine und Consumer erreicht,
+was eine leichte Austauschbarkeit garantiert.
+
+Die fachliche Stabilität ist eine der wichtigsten Anforderungen
+an die ConsumerAPI.
+
+Das hier vorgestellte Konzept gilt für **sämtliche** technischen Implementierungen,
+egal ob TypeScript, .NET, oder anderen Implementierungen, die in Zukunft einmal
+folgen könnten.
+
+> ## TODOs und allgemeine offene Fragen
 >
-> * Spezifikation des UserTask-Payloads
+> * Spezifikation des EventTrigger-Payloads
 > * Werden bei der Rest-API die Validierungen geliefert?
 > * Auflistung der IConsumerAPI-Methoden zu den REST-APIs
-
-## Begriffsdefinitionen
-
-Manche Begriffe haben im Kontext der ConsumerAPI eine besondere Bedeutung,
-die sich aus dem Namen nicht unbedingt offensichtlich ableiten lässt.
-
-Um Missverständnissen vorzubeugen, werden nachfolgend die wichtigsten Begriffe
-kurz definiert.
-
-### Definition von 'Consumer'
-
-Ein Consumer ist eine Person oder ein Programm, das in die Ausführung
-eines Prozesses involviert ist. Er ist ein Akteur in einem Prozess.
-
-Beispiele sind:
-
-* Eine Person, die ein Formular ausfüllen muss, welches vom Prozess benötigt
-  wird.
-* Ein Programm, das einen laufenden Prozess über eine Zustandsveränderung
-  informiert.
-* Eine Person oder ein Programm, das einen Prozess startet.
-
-### Definition von 'Correlation'
-
-Es kann vorkommen, dass das Ausführen eines Prozesses den Start anderer
-Prozesse mit sich zieht, oder dass mehrere Prozesse nacheinander ablaufen
-und so eine Prozesskette bilden.
-
-Derartige Konstrukte, werden als `Vorgang`, oder `Correlation` bezeichnet.
-
-_Hinweis_: Ein Vorgang muss nicht _zwingend_ aus mehreren Prozessen bestehen.
-Man kann auch einen Vorgang mit einem einzelnen Prozess definieren.
-
-### Definition von 'Event'
-
-Das `Event` bezeichnet die allgemeine Basis für Ereignise, die bei der
-Verarbeitung von Prozessmodellen innerhalb der ProcessEngine aufkommen können.
-
-Bei den Events werden zwei Unterteilungen vorgenommen:
-
-* `BpmnEvent` -Events, die durch den BPMN 2.0 Standard definiert sind.
-* `SystemEvent` -Events, die durch die Verarbeitung eines Prozessmodells
-  innerhalb der ProcessEngine vom System ausgelöst werden und nicht durch
-  den BPMN Standard definiert sind.
-
-#### Definition von 'System Event'
-
-Ein `SystemEvent` bezeichnet ein Event, welches sich auf einen Prozess oder
-Vorgang bezieht, aber **nicht** innerhalb des zugehörigen Prozesmodells
-modelliert ist.
-
-`System Events` sind zum Beispiel:
-
-* Prozess gestartet
-* Prozess beendet
-* Prozess abgebrochen
-
-#### Definition von 'BPMN Event'
-
-Mit dem Begriff `BPMN Event` ist immer ein Event gemeint, welches in einem
-Prozessmodell modelliert wurde.
-
-Beispiele für `BPMN Events`:
-
-* Email Versand erfolgreich
-* Der Prozess sendet ein Signal
-* Eine Nachricht wurde empfangen
-* Ein Timer ist abgelaufen
 
 ## Technischer Aufbau
 
@@ -149,7 +94,12 @@ Bei einer API-Version 1 würde dies folgendermaßen aussehen:
 /api/consumer/v1
 ```
 
-> TODO: mm - muss noch ausformuliert werden
+So ergibt sich z.B. folgende URL für das Starten von Prozessinstanzen:
+
+```REST
+
+```
+
 
 Eine Erklärung zur Routenbenennung kann [hier](./consumer_api/dealing_with_events.md#auslösen-eines-prozessinstanz-events) eingesehen werden.
 
@@ -159,19 +109,19 @@ Die Aufgaben der jeweiligen Routen wird im folgenden Abschnitt genauer erklärt.
 
 Über die ConsumerAPI müssen folgende Aufgaben erledigt werden können:
 
-* [Auflisten startbarer Prozessmodelle](./consumer_api/aufgaben/auflisten-startbarer-prozessmodelle.md) **(Done)**
-  * [Alle Prozessmodelle abfragen](./consumer_api/aufgaben/auflisten-startbarer-prozessmodelle.md#alle-prozessmodelle-abfragen) **(Done)**
-  * [Einzelnes Prozessmodell abfragen](./consumer_api/aufgaben/auflisten-startbarer-prozessmodelle.md#einzelnes-prozessmodell-abfragen) **(Done)**
-* [Starten eines Prozessmodells](./consumer_api/aufgaben/starten-eines-prozessmodells.md) **(Done)**
-  * [Starten und auf ein `System Event` warten](./consumer_api/aufgaben/starten-eines-prozessmodells.md#starten-und-auf-ein-system-event-warten) **(Done)**
-  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/aufgaben/starten-eines-prozessmodells.md#starten-und-auf-ein-bestimmtes-endevent-warten) **(Done)**
-* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./consumer_api/aufgaben/abfragen-von-bpmn-ereignissen-auf-die-der-prozess-wartet.md)
-* [Auslösen von Ereignissen](./consumer_api/aufgaben/ausloesen-von-ereignissen.md)
-* [Auflisten wartender UserTasks](./consumer_api/aufgaben/auflisten-wartender-usertasks.md) **(Done)**
-* [Abschließen eines UserTasks](./consumer_api/aufgaben/abschließen-eines-usertasks.md) **(Done)**
-* [Erhalten von Prozessbenachrichtigungen](./consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md)
-  * [Arten von Prozessbenachrichtigungen](./consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#arten-von-prozessbenachrichtigungen)
-  * [Erhalten von BPMN-Events](./consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-bpmn-events)
-  * [Erhalten von Infos zu start und ende von Aktivitäten](./consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
-  * [Erhalten von System-Events](./consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-system-events)
-  * [Erhalten von BPMN-Signalen](./consumer_api/aufgaben/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-bpmn-signalen)
+* [Auflisten startbarer Prozessmodelle](./consumer_api/tasks/auflisten-startbarer-prozessmodelle.md)
+  * [Alle Prozessmodelle abfragen](./consumer_api/tasks/auflisten-startbarer-prozessmodelle.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](./consumer_api/tasks/auflisten-startbarer-prozessmodelle.md#einzelnes-prozessmodell-abfragen)
+* [Starten einer Prozessinstanz](./consumer_api/tasks/start_process_instance.md)
+  * [Starten und auf ein SystemEvent warten](./consumer_api/tasks/start_process_instance.md#starten-und-auf-ein-system-event-warten)
+  * [Starten und auf ein bestimmtes EndEvent warten](./consumer_api/tasks/start_process_instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
+* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./consumer_api/tasks/abfragen-von-bpmn-ereignissen-auf-die-der-prozess-wartet.md)
+* [Auslösen von Ereignissen](./consumer_api/tasks/ausloesen-von-ereignissen.md)
+* [Auflisten wartender UserTasks](./consumer_api/tasks/auflisten-wartender-usertasks.md)
+* [Abschließen eines UserTasks](./consumer_api/tasks/abschließen-eines-usertasks.md)
+* [Erhalten von Prozessbenachrichtigungen](./consumer_api/tasks/erhalten-von-prozessbenachrichtigungen.md)
+  * [Arten von Prozessbenachrichtigungen](./consumer_api/tasks/erhalten-von-prozessbenachrichtigungen.md#arten-von-prozessbenachrichtigungen)
+  * [Erhalten von BpmnEvents](./consumer_api/tasks/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-bpmn-events)
+  * [Erhalten von Infos zu start und ende von Aktivitäten](./consumer_api/tasks/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
+  * [Erhalten von SystemEvents](./consumer_api/tasks/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-system-events)
+  * [Erhalten von BPMN-Signalen](./consumer_api/tasks/erhalten-von-prozessbenachrichtigungen.md#erhalten-von-bpmn-signalen)
