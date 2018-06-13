@@ -7,11 +7,13 @@ import {
   ICorrelationResult,
 } from '@process-engine/consumer_api_contracts';
 
+// Retrieve through dependency injection
 const consumerApiService: IConsumerApiService;
 
+// The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
-}
+};
 
 // Required paramters
 const processModelKey = 'test_consumer_api_process_start';

@@ -1,41 +1,48 @@
 # Auflisten wartender UserTasks
 
+Siehe [Konzept zum Auflisten wartender UserTasks](../../../../api/consumer_api/tasks/list-waiting-usertasks.md).
+
 ```TypeScript
-import {ConsumerContext, IConsumerApiService, UserTaskList} from '@process-engine/consumer_api_contracts';
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  UserTaskList
+} from '@process-engine/consumer_api_contracts';
 
-const consumerApiService: IConsumerApiService; // Get via IoC
+// Retrieve through dependency injection
+const consumerApiService: IConsumerApiService;
 
-// Required parameters
-const processModelKey: string = 'consumer_api_lane_test';
-const correlationId: string = 'someCorrelationId';
+// The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
 };
 
+// Required parameters
+const processModelKey: string = 'consumer_api_lane_test';
+const correlationId: string = 'someCorrelationId';
+
 // Get the user tasks for the correlation
-let userTaskList: UserTaskList = await consumerApiService.getUserTasksForCorrelation(context, correlationId);
+let userTaskList: UserTaskList =
+  await consumerApiService.getUserTasksForCorrelation(context, correlationId);
 
 // Get the user tasks for the process model
-userTaskList = await consumerApiService.getUserTasksForProcessModel(context, processModelKey);
+userTaskList =
+  await consumerApiService.getUserTasksForProcessModel(context, processModelKey);
 
 // Get the user tasks for the process model within the correlation
-userTaskList = await consumerApiService.getUserTasksForProcessModelInCorrelation(context, processModelKey, correlationId);
+userTaskList =
+  await consumerApiService.getUserTasksForProcessModelInCorrelation(context,
+                                                                    processModelKey,
+                                                                    correlationId);
 ```
 
-### Ziel/UseCase
+## Parameter
 
-Holt `UserTasks`, die darauf warten bearbeitet zu werden.
-
-Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
-bearbeiten darf.
-
-### Parameter
-
-#### Erforderliche Parameter
+### Erforderliche Parameter
 
 * `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 
-#### Optionale Parameter
+### Optionale Parameter
 
 * `process_model_key` - Wenn angegeben werden nur `UserTasks` angefragt, die zu
   dem ProzessModell gehören, das durch diesen Key identifiziert wird.
@@ -43,8 +50,7 @@ bearbeiten darf.
   dem Vorgang gehören, der mit dieser ID identifiziert wird. Der Parameter
   erfordert, dass auch der `process_model_key` Parameter angegeben wird.
 
-
-### Rückgabewerte
+## Rückgabewerte
 
 Die Rückgabe ist vom Typ [UserTasksList](./public_api.md#usertasklist) und beinhaltet
 eine Liste aller gefundenen UserTasks, die darauf warten bearbeitet zu werden.
@@ -75,7 +81,7 @@ Beispielausgabe:
 }
 ```
 
-### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
+## Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung

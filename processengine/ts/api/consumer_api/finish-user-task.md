@@ -1,5 +1,7 @@
 # Abschließen eines UserTasks
 
+Siehe [Konzept zum Beenden wartender UserTasks](../../../../api/consumer_api/tasks/finish-user-task.md).
+
 ```TypeScript
 import {ConsumerContext, IConsumerApiService, UserTaskResult} from '@process-engine/consumer_api_contracts';
 
@@ -23,18 +25,9 @@ const userTaskResult: UserTaskResult = {
 consumerApiService.finishUserTask(context, processModelKey, correlationId, userTaskId, userTaskResult);
 ```
 
-### Ziel/UseCase
+## Parameter
 
-Wenn ein UserTask fertig bearbeitet wurde, wird der Process Engine über diese
-Schnittstelle das Ergebnis des UserTasks mitgeteilt. Das hat zur Folge, dass
-der dazugehörige Prozesspfad weiter ausgeführt wird.
-
-Benutzer können nur die UserTasks abschließen, die sie auch berechtigt
-sind zu sehen.
-
-### Parameter
-
-#### Erforderliche Parameter
+### Erforderliche Parameter
 
 * `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
@@ -44,15 +37,15 @@ sind zu sehen.
 * `user_task_id` - Die ID des UserTasks der abgeschlossen werden soll.
 * `userTaskResult` -  Das Ergebnis des UserTasks, siehe [UserTaskResult](./public_api.md#usertaskresult)
 
-#### Optionale Parameter
+### Optionale Parameter
 
 Die Funktion hat keine optionalen Parameter.
 
-### Rückgabewerte
+## Rückgabewerte
 
 Im Erfolgsfall gibt diese Methode keinen Wert zurück.
 
-### Fehler, die bei einer Fehlbenutzung erwartet werden müssen
+## Fehler, die bei einer Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`: Der bereitgestellte `result` Payload ist ungültig

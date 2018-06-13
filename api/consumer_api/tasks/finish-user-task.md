@@ -1,39 +1,35 @@
 # Abschließen eines UserTasks
 
-### Ziel/UseCase
+## Ziel/UseCase
 
 Wenn ein UserTask fertig bearbeitet wurde, wird der Process Engine über diese
 Schnittstelle das Ergebnis des UserTasks mitgeteilt. Das hat zur Folge, dass
 der dazugehörige Prozesspfad weiter ausgeführt wird.
 
-### Erforderliche und Optionale Parameter
-
-Die Schnittstelle erfordert die folgenden Parameter:
+## Erforderliche Parameter
 
 * `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
-* `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
+  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
+* `processModelKey` - Der Key der das Prozessmodell identifiziert, welches
   den abzuschließenden UserTask beinhaltet.
-* `correlation_id` - Die ID die den Vorgang identifiziert, zu dem der wartende
-  UserTask gehört.
-* `user_task_id` - Die ID des UserTasks der abgeschlossen werden soll.
+* `correlationId` - Die ID der Correlation, zu welcher der UserTask gehört
+* `userTaskId` - Die ID des UserTasks der abgeschlossen werden soll
 * `result` -  Das Ergebnis des UserTasks
 
-### Ergebnis/Rückgabewerte
+## Ergebnis/Rückgabewerte
 
 Bei Erfolg ist das Ergebnis leer.
 
-### Was passiert in der Process Engine
+## Was passiert in der Process Engine
 
-- Es werden alle wartenden UserTasks abgefragt, die zu dem gegebenen
-  ProzessModell in der gegebenen Correlation gehören (siehe
-  [Auflisten wartender UserTasks](./auflisten-wartender-usertasks.md)).
+- Es der passende UserTasks abgefragt, der zu dem gegebenen
+  ProzessModell in der gegebenen Correlation gehört
 - Es wird ein EventListener am EventAggregator registriert, um darauf reagieren
-  zu können, wenn der UserTask erfolgreich abgeschlossen wurde.
+  zu können, wenn der UserTask erfolgreich abgeschlossen wurde
 - Es wird ein Event am EventAggregator gepublished, um der ProcessEngine mit
-  zu teilen, dass der UserTask bearbeitet wurde.
+  zu teilen, dass der UserTask bearbeitet wurde
 
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`: Der bereitgestellte `result` Payload ist ungültig
@@ -48,7 +44,7 @@ Mögliche auftretende Fehler sind:
     gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
-### REST/Messagebus API
+## REST/Messagebus API
 
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
@@ -57,11 +53,26 @@ POST /process_models/{process_model_key}/correlations/{correlation_id}/user_task
 
 // body
 {
-  "form_fields": {
+  "formFields": {
     "Form_XGSVBgio": true
   }
 }
 ```
 
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+## IConsumerApiService Schnittstelle
 
+Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase über die
+Methode `finishUserTask`.
+
+Diese Methode erwartet die oben beschriebenen Parameter
+in folgender Reihenfolge:
+- `context`
+- `processModelKey`
+- `correlationId`
+- `userTaskId`
+- `result`
+
+## Regelwerk
+
+Benutzer können nur die UserTasks abschließen, die sie auch berechtigt
+sind zu sehen.
