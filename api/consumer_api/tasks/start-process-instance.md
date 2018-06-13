@@ -92,13 +92,13 @@ Mögliche auftretende Fehler sind:
 Die HTTP-Routen für die Schnittstelle sehen so aus:
 
 ```JavaScript
-// Start Process Instance and resolve after instance is started
+// Starte Prozessinstanz und antworte direkt nach Prozessstart
 POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceCreated
 
-// Start Process Instance and resolve after instance is finished
+// Starte Prozessinstanz und antworte nach Prozessende
 POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceFinished
 
-// Start Process Instance and resolve after the given EndEvent was reached
+// Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde
 POST /process_models/:process_model_key/start_events/:start_event_key/end_event/:end_event_key/start_and_resolve_by_end_event`
 ```
 

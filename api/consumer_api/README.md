@@ -111,11 +111,6 @@ wird im folgenden Abschnitt genauer erklärt.
 
 Über die ConsumerAPI müssen folgende Aufgaben erledigt werden können:
 
-> ## TODO
->
-> * Spezifikation des EventTrigger-Payloads
-> * Auflistung der IConsumerApiService-Methoden zu den REST-APIs
-
 * [Auflisten startbarer Prozessmodelle](./consumer_api/tasks/list-startable-process-models.md)
   * [Alle Prozessmodelle abfragen](./consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
   * [Einzelnes Prozessmodell abfragen](./consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
