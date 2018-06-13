@@ -1,25 +1,25 @@
-# ConsumerAPI
+# ConsumerAPI.ts
 
-Dieser Abschnitt beschreibt die TS Implementierung der [ConsumerAPI](../../../../api/consumer_api/README.md).
+Dieser Abschnitt beschreibt die TypeScript Implementierung der [ConsumerAPI](../../../../api/consumer_api/README.md).
 
 Die Implementierung baut auf den gleichen [Konzepten](../../konzepte/README.md) und [Architekturmustern](../../architektur/README.md)
-wie die TS Implememntierung der ProcessEngine auf.
+wie die TypeScript Implementierung der ProcessEngine auf.
 
 # Pakete
 
-Die ConsumerAPI umfasst folgende Pakete
+Die ConsumerAPI.ts umfasst folgende Pakete
 - `@process-engine/consumer_api_contracts` - Definiert die Schnittstellen
-für `consumer_api_core` und `consumer_api_client`
+für `@process-engine/consumer_api_core` und `@process-engine/consumer_api_client`
 - `@process-engine/consumer_api_core` - Steuert die Interaktion mit einer
 internen ProcessEngine
 - `@process-engine/consumer_api_client` - Steuert die Kommunikation mit einer
 externen ProcessEngine
 - `@process-engine/consumer_api_http` - Dient als Kommunikations-Endpunkt
-für `consumer_api_client`
+für `@process-engine/consumer_api_client`
 
 # Vorraussetzungen
 
-Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
+Um die ConsumerAPI.ts benutzen zu können sind folgende Mindestanforderungen gegeben:
 
 - Das Paket `@process-engine/process-engine` in der Version 6.0.2
 - Node Version 8.9.x
@@ -37,12 +37,12 @@ Für eine detaillierte Installationsanleitung, siehe:
 - [Einrichtung mit integrierter ProcessEngine](setup_internal_process_engine.md)
 - [Einrichtung mit externer ProcessEngine](setup_external_process_engine.md)
 
-Die Konfiguration der Consumer API Komponenten erfolgt nach dem
+Die Konfiguration der ConsumerAPI.ts Komponenten erfolgt nach dem
 [Konfigurationskonzept](../../konzepte/configuration.md).
 
 # Features
 
-Die ConsumerAPI umfasst derzeit folgende Features:
+Die ConsumerAPI.ts umfasst derzeit folgende Features:
 
 * Abfragen startbarer Prozessmodelle
 * Starten von Prozessinstanzen
@@ -51,10 +51,6 @@ Die ConsumerAPI umfasst derzeit folgende Features:
 * Ergebnis einer Prozesskorrelation abfragen
 
 # Dokumentation
-
-## Allgemein
-* [Technischer Aufbau](consumer-api-structure.md)
-* [Public API](public_api.md)
 
 ## Funktionsdokumentation
 * [Abfragen startbarer Prozessmodelle](list-startable-process-models.md)
@@ -66,6 +62,9 @@ Die ConsumerAPI umfasst derzeit folgende Features:
 * [Auflisten wartender UserTasks](list-waiting-usertasks.md)
 * [Abschließen eines UserTasks](finish-user-task.md)
 * [Ergebnis einer Prozesskorrelation abfragen](get-correlation-result.md)
+
+## Zusätzliche Dokumentation
+* [Public API](public_api.md)
 
 # Codebeispiel - Starten eines Prozesses
 

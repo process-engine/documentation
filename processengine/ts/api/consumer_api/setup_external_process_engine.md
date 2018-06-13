@@ -1,7 +1,7 @@
 # Einrichtung mit externer ProcessEngine:
 
-Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI, unter Verwendung
-einer ProcessEngine, die außerhalb der Anwendung liegt.
+Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI.ts,
+unter Verwendung einer ProcessEngine, die außerhalb der Anwendung liegt.
 
 ![Aufbau](images/consumer_api_architecture_external.png)
 
@@ -53,7 +53,6 @@ Beispiel Config:
     ]
   }
 }
-
 ```
 
 In diesem Beispiel haben wir 2 Benutzer:

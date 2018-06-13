@@ -1,6 +1,6 @@
 # Public API
 
-Nachfolgend wird die öffentliche API der ConsumerAPI erläutert.
+Nachfolgend wird die öffentliche API der ConsumerAPI.ts erläutert.
 
 Die Schnittstellen sind im Paket `@process-engine/consumer_api_contracts` definiert.
 
@@ -51,7 +51,7 @@ export interface IConsumerApiService {
 
 Der ConsumerContext enthält die Identity des aktuellen Benutzers.
 Diese wird verwendet, um die Berechtigungen eines Benutzers zu verifizieren,
-wenn der Benutzer Funktionen der ConsumerAPI aufruft.
+wenn der Benutzer Funktionen der ConsumerAPI.ts aufruft.
 
 ```TypeScript
 export class ConsumerContext {
@@ -98,7 +98,7 @@ export class Event {
 
 Die folgenden Schnittstellen beschreiben die Parameter, welche für das Starten
 von Prozessinstanzen verwendet werden.
-Diese werden von den folgenden Methoden der ConsumerAPI services erwartet:
+Diese werden von den folgenden Methoden der ConsumerAPI.ts services erwartet:
 - `startProcessInstance`
 - `startProcessInstanceAndAwaitEndEvent`
 

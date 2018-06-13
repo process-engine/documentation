@@ -41,10 +41,10 @@ Beispielausgabe:
 
 ```JSON
 {
-  "process_models": [
+  "processModels": [
     {
       "key": "MyFancyProcess",
-      "start_events": [
+      "startEvents": [
         {
           "key": "FancyProccessStart1",
           "data": {}
@@ -54,7 +54,7 @@ Beispielausgabe:
           "data": {}
         }
       ],
-      "end_events": [
+      "endEvents": [
         {
           "key": "FancyProccessEnd1",
           "data": {}
@@ -98,7 +98,7 @@ const processModelList: ProcessModelList =
 ### Erforderliche Parameter
 
 * `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
-* `process_model_key` - Der Key des Prozessmodells, welches der Benutzer
+* `processModelKey` - Der Key des Prozessmodells, welches der Benutzer
   abfragen möchte
 
 ### Rückgabewerte
@@ -110,7 +110,7 @@ Beispielausgabe:
 ```JSON
 {
   "key": "MyFancyProcess",
-  "start_events": [
+  "startEvents": [
     {
       "key": "FancyProccessStart1",
       "data": {}
@@ -120,7 +120,7 @@ Beispielausgabe:
       "data": {}
     }
   ],
-  "end_events": [
+  "endEvents": [
     {
       "key": "FancyProccessEnd1",
       "data": {}
@@ -134,6 +134,6 @@ Beispielausgabe:
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
 - `403`: Der anfragende Benutzer ist nicht berechtigt diesen Request auszuführen
-- `404`: Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
+- `404`: Es konnte kein Prozessmodell mit dem gegebenen `processModelKey`
 gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
