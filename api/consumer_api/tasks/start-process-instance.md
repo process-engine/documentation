@@ -87,6 +87,35 @@ Mögliche auftretende Fehler sind:
     eines Fehlers vorzeitig ab
   - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
+### REST/Messagebus API
+
+Die HTTP-Routen für die Schnittstelle sehen so aus:
+
+```JavaScript
+// Start Process Instance and resolve after instance is started
+POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceCreated
+
+// Start Process Instance and resolve after instance is finished
+POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceFinished
+
+// Start Process Instance and resolve after the given EndEvent was reached
+POST /process_models/:process_model_key/start_events/:start_event_key/end_event/:end_event_key/start_and_resolve_by_end_event`
+```
+
+### IConsumerApiService Schnittstelle
+
+Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
+über die Methode `startProcessInstance`.
+
+Diese Methode benötigt die weiter oben beschriebenen Parameter in folgender
+Reihenfolge:
+- `context`
+- `processModelKey`
+- `startEventKey`
+- `payload`
+- `startCallbackType`
+- `endEventKey`
+
 ### Regelwerk
 
 Ein Benutzer kann immer nur die Prozesse starten, die er auch berechtigt ist
