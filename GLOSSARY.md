@@ -152,19 +152,19 @@ Es wird zwischen zwei Arten von `Events` unterschieden:
 Beide Arten von Events werden über den Messagebus veröffentlicht und sind für
 den Benutzer abgreifbar.
 
-### BPMN Event
+## BpmnEvent
 
-Mit dem Begriff `BPMN Event` ist immer ein Event gemeint, welches in einem
+Mit dem Begriff `BpmnEvent` ist immer ein Event gemeint, welches in einem
 Prozessmodell modelliert wurde.
 
-Beispiele für `BPMN Events`:
+Beispiele für `BpmnEvents`:
 
 * Ein modelliertes EndEvent wurde erreicht
 * Der Prozess sendet ein Signal
 * Eine Nachricht wurde empfangen
 * Ein Timer ist abgelaufen
 
-### SystemEvent
+## SystemEvent
 
 Ein `SystemEvent` bezeichnet ein Event, welches sich auf die Ausführung eines
 Prozesses oder Vorgangs bezieht, aber **nicht** innerhalb des zugehörigen
