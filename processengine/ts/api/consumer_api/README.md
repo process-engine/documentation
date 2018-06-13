@@ -1,10 +1,9 @@
 # ConsumerAPI
 
-Die ConsumerAPI dient zur Ausführung von Prozessmodellen und steuert die daraus
-resultierende Interaktion mit der ProcessEngine.
+Dieser Abschnitt beschreibt die TS Implementierung der [ConsumerAPI](../../../../api/consumer_api/README.md).
 
-Dabei werden die gleichen [Konzepte](../../konzepte/README.md) und [Architekturmuster](../../architektur/README.md) verwendet,
-wie sie von der ProcessEngine selbst benutzt werden.
+Die Implementierung baut auf den gleichen [Konzepten](../../konzepte/README.md) und [Architekturmustern](../../architektur/README.md)
+wie die TS Implememntierung der ProcessEngine auf.
 
 # Pakete
 
@@ -56,7 +55,6 @@ Die ConsumerAPI umfasst derzeit folgende Features:
 ## Allgemein
 * [Technischer Aufbau](consumer-api-structure.md)
 * [Public API](public_api.md)
-* [Glossar](glossary.md)
 
 ## Funktionsdokumentation
 * [Abfragen startbarer Prozessmodelle](list-startable-process-models.md)

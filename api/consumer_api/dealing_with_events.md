@@ -1,41 +1,5 @@
 # ConsumerAPI
 
-### Definition von 'Event'
-
-Das `Event` bezeichnet die allgemeine Basis für Ereignise, die bei der
-Verarbeitung von Prozessmodellen innerhalb der ProcessEngine aufkommen können.
-
-Bei den Events werden zwei Unterteilungen vorgenommen:
-
-* `BpmnEvent` -Events, die durch den BPMN 2.0 Standard definiert sind.
-* `SystemEvent` -Events, die durch die Verarbeitung eines Prozessmodells
-  innerhalb der ProcessEngine vom System ausgelöst werden und nicht durch
-  den BPMN Standard definiert sind.
-
-#### Definition von 'System Event'
-
-Ein `SystemEvent` bezeichnet ein Event, welches sich auf einen Prozess oder
-Vorgang bezieht, aber **nicht** innerhalb des zugehörigen Prozesmodells
-modelliert ist.
-
-`System Events` sind zum Beispiel:
-
-* Prozess gestartet
-* Prozess beendet
-* Prozess abgebrochen
-
-#### Definition von 'BPMN Event'
-
-Mit dem Begriff `BPMN Event` ist immer ein Event gemeint, welches in einem
-Prozessmodell modelliert wurde.
-
-Beispiele für `BPMN Events`:
-
-* Email Versand erfolgreich
-* Der Prozess sendet ein Signal
-* Eine Nachricht wurde empfangen
-* Ein Timer ist abgelaufen
-
 ## Umgang mit Events
 
 Wenn von Events gesprochen wird, gibt es dabei zwei Sichtweisen:
