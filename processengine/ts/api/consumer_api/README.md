@@ -57,8 +57,6 @@ Die ConsumerAPI.ts umfasst derzeit folgende Features:
   * [Alle Prozessmodelle abfragen](list-startable-process-models.md#alle-prozessmodelle-abfragen)
   * [Einzelnes Prozessmodell abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
 * [Starten von Prozessinstanzen](start-process-instance.md)
-  * [Starten und auf ein System Event warten](start-process-instance.md#starten-und-auf-ein-system-event-warten)
-  * [Starten und auf ein bestimmtes EndEvent warten](start-process-instance.md#starten-und-auf-ein-bestimmtes-endevent-warten)
 * [Auflisten wartender UserTasks](list-waiting-usertasks.md)
 * [Abschließen eines UserTasks](finish-user-task.md)
 * [Ergebnis einer Prozesskorrelation abfragen](get-correlation-result.md)
