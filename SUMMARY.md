@@ -30,7 +30,7 @@
 
 ## API
 
-1. [ConsumerAPI](api/consumer-api.md)
+1. [ConsumerAPI](api/consumer_api/README.md)
   * [Auflisten startbarer Prozessmodelle](api/consumer_api/tasks/list-startable-process-models.md)
       * [Alle Prozessmodelle abfragen](api/consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
       * [Einzelnes Prozessmodell abfragen](api/consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
@@ -81,7 +81,6 @@
         * [Auflisten wartender UserTasks](processengine/ts/api/consumer_api/list-waiting-usertasks.md)
         * [Abschließen eines UserTasks](processengine/ts/api/consumer_api/finish-user-task.md)
         * [Ergebnis einer Prozesskorrelation abfragen](processengine/ts/api/consumer_api/get-correlation-result.md)
-        * [Technischer Aufbau](processengine/ts/api/consumer_api/consumer-api-structure.md)
         * [Public API](processengine/ts/api/consumer_api/public_api.md)
             * [IConsumerApiService](processengine/ts/api/consumer_api/public_api.md#iconsumerapiservice)
             * [ConsumerContext](processengine/ts/api/consumer_api/public_api.md#consumercontext)
