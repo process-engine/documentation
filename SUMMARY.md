@@ -69,7 +69,7 @@
     * [Extensions](processengine/ts/architektur/extensions.md)
 
   1. [APIs](processengine/ts/api/README.md)
-    * [Consumer API](processengine/ts/api/consumer_api/README.md)
+    * [ConsumerAPI](processengine/ts/api/consumer_api/README.md)
         * [Einrichtung mit integrierter ProcessEngine](processengine/ts/api/consumer_api/setup_internal_process_engine.md)
         * [Einrichtung mit externer ProcessEngine](processengine/ts/api/consumer_api/setup_external_process_engine.md)
         * [Abfragen startbarer Prozessmodelle](processengine/ts/api/consumer_api/list-startable-process-models.md)

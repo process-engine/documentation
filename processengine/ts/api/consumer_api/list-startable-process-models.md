@@ -1,40 +1,34 @@
 # Auflisten startbarer Prozessmodelle
 
+Siehe [Konzept zum Auflisten startbarer Prozessmodelle](../../../../api/consumer_api/tasks/list-startable-process-models.md).
+
 * [Alle Prozessmodelle abfragen](#alle-prozessmodelle-abfragen)
 * [Einzelnes Prozessmodell abfragen](#einzelnes-prozessmodell-abfragen)
 
 ## Alle Prozessmodelle abfragen
 
 ```TypeScript
-import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  ProcessModelList
+} from '@process-engine/consumer_api_contracts';
 
-const consumerApiService: IConsumerApiService; // Get via IoC
+// Retrieve through dependency injection
+const consumerApiService: IConsumerApiService;
 
+// The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
-}
+};
 
-const processModelList: ProcessModelList = await consumerApiService.getProcessModels(context);
+const processModelList: ProcessModelList =
+  await consumerApiService.getProcessModels(context);
 ```
 
-### Ziel/UseCase
-
-Bezieht eine Liste aller Prozessmodelle.
-
-Es werden nur Prozessmodelle angezeigt, auf die folgendes zutrifft:
-- Der Benutzer hat die Berechtigung den Prozess zu sehen
-- Der Prozess ist als ausführbar markiert (`isExecutable` Flag ist gesetzt)
-- Es existiert mindestens ein `StartEvent` auf das der Benutzer Zugriff hat
-
-### Parameter
-
-#### Erforderliche Parameter
+### Erforderliche Parameter
 
 * `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
-
-#### Optionale Parameter
-
-Die Funktion hat keine optionalen Parameter.
 
 ### Rückgabewerte
 
@@ -59,6 +53,12 @@ Beispielausgabe:
           "key": "FancyProccessStart2",
           "data": {}
         }
+      ],
+      "end_events": [
+        {
+          "key": "FancyProccessEnd1",
+          "data": {}
+        }
       ]
     }
   ]
@@ -75,37 +75,31 @@ auszuführen
 ## Einzelnes Prozessmodell abfragen
 
 ```TypeScript
-import {ConsumerContext, IConsumerApiService, ProcessModelList} from '@process-engine/consumer_api_contracts';
+import {
+  ConsumerContext,
+  IConsumerApiService,
+  ProcessModelList
+} from '@process-engine/consumer_api_contracts';
 
-const consumerApiService: IConsumerApiService; // Get via IoC
+// Retrieve through dependency injection
+const consumerApiService: IConsumerApiService;
 
+// The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
   identity: 'insertJwtTokenHere',
-}
+};
 
 const processModelKey: string = 'test_consumer_api_process_start';
 
-const processModelList: ProcessModelList = await consumerApiService.getProcessModelByKey(context, processModelKey);
+const processModelList: ProcessModelList =
+  await consumerApiService.getProcessModelByKey(context, processModelKey);
 ```
 
-### Ziel/UseCase
-
-Unter Angabe eines `process_model_keys` kann ein einzelnes Prozessmodell direkt
-abgefragt werden. Das dient dazu zu erfahren ob der Benutzer auf das
-Prozessmodell zugreifen darf und welche StartEvents des Prozesses er auslösen
-kann.
-
-### Parameter
-
-#### Erforderliche Parameter
+### Erforderliche Parameter
 
 * `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
 * `process_model_key` - Der Key des Prozessmodells, welches der Benutzer
   abfragen möchte
-
-#### Optionale Parameter
-
-Die Funktion hat keine optionalen Parameter.
 
 ### Rückgabewerte
 
@@ -123,6 +117,12 @@ Beispielausgabe:
     },
     {
       "key": "FancyProccessStart2",
+      "data": {}
+    }
+  ],
+  "end_events": [
+    {
+      "key": "FancyProccessEnd1",
       "data": {}
     }
   ]

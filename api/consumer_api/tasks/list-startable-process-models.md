@@ -7,18 +7,26 @@
 
 ### Ziel/UseCase
 
-Bezieht eine Liste aller Prozessmodelle, welche über mindestens ein
-StartEvent verfügen welches der aktuell eingeloggte Benutzer sehen darf.
+Bezieht eine Liste aller Prozessmodelle.
 
-Ziel ist es, dem Benutzer zu ermöglichen, Prozesse zu starten. Dafür muss er
-wissen, welche Prozesse er starten kann
+Es werden nur Prozessmodelle angezeigt, auf die folgendes zutrifft:
+- Der Benutzer hat die Berechtigung den Prozess zu sehen
+- Der Prozess ist als ausführbar markiert (`isExecutable` Flag ist gesetzt)
+- Es existiert mindestens ein `StartEvent` auf das der Benutzer Zugriff hat
 
-### Erforderliche und Optionale Parameter
+Ziel ist es, dem Benutzer zu ermöglichen, Prozesse zu starten.
+Dafür muss er wissen, welche Prozesse er überhaupt starten kann.
 
-Die Schnittstelle erfordert die folgenden Parameter:
+### Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
+#### Erforderliche Parameter
+
+* `context` - Der Kontext, in dem die Abarbeitung der Funktion geschehen soll.
+  Enthält u.A. einen Token, der den anfragenden Benutzer identifiziert.
+
+#### Optionale Parameter
+
+Die Schnittstelle hat keine optionalen Parameter.
 
 ### Ergebnis/Rückgabewerte
 
@@ -27,6 +35,9 @@ Jedes JSON Objekt in diesem Array beinhaltet dabei folgende Informationen:
 
 * Den Key des Prozessmodells
 * Eine Auflistung der Keys aller im Prozessmodell enthaltenen StartEvents
+* Eine Auflistung der Keys aller im Prozessmodell enthaltenen EndEvents
+
+**Wichtig**: Es werden nur Events ausgegben, auf die der Benutzer zugreifen darf.
 
 Daraus ergibt sich folgende Response:
 
@@ -38,12 +49,16 @@ Daraus ergibt sich folgende Response:
       "start_events": [
         {
           "key": "FancyProccessStart1",
-          "id": "someStartEventId",
           "data": {}
         },
         {
           "key": "FancyProccessStart2",
-          "id": "someOtherStartEventId",
+          "data": {}
+        }
+      ],
+      "end_events": [
+        {
+          "key": "FancyProccessEnd1",
           "data": {}
         }
       ]
@@ -53,7 +68,16 @@ Daraus ergibt sich folgende Response:
       "start_events": [
         {
           "key": "TestStart",
-          "id": "yetAnOtherStartEventId",
+          "data": {}
+        }
+      ],
+      "end_events": [
+        {
+          "key": "FancyProccessEnd1",
+          "data": {}
+        },
+        {
+          "key": "FancyProccessEnd2",
           "data": {}
         }
       ]
@@ -64,13 +88,15 @@ Daraus ergibt sich folgende Response:
 
 ### Was passiert in der Process Engine
 
-- Es werden alle Prozessmodelle angefragt.
-- Davon werden alle übernommen, die Lanes haben auf die der Verwender zugriff
-  hat. Lanes ohne StartEvents werden dabei behandlet, als hätte der Verwender
-  keinen Zugriff auf die Lane.
+- Es werden alle Prozessmodelle angefragt
+- Prozessmodelle, welche keine StartEvents beinhalten, auf die der Benutzer
+Zugriff hat, werden herausgefiltert
+  - Welche StartEvents verfügbar sind, richtet sich danach, auf welcher Lane
+  diese sich befinden
 - Jedem verbleibenden Prozessmodell werden die so bestimmten zugehörigen
-  StartEvents zugeteilt.
-- Die Prozessmodelle werden als Ergebnis zurückgegeben.
+  StartEvents zugeteilt
+- Die gleiche Rechteprüfung und Zuweisung passiert auch für EndEvents
+- Die Prozessmodelle werden als Ergebnis zurückgegeben
 
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
@@ -84,31 +110,57 @@ auszuführen
 
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
-```
+```REST
 GET /process_models
 ```
 
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+### IConsumerApiService Schnittstelle
+
+Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
+über die Methode `getProcessModels`.
+
+Als Parameter nimmt diese Methode den `Context` (siehe oben)
+des Benutzers entgegen.
+
+### Zugriffsberechtigungen
 
 Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
 Berechtigungen auch sehen dürfen.
+
+Dabei ist folgendes zu beachten:
+- Prozessmodelle, die mindestens 1 zugreifbares StartEvent und 1 zugreifbares
+ EndEvent haben, werden ausgegeben
+- Prozessmodelle, die mindestens 1 zugreifbares StartEvent, aber **kein**
+zugreifbares EndEvent haben, werden ausgegeben
+- Prozessmodelle, die **kein** zugreifbares StartEvent, aber ein oder mehrere
+zugreifbare EndEvents haben, werden **nicht** ausgegben
+
+Diese Konstellation ist dadurch bedingt, dass es dem Benutzer auch möglich sein
+soll Prozessinstanzen zu starten, ohne sich auf ein bestimmtes EndEvent zu
+subscriben, die Angabe eines StartEvents aber immer zwinged erforderlich ist.
 
 ## Einzelnes Prozessmodell abfragen
 
 ### Ziel/UseCase
 
 Unter Angabe eines `process_model_keys` kann ein einzelnes Prozessmodell direkt
-abgefragt werden. Das dient dazu zu erfahren, welche StartEvents der eingeloggte
-Benutzer zu diesem Prozess auslösen kann.
+abgefragt werden.
+Dies ermöglicht es dem Benutzer zu erfahren, ob er auf das Prozessmodell
+zugreifen darf, welche StartEvents des Prozesses er auslösen und auf welche
+EndEvents er sich subscriben darf.
 
-### Erforderliche und Optionale Parameter
+### Parameter
 
-Die Schnittstelle erfordert die folgenden Parameter:
+#### Erforderliche Parameter
 
 * `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
   (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
-* `process_model_key` - Der Key der das ProzessModell identifiziert, um das es
-  geht
+* `process_model_key` - Der Key des Prozessmodells, welches der Benutzer
+  abfragen möchte
+
+#### Optionale Parameter
+
+Die Funktion hat keine optionalen Parameter.
 
 ### Ergebnis/Rückgabewerte
 
@@ -122,12 +174,12 @@ zurückgegeben wird.
   "start_events": [
     {
       "key": "FancyProccessStart1",
-      "id": "someStartEventId",
       "data": {}
-    },
+    }
+  ],
+  "end_events": [
     {
-      "key": "FancyProccessStart2",
-      "id": "someOtherStartEventId",
+      "key": "FancyProccessEnd1",
       "data": {}
     }
   ]
@@ -136,18 +188,18 @@ zurückgegeben wird.
 
 ### Was passiert in der Process Engine
 
-- Es wird anhand des `process_model_key` das Prozessmodell angefragt.
-- Alle StartEvents, die in Lanes liegen, auf die der Verwender zugriff hat
-  werden dem Prozessmodell zugeteilt.
-- Sollten keine StartEvents vorhanden sein, auf die der Verwender zugriff hat,
-  wird ein ForbiddenError geworfen.
-- Das Prozessmodell wird als Ergebnis zurückgegeben.
+Es passiert hier das gleiche wie beim Abfragen aller Prozessmodelle, nur dass
+die Abfrage und die nötigen Berechtigungs-Checks nur gezielt für ein
+einzelnes Prozessmodell erfolgen.
+
+Alle Einschränkungen und Besonderheiten, die beim Abfragen aller Prozessmodelle
+gelten, kommen auch hier zur Geltung.
 
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
-- `403`: Der anfragende Benutzer ist nicht berechtigt diesen Request auszuführen
+- `403`: Der anfragende Benutzer ist nicht berechtigt das Prozesmodell zu sehen
 - `404`: Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
 gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
@@ -156,11 +208,19 @@ gefunden werden
 
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
-```
-GET /process_models/{process_model_key}
+```REST
+GET /process_models/:process_model_key
 ```
 
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+### IConsumerApiService Schnittstelle
 
-Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
-Berechtigungen auch sehen dürfen.
+Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
+über die Methode `getProcessModelByKey`.
+
+Die weiter oben genannten Parameter müssen in folgender Reihenfolge angegeben werden:
+- `context`
+- `process_model_key`
+
+### Zugriffsberechtigungen
+
+Es gelten die gleichen Einschränkungen, wie beim Abfragen aller Prozessmodelle.
