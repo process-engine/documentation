@@ -1,166 +1,119 @@
 # Starten eines Prozessmodells
 
-* [Starten und auf ein `System Event` warten](#starten-und-auf-ein-system-event-warten)
-* [Starten und auf ein bestimmtes EndEvent warten](#starten-und-auf-ein-bestimmtes-endevent-warten)
+## Ziel/UseCase
 
-## Starten und auf ein `System Event` warten
+Startet eine Prozessinstanz durch das Auslösen eines gegebenen StartEvents.
+Die Schnittstelle antwortet, sobald ein gegebenes Event erreicht wurde.
 
-### Ziel/UseCase
+Dabei kann es sich um ein SystemEvent oder ein Bpmn-EndEvent handeln.
 
-Startet einen Prozess durch das Auslösen eines Start-Events. Die Schnittstelle
-antwortet je nach Verwendung der Parameter entweder sofort nach dem
-erfolgreichen Start des Prozesses, oder nachdem er beendet wurde.
+Prozessinstanzen sind immer Teil einer Correlation.
+Daher ist es optional möglich der Schnittstelle eine eigene CorrelationId
+vorzugeben, wenn man nicht wünscht, dass die ProcessEngine eine
+CorrelationId automatisch generiert.
 
-### Erforderliche und Optionale Parameter
+So oder so wird man jedoch immer darüber informiert, in welcher Correlation
+sich die gestartete Prozessinstanz befindet.
 
-Die Schnittstelle erfordert die folgenden Parameter:
+## Parameter
+
+### Erforderliche Parameter
 
 * `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
-* `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
-  gestartet werden soll.
-* `start_event_key` - Der Key des StartEvents, Das zum starten des Prozesses
-  ausgelöst werden soll.
+  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
+* `processModelKey` - Der Key der das Prozessmodell identifiziert, welches
+  gestartet werden soll
+* `startEventKey` - Der Key des StartEvents, Das zum starten des Prozesses
+  ausgelöst werden soll
+* `endEventKey` - Der Key des EndEvents, bei dessen erreichen die
+  Schnittstelle antwortet. Wird nur ausgewertet, wenn `startCallbackType`
+  auf `CallbackOnEndEventReached` gesetzt wurde, ist dann aber Pflichtangabe
 
-Die Schnittstelle bietet die folgenden optionalen Parameter:
+### Optionale Parameter
 
-* `correlation_id` - Eine ID, anhand derer der gestartete Vorgang identifiziert
-  werden kann. Wenn nicht angegeben, wird die Process Engine eine correlation_id
-  generieren.
+* `correlationId` - Eine ID, anhand derer der gestartete Vorgang identifiziert
+  werden kann. Wenn nicht angegeben, wird die ProcessEngine selbst eine
+  correlationId generieren
+* `inputValues` - Eingabewerte, mit denen der Prozess gestartet wird.
+* `startCallbackType` - Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
+  * `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
+    Prozessinstanz **gestartet**  wurde
+  * `CallbackOnProcessInstanceFinished` - Die Schnittstelle antwortet, wenn die
+    Prozessinstanz **beendet**  wurde
+  * `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
+    Prozessinstanz durch ein bestimmtes EndEvent **beendet** wurde
+  * Default ist `CallbackOnProcessInstanceCreated`
 
-* `input_values` - Eingabewerte, mit denen der Prozess gestartet wird.
+## Ergebnis/Rückgabewerte
 
-* `return_on` - Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
-  * `on_process_instance_started` - Die Schnittstelle antwortet, wenn die
-    Prozessinstanz **gestartet**  wurde.
-  * `on_process_instance_finished` - Die Schnittstelle antwortet, wenn die
-    Prozessinstanz **beendet** wurde.
-
-  Wenn nicht angegeben, wird implizit `on_process_instance_started` verwendet.
-
-### Ergebnis/Rückgabewerte
-
-Der Response body enthält die correlation_id des gestarteten Vorgangs:
+Der Response body enthält die correlationId des gestarteten Vorgangs:
 
 ```JSON
 {
-  "correlation_id": "d44c820a-9a78-44b4-af64-5968625cffad"
+  "correlationId": "d44c820a-9a78-44b4-af64-5968625cffad"
 }
 ```
 
-### Was passiert in der Process Engine
+## Was passiert in der ProcessEngine
 
-- Es werden alle StartEvents zu dem Prozessmodell angefragt, die in Lanes
-  liegen, auf die der Verwender Zugriff hat.
-- Es wird anhand des Prozessmodells eine neue Prozessinstanz erstellt.
-- Wenn keine correlation_id vorgegeben ist, wird eine generiert.
-- Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet.
-- Je nach Wert von `return_on` wird entweder direkt nach dem erfolgreichen Start
-  geantwortet, oder sobald der Prozess beendet wurde.
+- Das Prozessmodell wird geladen
+- Es wird geprüft ob sich das gegebene StartEvent in dem Prozessmodell befindet
+- Es wird geprüft ob der anfragende Benutzer das StartEvent ausführen darf
+- ggf. geschieht das gleiche für EndEvents
+- Anhand des Prozessmodells wird eine neue Prozessinstanz erstellt
+- Wenn keine correlationId vorgegeben ist, wird eine generiert und die Prozessinstanz
+  mit dieser assoziert
+- Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet
+- Je nach Wert von `startCallbackType` antwortet die Schnittstelle
+  - nach erfolgreichem Start
+  - nach Beenden des Prozesses
+  - nach Erreichen des gegebenen EndEvents
 
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`:
-    - Die bereitgestellten `input_values` sind ungültig
-    - Der bereitgestellte Wert für `return_on` ist ungültig
+    - Die bereitgestellten `inputValues` sind ungültig
+    - Der bereitgestellte Wert für `startCallbackType` ist ungültig
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
 - `403`: Der anfragende Benutzer hat auf den angegebenen Prozess keinen Zugriff
 - `404`:
-  - Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
+  - Es konnte kein Prozessmodell mit dem gegebenen `processModelKey`
     gefunden werden
-  - Das Prozessmodell hat kein Startevent mit dem angegebenen `start_event_key`
+  - Das Prozessmodell hat kein Startevent mit dem angegebenen `startEventKey`
 - `500`:
   - Der Prozess konnte wegen eines internen Fehlers nicht gestartet werden
-  - Der Prozess brach vor erreichen des angegebenen `return_on` Events wegen
+  - Der Prozess brach vor erreichen des angegebenen `startCallbackType` Events wegen
     eines Fehlers vorzeitig ab
   - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+### Regelwerk
 
-> TODO: Zusätzliche Infos zu der Schnittstelle aufschreiben.
+Ein Benutzer kann immer nur die Prozesse starten, die er auch berechtigt ist
+zu sehen.
+Ebenso kann er nur StartEvents und EndEvents ansteuern, bei denen er die
+entsprechenden Berechtigungen hat.
 
-## Starten und auf ein bestimmtes EndEvent warten
+### Besonderheiten beim Subscriben auf ein EndEvent
 
-### Ziel/UseCase
+Wird explizit auf ein EndEvent subscribed, dann **muss** der Benutzer die
+Berechtigung dazu haben.
 
-Startet einen Prozess durch das Auslösen eines Start-Events. Die Schnittstelle
-antwortet sobald ein gegebenes BPMN-EndEvent erreicht wurde
+Wenn jedoch eine Prozessinstanz gestartet wird, **ohne** dass der Benutzer sich
+auf ein EndEvent subscribed, erfolgt diese Prüfung **nicht**.
 
-### Erforderliche und Optionale Parameter
+Das ist dadurch bedingt, dass die ProcessEngine nicht vor der Prozessausführung
+wissen kann, ob der Benutzer auf das EndEvent, dass die Prozessinstanz am Ende
+erreichen wird, auch tatsächlich zugreifen kann.
 
-Die Schnittstelle erfordert die folgenden Parameter:
+Allerdings wird nach Prozessende sichergestellt, dass der Benutzer keine
+Informationen erhält, die ggf. garnicht für ihn bestimmt waren.
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
-* `process_model_key` - Der Key der das Prozessmodell identifiziert, welches
-  gestartet werden soll.
-* `start_event_key` - Der Key des StartEvents, Das zum starten des Prozesses
-  ausgelöst werden soll.
-* `end_event_key` - Der Key des EndEvents, bei dessen erreichen die
-  Schnittstelle antwortet
+Das heisst:
+Erreicht die Prozessinstanz ein EndEvent, dass der Benutzer nicht berechtigt
+ist zu sehen, wird er zwar darüber informiert **dass** der Prozess beendet wurde,
+jedoch erhält er **nicht** das Prozessergebnis.
 
-Die Schnittstelle bietet die folgenden optionalen Parameter:
-
-* `correlation_id` - Eine ID, anhand derer der gestartete Vorgang identifiziert
-  werden kann. Wenn nicht angegeben, wird die Process Engine eine correlation_id
-  generieren.
-
-* `input_values` - Eingabewerte, mit denen der Prozess gestartet wird.
-
-### Ergebnis/Rückgabewerte
-
-Als Rückgabewert erhält man die correlation_id zu dem Vorgang den man gestartet
-hat:
-
-```JSON
-{
-  "correlation_id": "d44c820a-9a78-44b4-af64-5968625cffad"
-}
-```
-
-### Was passiert in der Process Engine
-
-- Es werden alle StartEvents und EndEvents zu dem Prozessmodell angefragt, die
-  in Lanes liegen, auf die der Verwender Zugriff hat.
-- Es wird anhand des Prozessmodells eine neue Prozessinstanz erstellt.
-- Wenn keine correlation_id vorgegeben ist, wird eine generiert.
-- Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet.
-- Sobald das vorgegebene EndEvent erreicht ist, wird geantwortet.
-
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
-
-Mögliche auftretende Fehler sind:
-- `400`: Der bereitgestellte request body ist ungültig
-- `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
-- `403`: Der anfragende Benutzer hat auf den angegebenen Prozess keinen Zugriff
-- `404`:
-  - Es konnte kein Prozessmodell mit dem angegebenen `process_model_key`
-    gefunden werden
-  - Das Prozessmodell hat kein StartEvent mit dem gegebenen `start_event_key`
-  - Das Prozessmodell hat kein EndEvent mit dem gegebenen `end_event_key`
-- `500`:
-  - Der Prozess konnte wegen eines internen Fehlers nicht gestartet werden
-  - Der Prozess brach vor erreichen des angegebenen `return_on` Events wegen
-    eines Fehlers vorzeitig ab
-  - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
-
-### REST/Messagebus API
-
-Die HTTP-Route für die Schnittstelle sieht so aus:
-
-```JavaScript
-POST /process_models/{process_model_key}/start_events/{start_event_key}/end_event/{end_event_key}/start_and_resolve_by_end_event
-
-// body
-{
-  "correlation_id": "d44c820a-9a78-44b4-af64-5968625cffad",
-  "input_values": {}
-}
-```
-
-### ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
-
-Wenn der Prozess aufgrund eines Fehlers beendet wird, ohne dass das angegebene
-EndEvent erreicht wird, wird die Fehlernachricht keine Details dazu beinhalten,
-da der Verwender unter Umständen nicht berechtigt ist, diese Details einzusehen.
+Gleiche Einschränkungen gelten auch für TerminateEndEvents und ErrorEndEvents.
+Bei fehlender Berechtigung wird der Benutzer nur darüber informiert. **dass** ein
+Fehler auftrat, jedoch nicht welcher Art von Fehler.
