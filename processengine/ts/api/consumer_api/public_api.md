@@ -7,7 +7,7 @@ Die Schnittstellen sind im Paket `@process-engine/consumer_api_contracts` defini
 ## IConsumerApiService
 
 Das IConsumerApiService Interface stellt die Schnittstellen bereit, die sowohl
-in `ConsumerApiCore`, also auch in `ConsumerApiClient` verwendet werden.
+in `ConsumerApiCore`, als auch in `ConsumerApiClient` verwendet werden.
 
 Dadurch ist gewährleistet, dass beide Komponenten sich auf die gleiche Art
 verwenden und leicht austauschen lassen.
@@ -16,28 +16,39 @@ verwenden und leicht austauschen lassen.
 export interface IConsumerApiService {
   // Get Process models
   getProcessModels(context: ConsumerContext): Promise<ProcessModelList>;
-  getProcessModelByKey(context: ConsumerContext, processModelKey: string): Promise<ProcessModel>;
-  // Start Process instances
+
+  getProcessModelByKey(context: ConsumerContext,
+                       processModelKey: string
+                      ): Promise<ProcessModel>;
+
+  // Manage Process instances
   startProcessInstance(context: ConsumerContext,
                        processModelKey: string,
                        startEventKey: string,
                        payload: ProcessStartRequestPayload,
-                       startCallbackType: StartCallbackType
+                       startCallbackType: StartCallbackType,
+                       endEventKey?: string
                       ): Promise<ProcessStartResponsePayload>;
-  startProcessInstanceAndAwaitEndEvent(context: ConsumerContext,
-                                       processModelKey: string,
-                                       startEventKey: string,
-                                       endEventKey: string,
-                                       payload: ProcessStartRequestPayload
-                                      ): Promise<ProcessStartResponsePayload>;
-  getProcessResultForCorrelation(context: ConsumerContext, correlationId: string, processModelKey: string): Promise<ICorrelationResult>;
+
+  getProcessResultForCorrelation(context: ConsumerContext,
+                                 correlationId: string,
+                                 processModelKey: string
+                                ): Promise<ICorrelationResult>;
+
   // Manage UserTasks
-  getUserTasksForProcessModel(context: ConsumerContext, processModelKey: string): Promise<UserTaskList>;
-  getUserTasksForCorrelation(context: ConsumerContext, correlationId: string): Promise<UserTaskList>;
+  getUserTasksForProcessModel(context: ConsumerContext,
+                              processModelKey: string
+                             ): Promise<UserTaskList>;
+
+  getUserTasksForCorrelation(context: ConsumerContext,
+                             correlationId: string
+                            ): Promise<UserTaskList>;
+
   getUserTasksForProcessModelInCorrelation(context: ConsumerContext,
                                            processModelKey: string,
                                            correlationId: string
                                           ): Promise<UserTaskList>;
+
   finishUserTask(context: ConsumerContext,
                  processModelKey: string,
                  correlationId: string,
@@ -49,9 +60,9 @@ export interface IConsumerApiService {
 
 ## ConsumerContext
 
-Der ConsumerContext enthält die Identity des aktuellen Benutzers.
-Diese wird verwendet, um die Berechtigungen eines Benutzers zu verifizieren,
-wenn der Benutzer Funktionen der ConsumerAPI.ts aufruft.
+Der ConsumerContext enthält die Identity eines Benutzers.
+Diese wird verwendet, um die Berechtigungen des Benutzers zu verifizieren,
+wenn dieser Funktionen der ConsumerAPI.ts aufruft.
 
 ```TypeScript
 export class ConsumerContext {
@@ -70,7 +81,7 @@ bzw. eine Liste von Prozessmodellen.
 
 ```TypeScript
 export class ProcessModelList {
-  public process_models: Array<ProcessModel> = [];
+  public processModels: Array<ProcessModel> = [];
 }
 ```
 
@@ -89,7 +100,7 @@ export class ProcessModel {
 export class Event {
   public key: string;
   public id: string;
-  public process_instance_id: string;
+  public processInstanceId: string;
   public data: any; // TODO: Define event-payload
 }
 ```
@@ -98,48 +109,66 @@ export class Event {
 
 Die folgenden Schnittstellen beschreiben die Parameter, welche für das Starten
 von Prozessinstanzen verwendet werden.
-Diese werden von den folgenden Methoden der ConsumerAPI.ts services erwartet:
-- `startProcessInstance`
-- `startProcessInstanceAndAwaitEndEvent`
 
 ### StartCallbackType
+
+Gibt an wann die Schnittstelle antwortet.
+Mögliche Werte sind:
+* `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz **gestartet**  wurde
+* `CallbackOnProcessInstanceFinished` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz **beendet**  wurde
+* `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
+  Prozessinstanz ein bestimmtes EndEvent erreicht hat
+
+Diese wird von der Funktion `startProcessInstance` erwartet.
+Wenn nicht angegeben, wird implizit `CallbackOnProcessInstanceCreated` benutzt.
 
 ```TypeScript
 export enum StartCallbackType {
   CallbackOnProcessInstanceCreated = 1,
+  CallbackOnProcessInstanceFinished = 2,
   CallbackOnEndEventReached = 3,
 }
 ```
 
-Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
-* `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
-  Prozessinstanz **gestartet**  wurde.
-* `CallbackOnEndEventReached` - Die Schnittstelle antwortet, wenn die
-  Prozessinstanz durch ein EndEvent **beendet** wurde.
-
 ### ProcessStartRequestPayload
+
+Dieser Parameter enthält sämtliche Werte, die für den
+Prozessstart relevant sind:
+- `inputValues`: Enthält sämtliche Werte, die dem Prozess als `initialToken`
+  mitgegeben werden
+- `correlationId`: Optional. Wenn mitgegeben, wird diese ID für die Correlation
+  verwendet. Wenn nicht mitgegeben, erzeugt die ConsumerAPI ein eigene
+  correlationId
+- `callerId`: Optional. Wird nur in Zusammenhang mit Subprozessen verwendet.
+  Wenn ein Subprozess gestartet werden soll, enthält dieses Feld die
+  Instanz ID des aufrufenden Prozesses
 
 ```TypeScript
 export class ProcessStartRequestPayload {
-  public correlation_id: string;
+  public inputValues: any;
+  public correlationId?: string;
   public callerId?: string;
-  public input_values: any;
 }
 ```
 
-`callerId` wird nur in Zusammenhang mit Subprozessen verwendet.
-Wenn ein Subprozess gestartet werden soll, enthält das Feld die Instanz ID
-des aufrufenden Prozesses.
-
 ### ProcessStartResponsePayload
+
+Beschreibt die Antwort, die nach dem Starten einer Prozessinstanz bereitgestellt
+wird.
+Aktuell enthält diese Antwort nur die CorrelationId des gestarteten Prozesses.
 
 ```TypeScript
 export class ProcessStartResponsePayload {
-  public correlation_id: string;
+  public correlationId: string;
 }
 ```
 
 ### ICorrelationResult
+
+Wird durch die Funktion `getProcessResultForCorrelation` verwendet und enthält
+das Ergebnis der angefragten Correlation.
 
 ```TypeScript
 export interface ICorrelationResult {
@@ -156,7 +185,7 @@ bzw. eine Liste von UserTasks.
 
 ```TypeScript
 export class UserTaskList {
-  public user_tasks: Array<UserTask>;
+  public userTasks: Array<UserTask>;
 }
 ```
 
@@ -166,7 +195,7 @@ export class UserTaskList {
 export class UserTask {
   public key: string;
   public id: string;
-  public process_instance_id: string;
+  public processInstanceId: string;
   public data: UserTaskConfig;
 }
 ```
@@ -175,7 +204,7 @@ export class UserTask {
 
 ```TypeScript
 export class UserTaskConfig {
-  public form_fields: Array<UserTaskFormField>;
+  public formFields: Array<UserTaskFormField>;
 }
 ```
 
@@ -186,7 +215,7 @@ Abschluss mitgeben kann (Siehe `finishUserTask` in `IConsumerApiService`).
 
 ```TypeScript
 export class UserTaskResult {
-  public form_fields: {
+  public formFields: {
     [fieldId: string]: any,
   };
 }
