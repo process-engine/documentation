@@ -1,4 +1,6 @@
-# Ergebnis einer Prozesskorrelation abfragen
+# Ergebnis einer Prozessinstanz abfragen
+
+Siehe [Konzept zum Abfragen von Ergebnissen einer Prozessinstanz](../../../../api/consumer_api/tasks/get-correlation-result.md).
 
 ```TypeScript
 import {
@@ -23,20 +25,15 @@ const correlationId = 'someCorrelationId';
 const result: ICorrelationResult = await consumerApiService.getProcessResultForCorrelation(consumerContext, correlationId, processModelKey);
 ```
 
-## Ziel/UseCase
-
-Diese Funktion erlaubt es nach der Ausführung einer einzelnen Prozessinstanz,
-oder einer Prozesskorrelation das Ergebnis dieser abzufragen.
-
 ## Parameter
 
 ### Erforderliche Parameter
 
 * `context` - Der [ConsumerContext](./public_api.md#consumercontext) des aufrufenden Benutzers
-* `correlation_id` - Die ID der Korrelation, dessen Ergebnis abgefragt
+* `correlation_id` - Die ID der Correlation, dessen Ergebnis abgefragt
   werden soll
-* `process_model_key` - Der Key der das Prozessmodell identifiziert, dessen
-  Ergebnis abgefragt werden soll.
+* `process_model_key` - Der Key, der die Prozessinstanz identifiziert, dessen
+  Ergebnis abgefragt werden soll
 
 ### Optionale Parameter
 
@@ -45,7 +42,7 @@ Die Funktion hat keine optionalen Parameter.
 ## Rückgabewerte
 
 Die Rückgabe der Methode entspricht dem Typen [ICorrelationResult](./public_api.md#icorrelationresult)
-und enthält das Ergebnis der angefragten Korrelation.
+und enthält das Ergebnis der angefragten Prozessinstanz.
 
 Wie das Ergebnis aussieht, hängt von der Gestaltung des Prozessmodells ab.
 Allgemein kann man jedoch sagen, es wird nur das konkrete Prozessergebnis
@@ -66,9 +63,9 @@ Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
 - `403`: Der anfragende Benutzer hat auf den angegebenen Prozess keinen Zugriff
 - `404`:
-  - Es konnte keine Korrelation mit dem angegebenen `correlation_id`
+  - Es konnte keine Correlation mit dem angegebenen `correlation_id`
     gefunden werden
-  - Es konnte in der gegebenen Korrelation kein Prozessmodell mit dem
+  - Es konnte in der gegebenen Correlation kein Prozessmodell mit dem
     angegebenen `process_model_key` gefunden werden
 - `500`:
   - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf

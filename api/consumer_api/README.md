@@ -126,6 +126,7 @@ wird im folgenden Abschnitt genauer erklärt.
 * [Auslösen von Ereignissen](./tasks/trigger-event.md)
 * [Auflisten wartender UserTasks](./tasks/list-waiting-usertasks.md)
 * [Abschließen eines UserTasks](./tasks/finish-user-task.md)
+* [Ergebnis einer Prozesskorrelation abfragen](./tasks/get-correlation-result.md)
 * [Erhalten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md)
   * [Arten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
   * [Erhalten von BpmnEvents](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)

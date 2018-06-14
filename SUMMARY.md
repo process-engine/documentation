@@ -39,6 +39,7 @@
   * [Auslösen von Ereignissen](api/consumer_api/tasks/trigger-event.md)
   * [Auflisten wartender UserTasks](api/consumer_api/tasks/list-waiting-usertasks.md)
   * [Abschließen eines UserTasks](api/consumer_api/tasks/finish-user-task.md)
+  * [Ergebnis einer Prozesskorrelation abfragen](api/consumer_api/tasks/get-correlation-result.md)
   * [Erhalten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md)
       * [Arten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
       * [Erhalten von BPMN-Events](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
