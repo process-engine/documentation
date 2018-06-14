@@ -10,11 +10,11 @@ der dazugehörige Prozesspfad weiter ausgeführt wird.
 
 * `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
   (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
-* `processModelKey` - Der Key der das Prozessmodell identifiziert, welches
+* `processModelKey` - Der Key, der das Prozessmodell identifiziert, welches
   den abzuschließenden UserTask beinhaltet.
 * `correlationId` - Die ID der Correlation, zu welcher der UserTask gehört
 * `userTaskId` - Die ID des UserTasks der abgeschlossen werden soll
-* `result` -  Das Ergebnis des UserTasks
+* `result` - Das Ergebnis des UserTasks
 
 ## Ergebnis/Rückgabewerte
 
@@ -22,12 +22,13 @@ Bei Erfolg ist das Ergebnis leer.
 
 ## Was passiert in der Process Engine
 
-- Es der passende UserTasks abgefragt, der zu dem gegebenen
+- Es wird der passende UserTasks abgefragt, der zu dem gegebenen
   ProzessModell in der gegebenen Correlation gehört
 - Es wird ein EventListener am EventAggregator registriert, um darauf reagieren
   zu können, wenn der UserTask erfolgreich abgeschlossen wurde
 - Es wird ein Event am EventAggregator gepublished, um der ProcessEngine mit
   zu teilen, dass der UserTask bearbeitet wurde
+- Nachdem der UserTask beendet wurde, wird der Prozesspfad weiter ausgeführt
 
 ## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
@@ -72,7 +73,7 @@ in folgender Reihenfolge:
 - `userTaskId`
 - `result`
 
-## Regelwerk
+## Zugriffsberechtigungen
 
 Benutzer können nur die UserTasks abschließen, die sie auch berechtigt
 sind zu sehen.

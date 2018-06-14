@@ -59,7 +59,7 @@ POST /process_models/{process_model_key}/correlations/{correlation_id}/events/{e
 
 > TODO: Schnittstelle definieren
 
-## ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+## Zugriffsberechtigungen
 
 Siehe auch [Umgang mit Events](./dealing_with_events.md).
 

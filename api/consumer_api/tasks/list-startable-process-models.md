@@ -43,10 +43,10 @@ Daraus ergibt sich folgende Response:
 
 ```JSON
 {
-  "process_models": [
+  "processModels": [
     {
       "key": "MyFancyProcess",
-      "start_events": [
+      "startEvents": [
         {
           "key": "FancyProccessStart1",
           "data": {}
@@ -56,7 +56,7 @@ Daraus ergibt sich folgende Response:
           "data": {}
         }
       ],
-      "end_events": [
+      "endEvents": [
         {
           "key": "FancyProccessEnd1",
           "data": {}
@@ -65,13 +65,13 @@ Daraus ergibt sich folgende Response:
     },
     {
       "key": "ProductTest",
-      "start_events": [
+      "startEvents": [
         {
           "key": "TestStart",
           "data": {}
         }
       ],
-      "end_events": [
+      "endEvents": [
         {
           "key": "FancyProccessEnd1",
           "data": {}
@@ -89,14 +89,12 @@ Daraus ergibt sich folgende Response:
 ### Was passiert in der Process Engine
 
 - Es werden alle Prozessmodelle angefragt
-- Prozessmodelle, welche keine StartEvents beinhalten, auf die der Benutzer
-Zugriff hat, werden herausgefiltert
-  - Welche StartEvents verfügbar sind, richtet sich danach, auf welcher Lane
+- Prozessmodelle, welche keine StartEvents beinhalten auf die der Benutzer
+  Zugriff hat, werden herausgefiltert
+  - Welche StartEvents verfügbar sind richtet sich danach auf welcher Lane
   diese sich befinden
-- Jedem verbleibenden Prozessmodell werden die so bestimmten zugehörigen
-  StartEvents zugeteilt
-- Die gleiche Rechteprüfung und Zuweisung passiert auch für EndEvents
-- Die Prozessmodelle werden als Ergebnis zurückgegeben
+- Die gleiche Rechteprüfung passiert auch für EndEvents
+- Die verbleibenden Prozessmodelle werden als Ergebnis zurückgegeben
 
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
@@ -143,7 +141,7 @@ subscriben, die Angabe eines StartEvents aber immer zwinged erforderlich ist.
 
 ### Ziel/UseCase
 
-Unter Angabe eines `process_model_keys` kann ein einzelnes Prozessmodell direkt
+Unter Angabe eines `processModelKeys` kann ein einzelnes Prozessmodell direkt
 abgefragt werden.
 Dies ermöglicht es dem Benutzer zu erfahren, ob er auf das Prozessmodell
 zugreifen darf, welche StartEvents des Prozesses er auslösen und auf welche
@@ -155,7 +153,7 @@ EndEvents er sich subscriben darf.
 
 * `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
   (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
-* `process_model_key` - Der Key des Prozessmodells, welches der Benutzer
+* `processModelKey` - Der Key des Prozessmodells, welches der Benutzer
   abfragen möchte
 
 #### Optionale Parameter
@@ -171,13 +169,13 @@ zurückgegeben wird.
 ```JSON
 {
   "key": "MyFancyProcess",
-  "start_events": [
+  "startEvents": [
     {
       "key": "FancyProccessStart1",
       "data": {}
     }
   ],
-  "end_events": [
+  "endEvents": [
     {
       "key": "FancyProccessEnd1",
       "data": {}
@@ -200,7 +198,7 @@ gelten, kommen auch hier zur Geltung.
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
 - `403`: Der anfragende Benutzer ist nicht berechtigt das Prozesmodell zu sehen
-- `404`: Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
+- `404`: Es konnte kein Prozessmodell mit dem gegebenen `processModelKey`
 gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 
@@ -219,7 +217,7 @@ Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
 
 Die weiter oben genannten Parameter müssen in folgender Reihenfolge angegeben werden:
 - `context`
-- `process_model_key`
+- `processModelKey`
 
 ### Zugriffsberechtigungen
 

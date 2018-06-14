@@ -13,11 +13,14 @@ Holt `UserTasks`, die darauf warten bearbeitet zu werden.
 
 ### Optionale Parameter
 
-* `processModelKey` - Wenn angegeben werden nur `UserTasks` angefragt, die zu
+* `processModelKey` - Wenn angegeben, werden nur `UserTasks` angefragt, die zu
   dem ProzessModell gehören, das durch diesen Key identifiziert wird.
-* `correlationId` - Wenn angegeben werden nur `UserTasks` angefragt, die zu
-  dem Vorgang gehören, der mit dieser ID identifiziert wird. Der Parameter
-  erfordert, dass auch der `processModelKey` Parameter angegeben wird.
+* `correlationId` - Wenn angegeben, werden nur `UserTasks` angefragt, die zu
+  dem Vorgang gehören, der mit dieser ID identifiziert wird.
+
+Werden beide Parameter in Kombination verwendet, werden nur die UserTasks
+aufgelistet, die zu der passenden Prozessinstanz in der passenden Correlation
+gehören.
 
 ## Ergebnis/Rückgabewerte
 
@@ -98,7 +101,7 @@ Die `IConsumerApiService` Schnittstelle implementiert diese UseCases über
   Prozessmodells in einer Correlation
   - Benötigt die Parameter `correlationId` und `processModelKey`
 
-## Regelwerk
+## Zugriffsberechtigungen
 
 Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
 bearbeiten darf.

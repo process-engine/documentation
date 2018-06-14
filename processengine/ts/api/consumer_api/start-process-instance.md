@@ -58,10 +58,7 @@ const result: ProcessStartResponsePayload =
 
 ### Optionale Parameter
 
-* `correlationId` - Eine ID, anhand derer der gestartete Vorgang identifiziert
-  werden kann. Wenn nicht angegeben, wird die Process Engine eine correlationId
-  generieren
-* `inputValues` - Eingabewerte, mit denen der Prozess gestartet wird
+* `payload` - Enthält [Parameter für den Prozessstart](./public_api.md#processstartrequestpayload)
 * `startCallbackType` - Gibt an, wann die Schnittstelle antwortet
   * `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
     Prozessinstanz **gestartet**  wurde

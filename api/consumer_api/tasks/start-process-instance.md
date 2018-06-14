@@ -12,18 +12,18 @@ Daher ist es optional möglich der Schnittstelle eine eigene CorrelationId
 vorzugeben, wenn man nicht wünscht, dass die ProcessEngine eine
 CorrelationId automatisch generiert.
 
-So oder so wird man jedoch immer darüber informiert, in welcher Correlation
+In beiden Fällen wird man jedoch immer darüber informiert, in welcher Correlation
 sich die gestartete Prozessinstanz befindet.
 
 ## Parameter
 
 ### Erforderliche Parameter
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
+* `context` - Der Kontext, in dem die Abarbeitung der Funktion geschehen soll
   (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
-* `processModelKey` - Der Key der das Prozessmodell identifiziert, welches
+* `processModelKey` - Der Key, der das Prozessmodell identifiziert, welches
   gestartet werden soll
-* `startEventKey` - Der Key des StartEvents, Das zum starten des Prozesses
+* `startEventKey` - Der Key, des StartEvents, Das zum starten des Prozesses
   ausgelöst werden soll
 * `endEventKey` - Der Key des EndEvents, bei dessen erreichen die
   Schnittstelle antwortet. Wird nur ausgewertet, wenn `startCallbackType`
@@ -31,10 +31,13 @@ sich die gestartete Prozessinstanz befindet.
 
 ### Optionale Parameter
 
-* `correlationId` - Eine ID, anhand derer der gestartete Vorgang identifiziert
-  werden kann. Wenn nicht angegeben, wird die ProcessEngine selbst eine
-  correlationId generieren
-* `inputValues` - Eingabewerte, mit denen der Prozess gestartet wird.
+* `payload` - Enthält Parameter für den Prozessstart
+  * `correlationId` - Eine ID, anhand derer der gestartete Vorgang identifiziert
+    werden kann. Wenn nicht angegeben, wird die ProcessEngine selbst eine
+    correlationId generieren
+  * `callerId` - Nur bei CallActivity und Subprocess zu verwenden: Enthält die
+    Instanz ID des aufrufenden Prozesses
+  * `inputValues` - Eingabewerte, mit denen der Prozess gestartet wird
 * `startCallbackType` - Gibt an, wann die Schnittstelle antwortet. Mögliche Werte sind:
   * `CallbackOnProcessInstanceCreated` - Die Schnittstelle antwortet, wenn die
     Prozessinstanz **gestartet**  wurde
@@ -61,11 +64,11 @@ Der Response body enthält die correlationId des gestarteten Vorgangs:
 - Es wird geprüft ob der anfragende Benutzer das StartEvent ausführen darf
 - ggf. geschieht das gleiche für EndEvents
 - Anhand des Prozessmodells wird eine neue Prozessinstanz erstellt
-- Wenn keine correlationId vorgegeben ist, wird eine generiert und die Prozessinstanz
-  mit dieser assoziert
-- Die Prozessinstanz wird unter Verwendung des definierte StartEvents gestartet
+- Erzeugen der Correlation und Verknüpfen mit der Prozessinstanz
+  - Wenn keine correlationId vorgegeben ist, wird eine generiert
+- Die Prozessinstanz wird unter Verwendung des definierten StartEvents gestartet
 - Je nach Wert von `startCallbackType` antwortet die Schnittstelle
-  - nach erfolgreichem Start
+  - nach starten des Prozesses
   - nach Beenden des Prozesses
   - nach Erreichen des gegebenen EndEvents
 
@@ -116,7 +119,7 @@ Reihenfolge:
 - `startCallbackType`
 - `endEventKey`
 
-### Regelwerk
+### Zugriffsberechtigungen
 
 Ein Benutzer kann immer nur die Prozesse starten, die er auch berechtigt ist
 zu sehen.
@@ -144,5 +147,5 @@ ist zu sehen, wird er zwar darüber informiert **dass** der Prozess beendet wurd
 jedoch erhält er **nicht** das Prozessergebnis.
 
 Gleiche Einschränkungen gelten auch für TerminateEndEvents und ErrorEndEvents.
-Bei fehlender Berechtigung wird der Benutzer nur darüber informiert. **dass** ein
+Bei fehlender Berechtigung wird der Benutzer nur darüber informiert **dass** ein
 Fehler auftrat, jedoch nicht welcher Art von Fehler.

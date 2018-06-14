@@ -87,6 +87,6 @@ GET /process_models/:process_model_key/correlations/:correlationId/events
 
 > TODO: Schnittstelle definieren
 
-## ggf. weitere sinnvolle Infos (z.B. Regelwerk, berechtigungen usw.)
+## Zugriffsberechtigungen
 
 Man erhält nur Events, die man mit dem anfragenden Benutzer auch auslösen darf.

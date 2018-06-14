@@ -44,11 +44,14 @@ userTaskList =
 
 ### Optionale Parameter
 
-* `process_model_key` - Wenn angegeben werden nur `UserTasks` angefragt, die zu
+* `processModelKey` - Wenn angegeben, werden nur `UserTasks` angefragt, die zu
   dem ProzessModell gehören, das durch diesen Key identifiziert wird.
-* `correlation_id` - Wenn angegeben werden nur `UserTasks` angefragt, die zu
-  dem Vorgang gehören, der mit dieser ID identifiziert wird. Der Parameter
-  erfordert, dass auch der `process_model_key` Parameter angegeben wird.
+* `correlationId` - Wenn angegeben, werden nur `UserTasks` angefragt, die zu
+  dem Vorgang gehören, der mit dieser ID identifiziert wird.
+
+Werden beide Parameter in Kombination verwendet, werden nur die UserTasks
+aufgelistet, die zu der passenden Prozessinstanz in der passenden Correlation
+gehören.
 
 ## Rückgabewerte
 
@@ -61,18 +64,18 @@ Beispielausgabe:
 
 ```JSON
 {
-  "user_tasks": [
+  "userTasks": [
     {
-      "process_instance_id": "19ff240a-239e-4ee6-ac29-665fb3b57078",
-      "user_task_key": "SomeUserTask1",
-      "user_task_id": "004d6b6d-8467-4893-8b23-fe5f380389aa",
-      "user_task_data": {
-        "form_fields": [
+      "id": "004d6b6d-8467-4893-8b23-fe5f380389aa",
+      "key": "SomeUserTask1",
+      "processInstanceId": "19ff240a-239e-4ee6-ac29-665fb3b57078",
+      "data": {
+        "formFields": [
           {
             "id": "someFormFieldId",
             "type": "string",
             "label": "someFormFieldLabel",
-            "default_value": "someTestDefaultValue"
+            "defaultValue": "someTestDefaultValue"
           }
         ]
       }
@@ -89,8 +92,8 @@ Mögliche auftretende Fehler sind:
 - `404`:
   - Das Prozessmodell gehört zu keiner der Prozessinstanzen, die zu der
     Correlation gehören
-  - Es konnte kein Prozessmodell mit dem gegebenen `process_model_key`
+  - Es konnte kein Prozessmodell mit dem gegebenen `processModelKey`
     gefunden werden
-  - Es konnte keine Correlation mit der gegebenen `correlation_id`
+  - Es konnte keine Correlation mit der gegebenen `correlationId`
     gefunden werden
 - `500`: Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
