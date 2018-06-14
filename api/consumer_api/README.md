@@ -20,7 +20,7 @@ folgen könnten.
 
 ## Technischer Aufbau
 
-![Aufbau](./consumer_api/images/consumer_api_architecture.png)
+![Aufbau](./images/consumer_api_architecture.png)
 
 Wie im Diagramm zu erkennen, unterscheidet man zwischen zwei Anwendungsfällen:
 
@@ -102,7 +102,7 @@ So ergibt sich z.B. folgende URL für das Abfragen wartender UserTasks in einer 
 GET /api/consumer/v1/correlations/:correlation_id/user_tasks
 ```
 
-Eine Erklärung zur Routenbenennung kann [hier](./consumer_api/dealing_with_events.md#auslösen-eines-prozessinstanz-events) eingesehen werden.
+Eine Erklärung zur Routenbenennung kann [hier](./dealing_with_events.md#auslösen-eines-prozessinstanz-events) eingesehen werden.
 
 Welche Routen es gibt und was deren Funktionen sind,
 wird im folgenden Abschnitt genauer erklärt.
@@ -111,17 +111,17 @@ wird im folgenden Abschnitt genauer erklärt.
 
 Über die ConsumerAPI müssen folgende Aufgaben erledigt werden können:
 
-* [Auflisten startbarer Prozessmodelle](./consumer_api/tasks/list-startable-process-models.md)
-  * [Alle Prozessmodelle abfragen](./consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
-  * [Einzelnes Prozessmodell abfragen](./consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
-* [Starten von Prozessinstanzen](./consumer_api/tasks/start-process-instance.md)
-* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./consumer_api/tasks/list-triggerable-events.md)
-* [Auslösen von Ereignissen](./consumer_api/tasks/trigger-event.md)
-* [Auflisten wartender UserTasks](./consumer_api/tasks/list-waiting-usertasks.md)
-* [Abschließen eines UserTasks](./consumer_api/tasks/finish-user-task.md)
-* [Erhalten von Prozessbenachrichtigungen](./consumer_api/tasks/receive-process-notifiations.md)
-  * [Arten von Prozessbenachrichtigungen](./consumer_api/tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
-  * [Erhalten von BpmnEvents](./consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
-  * [Erhalten von Infos zu start und ende von Aktivitäten](./consumer_api/tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
-  * [Erhalten von SystemEvents](./consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
-  * [Erhalten von BPMN-Signalen](./consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
+* [Auflisten startbarer Prozessmodelle](./tasks/list-startable-process-models.md)
+  * [Alle Prozessmodelle abfragen](./tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](./tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+* [Starten von Prozessinstanzen](./tasks/start-process-instance.md)
+* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./tasks/list-triggerable-events.md)
+* [Auslösen von Ereignissen](./tasks/trigger-event.md)
+* [Auflisten wartender UserTasks](./tasks/list-waiting-usertasks.md)
+* [Abschließen eines UserTasks](./tasks/finish-user-task.md)
+* [Erhalten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md)
+  * [Arten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
+  * [Erhalten von BpmnEvents](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
+  * [Erhalten von Infos zu start und ende von Aktivitäten](./tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
+  * [Erhalten von SystemEvents](./tasks/receive-process-notifiations.md#erhalten-von-system-events)
+  * [Erhalten von BPMN-Signalen](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
