@@ -11,8 +11,8 @@ Man erhält nur Events, die man mit dem anfragenden Benutzer auch auslösen darf
 
 ## Was passiert in der Process Engine
 
-- Es werden alle wartenden Events geladen, die innerhalb der gegebenen
-  Correlation gehören
+- Es werden alle wartenden Events geladen, die zu Prozessinstanzen gehören,
+  die mit der gegebenen Correlation verknüpft sind.
 - Wenn angegeben, werden nur die Events zurückgegeben, die zu einer
   Prozessinstanz mit passendem processModelKey gehören
 - Es wird geprüft, welche Events der anfragende Benutzer auslösen kann

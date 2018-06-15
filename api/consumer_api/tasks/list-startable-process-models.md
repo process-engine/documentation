@@ -41,6 +41,7 @@ subscriben, die Angabe eines StartEvents aber immer zwingend erforderlich ist.
   Zugriff hat, werden herausgefiltert
   - Welche StartEvents verfügbar sind richtet sich danach auf welcher Lane
   diese sich befinden
+  > TODO: Rechtekonzept dokumentieren und hier verlinken
 - Die gleiche Rechteprüfung passiert auch für EndEvents
 - Die verbleibenden Prozessmodelle werden als Ergebnis zurückgegeben
 
@@ -153,9 +154,9 @@ Es gelten die gleichen Einschränkungen, wie beim Abfragen aller Prozessmodelle.
 
 ### Was passiert in der Process Engine
 
-Es passiert hier das gleiche wie beim Abfragen aller Prozessmodelle, nur dass
-die Abfrage und die nötigen Berechtigungs-Checks nur gezielt für ein
-einzelnes Prozessmodell erfolgen.
+Es passiert hier das gleiche wie beim Abfragen aller Prozessmodelle.
+Nur werden die Abfrage und die nötigen Berechtigungs-Checks gezielt für ein
+einzelnes Prozessmodell ausgeführt.
 
 Alle Einschränkungen und Besonderheiten, die beim Abfragen aller Prozessmodelle
 gelten, kommen auch hier zur Geltung.

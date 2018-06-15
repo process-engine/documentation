@@ -13,12 +13,10 @@ sind zu sehen.
 
 ## Was passiert in der Process Engine
 
-- Es wird der passende UserTasks abgefragt, der zu dem gegebenen
+- Es wird der passende UserTask abgefragt, der zu dem gegebenen
   ProzessModell in der gegebenen Correlation gehört
-- Es wird ein EventListener am EventAggregator registriert, um darauf reagieren
-  zu können, wenn der UserTask erfolgreich abgeschlossen wurde
-- Es wird ein Event am EventAggregator gepublished, um der ProcessEngine mit
-  zu teilen, dass der UserTask bearbeitet wurde
+- Es wird auf ein Event gewartet, das eintritt wenn der UserTask bearbeitet
+  wurde
 - Nachdem der UserTask beendet wurde, wird der Prozesspfad weiter ausgeführt
 
 ## Parameter

@@ -75,7 +75,7 @@ verwenden lassen.
 Dieser Aufbau gewährleistet auch die geforderte Austauschbarkeit, da es durch
 diese Architektur mit nur wenig Aufwand möglich ist eine interne ProcessEngine
 gegen eine ausgelagerte zu tauschen, oder umgekehrt.
-Dadurch dass implementierende Anwendung die ConsumerAPI verwendet, wird sie
+Dadurch, dass implementierende Anwendung die ConsumerAPI verwendet, wird sie
 von dem Austausch nichts mitbekommen.
 
 ### ConsumerApiCore

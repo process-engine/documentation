@@ -33,7 +33,7 @@ entsprechenden Berechtigungen hat.
   - Wenn keine correlationId vorgegeben ist, wird eine generiert
 - Die Prozessinstanz wird unter Verwendung des definierten StartEvents gestartet
 - Je nach Wert von `startCallbackType` antwortet die Schnittstelle
-  - nach starten des Prozesses
+  - nach Starten des Prozesses
   - nach Beenden des Prozesses
   - nach Erreichen des gegebenen EndEvents
 
@@ -50,16 +50,16 @@ wissen kann, ob der Benutzer auf das EndEvent, dass die Prozessinstanz am Ende
 erreichen wird, auch tatsächlich zugreifen kann.
 
 Allerdings wird nach Prozessende sichergestellt, dass der Benutzer keine
-Informationen erhält, die ggf. garnicht für ihn bestimmt waren.
+Informationen erhält, die ggf. nicht für ihn bestimmt waren.
 
 Das heisst:
 Erreicht die Prozessinstanz ein EndEvent, dass der Benutzer nicht berechtigt
-ist zu sehen, wird er zwar darüber informiert **dass** der Prozess beendet wurde,
+ist zu sehen, wird er zwar darüber informiert, **dass** der Prozess beendet wurde,
 jedoch erhält er **nicht** das Prozessergebnis.
 
 Gleiche Einschränkungen gelten auch für TerminateEndEvents und ErrorEndEvents.
-Bei fehlender Berechtigung wird der Benutzer nur darüber informiert **dass** ein
-Fehler auftrat, jedoch nicht welcher Art von Fehler.
+Bei fehlender Berechtigung wird der Benutzer nur darüber informiert, **dass** ein
+Fehler auftrat, jedoch nicht welche Art von Fehler.
 
 ## Parameter
 
@@ -69,11 +69,11 @@ Fehler auftrat, jedoch nicht welcher Art von Fehler.
   (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
 * `processModelKey` - Der Key, der das Prozessmodell identifiziert, welches
   gestartet werden soll
-* `startEventKey` - Der Key, des StartEvents, Das zum starten des Prozesses
+* `startEventKey` - Der Key, des StartEvents, das zum starten des Prozesses
   ausgelöst werden soll
-* `endEventKey` - Der Key des EndEvents, bei dessen erreichen die
+* `endEventKey` - Der Key des EndEvents, bei dessen Erreichen die
   Schnittstelle antwortet. Wird nur ausgewertet, wenn `startCallbackType`
-  auf `CallbackOnEndEventReached` gesetzt wurde, ist dann aber Pflichtangabe
+  auf `CallbackOnEndEventReached` gesetzt wurde, ist dann aber eine Pflichtangabe
 
 ### Optionale Parameter
 
@@ -117,7 +117,7 @@ Mögliche auftretende Fehler sind:
   - Das Prozessmodell hat kein Startevent mit dem angegebenen `startEventKey`
 - `500`:
   - Der Prozess konnte wegen eines internen Fehlers nicht gestartet werden
-  - Der Prozess brach vor erreichen des angegebenen `startCallbackType` Events wegen
+  - Der Prozess brach vor Erreichen des angegebenen `startCallbackType` Events wegen
     eines Fehlers vorzeitig ab
   - Beim Verarbeiten der Anfrage trat ein systeminterner Fehler auf
 

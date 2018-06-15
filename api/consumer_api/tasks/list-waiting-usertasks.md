@@ -6,8 +6,7 @@ Holt `UserTasks`, die darauf warten bearbeitet zu werden.
 
 ## Zugriffsberechtigungen
 
-Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
-bearbeiten darf.
+Man erhält nur `UserTaks`, die der anfragende Benutzer auch bearbeiten darf.
 
 ## Was passiert in der Process Engine
 
@@ -15,9 +14,9 @@ bearbeiten darf.
   die zu dem Prozessmodell gehören
 - Wenn eine `correlationId` angegeben wurde, werden alle UserTasks angefragt,
   die zu einer der Prozessinstanzen gehören, die zu der Correlation gehören
-- Wenn ein `processModelKey` UND eine `correlationId` angegeben wurde, werden
+- Wenn ein `processModelKey` **und** eine `correlationId` angegeben wurden, werden
   alle UserTasks ermittelt, die sich innerhalb der gegebenen Correlation befinden
-  und zu einer Prozessinstanz mit passendem Key gehören
+  und zu einer Prozessinstanz mit passendem `ProcessModelKey` gehören
 
 ## Parameter
 

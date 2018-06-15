@@ -16,7 +16,8 @@ Ob sie das Prozessergebnis sehen können, richtet sich danach mit welchem
 EndEvent der Prozess beendet wurde.
 
 Liegt das EndEvent auf einer Lane, die der Benutzer berechtigt ist zu sehen,
-darf er auch das Prozessergebnis einsehen.
+darf er auch das Prozessergebnis einsehen.x
+> TODO: Rechtekonzept dokumentieren und hier verlinken
 
 Andernfalls wird ein 403 Fehler zurückgegben.
 
@@ -44,10 +45,11 @@ Die Funktion hat keine optionalen Parameter.
 
 Die Rückgabe der Methode enthält das Ergebnis der angefragten Prozessinstanz.
 
-Wie das Ergebnis aussieht, hängt von der Gestaltung des Prozessmodells ab.
-Allgemein kann man jedoch sagen, es wird nur das konkrete Prozessergebnis
-zurückgegeben.
-Die Token-History ist grundsätzlich **nicht** enthalten.
+Es wird nur das konrekte Prozessergebnis zurückgegeben, das bei
+Prozessende vorlag.
+
+Welche Informationen in dem Ergebnis stehen, hängt auch davon ab, welches der
+modellierten EndEvents erreicht wurde.
 
 Beispiel:
 

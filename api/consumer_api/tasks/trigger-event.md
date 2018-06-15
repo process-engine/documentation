@@ -2,7 +2,7 @@
 
 ## Ziel/UseCase
 
-Löst ein BPMN-Event aus, dass zurzeit darauf wartet ausgelöst zu werden.
+Löst ein BPMN-Event aus, das zurzeit darauf wartet ausgelöst zu werden.
 
 ## Zugriffsberechtigungen
 
