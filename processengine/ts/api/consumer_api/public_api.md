@@ -1,6 +1,7 @@
 # Public API
 
-Nachfolgend wird die öffentliche API der ConsumerAPI.ts erläutert.
+Nachfolgend wird die öffentliche API der TypeScript Implementierung
+der ConsumerAPI erläutert.
 
 Die Schnittstellen sind im Paket `@process-engine/consumer_api_contracts` definiert.
 
@@ -62,7 +63,7 @@ export interface IConsumerApiService {
 
 Der ConsumerContext enthält die Identity eines Benutzers.
 Diese wird verwendet, um die Berechtigungen des Benutzers zu verifizieren,
-wenn dieser Funktionen der ConsumerAPI.ts aufruft.
+wenn dieser Funktionen der ConsumerAPI aufruft.
 
 ```TypeScript
 export class ConsumerContext {

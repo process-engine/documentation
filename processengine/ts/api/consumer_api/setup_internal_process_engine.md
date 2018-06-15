@@ -1,6 +1,6 @@
 # Einrichtung mit integrierter ProcessEngine:
 
-Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI.ts, unter Verwendung
+Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI, unter Verwendung
 einer ProcessEngine, die direkt in die Anwendung integriert ist.
 
 ![Aufbau](images/consumer_api_architecture_internal.png)
@@ -25,6 +25,7 @@ abgelegt werden muss.
 
 In dieser Datei werden die Claims konfiguriert, mit denen die Benutzer Zugriff
 auf die Lanes eines Prozesses erhalten sollen.
+  > TODO: Rechtekonzept dokumentieren und hier verlinken
 
 Die Claims werden dabei stehts einem konkreten Benutzer zugeordnet.
 Ebenfalls ist zu beachten, dass die zugeordneten Claims dem Namen einer `Lane`
@@ -51,6 +52,11 @@ In diesem Beispiel haben wir 2 Benutzer:
 - `UserA`: Hat auf alle Lanes mit dem Namen `Lane_A` Zugriff
 - `UserB`: Hat auf alle Lanes mit dem Namen `Lane_A` und `Lane_B` Zugriff
 
-Wichtig ist: Die ConsumerAPI selbst besitzt keinerlei Benutzerverwaltung.
+Wichtig ist:
 Um sich an der ConsumerAPI zu authentifizeren, ist ein gültiger JWT Token
 erforderlich, der einem [ConsumerContext](./public_api.md#consumercontext) mitgegeben wird.
+
+Die ConsumerAPI selbst besitzt jedoch keinerlei Benutzerverwaltung.
+Daher muss der Token von der implementierenden Anwendung bereitgestellt werden.
+
+> TODO: Verweis auf IAM Konzept

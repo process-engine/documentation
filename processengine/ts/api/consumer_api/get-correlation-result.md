@@ -44,10 +44,11 @@ Die Funktion hat keine optionalen Parameter.
 Die Rückgabe der Methode entspricht dem Typen [ICorrelationResult](./public_api.md#icorrelationresult)
 und enthält das Ergebnis der angefragten Prozessinstanz.
 
-Wie das Ergebnis aussieht, hängt von der Gestaltung des Prozessmodells ab.
-Allgemein kann man jedoch sagen, es wird nur das konkrete Prozessergebnis
-zurückgegeben.
-Die Token-History ist grundsätzlich **nicht** enthalten.
+Es wird nur das konrekte Prozessergebnis zurückgegeben, das bei
+Prozessende vorlag.
+
+Welche Informationen in dem Ergebnis stehen, hängt auch davon ab, welches der
+modellierten EndEvents erreicht wurde.
 
 Beispiel:
 
@@ -57,7 +58,7 @@ Beispiel:
 }
 ```
 
-## Fehler, die bei einer Fehlbenutzung erwartet werden müssen
+## Fehler, die erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung

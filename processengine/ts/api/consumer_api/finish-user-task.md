@@ -19,7 +19,9 @@ const correlationId: string = 'someCorrelationId';
 const userTaskId: string = 'Task_1vdwmn1';
 const userTaskResult: UserTaskResult = {
   formFields: {
-    Form_XGSVBgio: true,
+    first_name: 'fox',
+    last_name: 'mulder',
+    accepted_terms: true,
   },
 };
 
@@ -47,7 +49,7 @@ Die Funktion hat keine optionalen Parameter.
 
 Im Erfolgsfall gibt diese Methode keinen Wert zurück.
 
-## Fehler, die bei einer Fehlbenutzung erwartet werden müssen
+## Fehler, die erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`: Der bereitgestellte `result` Payload ist ungültig
