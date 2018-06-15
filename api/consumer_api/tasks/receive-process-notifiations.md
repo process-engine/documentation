@@ -92,7 +92,7 @@ Attributen:
 
 > TODO: Das verhalten der Schnittstelle in der Process Engine beschreiben.
 
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die erwartet werden müssen
 
 > TODO: Bad-Paths der Schnittstelle beschreiben.
 
@@ -148,7 +148,7 @@ Attributen:
 
 > TODO: Das verhalten der Schnittstelle in der Process Engine beschreiben.
 
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die erwartet werden müssen
 
 > TODO: Bad-Paths der Schnittstelle beschreiben.
 
@@ -204,7 +204,7 @@ Attributen:
 
 > TODO: Das verhalten der Schnittstelle in der Process Engine beschreiben.
 
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die erwartet werden müssen
 
 > TODO: Bad-Paths der Schnittstelle beschreiben.
 
@@ -254,7 +254,7 @@ Attributen:
 
 > TODO: Das verhalten der Schnittstelle in der Process Engine beschreiben.
 
-### Fehler, die bei der Fehlbenutzung erwartet werden müssen
+### Fehler, die erwartet werden müssen
 
 > TODO: Bad-Paths der Schnittstelle beschreiben.
 

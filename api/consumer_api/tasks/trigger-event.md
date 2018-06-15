@@ -35,7 +35,7 @@ Siehe auch [Umgang mit Events](./dealing_with_events.md).
 
 > TODO: Die Rückgabewerte dieser Schnittstelle beschreiben.
 
-## Fehler, die bei der Fehlbenutzung erwartet werden müssen
+## Fehler, die erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`: Der bereitgestellte Payload ist ungültig

@@ -31,6 +31,7 @@
 ## API
 
 1. [ConsumerAPI](api/consumer_api/README.md)
+  * [Technischer Aufbau](api/consumer_api/technical-specifications.md)
   * [Auflisten startbarer Prozessmodelle](api/consumer_api/tasks/list-startable-process-models.md)
       * [Alle Prozessmodelle abfragen](api/consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
       * [Einzelnes Prozessmodell abfragen](api/consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)

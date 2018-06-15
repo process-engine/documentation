@@ -5,16 +5,6 @@ Dieser Abschnitt beschreibt die TypeScript Implementierung der [ConsumerAPI](../
 Die Implementierung baut auf den gleichen [Konzepten](../../konzepte/README.md) und [Architekturmustern](../../architektur/README.md)
 wie die TypeScript Implementierung der ProcessEngine auf.
 
-# Features
-
-Die ConsumerAPI hat derzeit folgende Features:
-
-* Abfragen startbarer Prozessmodelle
-* Starten von Prozessinstanzen
-* Wartende UserTasks ermitteln
-* UserTasks abschließen
-* Ergebnis einer Prozesskorrelation abfragen
-
 # Dokumentation
 
 ## Funktionsdokumentation

@@ -39,7 +39,7 @@ Die Funktion hat keine optionalen Parameter.
 
 Bei Erfolg ist das Ergebnis leer.
 
-## Fehler, die bei der Fehlbenutzung erwartet werden müssen
+## Fehler, die erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`: Der bereitgestellte `result` Payload ist ungültig
@@ -64,7 +64,9 @@ POST /process_models/{process_model_key}/correlations/{correlation_id}/user_task
 // body
 {
   "formFields": {
-    "Form_XGSVBgio": true
+    "first_name": 'fox',
+    "last_name": 'mulder',
+    "accepted_terms": true,
   }
 }
 ```

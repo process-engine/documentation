@@ -103,7 +103,7 @@ Der Response body enthält die correlationId des gestarteten Vorgangs:
 }
 ```
 
-## Fehler, die bei der Fehlbenutzung erwartet werden müssen
+## Fehler, die erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `400`:

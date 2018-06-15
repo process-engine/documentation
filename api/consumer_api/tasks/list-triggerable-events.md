@@ -62,7 +62,7 @@ die man in einer Prozessinstanz auslösen kann:
 }
 ```
 
-## Fehler, die bei der Fehlbenutzung erwartet werden müssen
+## Fehler, die erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
 - `401`: Der anfragende Benutzer hat keine gültige Authentifizierung
