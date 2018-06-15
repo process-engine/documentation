@@ -5,6 +5,18 @@
 Holt alle BPMN-Events zu einer Prozessinstanz, die darauf warten ausgelöst
 zu werden.
 
+## Zugriffsberechtigungen
+
+Man erhält nur Events, die man mit dem anfragenden Benutzer auch auslösen darf.
+
+## Was passiert in der Process Engine
+
+- Es werden alle wartenden Events geladen, die innerhalb der gegebenen
+  Correlation gehören
+- Wenn angegeben, werden nur die Events zurückgegeben, die zu einer
+  Prozessinstanz mit passendem processModelKey gehören
+- Es wird geprüft, welche Events der anfragende Benutzer auslösen kann
+
 ## Parameter
 
 ### Erforderliche Parameter
@@ -50,14 +62,6 @@ die man in einer Prozessinstanz auslösen kann:
 }
 ```
 
-## Was passiert in der Process Engine
-
-- Es werden alle wartenden Events geladen, die innerhalb der gegebenen
-  Correlation gehören
-- Wenn angegeben, werden nur die Events zurückgegeben, die zu einer
-  Prozessinstanz mit passendem processModelKey gehören
-- Es wird geprüft, welche Events der anfragende Benutzer auslösen kann
-
 ## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
@@ -86,7 +90,3 @@ GET /process_models/:process_model_key/correlations/:correlationId/events
 ### IConsumerApiService Schnittstelle
 
 > TODO: Schnittstelle definieren
-
-## Zugriffsberechtigungen
-
-Man erhält nur Events, die man mit dem anfragenden Benutzer auch auslösen darf.

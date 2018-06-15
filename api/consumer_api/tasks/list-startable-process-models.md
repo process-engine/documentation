@@ -17,6 +17,33 @@ Es werden nur Prozessmodelle angezeigt, auf die folgendes zutrifft:
 Ziel ist es, dem Benutzer zu ermöglichen, Prozesse zu starten.
 Dafür muss er wissen, welche Prozesse er überhaupt starten kann.
 
+### Zugriffsberechtigungen
+
+Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
+Berechtigungen auch sehen dürfen.
+
+Dabei ist folgendes zu beachten:
+- Prozessmodelle, die mindestens 1 zugreifbares StartEvent und 1 zugreifbares
+ EndEvent haben, werden ausgegeben
+- Prozessmodelle, die mindestens 1 zugreifbares StartEvent, aber **kein**
+zugreifbares EndEvent haben, werden ausgegeben
+- Prozessmodelle, die **kein** zugreifbares StartEvent, aber ein oder mehrere
+zugreifbare EndEvents haben, werden **nicht** ausgegben
+
+Diese Konstellation ist dadurch bedingt, dass es dem Benutzer auch möglich sein
+soll Prozessinstanzen zu starten, ohne sich auf ein bestimmtes EndEvent zu
+subscriben, die Angabe eines StartEvents aber immer zwingend erforderlich ist.
+
+### Was passiert in der Process Engine
+
+- Es werden alle Prozessmodelle angefragt
+- Prozessmodelle, welche keine StartEvents beinhalten auf die der Benutzer
+  Zugriff hat, werden herausgefiltert
+  - Welche StartEvents verfügbar sind richtet sich danach auf welcher Lane
+  diese sich befinden
+- Die gleiche Rechteprüfung passiert auch für EndEvents
+- Die verbleibenden Prozessmodelle werden als Ergebnis zurückgegeben
+
 ### Parameter
 
 #### Erforderliche Parameter
@@ -86,16 +113,6 @@ Daraus ergibt sich folgende Response:
 }
 ```
 
-### Was passiert in der Process Engine
-
-- Es werden alle Prozessmodelle angefragt
-- Prozessmodelle, welche keine StartEvents beinhalten auf die der Benutzer
-  Zugriff hat, werden herausgefiltert
-  - Welche StartEvents verfügbar sind richtet sich danach auf welcher Lane
-  diese sich befinden
-- Die gleiche Rechteprüfung passiert auch für EndEvents
-- Die verbleibenden Prozessmodelle werden als Ergebnis zurückgegeben
-
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
@@ -120,23 +137,6 @@ Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
 Als Parameter nimmt diese Methode den `Context` (siehe oben)
 des Benutzers entgegen.
 
-### Zugriffsberechtigungen
-
-Benutzer können nur die Prozessmodelle abfragen, die sie mit ihren
-Berechtigungen auch sehen dürfen.
-
-Dabei ist folgendes zu beachten:
-- Prozessmodelle, die mindestens 1 zugreifbares StartEvent und 1 zugreifbares
- EndEvent haben, werden ausgegeben
-- Prozessmodelle, die mindestens 1 zugreifbares StartEvent, aber **kein**
-zugreifbares EndEvent haben, werden ausgegeben
-- Prozessmodelle, die **kein** zugreifbares StartEvent, aber ein oder mehrere
-zugreifbare EndEvents haben, werden **nicht** ausgegben
-
-Diese Konstellation ist dadurch bedingt, dass es dem Benutzer auch möglich sein
-soll Prozessinstanzen zu starten, ohne sich auf ein bestimmtes EndEvent zu
-subscriben, die Angabe eines StartEvents aber immer zwinged erforderlich ist.
-
 ## Einzelnes Prozessmodell abfragen
 
 ### Ziel/UseCase
@@ -146,6 +146,19 @@ abgefragt werden.
 Dies ermöglicht es dem Benutzer zu erfahren, ob er auf das Prozessmodell
 zugreifen darf, welche StartEvents des Prozesses er auslösen und auf welche
 EndEvents er sich subscriben darf.
+
+### Zugriffsberechtigungen
+
+Es gelten die gleichen Einschränkungen, wie beim Abfragen aller Prozessmodelle.
+
+### Was passiert in der Process Engine
+
+Es passiert hier das gleiche wie beim Abfragen aller Prozessmodelle, nur dass
+die Abfrage und die nötigen Berechtigungs-Checks nur gezielt für ein
+einzelnes Prozessmodell erfolgen.
+
+Alle Einschränkungen und Besonderheiten, die beim Abfragen aller Prozessmodelle
+gelten, kommen auch hier zur Geltung.
 
 ### Parameter
 
@@ -184,15 +197,6 @@ zurückgegeben wird.
 }
 ```
 
-### Was passiert in der Process Engine
-
-Es passiert hier das gleiche wie beim Abfragen aller Prozessmodelle, nur dass
-die Abfrage und die nötigen Berechtigungs-Checks nur gezielt für ein
-einzelnes Prozessmodell erfolgen.
-
-Alle Einschränkungen und Besonderheiten, die beim Abfragen aller Prozessmodelle
-gelten, kommen auch hier zur Geltung.
-
 ### Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
@@ -218,7 +222,3 @@ Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
 Die weiter oben genannten Parameter müssen in folgender Reihenfolge angegeben werden:
 - `context`
 - `processModelKey`
-
-### Zugriffsberechtigungen
-
-Es gelten die gleichen Einschränkungen, wie beim Abfragen aller Prozessmodelle.

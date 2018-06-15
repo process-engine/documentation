@@ -4,6 +4,16 @@
 
 Löst ein BPMN-Event aus, dass zurzeit darauf wartet ausgelöst zu werden.
 
+## Zugriffsberechtigungen
+
+Siehe auch [Umgang mit Events](./dealing_with_events.md).
+
+> TODO: Zusätzliche Infos zu der Schnittstelle aufschreiben.
+
+## Was passiert in der Process Engine
+
+> TODO: Das verhalten der Schnittstelle in der Process Engine beschreiben.
+
 ## Parameter
 
 ### Erforderliche Parameter
@@ -24,10 +34,6 @@ Löst ein BPMN-Event aus, dass zurzeit darauf wartet ausgelöst zu werden.
 ## Ergebnis/Rückgabewerte
 
 > TODO: Die Rückgabewerte dieser Schnittstelle beschreiben.
-
-## Was passiert in der Process Engine
-
-> TODO: Das verhalten der Schnittstelle in der Process Engine beschreiben.
 
 ## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
@@ -58,9 +64,3 @@ POST /process_models/{process_model_key}/correlations/{correlation_id}/events/{e
 ### IConsumerApiService Schnittstelle
 
 > TODO: Schnittstelle definieren
-
-## Zugriffsberechtigungen
-
-Siehe auch [Umgang mit Events](./dealing_with_events.md).
-
-> TODO: Zusätzliche Infos zu der Schnittstelle aufschreiben.

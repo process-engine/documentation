@@ -6,19 +6,10 @@ Wenn ein UserTask fertig bearbeitet wurde, wird der Process Engine über diese
 Schnittstelle das Ergebnis des UserTasks mitgeteilt. Das hat zur Folge, dass
 der dazugehörige Prozesspfad weiter ausgeführt wird.
 
-## Erforderliche Parameter
+## Zugriffsberechtigungen
 
-* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
-* `processModelKey` - Der Key, der das Prozessmodell identifiziert, welches
-  den abzuschließenden UserTask beinhaltet.
-* `correlationId` - Die ID der Correlation, zu welcher der UserTask gehört
-* `userTaskId` - Die ID des UserTasks der abgeschlossen werden soll
-* `result` - Das Ergebnis des UserTasks
-
-## Ergebnis/Rückgabewerte
-
-Bei Erfolg ist das Ergebnis leer.
+Benutzer können nur die UserTasks abschließen, die sie auch berechtigt
+sind zu sehen.
 
 ## Was passiert in der Process Engine
 
@@ -29,6 +20,26 @@ Bei Erfolg ist das Ergebnis leer.
 - Es wird ein Event am EventAggregator gepublished, um der ProcessEngine mit
   zu teilen, dass der UserTask bearbeitet wurde
 - Nachdem der UserTask beendet wurde, wird der Prozesspfad weiter ausgeführt
+
+## Parameter
+
+### Erforderliche Parameter
+
+* `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
+  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
+* `processModelKey` - Der Key, der das Prozessmodell identifiziert, welches
+  den abzuschließenden UserTask beinhaltet.
+* `correlationId` - Die ID der Correlation, zu welcher der UserTask gehört
+* `userTaskId` - Die ID des UserTasks der abgeschlossen werden soll
+* `result` - Das Ergebnis des UserTasks
+
+### Optionale Parameter
+
+Die Funktion hat keine optionalen Parameter.
+
+## Ergebnis/Rückgabewerte
+
+Bei Erfolg ist das Ergebnis leer.
 
 ## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
@@ -72,8 +83,3 @@ in folgender Reihenfolge:
 - `correlationId`
 - `userTaskId`
 - `result`
-
-## Zugriffsberechtigungen
-
-Benutzer können nur die UserTasks abschließen, die sie auch berechtigt
-sind zu sehen.

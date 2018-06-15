@@ -18,6 +18,26 @@ Das hier vorgestellte Konzept gilt für **sämtliche** technischen Implementieru
 egal ob TypeScript, .NET, oder anderen Implementierungen, die in Zukunft einmal
 folgen könnten.
 
+## Aufgaben der ConsumerAPI
+
+Über die ConsumerAPI müssen folgende Aufgaben erledigt werden können:
+
+* [Auflisten startbarer Prozessmodelle](./tasks/list-startable-process-models.md)
+  * [Alle Prozessmodelle abfragen](./tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](./tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+* [Starten von Prozessinstanzen](./tasks/start-process-instance.md)
+* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./tasks/list-triggerable-events.md)
+* [Auslösen von Ereignissen](./tasks/trigger-event.md)
+* [Auflisten wartender UserTasks](./tasks/list-waiting-usertasks.md)
+* [Abschließen eines UserTasks](./tasks/finish-user-task.md)
+* [Ergebnis einer Prozesskorrelation abfragen](./tasks/get-correlation-result.md)
+* [Erhalten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md)
+  * [Arten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
+  * [Erhalten von BpmnEvents](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
+  * [Erhalten von Infos zu start und ende von Aktivitäten](./tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
+  * [Erhalten von SystemEvents](./tasks/receive-process-notifiations.md#erhalten-von-system-events)
+  * [Erhalten von BPMN-Signalen](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
+
 ## Technischer Aufbau
 
 ![Aufbau](./images/consumer_api_architecture.png)
@@ -110,26 +130,3 @@ GET /api/consumer/v1/correlations/:correlation_id/user_tasks
 ```
 
 Eine Erklärung zur Routenbenennung kann [hier](./dealing_with_events.md#auslösen-eines-prozessinstanz-events) eingesehen werden.
-
-Welche Routen es gibt und was deren Funktionen sind,
-wird im folgenden Abschnitt genauer erklärt.
-
-## Aufgaben der ConsumerAPI
-
-Über die ConsumerAPI müssen folgende Aufgaben erledigt werden können:
-
-* [Auflisten startbarer Prozessmodelle](./tasks/list-startable-process-models.md)
-  * [Alle Prozessmodelle abfragen](./tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
-  * [Einzelnes Prozessmodell abfragen](./tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
-* [Starten von Prozessinstanzen](./tasks/start-process-instance.md)
-* [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](./tasks/list-triggerable-events.md)
-* [Auslösen von Ereignissen](./tasks/trigger-event.md)
-* [Auflisten wartender UserTasks](./tasks/list-waiting-usertasks.md)
-* [Abschließen eines UserTasks](./tasks/finish-user-task.md)
-* [Ergebnis einer Prozesskorrelation abfragen](./tasks/get-correlation-result.md)
-* [Erhalten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md)
-  * [Arten von Prozessbenachrichtigungen](./tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
-  * [Erhalten von BpmnEvents](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
-  * [Erhalten von Infos zu start und ende von Aktivitäten](./tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
-  * [Erhalten von SystemEvents](./tasks/receive-process-notifiations.md#erhalten-von-system-events)
-  * [Erhalten von BPMN-Signalen](./tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)

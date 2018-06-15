@@ -15,6 +15,52 @@ CorrelationId automatisch generiert.
 In beiden Fällen wird man jedoch immer darüber informiert, in welcher Correlation
 sich die gestartete Prozessinstanz befindet.
 
+## Zugriffsberechtigungen
+
+Ein Benutzer kann immer nur die Prozesse starten, die er auch berechtigt ist
+zu sehen.
+Ebenso kann er nur StartEvents und EndEvents ansteuern, bei denen er die
+entsprechenden Berechtigungen hat.
+
+## Was passiert in der ProcessEngine
+
+- Das Prozessmodell wird geladen
+- Es wird geprüft ob sich das gegebene StartEvent in dem Prozessmodell befindet
+- Es wird geprüft ob der anfragende Benutzer das StartEvent ausführen darf
+- ggf. geschieht das gleiche für EndEvents
+- Anhand des Prozessmodells wird eine neue Prozessinstanz erstellt
+- Erzeugen der Correlation und Verknüpfen mit der Prozessinstanz
+  - Wenn keine correlationId vorgegeben ist, wird eine generiert
+- Die Prozessinstanz wird unter Verwendung des definierten StartEvents gestartet
+- Je nach Wert von `startCallbackType` antwortet die Schnittstelle
+  - nach starten des Prozesses
+  - nach Beenden des Prozesses
+  - nach Erreichen des gegebenen EndEvents
+
+## Besonderheiten beim Subscriben auf ein EndEvent
+
+Wird explizit auf ein EndEvent subscribed, dann **muss** der Benutzer die
+Berechtigung dazu haben.
+
+Wenn jedoch eine Prozessinstanz gestartet wird, **ohne** dass der Benutzer sich
+auf ein EndEvent subscribed, erfolgt diese Prüfung **nicht**.
+
+Das ist dadurch bedingt, dass die ProcessEngine nicht vor der Prozessausführung
+wissen kann, ob der Benutzer auf das EndEvent, dass die Prozessinstanz am Ende
+erreichen wird, auch tatsächlich zugreifen kann.
+
+Allerdings wird nach Prozessende sichergestellt, dass der Benutzer keine
+Informationen erhält, die ggf. garnicht für ihn bestimmt waren.
+
+Das heisst:
+Erreicht die Prozessinstanz ein EndEvent, dass der Benutzer nicht berechtigt
+ist zu sehen, wird er zwar darüber informiert **dass** der Prozess beendet wurde,
+jedoch erhält er **nicht** das Prozessergebnis.
+
+Gleiche Einschränkungen gelten auch für TerminateEndEvents und ErrorEndEvents.
+Bei fehlender Berechtigung wird der Benutzer nur darüber informiert **dass** ein
+Fehler auftrat, jedoch nicht welcher Art von Fehler.
+
 ## Parameter
 
 ### Erforderliche Parameter
@@ -56,21 +102,6 @@ Der Response body enthält die correlationId des gestarteten Vorgangs:
   "correlationId": "d44c820a-9a78-44b4-af64-5968625cffad"
 }
 ```
-
-## Was passiert in der ProcessEngine
-
-- Das Prozessmodell wird geladen
-- Es wird geprüft ob sich das gegebene StartEvent in dem Prozessmodell befindet
-- Es wird geprüft ob der anfragende Benutzer das StartEvent ausführen darf
-- ggf. geschieht das gleiche für EndEvents
-- Anhand des Prozessmodells wird eine neue Prozessinstanz erstellt
-- Erzeugen der Correlation und Verknüpfen mit der Prozessinstanz
-  - Wenn keine correlationId vorgegeben ist, wird eine generiert
-- Die Prozessinstanz wird unter Verwendung des definierten StartEvents gestartet
-- Je nach Wert von `startCallbackType` antwortet die Schnittstelle
-  - nach starten des Prozesses
-  - nach Beenden des Prozesses
-  - nach Erreichen des gegebenen EndEvents
 
 ## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
@@ -118,34 +149,3 @@ Reihenfolge:
 - `payload`
 - `startCallbackType`
 - `endEventKey`
-
-### Zugriffsberechtigungen
-
-Ein Benutzer kann immer nur die Prozesse starten, die er auch berechtigt ist
-zu sehen.
-Ebenso kann er nur StartEvents und EndEvents ansteuern, bei denen er die
-entsprechenden Berechtigungen hat.
-
-### Besonderheiten beim Subscriben auf ein EndEvent
-
-Wird explizit auf ein EndEvent subscribed, dann **muss** der Benutzer die
-Berechtigung dazu haben.
-
-Wenn jedoch eine Prozessinstanz gestartet wird, **ohne** dass der Benutzer sich
-auf ein EndEvent subscribed, erfolgt diese Prüfung **nicht**.
-
-Das ist dadurch bedingt, dass die ProcessEngine nicht vor der Prozessausführung
-wissen kann, ob der Benutzer auf das EndEvent, dass die Prozessinstanz am Ende
-erreichen wird, auch tatsächlich zugreifen kann.
-
-Allerdings wird nach Prozessende sichergestellt, dass der Benutzer keine
-Informationen erhält, die ggf. garnicht für ihn bestimmt waren.
-
-Das heisst:
-Erreicht die Prozessinstanz ein EndEvent, dass der Benutzer nicht berechtigt
-ist zu sehen, wird er zwar darüber informiert **dass** der Prozess beendet wurde,
-jedoch erhält er **nicht** das Prozessergebnis.
-
-Gleiche Einschränkungen gelten auch für TerminateEndEvents und ErrorEndEvents.
-Bei fehlender Berechtigung wird der Benutzer nur darüber informiert **dass** ein
-Fehler auftrat, jedoch nicht welcher Art von Fehler.

@@ -4,6 +4,21 @@
 
 Holt `UserTasks`, die darauf warten bearbeitet zu werden.
 
+## Zugriffsberechtigungen
+
+Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
+bearbeiten darf.
+
+## Was passiert in der Process Engine
+
+- Wenn ein `processModelKey` angegeben wurde, werden alle UserTasks angefragt,
+  die zu dem Prozessmodell gehören
+- Wenn eine `correlationId` angegeben wurde, werden alle UserTasks angefragt,
+  die zu einer der Prozessinstanzen gehören, die zu der Correlation gehören
+- Wenn ein `processModelKey` UND eine `correlationId` angegeben wurde, werden
+  alle UserTasks ermittelt, die sich innerhalb der gegebenen Correlation befinden
+  und zu einer Prozessinstanz mit passendem Key gehören
+
 ## Parameter
 
 ### Erforderliche Parameter
@@ -49,16 +64,6 @@ bearbeitet zu werden:
 }
 ```
 
-## Was passiert in der Process Engine
-
-- Wenn ein `processModelKey` angegeben wurde, werden alle UserTasks angefragt,
-  die zu dem Prozessmodell gehören
-- Wenn eine `correlationId` angegeben wurde, werden alle UserTasks angefragt,
-  die zu einer der Prozessinstanzen gehören, die zu der Correlation gehören
-- Wenn ein `processModelKey` UND eine `correlationId` angegeben wurde, werden
-  alle UserTasks ermittelt, die sich innerhalb der gegebenen Correlation befinden
-  und zu einer Prozessinstanz mit passendem Key gehören
-
 ## Fehler, die bei der Fehlbenutzung erwartet werden müssen
 
 Mögliche auftretende Fehler sind:
@@ -100,8 +105,3 @@ Die `IConsumerApiService` Schnittstelle implementiert diese UseCases über
 - `getUserTasksForProcessModelInCorrelation`: Holt alle UserTasks eines
   Prozessmodells in einer Correlation
   - Benötigt die Parameter `correlationId` und `processModelKey`
-
-## Zugriffsberechtigungen
-
-Man erhält nur `UserTaks`, die man mit dem aktuell eingeloggten Benutzer auch
-bearbeiten darf.
