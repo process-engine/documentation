@@ -3,12 +3,12 @@
 Bridges werden verwendet, um verschiedene Technologien lose miteinander zu
 verbinden.
 
-Siehe auch: [Bridges](processengine/ts/architektur/bridges.md).
+Siehe auch: [Bridges](processengine/typescript/architektur/bridges.md).
 
 
 ## Adapter
 
-Siehe [Adapter](processengine/ts/architektur/adapters.md).
+Siehe [Adapter](processengine/typescript/architektur/adapters.md).
 
 ## Integration
 
