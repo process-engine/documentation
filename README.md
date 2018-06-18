@@ -18,7 +18,7 @@ Werkzeuge und Ideen bereitstellen, die:
 
 ## Was gibt es?
 
-Das Ökosystem wird um ProcessEngine.io wird stets erweitert, wobei sich drei
+Das Ökosystem um ProcessEngine.io wird stets erweitert, wobei sich drei
 tragende Säulen etabliert haben um Konzepte und Funktionalität zu
 kommunizieren:
 
@@ -34,9 +34,9 @@ Das BPMN-Studio ist die integrierte Entwicklungsumgebung für Geschäftsprozesse
 
 Mit dieser Software lassen sich:
 
-* Geschäftsprozesse modellieren.
-* Prozesse für die Ausführung deployen.
-* Prozesse analysieren und optimieren.
+* Geschäftsprozesse modellieren
+* Prozesse für die Ausführung deployen
+* Prozesse analysieren und optimieren
 
 #### Weiterführende Links
 
@@ -48,15 +48,11 @@ Mit dieser Software lassen sich:
 
 <img src="./images/process-engine-icon.png" width="256" height="256" />
 
-Unter einer ProcessEngine ist eine Software zu verstehen, die Geschäftsprozesse ausführen kann.
+Unter einer ProcessEngine ist eine Software zu verstehen,
+die Geschäftsprozesse ausführen kann.
 
 Es gibt mehrere Implementierungen der ProcessEngine, die sich für
 unterschiedliche Einsatzszenarien eignen.
-
-Alle Implementierungen der ProcessEngine unterstützen zentrale APIs (siehe
-[ProcessEngine APIs](#apis)). Dadurch kann die Implementierung der
-ProcessEngine ausgetauscht werden-- ohne, dass sich die Bedienung der
-ProcessEngine ändert.
 
 #### Weiterführende Links
 
@@ -65,8 +61,9 @@ ProcessEngine ändert.
 
 ### ProcessEngine APIs {#apis}
 
-Die Kommunikation mit der ProcessEngine erfolgt über zentrale APIs, die in
-allen Implementierungen zur Verfügung stehen.
+Die Kommunikation mit der ProcessEngine erfolgt über zentrale APIs
+(siehe [ProcessEngine APIs](#apis)), die in allen Implementierungen
+zur Verfügung stehen.
 
 Alle Implementierungen der ProcessEngine unterstützen diese APIs. Dadurch kann
 die Implementierung der ProcessEngine ausgetauscht werden - ohne, dass sich die
