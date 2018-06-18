@@ -133,7 +133,7 @@ POST /process_models/:process_model_key/start_events/:start_event_key/start?star
 POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceFinished
 
 // Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde
-POST /process_models/:process_model_key/start_events/:start_event_key/end_event/:end_event_key/start_and_resolve_by_end_event`
+POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnEndEventReached&end_event_key=endEventKey
 ```
 
 ### IConsumerApiService Schnittstelle
