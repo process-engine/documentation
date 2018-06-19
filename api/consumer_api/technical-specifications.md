@@ -6,14 +6,21 @@ Wie im Diagramm zu erkennen, unterscheidet man zwischen zwei Anwendungsfällen:
 
 ### Anwendung mit _integrierter_ ProcessEngine
 
-In diesem Fall greifen externe Anwendungsservices auf den **ConsumerApiCore**
-zu, der dann wiederum mit den Services der ProcessEngine kommuniziert.
+Hier befindet sich die ProcessEngine direkt in der Anwendung.
+Die externen Services der implementierenden Anwendung greifen auf den
+`ConsumerApiClientService` zu.
+Dieser wiederum kommuniziert über den `ConsumerApiCore` mit der ProcessEngine.
 
 ### Anwendung mit _externer_ ProcessEngine
 
-Hier kommt zusätzlich ein `ConsumerClient` mit ins Spiel.
-Dieser kommuniziert über HTTP-Routen und Messagebus-Kanälen mit der ConsumerAPI
-der externen ProcessEngine.
+Auch hier benutzen die externen Anwendungen den `ConsumerApiClient`.
+
+In diesem Anwendungsfall benutzt der `ConsumerApiClient` jedoch Http Routen
+und Messagebuskanäle um mit einer externen ProcessEngine zu kommunizieren.
+
+Die Anwendung, in welcher die externe ProcessEngine liegt, implementiert dazu
+das `ConsumerApiHttp` Paket, welches die passenden Http Endpunkte
+bereitstellt.
 
 ## Komponenten
 
@@ -35,24 +42,29 @@ verwenden lassen.
 Dieser Aufbau gewährleistet auch die geforderte Austauschbarkeit, da es durch
 diese Architektur mit nur wenig Aufwand möglich ist eine interne ProcessEngine
 gegen eine ausgelagerte zu tauschen, oder umgekehrt.
-Dadurch, dass implementierende Anwendung die ConsumerAPI verwendet, wird sie
-von dem Austausch nichts mitbekommen.
+
+### ConsumerApiClient
+
+Der `ConsumerApiClient` ist für externe Anwendungen die primäre Komponente zur
+Verwendung der ConsumerAPI.
+
+Dieser Client kann sowohl mit einer in der Anwendung integrierten ProcessEngine
+kommunizieren, als auch mit externen ProcessEngines, kommunizieren.
+
+Um die einfache Austauschbarkeit der ProcessEngine zu gewährleisten, sollte
+jedwede Kommunikation mit der ProcessEngine über die ConsumerAPI abgewickelt
+werden.
 
 ### ConsumerApiCore
 
 Das `ConsumerApiCore` Paket dient der direkten Kommunikation mit der
 ProcessEngine.
 
-In einer Anwendung mit integrierter ProcessEngine wird dieses Paket direkt
-verwendet.
+In einer Anwendung mit integrierter ProcessEngine wird dieses Paket durch den
+`ConsumerApiClient` direkt angesteuert.
 
 Wenn eine externe ProcessEngine angesteuert werden soll, wird dieses Paket
 in die Anwendung implementiert, in welcher sich die ProcessEngine befindet.
-
-### ConsumerApiClient
-
-Der `ConsumerApiClient` dient der Kommunikation mit der ConsumerAPI
-einer **externen** ProcessEngine.
 
 ### ConsumerApiHttp
 
@@ -64,8 +76,8 @@ Das Paket muss sich stehts in der gleichen Anwendung wie `ConsumerApiCore` befin
 
 ### REST/Messagebus-Schnittstelle
 
-`ConsumerApiClient` und `ConsumerApiCore` kommunizieren über eine REST- und eine
-Messagebus-Schnittstelle.
+Wird eine externe ProcessEngine verwendet, kommunizieren `ConsumerApiClient`
+und `ConsumerApiCore` über eine REST- und eine Messagebus-Schnittstelle.
 
 Die REST-Schnittstelle wird durch `ConsumerApiHttp` bereitgestellt,
 der Messagebus wird durch die ProcessEngine selbst verwaltet.
