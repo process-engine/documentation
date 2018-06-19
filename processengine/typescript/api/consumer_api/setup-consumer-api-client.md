@@ -4,16 +4,24 @@ Das `@process-engine/consumer_api_client` Paket stellt neben
 dem `ConsumerApiClientService` auch zwei Accessor Klassen bereit, mit welchen
 der Client die Kommunikation mit einer ProcessEngine steuern kann:
 - `ConsumerApiExternalAccessor`: Steuert die Kommunikation mit einer
-  **externen** ProcessEngine. Dies ist der Default Accessor
+  **externen** ProcessEngine
 - `ConsumerApiInternalAccessor`: Steuert die Kommunikation mit einer
   **internen** ProcessEngine
 
 Je nach Anwendungsszenario muss ein anderer Accessor verwendet werden.
 
-Die Verwendung von IoC erlaubt es auf leichte Weise den Accessor auszutauschen,
-da dieser dem `ConsumerApiClientService` als Dependency injected wird.
+Der `ConsumerApiClient` ist eine eigenständige und schlanke Komponente, die
+auch ohne IoC mit wenig Aufwand zu konfigurieren ist.
+Das ist besonders für Anwendungen interessant, die auf externe
+ProcessEngines zugreifen und selbst kein IoC benutzen.
 
-## Externe ProcessEngines
+Wenn IoC verwendet wird, kann der Accessor leicht ausgetauscht werden, indem
+einfach die Registrierung für den `ConsumerApiClient` entsprechend
+überschrieben wird.
+
+## Interne ProcessEngines
+
+### Mit IoC
 
 Es muss folgende IoC Registrierung für den `ConsumerApiClientService`
 erstellt werden:
@@ -22,6 +30,42 @@ erstellt werden:
 const ConsumerApiClientService = require('@process-engine/consumer_api_client').ConsumerApiClientService;
 
 function registerInContainer(container) {
+
+  container.register('ConsumerApiClientService', ConsumerApiClientService)
+    .dependencies('ConsumerApiInternalAccessor');
+}
+```
+
+`ConsumerApiInternalAccessor` ist der Name der IoC Registrierung für den
+Accessor, der die Kommunikation mit internen ProcessEngines steuert.
+
+### Ohne IoC
+
+Die Instanziierung des `ConsumerApiClient` kann ohne Verwendung von IoC z.B.
+wie folgt aussehen:
+
+```js
+const {
+  ConsumerApiClientService,
+  InternalAccessor,
+} = require('@process-engine/consumer_api_client').ConsumerApiClientService;
+
+const internalAccessor = new InternalAccessor();
+const consumerApiClientService = new ConsumerApiClientService(internalAccessor);
+```
+
+## Externe ProcessEngines
+
+### Mit IoC
+
+Es muss folgende IoC Registrierung für den `ConsumerApiClientService`
+erstellt werden:
+
+```js
+const ConsumerApiClientService = require('@process-engine/consumer_api_client').ConsumerApiClientService;
+
+function registerInContainer(container) {
+
   container.register('ConsumerApiClientService', ConsumerApiClientService)
     .dependencies('ConsumerApiExternalAccessor');
 }
@@ -36,22 +80,27 @@ solche Registrierung bereits mit sich.
 Wird eine externe ProcessEngine verwendet, ist dieser Schritt also nur
 notwendig, wenn eigene Accessor Implementierungen verwendet werden sollen.
 
-## Interne ProcessEngines
+### Ohne IoC
 
-Es muss folgende IoC Registrierung für den `ConsumerApiClientService`
-erstellt werden:
+Die Instanziierung des `ConsumerApiClient` kann ohne Verwendung von IoC z.B.
+wie folgt aussehen:
 
 ```js
-const ConsumerApiClientService = require('@process-engine/consumer_api_client').ConsumerApiClientService;
+const {
+  ConsumerApiClientService,
+  ExternalAccessor,
+} = require('@process-engine/consumer_api_client').ConsumerApiClientService;
 
-function registerInContainer(container) {
-  container.register('ConsumerApiClientService', ConsumerApiClientService)
-    .dependencies('ConsumerApiInternalAccessor');
+const HttpService = require('@essential-projects/services').HttpService;
+
+const httpService = new HttpService();
+httpService.config = {
+  url: 'http://address-to-process-engine',
 }
-```
 
-`ConsumerApiInternalAccessor` ist der Name der IoC Registrierung für den
-Accessor, der die Kommunikation mit internen ProcessEngines steuert.
+const externalAccessor = new ExternalAccessor(httpService);
+const consumerApiClientService = new ConsumerApiClientService(externalAccessor);
+```
 
 ## Custom Accessors
 
@@ -59,14 +108,16 @@ Es ist auch möglich eigene Accessor Klassen zu verwenden.
 Diese müssen das Interface `IConsumerApiAccessor` implementieren, damit
 sichergestellt ist, dass der Accessor alle nötigen Funktionalitäten abdeckt.
 
-Ebenfalls muss dieser Accessor am IoC registriert werden.
+### Mit IoC
+
+Bei Verwendung von IoC muss sichergestellt sein, dass der Custom Accessor am
+Container registriert wird.
 
 Anschließend muss die IoC Registrierung des `ConsumerApiClientService`
-wie oben beschrieben erfolgen. Statt `ConsumerApiInternalAccessor` gibt man
-dann den Namen des eigenen Accessors an.
+wie oben beschrieben erfolgen. Als dependency gibt man dann den Namen des
+eigenen Accessors an.
 
 Beispiel:
-
 
 ```js
 const ConsumerApiClientService = require('@process-engine/consumer_api_client').ConsumerApiClientService;
@@ -74,9 +125,24 @@ const ConsumerApiClientService = require('@process-engine/consumer_api_client').
 const myFancyAccessor = require('path-to-custom-accessor');
 
 function registerInContainer(container) {
+
   container.register('FancyCustomAccessor', myFancyAccessor);
 
   container.register('ConsumerApiClientService', ConsumerApiClientService)
     .dependencies('FancyCustomAccessor');
 }
+```
+
+### Ohne IoC
+
+Die Instanziierung des `ConsumerApiClient` kann ohne Verwendung von IoC z.B.
+wie folgt aussehen:
+
+```js
+const ConsumerApiClientService = require('@process-engine/consumer_api_client').ConsumerApiClientService;
+
+const MyFancyAccessor = require('path-to-custom-accessor');
+
+const fancyAccessor = new MyFancyAccessor();
+const consumerApiClientService = new ConsumerApiClientService(fancyAccessor);
 ```
