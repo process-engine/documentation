@@ -74,8 +74,9 @@
 
   1. [APIs](processengine/typescript/api/README.md)
     * [ConsumerAPI](processengine/typescript/api/consumer_api/README.md)
-        * [Einrichtung mit integrierter ProcessEngine](processengine/typescript/api/consumer_api/setup_internal_process_engine.md)
-        * [Einrichtung mit externer ProcessEngine](processengine/typescript/api/consumer_api/setup_external_process_engine.md)
+        * [Einrichtung mit integrierter ProcessEngine](processengine/typescript/api/consumer_api/setup-internal-process-engine.md)
+        * [Einrichtung mit externer ProcessEngine](processengine/typescript/api/consumer_api/setup-external-process-engine.md)
+        * [Konfigurieren des ConsumerApiClients](processengine/typescript/api/consumer_api/setup-consumer-api-client.md)
         * [Abfragen startbarer Prozessmodelle](processengine/typescript/api/consumer_api/list-startable-process-models.md)
             * [Alle Prozessmodelle abfragen](processengine/typescript/api/consumer_api/list-startable-process-models.md#alle-prozessmodelle-abfragen)
             * [Einzelnes Prozessmodell abfragen](processengine/typescript/api/consumer_api/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)

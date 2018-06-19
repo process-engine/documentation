@@ -50,13 +50,13 @@ Für weitere Beispiele, siehe Funktionsdokumentation.
 
 Die ConsumerAPI umfasst folgende Pakete
 - `@process-engine/consumer_api_contracts` - Definiert die Schnittstellen
-für `@process-engine/consumer_api_core` und `@process-engine/consumer_api_client`
-- `@process-engine/consumer_api_core` - Steuert die Interaktion mit einer
-internen ProcessEngine
-- `@process-engine/consumer_api_client` - Steuert die Kommunikation mit einer
-externen ProcessEngine
+  für `@process-engine/consumer_api_core` und `@process-engine/consumer_api_client`
+- `@process-engine/consumer_api_client` - Primäre Schnittstelle für externe
+  Anwendungsservices um auf die ConsumerAPI zuzugreifen.
+- `@process-engine/consumer_api_core` - Kommuniziert direkt mit der ProcessEngine
 - `@process-engine/consumer_api_http` - Dient als Kommunikations-Endpunkt
-für `@process-engine/consumer_api_client`
+  für `@process-engine/consumer_api_client`, wenn eine externe ProcessEngine
+  benutzt wird
 
 # Vorraussetzungen
 
@@ -75,8 +75,10 @@ Anwendung liegt (z.B. auf einem zentralen Server)
 Je nach Anwendungsfall sind unterschiedliche Installationsschritte auszuführen.
 
 Für eine detaillierte Installationsanleitung, siehe:
-- [Einrichtung mit integrierter ProcessEngine](setup_internal_process_engine.md)
-- [Einrichtung mit externer ProcessEngine](setup_external_process_engine.md)
+- [Einrichtung mit integrierter ProcessEngine](setup-internal-process-engine.md)
+- [Einrichtung mit externer ProcessEngine](setup-external-process-engine.md)
+
+Ebenfalls muss der [ConsumerApiClient konfiguriert werden](setup-consumer-api-client.md).
 
 Die Konfiguration der ConsumerAPI Komponenten erfolgt nach dem
 [Konfigurationskonzept](../../konzepte/configuration.md).

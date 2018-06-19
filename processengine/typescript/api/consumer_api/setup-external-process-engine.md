@@ -11,12 +11,12 @@ Die externe Anwendung, welche die ProcessEngine implementiert, muss folgende
 Pakete installiert haben:
 - `@process-engine/consumer_api_core`
 - `@process-engine/consumer_api_http`
-- `@process-engine/process-engine` - Version 6.0.2 oder höher
+- `@process-engine/process-engine` - Version 6.0.3 oder höher
 
 Die Anwendung, welche mit der externen Process Engine kommunizieren soll,
 benötigt folgende Pakete:
 - `@process-engine/consumer_api_client`
-- `@process-engine/process-engine` - Version 6.0.2 oder höher
+- `@process-engine/process-engine` - Version 6.0.3 oder höher
 
 In beiden Anwendungen muss sichergestellt werden,
 dass die jeweiligen IoC Module am IoC Container registriert werden.
@@ -71,19 +71,23 @@ Daher muss der Token von der implementierenden Anwendung bereitgestellt werden.
 
 ### Client Anwendung
 
-Die Anwendung, welche mit der externen ProcessEngine kommunizieren soll,
-benötigt folgende Konfiguration für `@process-engine/consumer_api_client`:
+Per Default verwendet der `ConsumerApiClientService` den Accessor für externe
+ProcessEngines.
+
+Dieser verwendet den HttpClient der ProcessEngine, der wie folgt konfiguriert
+werden muss:
 
 ```js
 {
-  "url": "http://address-to-external-application/api/consumer/v1"
+  "url": "http://address-to-external-application"
 }
 
 ```
 
 `url` bezeichnet dabei die HTTP Adresse, unter der die externe Anwendung
 erreichbar ist.
-Das Suffix `/api/consumer/v1` ist zwingend erforderlich.
 
-Die Konfiguration muss unter dem Konfigurationspfad
-`consumer_api_client:consumer_api_client_service` abgelegt sein.
+Die Konfiguration muss unter dem Konfigurationspfad `services:http`
+abgelegt werden.
+
+Für weiterführende Infos, siehe [Setup ConsumerApiClient](setup-consumer-api-client.md).

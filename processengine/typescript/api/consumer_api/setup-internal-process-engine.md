@@ -9,15 +9,20 @@ einer ProcessEngine, die direkt in die Anwendung integriert ist.
 
 Anwendungen, die eine integrierte ProcessEngine verwenden,
 benötigen folgende Pakete:
+- `@process-engine/consumer_api_client`
 - `@process-engine/consumer_api_core`
-- `@process-engine/process-engine` - Version 6.0.2 oder höher
+- `@process-engine/process-engine` - Version 6.0.3 oder höher
 
-Ebenfalls muss sichergestellt sein, dass das IoC Module des
-`@process-engine/consumer_api_core` Pakets am IoC Container registriert wird.
-Das Modul kann über den Pfad `@process-engine/consumer_api_core/ioc_module`
-angesteuert werden.
+Ebenfalls muss sichergestellt sein, dass die IoC Module der Pakete am Container
+registriert sind.
 
 ## Konfiguration
+
+### ConsumerApiClient
+
+Siehe [Setup ConsumerApiClient](setup-consumer-api-client.md).
+
+### ConsumerApiCore
 
 Das `@process-engine/consumer_api_core` Paket benötigt eine eigene Konfiguration,
 die unter dem Konfigurationspfad `consumer_api_core:consumer_api_iam_service`
