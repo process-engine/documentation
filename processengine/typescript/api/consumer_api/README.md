@@ -51,8 +51,8 @@ Für weitere Beispiele, siehe Funktionsdokumentation.
 Die ConsumerAPI umfasst folgende Pakete
 - `@process-engine/consumer_api_contracts` - Definiert die Schnittstellen
   für `@process-engine/consumer_api_core` und `@process-engine/consumer_api_client`
-- `@process-engine/consumer_api_client` - Primäre Schnittstelle für externe
-  Anwendungsservices um auf die ConsumerAPI zuzugreifen.
+- `@process-engine/consumer_api_client` - Primäre Komponente zur Verwendung der
+  ConsumerAPI.
 - `@process-engine/consumer_api_core` - Kommuniziert direkt mit der ProcessEngine
 - `@process-engine/consumer_api_http` - Dient als Kommunikations-Endpunkt
   für `@process-engine/consumer_api_client`, wenn eine externe ProcessEngine
@@ -62,7 +62,7 @@ Die ConsumerAPI umfasst folgende Pakete
 
 Um die ConsumerAPI benutzen zu können sind folgende Mindestanforderungen gegeben:
 
-- Das Paket `@process-engine/process-engine` in der Version 6.0.2
+- Das Paket `@process-engine/process-engine` in der Version 6.0.3
 - Node Version 8.9.x
 
 # Installation
@@ -77,8 +77,6 @@ Je nach Anwendungsfall sind unterschiedliche Installationsschritte auszuführen.
 Für eine detaillierte Installationsanleitung, siehe:
 - [Einrichtung mit integrierter ProcessEngine](setup-internal-process-engine.md)
 - [Einrichtung mit externer ProcessEngine](setup-external-process-engine.md)
-
-Ebenfalls muss der [ConsumerApiClient konfiguriert werden](setup-consumer-api-client.md).
 
 Die Konfiguration der ConsumerAPI Komponenten erfolgt nach dem
 [Konfigurationskonzept](../../konzepte/configuration.md).
