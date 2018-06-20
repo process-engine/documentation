@@ -72,5 +72,5 @@ Bedienung der ProcessEngine ändert.
 #### Weiterführende Links
 
 * [ConsumerAPI](./api/consumer_api/README.md)
-* [TypeScript-Implementierung der ConsumerAPI](./processengine/typescript/api/consumer_api/README.md)
+* [TypeScript-Implementierung der ConsumerAPI](./processengine/typescript/consumer_api/README.md)
 * [ManagementAPI](./api/management-api.md)
