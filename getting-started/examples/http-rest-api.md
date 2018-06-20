@@ -20,7 +20,7 @@ Dazu müssen in der `Extensions`-Ansicht die folgenden Properties hinzugefügt w
 ```
 module    HttpService
 method    get
-params    ['http://api.fixer.io/latest']
+params    ['http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y']
 ```
 
 <img src="../images/getting-started/http-rest-api/configure-fetch-data-service-task.png" width="100%" />
@@ -37,7 +37,7 @@ In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern
 lediglich der USD Kurs.
 
 Um das zu erreichen wird ihm - wieder in der `Extensions`-Ansicht - die Property
-```mapper   token.current.result.rates.USD```
+```mapper   token.current.result.EUR_USD.val```
 mitgegeben.
 
 <img src="../images/getting-started/http-rest-api/configure-sequence-flow-after-task.png" width="100%" />

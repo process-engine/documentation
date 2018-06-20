@@ -39,7 +39,7 @@ Data` umbenannt werden. Der Wert der `uiConfig` Property muss zu folgendem Wert
 abgeändert werden:
 
 ```
-${ "message": "1 EUR = " + token.current.rates.USD + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
+${ "message": "1 EUR = " + token.current.rates.val + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
 ```
 
 {% video controls="controls"%}../images/getting-started/sending-emails/rename_show_data_to_confirm_data.mp4{% endvideo
@@ -100,7 +100,7 @@ Was nun zu tun ist:
 An der Sequenz **nach** dem UserTask `Get Email Address` muss unter `Extensions`
 ein Property `mapper` mit folgendem Wert angelegt werden:
 ```
-{rates: token.history.ServiceTask_FetchData.result.rates, email: token.history.UserTask_GetEmailAddress}
+{rates: token.history.ServiceTask_FetchData.result.EUR_USD, email: token.history.UserTask_GetEmailAddress.email}
 ```
 
 {% video controls="controls"%}../images/getting-started/sending-emails/add_result_mapper_to_sequence_flow.mp4{% endvideo %}
@@ -124,7 +124,7 @@ Eigenschaften erhalten:
 ```
 module  MailService
 method  send
-params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + token.history.ServiceTask_FetchData.result.rates.USD + " USD"]
+params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + token.history.ServiceTask_FetchData.result.EUR_USD.val + " USD"]
 ```
 
 Nach diesem [Task](../../GLOSSARY.md#task) muss der Prozess beendet
