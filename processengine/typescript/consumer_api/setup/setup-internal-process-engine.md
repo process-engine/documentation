@@ -3,7 +3,7 @@
 Dieser Abschnitt beschreibt die Einrichtung einer ConsumerAPI, unter Verwendung
 einer ProcessEngine, die direkt in die Anwendung integriert ist.
 
-![Aufbau](images/consumer_api_architecture_internal.png)
+![Aufbau](../images/consumer_api_architecture_internal.png)
 
 ## Setup
 
