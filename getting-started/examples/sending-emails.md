@@ -42,7 +42,7 @@ abgeändert werden:
 ${ "message": "1 EUR = " + token.current.rates.val + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
 ```
 
-{% video controls="controls"%}../images/getting-started/sending-emails/rename_show_data_to_confirm_data.mp4{% endvideo
+{% video controls="controls"%}../images/getting-started/sending-emails/rename-_show-data_to_confirm-data.mp4{% endvideo
 %}
 
 So sieht der Task `Confirm Data` dann am Ende aus:
@@ -66,17 +66,8 @@ endvideo %}
 Zusammengefasst ergibt sich daraus ein `User Task` namens `Get Email Address`
 mit folgender Konfiguration:
 
-General:
+<img src="../images/getting-started/sending-emails/create_task_get_email_address.png" width="70%" />
 
-<img src="../images/getting-started/sending-emails/create_task_get_email_address_general.png" width="80%" />
-
-Forms:
-
-<img src="../images/getting-started/sending-emails/create_task_get_email_address_forms.png" width="80%" />
-
-Extension Properties:
-
-<img src="../images/getting-started/sending-emails/create_task_get_email_address_extensions.png" width="80%" />
 
 ### Task Resultate in Mapper zusammenführen
 
@@ -147,9 +138,9 @@ Hinzufügen von Flows und einem
 
 Hinzufügen der entsprechenden Überprüfungen:
 
-<img src="../images/getting-started/sending-emails/add_condition_ok.png" width="60%" />
+<img src="../images/getting-started/sending-emails/add_condition_ok.png" width="70%" />
 
-<img src="../images/getting-started/sending-emails/add_condition_cancel.png" width="60%" />
+<img src="../images/getting-started/sending-emails/add_condition_cancel.png" width="70%" />
 
 Setzen der Properties für den
 [Service Task](../../GLOSSARY.md#service-task):
