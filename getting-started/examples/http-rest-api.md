@@ -11,11 +11,11 @@ Daten anzuzeigen:
 
 {% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
-In der `Extensions`-Ansicht kann dem [Service Task](../../GLOSSARY.md#service-task)
+Rechts im Property Panel kann dem [Service Task](../../GLOSSARY.md#service-task)
 mit dem Namen `Fetch Data` nun gesagt werden, was er tun soll:
 In diesem Fall einen HTTP GET Request gegen eine bestimmte URL ausführen.
 
-Dazu müssen in der `Extensions`-Ansicht die folgenden Properties hinzugefügt werden:
+Dazu muss dem Element im Property Panel die folgenden Properties hinzugefügt werden:
 
 ```
 module    HttpService
@@ -36,7 +36,7 @@ Token aufbewahrt werden.
 In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern
 lediglich der USD Kurs.
 
-Um das zu erreichen wird ihm - wieder in der `Extensions`-Ansicht - die Property
+Um das zu erreichen wird ihm - wieder im Property Panel - die Property
 ```mapper   token.current.result.EUR_USD.val```
 mitgegeben.
 
@@ -47,7 +47,7 @@ den USD Kurs durch den Zugriff auf `token.current` nutzen.
 
 Zum Schluss muss dem [User Task](../../GLOSSARY.md#user-task)
 (`Show Data`) nur noch gesagt werden, was er anzeigen soll. Dies geschieht
-wieder über die `Extensions`-Ansicht.
+wieder über das Property Panel.
 
 Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu
 verwenden und konfigurieren diesen mit folgender `uiConfig`:
