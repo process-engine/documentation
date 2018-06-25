@@ -72,9 +72,9 @@ Ein [User Task](../../GLOSSARY.md#user-task) kann so eingestellt werden,
 dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
 kann wie folgt geschehen:
 
-- Über die rechts befindliche Dropdown-Liste zur Ansicht `Extensions` wechseln
-- Hier kann nun mit Hilfe von Key-Value-Paare eingestellt werden, wie die
-Oberfläche aussehen soll
+- Auswählen des UserTasks
+- Rechts im Property Panel kann nun mit Hilfe von Key-Value-Paare unter Properties 
+eingestellt werden, wie die Oberfläche aussehen soll
 
 <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 
@@ -98,8 +98,6 @@ ${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] 
 ```
 
 <img src="../images/getting-started/hello-world/extensions-properties.png" width="100%" />
-
-{% video controls="controls"%}../images/getting-started/hello-world/configure-hello-world-task.mp4{% endvideo %}
 
 **Zusammenfassung**
 
