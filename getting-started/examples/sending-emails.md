@@ -88,7 +88,7 @@ der uns die Ergebnisse aus den beiden vorangegangenen Tasks zusammengefasst
 bereitstellt.
 
 Was nun zu tun ist:
-An der Sequenz **nach** dem UserTask `Get Email Address` muss unter `Extensions`
+An der Sequenz **nach** dem UserTask `Get Email Address` muss im Property Panel
 ein Property `mapper` mit folgendem Wert angelegt werden:
 ```
 {rates: token.history.ServiceTask_FetchData.result.EUR_USD, email: token.history.UserTask_GetEmailAddress.email}
