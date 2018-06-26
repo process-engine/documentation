@@ -8,13 +8,13 @@ wie die TypeScript Implementierung der ProcessEngine auf.
 # Dokumentation
 
 ## Funktionsdokumentation
-* [Abfragen startbarer Prozessmodelle](list-startable-process-models.md)
-  * [Alle Prozessmodelle abfragen](list-startable-process-models.md#alle-prozessmodelle-abfragen)
-  * [Einzelnes Prozessmodell abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
-* [Starten von Prozessinstanzen](start-process-instance.md)
-* [Auflisten wartender UserTasks](list-waiting-usertasks.md)
-* [Abschließen eines UserTasks](finish-user-task.md)
-* [Ergebnis einer Prozesskorrelation abfragen](get-correlation-result.md)
+* [Abfragen startbarer Prozessmodelle](tasks/list-startable-process-models.md)
+  * [Alle Prozessmodelle abfragen](tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
+  * [Einzelnes Prozessmodell abfragen](tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+* [Starten von Prozessinstanzen](tasks/start-process-instance.md)
+* [Auflisten wartender UserTasks](tasks/list-waiting-usertasks.md)
+* [Abschließen eines UserTasks](tasks/finish-user-task.md)
+* [Ergebnis einer Prozesskorrelation abfragen](tasks/get-correlation-result.md)
 
 ## Zusätzliche Dokumentation
 * [Public API](public_api.md)
@@ -75,8 +75,8 @@ Anwendung liegt (z.B. auf einem zentralen Server)
 Je nach Anwendungsfall sind unterschiedliche Installationsschritte auszuführen.
 
 Für eine detaillierte Installationsanleitung, siehe:
-- [Einrichtung mit integrierter ProcessEngine](setup-internal-process-engine.md)
-- [Einrichtung mit externer ProcessEngine](setup-external-process-engine.md)
+- [Einrichtung mit integrierter ProcessEngine](setup/setup-internal-process-engine.md)
+- [Einrichtung mit externer ProcessEngine](setup/setup-external-process-engine.md)
 
 Die Konfiguration der ConsumerAPI Komponenten erfolgt nach dem
 [Konfigurationskonzept](../../konzepte/configuration.md).

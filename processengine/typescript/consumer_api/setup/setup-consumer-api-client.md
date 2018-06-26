@@ -54,6 +54,9 @@ function registerInContainer(container) {
 }
 ```
 
+`ConsumerApiInternalAccessor` ist der Name der IoC Registrierung für den
+Accessor, der die Kommunikation mit integrierten ProcessEngines steuert.
+
 ## Externe ProcessEngines
 
 ### Ohne IoC-Container
@@ -95,12 +98,6 @@ function registerInContainer(container) {
 
 `ConsumerApiExternalAccessor` ist der Name der IoC Registrierung für den
 Accessor, der die Kommunikation mit externen ProcessEngines steuert.
-
-Das `ioc_module` des `@process-engine/consumer_api_client` Pakets bringt eine
-solche Registrierung bereits mit sich.
-
-Wird eine externe ProcessEngine verwendet, ist dieser Schritt also nur
-notwendig, wenn eigene Accessor Implementierungen verwendet werden sollen.
 
 ## Custom Accessors
 
