@@ -73,8 +73,8 @@ dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
 kann wie folgt geschehen:
 
 - Auswählen des UserTasks
-- Rechts im Property Panel kann nun mit Hilfe von Key-Value-Paare unter Properties 
-eingestellt werden, wie die Oberfläche aussehen soll
+- In der rechten Leiste unter dem Punkt Properties lässt sich nun
+die anzuzeigenden Oberfläche mittels Key - Value Paaren definieren
 
 <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 

@@ -11,9 +11,11 @@ Daten anzuzeigen:
 
 {% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
-Rechts im Property Panel kann dem [Service Task](../../GLOSSARY.md#service-task)
-mit dem Namen `Fetch Data` nun gesagt werden, was er tun soll:
-In diesem Fall einen HTTP GET Request gegen eine bestimmte URL ausführen.
+Innerhalb des Property Panels lässt sich nun ebenfalls mittels Key Value Paaren
+der [Service Task](../../GLOSSARY.md#service-task) definieren.
+In unserem Fall soll der `Fetch Data` Task einen `GET - request` auf der 
+angegebenen URL ausführen. Die Antwort wird anschließend als aktueller Token 
+Wert festgelegt.
 
 Dazu muss dem Element im Property Panel die folgenden Properties hinzugefügt werden:
 
