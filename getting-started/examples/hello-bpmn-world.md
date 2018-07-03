@@ -72,9 +72,9 @@ Ein [User Task](../../GLOSSARY.md#user-task) kann so eingestellt werden,
 dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
 kann wie folgt geschehen:
 
-- Auswählen des UserTasks
-- In der rechten Leiste unter dem Punkt Properties lässt sich nun
-die anzuzeigenden Oberfläche mittels Key - Value Paaren definieren
+1. Auswählen des UserTasks
+2. In der rechten Leiste unter dem Punkt Properties lässt sich nun
+die anzuzeigene Oberfläche mittels Key-Value Paaren definieren
 
 <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 

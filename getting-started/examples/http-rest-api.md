@@ -11,13 +11,13 @@ Daten anzuzeigen:
 
 {% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
-Innerhalb des Property Panels lässt sich nun ebenfalls mittels Key Value Paaren
+Innerhalb des Property Panels lässt sich nun ebenfalls mittels Key-Value Paaren
 der [Service Task](../../GLOSSARY.md#service-task) definieren.
 In unserem Fall soll der `Fetch Data` Task einen `GET - request` auf der 
-angegebenen URL ausführen. Die Antwort wird anschließend als aktueller Token 
-Wert festgelegt.
+angegebenen URL ausführen.
+Die Antwort wird anschließend als aktueller Token Wert festgelegt.
 
-Dazu muss dem Element im Property Panel die folgenden Properties hinzugefügt werden:
+Dazu müssen dem Element im Property Panel die folgenden Properties hinzugefügt werden:
 
 ```
 module    HttpService
