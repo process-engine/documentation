@@ -55,10 +55,7 @@ dabei um eine von der ProcessEngine zugewiesene Aufgabe; etwa die Genehmigung ei
 | :----: | -------- |
 | ![](./assets/task_benutzer.svg) | ![](./assets/example_benutzer.svg) |
 
-Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
- - Tomate
- - Gurke
- - Sägespäne
+In dem obigen Beispiel erstellt der Benutzer eine Einkaufsliste.
 
 #### Service Aktivität
 
@@ -68,12 +65,7 @@ Eine Serviceaktivität wird von einer Software ausgeführt. Hierbei handelt es s
 | :----: | -------- |
 | ![](./assets/task_service.svg) | ![](./assets/example_service.svg) |
 
-1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
-
-   - Tomate
-   - Gurke
-   - Sägespäne
-
+1. Der Benutzer erstellt eine Einkaufsliste.
 1. Die Preise der Positionen werden von einem Service ermittelt.
 
 #### Skriptaktivität
@@ -88,10 +80,7 @@ Skriptaktivitäten erlauben das Ausgeben von Text auf einer Konsole oder generel
 | :----: | -------- |
 | ![](./assets/task_skript.svg) | ![](./assets/example_skript.svg) |
 
-1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
- - Tomate
- - Gurke
- - Sägespäne
+1. Der Benutzer erstellt eine Einkaufsliste.
 1. Die Preise der Positionen werden von einem Service ermittelt.
 1. Der Gesamtpreis wird von einem Skript ausgegeben.
 
