@@ -11,16 +11,18 @@ Daten anzuzeigen:
 
 {% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
-In der `Extensions`-Ansicht kann dem [Service Task](../../GLOSSARY.md#service-task)
-mit dem Namen `Fetch Data` nun gesagt werden, was er tun soll:
-In diesem Fall einen HTTP GET Request gegen eine bestimmte URL ausführen.
+Innerhalb des Property Panels lässt sich nun ebenfalls mittels Key-Value Paaren
+der [Service Task](../../GLOSSARY.md#service-task) definieren.
+In unserem Fall soll der `Fetch Data` Task einen `GET - request` auf der 
+angegebenen URL ausführen.
+Die Antwort wird anschließend als aktueller Token Wert festgelegt.
 
-Dazu müssen in der `Extensions`-Ansicht die folgenden Properties hinzugefügt werden:
+Dazu müssen dem Element im Property Panel die folgenden Properties hinzugefügt werden:
 
 ```
 module    HttpService
 method    get
-params    ['http://api.fixer.io/latest']
+params    ['http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y']
 ```
 
 <img src="../images/getting-started/http-rest-api/configure-fetch-data-service-task.png" width="100%" />
@@ -36,8 +38,8 @@ Token aufbewahrt werden.
 In diesem Fall sollen nicht alle Wechselkurse angezeigt werden, sondern
 lediglich der USD Kurs.
 
-Um das zu erreichen wird ihm - wieder in der `Extensions`-Ansicht - die Property
-```mapper   token.current.result.rates.USD```
+Um das zu erreichen wird ihm - wieder im Property Panel - die Property
+```mapper   token.current.result.EUR_USD.val```
 mitgegeben.
 
 <img src="../images/getting-started/http-rest-api/configure-sequence-flow-after-task.png" width="100%" />
@@ -47,7 +49,7 @@ den USD Kurs durch den Zugriff auf `token.current` nutzen.
 
 Zum Schluss muss dem [User Task](../../GLOSSARY.md#user-task)
 (`Show Data`) nur noch gesagt werden, was er anzeigen soll. Dies geschieht
-wieder über die `Extensions`-Ansicht.
+wieder über das Property Panel.
 
 Dazu setzen wir `Confirm` als `uiName`, um einen Bestätigungsdialog zu
 verwenden und konfigurieren diesen mit folgender `uiConfig`:
