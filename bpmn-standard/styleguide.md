@@ -49,13 +49,11 @@ Fokus der Aktivität.
 #### Benutzeraktivität
 
 Eine Benutzeraktivität wird immer von einem Menschen erledigt; es handelt sich
-dabei um eine von der ProcessEngine zugewiesene Aufgabe.
+dabei um eine von der ProcessEngine zugewiesene Aufgabe; etwa die Genehmigung eines Antrags, die Prüfung von offiziellen Dokumenten oder die Bearbeitung einer Anfrage.
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Nutzer Task](./assets/task_benutzer.svg) | Die Genehmigung eines Antrags; die Prüfung von offiziellen Dokumenten oder die Bearbeitung einer Anfrage. |
-
-![Beispiel Benutzer](./assets/example_benutzer.svg)
+| ![](./assets/task_benutzer.svg) | ![](./assets/example_benutzer.svg) |
 
 Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
  - Tomate
@@ -64,13 +62,11 @@ Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
 
 #### Service Aktivität
 
-Eine Serviceaktivität wird von einer Software ausgeführt.
+Eine Serviceaktivität wird von einer Software ausgeführt. Hierbei handelt es sich etwa die Abfrage von Daten einer API, die automatische Verbuchung einer Rechnung oder das Generieren eines Angebots für einen Kunden.
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Service Task](./assets/task_service.svg) | Das Abfragen von Daten einer API, die automatische Verbuchung einer Rechnung oder das Generieren eines Angebots für einen Kunden. |
-
-![Beispiel Service](./assets/example_service.svg)
+| ![](./assets/task_service.svg) | ![](./assets/example_service.svg) |
 
 1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
 
@@ -84,14 +80,13 @@ Eine Serviceaktivität wird von einer Software ausgeführt.
 
 Eine Skriptaktivität enthält ein Skript, das von der ProcessEngine ausgeführt
 wird.
-
 Die ProcessEngine unterstützt JavaScript als Skriptsprache.
+Skriptaktivitäten erlauben das Ausgeben von Text auf einer Konsole oder generell alle Aufgaben, die mit JavaScript erledigt werden können.
+
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Skript Task](./assets/task_skript.svg) | Das Ausgeben von Text auf einer Konsole oder generell alle Aufgaben, die mit JavaScript erledigt werden können. |
-
-![Beispiel Skript](./assets/example_skript.svg)
+| ![](./assets/task_skript.svg) | ![](./assets/example_skript.svg) |
 
 1. Der Benutzer erstellt eine Einkaufsliste, zum Beispiel:
  - Tomate
@@ -107,9 +102,8 @@ Prozess.
 
 | Symbol | Beispiel |
 | :----: | -------- |
-| ![Aufruf Task](./assets/task_aufruf.svg) | Der Aufruf eines anderen Prozesses in diesem Prozess. |
+| ![](./assets/task_aufruf.svg) | ![](./assets/example_aufruf.svg) |
 
-![Beispiel Aufruf](./assets/example_aufruf.svg)
 
 Der gesamte Prozess wird durch die Aufrufaktivität aufgerufen.
 
