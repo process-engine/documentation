@@ -14,6 +14,7 @@
   "dependencies": {
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-collapsible-menu": "^1.0.3",
+    "gitbook-plugin-editlink": "^1.0.2",
     "gitbook-plugin-html5-video": "^1.0.0",
     "gitbook-plugin-image-captions-extended": "0.0.3"
   },

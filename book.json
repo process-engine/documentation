@@ -2,12 +2,18 @@
   "plugins": [
     "collapsible-menu",
     "html5-video",
-    "image-captions-extended"
+    "image-captions-extended",
+    "editlink"
   ],
   "pluginsConfig": {
     "image-captions": {
       "caption": "_CAPTION_",
       "align": "left"
+    },
+    "editlink": {
+      "base": "https://github.com/process-engine/documentation/edit/develop/",
+      "label": "Improve this page",
+      "multilingual": false
     }
   }
 }
