@@ -19,7 +19,7 @@ Werkzeuge und Ideen bereitstellen, die:
 ## Was gibt es?
 
 Das Ökosystem um ProcessEngine.io wird stets erweitert, wobei sich drei
-tragende Säulen etabliert haben um Konzepte und Funktionalität zu
+tragende Säulen etabliert haben, um Konzepte und Funktionalität zu
 kommunizieren:
 
 1. BPMN-Studio
