@@ -56,7 +56,7 @@ unterschiedliche Einsatzszenarien eignen.
 
 #### Weiterführende Links
 
-* [TypeScript-Implementierung](./getting-started/installation.md)
+* [TypeScript-Implementierung](./processengine/typescript/README.md)
 * .NET-Implementierung (Bereits veröffentlicht, Dokumentation fehlt zurzeit)
 
 ### ProcessEngine APIs {#apis}
