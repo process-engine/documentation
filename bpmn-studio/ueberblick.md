@@ -6,68 +6,76 @@
 
 Das BPMN-Studio besteht aus einer vielzahl von verschiedenen Komponenten.
 
+## SolutionExplorer
 Zum einen ist der [SolutionExplorer](components/solution-explorer/solution-explorer.md) ein wichtiger Bestandteil des Studios.
 
-![SolutionExplorer](./solution-explorer.png)
+![SolutionExplorer](components/solution-explorer/solution-explorer.png)
 
-Man kann diesen über das BILD Icon links neben `Plan` in der Navigation erreichen.
+Man kann diesen über das Icon links neben `Plan` in der Navigation erreichen.
 
-Der "Process Definition List"-Dialog zeigt alle Prozessmodelle, die zurzeit
-in der Datenbank vorhanden sind.
+![SolutionExplorer Icon](components/solution-explorer/solution-explorer-icon.png)
 
-Beim Start der Anwendung sind zwei Prozesse vorhanden:
+## Plan View
 
-1.  Prozess löschen
-1.  Prozess erstellen
+Die [Plan View](components/plan-view/plan-view.md) zeigt alle Prozessmodelle, die zurzeit
+in der Datenbank vorhanden sind. Falls keine Prozessmodelle in der
+Tabelle aufgeführt werden, müssen diese noch deployed werden.
 
-Oben links befindet sich der "Create Process Definition"-Button.
-Er öffnet einen Dialog zum Erstellen eines neuen Prozessmodells.
-Dieses neue Prozessmodell kann nach dem Erstellen mit dem entsprechenden
-"Details"-Button, rechts in der Tabelle, bearbeitet werden.
+![Plan View](components/plan-view/plan-view.png)
 
-Der "Start"-Button links neben dem "Details"-Button dient zum Starten einer
-Prozessinstanz anhand des Prozessmodells.
+Über die [Plan View](components/plan-view/plan-view.md), oder über den
+[SolutionExplorer](components/solution-explorer/solution-explorer.md) kann 
+man die Detail Ansicht eines Prozesses öffnen, in der man dann die Möglichkeit
+hat diesen zu Modellieren, Deployen, Exportieren oder auch Starten kann.
 
-## Task List
+Um die Ansicht zu öffnen klickt man entweder in der [Plan View](components/plan-view/plan-view.md)
+auf den Tabelleneintrag, oder auf den Prozessnamen im 
+[SolutionExplorer](components/solution-explorer/solution-explorer.md).
 
-![Task List](./task-list.png)
+## Detail View
 
-Der "Task List"-Dialog zeigt alle Tasks, die für den angemeldeten Benutzer
-verfügbar sind.
+![Detail View](components/detail-view/detail-view.png)
 
-Im Bild wird ein Task des "Prozess erstellen"-Prozesses angezeigt. Der Task
-wartet darauf, von einem Benutzer bearbeitet zu werden. Mit einem Klick auf den
-"Continue"-Button wird der Nutzer zu einer Oberfläche zum bearbeiten des Task
-geführt.
+Die [Detail View](components/detail-view/detail-view.md) behandelt alle
+Diagramm relevanten sachen. Hauptsächlich wird hier das Prozessmodell
+modelliert und konfiguriert.
 
-## Process Instance List
+## Diff View
 
-![Process Instance List](./process-instance-list.png)
+![Diff View](components/diff-view/diff-view.png)
 
-Der "Process Instance List"-Dialog zeigt die Prozessinstanzen, die:
+Die [Diff View](components/diff-view/diff-view.md) kann über die Statusbar
+aufgerufen werden, allerdings nur wenn die [Detail View](components/detail-view/detail-view.md)
+geöffnet ist.
 
-- gerade ausgeführt werden.
-- schon ausgeführt wurden.
+Sie zeigt an, in welchen Bereichen sich ein Diagramm verändert hat.
+Zusätzlich gibt es ein Changelog der Änderungen.
 
-Insgesamt stellt der Dialog eine Liste aller Prozessinstanzen dar.
+![Aufruf der Diff View](components/diff-view/diff-view-aufruf.png)
 
-Mit dem Dropdown in der Spalte "State" kann man die Tabelle nach dem Status
-der Prozessinstanz sortieren.
+## XML View
 
-## Der Prozess Editor
+![XML View](components/xml-view/xml-view.png)
 
-![Prozess Editor](./process-editor.png)
+Die [XML View](components/xml-view/xml-view.md) Zeigt die aktuelle XML
+des Prozessmodells. 
 
-In der Mitte des Bildschirms wird der Prozess Editor angezeigt.
-Am linken Bildschirmrand finden sich alle Werkzeuge, die zum Bearbeiten eines Prozesses
-notwendig sind. Eine weitere Toolbar befindet sich oberhalb des Editors.
+## Dashboard
 
-Diese bietet die folgenden Funktionen:
+![Dashboard](components/dashboard/dashboard.png)
 
-- Start - Startet eine neue Prozessinstanz anhand des Prozessmodells.
-- Processes - Zeigt eine Liste von Prozessinstanzen zu dem Prozessmodell.
-- Tasks - Zeigt eine Liste von Tasks, die zu dem Prozessmodell gehören.
-- Save - Speichert die Änderungen am Prozessmodell.
-- Delete Process - Löscht das Prozessmodell.
-- Export Diagramm - Exportiert das Diagramm als .bpmn-Datei
-- Import Diagramm - Importiert ein Diagramm aus einer .bpmn oder .xml-Datei
+Das [Dashboard](components/dashboard/dashboard.md) ist über die Navigationsleiste
+zu finden und zeigt die aktuell laufenden Prozesse der verbundenen ProcessEngine.
+Zusätzlich bekommt man eine Liste der anstehenden UserTasks angezeigt.
+Es gibt die Möglichkeit UserTasks einer bestimmten Prozessinstanz (Correlation) anzuzeigen.
+
+## Config Panel
+
+![Config Panel](components/config-panel/config-panel.png)
+
+Das [Config Panel](components/config-panel/config-panel.md) kannn über die Statusbar
+aufgerufen werden.
+
+![Config Panel Aufruf](components/config-panel/config-panel-aufruf.png)
+
+Dort kann sich zum Beispiel mit einer externen ProcessEngine verbunden werden.
