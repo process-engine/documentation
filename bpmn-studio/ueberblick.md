@@ -1,8 +1,16 @@
-# Beschreibung der Dialoge
+# Überblick
 
-## Process Definition List {#process-definition-list}
+## BPMN-Studio
 
-![Process Definition List](./process-definition-list.png)
+![BPMN-Studio](./bpmn-studio.png)
+
+Das BPMN-Studio besteht aus einer vielzahl von verschiedenen Komponenten.
+
+Zum einen ist der SolutionExplorer ein wichtiger Bestandteil des Studios.
+
+![SolutionExplorer](./solution-explorer.png)
+
+Man kann diesen über das BILD Icon links neben `Plan` in der Navigation erreichen.
 
 Der "Process Definition List"-Dialog zeigt alle Prozessmodelle, die zurzeit
 in der Datenbank vorhanden sind.
