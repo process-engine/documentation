@@ -29,6 +29,7 @@
 1. [Komponenten](bpmn-studio/components/README.md)
   * [Solution Explorer](bpmn-studio/components/solution-explorer/solution-explorer.md)
   * [Plan View](bpmn-studio/components/plan-view/plan-view.md)
+  * [Detail View](bpmn-studio/components/detail-view/detail-view.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 1. [Hands-On](bpmn-studio/hands-on/README.md)
 
