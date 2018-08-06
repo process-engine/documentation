@@ -25,7 +25,7 @@
 
 ## BPMN-Studio
 
-1. [Beschreibung der Ansichten](bpmn-studio/beschreibung-ansichten.md)
+1. [Überblick](bpmn-studio/ueberblick.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 1. [Hands-On](bpmn-studio/hands-on/README.md)
 
