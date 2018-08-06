@@ -6,3 +6,4 @@
 1. [Diff View](diff-view/diff-view.md)
 1. [XML View](xml-view/xml-view.md)
 1. [Dashboard](dashboard/dashboard.md)
+1. [Config Panel](config-panel/config-panel.md)
