@@ -6,7 +6,7 @@
 
 Das BPMN-Studio besteht aus einer vielzahl von verschiedenen Komponenten.
 
-Zum einen ist der SolutionExplorer ein wichtiger Bestandteil des Studios.
+Zum einen ist der [SolutionExplorer](components/solution-explorer/solution-explorer.md) ein wichtiger Bestandteil des Studios.
 
 ![SolutionExplorer](./solution-explorer.png)
 
