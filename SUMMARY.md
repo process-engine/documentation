@@ -31,6 +31,7 @@
   * [Plan View](bpmn-studio/components/plan-view/plan-view.md)
   * [Detail View](bpmn-studio/components/detail-view/detail-view.md)
   * [Diff View](bpmn-studio/components/diff-view/diff-view.md)
+  * [XML View](bpmn-studio/components/xml-view/xml-view.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 1. [Hands-On](bpmn-studio/hands-on/README.md)
 
