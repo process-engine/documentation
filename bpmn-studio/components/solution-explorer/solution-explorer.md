@@ -1,2 +1,0 @@
-#### Solution Explorer
-🚧 Under construction
