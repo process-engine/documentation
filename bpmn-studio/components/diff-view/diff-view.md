@@ -19,7 +19,7 @@ Statusleiste aktiviert.
 ## Aufbau und Strukturierung
 
 Wenn die Diff View über den "Show Diff"-Button in der unteren rechten Ecke
-des BPMN-Studios geöffnet wurde, werden das Vorher und das Nachher Diagramm
+des BPMN-Studios geöffnet wurde, werden das "Vorher"- und das "Nachher"-Diagramm
 angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 
 
