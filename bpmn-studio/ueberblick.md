@@ -11,7 +11,7 @@ beschrieben.
 Der [SolutionExplorer](components/solution-explorer/solution-explorer.md) 
 ist ein wichtiger Bestandteil des BPMN-Studios. Er bietet die Funktionalität
 Ordner (Solutions) oder Dateien zu öffnen. Darüber hinaus ist er in allen
-Ansichten verfügbar. Somit kann von jeder Ansicht aus zu der Detail Ansicht
+Ansichten verfügbar. Somit kann von jeder Ansicht aus zu der Designansicht
 eines Prozesses navigiert werden.
 
 Zusätzlich zeigt er die deployten Prozesse der verbundenen ProcessEngine.
@@ -31,9 +31,9 @@ der Tabelle aufgeführt werden, müssen diese noch deployed werden.
 
 ![Plan View](components/plan-view/plan-view.png)
 
-Über die [Plan View](components/plan-view/plan-view.md) kann man die Detail
-Ansicht eines Prozesses öffnen, in der man dann die Möglichkeit hat diesen 
-zu modellieren, zu deployen, zu exportieren oder auch starten kann.
+Über die [Plan View](components/plan-view/plan-view.md) kann man die 
+Designansicht eines Prozesses öffnen, in der man dann die Möglichkeit hat
+diesen zu modellieren, zu deployen, zu exportieren oder auch zu starten.
 
 Um die Ansicht zu öffnen klickt man in der 
 [Plan View](components/plan-view/plan-view.md) auf den Tabelleneintrag.
@@ -44,15 +44,15 @@ Um die Ansicht zu öffnen klickt man in der
 
 Die [Design View](components/design-view/design-view.md) bietet die
 Möglichkeit das Diagramm zu betrachten, zu modellieren und zu konfigurieren.
-Die Ansicht kann über den Solution Explorer, oder über die Plan View
-aufgerufen werden.
+Die Ansicht kann über den Solution Explorer, oder über die 
+[Plan View](components/plan-view/plan-view.md) aufgerufen werden.
 
 ## Diff View
 
 ![Diff View](components/diff-view/diff-view.png)
 
 Die [Diff View](components/diff-view/diff-view.md) kann in der 
-[Design Ansicht](components/design-view/design-view.md) über die Statusleiste
+[Design View](components/design-view/design-view.md) über die Statusleiste
 aufgerufen werden.
 
 Sie zeigt an, in welchen Bereichen sich ein Diagramm verändert hat.
@@ -64,7 +64,7 @@ Zusätzlich gibt es ein Changelog der Änderungen.
 
 ![XML View](components/xml-view/xml-view.png)
 
-Die [XML View](components/xml-view/xml-view.md) Zeigt die aktuelle XML
+Die [XML View](components/xml-view/xml-view.md) zeigt die aktuelle XML
 des Prozessmodells. 
 
 ## Dashboard
@@ -93,7 +93,7 @@ verbindet und an welchem Server sich der Benutzer authentifiziert.
 ![Login Button](login-button.png)
 
 Der Login Button befindet sich oben rechts im BPMN-Studio.
-Nach einem klick auf den Button wird man auf die Anmeldeseite
+Nach einem Klick auf den Button wird man auf die Anmeldeseite
 des eingestellten IdentityServers geleitet, um sich anzumelden.
 
 ![Anmeldeseite](identity-server-login.png)
