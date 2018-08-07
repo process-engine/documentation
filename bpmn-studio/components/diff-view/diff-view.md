@@ -11,7 +11,7 @@ In der grafischen Ansicht kann der Benutzer zwischen "Vorher gegen Nachher"
 (Before vs. After) oder "Nachher gegen Vorher" (After vs. Before) wählen. Die
 Schaltflächen dazu finden sich mittig in der unteren Statusleiste.
 
-In der Listenansicht werden die Änderungen mit Typ und ggf. Elementnamens
+In der Listenansicht werden die Änderungen mit Typ und ggf. Elementnamen
 aufgezeigt. Dabei wird nach Änderungsart sortiert. Die Listenansicht ist über
 die Schaltfläche mit den 3 horizontalen Balken mittig in der unteren
 Statusleiste aktiviert.
