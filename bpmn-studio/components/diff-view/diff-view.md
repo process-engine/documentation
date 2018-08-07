@@ -3,7 +3,7 @@
 ## Aufgaben und Motivation
 
 Mit Hilfe der Diff View ist es dem Benutzer möglich, Änderungen nach dem letzten
-Speicherstand so einfach wie möglich zu erkennen.
+Speicherstand zu erkennen.
 
 Die Unterschiede an den Diagrammen werden als Graph und als Liste dargestellt.
 
