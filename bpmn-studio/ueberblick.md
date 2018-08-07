@@ -38,11 +38,11 @@ zu modellieren, zu deployen, zu exportieren oder auch starten kann.
 Um die Ansicht zu öffnen klickt man in der 
 [Plan View](components/plan-view/plan-view.md) auf den Tabelleneintrag.
 
-## Detail View
+## Design View
 
-![Detail View](components/detail-view/detail-view.png)
+![Design View](components/design-view/design-view.png)
 
-Die [Detail View](components/detail-view/detail-view.md) bietet die
+Die [Design View](components/design-view/design-view.md) bietet die
 Möglichkeit das Diagramm zu betrachten, zu modellieren und zu konfigurieren.
 Die Ansicht kann über den Solution Explorer, oder über die Plan View
 aufgerufen werden.
