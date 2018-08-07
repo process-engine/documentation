@@ -2,13 +2,13 @@
 
 ## Aufgaben und Motivation
 
-Die Diff-View ermöglicht dem Benutzer die Unterschiede zwischen zwei Diagrammen
+Die Diff View ermöglicht dem Benutzer die Unterschiede zwischen zwei Diagrammen
 so einfach wie möglich zu erkennen.
 
-Dazu stellt die Diff-View die Unterschiede der Diagramme sowohl grafisch als
+Dazu stellt die Diff View die Unterschiede der Diagramme sowohl grafisch als
 auch als Liste dar.
 
-Mit Hilfe der Diff-View ist es dem Benutzer möglich, Änderungen nach dem letzten
+Mit Hilfe der Diff View ist es dem Benutzer möglich, Änderungen nach dem letzten
 Speicherstand so einfach wie möglich zu erkennen.
 
 Die Unterschiede an den Diagrammen werden als Graph und als Liste dargestellt.
@@ -24,27 +24,27 @@ Statusleiste aktiviert.
 
 ## Aufbau und Strukturierung
 
-Wenn die Diff-View über den "Show Diff"-Button in der unteren rechten Ecke
+Wenn die Diff View über den "Show Diff"-Button in der unteren rechten Ecke
 des BPMN-Studios geöffnet wurde, werden das Vorher und das Nachher Diagramm
 angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 
 
-![Diff View Start Ansicht](./images/diff-view-start.png)
+![Diff View Start Ansicht](./images/Diff View-start.png)
 
 Klickt man auf einen der beiden o.g. Buttons wird, in dem noch leeren
-Abschnitt der DiffView, das entsprechende Diagram mit den markierten Änderungen
+Abschnitt der Diff View, das entsprechende Diagram mit den markierten Änderungen
 angezeigt.
 Welche Farbe was bedeutet kann unten links in der Ecke in der Legende abgelesen
 werden.
 
-![Vorher zu Nachher](./images/diff-view-vorher.png)
+![Vorher zu Nachher](./images/Diff View-vorher.png)
 
-![Nachher zu Vorher](./images/diff-view-nachher.png)
+![Nachher zu Vorher](./images/Diff View-nachher.png)
 
 Zwischen den beiden Modus-Auswahl-Buttons befindet sich der Button zum Ein-/
 Ausblenden der Listenansicht.
 
-![Listenansicht](./images/diff-view-change-list.png)
+![Listenansicht](./images/Diff View-change-list.png)
 
 Die Listenansicht zeigt alle Änderungen an. Diese sind nach der Art
  der Änderung in folgender Reihenfolge sortiert:
@@ -59,7 +59,7 @@ Elements angegeben.
 
 ## Funktion
 
-Die Diff-View zeigt die Änderungen zwischen dem zuletzt gespeicherten und dem
+Die Diff View zeigt die Änderungen zwischen dem zuletzt gespeicherten und dem
 aktuellen Diagramm an.
 
 Die Vorher gegen Nachher Ansicht zeigt die Änderungen anhand der Basis des
