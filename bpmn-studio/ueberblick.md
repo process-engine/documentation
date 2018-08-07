@@ -7,9 +7,9 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
 1. Der [Solution Explorer](components/solution-explorer/solution-explorer.md)
   zeigt geöffnete Ordner (Solutions) oder Dateien auf dem Dateisystem, oder
   hochgeladene Prozesse einer verbundenen ProcessEngine an.
-1. Die [Plan-Ansicht](components/plan-view/plan-view.md) zeigt alle 
+1. Die [Plan-Ansicht](components/plan-view/plan-view.md) zeigt alle
   Prozessmodelle, welche in der verbundenen ProcessEngine existieren.
-1. Die [Design-Ansicht](components/design-view/design-view.md) bietet die 
+1. Die [Design-Ansicht](components/design-view/design-view.md) bietet die
   Möglichkeit ein Diagramm zu betrachten, zu modellieren, zu konfigurieren,
   zu deployen/starten und zu exportieren.
 1. Die [Diff-Ansicht](components/diff-view/diff-view.md) zeigt Änderungen
@@ -21,7 +21,7 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
 1. In den [Settings](components/config-panel/config-panel.md) lässt sich
   konfigurieren, mit welcher ProcessEngine sich das BPMN-Studio verbindet
   und an welchem Server sich der Benutzer authentifiziert.
-1. Der [Login](components/login/login.md) ermöglicht es sich bei einem 
+8. Der [Login](components/login/login.md) ermöglicht es sich bei einem
   IdentityServer zu authentifizieren.
-1. Der [Waiting Room](components/waiting-room/waiting-room.md) erscheint, 
+9. Der [Waiting Room](components/waiting-room/waiting-room.md) erscheint,
   während ein Prozess ausgeführt wird.
