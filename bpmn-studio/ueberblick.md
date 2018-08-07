@@ -52,7 +52,7 @@ aufgerufen werden.
 ![Diff View](components/diff-view/diff-view.png)
 
 Die [Diff View](components/diff-view/diff-view.md) kann in der 
-[Detailansicht](components/detail-view/detail-view.md) über die Statusleiste
+[Design Ansicht](components/design-view/design-view.md) über die Statusleiste
 aufgerufen werden.
 
 Sie zeigt an, in welchen Bereichen sich ein Diagramm verändert hat.
