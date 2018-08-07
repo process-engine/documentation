@@ -2,12 +2,6 @@
 
 ## Aufgaben und Motivation
 
-Die Diff View ermöglicht dem Benutzer die Unterschiede zwischen zwei Diagrammen
-so einfach wie möglich zu erkennen.
-
-Dazu stellt die Diff View die Unterschiede der Diagramme sowohl grafisch als
-auch als Liste dar.
-
 Mit Hilfe der Diff View ist es dem Benutzer möglich, Änderungen nach dem letzten
 Speicherstand so einfach wie möglich zu erkennen.
 
