@@ -8,7 +8,7 @@ kann man
 herunterladen.
 
 Wurde die Anwendung erfolgreich installiert und ausgeführt,
-öffnet sich die Landingpage des BPMN-Studios.
+öffnet sich die Startseite des BPMN-Studios.
 
 ![BPMN-Studio](images/bpmn-studio.png)
 
