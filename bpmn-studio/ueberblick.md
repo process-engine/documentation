@@ -85,5 +85,31 @@ Statusleiste aufgerufen werden.
 
 ![Config Panel Aufruf](components/config-panel/config-panel-aufruf.png)
 
-Dort kann sich mit einer externen ProcessEngine, und einem anderen
-IdentityServer verbunden werden.
+Dort lässt sich einstellen, mit welcher ProcessEngine sich das BPMN-Studio
+verbindet und an welchem Server sich der Benutzer authentifiziert.
+
+## Login
+
+![Login Button](login-button.png)
+
+Der Login Button befindet sich oben rechts im BPMN-Studio.
+Nach einem klick auf den Button wird man auf die Anmeldeseite
+des eingestellten IdentityServers geleitet, um sich anzumelden.
+
+![Anmeldeseite](identity-server-login.png)
+
+Nach erfolgreichem Login leitet das BPMN-Studio zurück zur vorherigen
+Seite und der Login Button oben rechts ist durch den Benutzername
+und einem Logout Button ersetzt.
+
+![Benutzername und Logout](username-logout.png)
+
+## Waiting Room
+
+![Waiting Room](waiting-room.png)
+
+Der Waiting Room erscheint, sobald ein Prozess gestartet wurde und ausgeführt
+wird. Er wird so lange angezeigt bis der Prozess und seine Tasks beendet wurden.
+Man kann den Waiting Room verlassen und den Prozess, falls ein UserTask ansteht,
+später weiter ausführen. Wenn der Prozess keinen UserTask enthält, wird der
+Prozess automatisch nach Fertigstellung seiner Tasks beendet.
