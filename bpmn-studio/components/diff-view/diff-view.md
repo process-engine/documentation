@@ -28,7 +28,7 @@ angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 Klickt man auf einen der beiden o.g. Buttons wird, in dem noch leeren
 Abschnitt der Diff View, das entsprechende Diagram mit den markierten Änderungen
 angezeigt.
-Welche Farbe was bedeutet kann unten links in der Ecke in der Legende abgelesen
+Die Farbbedeutung kann unten links in der Ecke in der Legende abgelesen
 werden.
 
 ![Vorher zu Nachher](./images/Diff View-vorher.png)
