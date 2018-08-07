@@ -4,11 +4,17 @@
 
 ![BPMN-Studio](./bpmn-studio.png)
 
-Das BPMN-Studio besteht aus einer vielzahl von Komponenten.
+Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio näher
+beschrieben.
 
 ## SolutionExplorer
 Der [SolutionExplorer](components/solution-explorer/solution-explorer.md) 
-ist ein wichtiger Bestandteil des BPMN-Studios.
+ist ein wichtiger Bestandteil des BPMN-Studios. Er bietet die Funktionalität
+Ordner (Solutions) oder Dateien zu öffnen. Darüber hinaus ist er in allen
+Ansichten verfügbar. Somit kann von jeder Ansicht aus zu der Detail Ansicht
+eines Prozesses navigiert werden.
+
+Zusätzlich zeigt er die deployten Prozesse der verbundenen ProcessEngine.
 
 ![SolutionExplorer](components/solution-explorer/solution-explorer.png)
 
@@ -25,23 +31,21 @@ der Tabelle aufgeführt werden, müssen diese noch deployed werden.
 
 ![Plan View](components/plan-view/plan-view.png)
 
-Über die [Plan View](components/plan-view/plan-view.md), oder über den
-[SolutionExplorer](components/solution-explorer/solution-explorer.md) kann 
-man die Detail Ansicht eines Prozesses öffnen, in der man dann die Möglichkeit
-hat diesen zu Modellieren, zu Deployen, zu Exportieren oder auch Starten kann.
+Über die [Plan View](components/plan-view/plan-view.md) kann man die Detail
+Ansicht eines Prozesses öffnen, in der man dann die Möglichkeit hat diesen 
+zu modellieren, zu deployen, zu exportieren oder auch starten kann.
 
-Um die Ansicht zu öffnen klickt man entweder in der 
-[Plan View](components/plan-view/plan-view.md) auf den Tabelleneintrag, oder 
-auf den Prozessnamen im 
-[SolutionExplorer](components/solution-explorer/solution-explorer.md).
+Um die Ansicht zu öffnen klickt man in der 
+[Plan View](components/plan-view/plan-view.md) auf den Tabelleneintrag.
 
 ## Detail View
 
 ![Detail View](components/detail-view/detail-view.png)
 
-Die [Detail View](components/detail-view/detail-view.md) behandelt alle
-Diagramm relevanten sachen. Hauptsächlich wird hier der Prozess
-modelliert und konfiguriert.
+Die [Detail View](components/detail-view/detail-view.md) bietet die
+Möglichkeit das Diagramm zu betrachten, zu modellieren und zu konfigurieren.
+Die Ansicht kann über den Solution Explorer, oder über die Plan View
+aufgerufen werden.
 
 ## Diff View
 
@@ -70,8 +74,7 @@ des Prozessmodells.
 Das [Dashboard](components/dashboard/dashboard.md) ist in der Navigationsleiste
 zu finden und zeigt die aktuell laufenden Prozesse der verbundenen
 ProcessEngine. Zusätzlich wird eine Liste der anstehenden UserTasks angezeigt.
-Es gibt die Möglichkeit UserTasks einer bestimmten Prozessinstanz (Correlation)
-anzuzeigen.
+Es gibt die Möglichkeit UserTasks einer bestimmten Korrelation anzuzeigen.
 
 ## Config Panel
 
