@@ -29,7 +29,7 @@ des BPMN-Studios geöffnet wurde, werden das Vorher und das Nachher Diagramm
 angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 
 
-![Diff View Start Ansicht](./images/Diff View-start.png)
+![Diff View Startansicht](./images/Diff View-start.png)
 
 Klickt man auf einen der beiden o.g. Buttons wird, in dem noch leeren
 Abschnitt der Diff View, das entsprechende Diagram mit den markierten Änderungen
