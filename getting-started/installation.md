@@ -19,7 +19,7 @@ es kann aber auch direkt ausgeführt werden.
 
 ### Windows
 
-Für die Windows-Version sollte die `exe`-Datei des entsprechenden Releases
+Für die Windows-Version sollte die `.exe`-Datei des entsprechenden Releases
 heruntergeladen werden.
 
 Diese kann zur Installation des BPMN-Studio ausgeführt werden. Nach der
