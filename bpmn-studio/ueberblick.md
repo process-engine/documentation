@@ -82,4 +82,5 @@ Statusleiste aufgerufen werden.
 
 ![Config Panel Aufruf](components/config-panel/config-panel-aufruf.png)
 
-Dort kann sich zum Beispiel mit einer externen ProcessEngine verbunden werden.
+Dort kann sich mit einer externen ProcessEngine, und einem anderen
+IdentityServer verbunden werden.
