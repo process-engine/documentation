@@ -7,11 +7,6 @@ kann man
 [hier](https://github.com/process-engine/bpmn-studio/releases)
 herunterladen.
 
-Wurde die Anwendung erfolgreich installiert und ausgeführt,
-öffnet sich die Startseite des BPMN-Studios.
-
-![BPMN-Studio](images/bpmn-studio.png)
-
 ### Mac
 
 Die oben verlinkten Releases enthalten eine `.dmg`-Datei.
@@ -26,3 +21,9 @@ heruntergeladen werden.
 
 Diese kann zur Installation des BPMN-Studio ausgeführt werden. Nach der 
 Installation ist das BPMN-Studio startbereit.
+
+-----
+Wurde die Anwendung erfolgreich installiert und ausgeführt,
+öffnet sich die Startseite des BPMN-Studios.
+
+![BPMN-Studio](images/bpmn-studio.png)
