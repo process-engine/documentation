@@ -12,7 +12,10 @@ herunterladen.
 Die oben verlinkten Releases enthalten eine `.dmg`-Datei.
 
 Diese Datei kann direkt ausgeführt werden oder zur Installation in den
-`Programme`-Ordner verschoben werden.
+Programme-Ordner verschoben werden.
+
+Wir empfehlen BPMN-Studio in den `Programme`-Ordner zu verschieben,
+es kann aber auch direkt ausgeführt werden.
 
 ### Windows
 
