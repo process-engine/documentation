@@ -7,8 +7,8 @@ Speicherstand zu erkennen.
 
 Die Unterschiede an den Diagrammen werden als Graph und als Liste dargestellt.
 
-In der grafischen Ansicht kann der Anwender zwischen Vorher gegen Nachher
-(Before vs. After) oder Nachher gegen Vorher (After vs. Before) wählen. Die
+In der grafischen Ansicht kann der Benutzer zwischen "Vorher gegen Nachher"
+(Before vs. After) oder "Nachher gegen Vorher" (After vs. Before) wählen. Die
 Schaltflächen dazu finden sich mittig in der unteren Statusleiste.
 
 In der Listenansicht werden die Änderungen mit Typ und ggf. Elementnamens
