@@ -12,9 +12,9 @@ In der grafischen Ansicht kann der Benutzer zwischen "Vorher gegen Nachher"
 Schaltflächen dazu finden sich mittig in der unteren Statusleiste.
 
 In der Listenansicht werden die Änderungen mit Typ und ggf. Elementnamen
-aufgezeigt. Dabei wird nach Änderungsart sortiert. Die Listenansicht ist über
-die Schaltfläche mit den 3 horizontalen Balken mittig in der unteren
-Statusleiste aktiviert.
+aufgezeigt. Die Liste ist nach Änderungsart sortiert. Über die Schaltfläche mit
+den 3 horizontalen Balken mittig  kann die Listenansicht eingeblendet und
+ausgeblendet werden.
 
 ## Aufbau und Strukturierung
 
@@ -25,7 +25,7 @@ angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 
 ![Diff View Startansicht](./images/diff-view-start.png)
 
-Klickt man auf einen der beiden o.g. Buttons wird, in dem noch leeren
+Klickt man auf einen der beiden Modus-Auswahl-Buttons wird, in dem noch leeren
 Abschnitt der Diff View, das entsprechende Diagram mit den markierten Änderungen
 angezeigt.
 Die Farbbedeutung kann unten links in der Ecke in der Legende abgelesen
