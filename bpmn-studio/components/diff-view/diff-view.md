@@ -56,8 +56,6 @@ Elements angegeben.
 Die Diff View zeigt die Änderungen zwischen dem zuletzt gespeicherten und dem
 aktuellen Diagramm an.
 
-Die "Vorher gegen Nachher" Ansicht zeigt die Änderungen anhand der Basis des
-alten Diagramms an, also alle Elemente die gelöscht oder geändert wurden.
-Die Nachher gegen Vorher Ansicht zeigt die Änderungen anhand der Basis des
-neuen Diagramms an, also mit allen Elementen die hinzugefügt oder geändert
-wurden.
+Die "Vorher gegen Nachher" Ansicht zeigt das alte Diagramm mit Markierungen bei
+gelöschten oder veränderten Elementen, wohingegen bei der "Nachher gegen Vorher"
+Ansicht die Änderungen anhand des neuen Diagramms dargestellt werden.
