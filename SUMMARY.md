@@ -35,6 +35,7 @@
   * [Dashboard](bpmn-studio/components/dashboard/dashboard.md)
   * [Config Panel](bpmn-studio/components/config-panel/config-panel.md)
   * [Login](bpmn-studio/components/login/login.md)
+  * [Waiting Room](bpmn-studio/components/waiting-room/waiting-room.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 1. [Hands-On](bpmn-studio/hands-on/README.md)
 
