@@ -23,7 +23,7 @@ des BPMN-Studios geöffnet wurde, werden das "Vorher"- und das "Nachher"-Diagram
 angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 
 
-![Diff View Startansicht](./images/Diff View-start.png)
+![Diff View Startansicht](./images/diff-view-start.png)
 
 Klickt man auf einen der beiden o.g. Buttons wird, in dem noch leeren
 Abschnitt der Diff View, das entsprechende Diagram mit den markierten Änderungen
@@ -31,14 +31,14 @@ angezeigt.
 Die Farbbedeutung kann unten links in der Ecke in der Legende abgelesen
 werden.
 
-![Vorher zu Nachher](./images/Diff View-vorher.png)
+![Vorher zu Nachher](./images/diff-view-vorher.png)
 
-![Nachher zu Vorher](./images/Diff View-nachher.png)
+![Nachher zu Vorher](./images/diff-view-nachher.png)
 
 Zwischen den beiden Modus-Auswahl-Buttons befindet sich der Button zum Ein-/
 Ausblenden der Listenansicht.
 
-![Listenansicht](./images/Diff View-change-list.png)
+![Listenansicht](./images/diff-view-change-list.png)
 
 Die Listenansicht zeigt alle Änderungen an. Diese sind nach der Art
  der Änderung in folgender Reihenfolge sortiert:
