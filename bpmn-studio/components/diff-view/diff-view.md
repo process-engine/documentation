@@ -2,7 +2,7 @@
 
 ## Aufgaben und Motivation
 
-Mit Hilfe der Diff View ist es dem Benutzer möglich, Änderungen nach dem letzten
+Mit Hilfe der Diff-Ansicht ist es dem Benutzer möglich, Änderungen nach dem letzten
 Speicherstand zu erkennen.
 
 Die Unterschiede an den Diagrammen werden als Graph und als Liste dargestellt.
@@ -18,15 +18,15 @@ ausgeblendet werden.
 
 ## Aufbau und Strukturierung
 
-Wenn die Diff View über den "Show Diff"-Button in der unteren rechten Ecke
+Wenn die Diff-Ansicht über den "Show Diff"-Button in der unteren rechten Ecke
 des BPMN-Studios geöffnet wurde, werden das "Vorher"- und das "Nachher"-Diagramm
 angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 
 
-![Diff View Startansicht](./images/diff-view-start.png)
+![Diff-Ansicht Startansicht](./images/diff-view-start.png)
 
 Klickt man auf einen der beiden Modus-Auswahl-Buttons wird, in dem noch leeren
-Abschnitt der Diff View, das entsprechende Diagram mit den markierten Änderungen
+Abschnitt der Diff-Ansicht, das entsprechende Diagram mit den markierten Änderungen
 angezeigt.
 Die Farbbedeutung kann unten links in der Ecke in der Legende abgelesen
 werden.
@@ -53,7 +53,7 @@ Elements angegeben.
 
 ## Funktion
 
-Die Diff View zeigt die Änderungen zwischen dem zuletzt gespeicherten und dem
+Die Diff-Ansicht zeigt die Änderungen zwischen dem zuletzt gespeicherten und dem
 aktuellen Diagramm an.
 
 Die "Vorher gegen Nachher" Ansicht zeigt das alte Diagramm mit Markierungen bei
