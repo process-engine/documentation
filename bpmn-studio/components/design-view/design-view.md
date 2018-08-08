@@ -1,1 +1,1 @@
-# Detail View
+# Design-Ansicht

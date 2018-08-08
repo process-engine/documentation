@@ -1,1 +1,1 @@
-# Diff View
+# Diff-Ansicht
