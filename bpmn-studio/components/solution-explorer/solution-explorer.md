@@ -81,8 +81,6 @@ nicht importiert.
 | 6.  | Refresh                            | Aktualisiert den Solution Explorer und alle in ihm enthaltenen Solutions.                              |
 | 7.  | Open a Solution                    | Siehe 5.                                                                                               |
 
-Geöffnete Solution im Solution Explorer:
-
 ![Geöffnete FileSystem Solution im Solution Explorer](./filesystem_solution.png)
 
 | Nr. | Bezeichnung            | Beschreibung                                           |
