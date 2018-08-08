@@ -8,3 +8,4 @@
 1. [Dashboard](dashboard/dashboard.md)
 1. [Config Panel](config-panel/config-panel.md)
 1. [Login](login/login.md)
+1. [Waiting Room](waiting-room/waiting-room.md)
