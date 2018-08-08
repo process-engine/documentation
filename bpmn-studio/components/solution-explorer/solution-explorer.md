@@ -43,16 +43,16 @@ und zu öffnen.
 
 ![Öffnen einer Solution](./open_solution_dialog.png)
 
-Mit einem Klick auf "Öffnen" bestätigen wir den ausgewählten Ordner.
+Mit einem Klick auf "Öffnen" bestätigt der Nutzer den ausgewählten Ordner.
 
-Der Solution Explorer wird nun den ausgewählten Ordner als Solution anzeigen.
+Der Solution Explorer zeigt den ausgewählten Ordner nun als Solution an.
 Auch von hier kann der User mit einem Klick auf den Namen eines Diagramms in die
 entsprechende Designansicht gelangen und das Diagramm bearbeiten.
 
 ![Geöffnete FileSystem Solution](./opened_file_system_solution.png)
 
 **Hinweis:** Es werden nur .bpmn-Dateien angezeigt, andere Dateitypen werden
-nicht importiert.
+nicht angezeigt.
 
 ## Funktionen
 
