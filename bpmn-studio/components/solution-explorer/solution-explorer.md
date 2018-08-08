@@ -72,7 +72,7 @@ nicht angezeigt.
 ![Solution Explorer in der Dateisystemansicht](./solution_explorer_file_system.png)
 
 | Nr. | Bezeichnung                        | Beschreibung                                                                                           |
-| :-: | -----------                        | ------------                                                                                           |
+|:---:|:-----------------------------------|:-------------------------------------------------------------------------------------------------------|
 | 1.  | Reiter "Dateisystemansicht"        | Öffnet die Dateisystemansicht des Solution Explorers.                                                  |
 | 2.  | Reiter "ProcessEngineansicht"      | Öffnet die Ansicht zur Anzeige aller Diagramme auf der aktuell angebunden ProcessEngine.               |
 | 3.  | Solution Explorer öffnen/schließen | Öffnet und schließt den Solution Explorer.                                                             |
@@ -84,7 +84,7 @@ nicht angezeigt.
 ![Geöffnete FileSystem Solution im Solution Explorer](./filesystem_solution.png)
 
 | Nr. | Bezeichnung            | Beschreibung                                           |
-| :-: | -----------            | ------------                                           |
+|:---:|:-----------------------|:-------------------------------------------------------|
 | 1.  | Neues Diagramm anlegen | Erstellt ein neues Diagramm innerhalb dieser Solution. |
 | 2.  | Solution schließen     | Schließt diese Solution im Solution Explorer.          |
 | 3.  | Diagramme              | Öffnet die Designansicht des ausgewählten Diagramms.   |
