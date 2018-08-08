@@ -5,7 +5,8 @@
 Mit Hilfe der Diff-Ansicht ist es dem Benutzer möglich, Änderungen nach dem letzten
 Speicherstand zu erkennen.
 
-Die Unterschiede an den Diagrammen werden als Graph und als Liste dargestellt.
+Die Unterschiede zwischen den beiden Versionen werden als Graph und als Liste
+dargestellt.
 
 In der grafischen Ansicht kann der Benutzer zwischen "Vorher gegen Nachher"
 (Before vs. After) oder "Nachher gegen Vorher" (After vs. Before) wählen. Die
