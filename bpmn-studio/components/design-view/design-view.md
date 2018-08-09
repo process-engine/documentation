@@ -3,7 +3,7 @@
 ## Aufgaben und Motivation
 
 Die Design View ermöglicht dem Benutzer einen Prozess zu betrachten,
-zu modellieren und zu konfigurieren.
+zu modellieren zu konfigurieren, zu deployen/starten und zu exportieren.
 
 ## Aufbau und Strukturierung
 
@@ -12,77 +12,73 @@ Wenn die Design View geöffnet wurde, wird in der Mitte des BPMN-Studios
 
 ![Design View](design-view.png)
 
-Die Design View ist grundsätzlich in vier Bereiche aufgeteilt.
+Die Design View ist in vier Bereiche aufgeteilt.
 
 1. Modellierungsfläche
 
-  ![Modellierungsfläche](design-view-modeler.png)
+   ![Modellierungsfläche](design-view-modeler.png)
 
-  Die Modellierungsfläche kann mit der linken Werkzeugleiste genutzt werden.
-  Dort sind alle BPMN Elemente enthalten, die für die Modellierung gebraucht
-  werden.
+   In der linken Werkzeugleiste findet man im oberen Teil die Standardwerkzeuge
+   zum bearbeiten von BPMN-Diagrammen und im unteren Teil BPMN-Elemente.
 
-  Oben rechts in der Modellierungsfläche gibt es eine Minimap.
+   Oben rechts in der Modellierungsfläche gibt es eine Minimap.
 
-  ![Minimap geschlossen](design-view-minimap-closed.png)
+   ![Minimap geschlossen](design-view-minimap-closed.png)
 
-  Die Minimap zeigt das Diagramm komplett und kann es auch verschieben und
-  zoomen.
+   Die Minimap zeigt das Diagramm im Ganzen und erlaubt es dem Nutzer sie zur
+   Navigation zu nutzen und zu zoomen.
 
-  ![Minimap geöffnet](design-view-minimap-opened.png)
+   ![Minimap geöffnet](design-view-minimap-opened.png)
 
 2. Property Panel
 
-  ![Property Panel](design-view-propertypanel.png)
+   ![Property Panel](design-view-propertypanel.png)
 
-  Das Property Panel bietet die Möglichkeit ein angewähltes Element
-  zu konfigurieren und diesem Eigenschaften in Form von Properties
-  hinzuzufügen.
+   Das Property Panel bietet die Möglichkeit ein angewähltes Element
+   zu konfigurieren und diesem Eigenschaften hinzuzufügen.
 
-  Zusätzlich bietet das Property Panel eine Werkzeugleiste an, in der sich
-  Tools befinden, um die optische Darstellung des Diagramms anzupassen.
+   Zusätzlich bietet das Property Panel eine Werkzeugleiste an, in der sich
+   Tools befinden, um die optische Darstellung des Diagramms anzupassen.
 
-  Es ist Möglich:
+   Es ist möglich:
 
-  - Ein oder mehrere Elemente zu färben
-  - Mehrere Elemente horizontal auszurichten
-  - Mehrere Elemente vertikal auszurichten
+   - Ein oder mehrere Elemente zu färben.
+   - Mehrere Elemente horizontal auszurichten.
+   - Mehrere Elemente vertikal auszurichten.
 
-3. Aktionsmenu
+3. Aktionsmenü
 
-  Das Aktionsmenu gibt es in zwei Varianten.
-  Eine Variante des Aktionsmenu ist in der Design View mit einem geöffnetem
-  Diagramm, welches sich auf dem Dateisystem des eigenen Computers befindet.
+   Der Aufbau des Aktionsmenüs hängt davon ab, ob sich das Diagramm im
+   Dateisystem des Nutzers oder in der Datenbank der ProcessEngine befindet.
 
-  ![Aktionsmenu Filesystem](design-view-menu-filesystem.png)
+   <img style="float: left; width: 50%;" width="200" src="design-view-menu-filesystem.png">
 
-  Der Unterschied zwischen dem folgenden und obrigen Aktionsmenu ist der
-  Button ganz rechts.
+   <img style="float: right; width: 49%;" width="200" src="design-view-menu-processengine.png">
 
-  Befindet sich das Diagramm auf dem Dateisystem, kann es mit dem `Deploy Button`
-  auf die ProcessEngine geladen/deployed werden.
+   Der Unterschied zwischen den beiden Menüs ist der Button ganz rechts.
 
-  Wenn die Design View mit einem Diagramm aus der ProcessEngine geöffnet ist
-  sieht man stattdessen diesen `Start Button`, mit dem der Prozess ausgeführt
-  werden kann.
+   Befindet sich das Diagramm auf dem Dateisystem, kann es mit dem `Deploy Button`
+   (Bild links) auf die ProcessEngine geladen/deployed werden.
 
-  ![Aktionsmenu ProcessEngine](design-view-menu-processengine.png)
+   Wenn die Design View mit einem Diagramm aus der ProcessEngine geöffnet ist
+   sieht man stattdessen diesen `Start Button` (Bild rechts), mit dem der
+   Prozess ausgeführt werden kann.
 
-  Die anderen Buttons haben immer die selbe Funktionalität.
+   Die anderen Buttons haben immer die selbe Funktionalität.
 
-  - Erster Button von Links: Navigiert eine Seite zurück
-  - Zweiter Button von Links: Speichert den Prozess
-  - Button in der Mitte: Exportiert das Diagramm (.bpmn, .svg, .jpeg, oder .png)
-  - Zweiter Button von Rechts: Öffnet einen Drucken Dialog
+   - Erster Button von Links: Navigiert eine Seite zurück.
+   - Zweiter Button von Links: Speichert den Prozess.
+   - Button in der Mitte: Exportiert das Diagramm (.bpmn, .svg, .jpeg, oder .png).
+   - Zweiter Button von Rechts: Öffnet einen Drucken Dialog.
 
 4. Statusleiste
 
-  ![Statusleiste](design-view-xml-diff.png)
+   ![Statusleiste](design-view-xml-diff.png)
 
-  Die beiden Buttons `Show XML` und `Show Diff` sind nur in der Statusleiste
-  sind nur in der Design View sichtbar.
+   Die beiden Buttons `Show XML` und `Show Diff` sind nur in der Statusleiste
+   sind nur in der Design View sichtbar.
 
-  Der `Show XML` Button wechselt zur [XML View](../xml-view/xml-view.md) und zeigt das aktuelle XML
-  des Diagramms.
+   Der `Show XML` Button wechselt zur [XML View](../xml-view/xml-view.md) und zeigt das aktuelle XML
+   des Diagramms.
 
-  Der `Show Diff` Button wechselt zur [Diff View](../diff-view/diff-view.md).
+   Der `Show Diff` Button wechselt zur [Diff View](../diff-view/diff-view.md).
