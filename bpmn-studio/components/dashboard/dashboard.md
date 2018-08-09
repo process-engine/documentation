@@ -16,7 +16,7 @@ Im ersten Abschnitt, `Processes running`, werden die laufenden Prozesse als
 Tabelle aufgelistet. In der Tabelle wird die `Correlation Id` und die
 `Process Model Id` angezeigt.
 
-Im zweiten Abschnitt, `Task waiting`, werden UserTasks angezeigt, die auf
+Im zweiten Abschnitt, `Task waiting`, werden Aufgaben angezeigt, die auf
 weitere Bearbeitung warten. In der Tabelle werden ebenfalls die
 `Process Model Id` und die `User Task Id` angezeigt.
 
@@ -24,10 +24,10 @@ weitere Bearbeitung warten. In der Tabelle werden ebenfalls die
 
 ## Funktion
 
-In der Tabelle `Processes running` wird für jede laufende Prozessinstanz zwei
+In der Tabelle `Processes running` werden für jeden laufenden Prozesse zwei
 Links angeboten. In der Spalte `Process Model Id` ist jeweils ein Link zu der
-Design-Ansicht des Prozessmodels verlinkt. Ebenfalls können alle UserTasks für
-einen aktiven Prozess angezeigt werden.
+Design-Ansicht des Prozessmodels verlinkt. Über den Link `User Tasks` kann eine
+Ansicht mit allen Aufgaben zu dem entsprechenden Prozess angesteuert werden.
 
 Die `Task waiting` Tabelle enthält für jede wartende UserTask einen `Continue`
-Button. Dieser dient dazu die entsprechende Task fortzuführen.
+Button. Dieser dient dazu die entsprechende Aufgabe fortzuführen.
