@@ -22,7 +22,8 @@ heruntergeladen werden.
 Diese kann zur Installation des BPMN-Studio ausgeführt werden. Nach der 
 Installation ist das BPMN-Studio startbereit.
 
------
+### Nach der Installation
+
 Wurde die Anwendung erfolgreich installiert und ausgeführt,
 öffnet sich die Startseite des BPMN-Studios.
 
