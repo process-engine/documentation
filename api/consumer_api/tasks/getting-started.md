@@ -12,10 +12,13 @@ Bei standardmäßiger Installation ist der API Server unter `http://localhost:80
 Es müssen daher alle Routen in diesem Tutorial um die Serveradresse ergänzt werden.
 
 **Beispiel:**
+
 ```REST
 GET /api/consumer/v1/process_models
 ```
+
 entspricht
+
 ```REST
 GET http://localhost:8000/api/consumer/v1/process_models
 ```
@@ -27,6 +30,7 @@ Die nachfolgende Abfrage zeigt alle Prozesse an, die den Kriterien unter [Auflis
 ```REST
 GET /api/consumer/v1/process_models
 ```
+
 **Beispiel**:
 
 ```JSON
@@ -56,7 +60,9 @@ Mehr Informationen unter [Einzelnes Prozessmodell abfragen](list-startable-proce
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>
 ```
+
 **Beispiel**:
+
 ```REST
 GET /api/consumer/v1/process_models/HelloWorld
 ```
@@ -83,7 +89,9 @@ GET /api/consumer/v1/process_models/HelloWorld
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/events
 ```
+
 **Beispiel**:
+
 ```REST
 GET /api/consumer/v1/process_models/HelloWorld/events
 ```
@@ -105,7 +113,9 @@ GET /api/consumer/v1/process_models/HelloWorld/events
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/user_tasks
 ```
+
 **Beispiel**:
+
 ```REST
 GET /api/consumer/v1/process_models/HelloWorld/user_tasks
 ```
@@ -140,12 +150,14 @@ Mehr informationen unter [Starten von Prozessinstanzen](api/consumer_api/tasks/s
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/start_events/<start_event_id>/start?start_callback_type=<callback_type>
 ```
+
 `callback_type`
 * `1`: Starte Prozessinstanz und antworte direkt nach Prozessstart.
 * `2`: Starte Prozessinstanz und antworte nach Prozessende.
 * `3`: Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde.
 
 **Beispiel (`callback_type` = 1)**:
+
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/start?start_callback_type=1
 ```
@@ -196,7 +208,9 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 ```REST
 GET /api/consumer/v1/correlations/<correlation_id>/process_models/<processmodels_id>/results
 ```
+
 **Beispiel**:
+
 ```REST
 GET /api/consumer/v1/correlations/c5433825-ed03-4df4-b391-391e84b51f95/process_models/HelloWorld/results
 ```
@@ -220,7 +234,9 @@ GET /api/consumer/v1/correlations/c5433825-ed03-4df4-b391-391e84b51f95/process_m
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events
 ```
+
 **Beispiel**:
+
 ```REST
 GET /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-b391-391e84b51f95/events
 ```
@@ -242,7 +258,9 @@ GET /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-b
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events/<event_id>/trigger
 ```
+
 **Beispiel**:
+
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-b391-391e84b51f95/events/startEvent_1/trigger
 ```
@@ -253,18 +271,23 @@ Not implemented yet!
 
 ### UserTasks fertigstellen
 
+```JSON
+Content-Type: application/json
+payload: {"formFields":{"<form_field>":"<form_value>"}}
+```
+
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/user_tasks/<user_task_id>/finish
 ```
-*Header*: `Content-Type: application/json`
-
-*Body*: `{"formFields":{"<form_field>":"<form_value>"}}`
+Bei erfolgreicher Ausführung ist der Statuscode **204** und die Response ist leer.
 
 **Beispiel**:
+
+```JSON
+Content-Type: application/json
+payload: {"formFields":{"Form_qJOQHD8n":"123"}}
+```
+
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/correlations/2b0cfee3-9ae4-489d-95b5-f450ed93f203/user_tasks/Task_0tvsrla/finish
 ```
-
-*Header*: `Content-Type: application/json`
-
-*Body*: `{"formFields":{"Form_qJOQHD8n":"123"}}`
