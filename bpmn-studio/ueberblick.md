@@ -6,7 +6,7 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio gelistet.
 
 1. Der [Solution Explorer](components/solution-explorer/solution-explorer.md)
   zeigt geöffnete Ordner (Solutions) oder Dateien auf dem Dateisystem, oder
-  deployte Prozesse einer verbundenen ProcessEngine.
+  deployte Prozesse einer verbundenen ProcessEngine an.
 2. Die [Plan-Ansicht](components/plan-view/plan-view.md) zeigt alle 
   Prozessmodelle, die zurzeit in der Datenbank vorhanden sind.
 3. Die [Design-Ansicht](components/design-view/design-view.md) bietet die 
