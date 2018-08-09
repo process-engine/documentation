@@ -82,6 +82,17 @@
       * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
 
 1. [ManagementAPI](api/management-api.md)
+      * [Getting started](api/management_api/tasks/getting-started.md)
+        * [Einstieg](api/management_api/tasks/getting-started.md#einstieg)
+        * [Routen](api/management_api/tasks/getting-started.md#routen)
+        * [Prozessmodell anlegen oder ändern](api/management_api/tasks/getting-started.md#prozessmodell-anlegen-oder-ändern)
+        * [Alle Prozessmodelle abfragen](api/management_api/tasks/getting-started.md#alle-prozessmodelle-abfragen)
+        * [Prozessmodell abfragen](api/management_api/tasks/getting-started.md#prozessmodell-abfragen)
+        * [Events anzeigen](api/management_api/tasks/getting-started.md#events-anzeigen)
+        * [UserTasks anzeigen](api/management_api/tasks/getting-started.md#usertasks-anzeigen)
+        * [Prozesse starten](api/management_api/tasks/getting-started.md#prozesse-starten)
+        * [Aktive Prozesse anzeigen](api/management_api/tasks/getting-started.md#aktive-prozesse-anzeigen)
+        * [UserTasks fertigstellen](api/management_api/tasks/getting-started.md#usertasks-fertigstellen) 
 
 ## ProcessEngine
 
