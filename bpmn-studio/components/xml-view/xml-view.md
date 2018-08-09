@@ -1,25 +1,27 @@
-# XML View
+# XML-Ansicht
 
 ## Aufgaben und Motivation
 
-Die XML Ansicht ist eine Erweiterung des Design Views. In dieser Ansicht wird
-das rohe XML des Diagrams dargestellt.
-
-In der XML Ansicht kann der Benutzer sehen, wie das XML aussieht, welches er
-aktuell modelliert.
+Die XML-Ansicht ist eine Erweiterung des Design-Ansicht. In dieser Ansicht wird
+die XML des Diagrams dargestellt.
 
 ## Aufbau und Strukturierung
 
-Die XML Ansicht kann über die Schaltfäche "Show XML" unten rechts in der
-Statusliste geöffnet werden.
+Die XML-Ansicht kann aus der Design-Ansicht heraus über die Schaltfäche
+`Show XML` unten rechts in der Statusleiste geöffnet werden.
+
+![Der XML View](open-xml-view.png)
+
+Anstelle der Diagramm-View, wird das XML des geöffneten Diagramms angezeigt.
+Dieses XML entspricht der technischen Speicherung des aktuell geöffneten
+BPMN-Diagramms.
+
+Das zentrale Textfeld verfügt über ein Syntaxhervorhebung und Zeilennummerierung
+auf der Linken Seite. Es ist zurzeit nicht möglich, dass XML zu editieren.
 
 ![Der XML View](xml-view.png)
 
-Zentral wird das XML des Diagramms angezeigt, diese entspricht immer der
-des im Design View modellierten Diagrammes. Das zentrale Textfeld
-verfügt ebenfalls über ein Syntaxhervorhebung und Zeilennummern auf der Linken
-Seite.
-
 ## Funktion
 
-Der Inhalt des XML Views kann nicht editiert werden, es nur kopiert werden.
+Der Inhalt des XML-Ansicht kann nicht editiert werden. Allerdings kann der
+Inhalt kopiert werden.
