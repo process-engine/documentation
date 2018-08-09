@@ -45,7 +45,7 @@
 ## ProcessEngine API
 
 1. [ConsumerAPI](api/consumer_api/README.md)
-  * [Getting started](api/consumer_api/tasks/getting-started.md)
+    * [Getting started](api/consumer_api/tasks/getting-started.md)
       * [Einstieg](api/consumer_api/tasks/getting-started.md#einstieg)
       * [Routen](api/consumer_api/tasks/getting-started.md#routen)
       * [Alle Prozessmodelle abfragen](api/consumer_api/tasks/getting-started.md#alle-prozessmodelle-abfragen)
@@ -57,10 +57,12 @@
       * [Events von Ergebnissen anzeigen](api/consumer_api/tasks/getting-started.md#events-von-ergebnissen-anzeigen)
       * [Events von Ergebnissen triggern](api/consumer_api/tasks/getting-started.md#events-von-ergebnissen-triggern)
       * [User tasks fertigstellen](api/consumer_api/tasks/getting-started.md#user-tasks-fertigstellen)
-  * [Technischer Aufbau](api/consumer_api/technical-specifications.md)
-  * [Auflisten startbarer Prozessmodelle](api/consumer_api/tasks/list-startable-process-models.md)
+
+    * [Technischer Aufbau](api/consumer_api/technical-specifications.md)
+    * [Auflisten startbarer Prozessmodelle](api/consumer_api/tasks/list-startable-process-models.md)
       * [Alle Prozessmodelle abfragen](api/consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
       * [Einzelnes Prozessmodell abfragen](api/consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+
    * [Starten von Prozessinstanzen](api/consumer_api/tasks/start-process-instance.md)
    * [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](api/consumer_api/tasks/list-triggerable-events.md)
    * [Auslösen von Ereignissen](api/consumer_api/tasks/trigger-event.md)
@@ -68,11 +70,12 @@
    * [Abschließen eines UserTasks](api/consumer_api/tasks/finish-user-task.md)
    * [Ergebnis einer Prozesskorrelation abfragen](api/consumer_api/tasks/get-correlation-result.md)
    * [Erhalten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md)
-       * [Arten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
-       * [Erhalten von BPMN-Events](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
-       * [Erhalten von Infos zu start und ende von Aktivitäten](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
-       * [Erhalten von SystemEvents](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
-       * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
+
+      * [Arten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
+      * [Erhalten von BPMN-Events](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
+      * [Erhalten von Infos zu start und ende von Aktivitäten](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
+      * [Erhalten von SystemEvents](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
+      * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
 1. [ManagementAPI](api/management-api.md)
 
 ## ProcessEngine
