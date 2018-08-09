@@ -20,27 +20,23 @@ Letzteres dient dazu, den [Task](../../GLOSSARY.md#task) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
-Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen
-Diagramms. Alternativ kann auch der `Prozess erstellen`-Prozess ausgeführt
-werden.
+Zunächst wird ein neues Diagramm benötigt. Dieses kann über den Solution Explorer erstellt werden.
+Zunächst muss man eine Solution öffnen. Dazu klickt man im Solution Explorer auf den "Ordner öffnen"-Button.
 
-<img src="../images/getting-started/hello-world/create-process-1-process-definition-button.png" width="100%" />
+<img src="../images/getting-started/hello-world/open-a-solution-button.png" width="100%" />
 
-Es öffnet sich ein neuer Dialog; dort können ein Name und ein Schlüssel für das
-Prozessmodell angegeben werden; in diesem Fall wird bei beiden `Hello World`
-gewählt.
+Es öffnet sich ein Fenster zur Auswahl eines Ordner, der geöffnet werden soll.
+Sobald man ein Ordner geöffnet hat kann man ein Diagramm erstellen. Dazu klickt man auf den
+"Datei hinzufügen"-Button.
 
-<img src="../images/getting-started/hello-world/create-process-2-initial-processdata.png" width="100%" />
+<img src="../images/getting-started/hello-world/create-new-diagram-button.png" width="100%" />
 
-Die Task List erscheint; in der Liste befindet sich der Eintrag: `Prozess
-erstellen`; nach Beendigung der Arbeiten im Backend, springt der UserTaskName
-auf `Prozess erstellt` um; die `Continue` Schaltfläche kann betätigt werden; die
-darauffolgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
+Es erscheint ein Textfeld, in dem man dann den Namen für die Datei eingeben kann.
+In diesem Fall wird `Hello World` gewählt.
 
-Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an; die
-`Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
+<img src="../images/getting-started/hello-world/create-new-diagram-input.png" width="100%" />
 
-<img src="../images/getting-started/hello-world/create-process-3-finished.png" width="100%"/>
+Die Design-Ansicht öffnet sich mit dem gerade erstellten Diagramm.
 
 So sieht das Ganze dann aus:
 
@@ -48,15 +44,16 @@ So sieht das Ganze dann aus:
 
 ## Modellierung eines Diagramms
 
-Der BPMN-Editor zeigt uns eine Ansicht mit einer
-[Lane](../../GLOSSARY.md#lane) und einem Startevent.
+Der BPMN-Editor zeigt uns ein Diagramm mit einer
+[Lane](../../GLOSSARY.md#lane), einem Startevent und einem Endevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü; dieses Menü
 erlaubt es neue Elemente hinzuzufügen; diese werden direkt mit dem ausgewählten
 Element verbunden.
 
+Der Sequenzfluss vom Startevent zum Endevent wird zunächst entfernt.
 An dem Startpunkt wird dann ein [User Task](../../GLOSSARY.md#user-task)
-mit dem Namen `Hello Word` verbunden; an diesem dann ein Endevent.
+mit dem Namen `Hello Word` verbunden; an diesem dann das Endevent.
 
 Das Ganze sollte dann so aussehen:
 
@@ -69,35 +66,20 @@ Und so wird es gemacht:
 ## Integration eines Diagramms
 
 Ein [User Task](../../GLOSSARY.md#user-task) kann so eingestellt werden,
-dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
-kann wie folgt geschehen:
+dass dem Benutzer eine grafische Oberfläche dargestellt wird. In diesem Fall
+wird eine Confirm Ansicht gewählt.
+Um das zu erreichen muss die User Task folgendermaßen eingestellt werden:
 
-1. Auswählen des UserTasks
-2. In der rechten Leiste unter dem Punkt Properties lässt sich nun
-die anzuzeigene Oberfläche mittels Key-Value Paaren definieren
+1. In der rechten Leiste unter dem Punkt Properties lässt sich die anzuzeigene
+Oberfläche mittels Key-Value Paaren definieren:
 
 <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 
-Es gibt zwei Felder:
+2. Eine Form Field mit dem Typ Boolean wird benötigt. Das Label stellt die
+Nachricht, die confirmed werden soll, dar.
 
-1. `uiName`
-1. `uiConfig`
+<img src="../images/getting-started/hello-world/confirm-form-field.png" width="50%" />
 
-Mit Hilfe von `uiName` wird die Art der UI Komponente festgelegt.
-
-In diesem Fall benutzen wir einen Bestätigungsdialog. Als Wert für das Feld
-`uiName` wählen wir dazu `Confirm`.
-
-Mit Hilfe von `uiConfig` werden die Details der UI Komponente bestimmt.
-
-In diesem Fall die Nachricht und die Bedienelemente, die angezeigt werden
-sollen; bitte folgendes in das Feld `uiConfig` eintragen:
-
-```javascript
-${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
-```
-
-<img src="../images/getting-started/hello-world/extensions-properties.png" width="100%" />
 
 **Zusammenfassung**
 
