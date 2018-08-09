@@ -27,7 +27,7 @@ angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
 ![Diff-Ansicht Startansicht](./images/diff-view-start.png)
 
 Klickt man auf einen der beiden Modus-Auswahl-Buttons wird, in dem noch leeren
-Abschnitt der Diff-Ansicht, das entsprechende Diagram mit den markierten Änderungen
+Abschnitt der Diff-Ansicht, das entsprechende Diagramm mit den markierten Änderungen
 angezeigt.
 Die Farbbedeutung kann unten links in der Ecke in der Legende abgelesen
 werden.
