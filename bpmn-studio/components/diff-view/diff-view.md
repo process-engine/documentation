@@ -17,6 +17,9 @@ aufgezeigt. Die Liste ist nach Änderungsart sortiert. Über die Schaltfläche m
 den 3 horizontalen Balken mittig kann die Listenansicht eingeblendet und
 ausgeblendet werden.
 
+![Schaltfläche zum anzeigen der Listenansicht](./images/diff-view-change-list-icon.png)
+
+
 ## Aufbau und Strukturierung
 
 Wenn die Diff-Ansicht über den "Show Diff"-Button in der unteren rechten Ecke
