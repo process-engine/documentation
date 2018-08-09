@@ -1,11 +1,12 @@
 ## Einstieg
 
-Um einen ersten Einstieg in die Arbeitsweise mit der API zu erhalten, wird hier ein Überlick über die 
+Um einen ersten Überblick in die Arbeitsweise mit der API zu erhalten, wird hier ein Überlick über die 
 Grundlegenden Routen und Parameter gegeben.
 
 Tipp: Um bei den Abfragen Ergebnisse zu erhalten, muss mindestens ein 'executeable Diagram' vorhanden sein.
 
 ### Routen
+
 Bei standardmäßiger Installation ist der API Server unter `http://localhost:8000` erreichbar. 
 
 Es müssen daher alle Routen in diesem Tutorial um die Serveradresse ergänzt werden.
@@ -20,6 +21,7 @@ GET http://localhost:8000/api/consumer/v1/process_models
 ```
 
 ### Alle Prozessmodelle abfragen
+
 Die nachfolgende Abfrage zeigt alle Prozesse an, die den Kriterien unter [Auflisten startbarer Prozessmodelle](list-startable-process-models.md) entsprechen.
 
 ```REST
@@ -48,7 +50,8 @@ GET /api/consumer/v1/process_models
 ```
 
 ### Prozessmodell abfragen
-Mehr informationen unter [Einzelnes Prozessmodell abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen) entsprechen.
+
+Mehr Informationen unter [Einzelnes Prozessmodell abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen) entsprechen.
 
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>
@@ -76,6 +79,7 @@ GET /api/consumer/v1/process_models/HelloWorld
 ```
 
 ### Events anzeigen
+
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/events
 ```
@@ -96,7 +100,8 @@ GET /api/consumer/v1/process_models/HelloWorld/events
 }
 ```
 
-### User tasks anzeigen
+### UserTasks anzeigen
+
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/user_tasks
 ```
@@ -136,9 +141,9 @@ Mehr informationen unter [Starten von Prozessinstanzen](api/consumer_api/tasks/s
 POST /api/consumer/v1/process_models/<processmodels_id>/start_events/<start_event_id>/start?start_callback_type=<callback_type>
 ```
 `callback_type`
-* `1`: Starte Prozessinstanz und antworte direkt nach Prozessstart
-* `2`: Starte Prozessinstanz und antworte nach Prozessende
-* `3`: Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde
+* `1`: Starte Prozessinstanz und antworte direkt nach Prozessstart.
+* `2`: Starte Prozessinstanz und antworte nach Prozessende.
+* `3`: Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde.
 
 **Beispiel (`callback_type` = 1)**:
 ```REST
@@ -152,7 +157,7 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 ```
 **Beispiel (`callback_type` = 2)**:
 
-*Hinweis: Ergebnis erscheint erst nach Prozessende*
+*Hinweis: Ergebnis erscheint erst nach Prozessende.*
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/start?start_callback_type=2
 ```
@@ -170,7 +175,7 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 ```
 **Beispiel (`callback_type` = 3)**:
 
-*Hinweis: Ergebnis erscheint erst nach Prozessende*
+*Hinweis: Ergebnis erscheint erst nach Prozessende.*
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/start?start_callback_type=3&end_event_id=EndEvent_0eie6q6
 ```
@@ -187,6 +192,7 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 ```
 
 ### Ergebnisse anzeigen
+
 ```REST
 GET /api/consumer/v1/correlations/<correlation_id>/process_models/<processmodels_id>/results
 ```
@@ -210,6 +216,7 @@ GET /api/consumer/v1/correlations/c5433825-ed03-4df4-b391-391e84b51f95/process_m
 ```
 
 ### Events von Ergebnissen anzeigen
+
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events
 ```
@@ -231,6 +238,7 @@ GET /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-b
 ```
 
 ### Events von Ergebnissen triggern
+
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events/<event_id>/trigger
 ```
@@ -243,7 +251,8 @@ POST /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-
 Not implemented yet!
 ```
 
-### User tasks fertigstellen
+### UserTasks fertigstellen
+
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/user_tasks/<user_task_id>/finish
 ```
