@@ -1,6 +1,5 @@
 # Login
 
-
 ![Login Button](login-button.png)
 
 Der Login Button befindet sich oben rechts im BPMN-Studio.

@@ -12,7 +12,7 @@ Wenn die Design View geöffnet wurde, wird in der Mitte des BPMN-Studios
 
 ![Design View](design-view.png)
 
-Die Design View ist in vier Bereiche aufgeteilt.
+Die Design View ist in vier Bereiche aufgeteilt:
 
 1. Modellierungsfläche
 
