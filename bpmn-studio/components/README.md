@@ -6,6 +6,6 @@
 1. [Diff-Ansicht](diff-view/diff-view.md)
 1. [XML-Ansicht](xml-view/xml-view.md)
 1. [Dashboard](dashboard/dashboard.md)
-1. [Settings](config-panel/config-panel.md)
+1. [Settings](settings/settings.md)
 1. [Login](login/login.md)
 1. [Waiting Room](waiting-room/waiting-room.md)

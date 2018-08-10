@@ -33,7 +33,7 @@
    1. [Diff-Ansicht](bpmn-studio/components/diff-view/diff-view.md)
    1. [XML-Ansicht](bpmn-studio/components/xml-view/xml-view.md)
    1. [Dashboard](bpmn-studio/components/dashboard/dashboard.md)
-   1. [Settings](bpmn-studio/components/config-panel/config-panel.md)
+   1. [Settings](bpmn-studio/components/settings/settings.md)
    1. [Login](bpmn-studio/components/login/login.md)
    1. [Waiting Room](bpmn-studio/components/waiting-room/waiting-room.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
