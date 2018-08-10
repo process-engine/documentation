@@ -7,8 +7,6 @@ kann man
 [hier](https://github.com/process-engine/bpmn-studio/releases)
 herunterladen.
 
-Wurde die Anwendung erfolgreich installiert und ausgeführt, öffnet sich die [Prozessübersicht](./../bpmn-studio/beschreibung-ansichten.md#process-definition-list).
-
 ![BPMN-Studio](images/bpmn-studio.png)
 
 ### Mac
