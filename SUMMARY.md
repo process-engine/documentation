@@ -3,49 +3,56 @@
 ## Getting Started
 
 1. [Einleitung](README.md)
-
-  * [BPMN-Studio](README.md#bpmn-studio)
-  * [ProcessEngine](README.md#process-engine)
-  * [APIs](README.md#apis)
-
+    * [BPMN-Studio](README.md#bpmn-studio)
+    * [ProcessEngine](README.md#process-engine)
+    * [APIs](README.md#apis)
 1. [Installation](getting-started/installation.md)
 1. [Beispiele](getting-started/examples/README.md)
-
-  * [Hello BPMN World](getting-started/examples/hello-bpmn-world.md)
-  * [Konsumieren einer HTTP REST API](getting-started/examples/http-rest-api.md)
-  * [Versenden von E-Mails](getting-started/examples/sending-emails.md)
+    * [Hello BPMN World](getting-started/examples/hello-bpmn-world.md)
+    * [Konsumieren einer HTTP REST API](getting-started/examples/http-rest-api.md)
+    * [Versenden von E-Mails](getting-started/examples/sending-emails.md)
 
 ## BPMN - Standard
 
 1. [BPMN Basics](bpmn-standard/bpmn-basics/README.md)
 1. [Styleguide](bpmn-standard/styleguide.md)
 1. [BPMN ProcessEngine](bpmn-standard/bpmn-process-engine/README.md)
-
-  * [TerminateEndEvent](bpmn-standard/bpmn-process-engine/terminate-end-event.md)
+    * [TerminateEndEvent](bpmn-standard/bpmn-process-engine/terminate-end-event.md)
 
 ## BPMN-Studio
 
 1. [Beschreibung der Ansichten](bpmn-studio/beschreibung-ansichten.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 1. [Hands-On](bpmn-studio/hands-on/README.md)
-
-  * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md)
-  * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md)
+    * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md)
+    * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md)
 
 ## ProcessEngine API
 
 1. [ConsumerAPI](api/consumer_api/README.md)
-  * [Technischer Aufbau](api/consumer_api/technical-specifications.md)
-  * [Auflisten startbarer Prozessmodelle](api/consumer_api/tasks/list-startable-process-models.md)
+   * [Getting started](api/consumer_api/tasks/getting-started.md)
+      * [Einstieg](api/consumer_api/tasks/getting-started.md#einstieg)
+      * [Routen](api/consumer_api/tasks/getting-started.md#routen)
+      * [Alle Prozessmodelle abfragen](api/consumer_api/tasks/getting-started.md#alle-prozessmodelle-abfragen)
+      * [Prozessmodell abfragen](api/consumer_api/tasks/getting-started.md#prozessmodell-abfragen)
+      * [Events anzeigen](api/consumer_api/tasks/getting-started.md#events-anzeigen)
+      * [UserTasks anzeigen](api/consumer_api/tasks/getting-started.md#usertasks-anzeigen)
+      * [Prozesse starten](api/consumer_api/tasks/getting-started.md#prozesse-starten)
+      * [Ergebnisse anzeigen](api/consumer_api/tasks/getting-started.md#ergebnisse-anzeigen)
+      * [Events von Ergebnissen anzeigen](api/consumer_api/tasks/getting-started.md#events-von-ergebnissen-anzeigen)
+      * [Events von Ergebnissen triggern](api/consumer_api/tasks/getting-started.md#events-von-ergebnissen-triggern)
+      * [UserTasks fertigstellen](api/consumer_api/tasks/getting-started.md#usertasks-fertigstellen)
+   * [Technischer Aufbau](api/consumer_api/technical-specifications.md)
+   * [Auflisten startbarer Prozessmodelle](api/consumer_api/tasks/list-startable-process-models.md)
       * [Alle Prozessmodelle abfragen](api/consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
       * [Einzelnes Prozessmodell abfragen](api/consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
-  * [Starten von Prozessinstanzen](api/consumer_api/tasks/start-process-instance.md)
-  * [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](api/consumer_api/tasks/list-triggerable-events.md)
-  * [Auslösen von Ereignissen](api/consumer_api/tasks/trigger-event.md)
-  * [Auflisten wartender UserTasks](api/consumer_api/tasks/list-waiting-usertasks.md)
-  * [Abschließen eines UserTasks](api/consumer_api/tasks/finish-user-task.md)
-  * [Ergebnis einer Prozesskorrelation abfragen](api/consumer_api/tasks/get-correlation-result.md)
-  * [Erhalten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md)
+   * [Starten von Prozessinstanzen](api/consumer_api/tasks/start-process-instance.md)
+   * [Abfragen von BPMN-Ereignissen auf die der Prozess wartet](api/consumer_api/tasks/list-triggerable-events.md)
+   * [Auslösen von Ereignissen](api/consumer_api/tasks/trigger-event.md)
+   * [Auflisten wartender UserTasks](api/consumer_api/tasks/list-waiting-usertasks.md)
+   * [Abschließen eines UserTasks](api/consumer_api/tasks/finish-user-task.md)
+   * [Ergebnis einer Prozesskorrelation abfragen](api/consumer_api/tasks/get-correlation-result.md)
+   * [Erhalten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md)
       * [Arten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
       * [Erhalten von BPMN-Events](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
       * [Erhalten von Infos zu start und ende von Aktivitäten](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
@@ -56,22 +63,18 @@
 ## ProcessEngine
 
 1. [TypeScript](processengine/typescript/README.md)
-
   1. [Setup](processengine/typescript/setup/README.md)
-    * [Konfiguration](processengine/typescript/setup/konfiguration.md)
-
+      * [Konfiguration](processengine/typescript/setup/konfiguration.md)
   1. [Konzepte](processengine/typescript/konzepte/README.md)
-    * [Konfiguration](processengine/typescript/konzepte/configuration.md)
-
+      * [Konfiguration](processengine/typescript/konzepte/configuration.md)
   1. [Architektur](processengine/typescript/architektur/README.md)
-    * [Dependency Injection](processengine/typescript/architektur/dependendy-injection.md)
-    * [Discovery](processengine/typescript/architektur/discovery.md)
-    * [Struktur](processengine/typescript/architektur/structure.md)
-    * [Adapter](processengine/typescript/architektur/adapters.md)
-    * [Bridges](processengine/typescript/architektur/bridges.md)
-    * [Contracts](processengine/typescript/architektur/contracts.md)
-    * [Extensions](processengine/typescript/architektur/extensions.md)
-
+      * [Dependency Injection](processengine/typescript/architektur/dependendy-injection.md)
+      * [Discovery](processengine/typescript/architektur/discovery.md)
+      * [Struktur](processengine/typescript/architektur/structure.md)
+      * [Adapter](processengine/typescript/architektur/adapters.md)
+      * [Bridges](processengine/typescript/architektur/bridges.md)
+      * [Contracts](processengine/typescript/architektur/contracts.md)
+      * [Extensions](processengine/typescript/architektur/extensions.md)
   1. [ConsumerAPI](processengine/typescript/consumer_api/README.md)
       * [Setup](processengine/typescript/consumer_api/setup/README.md)
           * [Einrichtung mit integrierter ProcessEngine](processengine/typescript/consumer_api/setup/setup-internal-process-engine.md)
