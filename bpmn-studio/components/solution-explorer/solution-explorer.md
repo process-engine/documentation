@@ -16,18 +16,18 @@ Um das zu erreichen zeigt der Solution Explorer die verschiedenen geöffneten
 Solutions, sowie einzelne geöffnete Diagramme untereinander an. Um sie zu
 unterscheiden sind Solutions mit einem Ordnersymbol gekennzeichnet und ihre
 zugehörigen Diagramme werden eingerückt darunter dargestellt. Ein einfacher
-Klick öffnet ein Diagramm in der Designansicht. Dies ermöglicht das schnelle
+Klick öffnet ein Diagramm in der Design-Ansicht. Dies ermöglicht das schnelle
 und einfache Springen zwischen Diagrammen und Solutions.
 
 ## Aufbau und Strukturierung
 
 In seinem Startzustand, also beim erstmaligen Öffnen des BPMN-Studios, zeigt der
-Solution Explorer alle verfügbaren Diagramme auf der aktuell angebunden
+Solution Explorer alle verfügbaren Diagramme auf der aktuell angebundenen
 ProcessEngine untereinander an.
 
 ![Solution Explorer beim ersten öffnen](./first_opening.png)
 
-Schon hier kann der Nutzer mit einem einzigen Klick in die Designansicht des
+Schon hier kann der Nutzer mit einem einzigen Klick in die Design-Ansicht des
 angeklickten Diagramms gelangen und dieses editieren.
 
 Mit einem Klick auf das Ordnersymbol im Reiter des Solution Explorers kann
@@ -47,7 +47,7 @@ Mit einem Klick auf "Öffnen" bestätigt der Nutzer den ausgewählten Ordner.
 
 Der Solution Explorer zeigt den ausgewählten Ordner nun als Solution an.
 Auch von hier kann der User mit einem Klick auf den Namen eines Diagramms in die
-entsprechende Designansicht gelangen und das Diagramm bearbeiten.
+entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 
 ![Geöffnete FileSystem Solution](./opened_file_system_solution.png)
 
@@ -74,4 +74,4 @@ nicht angezeigt.
 |:---:|:-----------------------|:-------------------------------------------------------|
 | 1.  | Neues Diagramm anlegen | Erstellt ein neues Diagramm innerhalb dieser Solution. |
 | 2.  | Solution schließen     | Schließt diese Solution im Solution Explorer.          |
-| 3.  | Diagramme              | Öffnet die Designansicht des ausgewählten Diagramms.   |
+| 3.  | Diagramme              | Öffnet die Design-Ansicht des ausgewählten Diagramms.   |
