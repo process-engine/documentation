@@ -18,10 +18,10 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
   des Diagramms.
 1. Das [Dashboard](components/dashboard/dashboard.md) zeigt die aktuell
  laufenden Prozesse und anstehende UserTasks einer verbundenen ProcessEngine
-1. In den [Settings](components/config-panel/config-panel.md) lässt sich
+1. In den [Settings](components/settings/settings.md) lässt sich
   konfigurieren, mit welcher ProcessEngine sich das BPMN-Studio verbindet
   und an welchem Server sich der Benutzer authentifiziert.
-8. Der [Login](components/login/login.md) ermöglicht es sich bei einem
+1. Der [Login](components/login/login.md) ermöglicht es sich bei einem
   IdentityServer zu authentifizieren.
-9. Der [Waiting Room](components/waiting-room/waiting-room.md) erscheint,
+1. Der [Waiting Room](components/waiting-room/waiting-room.md) erscheint,
   während ein Prozess ausgeführt wird.
