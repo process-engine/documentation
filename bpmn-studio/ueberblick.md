@@ -10,7 +10,7 @@ Zum einen ist der [SolutionExplorer](components/solution-explorer/solution-explo
 
 ![SolutionExplorer](./solution-explorer.png)
 
-Man kann diesen über das BILD Icon links neben `Plan` in der Navigation erreichen.
+Man kann diesen über das <img src="project-diagram-solid.svg" alt="Solution Explorer Icon" width="12x" height="12px" align="center"> Icon links neben `Plan` in der Navigation erreichen.
 
 Der "Process Definition List"-Dialog zeigt alle Prozessmodelle, die zurzeit
 in der Datenbank vorhanden sind.
