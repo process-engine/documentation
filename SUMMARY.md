@@ -33,7 +33,7 @@
    1. [Diff-Ansicht](bpmn-studio/components/diff-view/diff-view.md)
    1. [XML-Ansicht](bpmn-studio/components/xml-view/xml-view.md)
    1. [Dashboard](bpmn-studio/components/dashboard/dashboard.md)
-   1. [Settings](bpmn-studio/components/config-panel/config-panel.md)
+   1. [Settings](bpmn-studio/components/settings/settings.md)
    1. [Login](bpmn-studio/components/login/login.md)
    1. [Waiting Room](bpmn-studio/components/waiting-room/waiting-room.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
@@ -69,10 +69,10 @@
 
    1. [Setup](processengine/typescript/setup/README.md)
        * [Konfiguration](processengine/typescript/setup/konfiguration.md)
- 
+
    1. [Konzepte](processengine/typescript/konzepte/README.md)
        * [Konfiguration](processengine/typescript/konzepte/configuration.md)
- 
+
    1. [Architektur](processengine/typescript/architektur/README.md)
        * [Dependency Injection](processengine/typescript/architektur/dependendy-injection.md)
        * [Discovery](processengine/typescript/architektur/discovery.md)
@@ -111,7 +111,7 @@
           * [UserTaskConfig](processengine/typescript/consumer_api/public_api.md#usertaskconfig)
           * [UserTaskResult](processengine/typescript/consumer_api/public_api.md#usertaskresult)
    1. [Management API](processengine/typescript/management_api/README.md)
- 
+
 ## Anlagen
 
 1. [Glossar](GLOSSARY.md)
