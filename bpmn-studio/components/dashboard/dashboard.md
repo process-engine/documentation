@@ -10,7 +10,7 @@ verbunden ProcessEngine bezogen.
 
 Das Dashboard kann über den Navigationseintrag `Dashboard` geöffnet werden.
 
-Das Dashboard besteht aus folgenden zwei Abschnitten:
+Innerhalb des Dashboards finden sich die folgenden beiden Abschnitte:
 
 Im ersten Abschnitt, `Processes running`, werden die laufenden Prozesse als
 Tabelle aufgelistet. In der Tabelle wird die `Correlation Id` und die
@@ -24,9 +24,9 @@ weitere Bearbeitung warten. In der Tabelle werden ebenfalls die
 
 ## Funktion
 
-In der Tabelle `Processes running` werden für jeden laufenden Prozesse zwei
-Links angeboten. In der Spalte `Process Model Id` ist jeweils ein Link zu der
-Design-Ansicht des Prozessmodels verlinkt. Über den Link `User Tasks` kann eine
+In der Tabelle `Processes running` werden für jeden laufenden Prozess zwei
+Links angeboten. In der Spalte `Process Model Id` befindet sich jeweils ein Link zu der
+Design-Ansicht des Prozessmodels. Mittels dem Link `User Tasks` kann eine
 Ansicht mit allen Aufgaben zu dem entsprechenden Prozess angesteuert werden.
 
 Die `Task waiting` Tabelle enthält für jede wartende UserTask einen `Continue`

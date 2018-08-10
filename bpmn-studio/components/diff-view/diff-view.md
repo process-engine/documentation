@@ -14,7 +14,7 @@ Schaltflächen dazu befinden sich mittig in der unteren Statusleiste.
 
 In der Listenansicht werden die Änderungen mit Typ und ggf. Elementnamen
 aufgezeigt. Die Liste ist nach Änderungsart sortiert. Über die Schaltfläche mit
-den 3 horizontalen Balken mittig kann die Listenansicht eingeblendet und
+den drei horizontalen Balken mittig kann die Listenansicht eingeblendet und
 ausgeblendet werden.
 
 ![Schaltfläche zum anzeigen der Listenansicht](./images/diff-view-change-list-icon.png)

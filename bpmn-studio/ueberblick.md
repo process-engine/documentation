@@ -1,3 +1,10 @@
+# BPMN - Studio
+
+Das BPMN - Studio ist sowohl ein Tool zur Modellierung von BPMN - Diagrammen,
+als auch ein Frontend zur Kommunikation mit einer ProcessEngine.
+
+## Komponenten
+
 Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
 
 1. Der [Solution Explorer](components/solution-explorer/solution-explorer.md)

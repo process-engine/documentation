@@ -2,17 +2,17 @@
 
 ## Aufgaben und Motivation
 
-Die Design View ermöglicht dem Benutzer einen Prozess zu betrachten,
+Die Design-Ansicht ermöglicht dem Benutzer einen Prozess zu betrachten,
 zu modellieren zu konfigurieren, zu deployen/starten und zu exportieren.
 
 ## Aufbau und Strukturierung
 
-Wenn die Design View geöffnet wurde, wird in der Mitte des BPMN-Studios
+Wenn die Design-Ansicht geöffnet wurde, wird in der Mitte des BPMN-Studios
 (Modellierungsfläche) das Diagramm angezeigt.
 
-![Design View](design-view.png)
+![Design-Ansicht](design-view.png)
 
-Die Design View ist in vier Bereiche aufgeteilt:
+Die Design-Ansicht ist in vier Bereiche aufgeteilt:
 
 1. Modellierungsfläche
 
@@ -60,7 +60,7 @@ Die Design View ist in vier Bereiche aufgeteilt:
    Befindet sich das Diagramm auf dem Dateisystem, kann es mit dem `Deploy Button`
    (Bild links) auf die ProcessEngine geladen/deployed werden.
 
-   Wenn die Design View mit einem Diagramm aus der ProcessEngine geöffnet ist
+   Wenn die Design-Ansicht mit einem Diagramm aus der ProcessEngine geöffnet ist
    sieht man stattdessen diesen `Start Button` (Bild rechts), mit dem der
    Prozess ausgeführt werden kann.
 
@@ -75,10 +75,9 @@ Die Design View ist in vier Bereiche aufgeteilt:
 
    ![Statusleiste](design-view-xml-diff.png)
 
-   Die beiden Buttons `Show XML` und `Show Diff` sind nur in der Statusleiste
-   sind nur in der Design View sichtbar.
+   Die beiden Buttons `Show XML` und `Show Diff` sind nur in der Statusleiste der Design-Ansicht sichtbar.
 
-   Der `Show XML` Button wechselt zur [XML View](../xml-view/xml-view.md) und zeigt das aktuelle XML
+   Der `Show XML` Button wechselt zur [XML-Ansicht](../xml-view/xml-view.md) und zeigt das aktuelle XML
    des Diagramms.
 
-   Der `Show Diff` Button wechselt zur [Diff View](../diff-view/diff-view.md).
+   Der `Show Diff` Button wechselt zur [Diff-Ansicht](../diff-view/diff-view.md).
