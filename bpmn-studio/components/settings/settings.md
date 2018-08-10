@@ -43,5 +43,5 @@ In den Eingabefeldern können die Werte nach belieben verändert werden.
 Über den `Save` Button können die neuen Einstellungen übernommen werden. Diese
 überschreiben die alte Konfiguration.
 
-Um die `Cancel` Button können die Einstellugen verworfen werden. Die alten
+Mit dem `Cancel` Button können die Einstellugen verworfen werden. Die alten
 Einstellungen werden nicht überschrieben.
