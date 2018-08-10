@@ -1,6 +1,6 @@
 # BPMN - Studio
 
-Das BPMN - Studio ist sowohl ein Tool zur Modellierung von BPMN - Diagrammen,
+Das BPMN-Studio ist sowohl ein Tool zur Modellierung von BPMN-Diagrammen,
 als auch ein Frontend zur Kommunikation mit einer ProcessEngine.
 
 ## Komponenten
@@ -20,7 +20,7 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
 1. Die [XML-Ansicht](components/xml-view/xml-view.md) zeigt die aktuelle XML
   des Diagramms.
 1. Das [Dashboard](components/dashboard/dashboard.md) zeigt die aktuell
- laufenden Prozesse und anstehende UserTasks einer verbundenen ProcessEngine
+ laufenden Prozesse und wartende UserTasks einer verbundenen ProcessEngine
 1. In den [Settings](components/settings/settings.md) lässt sich
   konfigurieren, mit welcher ProcessEngine sich das BPMN-Studio verbindet
   und an welchem Server sich der Benutzer authentifiziert.

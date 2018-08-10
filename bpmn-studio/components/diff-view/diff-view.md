@@ -22,10 +22,9 @@ ausgeblendet werden.
 
 ## Aufbau und Strukturierung
 
-Wenn die Diff-Ansicht über den "Show Diff"-Button in der unteren rechten Ecke
-des BPMN-Studios geöffnet wurde, werden das "Vorher"- und das "Nachher"-Diagramm
-angezeigt, mit einem Hinweis auf die beiden Buttons zur Auswahl des Diff Modus.
-
+Die Diff - Ansicht lässt sich mittels des Show Diff - Buttons, welcher sich in der unteren Rechten Ecke des BPMN - Studios befindet, öffnen.
+In der linken oberen Spalte wird der zuletzt gespeicherte Stand des Diagramms, und in der rechten oberen Spalte der aktuelle Stand angezeigt.
+In der mittleren Fläche befindet sich standartmäßig ein Hinweis, was welcher der beiden Buttons zur Auswahl des Diff - Modus bewirkt.
 
 ![Diff-Ansicht Startansicht](./images/diff-view-start.png)
 
@@ -48,9 +47,9 @@ Die Listenansicht zeigt alle Änderungen an. Diese sind nach der Art
 der Änderung in folgender Reihenfolge sortiert:
 
 1. Entfernt
-1. Geändert
-1. Hinzugefügt
-1. Layout geändert
+2. Geändert
+3. Hinzugefügt
+4. Layout geändert
 
 Um das Element genau zu identifizieren werden die Art und der Name des
 Elements angegeben.

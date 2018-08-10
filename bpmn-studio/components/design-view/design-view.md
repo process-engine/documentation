@@ -21,7 +21,8 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
    In der linken Werkzeugleiste findet man im oberen Teil die Standardwerkzeuge
    zum bearbeiten von BPMN-Diagrammen und im unteren Teil BPMN-Elemente.
 
-   Oben rechts in der Modellierungsfläche gibt es eine Minimap.
+   Oben rechts in der Modellierungsfläche gibt es eine Minimap, welche sich
+   mit dem _Open_ Button öffnen lässt.
 
    ![Minimap geschlossen](design-view-minimap-closed.png)
 
@@ -61,7 +62,7 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
    (Bild links) auf die ProcessEngine geladen/deployed werden.
 
    Wenn die Design-Ansicht mit einem Diagramm aus der ProcessEngine geöffnet ist
-   sieht man stattdessen diesen `Start Button` (Bild rechts), mit dem der
+   sieht man stattdessen einen `Start Button` (Bild rechts), mit dem der
    Prozess ausgeführt werden kann.
 
    Die anderen Buttons haben immer die selbe Funktionalität.
