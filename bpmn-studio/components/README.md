@@ -1,5 +1,7 @@
 # Komponenten
 
+In diesen Abschnitt sind die einzelnen Komponenten des BPMN-Studios dokumentiert.
+
 1. [Solution Explorer](solution-explorer/solution-explorer.md)
 1. [Plan-Ansicht](plan-view/plan-view.md)
 1. [Design-Ansicht](design-view/design-view.md)
