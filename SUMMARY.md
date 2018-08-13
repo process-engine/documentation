@@ -37,6 +37,10 @@
    1. [Settings](bpmn-studio/components/settings/settings.md)
    1. [Login](bpmn-studio/components/login/login.md)
    1. [Waiting Room](bpmn-studio/components/waiting-room/waiting-room.md)
+1. [User Guide](bpmn-studio/user-guide/README.md)
+   1. [Basic Editing](bpmn-studio/user-guide/basic-editing/basic-editing.md)
+   1. [Deploy](bpmn-studio/user-guide/deploy/deploy.md)
+   1. [Start](bpmn-studio/user-guide/start/start.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 1. [Hands-On](bpmn-studio/hands-on/README.md)
 
