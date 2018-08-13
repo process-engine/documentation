@@ -1,4 +1,4 @@
-# BPMN - Studio
+# BPMN-Studio
 
 Das BPMN-Studio ist sowohl ein Tool zur Modellierung von BPMN-Diagrammen,
 als auch ein Frontend zur Kommunikation mit einer ProcessEngine.
