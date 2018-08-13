@@ -20,15 +20,17 @@ Letzteres dient dazu, den [Task](../../GLOSSARY.md#task) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
-Zunächst wird ein neues Diagramm benötigt. Dieses kann über den Solution
-Explorer erstellt werden. Dafür muss man eine Solution öffnen, dazu klickt
-man im Solution Explorer auf den "Open a Solution"-Button.
+Zunächst wird ein neues Diagramm benötigt.
+Der Solution Explorer ermöglicht uns ein neues Diagramm innerhalb einer Solution
+zu erstellen.
+Dazu klickt man zunächst im Solution Explorer auf den "Open a Solution"-Button.
 
 <img src="../images/getting-started/hello-world/open-a-solution-button.png" width="100%" />
 
-Es öffnet sich ein Fenster zur Auswahl eines Ordner, der geöffnet werden soll.
-Sobald man ein Ordner geöffnet hat kann man ein Diagramm erstellen. Dazu klickt man auf den
-"Datei hinzufügen"-Button.
+Es öffnet sich ein Fenster zur Auswahl eines Ordners.
+Bestätigt man den ausgewählten Ordner mit einem Klick auf "Öffnen" erscheint der
+Ordner als Solution im Solution Explorer. Jetzt kann man mit dem "Datei
+hinzufügen"-Button ein neues Diagramm erstellen.
 
 <img src="../images/getting-started/hello-world/create-new-diagram-button.png" width="100%" />
 
@@ -37,7 +39,8 @@ In diesem Fall wird `Hello World` gewählt.
 
 <img src="../images/getting-started/hello-world/create-new-diagram-input.png" width="100%" />
 
-Die Design-Ansicht öffnet sich mit dem gerade erstellten Diagramm.
+Nach dem Erstellen öffnet sich die Design-Ansicht automatisch mit dem gerade
+erstellten Diagramm.
 
 So sieht das Ganze dann aus:
 
@@ -66,10 +69,10 @@ Und so wird es gemacht:
 
 ## Integration eines Diagramms
 
-Ein [UserTask](../../GLOSSARY.md#user-task) kann so eingestellt werden,
-dass dem Benutzer eine grafische Oberfläche dargestellt wird. In diesem Fall
-wird eine Confirm Ansicht gewählt.
-Um das zu erreichen muss der UserTask folgendermaßen eingestellt werden:
+Ein [UserTask](../../GLOSSARY.md#user-task) kann so konfiguriert werden,
+dass dem Benutzer eine grafische Oberfläche dargestellt wird. In diesem Beispiel
+wird eine Confirm Ansicht erstellt.
+Um das zu erreichen muss der UserTask folgendermaßen konfiguriert werden:
 
   1. In dem Property Panel rechts unter dem Punkt Properties lässt sich die anzuzeigende
   Oberfläche mittels Key-Value Paaren definieren:
@@ -81,7 +84,7 @@ Um das zu erreichen muss der UserTask folgendermaßen eingestellt werden:
   1. Ein FormField mit dem Typ Boolean wird benötigt.
   Das Label stellt die Nachricht, die confirmed werden soll, dar.
 
-  **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss 
+  **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss
   immer das **ERSTE** FormField vom Typ `boolean` sein.
   Die Id spielt dabei keine Rolle.
 
@@ -91,10 +94,11 @@ Um das zu erreichen muss der UserTask folgendermaßen eingestellt werden:
 **Zusammenfassung**
 
 Was wir getan haben:
-- einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` erstellt.
-- den Task mit einer Konfiguration für die Oberfläche versehen.
-- die verschiedenen Ausführungsschritte miteinander verdrahtet.
 
-Hier ist der komplette Ablauf mit Ausführung des Prozesses zu sehen:
+- Einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` erstellt.
+- Den Task mit einer Konfiguration für die Oberfläche versehen.
+- Die verschiedenen Ausführungsschritte miteinander verdrahtet.
+
+Hier ist noch einmal der komplette Ablauf mit Ausführung des Prozesses zu sehen:
 
 {% video controls="controls"%}../images/getting-started/hello-world/hello-world_full_example.mp4{% endvideo %}
