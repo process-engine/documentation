@@ -18,8 +18,8 @@ Konfigurationspunkte zu finden sind:
 
 **Einstellungen für die ProcessEngine:**
 
-Hier kann der Endpunkt der ProcessEngine konfiguriert werden, den das BPMN-Studio
-verwenden soll. Bei dem Endpunkt handelt es sich um eine HTTP URL.
+Hier kann der Endpunkt der ProcessEngine konfiguriert werden, den das 
+BPMN-Studio verwenden soll. Bei dem Endpunkt handelt es sich um eine HTTP URL.
 
 ![Einstellungen für die ProcessEngine](settings-processengine.png)
 
