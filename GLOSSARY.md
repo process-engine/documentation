@@ -46,9 +46,11 @@ Beispiele für Domain Objects sind: user, process, ...
 
 ## BPMN-Studio
 
-BPMN-Studio ist eine Web- und Desktop-Applikation zur Erstellung, Verwaltung, Ausführung und Auswertung von BPMN-Prozessen. Es setzt auf dem BPMN.io auf und den BPMN-Standard 2.x um.
+BPMN-Studio ist eine Web- und Desktop-Applikation zur Erstellung, Verwaltung,
+Ausführung und Auswertung von BPMN-Prozessen. Es setzt auf 
+[bpmn-js](https://github.com/bpmn-io/bpmn-js) auf und den BPMN-Standard 2.x um.
 
-Zur [Dokumentation zum BPMN - Studio](bpmn-studio/ueberblick.md)
+[Dokumentation zum BPMN-Studio](bpmn-studio/ueberblick.md)
 
 ## BPMN
 
