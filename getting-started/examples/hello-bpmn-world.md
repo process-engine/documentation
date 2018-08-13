@@ -1,7 +1,7 @@
 # Hello BPMN-World
 
-Um die Möglichkeiten der ProcessEngine zu demonstrieren, wird ein Beispiel
-Diagramm erstellt.
+Um die Möglichkeiten der ProcessEngine und des BPMN-Studios zu demonstrieren,
+wird ein einfaches Beispiel Diagramm erstellt.
 
 Ziel ist es ein BPMN-Diagramm mit einem
 [Single User Task](../../GLOSSARY.md#user-task) zu erstellen.
@@ -10,8 +10,8 @@ Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
 
-Dieser [User Task](../../GLOSSARY.md#user-task) wird die folgenden zwei
-Elemente enthalten:
+Dieser [User Task](../../GLOSSARY.md#user-task) wird die folgenden Elemente
+enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
