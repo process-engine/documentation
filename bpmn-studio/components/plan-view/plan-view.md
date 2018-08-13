@@ -1,6 +1,7 @@
 # Plan-Ansicht
 
-Die Plan-Ansicht zeigt alle Prozessmodelle an, welche in der Datenbank der aktuell verbunden ProcessEngine existieren.
+Die Plan-Ansicht zeigt alle Prozessmodelle an, welche in der Datenbank der 
+aktuell verbunden ProcessEngine existieren.
 
 ## Aufgaben und Motivation
 
