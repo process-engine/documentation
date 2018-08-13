@@ -1,15 +1,18 @@
-## Einstieg
+# Einstieg
 
-Um einen ersten Überblick in die Arbeitsweise mit der API zu erhalten, wird hier ein Überlick über die 
-Grundlegenden Routen und Parameter gegeben.
+Um einen ersten Überblick in die Arbeitsweise mit der API zu erhalten, wird
+hier ein Überblick über die Grundlegenden Routen und Parameter gegeben.
 
-Tipp: Um bei den Abfragen Ergebnisse zu erhalten, muss mindestens ein 'executeable Diagram' vorhanden sein.
+Tipp: Um bei den Abfragen Ergebnisse zu erhalten, muss mindestens ein 
+ausführbares Diagramm vorhanden sein.
 
-### Routen
+## Routen
 
-Bei standardmäßiger Installation ist der API Server unter `http://localhost:8000` erreichbar. 
+Bei standardmäßiger Installation ist der API Server unter 
+`http://localhost:8000` erreichbar. 
 
-Es müssen daher alle Routen in diesem Tutorial um die Serveradresse ergänzt werden.
+Es müssen daher alle Routen in diesem Tutorial um die Serveradresse ergänzt
+werden.
 
 **Beispiel:**
 
@@ -23,9 +26,11 @@ entspricht
 GET http://localhost:8000/api/consumer/v1/process_models
 ```
 
-### Alle Prozessmodelle abfragen
+## Alle Prozessmodelle abfragen
 
-Die nachfolgende Abfrage zeigt alle Prozesse an, die den Kriterien unter [Auflisten startbarer Prozessmodelle](list-startable-process-models.md) entsprechen.
+Die nachfolgende Abfrage zeigt alle Prozesse an, die den Kriterien unter 
+[Auflisten startbarer Prozessmodelle](list-startable-process-models.md)
+entsprechen.
 
 ```REST
 GET /api/consumer/v1/process_models
@@ -53,9 +58,11 @@ GET /api/consumer/v1/process_models
 }
 ```
 
-### Prozessmodell abfragen
+## Prozessmodell abfragen
 
-Mehr Informationen unter [Einzelnes Prozessmodell abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen) entsprechen.
+Mehr Informationen unter [Einzelnes Prozessmodell 
+abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+entsprechen.
 
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>
@@ -84,7 +91,7 @@ GET /api/consumer/v1/process_models/HelloWorld
 }
 ```
 
-### Events anzeigen
+## Events anzeigen
 
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/events
@@ -108,7 +115,7 @@ GET /api/consumer/v1/process_models/HelloWorld/events
 }
 ```
 
-### UserTasks anzeigen
+## UserTasks anzeigen
 
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/user_tasks
@@ -143,18 +150,20 @@ GET /api/consumer/v1/process_models/HelloWorld/user_tasks
 }
 ```
 
-### Prozesse starten
+## Prozesse starten
 
-Mehr informationen unter [Starten von Prozessinstanzen](api/consumer_api/tasks/start-process-instance.md) entsprechen.
+Mehr Informationen unter [Starten von Prozessinstanzen
+](api/consumer_api/tasks/start-process-instance.md) entsprechen.
 
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/start_events/<start_event_id>/start?start_callback_type=<callback_type>
 ```
 
-`callback_type`
-* `1`: Starte Prozessinstanz und antworte direkt nach Prozessstart.
-* `2`: Starte Prozessinstanz und antworte nach Prozessende.
-* `3`: Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde.
+Die Prozessinstanz wird gestartet und es wird bei `callback_type`
+
+- `1` direkt geantwortet.
+- `2` nach Prozessende geantwortet.
+- `3` geantwortet wenn das angegeben EntEvent erreicht wurde.
 
 **Beispiel (`callback_type` = 1)**:
 
@@ -170,6 +179,7 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 **Beispiel (`callback_type` = 2)**:
 
 *Hinweis: Ergebnis erscheint erst nach Prozessende.*
+
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/start?start_callback_type=2
 ```
@@ -188,9 +198,11 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 **Beispiel (`callback_type` = 3)**:
 
 *Hinweis: Ergebnis erscheint erst nach Prozessende.*
+
 ```REST
 POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/start?start_callback_type=3&end_event_id=EndEvent_0eie6q6
 ```
+
 ```JSON
 {
     "correlationId": "91dfb9e5-4a60-461d-959a-8df222167ad5",
@@ -203,7 +215,7 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 }
 ```
 
-### Ergebnisse anzeigen
+## Ergebnisse anzeigen
 
 ```REST
 GET /api/consumer/v1/correlations/<correlation_id>/process_models/<processmodels_id>/results
@@ -229,7 +241,7 @@ GET /api/consumer/v1/correlations/c5433825-ed03-4df4-b391-391e84b51f95/process_m
 ]
 ```
 
-### Events von Ergebnissen anzeigen
+## Events von Ergebnissen anzeigen
 
 ```REST
 GET /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events
@@ -253,7 +265,7 @@ GET /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-b
 }
 ```
 
-### Events von Ergebnissen triggern
+## Events von Ergebnissen triggern
 
 ```REST
 POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events/<event_id>/trigger
@@ -269,11 +281,15 @@ POST /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-
 Not implemented yet!
 ```
 
-### UserTasks fertigstellen
+## UserTasks fertigstellen
 
 ```JSON
-Content-Type: application/json
-payload: {"formFields":{"<form_field>":"<form_value>"}}
+Content-Type: application/json,
+payload: {  
+   "formFields":{  
+      "<form_field>":"<form_value>"
+   }
+}
 ```
 
 ```REST
