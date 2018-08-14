@@ -211,3 +211,20 @@ hinzugefügt werden.
 
 <img src="process-properties.png" width="40%" />
 
+### Extension Properties
+
+Die Extension Properties werden bei jedem BPMN-Element angezeigt.
+Mittels Key-Value-Paaren können dem Element Eigenschaften hinzugefügt werden.
+
+Ein Anwendungsbeispiel ist zum Beispiel die Verwendung eines `ServiceTasks`.
+Um einen `ServiceTask` zu konfigurieren muss dieser drei Eigenschaften erhalten.
+
+Er erhält 
+
+- das Modul,
+- die Methode und
+- zugehörige Parameter.
+
+<img src="service-task-example.png" width="40%" />
+
+**Wichtig**: Die URL muss in Anführungszeichen angegeben werden.
