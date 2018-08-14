@@ -130,3 +130,18 @@ So sieht zum Beispiel die Error Sektion aus:
 
 <img src="error-sektion.png" width="40%" />
 
+### Conditional Event
+
+Die Conditional Event Sektion wird nur bei angewähltem `Conditional` Boundary
+Event sichbar. 
+
+Hier kann 
+
+- eine Condition,
+- ein Variable Name und
+- ein Variable Event
+
+angegeben werden.
+
+<img src="conditional-sektion.png" width="40%" />
+
