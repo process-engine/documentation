@@ -53,3 +53,51 @@ Die General Sektion behandelt mit
 1. und Docs
 
 die grundlegenden Informationen eines Elements.
+
+Beispiel: 
+
+<img src="general-sektion.png" width="40%" />
+
+### Forms
+
+Die komplette Forms Sektion ist nur sichtbar, wenn ein UserTask selektiert ist.
+
+Es können mehrere Form Fields angelegt und entfernt werden.
+Zusätzlich kann man für jeden UserTask optional einen `Form Key` setzen.
+
+Wenn ein UserTask angewählt ist sieht die Forms Sektion so aus:
+
+<img src="form-sektion-leer.png" width="40%" />
+
+Nach dem hinzufügen eines Form Fields über den `+` Button erscheint ein
+weiterer Teil der Sektion:
+
+<img src="form-sektion-formfield.png" width="40%" />
+
+In der Form Field Sektion gibt es die Möglichkeit festzulegen
+
+1. welche ID das Form Field erhalten soll,
+1. welchen Typ das Form Field haben soll,
+1. welches Label gesetzt werden soll,
+1. welcher Standardwert drin stehen soll.
+
+**Wichtig** hierbei ist das die **ID** einmalig sein muss und nicht leer sein darf.
+
+Es stehen folgende Typen als Auswahl zur Verfügung:
+
+1. string
+1. long
+1. boolean
+1. date
+1. enum
+1. custom type
+
+**Info**: 
+
+Wenn der Typ `enum` ausgewählt ist, erscheint eine weitere Sektion, 
+in der anhand von Key-Value-Paaren angegeben wird, welche Einträge
+die Enum-Auswahl beinhalten soll.
+
+Im BPMN-Studio wird ein UserTask vom Typ `enum` während der Ausführung als
+Dropdown dargestellt.
+
