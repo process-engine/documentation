@@ -6,14 +6,14 @@ In seinem Kern benutzt BPMN-Studio [bpmn-js](https://bpmn.io/toolkit/bpmn-js/)
 um das editieren und designen von Diagrammen zu ermöglichen.
 
 Das Tool bpmn-js, das sich intern auf [diagram-js](https://github.com/bpmn-io/diagram-js)
-stützt ist ein Unterprojekt von [bpmn.io](https://github.com/bpmn-io), einem
+stützt, ist ein Unterprojekt von [bpmn.io](https://github.com/bpmn-io), einem
 Open Source Projekt von camunda.
 
 Weitere Informationen finden sie auf der Website zu [bpmn.io](https://bpmn.io/).
 
-Für eine genaue Anleitung zur Modellierung von BPMN-Diagrammen und Prozessen
-bitten wir Sie sich auf das [Tutorial](https://camunda.com/bpmn/) von camunda
-zu beziehen.
+Für eine genaue Anleitung zur Modellierung von BPMN-Diagrammen und Prozessen,
+bietet das [Tutorial](https://camunda.com/bpmn/) von camunda einen guten
+Einstieg.
 
 ## Property Panel
 
@@ -26,8 +26,10 @@ Es erlaubt Benutzern unsichtbare Eigenschaften an einzelnen BPMN-Elementen
 hinzuzufügen, zu entfernen und zu konfigurieren.
 
 Verschiede BPMN-Elemente haben unterschiedliche Konfiguratinsmöglichkeiten
-im Property Panel. Die `General Section` und die `Properties Section` ist für alle 
-Elemente vorhanden.
+im Property Panel.
+
+Die `General Section` und die `Properties Section` ist für alle Elemente
+vorhanden.
 
 Im Property Panel werden folgende Sections behandelt:
 
@@ -81,7 +83,7 @@ In der `Form Field Section` gibt es die Möglichkeit festzulegen
 1. welches Label gesetzt werden soll,
 1. welcher Standardwert drin stehen soll.
 
-**Wichtig** hierbei ist das die **ID** einmalig sein muss und nicht leer sein darf.
+**Wichtig** hierbei ist das die **ID** einmalig sein muss und **nicht** leer sein darf.
 
 Es stehen folgende Typen als Auswahl zur Verfügung:
 
@@ -110,8 +112,8 @@ Die
 - Error Section und
 - Signal Section
 
-haben keine großen Unterschiede. Alle Sections sind sichtbar, wenn entweder
-ein Boundary oder eine End -Event von einem dieser Typen angewählt ist.
+haben keine wesentlichen Unterschiede. Alle Sections sind sichtbar, wenn
+entweder ein Boundary oder eine End -Event von einem dieser Typen angewählt ist.
 
 Lediglich die `Message Section` wird auch bei einem angewähltem `SendTask`, oder 
 `ReceiveTask` angezeigt.
