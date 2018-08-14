@@ -18,7 +18,9 @@ zu beziehen.
 ## Property Panel
 
 Das Property Panel im BPMN-Studio ist eine Erweiterung für die bpmn-io 
-Komponente (Modeler/Designer).
+Komponente (Modeler/Designer) und ist in der Design-Ansicht auf der rechten
+Seite zu finden. Über den Button in der Ecke rechts oben ist es möglich
+das Property Panel ein und auszublenden.
 
 Es erlaubt Benutzern unsichtbare Eigenschaften an einzelnen BPMN-Elementen
 hinzuzufügen, zu entfernen und zu konfigurieren.
@@ -29,18 +31,18 @@ Elemente vorhanden.
 
 Im Property Panel werden folgende Sektionen behandelt:
 
-1. [General (alle Elemente)](###general)
-1. Forms (UserTasks)
-1. Message (Receive Task, BoundaryEvents)
-1. Script (ScriptTasks)
-1. Call Activity (Call Activity Task)
-1. Timer (Timer Boundary/End Events)
-1. Escalation (Escalation Boundary/End Events)
-1. Condition (Conditional Boundary/End Events)
-1. Error (Error Boundary/End Events)
-1. Signal (Signal Boundary/End Events)
-1. Process (Collaboration)
-1. Properties (alle Elemente)
+1. [General (alle Elemente)](#general)
+1. [Forms (UserTasks)](#forms)
+1. [Message (Receive Task, Start/Boundary Events)](#message-escalation-error-signal)
+1. [Escalation (Boundary/End Events)](#message-escalation-error-signal)
+1. [Error (Boundary/End Events)](#message-escalation-error-signal)
+1. [Signal (Start/Boundary/End Events)](#message-escalation-error-signal)
+1. [Conditional (Start/Boundary/End Events)](#conditional-event)
+1. [Script (ScriptTasks)](#script)
+1. [Call Activity (Call Activity Task)](#call-activity)
+1. [Timer (Start/Boundary Events)](#timer)
+1. [Process (Collaboration)](#process)
+1. [Properties (alle Elemente)](#extension-properties)
 
 ### General
 
