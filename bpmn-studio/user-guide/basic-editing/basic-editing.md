@@ -101,3 +101,32 @@ die Enum-Auswahl beinhalten soll.
 Im BPMN-Studio wird ein UserTask vom Typ `enum` während der Ausführung als
 Dropdown dargestellt.
 
+### Message, Escalation, Error, Signal
+
+Die 
+
+- Message Sektion,
+- Escalation Sektion,
+- Error Sektion und
+- Signal Sektion
+
+haben keine großen Unterschiede. Alle Sektionen sind sichtbar, wenn entweder
+ein Boundary oder eine End -Event von einem dieser Typen angewählt ist.
+
+Lediglich die Message Sektion wird auch bei einem angewähltem `SendTask`, oder 
+`ReceiveTask` angezeigt.
+
+Die Sektionen sind vom Aufbau her identisch. Man fügt über den `+` Button
+eine Message, einen Error, eine Escalation oder ein Signal hinzu.
+
+Das hinzugefügte Event ist dann im Auswahldropdown automatisch ausgewählt.
+Anschließend setzt man die Werte, wie zum Beispiel beim Error Event den
+
+- Name,
+- Code,
+- und die Message.
+
+So sieht zum Beispiel die Error Sektion aus:
+
+<img src="error-sektion.png" width="40%" />
+
