@@ -8,10 +8,10 @@ werden beim Ausführen von BPMN-Studio automatisch angezeigt.
 
 ### Vor dem Start
 
-Jetzt da das Diagramm auf der ProcessEngine vorhanden ist müssen wir die
-entsprechende Ansicht in BPMN-Studio öffnen.
+Jetzt da das Diagramm auf der ProcessEngine vorhanden ist muss der Nutzer zunächst
+die entsprechende Ansicht in BPMN-Studio öffnen.
 
-Dazu öffnen wir den [Solution Explorer](hier Link einfügen) in der
+Dazu öffnet der Nutzer den [Solution Explorer](hier Link einfügen) in der
 ProcessEngine Ansicht um die bereits hochgeladenen Diagramme zu sehen.
 Mit einem Klick auf den Namen des gerade hochgeladenen Diagramm öffnet sich nun
 eine Designansicht die uns erlaubt das Diagramm mit einem Klick auf den
