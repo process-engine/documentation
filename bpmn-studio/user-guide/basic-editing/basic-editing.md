@@ -163,3 +163,17 @@ es würde im Backend während der Ausführung des Tasks geloggt werden.
 
 <img src="script-sektion.png" width="40%" />
 
+### Call Activity
+
+Die Call Activity Sektion wird bei einem `Call Activity` Task angezeigt
+und sieht wie folgt aus:
+
+<img src="call-activity-sektion.png" width="40%" />
+
+Wenn die Call Activity konfiguriert ist, also ein Prozess ausgewählt wurde,
+wird während der Ausführung der ausgewählte Prozess gestartet und nach
+beendigung wieder zurück zum eigentlichen Prozess gewechselt.
+
+Allerdings funktioniert es nur, wenn beide Prozesse auf verbundenen der 
+ProcessEngine liegen. 
+
