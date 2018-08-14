@@ -195,3 +195,19 @@ definiert.
 
 <img src="timer-sektion.png" width="40%" />
 
+### Process
+
+Das erscheinen der Process Sektion erreicht man, indem man kein Element 
+auswählt, sondern außerhalb einer Lane klickt. Dann sollte im Property Panel
+unter General die ID mit `Collaboration` anfangen und zusätzlich die Process
+Sektion unter der General Sektion erscheinen.
+
+Hier kann der Prozess als ausführbar gesetzt werden.
+
+<img src="process-sektion.png" width="40%" />
+
+An einer Collaboration können zusätzlich, wie bei BPMN-Elementen Properties
+hinzugefügt werden.
+
+<img src="process-properties.png" width="40%" />
+
