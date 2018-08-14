@@ -127,13 +127,13 @@ Die HTTP-Routen für die Schnittstelle sehen so aus:
 
 ```JavaScript
 // Starte Prozessinstanz und antworte direkt nach Prozessstart
-POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceCreated
+POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=1
 
 // Starte Prozessinstanz und antworte nach Prozessende
-POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnProcessInstanceFinished
+POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=2
 
 // Starte Prozessinstanz und antworte wenn das gegebene EndEvent erreicht wurde
-POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=CallbackOnEndEventReached&end_event_key=endEventKey
+POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=3&end_event_id=endEventKey
 ```
 
 ### IConsumerApiService Schnittstelle

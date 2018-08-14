@@ -1,18 +1,21 @@
 # Plan-Ansicht
 
-Die Plan-Ansicht zeigt alle Prozessmodelle, die zurzeit in der Datenbank
-vorhanden sind. Falls keine Prozessmodelle in der Tabelle aufgeführt werden,
-müssen diese noch deployed werden.
+Die Plan-Ansicht zeigt alle Prozessmodelle an, welche in der aktuell verbunden
+ProcessEngine existieren.
+
+## Aufgaben und Motivation
+
+Ziel der Plan-Ansicht ist es, den Benutzer einen Überblick über alle
+bestehenden Prozessmodelle zu geben.
+
+## Aufbau und Strukturierung
+
+Die Plan-Ansicht besteht aus einer Tabelle. In ihr werden die Prozessmodelle
+mit ihrem Namen aufgelistet.
 
 ![Plan-Ansicht](plan-view.png)
 
-Über die Plan-Ansicht kann man die Design-Ansicht eines Prozesses öffnen.
+## Funktion
 
-In dieser Ansicht hat man die Möglichkeit:
-
-   1. den Prozess zu modellieren.
-   1. den Prozess zu deployen.
-   1. den Prozess zu exportieren.
-   1. den Prozess zu starten (wenn der Prozess bereits deployed ist).
-   
-Um die Ansicht zu öffnen klickt man in der Plan-Ansicht auf den Tabelleneintrag.
+Jedes Prozessmodell kann angeklickt werden. Es öffnet sich die entsprechende
+[Design-Ansicht](../design-view/design-view.md) des Prozessmodelles.
