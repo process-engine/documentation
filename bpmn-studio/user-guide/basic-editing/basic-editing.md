@@ -177,3 +177,21 @@ beendigung wieder zurück zum eigentlichen Prozess gewechselt.
 Allerdings funktioniert es nur, wenn beide Prozesse auf verbundenen der 
 ProcessEngine liegen. 
 
+### Timer
+
+Die Timer Sektion erscheint bei Timer Boundary Events.
+
+Es gibt drei Modi:
+
+1. Date 
+1. Duration
+1. Cycle
+
+**Info**: Die Timer Definition muss im richtigen Format angegeben werden.
+
+Welches Zeitformat verwendet werden muss ist 
+[hier](https://docs.camunda.org/manual/7.9/reference/bpmn20/events/timer-events/)
+definiert.
+
+<img src="timer-sektion.png" width="40%" />
+
