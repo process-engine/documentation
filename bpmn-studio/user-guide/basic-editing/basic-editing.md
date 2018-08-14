@@ -26,10 +26,10 @@ Es erlaubt Benutzern unsichtbare Eigenschaften an einzelnen BPMN-Elementen
 hinzuzufügen, zu entfernen und zu konfigurieren.
 
 Verschiede BPMN-Elemente haben unterschiedliche Konfiguratinsmöglichkeiten
-im Property Panel. Die General Sektion und die Properties Sektion ist für alle 
+im Property Panel. Die `General Section` und die `Properties Section` ist für alle 
 Elemente vorhanden.
 
-Im Property Panel werden folgende Sektionen behandelt:
+Im Property Panel werden folgende Sections behandelt:
 
 1. [General (alle Elemente)](#general)
 1. [Forms (UserTasks)](#forms)
@@ -46,7 +46,7 @@ Im Property Panel werden folgende Sektionen behandelt:
 
 ### General
 
-Die General Sektion behandelt mit
+Die `General Section` behandelt mit
 
 1. ID,
 1. Name,
@@ -60,21 +60,21 @@ Beispiel:
 
 ### Forms
 
-Die komplette Forms Sektion ist nur sichtbar, wenn ein UserTask selektiert ist.
+Die komplette `Forms Section` ist nur sichtbar, wenn ein UserTask selektiert ist.
 
 Es können mehrere Form Fields angelegt und entfernt werden.
 Zusätzlich kann man für jeden UserTask optional einen `Form Key` setzen.
 
-Wenn ein UserTask angewählt ist sieht die Forms Sektion so aus:
+Wenn ein UserTask angewählt ist sieht die `Forms Section` so aus:
 
 <img src="form-sektion-leer.png" width="40%" />
 
 Nach dem hinzufügen eines Form Fields über den `+` Button erscheint ein
-weiterer Teil der Sektion:
+weiterer Teil der Section:
 
 <img src="form-sektion-formfield.png" width="40%" />
 
-In der Form Field Sektion gibt es die Möglichkeit festzulegen
+In der `Form Field Section` gibt es die Möglichkeit festzulegen
 
 1. welche ID das Form Field erhalten soll,
 1. welchen Typ das Form Field haben soll,
@@ -94,7 +94,7 @@ Es stehen folgende Typen als Auswahl zur Verfügung:
 
 **Info**: 
 
-Wenn der Typ `enum` ausgewählt ist, erscheint eine weitere Sektion, 
+Wenn der Typ `enum` ausgewählt ist, erscheint eine weitere Section, 
 in der anhand von Key-Value-Paaren angegeben wird, welche Einträge
 die Enum-Auswahl beinhalten soll.
 
@@ -105,18 +105,18 @@ Dropdown dargestellt.
 
 Die 
 
-- Message Sektion,
-- Escalation Sektion,
-- Error Sektion und
-- Signal Sektion
+- Message Section,
+- Escalation Section,
+- Error Section und
+- Signal Section
 
-haben keine großen Unterschiede. Alle Sektionen sind sichtbar, wenn entweder
+haben keine großen Unterschiede. Alle Sections sind sichtbar, wenn entweder
 ein Boundary oder eine End -Event von einem dieser Typen angewählt ist.
 
-Lediglich die Message Sektion wird auch bei einem angewähltem `SendTask`, oder 
+Lediglich die `Message Section` wird auch bei einem angewähltem `SendTask`, oder 
 `ReceiveTask` angezeigt.
 
-Die Sektionen sind vom Aufbau her identisch. Man fügt über den `+` Button
+Die Sections sind vom Aufbau her identisch. Man fügt über den `+` Button
 eine Message, einen Error, eine Escalation oder ein Signal hinzu.
 
 Das hinzugefügte Event ist dann im Auswahldropdown automatisch ausgewählt.
@@ -126,13 +126,13 @@ Anschließend setzt man die Werte, wie zum Beispiel beim Error Event den
 - Code,
 - und die Message.
 
-So sieht zum Beispiel die Error Sektion aus:
+So sieht zum Beispiel die `Error Section` aus:
 
 <img src="error-sektion.png" width="40%" />
 
 ### Conditional Event
 
-Die Conditional Event Sektion wird nur bei angewähltem `Conditional` Boundary
+Die `Conditional Event Section` wird nur bei angewähltem `Conditional` Boundary
 Event sichbar. 
 
 Hier kann 
@@ -147,7 +147,7 @@ angegeben werden.
 
 ### Script
 
-Die Script Sektion wird nur bei angewählten `ScriptTask` sichtbar.
+Die `Script Section` wird nur bei angewählten `ScriptTask` sichtbar.
 
 Der `ScriptTask` wird mit 
 
@@ -165,7 +165,7 @@ es würde im Backend während der Ausführung des Tasks geloggt werden.
 
 ### Call Activity
 
-Die Call Activity Sektion wird bei einem `Call Activity` Task angezeigt
+Die `Call Activity Section` wird bei einem `Call Activity` Task angezeigt
 und sieht wie folgt aus:
 
 <img src="call-activity-sektion.png" width="40%" />
@@ -179,7 +179,7 @@ ProcessEngine liegen.
 
 ### Timer
 
-Die Timer Sektion erscheint bei Timer Boundary Events.
+Die `Timer Section` erscheint bei Timer Boundary Events.
 
 Es gibt drei Modi:
 
@@ -197,10 +197,10 @@ definiert.
 
 ### Process
 
-Das erscheinen der Process Sektion erreicht man, indem man kein Element 
+Das erscheinen der `Process Section` erreicht man, indem man kein Element 
 auswählt, sondern außerhalb einer Lane klickt. Dann sollte im Property Panel
-unter General die ID mit `Collaboration` anfangen und zusätzlich die Process
-Sektion unter der General Sektion erscheinen.
+unter General die ID mit `Collaboration` anfangen und zusätzlich die 
+`Process Section` unter der `General Section` erscheinen.
 
 Hier kann der Prozess als ausführbar gesetzt werden.
 
