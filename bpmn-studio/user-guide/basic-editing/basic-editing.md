@@ -145,3 +145,21 @@ angegeben werden.
 
 <img src="conditional-sektion.png" width="40%" />
 
+### Script
+
+Die Script Sektion wird nur bei angewählten `ScriptTask` sichtbar.
+
+Der `ScriptTask` wird mit 
+
+- dem Format,
+- dem Script und
+- einer Result Variablen
+
+konfiguriert. Aktuell ist es so, dass JavaScript als Code ausgeführt werden
+kann. Dafür würde man auch nur das Script Feld brauchen.
+
+Als Test kann man zum Beispiel `console.log('Das ist ein Test!')` angeben, und
+es würde im Backend während der Ausführung des Tasks geloggt werden.
+
+<img src="script-sektion.png" width="40%" />
+
