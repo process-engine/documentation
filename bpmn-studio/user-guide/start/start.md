@@ -1,4 +1,4 @@
-# Start
+# Starten von Diagrammen
 
 Nach dem deployen des Diagramms können wir es nun auf der verbundenen
 ProcessEngine starten. Das Diagramm zu starten bedeutet das alle Tasks von der
@@ -27,7 +27,7 @@ Nach dem Starten des Prozesses zeigt das BPMN-Studio automatisch den sogenannten
 [Waiting Room](hier Link einfügen) an. In dieser Ansicht erfragt das BPMN-Studio
 regelmäßig ob neue UserTasks für den gerade gestarteten Prozess zur verfügung stehen.
 
-Falls ein Prozzes beendet wird, stellt es das BPMN-Studio fest und zeigt nun 
+Falls ein Prozzes beendet wird, stellt es das BPMN-Studio fest und zeigt nun
 das Dashboard an.
 
 Alternativ ist es natürlich jederzeit möglich den Waiting Room zu verlassen
