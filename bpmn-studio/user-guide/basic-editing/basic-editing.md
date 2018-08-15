@@ -81,9 +81,10 @@ In der `Form Field Section` gibt es die Möglichkeit festzulegen
 1. welche ID das Form Field erhalten soll,
 1. welchen Typ das Form Field haben soll,
 1. welches Label gesetzt werden soll,
-1. welcher Standardwert drin stehen soll.
+1. welcher Standardwert enthalten sein soll.
 
-**Wichtig** hierbei ist das die **ID** einmalig sein muss und **nicht** leer sein darf.
+**Wichtig:** DIe **ID** ist ein Pflichtfeld. Sie muss **einmalig** und **nicht leer**
+sein.
 
 Es stehen folgende Typen als Auswahl zur Verfügung:
 
