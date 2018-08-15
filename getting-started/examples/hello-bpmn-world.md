@@ -42,7 +42,7 @@ In diesem Fall wird `Hello World` gewählt.
 Nach dem Erstellen öffnet sich die Design-Ansicht automatisch mit dem gerade
 erstellten Diagramm.
 
-So sieht das Ganze dann aus:
+So sieht das Ganze  aus:
 
 {% video controls="controls"%}../images/getting-started/hello-world/create-new-diagram.mp4{% endvideo %}
 
@@ -56,14 +56,14 @@ erlaubt es neue Elemente hinzuzufügen; diese werden direkt mit dem ausgewählte
 Element verbunden.
 
 Der Sequenzfluss vom Startevent zum Endevent wird zunächst entfernt.
-An dem Startpunkt wird dann ein [UserTask](../../GLOSSARY.md#user-task)
-mit dem Namen `Hello Word` verbunden; an diesem dann das Endevent.
+An dem Startpunkt wird ein [UserTask](../../GLOSSARY.md#user-task)
+mit dem Namen `Hello Word` verbunden; an diesem das Endevent.
 
-Das Ganze sollte dann so aussehen:
+Das Ganze sollte so aussehen:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.png" width="100%" />
 
-Und so wird es gemacht:
+Im folgenden video, fassen wir die Schritte zusammen:
 
 {% video controls="controls"%}../images/getting-started/hello-world/create-hello-world.mp4{% endvideo %}
 
@@ -82,7 +82,7 @@ Um das zu erreichen muss der UserTask folgendermaßen konfiguriert werden:
   <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 
   1. Ein FormField mit dem Typ Boolean wird benötigt.
-  Das Label stellt die Nachricht, die confirmed werden soll, dar.
+  Das Label stellt die Nachricht, die nur bestätigt werden soll, dar.
 
   **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss
   immer das **ERSTE** FormField vom Typ `boolean` sein.
@@ -93,7 +93,9 @@ Um das zu erreichen muss der UserTask folgendermaßen konfiguriert werden:
 
 **Zusammenfassung**
 
-Was wir getan haben:
+Was wir getan haben?
+
+Wir haben:
 
 - Einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` erstellt.
 - Den Task mit einer Konfiguration für die Oberfläche versehen.
