@@ -1,4 +1,4 @@
-# Deploy
+# Deployen von Diagrammen
 
 Ein Diagramm zu deployen bedeutet das geöffnete Diagramm auf die aktuell
 verbundene ProcessEngine hochzuladen.
