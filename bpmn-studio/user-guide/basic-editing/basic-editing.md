@@ -17,7 +17,7 @@ Einstieg.
 
 ## Property Panel
 
-Das Property Panel im BPMN-Studio ist eine Erweiterung für die bpmn-io 
+Das Property Panel im BPMN-Studio ist eine Erweiterung für die bpmn-io
 Komponente (Modeler/Designer) und ist in der Design-Ansicht auf der rechten
 Seite zu finden. Über den Button in der Ecke rechts oben ist es möglich
 das Property Panel ein und auszublenden.
@@ -56,7 +56,7 @@ Die `General Section` behandelt mit
 
 die grundlegenden Informationen eines Elements.
 
-Beispiel: 
+Beispiel:
 
 <img src="general-sektion.png" width="40%" />
 
@@ -94,9 +94,9 @@ Es stehen folgende Typen als Auswahl zur Verfügung:
 1. enum
 1. custom type
 
-**Info**: 
+**Info**:
 
-Wenn der Typ `enum` ausgewählt ist, erscheint eine weitere Section, 
+Wenn der Typ `enum` ausgewählt ist, erscheint eine weitere Section,
 in der anhand von Key-Value-Paaren angegeben wird, welche Einträge
 die Enum-Auswahl beinhalten soll.
 
@@ -105,7 +105,7 @@ Dropdown dargestellt.
 
 ### Message, Escalation, Error, Signal
 
-Die 
+Die
 
 - Message Section,
 - Escalation Section,
@@ -115,7 +115,7 @@ Die
 haben keine wesentlichen Unterschiede. Alle Sections sind sichtbar, wenn
 entweder ein Boundary oder eine End -Event von einem dieser Typen angewählt ist.
 
-Lediglich die `Message Section` wird auch bei einem angewähltem `SendTask`, oder 
+Lediglich die `Message Section` wird auch bei einem angewähltem `SendTask`, oder
 `ReceiveTask` angezeigt.
 
 Die Sections sind vom Aufbau her identisch. Man fügt über den `+` Button
@@ -135,9 +135,9 @@ So sieht zum Beispiel die `Error Section` aus:
 ### Conditional Event
 
 Die `Conditional Event Section` wird nur bei angewähltem `Conditional` Boundary
-Event sichbar. 
+Event sichbar.
 
-Hier kann 
+Hier kann
 
 - eine Condition,
 - ein Variable Name und
@@ -151,7 +151,7 @@ angegeben werden.
 
 Die `Script Section` wird nur bei angewählten `ScriptTask` sichtbar.
 
-Der `ScriptTask` wird mit 
+Der `ScriptTask` wird mit
 
 - dem Format,
 - dem Script und
@@ -176,8 +176,8 @@ Wenn die Call Activity konfiguriert ist, also ein Prozess ausgewählt wurde,
 wird während der Ausführung der ausgewählte Prozess gestartet und nach
 beendigung wieder zurück zum eigentlichen Prozess gewechselt.
 
-Allerdings funktioniert es nur, wenn beide Prozesse auf verbundenen der 
-ProcessEngine liegen. 
+Allerdings funktioniert es nur, wenn beide Prozesse auf der verbundenen
+ProcessEngine liegen.
 
 ### Timer
 
@@ -185,13 +185,13 @@ Die `Timer Section` erscheint bei Timer Boundary Events.
 
 Es gibt drei Modi:
 
-1. Date 
+1. Date
 1. Duration
 1. Cycle
 
 **Info**: Die Timer Definition muss im richtigen Format angegeben werden.
 
-Welches Zeitformat verwendet werden muss ist 
+Welches Zeitformat verwendet werden muss ist
 [hier](https://docs.camunda.org/manual/7.9/reference/bpmn20/events/timer-events/)
 definiert.
 
@@ -199,9 +199,9 @@ definiert.
 
 ### Process
 
-Das erscheinen der `Process Section` erreicht man, indem man kein Element 
+Das erscheinen der `Process Section` erreicht man, indem man kein Element
 auswählt, sondern außerhalb einer Lane klickt. Dann sollte im Property Panel
-unter General die ID mit `Collaboration` anfangen und zusätzlich die 
+unter General die ID mit `Collaboration` anfangen und zusätzlich die
 `Process Section` unter der `General Section` erscheinen.
 
 Hier kann der Prozess als ausführbar gesetzt werden.
@@ -221,7 +221,7 @@ Mittels Key-Value-Paaren können dem Element Eigenschaften hinzugefügt werden.
 Ein Anwendungsbeispiel ist zum Beispiel die Verwendung eines `ServiceTasks`.
 Um einen `ServiceTask` zu konfigurieren muss dieser drei Eigenschaften erhalten.
 
-Er erhält 
+Er erhält
 
 - das Modul,
 - die Methode und

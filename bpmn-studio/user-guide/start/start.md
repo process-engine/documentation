@@ -18,6 +18,10 @@ Mit einem Klick auf den Namen des gerade hochgeladenen Diagramm öffnet sich nun
 eine Design-Ansicht, die uns erlaubt das Diagramm mit einem Klick auf den
 "Start-Button" auszuführen.
 
+**Wichtig:** Um ein Prozess ausführbar zu machen muss das Häkchen bei dem Feld
+`Executable` gesetzt sein. Das findet man in der [Process Section](hier link einfügen)
+des Proeprty Panels.
+
 Allerdings muss der Prozess vorher als ausführbar markiert werden.
 Wie das funktioniert ist [hier](../basic-editing/basic-editing.md#process) beschrieben.
 
