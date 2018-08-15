@@ -2,18 +2,23 @@
 
 ## Modeler
 
-In seinem Kern benutzt BPMN-Studio [bpmn-js](https://bpmn.io/toolkit/bpmn-js/)
+Im Kern benutzt BPMN-Studio
+[bpmn-js](https://bpmn.io/toolkit/bpmn-js/)
 um das editieren und designen von Diagrammen zu ermöglichen.
 
-Das Tool bpmn-js, das sich intern auf [diagram-js](https://github.com/bpmn-io/diagram-js)
-stützt, ist ein Unterprojekt von [bpmn.io](https://github.com/bpmn-io), einem
-Open Source Projekt von camunda.
+Das Tool bpmn-js, das sich intern auf
+[diagram-js](https://github.com/bpmn-io/diagram-js)
+stützt, ist ein Unterprojekt von
+[bpmn.io](https://github.com/bpmn-io)
+, einem Open Source Projekt von camunda.
 
-Weitere Informationen finden sie auf der Website zu [bpmn.io](https://bpmn.io/).
+Weitere Informationen finden sie auf der Website zu
+[bpmn.io](https://bpmn.io/).
 
 Für eine genaue Anleitung zur Modellierung von BPMN-Diagrammen und Prozessen,
-bietet das [Tutorial](https://camunda.com/bpmn/) von camunda einen guten
-Einstieg.
+bietet das
+[Tutorial](https://camunda.com/bpmn/)
+von camunda einen guten Einstieg.
 
 ## Property Panel
 
@@ -25,8 +30,8 @@ das Property Panel ein und auszublenden.
 Es erlaubt Benutzern unsichtbare Eigenschaften an einzelnen BPMN-Elementen
 hinzuzufügen, zu entfernen und zu konfigurieren.
 
-Verschiede BPMN-Elemente haben unterschiedliche Konfiguratinsmöglichkeiten
-im Property Panel.
+Verschiedene BPMN-Elemente haben unterschiedliche Konfiguratinsmöglichkeiten im
+Property Panel.
 
 Die `General Section` und die `Properties Section` ist für alle Elemente
 vorhanden.
@@ -62,16 +67,18 @@ Beispiel:
 
 ### Forms
 
-Die komplette `Forms Section` ist nur sichtbar, wenn ein UserTask selektiert ist.
+Die komplette `Forms Section` ist nur sichtbar, wenn ein UserTask ausgewählt ist.
+
+<!-- TODO: Was ist ein Form Field?? -->
 
 Es können mehrere Form Fields angelegt und entfernt werden.
 Zusätzlich kann man für jeden UserTask optional einen `Form Key` setzen.
 
-Wenn ein UserTask angewählt ist sieht die `Forms Section` so aus:
+Wenn ein UserTask angewählt ist, sieht die `Forms Section` so aus:
 
 <img src="form-sektion-leer.png" width="40%" />
 
-Nach dem hinzufügen eines Form Fields über den `+` Button erscheint ein
+Nach dem hinzufügen eines Form Fields über den `+` Button, erscheint ein
 weiterer Teil der Section:
 
 <img src="form-sektion-formfield.png" width="40%" />
@@ -83,7 +90,7 @@ In der `Form Field Section` gibt es die Möglichkeit festzulegen
 1. welches Label gesetzt werden soll,
 1. welcher Standardwert enthalten sein soll.
 
-**Wichtig:** DIe **ID** ist ein Pflichtfeld. Sie muss **einmalig** und **nicht leer**
+**Wichtig:** Die **ID** ist ein Pflichtfeld. Sie muss **einmalig** und **nicht leer**
 sein.
 
 Es stehen folgende Typen als Auswahl zur Verfügung:
