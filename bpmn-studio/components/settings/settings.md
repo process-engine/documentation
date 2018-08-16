@@ -2,7 +2,7 @@
 
 ## Aufgaben und Motivation
 
-Die Settings dienen dazu die Konfiguration vom BPMN-Studio zu bearbeiten.
+Die Settings dienen dazu, die Konfiguration vom BPMN-Studio zu bearbeiten.
 
 ## Aufbau und Strukturierung
 
@@ -14,11 +14,11 @@ in der Statusleiste geöffnet werden.
 Die Ansicht besteht aus verschiedenen Kategorien, unter welchen einzelne
 Konfigurationspunkte zu finden sind:
 
-![Setting](settings.png)
+![Settings](settings.png)
 
 **Einstellungen für die ProcessEngine:**
 
-Hier kann der Endpunkt der ProcessEngine konfiguriert werden, den das 
+Hier kann der Endpunkt der ProcessEngine konfiguriert werden, den das
 BPMN-Studio verwenden soll. Bei dem Endpunkt handelt es sich um eine HTTP URL.
 
 ![Einstellungen für die ProcessEngine](settings-processengine.png)
@@ -31,17 +31,15 @@ ProcessEngine nicht verwendet wird, zeigt BPMN-Studio einen Hinweis an:
 
 **Einstellungen für OpenId Connect:**
 
-In dieser Sektion kann die Autorität gesetzt werden. Diese wird für die Login
-Funktionalität verwendet. Die Autorität muss eine HTTP URL enthalten.
+In dieser Sektion kann die Authority gesetzt werden. Diese wird für die Login
+Funktionalität verwendet. Die Authority muss eine HTTP URL enthalten.
 
 ![Einstellungen für OpenId Connect](settings-open-id.png)
 
 ## Funktion
 
-In den Eingabefeldern können die Werte nach belieben verändert werden.
-
 Über den `Save` Button können die neuen Einstellungen übernommen werden. Diese
 überschreiben die alte Konfiguration.
 
-Mit dem `Cancel` Button können die Einstellugen verworfen werden. Die alten
+Mit dem `Cancel` Button können die Einstellungen verworfen werden. Die alten
 Einstellungen werden nicht überschrieben.

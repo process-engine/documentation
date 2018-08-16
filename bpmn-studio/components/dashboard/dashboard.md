@@ -31,4 +31,4 @@ kann eine Ansicht mit allen Aufgaben zu dem entsprechenden Prozess angesteuert
 werden.
 
 Die `Task waiting` Tabelle enthält für jede wartende UserTask einen `Continue`
-Button. Dieser dient dazu die entsprechende Aufgabe fortzuführen.
+Button. Dieser dient dazu, die entsprechende Aufgabe fortzuführen.

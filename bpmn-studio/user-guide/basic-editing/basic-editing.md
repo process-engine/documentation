@@ -4,13 +4,13 @@
 
 Im Kern benutzt BPMN-Studio
 [bpmn-js](https://bpmn.io/toolkit/bpmn-js/)
-um das editieren und designen von Diagrammen zu ermöglichen.
+um das Editieren und Designen von Diagrammen zu ermöglichen.
 
 Das Tool bpmn-js, das sich intern auf
 [diagram-js](https://github.com/bpmn-io/diagram-js)
 stützt, ist ein Unterprojekt von
 [bpmn.io](https://github.com/bpmn-io).
-Das Projekt bpmn.io ist ein Open Source Projekt von camunda.
+Das Projekt bpmn.io ist ein Open-Source-Projekt von camunda.
 
 Weitere Informationen finden Sie auf der Website zu
 [bpmn.io](https://bpmn.io/).
@@ -40,7 +40,7 @@ Property Panel. Im Nachfolgenden, werden diese Möglichkeiten beschrieben.
 Die Abschnitte
 
 * `General Section` und
-* `Properties Section`
+* `Properties Section`createCamundaProperties
 
 sind für alle Elemente vorhanden.
 
@@ -77,7 +77,7 @@ Beispiel:
 Das ID-Feld enthält eine technische ID; sie wird automatisch vergeben und
 sollte nicht verändert werden.
 
-Das Feld Name ist der Anzeigename des Elements und wird auf der grafischen
+Das Name-Feld ist der Anzeigename des Elements und wird auf der grafischen
 Darstellung angezeigt. Die genaue Position ist abhängig von dem Element und
 kann
 
@@ -239,7 +239,7 @@ Es gibt drei Modi:
 
 **Info**: Die Timer Definition muss im richtigen Format angegeben werden.
 
-Welches Zeitformat verwendet werden muss ist
+Das zu verwendende Zeitformat ist
 [hier](https://docs.camunda.org/manual/7.9/reference/bpmn20/events/timer-events/)
 definiert.
 
@@ -272,9 +272,13 @@ Um einen `ServiceTask` zu konfigurieren muss dieser drei Eigenschaften erhalten.
 
 Er erhält
 
+<!-- TODO: Explain what a module is -->
 - das Modul,
 - die Methode und
-- zugehörige Parameter.
+- zugehörige Parameter
+
+in Form einer Liste, welche mit eckigen Klammern umschlossen ist und deren
+Elemente mit Kommata getrennt werden.
 
 <img src="service-task-example.png" width="40%" />
 

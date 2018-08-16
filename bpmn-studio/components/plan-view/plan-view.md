@@ -1,6 +1,6 @@
 # Plan-Ansicht
 
-Die Plan-Ansicht zeigt alle Prozessmodelle an, welche in der Datenbank der 
+Die Plan-Ansicht zeigt alle Prozessmodelle an, welche in der Datenbank der
 aktuell verbunden ProcessEngine existieren.
 
 ## Aufgaben und Motivation
@@ -18,4 +18,5 @@ mit ihrem Namen aufgelistet.
 ## Funktion
 
 Jedes Prozessmodell kann angeklickt werden. Es öffnet sich die entsprechende
-[Design-Ansicht](../design-view/design-view.md) des Prozessmodelles.
+[Design-Ansicht](../design-view/design-view.md)
+des Prozessmodells.

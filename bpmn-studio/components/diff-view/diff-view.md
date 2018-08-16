@@ -57,7 +57,7 @@ der Änderung in folgender Reihenfolge sortiert:
 3. Hinzugefügt
 4. Layout geändert
 
-Um das Element genau zu identifizieren werden die Art und der Name des
+Um das Element genau zu identifizieren, werden die Art und der Name des
 Elements angegeben.
 
 ## Funktion
