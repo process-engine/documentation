@@ -3,8 +3,7 @@
 ## Aufgaben und Motivation
 
 Ziel des Dashboards ist es dem Benutzer einen schnellen Überblick über die
-aktuell laufenden Prozesse zu geben. Diese Informationen werden von der aktuell
-verbunden ProcessEngine bezogen.
+aktuell auf der verbundenen ProcessEngine laufenden Prozesse zu geben.
 
 ## Aufbau und Strukturierung
 

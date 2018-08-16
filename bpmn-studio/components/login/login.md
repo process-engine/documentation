@@ -1,8 +1,9 @@
 # Login
 
+Der Login Button befindet sich oben rechts im BPMN-Studio.
+
 ![Login Button](login-button.png)
 
-Der Login Button befindet sich oben rechts im BPMN-Studio.
 Nach einem Klick auf den Button wird man auf die Anmeldeseite
 des eingestellten IdentityServers geleitet, um sich anzumelden.
 
