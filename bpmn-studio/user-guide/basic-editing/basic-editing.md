@@ -12,7 +12,7 @@ stützt, ist ein Unterprojekt von
 [bpmn.io](https://github.com/bpmn-io).
 Das Projekt bpmn.io ist ein Open Source Projekt von camunda.
 
-Weitere Informationen finden sie auf der Website zu
+Weitere Informationen finden Sie auf der Website zu
 [bpmn.io](https://bpmn.io/).
 
 Für eine genaue Anleitung zur Modellierung von BPMN-Diagrammen und Prozessen,
@@ -78,7 +78,7 @@ Das ID-Feld enthält eine technische ID; sie wird automatisch vergeben und
 sollte nicht verändert werden.
 
 Das Feld Name ist der Anzeigename des Elements und wird auf der grafischen
-Darstellung angezeigt.  Die genaue Position ist abhängig von dem Element und
+Darstellung angezeigt. Die genaue Position ist abhängig von dem Element und
 kann
 
 1. unter dem Element (z.B. Events),
@@ -93,7 +93,7 @@ platziert werden.
 Dieser Text wird in dem BPMN-XML gespeichert und weitergeben. Damit ist die
 Dokumentation eines Elementes für andere sichtbar.
 
-Tip: In dem Docs-Feld ist eine gute Beschreibung hilfreich, sie ist im Diagramm
+Tipp: In dem Docs-Feld ist eine gute Beschreibung hilfreich, sie ist im Diagramm
 nur nicht sichtbar; ist eine sichtbare Anmerkung im Diagramm gewünscht, kann
 alternativ/zusätzlich eine TextAnnotation verwendet werden.
 
@@ -118,21 +118,21 @@ weiterer Teil der Section:
 In der `Form Field Section` gibt es die Möglichkeit festzulegen
 
 1. welche ID das Form Field erhalten soll,
-1. welchen Typ das Form Field haben soll,
-1. welches Label gesetzt werden soll,
-1. welcher Standardwert enthalten sein soll.
+2. welchen Typ das Form Field haben soll,
+3. welches Label gesetzt werden soll,
+4. welcher Standardwert enthalten sein soll.
 
 **Wichtig:** Die **ID** ist ein Pflichtfeld. Sie muss **einmalig** und
 **nicht leer** sein.
 
 Es stehen folgende Typen als Auswahl zur Verfügung:
 
-1. string
-1. long
-1. boolean
-1. date
-1. enum
-1. custom type
+1. `string`
+1. `long`
+1. `boolean`
+1. `date`
+1. `enum`
+1. `custom type`
 
 **Info**:
 
