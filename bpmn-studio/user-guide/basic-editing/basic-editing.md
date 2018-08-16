@@ -24,19 +24,28 @@ von camunda einen guten Einstieg.
 
 Das Property Panel im BPMN-Studio ist eine Erweiterung für die bpmn-io
 Komponente (Modeler/Designer) und ist in der Design-Ansicht auf der rechten
-Seite zu finden. Über den Button in der Ecke rechts oben ist es möglich
-das Property Panel ein und auszublenden.
+Seite zu finden.
 
-Es erlaubt Benutzern unsichtbare Eigenschaften an einzelnen BPMN-Elementen
-hinzuzufügen, zu entfernen und zu konfigurieren.
+Über den Button in der Ecke rechts oben ist es möglich das Property Panel ein-
+bzw. auszublenden.
+
+Das Property Panel erlaubt es Benutzern Eigenschaften an einzelnen
+BPMN-Elementen hinzuzufügen, zu entfernen und zu konfigurieren. Diese
+Eigenschaften sind unsichtbar und werden nicht in der grafischen Darstellung
+zur Anzeige gebracht
 
 Verschiedene BPMN-Elemente haben unterschiedliche Konfiguratinsmöglichkeiten im
-Property Panel.
+Property Panel. Im Nachfolgenden, werden diese Möglichkeiten beschrieben.
 
-Die `General Section` und die `Properties Section` ist für alle Elemente
-vorhanden.
+Die Abschnitte
 
-Im Property Panel werden folgende Sections behandelt:
+* `General Section` und
+* `Properties Section`
+
+sind für alle Elemente vorhanden.
+
+Darüber hinaus gibt es Möglichkeiten, die abhängig von dem ausgewähltem Element sind.
+Im Property Panel gibt es folgende Sections:
 
 1. [General (alle Elemente)](#general)
 1. [Forms (UserTasks)](#forms)
