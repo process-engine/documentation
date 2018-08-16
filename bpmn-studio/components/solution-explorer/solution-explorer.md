@@ -7,8 +7,6 @@ jeder Ansicht aus zu der Design-Ansicht eines Prozesses navigiert werden.
 Zusätzlich zeigt er alle Prozesse an, welche auf der aktuell verbundenen
 ProcessEngine existieren.
 
-![Solution Explorer](solution-explorer.png)
-
 Der Solution Explorer kann über die Navigationsleiste mittels des
  <img src="icons/project-diagram-solid.svg" width="15" height="15" align="center"> - Buttons
  ein- und ausgeblendet werden.
@@ -27,7 +25,7 @@ zwischen den Diagrammen einer Solution oder zwischen Solutions zu wechseln.
 
 Um das zu erreichen zeigt der Solution Explorer die verschiedenen geöffneten
 Solutions, sowie einzelne geöffnete Diagramme untereinander an. Um sie zu
-unterscheiden sind Solutions mit einem Ordnersymbol gekennzeichnet und ihre
+unterscheiden sind Solutions mit einem Ordnersymbol gekennzeichnet. Ihre
 zugehörigen Diagramme werden eingerückt darunter dargestellt. Ein einfacher
 Klick öffnet ein Diagramm in der Design-Ansicht. Dies ermöglicht das schnelle
 und einfache Springen zwischen Diagrammen und Solutions.
@@ -64,8 +62,7 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 
 ![Geöffnete FileSystem Solution](./opened_file_system_solution.png)
 
-**Hinweis:** Es werden nur .bpmn-Dateien angezeigt, andere Dateitypen werden
-nicht angezeigt.
+**Hinweis:** Es werden nur .bpmn-Dateien angezeigt.
 
 ## Funktionen
 
