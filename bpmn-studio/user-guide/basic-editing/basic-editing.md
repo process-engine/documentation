@@ -122,8 +122,8 @@ In der `Form Field Section` gibt es die Möglichkeit festzulegen
 1. welches Label gesetzt werden soll,
 1. welcher Standardwert enthalten sein soll.
 
-**Wichtig:** Die **ID** ist ein Pflichtfeld. Sie muss **einmalig** und **nicht leer**
-sein.
+**Wichtig:** Die **ID** ist ein Pflichtfeld. Sie muss **einmalig** und
+**nicht leer** sein.
 
 Es stehen folgende Typen als Auswahl zur Verfügung:
 
