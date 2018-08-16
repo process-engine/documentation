@@ -152,16 +152,22 @@ Die
 - Error Section und
 - Signal Section
 
-haben keine wesentlichen Unterschiede. Alle Sections sind sichtbar, wenn
-entweder ein Boundary oder eine End -Event von einem dieser Typen angewählt ist.
+haben einen ähnlichen Aufbau. Alle Sections sind sichtbar, wenn entweder ein
+Boundary- oder ein End-Event von einem der genannten Typen angewählt ist.
 
-Lediglich die `Message Section` wird auch bei einem angewähltem `SendTask`, oder
+Die `Message Section` wird auch bei einem angewähltem `SendTask`, oder
 `ReceiveTask` angezeigt.
 
-Die Sections sind vom Aufbau her identisch. Man fügt über den `+` Button
-eine Message, einen Error, eine Escalation oder ein Signal hinzu.
+Die Sections folgen einem ähnlichen Aufbau: Über den `+`-Button kann
 
-Das hinzugefügte Event ist dann im Auswahldropdown automatisch ausgewählt.
+* ein Message-Event,
+* ein Error-Event,
+* ein Escalation-Event oder
+* ein Signal-Event
+
+hinzugefügt werden.
+
+Das hinzugefügte Event ist dann im Dropdown automatisch ausgewählt.
 Anschließend setzt man die Werte, wie zum Beispiel beim Error Event den
 
 - Name,
