@@ -58,12 +58,15 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
 
    Der Unterschied zwischen den beiden Menüs ist der Button ganz rechts.
 
-   Befindet sich das Diagramm auf dem Dateisystem, kann es mit dem `Deploy Button`
-   (Bild links) auf die ProcessEngine geladen/deployed werden.
+   Befindet sich das Diagramm auf dem Dateisystem, kann es mit dem
+   <img src="icons/dolly-flatbed-solid.svg" width="15" height="15" align="center">
+    Button auf die ProcessEngine geladen/deployed werden.
 
    Wenn die Design-Ansicht mit einem Diagramm aus der ProcessEngine geöffnet ist
-   sieht man stattdessen einen `Start Button` (Bild rechts), mit dem der
-   Prozess ausgeführt werden kann.
+   sieht man stattdessen den
+    <img src="icons/play-solid.svg" width="12" height="12">
+   Button (Bild rechts), mit welchem ein Prozess auf der verbundene
+   ProcessEngine ausgeführt werden kann.
 
    Die anderen Buttons haben immer die selbe Funktionalität.
 
