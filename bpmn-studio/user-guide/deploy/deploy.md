@@ -16,11 +16,15 @@ einer ProcessEngine ausführen zu können.
 
 ## Deployen eines Diagramms
 
-Nachdem das Diagramm erstellt wurde kann es theoretisch bereits deployed werden.
-Das lässt sich einfach mit einem Klick auf den
+Nachdem das Diagramm erstellt wurde kann es deployed werden. Das lässt sich
+mit einem Klick auf den
 [deploy-Button](../../components/design-view/design-view.md) erreichen.
+
 Mit einem Klick auf diesen Button wird das aktuell geöffnete Diagramm von
 BPMN-Studio automatisch auf die verbundene ProcessEngine hochgeladen.
 
-**Zur Erinnerung**: Sie können die verbundene ProcessEngine jederzeit in den
-[Settings](../../components/settings/settings.md) ändern.
+**Zur Erinnerung**:
+
+Sie können die verbundene ProcessEngine jederzeit in den
+[Settings](../../components/settings/settings.md)
+ändern.
