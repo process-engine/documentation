@@ -3,7 +3,7 @@
 ## Aufgaben und Motivation
 
 Die Design-Ansicht ermöglicht dem Benutzer einen Prozess zu betrachten,
-zu modellieren, zu konfigurieren, zu deployen/starten und zu exportieren.
+zu modellieren, zu konfigurieren, zu deployen, zu starten und zu exportieren.
 
 ## Aufbau und Strukturierung
 
@@ -79,7 +79,7 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
    Die beiden Buttons `Show XML` und `Show Diff` sind nur in der Statusleiste
    der Design-Ansicht sichtbar.
 
-   Der `Show XML` Button wechselt zur [XML-Ansicht](../xml-view/xml-view.md) 
+   Der `Show XML` Button wechselt zur [XML-Ansicht](../xml-view/xml-view.md)
    und zeigt das aktuelle XML des Diagramms.
 
    Der `Show Diff` Button wechselt zur [Diff-Ansicht](../diff-view/diff-view.md).
