@@ -203,11 +203,13 @@ Der `ScriptTask` wird mit
 - dem Script und
 - einer Result Variablen
 
-konfiguriert. Aktuell ist es so, dass JavaScript als Code ausgeführt werden
-kann. Dafür würde man auch nur das Script Feld brauchen.
+konfiguriert. Aktuell kann JavaScript als Code ausgeführt werden kann. Dafür
+bedient man sich des Script-Felds im Property Panel.
 
-Als Test kann man zum Beispiel `console.log('Das ist ein Test!')` angeben, und
-es würde im Backend während der Ausführung des Tasks geloggt werden.
+**Beispiel:**
+
+Als Test kann man zum Beispiel `console.log('Das ist ein Test!')` angeben; es
+würde im Backend während der Ausführung des Tasks geloggt werden.
 
 <img src="script-sektion.png" width="40%" />
 
@@ -218,12 +220,12 @@ und sieht wie folgt aus:
 
 <img src="call-activity-sektion.png" width="40%" />
 
-Wenn die Call Activity konfiguriert ist, also ein Prozess ausgewählt wurde,
+Wenn die Call Activity konfiguriert ist- also ein Prozess ausgewählt wurde-
 wird während der Ausführung der ausgewählte Prozess gestartet und nach
-beendigung wieder zurück zum eigentlichen Prozess gewechselt.
+Beendigung wieder zurück zum eigentlichen Prozess gewechselt.
 
 Allerdings funktioniert es nur, wenn beide Prozesse auf der verbundenen
-ProcessEngine liegen.
+ProcessEngine deployed sind.
 
 ### Timer
 
@@ -246,9 +248,10 @@ definiert.
 ### Process
 
 Das erscheinen der `Process Section` erreicht man, indem man kein Element
-auswählt, sondern außerhalb einer Lane klickt. Dann sollte im Property Panel
-unter General die ID mit `Collaboration` anfangen und zusätzlich die
-`Process Section` unter der `General Section` erscheinen.
+auswählt, sondern außerhalb einer Lane klickt.
+
+Im Property Panel unter General beginnt nun die ID mit dem Text `Collaboration`
+und zusätzlich die `Process Section` unter der `General Section` erscheinen.
 
 Hier kann der Prozess als ausführbar gesetzt werden.
 
