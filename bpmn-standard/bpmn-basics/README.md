@@ -6,6 +6,9 @@ Die Verwendung der **B**usiness **P**rocess **M**odel and **N**otation
 (**BPMN**) erlaubt die Modellierung von Geschäftsprozessen.
 
 BPMN ist ein Standard, der grafische Symbole und deren Verwendung spezifiziert.
+Immer wenn von BPMN die Rede ist, ist immer der Standard
+[BPMN 2.0](https://de.wikipedia.org/w/index.php?title=Business_Process_Model_and_Notation&oldid=177403415#Version_2.0)
+gemeint.
 
 <img title="Beispiel für ein Prozessmodell" src="./muedigkeit.svg" width="100%" />
 
@@ -30,18 +33,28 @@ modelliert werden können:
      des Prozesses.
    - Diese Prozesse sind in Teilen oder als Ganzes automatisierbar.
 
-### Zusammenfassung
+In unserer Vision einer prozessgetriebenen Entwicklung beginnt man mit einem
+strategischem Modell, entwickelt sich schnell zu einem operativem Modell,
+welches iterativ verbessert wird. Ziel ist es, stets alle Beteiligten an der
+Iteration mitwirken zu lassen.
 
-| Strategische Prozessmodelle | Operative Prozessmodelle |
-| --------------------------- | ------------------------ |
-| kompakte Ablaufbeschreibung  | konkrete Ablaufbeschreibung |
-| schneller Überblick | genaue Definition (was, wann, wie) |
-| abstrakte, logische Sprache | physisch-konkrete Semantik |
-| nicht automatisierbar | automatisierbar (in Teilen oder als Ganzes) |
+Der Vorteil diese Vorgehens ist:
 
+Man hat ein Werkzeug in der Hand, frühzeitig Fehler zu identifizieren und kann
+korrigierend eingreifen, bevor hohe Kosten entstehen.
 
+### Zusammenfassung Arten von Prozessmodellen
 
-## Begriffsdefinitionen
+| Strategische Prozessmodelle | Operative Prozessmodelle                    |
+| :-------------------------- | :------------------------------------------ |
+| kompakte Ablaufbeschreibung | konkrete Ablaufbeschreibung                 |
+| schneller Überblick         | genaue Definition (was, wann, wie)          |
+| abstrakte, logische Sprache | physisch-konkrete Semantik                  |
+| nicht automatisierbar       | automatisierbar (in Teilen oder als Ganzes) |
+
+## Begriffsdefinition
+
+Wir halten es für wichtig, folgenden Begriff zu erklären.
 
 ### Kollaboration
 
@@ -72,11 +85,11 @@ Eine Aktivität symbolisiert, dass etwas getan werden soll.
 
 #### Spezialformen der Aktivität
 
-|       Name        |                     Symbol                     |                                                                  Beschreibung                                                                   |
+| Name              | Symbol                                         | Beschreibung                                                                                                                                     |
 | ----------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Benutzeraktivität | <img width="200px" src="./user_task.svg"/>     | Stellt eine Aktivität dar, die eine Benutzerinteraktion erfordert.                                                                              |
-| Serviceaktivität  | <img width="200px" src="./service_task.svg"/>  | Stellt eine Aktivität dar, die einen Dienst wie einen Webdienst oder eine automatisierte Anwendung verwendet.                                   |
-| Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer ProcessEngine ausgeführt werden soll.                                  |
+| Benutzeraktivität | <img width="200px" src="./user_task.svg"/>     | Stellt eine Aktivität dar, die eine Benutzerinteraktion erfordert.                                                                               |
+| Serviceaktivität  | <img width="200px" src="./service_task.svg"/>  | Stellt eine Aktivität dar, die einen Dienst wie einen Webdienst oder eine automatisierte Anwendung verwendet.                                    |
+| Skriptaktivität   | <img width="200px" src="./script_task.svg"/>   | Stellt eine Aktivität dar, die ein Skript beinhaltet, welches von einer ProcessEngine ausgeführt werden soll.                                    |
 | Aufrufaktivität   | <img width="200px" src="./call_activity.svg"/> | Stellt eine Aktivität dar, die einen anderen Prozess aufruft. Sobald der aufgerufene Prozess beendet ist, ist auch die Aufrufaktivität beendet. |
 
 ### Sequenzfluss
@@ -91,11 +104,10 @@ darzustellen.
 Ein Gateway teilt den Prozessfluss in mehrere Flüsse auf, oder führt mehrere
 Flüsse wieder zusammen.
 
-
 #### Spezialformen des Gateways
 
-|         Name          |                      Symbol                       |                                                                 Beschreibung                                                                  |
-| --------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name                  | Symbol                                            | Beschreibung                                                                                                                                    |
+| --------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------  |
 | Exklusives<br>Gateway | <img width="50px" src="./exclusive_gateway.svg"/> | <ul><li>Folge <b>einem</b> der Ausgangsflüssen</li><li>Setze den Prozess fort, sobald <b>einer</b> der Eingangsflüsse erreicht wird</li></ul> |
 | Paralleles<br>Gatway  | <img width="50px" src="./parallel_gateway.svg"/>  | <ul><li>Folge <b>allen</b> Ausgangsflüssen</li><li>Setze den Prozess fort, sobald <b>alle</b> Eingangsflüsse erreicht wurden</li></ul>        |
 
@@ -115,9 +127,16 @@ Ein Ereignis symbolisiert, dass etwas passiert. Ereignisse können:
 
 Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargestellt:
 
+1. Art der Linie des Kreises
+1. Durchgezogene oder gestrichelte Linie
+1. Ausgefülltes oder nicht ausgefülltes Symbol
+1. Gewähltes Symbol
+
+Im Folgenden findet sich eine nicht vollständige Liste aller Kombinationen dieser Charakteristika.
+
 ##### 1. Art der Linie des Kreises
 
-|       Name       |                          Symbol                          |                                    Beschreibung                                     |
+| Name             | Symbol                                                   | Beschreibung                                                                        |
 | ---------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | Startereignis    | <img width="50px" src="./event.svg"/>                    | Eine einzelne, dünne Linie bedeutet: Das Ereignis startet den Prozess.              |
 | Zwischenereignis | <img width="50px" src="./intermediate_throw_event.svg"/> | Doppelte, dünne Linien bedeuten: Das Ereignis tritt während des Prozessablaufs auf. |
@@ -125,14 +144,14 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 
 ##### 2. Durchgezogene oder gestrichelte Linie
 
-|                Name                 |                        Symbol                         |                                                                              Beschreibung                                                                               |
-| ----------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unterbrechendes<br>Ereignis         | <img width="50px" src="./receiving_event.svg">                  | Durchgezogene Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess abgebrochen.</li><li>Die zugehörige Aktivität abgebrochen.</li></ul>            |
+| Name                                | Symbol                                                | Beschreibung                                                                                                                                                              |
+| ----------------------------------- | ----------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
+| Unterbrechendes<br>Ereignis         | <img width="50px" src="./receiving_event.svg">        | Durchgezogene Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess abgebrochen.</li><li>Die zugehörige Aktivität abgebrochen.</li></ul>       |
 | Nicht unter-<br>brechendes Ereignis | <img width="50px" src="./non_interrupting_event.svg"> | Gestrichelte Linien bedeuten: je nach Kontext wird bei Eintritt<ul><li>Der Oberprozess nicht abgebrochen.</li><li>Die zugehörige Aktivität nicht abgebrochen.</li></ul> |
 
 ##### 3. Ausgefülltes oder nicht ausgefülltes Symbol
 
-|          Name           |                     Symbol                     |                                             Beschreibung                                              |
+| Name                    | Symbol                                         | Beschreibung                                                                                          |
 | ----------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | Eintretendes Ereignisse | <img width="50px" src="./receiving_event.svg"> | Ein nicht ausgefülltes Symbol bedeutet:<br>Der Prozess läuft erst weiter, wenn das Ereignis eintritt. |
 | Auslösendes Ereignis    | <img width="50px" src="./throwing_event.svg">  | Ein Ausgefülltes Symbol bedeutet:<br>Das Ereignis wird ausgelöst und der Prozess läuft weiter.        |

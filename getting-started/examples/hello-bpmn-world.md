@@ -1,17 +1,18 @@
 # Hello BPMN-World
 
-Um die Möglichkeiten der ProcessEngine zu demonstrieren, wird ein Beispiel
-Diagramm erstellt.
+Um den Umgang der ProcessEngine und des BPMN-Studios zu demonstrieren, wird ein
+einfaches Beispiel Diagramm erstellt.
 
-Ziel ist es ein BPMN-Diagramm mit einem
-[Single User Task](../../GLOSSARY.md#user-task) zu erstellen.
+Ziel ist es, ein BPMN-Diagramm mit einem
+[Single User Task](../../GLOSSARY.md#user-task)
+zu erstellen.
 
 Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
 
-Dieser [User Task](../../GLOSSARY.md#user-task) wird die folgenden zwei
-Elemente enthalten:
+Dieser [User Task](../../GLOSSARY.md#user-task) wird die folgenden Elemente
+enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
@@ -20,92 +21,90 @@ Letzteres dient dazu, den [Task](../../GLOSSARY.md#task) zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
-Die Schaltfäche `Create Process Definition` dient zum Erstellen eines neuen
-Diagramms. Alternativ kann auch der `Prozess erstellen`-Prozess ausgeführt
-werden.
+Zunächst wird ein neues Diagramm benötigt.
+Der Solution Explorer ermöglicht uns ein neues Diagramm innerhalb einer Solution
+zu erstellen.
 
-<img src="../images/getting-started/hello-world/create-process-1-process-definition-button.png" width="100%" />
+Dazu klickt man zunächst im Solution Explorer auf den "Open a Solution"-Button.
 
-Es öffnet sich ein neuer Dialog; dort können ein Name und ein Schlüssel für das
-Prozessmodell angegeben werden; in diesem Fall wird bei beiden `Hello World`
-gewählt.
+<img src="../images/getting-started/hello-world/open-a-solution-button.png" width="100%" />
 
-<img src="../images/getting-started/hello-world/create-process-2-initial-processdata.png" width="100%" />
+Es öffnet sich ein Fenster zur Auswahl eines Ordners.
+Bestätigt man den ausgewählten Ordner mit einem Klick auf "Öffnen" erscheint der
+Ordner als Solution im Solution Explorer. Jetzt kann man mit dem "Datei
+hinzufügen"-Button ein neues Diagramm erstellen.
 
-Die Task List erscheint; in der Liste befindet sich der Eintrag: `Prozess
-erstellen`; nach Beendigung der Arbeiten im Backend, springt der UserTaskName
-auf `Prozess erstellt` um; die `Continue` Schaltfläche kann betätigt werden; die
-darauffolgende Nachricht kann über die `OK` Schaltfläche geschlossen werden.
+<img src="../images/getting-started/hello-world/create-new-diagram-button.png" width="100%" />
 
-Der `Process Definition List`-Reiter zeigt die Liste der Prozessmodelle an; die
-`Details`-Schaltfläche des gerade erstellten Prozesses öffnet den Prozesseditor.
+Es erscheint ein Textfeld, in dem der Name für die Datei eingegeben wird.
+In diesem Fall wird `Hello World` gewählt.
 
-<img src="../images/getting-started/hello-world/create-process-3-finished.png" width="100%"/>
+<img src="../images/getting-started/hello-world/create-new-diagram-input.png" width="100%" />
 
-So sieht das Ganze dann aus:
+Nach dem Erstellen öffnet sich die Design-Ansicht automatisch mit dem gerade
+erstellten Diagramm.
+
+So sieht das Ganze  aus:
 
 {% video controls="controls"%}../images/getting-started/hello-world/create-new-diagram.mp4{% endvideo %}
 
 ## Modellierung eines Diagramms
 
-Der BPMN-Editor zeigt uns eine Ansicht mit einer
-[Lane](../../GLOSSARY.md#lane) und einem Startevent.
+Die Design-Ansicht zeigt uns ein Diagramm mit einer
+[Lane](../../GLOSSARY.md#lane), einem Startevent und einem Endevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü; dieses Menü
 erlaubt es neue Elemente hinzuzufügen; diese werden direkt mit dem ausgewählten
 Element verbunden.
 
-An dem Startpunkt wird dann ein [User Task](../../GLOSSARY.md#user-task)
-mit dem Namen `Hello Word` verbunden; an diesem dann ein Endevent.
+Der Sequenzfluss vom Startevent zum Endevent wird zunächst entfernt.
+An dem Startpunkt wird ein [UserTask](../../GLOSSARY.md#user-task)
+mit dem Namen `Hello Word` verbunden; an diesem das Endevent.
 
-Das Ganze sollte dann so aussehen:
+Das Ganze sollte so aussehen:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.png" width="100%" />
 
-Und so wird es gemacht:
+Im folgenden Video, fassen wir die Schritte zusammen:
 
 {% video controls="controls"%}../images/getting-started/hello-world/create-hello-world.mp4{% endvideo %}
 
-## Integration eines Diagramms
+## Umsetzung eines User Task
 
-Ein [User Task](../../GLOSSARY.md#user-task) kann so eingestellt werden,
-dass dem Benutzer eine grafische Oberfläche dargestellt wird. Die Konfiguration
-kann wie folgt geschehen:
+Ein [UserTask](../../GLOSSARY.md#user-task) kann so konfiguriert werden, dass
+dem Benutzer eine grafische Oberfläche präsentiert wird, in der er aufgefordert
+wird ein Formular auszufüllen oder das Angezeigte zu bestätigen.
 
-1. Auswählen des UserTasks
-2. In der rechten Leiste unter dem Punkt Properties lässt sich nun
-die anzuzeigene Oberfläche mittels Key-Value Paaren definieren
+In diesem Beispiel wird eine Confirm Ansicht erstellt. Um das zu erreichen,
+muss der UserTask folgendermaßen konfiguriert werden:
 
-<img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
+1. In dem Property Panel rechts unter dem Punkt Properties lässt sich die
+   anzuzeigende Oberfläche mittels Key-Value Paaren definieren:
 
-Es gibt zwei Felder:
+   Hier fügen wir eine Property namens `preferredControl` mit dem Wert `confirm` hinzu.
 
-1. `uiName`
-1. `uiConfig`
+   <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 
-Mit Hilfe von `uiName` wird die Art der UI Komponente festgelegt.
+1. Ein FormField mit dem Typ Boolean wird benötigt.
 
-In diesem Fall benutzen wir einen Bestätigungsdialog. Als Wert für das Feld
-`uiName` wählen wir dazu `Confirm`.
+   Das Label stellt die Nachricht, die nur bestätigt werden soll, dar.
 
-Mit Hilfe von `uiConfig` werden die Details der UI Komponente bestimmt.
+   **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss
+   immer das **ERSTE** FormField vom Typ `boolean` sein.
+   Die Id spielt dabei keine Rolle.
 
-In diesem Fall die Nachricht und die Bedienelemente, die angezeigt werden
-sollen; bitte folgendes in das Feld `uiConfig` eintragen:
-
-```javascript
-${ "message": "Hello World!", "layout": [ { "key": "confirm", "label": "OK" } ] };
-```
-
-<img src="../images/getting-started/hello-world/extensions-properties.png" width="100%" />
+   <img src="../images/getting-started/hello-world/confirm-form-field.png" width="50%" />
 
 **Zusammenfassung**
 
-Was wir getan haben:
-- einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` definiert
-- den Task mit einer Konfiguration für die Oberfläche versehen
-- die verschiedenen Ausführungsschritte miteinander verdrahtet
+Was wir getan haben?
 
-Zeit den Prozess auszuführen:
+Wir haben:
 
-{% video controls="controls"%}../images/getting-started/hello-world/run-hello-world.mp4{% endvideo %}
+- Einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` erstellt.
+- Den Task mit einer Konfiguration für die Oberfläche versehen.
+- Die verschiedenen Ausführungsschritte miteinander verdrahtet.
+
+Hier ist noch einmal der komplette Ablauf mit Ausführung des Prozesses zu sehen:
+
+{% video controls="controls"%}../images/getting-started/hello-world/hello-world_full_example.mp4{% endvideo %}
