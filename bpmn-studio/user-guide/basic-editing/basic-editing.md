@@ -9,8 +9,8 @@ um das editieren und designen von Diagrammen zu ermöglichen.
 Das Tool bpmn-js, das sich intern auf
 [diagram-js](https://github.com/bpmn-io/diagram-js)
 stützt, ist ein Unterprojekt von
-[bpmn.io](https://github.com/bpmn-io)
-, einem Open Source Projekt von camunda.
+[bpmn.io](https://github.com/bpmn-io).
+Das Projekt bpmn.io ist ein Open Source Projekt von camunda.
 
 Weitere Informationen finden sie auf der Website zu
 [bpmn.io](https://bpmn.io/).
