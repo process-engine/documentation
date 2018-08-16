@@ -65,6 +65,12 @@ BPMN - Prozesse auszuführen. Ein entsprechender Prozess, welcher
 automatisiert ausgeführt werden soll, wird dabei als BPMN - Diagramm
 notiert.
 
+## Solution
+
+In einer Solution werden alle Diagramme die zur Lösung eines Problems notwendig sind
+gebündelt und organisiert. Auf einem Dateisystem ist eine Solution nichts
+anderes als ein Ordner der eine Menge von Diagrammen enthält.
+
 ### Kollaboration
 
 Kollaboration bezeichnet die Zusammenarbeit mehrerer unabhängiger Prozesse. Die
