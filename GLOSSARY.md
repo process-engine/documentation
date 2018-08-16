@@ -62,7 +62,7 @@ grafische Symbole und spezifiziert deren Verwendung.
 
 Eine ProcessEngine beschreibt ein Tool welches in der Lage ist,
 BPMN - Prozesse auszuführen. Ein entsprechender Prozess, welcher
-automatisiert ausgeführt werden soll, wird dabei als BPMN - Diagram
+automatisiert ausgeführt werden soll, wird dabei als BPMN - Diagramm
 notiert.
 
 ### Kollaboration
