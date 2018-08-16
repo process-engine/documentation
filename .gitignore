@@ -42,6 +42,11 @@ jspm_packages
 # Typings directories
 typings
 
+# Editor settings
+.vscode
+
+# Miscellaneous 
 _book
 public
 package-lock.json
+
