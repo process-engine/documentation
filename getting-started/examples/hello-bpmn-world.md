@@ -1,10 +1,11 @@
 # Hello BPMN-World
 
-Um die Möglichkeiten der ProcessEngine und des BPMN-Studios zu demonstrieren,
-wird ein einfaches Beispiel Diagramm erstellt.
+Um den Umgang der ProcessEngine und des BPMN-Studios zu demonstrieren, wird ein
+einfaches Beispiel Diagramm erstellt.
 
-Ziel ist es ein BPMN-Diagramm mit einem
-[Single User Task](../../GLOSSARY.md#user-task) zu erstellen.
+Ziel ist es, ein BPMN-Diagramm mit einem
+[Single User Task](../../GLOSSARY.md#user-task)
+zu erstellen.
 
 Das Diagramm sieht folgendermaßen aus:
 
@@ -23,6 +24,7 @@ Letzteres dient dazu, den [Task](../../GLOSSARY.md#task) zu beenden.
 Zunächst wird ein neues Diagramm benötigt.
 Der Solution Explorer ermöglicht uns ein neues Diagramm innerhalb einer Solution
 zu erstellen.
+
 Dazu klickt man zunächst im Solution Explorer auf den "Open a Solution"-Button.
 
 <img src="../images/getting-started/hello-world/open-a-solution-button.png" width="100%" />
@@ -63,33 +65,35 @@ Das Ganze sollte so aussehen:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.png" width="100%" />
 
-Im folgenden video, fassen wir die Schritte zusammen:
+Im Folgenden video, fassen wir die Schritte zusammen:
 
 {% video controls="controls"%}../images/getting-started/hello-world/create-hello-world.mp4{% endvideo %}
 
-## Integration eines Diagramms
+## Umsetzung eines User Task
 
-Ein [UserTask](../../GLOSSARY.md#user-task) kann so konfiguriert werden,
-dass dem Benutzer eine grafische Oberfläche dargestellt wird. In diesem Beispiel
-wird eine Confirm Ansicht erstellt.
-Um das zu erreichen muss der UserTask folgendermaßen konfiguriert werden:
+Ein [UserTask](../../GLOSSARY.md#user-task) kann so konfiguriert werden, dass
+dem Benutzer eine grafische Oberfläche präsentiert wird, in der er aufgefordert
+wird ein Formular auszufüllen oder das Angezeigte zu bestätigen.
 
-  1. In dem Property Panel rechts unter dem Punkt Properties lässt sich die anzuzeigende
-  Oberfläche mittels Key-Value Paaren definieren:
+In diesem Beispiel wird eine Confirm Ansicht erstellt. Um das zu erreichen,
+muss der UserTask folgendermaßen konfiguriert werden:
 
-    Hier fügen wir eine Property namens `preferredControl` mit dem Wert `confirm` hinzu.
+1. In dem Property Panel rechts unter dem Punkt Properties lässt sich die
+   anzuzeigende Oberfläche mittels Key-Value Paaren definieren:
 
-  <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
+   Hier fügen wir eine Property namens `preferredControl` mit dem Wert `confirm` hinzu.
 
-  1. Ein FormField mit dem Typ Boolean wird benötigt.
-  Das Label stellt die Nachricht, die nur bestätigt werden soll, dar.
+   <img src="../images/getting-started/hello-world/extensions-selection.png" width="100%" />
 
-  **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss
-  immer das **ERSTE** FormField vom Typ `boolean` sein.
-  Die Id spielt dabei keine Rolle.
+1. Ein FormField mit dem Typ Boolean wird benötigt.
 
-  <img src="../images/getting-started/hello-world/confirm-form-field.png" width="50%" />
+   Das Label stellt die Nachricht, die nur bestätigt werden soll, dar.
 
+   **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss
+   immer das **ERSTE** FormField vom Typ `boolean` sein.
+   Die Id spielt dabei keine Rolle.
+
+   <img src="../images/getting-started/hello-world/confirm-form-field.png" width="50%" />
 
 **Zusammenfassung**
 

@@ -1,6 +1,6 @@
 # Solution Explorer
 
-Der Solution Explorer bietet die Funktionalität Ordner (Solutions) oder Dateien
+Der Solution Explorer bietet die Funktionalität, Ordner (Solutions) oder Dateien
 zu öffnen. Darüber hinaus ist er in allen Ansichten verfügbar. Somit kann von
 jeder Ansicht aus zu der Design-Ansicht eines Prozesses navigiert werden.
 
@@ -8,27 +8,35 @@ Zusätzlich zeigt er alle Prozesse an, welche auf der aktuell verbundenen
 ProcessEngine existieren.
 
 Der Solution Explorer kann über die Navigationsleiste mittels des
- <img src="icons/project-diagram-solid.svg" width="15" height="15" align="center"> - Buttons
- ein- und ausgeblendet werden.
+<img src="icons/project-diagram-solid.svg" width="15" height="15" align="center">-Buttons
+ein- und ausgeblendet werden.
 
 ## Was ist eine Solution?
 
 Eine Solution stellt in unserer Philosophie einen Teil der Projektstruktur dar.
-In ihr werden alle Diagramme die zur Lösung eines Problems notwendig sind
-gebündelt und organisiert. Auf einem Dateisystem ist eine Solution nichts
-anderes als ein Ordner der eine Menge von Diagrammen enthält.
+
+**Beispiel**
+
+Innerhalb Projekts: Entwicklung einer Web-Platform, gibt es Solutions für die
+Rechnungserstellung oder Autorisierung von Benutzern. Diese Solutions
+orientieren sich den Domänen, die ein Projekt berührt.
+
+In einer Solution werden alle Diagramme, die zur Lösung eines Problems
+notwendig sind, gebündelt und organisiert. Auf einem Dateisystem ist eine
+Solution nichts anderes als ein Ordner der eine Menge von Diagrammen enthält.
 
 ## Aufgaben und Motivation
 
-Der Solution Explorer soll es dem Anwender so einfach wie möglich machen
+Der Solution Explorer soll es dem Anwender so einfach wie möglich machen,
 zwischen den Diagrammen einer Solution oder zwischen Solutions zu wechseln.
 
-Um das zu erreichen zeigt der Solution Explorer die verschiedenen geöffneten
-Solutions, sowie einzelne geöffnete Diagramme untereinander an. Um sie zu
-unterscheiden sind Solutions mit einem Ordnersymbol gekennzeichnet. Ihre
-zugehörigen Diagramme werden eingerückt darunter dargestellt. Ein einfacher
-Klick öffnet ein Diagramm in der Design-Ansicht. Dies ermöglicht das schnelle
-und einfache Springen zwischen Diagrammen und Solutions.
+Um das zu erreichen, zeigt der Solution Explorer die verschiedenen geöffneten
+Solutions, sowie einzelne geöffnete Diagramme untereinander an. Solutions
+werden mit einem Ordnersymbol gekennzeichnet.
+
+Ihre zugehörigen Diagramme werden eingerückt darunter dargestellt. Ein
+einfacher Klick öffnet ein Diagramm in der Design-Ansicht. Dies ermöglicht das
+schnelle und einfache Springen zwischen Diagrammen und Solutions.
 
 ## Aufbau und Strukturierung
 

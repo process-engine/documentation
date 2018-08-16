@@ -35,10 +35,10 @@ modelliert werden können:
 
 In unserer Vision einer prozessgetriebenen Entwicklung beginnt man mit einem
 strategischem Modell, entwickelt sich schnell zu einem operativem Modell,
-welches iterativ verbessert wird. Ziel ist es immer alle Beteiligten an der
+welches iterativ verbessert wird. Ziel ist es, stets alle Beteiligten an der
 Iteration mitwirken zu lassen.
 
-Der Vorteil, diese Vorgehens ist:
+Der Vorteil diese Vorgehens ist:
 
 Man hat ein Werkzeug in der Hand, frühzeitig Fehler zu identifizieren und kann
 korrigierend eingreifen, bevor hohe Kosten entstehen.
@@ -132,7 +132,7 @@ Die Art des Ereignisses wird in dessen Symbol durch vier Charakteristika dargest
 1. Ausgefülltes oder nicht ausgefülltes Symbol
 1. Gewähltes Symbol
 
-Im folgenden findet sich eine nicht vollständige Liste aller Kombinationen dieser Charakteristika.
+Im Folgenden findet sich eine nicht vollständige Liste aller Kombinationen dieser Charakteristika.
 
 ##### 1. Art der Linie des Kreises
 
