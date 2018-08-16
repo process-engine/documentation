@@ -74,6 +74,29 @@ Beispiel:
 
 <img src="general-sektion.png" width="40%" />
 
+Das ID-Feld enthält eine technische ID; sie wird automatisch vergeben und
+sollte nicht verändert werden.
+
+Das Feld Name ist der Anzeigename des Elements und wird auf der grafischen
+Darstellung angezeigt.  Die genaue Position ist abhängig von dem Element und
+kann
+
+1. unter dem Element (z.B. Events),
+1. in dem Element (z.B. Tasks, Lanes),
+1. nicht (z.B. Gateways)
+
+angezeigt werden.
+
+Das Docs-Feld wird zur Dokumentation des Elements gedacht; es kann ein Freitext
+platziert werden.
+
+Dieser Text wird in dem BPMN-XML gespeichert und weitergeben. Damit ist die
+Dokumentation eines Elementes für andere sichtbar.
+
+Tip: In dem Docs-Feld ist eine gute Beschreibung hilfreich, sie ist im Diagramm
+nur nicht sichtbar; ist eine sichtbare Anmerkung im Diagramm gewünscht, kann
+alternativ/zusätzlich eine TextAnnotation verwendet werden.
+
 ### Forms
 
 Die komplette `Forms Section` ist nur sichtbar, wenn ein UserTask ausgewählt ist.
