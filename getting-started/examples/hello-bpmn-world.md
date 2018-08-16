@@ -65,7 +65,7 @@ Das Ganze sollte so aussehen:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.png" width="100%" />
 
-Im Folgenden video, fassen wir die Schritte zusammen:
+Im folgenden Video, fassen wir die Schritte zusammen:
 
 {% video controls="controls"%}../images/getting-started/hello-world/create-hello-world.mp4{% endvideo %}
 
