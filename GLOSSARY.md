@@ -47,7 +47,7 @@ Beispiele für Domain Objects sind: user, process, ...
 ## BPMN-Studio
 
 BPMN-Studio ist eine Web- und Desktop-Applikation zur Erstellung, Verwaltung,
-Ausführung und Auswertung von BPMN-Prozessen. Es setzt auf 
+Ausführung und Auswertung von BPMN-Prozessen. Es setzt auf
 [bpmn-js](https://github.com/bpmn-io/bpmn-js) auf und den BPMN-Standard 2.x um.
 
 [Dokumentation zum BPMN-Studio](bpmn-studio/ueberblick.md)
@@ -57,6 +57,13 @@ Ausführung und Auswertung von BPMN-Prozessen. Es setzt auf
 BPMN steht für **B**usiness **P**rocess **M**odel and **N**otation. Es ist ein
 Standard, der die Modellierung von Geschäftsprozessen erlaubt. Dazu definiert er
 grafische Symbole und spezifiziert deren Verwendung.
+
+## ProcessEngine
+
+Eine ProcessEngine beschreibt ein Tool welches in der Lage ist,
+BPMN - Prozesse auszuführen. Ein entsprechender Prozess, welcher
+automatisiert ausgeführt werden soll, wird dabei als BPMN - Diagram
+notiert.
 
 ### Kollaboration
 
