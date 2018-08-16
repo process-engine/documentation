@@ -9,10 +9,9 @@ ProcessEngine existieren.
 
 ![Solution Explorer](solution-explorer.png)
 
-Der Solution Explorer kann über die Navigationsleiste ein- und ausgeblendet
-werden.
-
-![Solution Explorer Icon](solution-explorer-icon.png)
+Der Solution Explorer kann über die Navigationsleiste mittels des
+ <img src="icons/project-diagram-solid.svg" width="15" height="15" align="center"> - Buttons
+ ein- und ausgeblendet werden.
 
 ## Was ist eine Solution?
 
