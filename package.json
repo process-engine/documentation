@@ -1,6 +1,6 @@
 {
   "name": "gitbookdoku",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "description": "## What is the problem at hand?",
   "main": "index.js",
   "scripts": {
