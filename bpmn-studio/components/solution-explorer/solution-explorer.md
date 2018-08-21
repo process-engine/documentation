@@ -93,3 +93,15 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 | 1.  | Neues Diagramm anlegen | Erstellt ein neues Diagramm innerhalb dieser Solution. |
 | 2.  | Solution schließen     | Schließt diese Solution im Solution Explorer.          |
 | 3.  | Diagramme              | Öffnet die Design-Ansicht des ausgewählten Diagramms.   |
+
+**Hinweis:** Bei dem Erstellen eines neuen Diagramms sind bei der Namens
+Auswahl nur
+- Alphanumerische Zeichen,
+- Deutsche Umlaute und
+- die folgenden Trennzeichen:
+  - Punkt
+  - Leerzeichen,
+  - Bindestrich und
+  - Unterstrich
+
+valide Zeichen.
