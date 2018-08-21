@@ -94,8 +94,9 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 | 2.  | Solution schließen     | Schließt diese Solution im Solution Explorer.          |
 | 3.  | Diagramme              | Öffnet die Design-Ansicht des ausgewählten Diagramms.  |
 
-**Hinweis:** Bei dem Erstellen eines neuen Diagramms sind bei der Namensauswahl
-nur
+## Valide Diagramm Namen
+
+Der Name des Diagrams muss den folgenden Regeln entsprechen, er darf nur:
 
 - Alphanumerische Zeichen,
 - Deutsche Umlaute und
@@ -105,4 +106,13 @@ nur
   - Bindestrich und
   - Unterstrich
 
-valide Zeichen.
+enthalten; sie werden vom BPMN-Studio eine Meldung erhalten, wenn der Name
+gegen eine Regel verstößt.
+
+**Beispiele**
+
+1. `bücher_bestellprozess`
+1. `einstellung_neue_mitarbeiter`
+1. `ausbildungsnachweise_kontrollieren`
+1. `bpmn-studio.login`
+1. `20180810-bestellung_bezahlen-checkout`
