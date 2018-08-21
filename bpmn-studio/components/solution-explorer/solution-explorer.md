@@ -94,12 +94,13 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 | 2.  | Solution schließen     | Schließt diese Solution im Solution Explorer.          |
 | 3.  | Diagramme              | Öffnet die Design-Ansicht des ausgewählten Diagramms.  |
 
-**Hinweis:** Bei dem Erstellen eines neuen Diagramms sind bei der Namens
-Auswahl nur
+**Hinweis:** Bei dem Erstellen eines neuen Diagramms sind bei der Namensauswahl
+nur
+
 - Alphanumerische Zeichen,
 - Deutsche Umlaute und
 - die folgenden Trennzeichen:
-  - Punkt
+  - Punkt,
   - Leerzeichen,
   - Bindestrich und
   - Unterstrich
