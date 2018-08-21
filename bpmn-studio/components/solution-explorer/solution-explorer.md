@@ -98,8 +98,8 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 
 Der Name des Diagrams muss den folgenden Regeln entsprechen, er darf nur:
 
-- Alphanumerische Zeichen,
-- Deutsche Umlaute und
+- alphanumerische Zeichen,
+- deutsche Umlaute und
 - die folgenden Trennzeichen:
   - Punkt,
   - Leerzeichen,
