@@ -94,7 +94,7 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 | 2.  | Solution schließen     | Schließt diese Solution im Solution Explorer.          |
 | 3.  | Diagramme              | Öffnet die Design-Ansicht des ausgewählten Diagramms.  |
 
-## Valide Diagramm Namen
+## Valide Diagrammnamen
 
 Der Name des Diagrams muss den folgenden Regeln entsprechen, er darf nur:
 
