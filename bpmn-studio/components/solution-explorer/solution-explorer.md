@@ -113,6 +113,6 @@ gegen eine Regel verstößt.
 
 1. `bücher_bestellprozess`
 1. `einstellung_neue_mitarbeiter`
-1. `ausbildungsnachweise_kontrollieren`
+1. `ausbildungsnachweise kontrollieren`
 1. `bpmn-studio.login`
 1. `20180810-bestellung_bezahlen-checkout`
