@@ -112,7 +112,7 @@ gegen eine Regel verstößt.
 **Beispiele**
 
 1. `bücher_bestellprozess`
-1. `einstellung_neue_mitarbeiter`
+1. `einstellung_neuer_mitarbeiter`
 1. `ausbildungsnachweise kontrollieren`
 1. `bpmn-studio.login`
 1. `20180810-bestellung_bezahlen-checkout`
