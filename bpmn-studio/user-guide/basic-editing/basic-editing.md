@@ -143,6 +143,27 @@ die Enum-Auswahl beinhalten soll.
 Im BPMN-Studio wird ein UserTask vom Typ `enum` während der Ausführung als
 Dropdown dargestellt.
 
+#### Dynamische Werte für Formularfelder
+
+Bei der Anzeige von UserTasks kann es hilfreich sein, Beschriftungen mit
+dynamischen Werten zu versehen, die sich erst während der Prozessausführung
+ergeben.
+
+Jeder Task, der im Diagramm ausgeführt wird, hält ein Zwischenergebnis fest. Auf
+dieses Zwischenergebnis kann man sich mittels der `Id` des Tasks beziehen, der
+das gewünschte Zwischenergebnis erzeugt hat.
+
+Nehmen wir einen UserTask mit einem Form Field an, der als `Default Value` das
+Ergebnis eines vorherigen Tasks mit der `Id` "my_task" nutzen möchte. Der
+`Default Value` wird hierbei folgendermaßen beschrieben:
+
+```
+${token.history.my_task}
+```
+
+Diese Funktion kann in den Werten für `Label`, `Default Value` genutzt
+werden.
+
 ### Message, Escalation, Error, Signal
 
 Die
