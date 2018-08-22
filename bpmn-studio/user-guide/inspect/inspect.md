@@ -2,6 +2,8 @@
 
 Think-Design-Inspect ist unser gelebtes Vorgehen bei der Projektumsetzung.
 
+![Inspect](./inspect.png)
+
 In diesem Kapitel soll es um die Ideen hinter Inspect gehen. Inspect- lässt
 sich treffen mit untersuchen übersetzten- bietet uns die Möglichkeit zur
 Analyse und Kontrolle laufender Prozessinstanzen auf einer ProcessEngine.
