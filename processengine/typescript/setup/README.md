@@ -19,7 +19,7 @@ beziehen, entweder:
 1. als [Standalone Software](https://github.com/process-engine/bpmn-studio/releases) oder
 1. in einem [Docker Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image).
 
-## Für Entwickler {#entwickler}
+## Für den Produktiveinsatz {#produktiv}
 
 ![](images/process-engine-runtime.png)
 
