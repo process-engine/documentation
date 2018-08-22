@@ -14,10 +14,10 @@ Mit dem BPMN-Studio lassen sich bequem BPMN-Diagramme erstellen oder bearbeiten
 und vorhandene BPMN-Diagramme als Prozesse starten.
 
 Es gibt zwei Möglichkeiten das BPMN-Studio mit integrierter ProcessEngine zu
-beziehen:
+beziehen, entweder:
 
-* als [Standalone Software](https://github.com/process-engine/bpmn-studio/releases)
-* in einem [Docker Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image)
+1. als [Standalone Software](https://github.com/process-engine/bpmn-studio/releases) oder
+1. in einem [Docker Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image).
 
 ## Für Entwickler {#entwickler}
 
