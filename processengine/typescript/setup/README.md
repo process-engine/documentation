@@ -15,10 +15,8 @@ und vorhandene BPMN-Diagramme als Prozesse starten.
 
 Es gibt zwei Möglichkeiten das BPMN-Studio mit integrierter Process Engine zu
 beziehen:
-* als [Standalone
-  Software](https://github.com/process-engine/bpmn-studio/releases)
-* in einem [Docker
-  Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image)
+* als [Standalone Software](https://github.com/process-engine/bpmn-studio/releases)
+* in einem [Docker Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image)
 
 ## Für Entwickler {#entwickler}
 
@@ -29,6 +27,6 @@ Process Engine Server zu installieren.
 
 Die Installation der Software erfolgt über den Paketmanager NPM.
 
-Eine detaillierte Installationsanleitung befindet sich in der [README des
-Github-Projects](https://github.com/process-engine/process_engine_runtime#requirements).
+Eine detaillierte Installationsanleitung befindet sich in der
+[README des Github-Projects](https://github.com/process-engine/process_engine_runtime#requirements).
 
