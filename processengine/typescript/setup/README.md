@@ -16,8 +16,11 @@ Es gibt zwei Möglichkeiten das BPMN-Studio mit integrierter Process Engine zu b
 
 ## Für Entwickler {#entwickler}
 
-![](images/process-engine-standalone.png)
+![](images/process-engine-runtime.png)
 
-Das [Startprojekt für Entwickler](https://github.com/process-engine/skeleton/tree/develop/process-engine-server) bietet die Möglichkeit einen vorkonfigurierten Process Engine Server zu installieren.
+Die ProcessEngine Runtime bietet die Möglichkeit einen vorkonfigurierten Process Engine Server zu installieren.
 
-Dieses Projekt kann gleichzeitig als Ausgangsbasis genutzt werden, um ein Projekt auf Basis der Process Engine zu entwickeln.
+Die Installation der Software erfolgt über den Paketmanager NPM.
+
+Eine detaillierte Installationsanleitung befindet sich in der [README des Github-Projects](https://github.com/process-engine/process_engine_runtime#requirements).
+
