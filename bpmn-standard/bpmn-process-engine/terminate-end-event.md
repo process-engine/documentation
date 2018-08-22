@@ -32,10 +32,10 @@ Ausführung dieses Pfades erfolgreich war.
 
 Wird ein `TerminateEndEvent` erreicht, ermittelt die ProcessEngine sämtliche
 Instanzen von laufenden Aktivitäten und erzwingt ihr sofortiges Ende.
-Diese werden dann in den Status `terminate` versetzt.
+Diese werden dann in den Status `terminated` versetzt.
 
 Nachdem sämtliche Aktivitäten beendet wurden, wird auch der Prozess selbst in
-den Status `terminate` versetzt und beendet.
+den Status `terminated` versetzt und beendet.
 
 Da es sich beim `TerminateEndEvent` um ein irreguläres Prozessende handelt,
 wird die ProcessEngine beim Auftreten eines solchen Events einen Fehler
@@ -45,10 +45,11 @@ Diese Fehler können über ein reguläres `try/catch` gefangen werden:
 
 ```js
 try {
-  return processEngineService.executeProcess(executionContext,
-                                             processModelId,
-                                             processModelKey,
-                                             initialToken);
+  return executeProcessService.start(executionContextFacade,
+                                     processModel,
+                                     startEventId,
+                                     correlationId,
+                                     initialToken);
 } catch (error) {
   // Do something with the error
 }
