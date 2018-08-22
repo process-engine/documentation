@@ -29,9 +29,9 @@ Modus, durch farbige Markierungen dargestellt werden.
 
 ![Diff-Ansicht Startansicht](./images/diff-view-start.png)
 
-Klickt man auf einen der beiden Modus-Auswahl-Buttons wird, in dem noch leeren
-Abschnitt der Diff-Ansicht, das entsprechende Diagramm mit den markierten Änderungen
-angezeigt.
+Klickt man auf einen der beiden Modus-Auswahl-Buttons wird das entsprechende
+Diagramm mit den markierten Änderungen angezeigt.
+Standardmäßig wird die "Nachher gegen Vorher" Ansicht angezeigt.
 Die Farbbedeutung kann unten links in der Ecke in der Legende abgelesen
 werden.
 
