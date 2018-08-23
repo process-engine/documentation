@@ -96,7 +96,8 @@ entsprechende Design-Ansicht gelangen und das Diagramm bearbeiten.
 
 ## Valide Diagrammnamen
 
-Der Name des Diagrams muss den folgenden Regeln entsprechen, er darf nur:
+Der Name des Diagrams muss den folgenden Regeln entsprechen.
+Er darf nur
 
 - alphanumerische Zeichen,
 - deutsche Umlaute und
@@ -106,7 +107,7 @@ Der Name des Diagrams muss den folgenden Regeln entsprechen, er darf nur:
   - Bindestrich und
   - Unterstrich
 
-enthalten; sie werden vom BPMN-Studio eine Meldung erhalten, wenn der Name
+enthalten; Sie werden vom BPMN-Studio eine Meldung erhalten, wenn der Name
 gegen eine Regel verstößt.
 
 **Beispiele**
