@@ -1,7 +1,7 @@
 {
-  "name": "gitbookdoku",
-  "version": "4.0.0",
-  "description": "## What is the problem at hand?",
+  "name": "ProcessEngine.io Documentation",
+  "version": "4.2.0",
+  "description": "This is the User Handbook of the ProcessEngine Project.",
   "main": "index.js",
   "scripts": {
     "start": "npm run serve",
