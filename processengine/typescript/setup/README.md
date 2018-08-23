@@ -1,23 +1,33 @@
 # Setup
 
-Um die Process Engine in einer einfachen Standardkonfiguration zu installieren, steht ein [Skeleton-Projekt](https://github.com/process-engine/skeleton) zur Verfügung, das mehrere vorkonfigurierte Setups enthält.
+Um die ProcessEngine in einer einfachen Standardkonfiguration zu installieren,
+steht ein [Skeleton-Projekt](https://github.com/process-engine/skeleton) zur
+Verfügung, das vorkonfigurierte Setups enthält.
 
 ## Zum Testen
 
+Die ProcessEngine kann am besten zusammen mit dem BPMN-Studio getestet werden.
+
 ![](images/process-engine-and-bpmn-studio.png)
 
-Die Process Engine kann am besten zusammen mit dem BPMN-Studio getestet werden.
+Mit dem BPMN-Studio lassen sich bequem BPMN-Diagramme erstellen oder bearbeiten
+und vorhandene BPMN-Diagramme als Prozesse starten.
 
-Mit dem BPMN-Studio lassen sich bequem BPMN-Diagramme erstellen oder bearbeiten und vorhandene BPMN-Diagramme als Prozesse starten.
+Es gibt zwei Möglichkeiten das BPMN-Studio mit integrierter ProcessEngine zu
+beziehen, entweder:
 
-Es gibt zwei Möglichkeiten das BPMN-Studio mit integrierter Process Engine zu beziehen:
-* als [Standalone Software](https://github.com/process-engine/bpmn-studio/releases)
-* in einem [Docker Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image)
+1. als [Standalone Software](https://github.com/process-engine/bpmn-studio/releases) oder
+1. in einem [Docker Container](https://github.com/process-engine/skeleton/tree/develop/full-docker-image).
 
-## Für Entwickler {#entwickler}
+## Für den Produktiveinsatz {#produktiv}
 
-![](images/process-engine-standalone.png)
+![](images/process-engine-runtime.png)
 
-Das [Startprojekt für Entwickler](https://github.com/process-engine/skeleton/tree/develop/process-engine-server) bietet die Möglichkeit einen vorkonfigurierten Process Engine Server zu installieren.
+Die ProcessEngine-Runtime bietet die Möglichkeit einen vorkonfigurierten
+ProcessEngine Server zu installieren.
 
-Dieses Projekt kann gleichzeitig als Ausgangsbasis genutzt werden, um ein Projekt auf Basis der Process Engine zu entwickeln.
+Die Installation der Software erfolgt über den Paketmanager npm.
+
+Eine detaillierte Installationsanleitung befindet sich in der
+[README des Github-Projects](https://github.com/process-engine/process_engine_runtime#requirements).
+

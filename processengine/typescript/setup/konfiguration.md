@@ -2,8 +2,6 @@
 
 Die Einstellungen des Process Engine Servers können über die [Konfiguration](./../konzepte/configuration.md) angepasst werden.
 
-Wenn das [Entwicklersetup](./README.md#entwickler) verwendet wird, können Anpassungen der Konfiguration unter `process-engine-server/config/development` vorgenommen werden.
-
 Das [Docker Setup](https://github.com/process-engine/skeleton/tree/develop/full-docker-image) verwendet ebenfalls den [Process Engine Server des Skeleton Projekts](https://github.com/process-engine/skeleton/tree/develop/process-engine-server).
 
 Die Einstellung wird also für das Docker Setup ebenfalls in der oben beschrieben Konfigurationsdatei vorgenommen.
