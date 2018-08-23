@@ -1,6 +1,6 @@
 {
-  "name": "ProcessEngine.io Documentation",
-  "version": "4.2.0",
+  "name": "ProcessEngine.io",
+  "version": "4.2.1",
   "description": "This is the User Handbook of the ProcessEngine Project.",
   "main": "index.js",
   "scripts": {
