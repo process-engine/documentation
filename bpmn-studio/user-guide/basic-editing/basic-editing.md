@@ -157,6 +157,7 @@ Diese Funktion kann in den Werten für `Label`, `Default Value` genutzt
 werden.
 
 ##### Zugriff auf die Token History
+
 Nehmen wir einen UserTask mit einem Form Field an, der als `Default Value` das
 Ergebnis eines vorherigen Tasks mit der `Id` "my_task" nutzen möchte. Der
 `Default Value` wird hierbei folgendermaßen beschrieben:
@@ -166,6 +167,7 @@ ${token.history.my_task}
 ```
 
 ##### Zugriff auf den aktuellen Token
+
 Gehen wir vom gleichen Beispiel wie beim Zugriff auf die Token History aus.
 Diesmal ist der Task mit der `Id` "my_task" der direkte Vorgänger des UserTasks.
 In diesem Fall können wir den gleichen Wert wie zuvor über folgenden Wert
