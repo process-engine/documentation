@@ -8,36 +8,38 @@ Konfigurationsdatei vorgenommen.
 
 ## Datenbank
 
-Wir verwenden [Sequelize](http://docs.sequelizejs.com) basierte Repositories um auf unsere Datenbanken
-zuzugreifen.
+Wir verwenden
+[Sequelize](http://docs.sequelizejs.com)
+basierte Repositories um auf unsere Datenbanken zuzugreifen.
 
 Dank Sequelize ist es möglich viele verschiedene Datenbanken anzusteuern, ohne
-funktionell etwas ändern zu müssen.
-Lediglich die Konfiguration des Repositories muss angepasst werden, wenn eine
-andere Art von Datenbank verwendet werden soll als die bisherige.
+funktionell etwas ändern zu müssen. Lediglich die Konfiguration des
+Repositories muss angepasst werden, wenn eine andere Art von Datenbank
+verwendet werden soll als die bisherige.
 
 **Wichtig**:
+
 Sequelize unterstützt zwar zahlreiche Datenbanksysteme, ausführlich getestet
 wurden von uns bisher allerdings nur folgende:
+
 - Postgres
 - SQLite
 
 Probleme mit anderen Systemen, wie MySQL, werden nicht erwartet, da die
-Implementierungen der Repositories generisch gehalten sind.
-Für diese wird die Funktionalität jedoch nicht gewährleistet.
-
+Implementierungen der Repositories generisch gehalten sind. Für diese wird die
+Funktionalität jedoch nicht gewährleistet.
 
 ### Repositories
 
-Derzeit besitzen wir drei Repositories.
-Wie diese benannt sind, was deren Aufgabe ist und wie sie zu konfigurieren sind,
-wird nun nachfolgend erläutert.
+Derzeit besitzen wir drei Repositories. Wie diese benannt sind, was deren
+Aufgabe ist und wie sie zu konfigurieren sind, wird nun nachfolgend erläutert.
 
 #### ProcessModels
 
 In diesem Repository werden die Prozessmodelle gespeichert.
 
-Die Konfigurationsdatei findet sich unter
+Die Konfigurationsdatei findet sich unter:
+
 `config/<database-type>/process_engine/process_model_repository.json`.
 
 Durch die Verwendung von Sequelize ist das Konfigurationsschema in jedem Fall
@@ -46,58 +48,61 @@ identisch.
 Lediglich die Werte unterscheiden sich für SQLite und Postgres.
 
 **Hinweis**:
+
 Im oben beschriebenen Pfad steht `<database-type>` für die verwendete
 Datenbanktechnologie.
 
 Dadurch ergeben sich folgende Pfade:
-- Für Postgres: `process-engine-server/config/postgres/http/http_extension.json`
-- Für Sqlite: `process-engine-server/config/sqlite/http/http_extension.json`
+
+- für Postgres: `process-engine-server/config/postgres/http/http_extension.json`
+- für Sqlite: `process-engine-server/config/sqlite/http/http_extension.json`
 
 1. Minimale Konfiguration Postgres
 
-```
-{
-  "username": "admin",
-  "password": "admin",
-  "database": "processengine",
-  "host": "localhost",
-  "port": 5432,
-  "dialect": "postgres",
-  "supportBigNumbers": true,
-  "resetPasswordRequestTimeToLive": 12
-}
-```
+   ```
+   {
+     "username": "admin",
+     "password": "admin",
+     "database": "processengine",
+     "host": "localhost",
+     "port": 5432,
+     "dialect": "postgres",
+     "supportBigNumbers": true,
+     "resetPasswordRequestTimeToLive": 12
+   }
+   ```
 
 1. Minimale Konfiguration SQLite
 
-```
-{
-  "dialect": "sqlite",
-  "storage": "processengine.sqlite",
-  "supportBigNumbers": true,
-  "resetPasswordRequestTimeToLive": 12,
-  "logging": false
-}
-```
+   ```
+   {
+     "dialect": "sqlite",
+     "storage": "processengine.sqlite",
+     "supportBigNumbers": true,
+     "resetPasswordRequestTimeToLive": 12,
+     "logging": false
+   }
+   ```
 
 Standardmäßig schreiben wir alle Tabellen in eine gleich benannte Datenbank
 namens `processengine`.
 
 Man kann die Repositories jedoch auch problemlos auf mehrere Datenbanken
-aufteilen, indem man den Wert in `storage` (SQLite),
-bzw. `database` (Postgres) ändert.
+aufteilen, indem man den Wert in `storage` (SQLite), bzw. `database` (Postgres)
+ändert.
 
 Somit ist es auch möglich für jedes Repository eine eigene Datenbank zu
 verwenden.
 
-Auch eine gemischte Nutzung von SQLite und Postgres ist dank Sequelize
-kein Problem.
+Auch eine gemischte Nutzung von SQLite und Postgres ist dank Sequelize kein
+Problem.
 
 #### FlowNodeInstances
 
 In diesem Repository werden die Instanzen zu allen FlowNodes abgelegt.
 
-Die Konfigurationsdatei findet sich unter
+Die Konfigurationsdatei findet sich unter:
+
 `config/<database-type>/process_engine/flow_node_instance_repository.json`.
 
 Die Konfiguration erfolgt nach dem exakt gleichen Schema, wie im
@@ -108,7 +113,8 @@ Abschnitt [ProcessModels](#processmodels) beschrieben.
 In diesem Repository werden alle Timer Objekte gespeichert, die zu einem
 `TimerEvent` oder `TimerBoundaryEvent` gehören.
 
-Die Konfigurationsdatei findet sich unter
+Die Konfigurationsdatei findet sich unter:
+
 `config/<database-type>/process_engine/timers_repository.json`.
 
 Die Konfiguration erfolgt nach dem exakt gleichen Schema, wie im
@@ -118,7 +124,10 @@ Abschnitt [ProcessModels](#processmodels) beschrieben.
 ## HTTP-Endpunkt
 
 Der Port, unter dem der HTTP-Endpunkt der ProcessEngine-Runtime bereit steht,
-kann in der Datei `process-engine-server/config/<database-type>/http/http_extension.json`
+kann in der Datei
+
+`process-engine-server/config/<database-type>/http/http_extension.json`
+
 unter dem Eintrag `server.port` geändert werden.
 
 Eine vollständige HTTP Konfiguration sieht folgendermaßen aus:
