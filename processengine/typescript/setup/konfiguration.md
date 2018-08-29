@@ -3,15 +3,12 @@
 Die Einstellungen der ProcessEngine-Runtime können über die
 [Konfiguration](./../konzepte/configuration.md) angepasst werden.
 
-Das [Docker Setup](https://github.com/process-engine/skeleton/tree/develop/full-docker-image)
-verwendet ebenfalls die [ProcessEngine-Runtime des Skeleton Projekts](https://github.com/process-engine/skeleton/tree/develop/process-engine-server).
-
 Die Einstellung wird also für das Docker Setup ebenfalls in der oben beschrieben
 Konfigurationsdatei vorgenommen.
 
 ## Datenbank
 
-Wir verwenden [Sequelize]() basierte Repositories um auf unsere Datenbanken
+Wir verwenden [Sequelize](http://docs.sequelizejs.com) basierte Repositories um auf unsere Datenbanken
 zuzugreifen.
 
 Dank Sequelize ist es möglich viele verschiedene Datenbanken anzusteuern, ohne
@@ -25,10 +22,9 @@ wurden von uns bisher allerdings nur folgende:
 - Postgres
 - SQLite
 
-Zwar sind wir stehts bemüht die Implementierungen der Repositories generisch
-genug zu halten, so dass es mit anderen Systemen keine Probleme geben **sollte**,
-allerdings kann es derzeit nicht garantiert werden, dass z.B. bei MySql die
-gleiche Funktionalität vorhanden ist, wie z.B. bei Postgres!
+Probleme mit anderen Systemen, wie MySQL, werden nicht erwartet, da die
+Implementierungen der Repositories generisch gehalten sind.
+Für diese wird die Funktionalität jedoch nicht gewährleistet.
 
 
 ### Repositories
@@ -105,7 +101,7 @@ Die Konfigurationsdatei findet sich unter
 `config/<database-type>/process_engine/flow_node_instance_repository.json`.
 
 Die Konfiguration erfolgt nach dem exakt gleichen Schema, wie im
-Abschnitt `ProcessModels` beschrieben.
+Abschnitt [ProcessModels](#processmodels) beschrieben.
 
 #### Timers
 
@@ -116,7 +112,7 @@ Die Konfigurationsdatei findet sich unter
 `config/<database-type>/process_engine/timers_repository.json`.
 
 Die Konfiguration erfolgt nach dem exakt gleichen Schema, wie im
-Abschnitt `ProcessModels` beschrieben.
+Abschnitt [ProcessModels](#processmodels) beschrieben.
 
 
 ## HTTP-Endpunkt
