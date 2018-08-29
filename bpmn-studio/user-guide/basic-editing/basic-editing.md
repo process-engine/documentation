@@ -181,6 +181,7 @@ ${token.current}
 
 Die Darstellungsweise der User Tasks kann über eine Property mit dem Namen
 `preferredControl` festegelegt werden.
+
 Aktuell ist das BPMN-Studio in der Lage User Tasks auf zwei verschiedenen Arten
 darzustellen:
 
@@ -206,11 +207,12 @@ preferredControl      confirm
 ausgewählt. Dabei ist wichtig das `confirm` klein geschrieben wird.
 
 Dieser Dialog besitzt die Besonderheit, dass ein Form Field vom Typ `boolean`
-benötigt wird, welcher beim Ausführen bestätigt werden soll. Das Label dieses
+benötigt wird, welches beim Ausführen bestätigt werden soll. Das Label dieses
 Form Fields wird als Nachricht zum Bestätigen genutzt.
 
 Dazu wird das erste Form Field vom Typ `boolean` verwendet.
-Alle anderen Form Fielder werden normal angezeigt, wie auch bei dem Formular.
+Alle anderen Form Fields, werden normal angezeigt, wie auch bei dem Formular.
+
 Bestätigungsdialoge haben drei Button:
 
 1. `Cancel`-Button
@@ -218,17 +220,19 @@ Bestätigungsdialoge haben drei Button:
    Der `Cancel`-Button bricht das Bearbeiten der User Task ab und leitet zur
    Task-List weiter.
 
-1.  `Confirm`-Button
+1. `Confirm`-Button
 
    Der `Confirm`-Button bestätigt den Dialog und schließt den User Task mit
-   den eingegebenen Daten ab. Das erste `boolean` Form Field bekommt als
-   Value `true`.
+   den eingegebenen Daten ab.
+   
+   Das erste `boolean` Form Field bekommt als Wert `true` gesetzt.
 
-1.  `Decline`-Button
+1. `Decline`-Button
 
    Der `Decline`-Button lehnt den Dialog ab und schließt den User Task mit
-   den eingegebenen Daten ab. Das erste `boolean` Form Field bekommt als
-   Value `false`.
+   den eingegebenen Daten ab.
+   
+   Das erste `boolean` Form Field bekommt als Wert `false` gesetzt.
 
 ### Message, Escalation, Error, Signal
 
