@@ -1,36 +1,13 @@
 # Konfiguration
 
-Die Einstellungen der Process Engine Runtime können über die
+Die Einstellungen der ProcessEngine-Runtime können über die
 [Konfiguration](./../konzepte/configuration.md) angepasst werden.
 
 Das [Docker Setup](https://github.com/process-engine/skeleton/tree/develop/full-docker-image)
-verwendet ebenfalls die [Process Engine Runtime des Skeleton Projekts](https://github.com/process-engine/skeleton/tree/develop/process-engine-server).
+verwendet ebenfalls die [ProcessEngine-Runtime des Skeleton Projekts](https://github.com/process-engine/skeleton/tree/develop/process-engine-server).
 
 Die Einstellung wird also für das Docker Setup ebenfalls in der oben beschrieben
 Konfigurationsdatei vorgenommen.
-
-## HTTP-Endpunkt
-
-Der Port, unter dem der HTTP-Endpunkt des Process Engine Server bereit steht,
-kann in der Datei `process-engine-server/config/development/http/http_extension.json`
-unter dem Eintrag `server.port` geändert werden.
-
-```
-{
-  "server": {
-    "host": "0.0.0.0",
-    "port": 8000
-  },
-  "api": {
-    "version": "v1"
-  },
-  "routeConfiguration": {
-    "/app*": {
-      "refreshOnInvalidToken": true
-    }
-  }
-}
-```
 
 ## Datenbank
 
@@ -79,12 +56,20 @@ kein Problem.
 In diesem Repository werden die Prozessmodelle gespeichert.
 
 Die Konfigurationsdatei findet sich unter
-`config/postgres/process_engine/process_model_repository.json`.
+`config/<database-type>/process_engine/process_model_repository.json`.
 
 Durch die Verwendung von Sequelize ist das Konfigurationsschema in jedem Fall
 identisch.
 
 Lediglich die Werte unterscheiden sich für SQLite und Postgres.
+
+**Hinweis**:
+Im oben beschriebenen Pfad steht `<database-type>` für die verwendete
+Datenbanktechnologie.
+
+Dadurch ergeben sich folgende Pfade:
+- Für Postgres: `process-engine-server/config/postgres/http/http_extension.json`
+- Für Sqlite: `process-engine-server/config/sqlite/http/http_extension.json`
 
 1. Minimale Konfiguration Postgres
 
@@ -118,7 +103,7 @@ Lediglich die Werte unterscheiden sich für SQLite und Postgres.
 In diesem Repository werden die Instanzen zu allen FlowNodes abgelegt.
 
 Die Konfigurationsdatei findet sich unter
-`config/postgres/process_engine/flow_node_instance_repository.json`.
+`config/<database-type>/process_engine/flow_node_instance_repository.json`.
 
 Die Konfiguration erfolgt nach dem exakt gleichen Schema, wie im
 Abschnitt `ProcessModels` beschrieben.
@@ -129,7 +114,33 @@ In diesem Repository werden alle Timer Objekte gespeichert, die zu einem
 `TimerEvent` oder `TimerBoundaryEvent` gehören.
 
 Die Konfigurationsdatei findet sich unter
-`config/postgres/process_engine/timers_repository.json`.
+`config/<database-type>/process_engine/timers_repository.json`.
 
 Die Konfiguration erfolgt nach dem exakt gleichen Schema, wie im
 Abschnitt `ProcessModels` beschrieben.
+
+
+## HTTP-Endpunkt
+
+Der Port, unter dem der HTTP-Endpunkt der ProcessEngine-Runtime bereit steht,
+kann in der Datei `process-engine-server/config/<database-type>/http/http_extension.json`
+unter dem Eintrag `server.port` geändert werden.
+
+Eine vollständige HTTP Konfiguration sieht folgendermaßen aus:
+
+```
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000
+  },
+  "api": {
+    "version": "v1"
+  },
+  "routeConfiguration": {
+    "/app*": {
+      "refreshOnInvalidToken": true
+    }
+  }
+}
+```
