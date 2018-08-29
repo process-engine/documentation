@@ -189,34 +189,46 @@ darzustellen:
 
 Das Formular ist die standardmäßige Darstellung von User Tasks. Diese wird
 ausgewählt wenn keine andere Darstellungsmöglichkeit gesetzt wurde.
+
 Formulare zeigen alle Form Fields mit Text- oder Checkboxen an und haben einen
 `Cancel`- und einen `Continue`-Button.
+
 Der `Cancel`-Button bricht das Bearbeiten der User Task ab und leitet zur
-Task-List weiter.
-Der `Continue`-Button schließt den User Task mit den eingegebenen Daten ab.
+Task-List weiter. Der `Continue`-Button schließt den User Task mit den
+eingegebenen Daten ab.
 
 Der Bestätigungsdialog wird durch
+
 ```
 preferredControl      confirm
 ```
+
 ausgewählt. Dabei ist wichtig das `confirm` klein geschrieben wird.
-Dieser besitzt die Besonderheit, dass ein Form Field vom Typ `boolean` benötigt
-wird, welcher beim Ausführen bestätigt werden soll. Das Label dieses
+
+Dieser Dialog besitzt die Besonderheit, dass ein Form Field vom Typ `boolean`
+benötigt wird, welcher beim Ausführen bestätigt werden soll. Das Label dieses
 Form Fields wird als Nachricht zum Bestätigen genutzt.
+
 Dazu wird das erste Form Field vom Typ `boolean` verwendet.
 Alle anderen Form Fielder werden normal angezeigt, wie auch bei dem Formular.
 Bestätigungsdialoge haben drei Button:
-  1. `Cancel`-Button
-    - Der `Cancel`-Button bricht das Bearbeiten der User Task ab und leitet zur
-      Task-List weiter.
-  1.  `Confirm`-Button
-    - Der `Confirm`-Button bestätigt den Dialog und schließt den User Task mit
-      den eingegebenen Daten ab. Das erste `boolean` Form Field bekommt als
-      Value `true`.
-  1.  `Decline`-Button
-    - Der `Decline`-Button lehnt den Dialog ab und schließt den User Task mit
-      den eingegebenen Daten ab. Das erste `boolean` Form Field bekommt als
-      Value `false`.
+
+1. `Cancel`-Button
+
+   Der `Cancel`-Button bricht das Bearbeiten der User Task ab und leitet zur
+   Task-List weiter.
+
+1.  `Confirm`-Button
+
+   Der `Confirm`-Button bestätigt den Dialog und schließt den User Task mit
+   den eingegebenen Daten ab. Das erste `boolean` Form Field bekommt als
+   Value `true`.
+
+1.  `Decline`-Button
+
+   Der `Decline`-Button lehnt den Dialog ab und schließt den User Task mit
+   den eingegebenen Daten ab. Das erste `boolean` Form Field bekommt als
+   Value `false`.
 
 ### Message, Escalation, Error, Signal
 
