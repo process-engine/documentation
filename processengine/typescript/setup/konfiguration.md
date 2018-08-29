@@ -26,9 +26,9 @@ wurden von uns bisher allerdings nur folgende:
 - SQLite
 
 Zwar sind wir stehts bemüht die Implementierungen der Repositories generisch
-genug zu halten, dass es mit anderen Systemen keine Probleme geben **sollte**,
+genug zu halten, so dass es mit anderen Systemen keine Probleme geben **sollte**,
 allerdings kann es derzeit nicht garantiert werden, dass z.B. bei MySql die
-gleiche Funktionalität gewährleiset ist, wie z.B. bei Postgres!
+gleiche Funktionalität vorhanden ist, wie z.B. bei Postgres!
 
 
 ### Repositories
@@ -36,20 +36,6 @@ gleiche Funktionalität gewährleiset ist, wie z.B. bei Postgres!
 Derzeit besitzen wir drei Repositories.
 Wie diese benannt sind, was deren Aufgabe ist und wie sie zu konfigurieren sind,
 wird nun nachfolgend erläutert.
-
-*Hinweis*:
-Standardmäßig schreiben wir alle Tabellen in eine gleich benannte Datenbank,
-namens `processengine`.
-
-Man kann die Repositories jedoch auch problemlos auf mehrere Datenbanken
-aufteilen, in dem man den Wert in `storage` (SQLite),
-bzw. `database` (postgres) ändert.
-
-Somit ist es auch möglich für jedes Repository eine eigene Datenbank zu
-verwenden.
-
-Auch eine gemischte Nutzung von SQLite und Postgres ist dank Sequelize
-kein Problem.
 
 #### ProcessModels
 
@@ -97,6 +83,19 @@ Dadurch ergeben sich folgende Pfade:
   "logging": false
 }
 ```
+
+Standardmäßig schreiben wir alle Tabellen in eine gleich benannte Datenbank
+namens `processengine`.
+
+Man kann die Repositories jedoch auch problemlos auf mehrere Datenbanken
+aufteilen, indem man den Wert in `storage` (SQLite),
+bzw. `database` (Postgres) ändert.
+
+Somit ist es auch möglich für jedes Repository eine eigene Datenbank zu
+verwenden.
+
+Auch eine gemischte Nutzung von SQLite und Postgres ist dank Sequelize
+kein Problem.
 
 #### FlowNodeInstances
 
