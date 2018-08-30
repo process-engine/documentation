@@ -41,7 +41,7 @@ an. In dieser Ansicht erfragt das BPMN-Studio regelmäßig ob neue UserTasks fü
 den gerade gestarteten Prozess zur Verfügung stehen.
 
 Falls ein Prozess beendet wird, stellt es das BPMN-Studio fest und zeigt
-das Dashboard an.
+die Inspect-Ansicht an.
 
 Alternativ ist es jederzeit möglich, den Waiting Room zu verlassen und nicht
 auf weitere UserTasks zu warten.
@@ -54,6 +54,6 @@ Prozesses.
 
 Sollte der Nutzer sich entscheiden nicht weiter im Waiting Room auf die
 weitere Ausführung oder auf das Ende des Prozesses zu warten, ist es jederzeit
-möglich den UserTask aus dem
-[Dashboard](../../components/dashboard/dashboard.md)
+möglich den UserTask aus der
+[Inspect Ansicht](../../components/dashboard/dashboard.md)
 heraus, wieder aufzunehmen.

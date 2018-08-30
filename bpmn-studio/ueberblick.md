@@ -11,7 +11,7 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
    zeigt geöffnete Ordner (Solutions) oder Dateien auf dem Dateisystem, oder
    hochgeladene Prozesse einer verbundenen ProcessEngine an.
 
-1. Die [Plan-Ansicht](components/plan-view/plan-view.md) zeigt alle
+1. Die [Think-Ansicht](components/plan-view/plan-view.md) zeigt alle
    Prozessmodelle, welche in der verbundenen ProcessEngine existieren.
 
 1. Die [Design-Ansicht](components/design-view/design-view.md) bietet die
@@ -24,7 +24,7 @@ Im Folgenden werden die wichtigsten Komponenten des BPMN-Studio aufgelistet.
 1. Die [XML-Ansicht](components/xml-view/xml-view.md) zeigt die aktuelle XML
    des Diagramms.
 
-1. Das [Dashboard](components/dashboard/dashboard.md) zeigt die aktuell
+1. Die [Inspect-Ansicht](components/dashboard/dashboard.md) zeigt die aktuell
    laufenden Prozesse und wartende UserTasks einer verbundenen ProcessEngine
 
 1. In den [Settings](components/settings/settings.md) lässt sich konfigurieren,
