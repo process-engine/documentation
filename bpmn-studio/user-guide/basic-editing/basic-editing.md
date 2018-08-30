@@ -157,6 +157,7 @@ Diese Funktion kann in den Werten für `Label`, `Default Value` genutzt
 werden.
 
 ##### Zugriff auf die Token History
+
 Nehmen wir einen UserTask mit einem Form Field an, der als `Default Value` das
 Ergebnis eines vorherigen Tasks mit der `Id` "my_task" nutzen möchte. Der
 `Default Value` wird hierbei folgendermaßen beschrieben:
@@ -166,6 +167,7 @@ ${token.history.my_task}
 ```
 
 ##### Zugriff auf den aktuellen Token
+
 Gehen wir vom gleichen Beispiel wie beim Zugriff auf die Token History aus.
 Diesmal ist der Task mit der `Id` "my_task" der direkte Vorgänger des UserTasks.
 In diesem Fall können wir den gleichen Wert wie zuvor über folgenden Wert
@@ -174,6 +176,63 @@ verwenden.
 ```
 ${token.current}
 ```
+
+##### Darstellungsmöglichkeiten für User Tasks
+
+Die Darstellungsweise der User Tasks kann über eine Property mit dem Namen
+`preferredControl` festegelegt werden.
+
+Aktuell ist das BPMN-Studio in der Lage User Tasks auf zwei verschiedenen Arten
+darzustellen:
+
+1. Als Formular
+1. Als Bestätigungsdialog
+
+Das Formular ist die standardmäßige Darstellung von User Tasks. Diese wird
+ausgewählt wenn keine andere Darstellungsmöglichkeit gesetzt wurde.
+
+Formulare zeigen alle Form Fields mit Text- oder Checkboxen an und haben einen
+`Cancel`- und einen `Continue`-Button.
+
+Der `Cancel`-Button bricht das Bearbeiten der User Task ab und leitet zur
+Task-List weiter. Der `Continue`-Button schließt den User Task mit den
+eingegebenen Daten ab.
+
+Der Bestätigungsdialog wird durch
+
+```
+preferredControl      confirm
+```
+
+ausgewählt. Dabei ist wichtig das `confirm` klein geschrieben wird.
+
+Dieser Dialog besitzt die Besonderheit, dass ein Form Field vom Typ `boolean`
+benötigt wird, welches beim Ausführen bestätigt werden soll. Das Label dieses
+Form Fields wird als Nachricht zum Bestätigen genutzt.
+
+Dazu wird das erste Form Field vom Typ `boolean` verwendet.
+Alle anderen Form Fields, werden normal angezeigt, wie auch bei dem Formular.
+
+Bestätigungsdialoge haben drei Button:
+
+1. `Cancel`-Button
+
+   Der `Cancel`-Button bricht das Bearbeiten der User Task ab und leitet zur
+   Task-List weiter.
+
+1. `Confirm`-Button
+
+   Der `Confirm`-Button bestätigt den Dialog und schließt den User Task mit
+   den eingegebenen Daten ab.
+   
+   Das erste `boolean` Form Field bekommt als Wert `true` gesetzt.
+
+1. `Decline`-Button
+
+   Der `Decline`-Button lehnt den Dialog ab und schließt den User Task mit
+   den eingegebenen Daten ab.
+   
+   Das erste `boolean` Form Field bekommt als Wert `false` gesetzt.
 
 ### Message, Escalation, Error, Signal
 
