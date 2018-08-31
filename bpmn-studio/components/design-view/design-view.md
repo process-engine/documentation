@@ -49,23 +49,18 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
 
 3. Aktionsmenü
 
-   Der Aufbau des Aktionsmenüs hängt davon ab, ob sich das Diagramm im
-   Dateisystem des Nutzers oder in der Datenbank der ProcessEngine befindet.
-
-   <img style="float: left; width: 50%;" width="200" src="design-view-menu-filesystem.png">
-
-   <img style="float: right; width: 49%;" width="200" src="design-view-menu-processengine.png">
-
-   Der Unterschied zwischen den beiden Menüs ist der Button ganz rechts.
+   ![Menü](design-view-menu.png)
 
    Befindet sich das Diagramm auf dem Dateisystem, kann es mit dem
    <img src="icons/dolly-flatbed-solid.svg" width="15" height="15" align="center">
     Button auf die ProcessEngine geladen/deployed werden.
 
+   Anschließend wird man auf die Ansicht der ProcessEngine geleitet und der
+   Deploy Button ausgegraut.
+
    Wenn die Design-Ansicht mit einem Diagramm aus der ProcessEngine geöffnet ist
-   sieht man stattdessen den
-    <img src="icons/play-solid.svg" width="12" height="12">
-   Button (Bild rechts), mit welchem ein Prozess auf der verbundene
+   wird der Start Button <img src="icons/play-solid.svg" width="12" height="12">
+   (Bild rechts) verfügbar, mit welchem ein Prozess auf der verbundene
    ProcessEngine ausgeführt werden kann.
 
    Die anderen Buttons haben immer die selbe Funktionalität.
