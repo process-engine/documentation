@@ -3,7 +3,8 @@
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
 
-Es folgt eine Anleitung zur schrittweisen Erstellung des Diagramms. Das fertige Diagramm kann [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/RestAPI)
+Es folgt eine Anleitung zur schrittweisen Erstellung des Diagramms. Das fertige Diagramm kann 
+[hier](https://github.com/process-engine/example_processes/tree/develop/solutions/RestAPI)
 heruntergeladen werden.
 
 Erstelle dazu ein neues Diagramm, analog zum Hello World Beispiel.
