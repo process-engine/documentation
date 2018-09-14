@@ -39,7 +39,7 @@ params    ['http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compac
 
 Zum Vergleich, so sollte das aussehen:
 
-<img src="./images/configure-fetch-data-service-task.png" width="100%" />
+<img src="../images/getting-started/http-rest-api/configure-fetch-data-service-task.png" width="100%" />
 
 Zum Schluss muss der
 [User Task](../../GLOSSARY.md#user-task)
@@ -67,7 +67,7 @@ Dazu erstellen wir:
 
 Das Ganze sieht so aus:
 
-<img src="./images/configure-show-data-user-task.png" width="100%" />
+<img src="../images/getting-started/http-rest-api/configure-show-data-user-task.png" width="100%" />
 
 Zusammengefasst sieht dergesamte Konfigurationsvorgang so aus:
 
