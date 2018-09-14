@@ -204,7 +204,7 @@ Der Bestätigungsdialog wird durch
 preferredControl      confirm
 ```
 
-ausgewählt. Dabei ist wichtig das `confirm` klein geschrieben wird.
+ausgewählt. Dabei ist wichtig, dass `confirm` klein geschrieben wird.
 
 Dieser Dialog besitzt die Besonderheit, dass ein Form Field vom Typ `boolean`
 benötigt wird, welches beim Ausführen bestätigt werden soll. Das Label dieses

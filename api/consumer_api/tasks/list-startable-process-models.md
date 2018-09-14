@@ -166,7 +166,7 @@ gelten, kommen auch hier zur Geltung.
 #### Erforderliche Parameter
 
 * `context` - Der Kontext in dem die Abarbeitung der Funktion geschehen soll
-  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert).
+  (enthält u.A. einen Token, der den Aufrufer der Funktion identifiziert)
 * `processModelKey` - Der Key des Prozessmodells, welches der Benutzer
   abfragen möchte
 
