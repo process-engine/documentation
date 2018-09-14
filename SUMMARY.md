@@ -12,8 +12,8 @@
 1. [Beispiele](getting-started/examples/README.md)
 
    * [Hello BPMN World](getting-started/examples/hello-bpmn-world.md)
-   <!-- Those examples do not work currently; TODO: Fix them if still needed -->
-   <!-- * [Konsumieren einer HTTP REST API](getting-started/examples/http-rest-api.md) -->
+   * [Konsumieren einer HTTP REST API](getting-started/examples/http-rest-api.md)
+   <!-- This example does not work currently; TODO: Fix them if still needed -->
    <!-- * [Versenden von E-Mails](getting-started/examples/sending-emails.md) -->
 
 ## BPMN - Standard
