@@ -6,5 +6,5 @@ und der
 [Process-Engine](./../../README.md#process-engine).
 
 1. [Hello BPMN World](./hello-bpmn-world.md)
-
+1. [HTTP REST API](./http-rest-api.md)
 (weitere Beispiele befinden sich in Arbeit)
