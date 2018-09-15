@@ -42,7 +42,6 @@ Mit dieser Software lassen sich:
 
 * [Installationsanleitung](./getting-started/installation.md)
 * [Dokumentation zu den Komponenten](./bpmn-studio/ueberblick.md)
-* [Hands-On Anwendungsbeispiele](./bpmn-studio/hands-on/README.md)
 
 ### ProcessEngine {#process-engine}
 
