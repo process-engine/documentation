@@ -27,7 +27,9 @@ function main()
   FAILED_REMOTE_CHECKS_COUNT=0
   for link in ${CHECK_REMOTE_LINKS[@]}; do
     statusCode=$(curl -s -o /dev/null -w '%{http_code}' "${link}")
-    if [[ $statusCode -ne 200 ]]; then
+
+    # We accept status Codes 200 and 302
+    if [[ $statusCode -ne 200 && $statusCode -ne 302 ]]; then
       echo "Error: Link is invalid: '${link}' Status Code: '${statusCode}'"
       FAILED_REMOTE_CHECKS_COUNT=$((FAILED_REMOTE_CHECKS_COUNT + 1))
     fi
