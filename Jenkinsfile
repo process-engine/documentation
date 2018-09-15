@@ -26,44 +26,44 @@ pipeline {
       }
     }
 
-    stage('build and publish') {
-      when {
-        branch 'master'
-      }
-      steps {
-        script {
-          dir('work') {
-            checkout([
-              $class: 'GitSCM',
-              branches: [
-                [name: '*/master'],
-                [name: '*/gh-pages']
-              ],
-              doGenerateSubmoduleConfigurations: false,
-              extensions: [
-                [$class: 'WipeWorkspace'],
-                [$class: 'CleanBeforeCheckout']
-              ],
-              submoduleCfg: [],
-              userRemoteConfigs: [
-                [
-                  credentialsId: 'ci-process-engine_ssh_key',
-                  url: 'git@github.com:process-engine/documentation.git'
-                ]
-              ]
-            ]);
-            sshagent(['ci-process-engine_ssh_key']) {
-              sh('git checkout master')
-              sh('git clean -xdf')
-              sh('bash build_prod.sh')
-              sh('git add --all .')
-              sh('git commit --message ":rocket: Automatic Build and Deploy"')
-              sh('git push origin gh-pages')
-            }
-          }
-        }
-      }
-    }
+    // stage('build and publish') {
+    //   when {
+    //     branch 'master'
+    //   }
+    //   steps {
+    //     script {
+    //       dir('work') {
+    //         checkout([
+    //           $class: 'GitSCM',
+    //           branches: [
+    //             [name: '*/master'],
+    //             [name: '*/gh-pages']
+    //           ],
+    //           doGenerateSubmoduleConfigurations: false,
+    //           extensions: [
+    //             [$class: 'WipeWorkspace'],
+    //             [$class: 'CleanBeforeCheckout']
+    //           ],
+    //           submoduleCfg: [],
+    //           userRemoteConfigs: [
+    //             [
+    //               credentialsId: 'ci-process-engine_ssh_key',
+    //               url: 'git@github.com:process-engine/documentation.git'
+    //             ]
+    //           ]
+    //         ]);
+    //         sshagent(['ci-process-engine_ssh_key']) {
+    //           sh('git checkout master')
+    //           sh('git clean -xdf')
+    //           sh('bash build_prod.sh')
+    //           sh('git add --all .')
+    //           sh('git commit --message ":rocket: Automatic Build and Deploy"')
+    //           sh('git push origin gh-pages')
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     stage('cleanup') {
       steps {
         script {
