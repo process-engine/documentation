@@ -33,9 +33,12 @@ Garantie. Für diese Variante geben wir zusätzlich Release Notes- die über die
 Diese Version wird ohne den Hinweis "Pre-release" veröffentlicht. Sie wird mit
 "Latest release" gekennzeichnet.
 
-Beispiel: [4.0.1](https://github.com/process-engine/bpmn-studio/releases/tag/v4.0.1)
+Beispiel: [4.3.0](https://github.com/process-engine/bpmn-studio/releases/tag/v4.3.0)
 
-Die Installation der Version wird empfohlen.
+Die Installation der aktuellsten Version wird empfohlen.
+Sie kann
+[hier](https://github.com/process-engine/bpmn-studio/releases/latest)
+gefunden werden.
 
 Eine Übersicht aller Versionen, befindet sich
 [hier](https://github.com/process-engine/bpmn-studio/releases).
