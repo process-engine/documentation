@@ -1,10 +1,6 @@
-## Anmerkung
+## Adapter
 
-Eine Anmerkung ist ein Kommentar im BPMN-Diagramm.
-
-## Aktivität
-
-Eine Aktivität zeigt an, dass etwas getan werden soll.
+Siehe [Adapter](processengine/typescript/architektur/adapters.md).
 
 ## Addict-IoC
 
@@ -12,14 +8,18 @@ Addict-IoC ist der IoC Container, den wir als Plattform für unseren Stack
 verwenden. Man kann diesen auf [GitHub](https://github.com/5minds/addict-ioc)
 finden.
 
+## Aktivität
+
+Eine Aktivität zeigt an, dass etwas getan werden soll.
+
+## Anmerkung
+
+Eine Anmerkung ist ein Kommentar im BPMN-Diagramm.
+
 ## Bridge
 
 Bridges werden verwendet, um verschiedene Technologien lose miteinander zu
 verbinden.
-
-<!-- ## Adapter -->
-
-<!-- Siehe [Adapter](processengine/typescript/architektur/adapters.md). -->
 
 ## BPMN
 
@@ -55,8 +55,7 @@ eines Prozesses involviert ist. Er ist ein Akteur in einem Prozess.
 
 Beispiele sind:
 
-* Eine Person, die ein Formular ausfüllen muss, welches vom Prozess benötigt
-  wird.
+* Eine Person, die ein Formular ausfüllen muss, das vom Prozess benötigt wird.
 * Ein Programm, das einen laufenden Prozess über eine Zustandsveränderung
   informiert.
 * Eine Person oder ein Programm, das einen Prozess startet.
