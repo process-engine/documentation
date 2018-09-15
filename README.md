@@ -61,9 +61,9 @@ unterschiedliche Einsatzszenarien eignen.
 
 ### ProcessEngine APIs {#apis}
 
-Die Kommunikation mit der ProcessEngine erfolgt über zentrale APIs
-(siehe [ProcessEngine APIs](#apis)), die in allen Implementierungen
-zur Verfügung stehen.
+Die Kommunikation mit der ProcessEngine erfolgt über zentrale APIs , die alle
+Implementierungen überspannen und einen roten Faden darstellen, die Konzepte
+verstehen.
 
 Alle Implementierungen der ProcessEngine unterstützen diese APIs. Dadurch kann
 die Implementierung der ProcessEngine ausgetauscht werden - ohne, dass sich die
