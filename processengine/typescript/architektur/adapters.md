@@ -1,6 +1,7 @@
 # Adaptermodul
 
-Ein Adaptermodul implementiert eine Schnittstelle zwischen einem internen Modul und einer Drittanbieter-Software.
+Ein Adaptermodul implementiert eine Schnittstelle zwischen einem internen Modul
+und einer Drittanbieter-Software.
 
 Hierfür wird vom Modul eine Anfrage an den Adapter geschickt. Dieser stellt
 daraufhin die Verbindung zur Software her, holt die Daten und sendet sie an das
