@@ -1,4 +1,4 @@
-# Getting started
+# Beispiele
 
 Das hier dargestellte Beispiel demonstriert die Verwendung des
 [BPMN-Studio](./../../README.md#bpmn-studio)
@@ -7,4 +7,3 @@ und der
 
 1. [Hello BPMN World](./hello-bpmn-world.md)
 1. [HTTP REST API](./http-rest-api.md)
-(weitere Beispiele befinden sich in Arbeit)
