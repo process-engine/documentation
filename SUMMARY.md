@@ -42,10 +42,6 @@
    1. [Deployment of ProcessModels](bpmn-studio/user-guide/deploy/deploy.md)
    1. [Starting a Process](bpmn-studio/user-guide/start/start.md)
 1. [Auto Updater](bpmn-studio/auto-updater.md)
-1. [Hands-On](bpmn-studio/hands-on/README.md)
-
-   * [Prozess erstellen](bpmn-studio/hands-on/prozess-erstellen.md)
-   * [Process parametrisieren](bpmn-studio/hands-on/prozess-parametrisieren.md)
 
 ## ProcessEngine API
 
