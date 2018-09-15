@@ -1,7 +1,11 @@
 # Hello BPMN-World
 
-Um den Umgang der ProcessEngine und des BPMN-Studios zu demonstrieren, wird ein
-einfaches Beispiel Diagramm erstellt.
+Um den Umgang der ProcessEngine und des BPMN-Studios zu demonstrieren,
+wird die schrittweise Anleitung für ein einfaches Beispieldiagramm
+gezeigt. Das fertige Diagramm kann
+[hier](https://github.com/process-engine/example_processes/tree/develop/solutions/HelloWorld)
+heruntergeladen werden.
+
 
 Ziel ist es, ein BPMN-Diagramm mit einem
 [Single User Task](../../GLOSSARY.md#user-task)
