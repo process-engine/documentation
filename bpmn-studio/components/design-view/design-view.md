@@ -58,10 +58,10 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
    Anschließend wird man auf die Ansicht der ProcessEngine geleitet und der
    Deploy Button ausgegraut.
 
-   Wenn die Design-Ansicht mit einem Diagramm aus der ProcessEngine geöffnet ist
-   wird der Start Button <img src="icons/play-solid.svg" width="12" height="12">
-   (Bild rechts) verfügbar, mit welchem ein Prozess auf der verbundene
-   ProcessEngine ausgeführt werden kann.
+   Das Öffnen eines Diagramms macht den Start-Button verfügbar
+   <img src="icons/play-solid.svg" width="12" height="12">
+   (Bild rechts). Mit diesem kann ein Prozess auf der verbundenen
+   ProcessEngine ausgeführt werden.
 
    Die anderen Buttons haben immer die selbe Funktionalität.
 
