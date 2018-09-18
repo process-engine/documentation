@@ -74,14 +74,14 @@ wie der Zustand der Ressource verändert werden soll. Wenn man z.B. ein Bild
 rotieren möchte, ergibt ein `POST` auf das Bild keinen Sinn:
 
 ```
-POST /image/{image_id} // Was passiert hier?
+POST /image/:image_id // Was passiert hier?
 ```
 
 Wenn man in dem Beispiel die Konvention bricht, und ein Verb zu der
 Route hinzufügt, gewinnt sie Präzison, ohne unverständlicher zu werden:
 
 ```
-POST /image/{image_id}/rotate // Ah, das Bild wird rotiert!
+POST /image/:image_id/rotate // Ah, das Bild wird rotiert!
 ```
 
 #### Die Route zum auslösen von Prozessinstanz-Events
@@ -92,7 +92,7 @@ der Zustand verändert werden soll; wir wollen eine Funktion auf dem Event
 ausführen:
 
 ```
-POST /process_instance/{process_instance_id}/event/{event_key}/trigger
+POST /process_instance/:process_instance_id/event/:event_key/trigger
 ```
 
 Die eigentliche Ressource ist die Prozessinstanz; der Zustand soll verändert werden.
@@ -127,7 +127,7 @@ werden, dass die Route nur aus Nomen besteht.
 Einen EventTrigger - der ein Event auslöst - könnte wie folgt anlegen werden:
 
 ```
-POST /process_instance/{process_instance_id}/event/{event_key}/event_trigger
+POST /process_instance/:process_instance_id/event/:event_key/event_trigger
 ```
 
 Da der event_trigger wie eine herkömmliche Ressource behandelt wird, erhält
@@ -142,13 +142,13 @@ Auch das holen einer eventTrigger-Collection ist in diesem Kontext
 sinnvoll. Folgende Route könnte alle Auslöser zu einem Event zurück geben:
 
 ```
-GET /process_instance/{process_instance_id}/event/{event_key}/event_trigger
+GET /process_instance/:process_instance_id/event/:event_key/event_trigger
 ```
 
 Oder man holt sich die Details zu einem bestimmten Vorkommnis:
 
 ```
-GET /process_instance/{process_instance_id}/event/{event_key}/event_trigger/{event_trigger_id}
+GET /process_instance/:process_instance_id/event/:event_key/event_trigger/:event_trigger_id
 ```
 
 **Bedenken:**
@@ -175,7 +175,7 @@ sieht - und fachlich beschreiben soll wozu sie dient, bei welcher der folgendend
 varianten ist man näher an dem was wirklich passiert?
 
 ```
-POST /process_instance/{process_instance_id}/event/{event_key}/trigger
+POST /process_instance/:process_instance_id/event/:event_key/trigger
 
-POST /process_instance/{process_instance_id}/event/{event_key}/event_trigger
+POST /process_instance/:process_instance_id/event/:event_key/event_trigger
 ```

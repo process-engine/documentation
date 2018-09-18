@@ -80,7 +80,7 @@ Die HTTP-Routen für die Schnittstelle sehen so aus:
 
 ```JavaScript
 // Holen aller ausführbaren BPMN-Events zu einem Vorgang
-GET /correlations/:correlationId/events
+GET /correlations/:correlation_id/events
 
 // Holen aller ausführbaren BPMN-Events zu einer Prozessinstanz
 // innerhalb eines Vorgangs
