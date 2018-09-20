@@ -102,3 +102,12 @@ GET /api/consumer/v1/correlations/:correlation_id/user_tasks
 ```
 
 Eine Erklärung zur Routenbenennung kann [hier](./dealing_with_events.md#auslösen-eines-prozessinstanz-events) eingesehen werden.
+
+#### Socket
+
+Die ConsumerAPI verfügt über einen eigenen Socket-Endpunkt. Der Endpunkt ist
+über einen eigenen
+[Socket.io-Namespace](https://socket.io/docs/rooms-and-namespaces/) gekapselt.
+
+Der Namespace lautet: `consumer_api`.
+
