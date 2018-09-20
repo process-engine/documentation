@@ -71,11 +71,10 @@
    * [Ergebnis einer Prozesskorrelation abfragen](api/consumer_api/tasks/get-correlation-result.md)
    * [Erhalten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md)
 
-      * [Arten von Prozessbenachrichtigungen](api/consumer_api/tasks/receive-process-notifiations.md#arten-von-prozessbenachrichtigungen)
-      * [Erhalten von BPMN-Events](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-events)
-      * [Erhalten von Infos zu Dtart und Ende von Aktivitäten](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-infos-zu-start-und-ende-von-aktivitäten)
-      * [Erhalten von SystemEvents](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
-      * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
+      * [Beendigung eines Prozesses](api/consumer_api/tasks/receive-process-notifiations.md#beendigung-eines-prozesses)
+      * [Abbruch eines Prozesses](api/consumer_api/tasks/receive-process-notifiations.md#abbruch-eines-prozesses)
+      * [Erreichen eines UserTasks](api/consumer_api/tasks/receive-process-notifiations.md#erreichen-eines-usertasks)
+      * [Abschluss eines UserTasks](api/consumer_api/tasks/receive-process-notifiations.md#abschluss-eines-usertasks)
 
 1. [ManagementAPI](api/management-api.md)
 
