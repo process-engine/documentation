@@ -170,6 +170,20 @@ Ein Task ist eine Aufgabe eines Prozesses. Dabei gibt es verschiedene Typen von
 Tasks, die unterschiedliche Anforderungen ausdrücken. Für eine Erklärung der
 verschiedenen Typen siehe: https://camunda.com/bpmn/reference/#activities-task
 
+## Token
+
+Der Token beschreibt ein Objekt, welches beim Prozessablauf über die
+Sequenzflüsse hinweg von Knoten zu Knoten mitgereicht wird.  Die
+durchwanderten Knoten können den Token anreichern und Informationen
+von ihm abfragen.
+
+Beim Prozessstart wird automatisch ein leerer Token
+generiert. Prozesse können auch mit bereits angereichten Tokens
+gestartet werden (etwa über Call Activities).
+
+Tokens bieten die Möglichkeit des Transports von Informationen über
+Elemente innerhalb eines Diagramms und auch zu anderen Prozessen.
+
 ## User Task
 
 Ein User Task ist eine Aufgabe, die von einem bestimmten Benutzer erledigt
