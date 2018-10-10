@@ -32,11 +32,11 @@ Formularfeld als `email`.
 Bei dem Formularfeld fügen wir ein Label hinzu mit dem Inhalt `Please
 enter your Email address:`.
 
-<img src="./images/create_task_get_email_address.gif" />
+{% video controls="controls"%}../images/getting-started/sending-emails/create_task_get_email_address.mp4{% endvideo %}
 
 Es ergibt sich folgende Konfiguration:
 
-<img src="./images/create_task_get_email_address.png" width="70%" />
+<img src="../images/getting-started/sending-emails/create_task_get_email_address.png" width="70%" />
 
 ### User Task für Bestätigungsdialog
 
@@ -58,7 +58,7 @@ erlaubt uns den Zugriff auf den Wert, welchen der Nutzer in dem
 vorherigen User Task mit der Id `usertask_enter_email` eingibt.
 Mit dem `+`-Zeichen kann dieser Wert mit Zeichenketten verbunden werden.
 
-<img src="./images/create_task_confirm_data.gif" />
+{% video controls="controls"%}../images/getting-started/sending-emails/create_task_confirm_data.mp4{% endvideo %}
 
 ### Exclusive Gateway (Exklusiver Pfad)
 
@@ -83,7 +83,7 @@ Der andere Fluss trägt die Condition
 
 und führt zu dem Service Task zum Versand der Mail.
 
-<img src="./images/create_gateway.gif" />
+{% video controls="controls"%}../images/getting-started/sending-emails/create_gateway.mp4{% endvideo %}
 
 ### Service Task für den Versand der Email
 
@@ -96,9 +96,10 @@ method  send
 params  [null, token.history.usertask_enter_email.form_fields.email, "Regarding Hello World", "Hello World!"]
 ```
 
-<img src="./images/create_service_task.gif" />
+{% video controls="controls"%}../images/getting-started/sending-emails/create_service_task.mp4{% endvideo %}
 
 ## Vollständige Konfiguration
 
 Hier ist eine Aufnahme der kompletten Konfiguration des Prozesses:
-<img src="./images/complete_configuration.gif" />
+
+{% video controls="controls"%}../images/getting-started/sending-emails/complete_configuration.mp4{% endvideo %}
