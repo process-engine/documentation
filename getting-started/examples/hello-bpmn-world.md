@@ -7,21 +7,19 @@ gezeigt. Das fertige Diagramm kann
 heruntergeladen werden.
 
 
-Ziel ist es, ein BPMN-Diagramm mit einem
-[Single User Task](../../GLOSSARY.md#user-task)
-zu erstellen.
+Ziel ist es, ein BPMN-Diagramm mit einem Single User Task zu
+erstellen.
 
 Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
 
-Dieser [User Task](../../GLOSSARY.md#user-task) wird die folgenden Elemente
-enthalten:
+Dieser User Task wird die folgenden Elemente enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
 
-Letzteres dient dazu, den [Task](../../GLOSSARY.md#task) zu beenden.
+Letzteres dient dazu, den Task zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
@@ -54,15 +52,15 @@ So sieht das Ganze  aus:
 
 ## Modellierung eines Diagramms
 
-Die Design-Ansicht zeigt uns ein Diagramm mit einer
-[Lane](../../GLOSSARY.md#lane), einem Startevent und einem Endevent.
+Die Design-Ansicht zeigt uns ein Diagramm mit einer Lane, einem
+Startevent und einem Endevent.
 
 Durch das Auswählen eines Elements öffnet sich ein Kontextmenü; dieses Menü
 erlaubt es neue Elemente hinzuzufügen; diese werden direkt mit dem ausgewählten
 Element verbunden.
 
 Der Sequenzfluss vom Startevent zum Endevent wird zunächst entfernt.
-An dem Startpunkt wird ein [UserTask](../../GLOSSARY.md#user-task)
+An dem Startpunkt wird ein User Task
 mit dem Namen `Hello Word` verbunden; an diesem das Endevent.
 
 Das Ganze sollte so aussehen:
@@ -75,9 +73,9 @@ Im folgenden Video, fassen wir die Schritte zusammen:
 
 ## Umsetzung eines User Task
 
-Ein [UserTask](../../GLOSSARY.md#user-task) kann so konfiguriert werden, dass
-dem Benutzer eine grafische Oberfläche präsentiert wird, in der er aufgefordert
-wird ein Formular auszufüllen oder das Angezeigte zu bestätigen.
+Ein User Task kann so konfiguriert werden, dass dem Benutzer eine
+grafische Oberfläche präsentiert wird, in der er aufgefordert wird ein
+Formular auszufüllen oder das Angezeigte zu bestätigen.
 
 In diesem Beispiel wird eine Confirm Ansicht erstellt. Um das zu erreichen,
 muss der UserTask folgendermaßen konfiguriert werden:
@@ -105,7 +103,7 @@ Was wir getan haben?
 
 Wir haben:
 
-- Einen [User Task](../../GLOSSARY.md#user-task) namens `Hello World` erstellt.
+- Einen User Task namens `Hello World` erstellt.
 - Den Task mit einer Konfiguration für die Oberfläche versehen.
 - Die verschiedenen Ausführungsschritte miteinander verdrahtet.
 

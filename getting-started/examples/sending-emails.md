@@ -4,7 +4,7 @@ Das Beispiel "Verwendung einer REST API" wird um den Versand von Emails
 erweitert, um die geladenen Daten zu versenden.
 
 Dazu muss der Prozess um die folgenden drei
-[Tasks](../../GLOSSARY.md#task) erweitert werden:
+Tasks erweitert werden:
 
 1. Die Abfrage der Email-Adresse
 1. Die Anforderung einer Bestätigung
@@ -18,8 +18,8 @@ Vorweg müssen ein paar Vorbereitungen getroffen werden.
 
 {% video controls="controls"%}../images/getting-started/sending-emails/preparation-send-email.mp4{% endvideo %}
 
-Den [Pool](../../GLOSSARY.md#pool) und das Startevent zu `Sending mails`
-umbenennen; die [Lane](../../GLOSSARY.md#lane) vergrößern, da mehr Platz
+Den Pool und das Startevent zu `Sending mails`
+umbenennen; die Lane vergrößern, da mehr Platz
 benötigt wird.
 
 Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
@@ -34,7 +34,7 @@ Fertig sieht das Ganze so aus:
 
 ### Aus "Show Data" wird "Confirm Data"
 
-Dann muss der `Show Data`-[Task](../../GLOSSARY.md#task) zu `Confirm
+Dann muss der `Show Data`-Task zu `Confirm
 Data` umbenannt werden. Der Wert der `uiConfig` Property muss zu folgendem Wert
 abgeändert werden:
 
@@ -56,9 +56,9 @@ Prozessschritte modelliert werden.
 
 ### User Task erstellen und konfigurieren
 
-Als nächstes erstellt man einen [User Task](../../GLOSSARY.md#user-task)
-mit dem Namen `Get Email Address`. Dieser fordert den User per UI dazu auf eine
-E-Mail anzugeben.
+Als nächstes erstellt man einen User Task mit dem Namen `Get Email
+Address`. Dieser fordert den User per UI dazu auf eine E-Mail
+anzugeben.
 
 {% video controls="controls"%}../images/getting-started/sending-emails/create_task_get_email_address.mp4{%
 endvideo %}
@@ -101,16 +101,14 @@ ein Property `mapper` mit folgendem Wert angelegt werden:
 
 Als Nächstes wird eine Überprüfung angelegt.
 
-Es ist zu prüfen, ob in dem `Confirm Data`-[Task](../../GLOSSARY.md#task)
-Confirm oder Cancel ausgewählt wurde; wir benutzen ein `Gateway` dafür.
+Es ist zu prüfen, ob in dem `Confirm Data`-Task Confirm oder Cancel
+ausgewählt wurde; wir benutzen ein `Gateway` dafür.
 
-Diese Auswahl hat Einfluss auf den weiteren Prozessweg. Cancel beendet den
-Prozess; Confirm löst den `Send email`-[Task](../../GLOSSARY.md#task)
-aus.
+Diese Auswahl hat Einfluss auf den weiteren Prozessweg. Cancel beendet
+den Prozess; Confirm löst den `Send email`-Task aus.
 
-Der letzte Prozessschritt ist der `Send
-email`-[Task](../../GLOSSARY.md#task). Dieser muss die folgenden
-Eigenschaften erhalten:
+Der letzte Prozessschritt ist der `Send email`-Task. Dieser muss die
+folgenden Eigenschaften erhalten:
 
 ```
 module  MailService
@@ -118,8 +116,7 @@ method  send
 params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + token.history.ServiceTask_FetchData.result.EUR_USD.val + " USD"]
 ```
 
-Nach diesem [Task](../../GLOSSARY.md#task) muss der Prozess beendet
-werden.
+Nach diesem Task muss der Prozess beendet werden.
 
 {% video controls="controls"%}../images/getting-started/sending-emails/confirm-and-send-email.mp4{% endvideo %}
 
@@ -131,8 +128,7 @@ Hinzufügen eines Gateways:
 
 <img src="../images/getting-started/sending-emails/add_gateway.png" width="35%" />
 
-Hinzufügen von Flows und einem
-[Service Task](../../GLOSSARY.md#service-task)(`Send email`):
+Hinzufügen von Flows und einem Service Task(`Send email`):
 
 <img src="../images/getting-started/sending-emails/add_flows_with_names.png" width="35%" />
 
@@ -142,8 +138,7 @@ Hinzufügen der entsprechenden Überprüfungen:
 
 <img src="../images/getting-started/sending-emails/add_condition_cancel.png" width="70%" />
 
-Setzen der Properties für den
-[Service Task](../../GLOSSARY.md#service-task):
+Setzen der Properties für den Service Task:
 
 <img src="../images/getting-started/sending-emails/add_service_task_and_its_properties.png" width="60%" />
 
