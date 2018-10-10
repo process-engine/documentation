@@ -114,7 +114,7 @@ Beachte folgende Regeln zum korrekten Modellieren von
 
    ![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
 
-1. Split- und Join Gateways korrespondieren (z.B. Exlusive Split Gateway mit
+1. Split- und Join Gateways korrespondieren (z.B. Exclusive Split Gateway mit
    Exclusive Join Gateway).
 
 ## Weitere Regeln
