@@ -1,151 +1,104 @@
 # Emails versenden
 
-Das Beispiel "Verwendung einer REST API" wird um den Versand von Emails
-erweitert, um die geladenen Daten zu versenden.
+In diesem Beispiel wird ein Prozess für den Versand von Emails modelliert.
+Das fertige Diagramm kann
+[hier](https://github.com/process-engine/example_processes/tree/develop/solutions/SendEmail)
+heruntergeladen werden.
 
 Dazu muss der Prozess um die folgenden drei
 Tasks erweitert werden:
 
-1. Die Abfrage der Email-Adresse
-1. Die Anforderung einer Bestätigung
-1. Den Versand einer Email mit dem Wechselkurs
+Wir erstellen ein Diagramm mit folgenden Bestandteilen:
 
-## Vorbereitungen
+1. Start Event
+1. User Task: `Enter Email Address`
+1. User Task: `Confirm Email Address`
+1. Exclusive Gateway: unterscheidet, ob im vorherigen User Task bestätigt wurde
+1. Service Task: `Send Email`
+1. End Event
 
-Vorweg müssen ein paar Vorbereitungen getroffen werden.
+Im Folgenden wird Erstellung und Konfiguration dieser Elemente gezeigt.
 
-### Prozess-Rahmenbedingungen
+### User Task zur Eingabe der Emailadresse
 
-{% video controls="controls"%}../images/getting-started/sending-emails/preparation-send-email.mp4{% endvideo %}
-
-Den Pool und das Startevent zu `Sending mails`
-umbenennen; die Lane vergrößern, da mehr Platz
-benötigt wird.
-
-Dazu klickt man doppelt auf den Poolname und gibt `Sending mails` ein.
-
-<img src="../images/getting-started/sending-emails/rename_poolname.png" width="35%" />
-
-Dasselbe wird auch bei dem Startevent gemacht.
-
-Fertig sieht das Ganze so aus:
-
-<img src="../images/getting-started/sending-emails/renamed_poolname_and_startevent.png" width="35%" />
-
-### Aus "Show Data" wird "Confirm Data"
-
-Dann muss der `Show Data`-Task zu `Confirm
-Data` umbenannt werden. Der Wert der `uiConfig` Property muss zu folgendem Wert
-abgeändert werden:
-
-```
-${ "message": "1 EUR = " + token.current.rates.val + " USD - email: " + token.current.email, "layout": [ { "key": "confirm", "label": "OK"}, { "key": "cancel", "label": "cancel"}] };
-```
-
-{% video controls="controls"%}../images/getting-started/sending-emails/rename-_show-data_to_confirm-data.mp4{% endvideo
-%}
-
-So sieht der Task `Confirm Data` dann am Ende aus:
-
-<img src="../images/getting-started/sending-emails/rename_show_data_to_confirm_data.png" width="80%" />
-
-## Neue Prozessschritte anlegen
-
-Nun, da die Vorbereitungen erledigt sind, können die weiteren notwendigen
-Prozessschritte modelliert werden.
-
-### User Task erstellen und konfigurieren
-
-Als nächstes erstellt man einen User Task mit dem Namen `Get Email
-Address`. Dieser fordert den User per UI dazu auf eine E-Mail
+Zu Beginn erstellt man einen User Task mit dem Namen `Get Email
+Address`. Dieser fordert den User per UI dazu auf eine Email
 anzugeben.
 
-{% video controls="controls"%}../images/getting-started/sending-emails/create_task_get_email_address.mp4{%
-endvideo %}
+Da wir auf die Eingabe des Nutzers zugreifen werden, lohnt es sich, den
+User Task und das Formularfeld zu benennen.
+Wir bezeichnen den User Task als `usertask_enter_email` und das
+Formularfeld als `email`.
+Bei dem Formularfeld fügen wir ein Label hinzu mit dem Inhalt `Please
+enter your Email address:`.
 
-Zusammengefasst ergibt sich daraus ein `User Task` namens `Get Email Address`
-mit folgender Konfiguration:
+<img src="./images/create_task_get_email_address.gif" />
 
-<img src="../images/getting-started/sending-emails/create_task_get_email_address.png" width="70%" />
+Es ergibt sich folgende Konfiguration:
 
+<img src="./images/create_task_get_email_address.png" width="70%" />
 
-### Task Resultate in Mapper zusammenführen
+### User Task für Bestätigungsdialog
 
-Bevor wir mit dem eigentlichen Modellieren weitermachen können, stellt sich
-uns noch ein kleines Problem in den Weg.
+Ein weiterer User Task soll dem Nutzer die Möglichkeit geben, den
+Prozess abzubrechen.
 
-**Situation**
-Ein `User Task` hat **niemals** Zugriff auf den Parameter `token.history`!
-Das hat zur Folge, dass der User Task `Confirm Data` keinen direkten Zugriff
-auf die Daten des Service Tasks `Fetch Data` haben kann!
+Wir erstellen den User Task mit der Id `usertask_email_confirm` und
+dem Namen `Confirm Data`. Für User Tasks zur Bestätigung benötigen
+wir zudem die Property `preferredControl` mit dem Wert `confirm` und
+ein Formularfeld vom Typ `Truth value`. Als Label benutzen wir:
 
-**Lösung**:
-Wie der `ServiceTask`, hat ein `UserTask` immer Zugriff auf den Parameter
-`token.current`.
-
-Mit dieser Information im Hinterkopf, können wir einen Mapper definieren,
-der uns die Ergebnisse aus den beiden vorangegangenen Tasks zusammengefasst
-bereitstellt.
-
-Was nun zu tun ist:
-An der Sequenz **nach** dem UserTask `Get Email Address` muss im Property Panel
-ein Property `mapper` mit folgendem Wert angelegt werden:
 ```
-{rates: token.history.ServiceTask_FetchData.result.EUR_USD, email: token.history.UserTask_GetEmailAddress.email}
+${"Do you want to send an email to " + token.history.usertask_enter_email.form_fields.email + "?"}
 ```
 
-{% video controls="controls"%}../images/getting-started/sending-emails/add_result_mapper_to_sequence_flow.mp4{% endvideo %}
+Innerhalb der `${...}`-Syntax können wir auf Inhalte des Tokens
+zugreifen. `token.history.usertask_enter_email.form_fields.email`
+erlaubt uns den Zugriff auf den Wert, welchen der Nutzer in dem
+vorherigen User Task mit der Id `usertask_enter_email` eingibt.
+Mit dem `+`-Zeichen kann dieser Wert mit Zeichenketten verbunden werden.
 
+<img src="./images/create_task_confirm_data.gif" />
 
-### Bestätigungsüberprüfung
+### Exclusive Gateway (Exklusiver Pfad)
 
 Als Nächstes wird eine Überprüfung angelegt.
 
-Es ist zu prüfen, ob in dem `Confirm Data`-Task Confirm oder Cancel
-ausgewählt wurde; wir benutzen ein `Gateway` dafür.
+Es ist zu prüfen, ob in dem `Confirm Data`-Task
+Confirm oder Cancel ausgewählt wurde; wir benutzen ein `Gateway` dafür.
 
 Diese Auswahl hat Einfluss auf den weiteren Prozessweg. Cancel beendet
 den Prozess; Confirm löst den `Send email`-Task aus.
 
-Der letzte Prozessschritt ist der `Send email`-Task. Dieser muss die
-folgenden Eigenschaften erhalten:
+Die Fallunterscheidung erfolgt bei der Konfiguration der
+Sequenzflüsse, die dem Exclusive Gateway folgen.
 
-```
+Einer der Flüsse führt zum End Event mit der Condition
+
+`token.history.usertask_enter_email.form_fields.email === "true"`.
+
+Der andere Fluss trägt die Condition
+
+`token.history.usertask_enter_email.form_fields.email === "false"`
+
+und führt zu dem Service Task zum Versand der Mail.
+
+<img src="./images/create_gateway.gif" />
+
+### Service Task für den Versand der Email
+
+Der letzte Prozessschritt ist der `Send email`-Task.
+Dieser muss die folgenden Eigenschaften erhalten:
+
+```plain
 module  MailService
 method  send
-params  [null, token.history.UserTask_GetEmailAddress.email, "EUR to USD conversion rate", "1 EUR = " + token.history.ServiceTask_FetchData.result.EUR_USD.val + " USD"]
+params  [null, token.history.usertask_enter_email.form_fields.email, "Regarding Hello World", "Hello World!"]
 ```
 
-Nach diesem Task muss der Prozess beendet werden.
+<img src="./images/create_service_task.gif" />
 
-{% video controls="controls"%}../images/getting-started/sending-emails/confirm-and-send-email.mp4{% endvideo %}
+## Vollständige Konfiguration
 
-
-> TODO: Bild- & Videomaterial aktualisieren, Textstellen anpassen, falls nötig
-
-
-Hinzufügen eines Gateways:
-
-<img src="../images/getting-started/sending-emails/add_gateway.png" width="35%" />
-
-Hinzufügen von Flows und einem Service Task(`Send email`):
-
-<img src="../images/getting-started/sending-emails/add_flows_with_names.png" width="35%" />
-
-Hinzufügen der entsprechenden Überprüfungen:
-
-<img src="../images/getting-started/sending-emails/add_condition_ok.png" width="70%" />
-
-<img src="../images/getting-started/sending-emails/add_condition_cancel.png" width="70%" />
-
-Setzen der Properties für den Service Task:
-
-<img src="../images/getting-started/sending-emails/add_service_task_and_its_properties.png" width="60%" />
-
-Dann kann das ganze getestet werden:
-
-{% video controls="controls"%}../images/getting-started/sending-emails/run-full-process.mp4{% endvideo %}
-
-Das fertige Prozessmodell sieht wie folgt aus:
-
-<img src="../images/getting-started/sending-emails/finished_process_diagram.png" width="100%" />
+Hier ist eine Aufnahme der kompletten Konfiguration des Prozesses:
+<img src="./images/complete_configuration.gif" />
