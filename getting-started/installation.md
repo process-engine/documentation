@@ -4,7 +4,7 @@
 
 Die aktuellste, stabile Version des BPMN-Studios und alle vorherigen Versionen
 kann man
-[hier](https://github.com/process-engine/bpmn-studio/releases/tag/v4.0.1)
+[hier](https://github.com/process-engine/bpmn-studio/releases/latest)
 herunterladen. Diese Installation wird empfohlen.
 
 Generell unterscheiden wir zwei Versionen des BPMN-Studios:
