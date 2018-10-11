@@ -1,6 +1,7 @@
 # Schnittstelle: ExternalTaskAPI
 
-Das hier vorgestellte Konzept basiert auf dem [External Task Pattern](https://docs.camunda.org/manual/latest/user-guide/process-engine/external-tasks/)
+Das hier vorgestellte Konzept basiert auf dem
+[External Task Pattern](https://docs.camunda.org/manual/latest/user-guide/process-engine/external-tasks/)
 von Camunda.
 
 ## Grundlegendes
@@ -30,6 +31,7 @@ Hierüber haben Sie die Möglichkeit ExternalTasks für sich zu reservieren,
 zu verarbeiten und abzuschließen.
 
 **WICHTIG**:
+
 Die API dient **nicht** der *Erstellung* von ExternalTasks!
 Dies wird durch die ProcessEngine selbst während der Ausführung von
 Prozessmodellen erledigt.
