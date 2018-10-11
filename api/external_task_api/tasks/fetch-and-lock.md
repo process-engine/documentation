@@ -111,3 +111,4 @@ Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
 über die Methode `fetchAndLockExternalTasks`.
 
 Die Methode erwartet die oben beschriebenen Parameter.
+Zusätzlich wird noch die `Identity` des Workers erwartet.
