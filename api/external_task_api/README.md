@@ -22,11 +22,11 @@ Ein Beispiel dafür wäre das Absetzen von HTTP Calls.
 Hier müsste der Handler der ProcessEngine wissen, wie man diese Calls ausführt
 und wie eine entsprechende Response zu verarbeiten wäre.
 
-Um dieses Szenario zu vermeiden, wird diese Aufgabe in einen ExternalTask
+Um derartige Szenarien zu vermeiden, wird diese Aufgabe in einen ExternalTask
 ausgelagert und an einen externen Worker delegiert.
 
 Die ExternalTaskAPI dient hierbei als Schnittstelle für diese Worker.
-Hierrüber haben Sie die Möglichkeit ExternalTasks für sich zu reservieren,
+Hierüber haben Sie die Möglichkeit ExternalTasks für sich zu reservieren,
 zu verarbeiten und abzuschließen.
 
 **WICHTIG**:
@@ -41,7 +41,7 @@ Dieses Konzept gilt als Leitfaden für **sämtliche** technischen Implementierun
 
 Über die ExternalTaskAPI müssen folgende Aufgaben erledigt werden können:
 
-* [ExternalTasks abrufen und sperren](./tasks/fetch-and-lock.md)
+* [ExternalTasks abrufen und reservieren](./tasks/fetch-and-lock.md)
 * [Sperrzeiten verlängern](./tasks/extend-lock.md)
 * [Handling von BPMN-Fehlern](./tasks/handle-bpmn-errors.md)
 * [Handling von Systemfehlern](./tasks/handle-system-errors.md)
