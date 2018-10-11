@@ -1,28 +1,31 @@
-# Abschließen von ExernalTasks
+# Behandeln von BPMN Fehlern
 
 ## Ziel/UseCase
 
-Wenn ein Worker einen ExternalTask fertig bearbeitet hat, kann er über diese
-Methode dies der ExternalTaskAPI mitteilen.
-Die ExternalTaskAPI wird den Task entsprechend aktualisieren und als "beendet"
-markieren.
+Dieser UseCase dient dazu, es dem Worker zu ermöglichen
+[Business Erorrs](https://docs.camunda.org/manual/latest/user-guide/process-engine/external-tasks/#reporting-bpmn-error)
+an die ExernalTask API zu übermitteln.
+
+Die API wird diesen Task dann entsprechend mit dem angegebenen Fehler versehen
+und als "fehlgeschlagen" markieren.
 Ab diesem Zeitpunkt hat dann kein Worker mehr Zugriff auf diesen ExternalTask.
 
 Ebenfalls wird die ProcessEngine über den EventAggregator darüber benachrichtigt,
-dass der ExternalTask beendet wurde.
-Dies erlaubt der ProcessEngine die Ausführung ihres Prozessmodells fortzusetzen.
+dass der ExternalTask mit einem Fehler beendet wurde.
+Dies erlaubt es der ProcessEngine den Fehler zu verarbeiten und die Ausführung
+des jeweiligen Prozessmodells fortzusetzen, oder abzubrechen.
 
 ## Zugriffsberechtigungen
 
-Worker können nur die ExternalTasks abschließen, die sie auch berechtigt
-sind zu sehen.
+Worker können BPMN Fehler nur für die ExternalTasks reporten,
+die sie auch berechtigt sind zu bearbeiten.
 
 ## Was passiert in der ProcessEngine
 
 - Es wird der passende ExternalTask abgefragt
 - Es wird geprüft, ob der anfragende Worker berechtigt ist den ExternalTask
-zu beenden
-- Ist dies der Fall, wird der ExternalTask mit dem mitgegebenen Ergebnis beendet
+zu bearbeiten
+- Ist dies der Fall, wird der ExternalTask mit dem mitgegebenen Fehler beendet
 - Anschließend wird die ProcessEngine über die Beendigung des ExternalTasks
 informiert
 
@@ -31,9 +34,8 @@ informiert
 ### Erforderliche Parameter
 
 - `workerId`: Die ID des anfragenden Workers.
-- `externalTaskId`: Die ID des abzuschließenden ExternalTasks.
-- `result`: Das Ergebnis, mit welchem der Worker den ExternalTask
-beenden will.
+- `externalTaskId`: Die ID des fehlerhaften ExternalTasks.
+- `errorCode`: Der Code des aufgetretenen BPMN Fehlers.
 
 
 ### Optionale Parameter
@@ -62,7 +64,7 @@ reserviert und ist für den anfragenden Worker gesperrt.
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
 ```REST
-POST /task/:external_task_id/finish
+POST /task/:external_task_id/handle_bpmn_error
 ```
 
 Es wird ein Post Body in folgendem Format erwartet:
@@ -70,25 +72,14 @@ Es wird ein Post Body in folgendem Format erwartet:
 ```JSON
 {
   "workerId": "Worker1",
-  "result": "some result"
-}
-```
-
-Alternativ kann `result` auch ein JSON Objekt sein:
-
-```JSON
-{
-  "workerId": "Worker1",
-  "result": {
-    "field_1": "some result"
-  }
+  "errorCode": "123abc"
 }
 ```
 
 ## IExternalTaskApiService Schnittstelle
 
 Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
-über die Methode `finishExternalTask`.
+über die Methode `handleBpmnError`.
 
 Die Methode erwartet die oben beschriebenen Parameter.
 Zusätzlich wird noch die `Identity` des Workers erwartet.

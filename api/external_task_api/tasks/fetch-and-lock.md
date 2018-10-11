@@ -1,4 +1,4 @@
-# ExternalTasks abrufen und reservieren
+# ExternalTasks abrufen und sperren
 
 ## Ziel/UseCase
 

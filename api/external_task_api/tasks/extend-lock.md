@@ -1,4 +1,4 @@
-# Auslösen von Ereignissen
+# Sperrzeiten verlängern
 
 ## Ziel/UseCase
 

@@ -41,11 +41,11 @@ Dieses Konzept gilt als Leitfaden für **sämtliche** technischen Implementierun
 
 Über die ExternalTaskAPI müssen folgende Aufgaben erledigt werden können:
 
-* [ExternalTasks abrufen und reservieren](./tasks/fetch-and-lock.md)
+* [ExternalTasks abrufen und sperren](./tasks/fetch-and-lock.md)
 * [Sperrzeiten verlängern](./tasks/extend-lock.md)
-* [Handling von BPMN-Fehlern](./tasks/handle-bpmn-errors.md)
-* [Handling von Systemfehlern](./tasks/handle-system-errors.md)
-* [Abschließen eines ExernalTasks](./tasks/finish-external-task.md)
+* [Abschließen von ExernalTasks](./tasks/finish-external-task.md)
+* [Behandeln von BPMN Fehlern](./tasks/handle-bpmn-errors.md)
+* [Behandeln von Systemfehlern](./tasks/handle-system-errors.md)
 
 ## Technischer Aufbau
 
