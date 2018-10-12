@@ -31,8 +31,11 @@ Zeitraum reserviert
 - `topicName`: Das Topic, in welchem nach ExternalTasks gesucht werden soll.
 - `maxTasks`: Die maximale Anzahl an Tasks, die reserviert und zurückgegeben
 werden soll.
-- `longPollingTimeout`: Die Zeit in ms, die der Server warten soll, bevor er den
-Request ausführt und eine Antwort sendet. Siehe [hier](https://docs.camunda.org/manual/latest/user-guide/process-engine/external-tasks/#long-polling-to-fetch-and-lock-external-tasks)
+- `longPollingTimeout`: Die Zeit in ms, die der Server warten soll,
+bevor eine Antwort gesendet wird. Dieser Timeout wird nur dann berücksichtigt,
+falls zum initialen Zeitpunkt der Anfrage keine ExternalTasks zur Verarbeitung
+verfügbar sind.
+Siehe [hier](https://docs.camunda.org/manual/latest/user-guide/process-engine/external-tasks/#long-polling-to-fetch-and-lock-external-tasks)
 - `lockDuration`: Die Dauer in ms, für welche die ExternalTasks für den Worker
 reserviert werden sollen.
 
