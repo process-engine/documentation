@@ -39,7 +39,7 @@ ihre Schnittstellen aus dem `IConsumerApi` Interface ab, wodurch
 sichergestellt ist, dass sich beide Komponenten auf die exakt gleiche Art
 verwenden lassen.
 
-Dieser Aufbau gewährleistet auch eine einfache Austauschbarkeit, da es durch
+Dieser Aufbau gewährleistet eine einfache Austauschbarkeit, da es durch
 diese Architektur mit nur wenig Aufwand möglich ist eine interne ProcessEngine
 gegen eine ausgelagerte zu tauschen, oder umgekehrt.
 
