@@ -136,9 +136,9 @@ POST /process_models/:process_model_key/start_events/:start_event_key/start?star
 POST /process_models/:process_model_key/start_events/:start_event_key/start?startCallbackType=3&end_event_id=endEventKey
 ```
 
-### IConsumerApiService Schnittstelle
+### IConsumerApi Schnittstelle
 
-Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
+Die `IConsumerApi` Schnittstelle implementiert diesen UseCase
 über die Methode `startProcessInstance`.
 
 Diese Methode benötigt die weiter oben beschriebenen Parameter in folgender

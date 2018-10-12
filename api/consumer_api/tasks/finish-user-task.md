@@ -71,9 +71,9 @@ POST /process_models/{process_model_key}/correlations/{correlation_id}/user_task
 }
 ```
 
-## IConsumerApiService Schnittstelle
+## IConsumerApi Schnittstelle
 
-Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase über die
+Die `IConsumerApi` Schnittstelle implementiert diesen UseCase über die
 Methode `finishUserTask`.
 
 Diese Methode erwartet die oben beschriebenen Parameter

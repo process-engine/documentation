@@ -130,9 +130,9 @@ Die HTTP-Route für die Schnittstelle sieht so aus:
 GET /process_models
 ```
 
-### IConsumerApiService Schnittstelle
+### IConsumerApi Schnittstelle
 
-Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
+Die `IConsumerApi` Schnittstelle implementiert diesen UseCase
 über die Methode `getProcessModels`.
 
 Als Parameter nimmt diese Methode den `Context` (siehe oben)
@@ -215,9 +215,9 @@ Die HTTP-Route für die Schnittstelle sieht so aus:
 GET /process_models/:process_model_key
 ```
 
-### IConsumerApiService Schnittstelle
+### IConsumerApi Schnittstelle
 
-Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase
+Die `IConsumerApi` Schnittstelle implementiert diesen UseCase
 über die Methode `getProcessModelByKey`.
 
 Die weiter oben genannten Parameter müssen in folgender Reihenfolge angegeben werden:

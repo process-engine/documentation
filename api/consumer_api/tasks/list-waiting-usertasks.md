@@ -92,9 +92,9 @@ GET /process_models/:process_model_key/user_tasks
 GET /process_models/:process_model_key/correlations/:correlation_id/user_tasks
 ```
 
-## IConsumerApiService Schnittstelle
+## IConsumerApi Schnittstelle
 
-Die `IConsumerApiService` Schnittstelle implementiert diese UseCases über
+Die `IConsumerApi` Schnittstelle implementiert diese UseCases über
 3 Methoden:
 
 - `getUserTasksForCorrelation`: Holt alle UserTasks in einer Correlation

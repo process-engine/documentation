@@ -24,12 +24,12 @@ wie die TypeScript Implementierung der ProcessEngine auf.
 ```TypeScript
 import {
   ConsumerContext,
-  IConsumerApiService,
+  IConsumerApi,
   StartCallbackType
 } from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {

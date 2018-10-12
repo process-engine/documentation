@@ -5,12 +5,12 @@ Siehe [Konzept zum Abfragen von Ergebnissen einer Prozessinstanz](../../../../ap
 ```TypeScript
 import {
   ConsumerContext,
-  IConsumerApiService,
+  IConsumerApi,
   ICorrelationResult,
 } from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
