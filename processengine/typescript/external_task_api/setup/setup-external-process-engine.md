@@ -76,4 +76,4 @@ erreichbar ist.
 Die Konfiguration muss unter dem Konfigurationspfad `services:http`
 abgelegt werden.
 
-Für weiterführende Infos, siehe [Setup ExternalTaskAPIClient](setup-consumer-api-client.md).
+Für weiterführende Infos, siehe [Setup ExternalTaskAPIClient](setup-external-task-api-client.md).

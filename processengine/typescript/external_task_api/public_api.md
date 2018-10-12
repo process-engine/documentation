@@ -3,7 +3,7 @@
 Nachfolgend wird die öffentliche API der TypeScript Implementierung
 der ExternalTaskAPI erläutert.
 
-Die Schnittstellen sind im Paket `@process-engine/consumer_api_contracts` definiert.
+Die Schnittstellen sind im Paket `@process-engine/external_task_api_contracts` definiert.
 
 ## IExternalTaskAPI
 

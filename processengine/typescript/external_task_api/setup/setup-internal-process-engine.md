@@ -21,7 +21,7 @@ registriert sind.
 
 ### ExternalTaskApiClient
 
-Siehe [Setup ExternalTaskApiClient](setup-consumer-api-client.md).
+Siehe [Setup ExternalTaskApiClient](setup-external-task-api-client.md).
 
 ### ExternalTaskApiCore
 
