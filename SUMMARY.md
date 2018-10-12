@@ -84,7 +84,7 @@
    * [Sperrzeit eines ExternalTasks verlängern](api/external_task_api/tasks/extend-lock.md)
    * [Handling von BPMN-Fehlern](api/external_task_api/tasks/handle-bpmn-errors.md)
    * [Handling von Systemfehlern](api/external_task_api/tasks/handle-system-errors.md)
-   * [Abschließen eines ExernalTasks](api/external_task_api/tasks/finish-external-task.md)
+   * [Abschließen eines ExternalTasks](api/external_task_api/tasks/finish-external-task.md)
 
 1. [ManagementAPI](api/management-api.md)
 

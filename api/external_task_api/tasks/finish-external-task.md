@@ -1,4 +1,4 @@
-# Abschließen von ExernalTasks
+# Abschließen von ExternalTasks
 
 ## Ziel/UseCase
 

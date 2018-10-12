@@ -4,7 +4,7 @@
 
 Dieser UseCase dient dazu, es dem Worker zu ermöglichen Systemfehler, die
 während der Ausführung von ExternalTasks aufgetreten sind, an die
-ExernalTaskAPI zu übermitteln.
+ExternalTasksAPI zu übermitteln.
 
 Die API wird diesen Task dann entsprechend mit dem angegebenen Fehler versehen
 und als "fehlgeschlagen" markieren.

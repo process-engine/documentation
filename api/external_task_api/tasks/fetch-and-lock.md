@@ -6,7 +6,7 @@ Bezieht eine Liste aller ExternalTasks zu einem bestimmten Topic, die derzeit
 zur Verarbeitung bereit stehen.
 Die ermittelten Tasks werden für einen durch den Worker festgelegten Zeitraum
 für diesen reserviert.
-In dieser Zeit kann kein anderer Worker diese tasks bearbeiten.
+In dieser Zeit kann kein anderer Worker diese Tasks bearbeiten.
 
 ## Zugriffsberechtigungen
 

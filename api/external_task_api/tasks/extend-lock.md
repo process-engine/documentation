@@ -2,7 +2,7 @@
 
 ## Ziel/UseCase
 
-Ermöglicht es einem Worker die Reservierungdauer ("lockoutDuration") für einen
+Ermöglicht es einem Worker die Reservierungsdauer ("lockoutDuration") für einen
 ExternalTask zu verlängern.
 Die Dauer ist in ms anzugeben und geht von der aktuellen Uhrzeit aus.
 
@@ -27,7 +27,7 @@ verlängert
 - `externalTaskId`: Die ID des ExternalTask, für welche der Worker seine
 Reservierung verlängern will
 - `additionalDuration`: Die Zeit in ms, ausgehend vom aktuellen Datum, um
-welche der Worker die Reservierung des ExernalTasks verlängern will
+welche der Worker die Reservierung des ExternalTasks verlängern will
 
 ### Optionale Parameter
 

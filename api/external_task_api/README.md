@@ -45,7 +45,7 @@ Dieses Konzept gilt als Leitfaden für **sämtliche** technischen Implementierun
 
 * [ExternalTasks abrufen und sperren](./tasks/fetch-and-lock.md)
 * [Sperrzeiten verlängern](./tasks/extend-lock.md)
-* [Abschließen von ExernalTasks](./tasks/finish-external-task.md)
+* [Abschließen von ExternalTasks](./tasks/finish-external-task.md)
 * [Behandeln von BPMN Fehlern](./tasks/handle-bpmn-errors.md)
 * [Behandeln von Systemfehlern](./tasks/handle-system-errors.md)
 
