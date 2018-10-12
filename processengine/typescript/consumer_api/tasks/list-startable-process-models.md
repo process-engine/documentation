@@ -10,12 +10,12 @@ Siehe [Konzept zum Auflisten startbarer Prozessmodelle](../../../../api/consumer
 ```TypeScript
 import {
   ConsumerContext,
-  IConsumerApiService,
+  IConsumerApi,
   ProcessModelList
 } from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {
@@ -77,12 +77,12 @@ auszuführen
 ```TypeScript
 import {
   ConsumerContext,
-  IConsumerApiService,
+  IConsumerApi,
   ProcessModelList
 } from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {

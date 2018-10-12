@@ -87,6 +87,6 @@ GET /correlations/:correlationId/events
 GET /process_models/:process_model_key/correlations/:correlationId/events
 ```
 
-### IConsumerApiService Schnittstelle
+### IConsumerApi Schnittstelle
 
 > TODO: Schnittstelle definieren

@@ -61,6 +61,6 @@ POST /process_models/{process_model_key}/correlations/{correlation_id}/events/{e
 // TODO: define request body/the event trigger payload
 ```
 
-### IConsumerApiService Schnittstelle
+### IConsumerApi Schnittstelle
 
 > TODO: Schnittstelle definieren

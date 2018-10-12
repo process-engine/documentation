@@ -5,16 +5,16 @@ der ConsumerAPI erläutert.
 
 Die Schnittstellen sind im Paket `@process-engine/consumer_api_contracts` definiert.
 
-## IConsumerApiService
+## IConsumerApi
 
-Das IConsumerApiService Interface stellt die Schnittstellen bereit, die sowohl
+Das IConsumerApi Interface stellt die Schnittstellen bereit, die sowohl
 in `ConsumerApiCore`, als auch in `ConsumerApiClient` verwendet werden.
 
 Dadurch ist gewährleistet, dass beide Komponenten sich auf die gleiche Art
 verwenden und leicht austauschen lassen.
 
 ```TypeScript
-export interface IConsumerApiService {
+export interface IConsumerApi {
   // Get Process models
   getProcessModels(context: ConsumerContext): Promise<ProcessModelList>;
 
@@ -212,7 +212,7 @@ export class UserTaskConfig {
 ### UserTaskResult
 
 `UserTaskResult` beschreibt den Payload, den man einem UserTask bei dessen
-Abschluss mitgeben kann (Siehe `finishUserTask` in `IConsumerApiService`).
+Abschluss mitgeben kann (Siehe `finishUserTask` in `IConsumerApi`).
 
 ```TypeScript
 export class UserTaskResult {

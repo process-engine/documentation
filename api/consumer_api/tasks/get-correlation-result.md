@@ -80,9 +80,9 @@ Die HTTP-Route für die Schnittstelle sieht so aus:
 GET /correlations/:correlationId}/process_models/:process_model_key/result
 ```
 
-## IConsumerApiService Schnittstelle
+## IConsumerApi Schnittstelle
 
-Die `IConsumerApiService` Schnittstelle implementiert diesen UseCase über die
+Die `IConsumerApi` Schnittstelle implementiert diesen UseCase über die
 Methode `getProcessResultForCorrelation`.
 
 Diese Methode erwartet die oben beschriebenen Parameter

@@ -5,12 +5,12 @@ Siehe [Konzept zum Auflisten wartender UserTasks](../../../../api/consumer_api/t
 ```TypeScript
 import {
   ConsumerContext,
-  IConsumerApiService,
+  IConsumerApi,
   UserTaskList
 } from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {

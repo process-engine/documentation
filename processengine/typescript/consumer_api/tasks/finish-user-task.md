@@ -3,10 +3,10 @@
 Siehe [Konzept zum Beenden wartender UserTasks](../../../../api/consumer_api/tasks/finish-user-task.md).
 
 ```TypeScript
-import {ConsumerContext, IConsumerApiService, UserTaskResult} from '@process-engine/consumer_api_contracts';
+import {ConsumerContext, IConsumerApi, UserTaskResult} from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {

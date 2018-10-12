@@ -5,14 +5,14 @@ Siehe [Konzept zum Starten von Prozessinstanzen](../../../../api/consumer_api/ta
 ```TypeScript
 import {
   ConsumerContext,
-  IConsumerApiService,
+  IConsumerApi,
   ProcessStartResponsePayload,
   ProcessStartResponsePayload,
   StartCallbackType,
 } from '@process-engine/consumer_api_contracts';
 
 // Retrieve through dependency injection
-const consumerApiService: IConsumerApiService;
+const consumerApiService: IConsumerApi;
 
 // The JWT token must be provided by the implementing application
 const context: ConsumerContext = {

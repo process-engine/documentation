@@ -30,12 +30,12 @@ im Detail erklärt.
 ### ConsumerApiContracts
 
 Dieses Paket definiert die gemeinsam genutzten Schnittstellen.
-Neben einem `IConsumerApiService` Interface, welches die gemeinsam genutzten
+Neben einem `IConsumerApi` Interface, welches die gemeinsam genutzten
 Funktionen definiert, sind hier auch die Messagebuspfade und REST-Routen
 definiert, über welche die ConsumerAPI Pakete miteinander kommunizieren.
 
 Sowohl `ConsumerApiClient` als auch `ConsumerApiCore` leiten
-ihre Schnittstellen aus dem `IConsumerApiService` Interface ab, wodurch
+ihre Schnittstellen aus dem `IConsumerApi` Interface ab, wodurch
 sichergestellt ist, dass sich beide Komponenten auf die exakt gleiche Art
 verwenden lassen.
 
