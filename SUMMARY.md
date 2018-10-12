@@ -77,6 +77,15 @@
       * [Erhalten von SystemEvents](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
       * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
 
+1. [ExternalTaskAPI](api/external_task_api/README.md)
+
+   * [Technischer Aufbau](api/external_task_api/technical-specifications.md)
+   * [ExternalTasks abrufen und sperren](api/external_task_api/tasks/fetch-and-lock.md)
+   * [Sperrzeit eines ExternalTasks verlängern](api/external_task_api/tasks/extend-lock.md)
+   * [Handling von BPMN-Fehlern](api/external_task_api/tasks/handle-bpmn-errors.md)
+   * [Handling von Systemfehlern](api/external_task_api/tasks/handle-system-errors.md)
+   * [Abschließen eines ExternalTasks](api/external_task_api/tasks/finish-external-task.md)
+
 1. [ManagementAPI](api/management-api.md)
 
 ## ProcessEngine
