@@ -39,7 +39,7 @@ ihre Schnittstellen aus dem `IExternalTaskApi` Interface ab, wodurch
 sichergestellt ist, dass sich beide Komponenten auf die exakt gleiche Art
 verwenden lassen.
 
-Dieser Aufbau gewährleistet auch die geforderte Austauschbarkeit, da es durch
+Dieser Aufbau gewährleistet auch eine einfache Austauschbarkeit, da es durch
 diese Architektur mit nur wenig Aufwand möglich ist eine interne ProcessEngine
 gegen eine ausgelagerte zu tauschen, oder umgekehrt.
 
@@ -48,8 +48,8 @@ gegen eine ausgelagerte zu tauschen, oder umgekehrt.
 Der `ExternalTaskApiClient` ist für externe Anwendungen die primäre Komponente zur
 Verwendung der ExternalTaskApi.
 
-Dieser Client kann sowohl mit einer in der Anwendung integrierten ProcessEngine
-kommunizieren, als auch mit externen ProcessEngines, kommunizieren.
+Dieser Client kann sowohl mit einer in der Anwendung integrierten, als auch mit
+externen ProcessEngines kommunizieren.
 
 Um die einfache Austauschbarkeit der ProcessEngine zu gewährleisten, sollte
 jedwede Kommunikation mit der ProcessEngine über die ExternalTaskApi abgewickelt
@@ -66,7 +66,7 @@ In einer Anwendung mit integrierter ProcessEngine wird dieses Paket durch den
 `ExternalTaskApiClient` direkt angesteuert.
 
 Wenn eine externe ProcessEngine angesteuert werden soll, wird dieses Paket
-in die Anwendung implementiert, in welcher sich die ProcessEngine befindet.
+in die Anwendung implementiert, in welcher sich diese befindet.
 
 ### ExternalTaskApiHttp
 
@@ -74,7 +74,7 @@ Wird eine externe ProcessEngine verwendet, dient das Paket `ExternalTaskApiHttp`
 als Schnittstelle für den `ExternalTaskApiClient` um mit dem
 `ExternalTaskApiCore` zu kommunizieren.
 
-Das Paket muss sich stehts in der gleichen Anwendung wie `ExternalTaskApiCore`
+Das Paket muss sich stets in der gleichen Anwendung wie `ExternalTaskApiCore`
 befinden.
 
 ### REST/Messagebus-Schnittstelle
