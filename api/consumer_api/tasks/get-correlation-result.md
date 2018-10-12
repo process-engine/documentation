@@ -77,7 +77,7 @@ Mögliche auftretende Fehler sind:
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
 ```JavaScript
-GET /correlations/:correlationId}/process_models/:process_model_key/result
+GET /correlations/:correlationId/process_models/:process_model_key/result
 ```
 
 ## IConsumerApi Schnittstelle

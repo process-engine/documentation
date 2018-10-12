@@ -55,7 +55,7 @@ Mögliche auftretende Fehler sind:
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
 ```JavaScript
-POST /process_models/{process_model_key}/correlations/{correlation_id}/events/{event_id}/trigger
+POST /process_models/:process_model_key/correlations/:correlation_id/events/:event_id/trigger
 
 // body
 // TODO: define request body/the event trigger payload

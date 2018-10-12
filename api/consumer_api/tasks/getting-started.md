@@ -3,13 +3,13 @@
 Um einen ersten Überblick in die Arbeitsweise mit der API zu erhalten, wird
 hier ein Überblick über die Grundlegenden Routen und Parameter gegeben.
 
-Tipp: Um bei den Abfragen Ergebnisse zu erhalten, muss mindestens ein 
+Tipp: Um bei den Abfragen Ergebnisse zu erhalten, muss mindestens ein
 ausführbares Diagramm vorhanden sein.
 
 ## Routen
 
-Bei standardmäßiger Installation ist der API Server unter 
-`http://localhost:8000` erreichbar. 
+Bei standardmäßiger Installation ist der API Server unter
+`http://localhost:8000` erreichbar.
 
 Es müssen daher alle Routen in diesem Tutorial um die Serveradresse ergänzt
 werden.
@@ -28,7 +28,7 @@ GET http://localhost:8000/api/consumer/v1/process_models
 
 ## Alle Prozessmodelle abfragen
 
-Die nachfolgende Abfrage zeigt alle Prozesse an, die den Kriterien unter 
+Die nachfolgende Abfrage zeigt alle Prozesse an, die den Kriterien unter
 [Auflisten startbarer Prozessmodelle](list-startable-process-models.md)
 entsprechen.
 
@@ -60,12 +60,12 @@ GET /api/consumer/v1/process_models
 
 ## Prozessmodell abfragen
 
-Mehr Informationen unter [Einzelnes Prozessmodell 
+Mehr Informationen unter [Einzelnes Prozessmodell
 abfragen](list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
 entsprechen.
 
 ```REST
-GET /api/consumer/v1/process_models/<processmodels_id>
+GET /api/consumer/v1/process_models/:process_model_id
 ```
 
 **Beispiel**:
@@ -94,7 +94,7 @@ GET /api/consumer/v1/process_models/HelloWorld
 ## Events anzeigen
 
 ```REST
-GET /api/consumer/v1/process_models/<processmodels_id>/events
+GET /api/consumer/v1/process_models/:process_model_id/events
 ```
 
 **Beispiel**:
@@ -118,7 +118,7 @@ GET /api/consumer/v1/process_models/HelloWorld/events
 ## UserTasks anzeigen
 
 ```REST
-GET /api/consumer/v1/process_models/<processmodels_id>/user_tasks
+GET /api/consumer/v1/process_models/:process_model_id/user_tasks
 ```
 
 **Beispiel**:
@@ -156,7 +156,7 @@ Mehr Informationen unter [Starten von Prozessinstanzen
 ](api/consumer_api/tasks/start-process-instance.md) entsprechen.
 
 ```REST
-POST /api/consumer/v1/process_models/<processmodels_id>/start_events/<start_event_id>/start?start_callback_type=<callback_type>
+POST /api/consumer/v1/process_models/:process_model_id/start_events/:start_event_id/start?start_callback_type=<callback_type>
 ```
 
 Die Prozessinstanz wird gestartet und es wird bei `callback_type`
@@ -218,7 +218,7 @@ POST /api/consumer/v1/process_models/HelloWorld/start_events/StartEvent_1mox3jl/
 ## Ergebnisse anzeigen
 
 ```REST
-GET /api/consumer/v1/correlations/<correlation_id>/process_models/<processmodels_id>/results
+GET /api/consumer/v1/correlations/:correlation_id/process_models/:process_model_id/results
 ```
 
 **Beispiel**:
@@ -244,7 +244,7 @@ GET /api/consumer/v1/correlations/c5433825-ed03-4df4-b391-391e84b51f95/process_m
 ## Events von Ergebnissen anzeigen
 
 ```REST
-GET /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events
+GET /api/consumer/v1/process_models/:process_model_id/correlations/:correlation_id/events
 ```
 
 **Beispiel**:
@@ -268,7 +268,7 @@ GET /api/consumer/v1/process_models/HelloWorld/correlations/c5433825-ed03-4df4-b
 ## Events von Ergebnissen triggern
 
 ```REST
-POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/events/<event_id>/trigger
+POST /api/consumer/v1/process_models/:process_model_id/correlations/:correlation_id/events/:event_id/trigger
 ```
 
 **Beispiel**:
@@ -285,15 +285,15 @@ Not implemented yet!
 
 ```JSON
 Content-Type: application/json,
-payload: {  
-   "formFields":{  
+payload: {
+   "formFields":{
       "<form_field>":"<form_value>"
    }
 }
 ```
 
 ```REST
-POST /api/consumer/v1/process_models/<processmodels_id>/correlations/<correlation_id>/user_tasks/<user_task_id>/finish
+POST /api/consumer/v1/process_models/:process_model_id/correlations/:correlation_id/user_tasks/:user_task_id/finish
 ```
 Bei erfolgreicher Ausführung ist der Statuscode **204** und die Response ist leer.
 

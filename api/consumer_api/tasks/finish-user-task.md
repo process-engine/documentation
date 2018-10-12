@@ -59,7 +59,7 @@ Mögliche auftretende Fehler sind:
 Die HTTP-Route für die Schnittstelle sieht so aus:
 
 ```JavaScript
-POST /process_models/{process_model_key}/correlations/{correlation_id}/user_tasks/{user_task_id}/finish
+POST /process_models/:process_model_key/correlations/:correlation_id/user_tasks/:user_task_id/finish
 
 // body
 {
