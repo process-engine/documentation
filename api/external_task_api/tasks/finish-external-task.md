@@ -22,7 +22,7 @@ sind zu sehen.
 - Es wird der passende ExternalTask abgefragt
 - Es wird geprüft, ob der anfragende Worker berechtigt ist den ExternalTask
 zu beenden
-- Ist dies der Fall, wird der ExternalTask mit dem mitgegebenen Ergebnis beendet
+  - Ist dies der Fall, wird der ExternalTask mit dem mitgegebenen Ergebnis beendet
 - Anschließend wird die ProcessEngine über die Beendigung des ExternalTasks
 informiert
 

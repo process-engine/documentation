@@ -17,10 +17,12 @@ durch einen anderen Worker reserviert wurden.
 ## Was passiert in der ProcessEngine
 
 - Es werden alle verfügbaren ExternalTasks zu dem gegebenen Topic abgefragt
-- ExternalTasks die derzeit durch andere Worker gesperrt sind werden gefiltert,
-genauso wie jene, die bereits beendet wurden
-- Die verbleibenen Tasks werden für den anfragenden Worker für einen bestimmten
-Zeitraum reserviert
+- ExternalTasks die derzeit durch andere Worker gesperrt sind werden gefiltert
+  - Bereits beendete Tasks werden ebenfalls gefiltert
+- Die verbleibenen ExternalTasks werden für den anfragenden Worker für einen
+bestimmten Zeitraum reserviert
+  - Während dieser Zeit kann kein anderer Worker auf diese ExternalTasks
+  zugreifen
 - Die angefragten Tasks werden an den Worker zurück gegeben
 
 ## Parameter

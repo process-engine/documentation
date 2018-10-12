@@ -17,7 +17,7 @@ verarbeiten hat.
 Im Normalfall sollte es sich dabei aber um Aufgaben handeln, für welche die
 ProcessEngine besondere Kenntnisse über BusinessLogic, oder technische
 Implementierungen haben müsste, die über den Standard Anwendungsfall
-(invoken einer Service methode) hinaus gehen.
+(aufrufen einer Service methode) hinaus gehen.
 
 Ein Beispiel dafür wäre das Absetzen von HTTP Calls.
 Hier müsste der Handler der ProcessEngine wissen, wie man diese Calls ausführt

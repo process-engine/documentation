@@ -16,7 +16,7 @@ Ebenfalls darf der ExternalTask noch nicht abgeschlossen sein.
 
 - Es wird der ExternalTask abgefragt, den der Worker weiter reservieren möchte
 - Es wird geprüft ob der Worker den Task bearbeiten darf
-- Falls dies der Fall ist, wird die `lockoutDuration` des ExternalTasks
+  - Falls dies der Fall ist, wird die `lockoutDuration` des ExternalTasks
 verlängert
 
 ## Parameter

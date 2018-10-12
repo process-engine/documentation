@@ -25,7 +25,7 @@ die sie auch berechtigt sind zu bearbeiten.
 - Es wird der passende ExternalTask abgefragt
 - Es wird geprüft, ob der anfragende Worker berechtigt ist den ExternalTask
 zu bearbeiten
-- Ist dies der Fall, wird der ExternalTask mit dem mitgegebenen Fehler beendet
+  - Ist dies der Fall, wird der ExternalTask mit dem mitgegebenen Fehler beendet
 - Anschließend wird die ProcessEngine über die Beendigung des ExternalTasks
 informiert
 
