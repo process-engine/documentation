@@ -26,7 +26,7 @@ verlängert
 - `workerId`: Die ID des anfragenden Workers.
 - `externalTaskId`: Die ID des ExternalTask, für welche der Worker seine
 Reservierung verlängern will
-- `additionalDuration`: Die Zeit in ms, ausgehend vom aktuellen Datum, um
+- `additionalDuration`: Die Zeit in ms, ausgehend vom aktuellen Zeitpunkt, um
 welche der Worker die Reservierung des ExternalTasks verlängern will
 
 ### Optionale Parameter

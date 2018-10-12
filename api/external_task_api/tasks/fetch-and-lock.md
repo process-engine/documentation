@@ -55,7 +55,7 @@ Daraus ergibt sich z.B. folgende Response:
 [{
   "id": "ExternalTask1",
   "workerId": "Worker1",
-  "topic": "some_samle_topic",
+  "topic": "some_sample_topic",
   "flowNodeInstanceId": "1234567",
   "correlationId": "23gb20tz51f",
   "processInstanceId": "2ncb13ßfg1b3g4g",
@@ -66,7 +66,7 @@ Daraus ergibt sich z.B. folgende Response:
 }, {
   "id": "ExternalTask2",
   "workerId": "Worker1",
-  "topic": "some_samle_topic",
+  "topic": "some_sample_topic",
   "flowNodeInstanceId": "374573495",
   "correlationId": "3b0vfg123f43b",
   "processInstanceId": "ß2cbß12fb1ß2hf",
@@ -98,7 +98,7 @@ Es wird ein Post Body in folgendem Format erwartet:
 ```JSON
 {
   "workerId": "Worker1",
-  "topicName": "some_samle_topic",
+  "topicName": "some_sample_topic",
   "maxTasks": 2,
   "longPollingTimeout": 500,
   "lockDuration": 30000
