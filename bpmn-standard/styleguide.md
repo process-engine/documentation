@@ -104,18 +104,18 @@ BPMN-Diagramm in mehrere Flüsse auf, oder führen mehrere Flüsse wieder zusamm
 Beachte folgende Regeln zum korrekten Modellieren von
 [Gateways](../GLOSSARY.md#gateway):
 
-1. Ein Split-Gateway hat einen eingehenden und einen oder mehrere ausgehende
+1. Ein Split Gateway hat einen eingehenden und einen oder mehrere ausgehende
    Pfeile.
 
    ![Beispiel Split Gateway](./assets/example_split_gateway.svg)
 
-1. Ein Join-Gateway hat einen oder mehrere eingehende und einen ausgehenden
+1. Ein Join Gateway hat einen oder mehrere eingehende und einen ausgehenden
    Pfeil.
 
    ![Beispiel Split Join Gateway](./assets/example_split_join_gateway.svg)
 
-1. Split- und Join-Gateways korrespondieren (z.B. XOR-Split-Gateway mit
-   XOR-Join-Gateway).
+1. Split- und Join Gateways korrespondieren (z.B. Exclusive Split Gateway mit
+   Exclusive Join Gateway).
 
 ## Weitere Regeln
 
