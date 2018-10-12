@@ -3,7 +3,7 @@
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
 
-Es folgt eine Anleitung zur schrittweisen Erstellung des Diagramms. Das fertige Diagramm kann 
+Es folgt eine Anleitung zur schrittweisen Erstellung des Diagramms. Das fertige Diagramm kann
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/RestAPI)
 heruntergeladen werden.
 
@@ -11,19 +11,15 @@ Erstelle dazu ein neues Diagramm, analog zum Hello World Beispiel.
 
 Erstelle dann:
 
-* einen
-  [Service Task](../../GLOSSARY.md#service-task),
-  um Daten zu laden und einen
-* [User Task](../../GLOSSARY.md#user-task),
-  um die Daten anzuzeigen.
+* einen Service Task, um Daten zu laden und einen
+* User Task, um die Daten anzuzeigen.
 
 Das Ganze sollte so aussehen:
 
 {% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
-Innerhalb des Property Panels lässt sich nun mittels Key-Value Paaren der
-[Service Task](../../GLOSSARY.md#service-task)
-definieren.
+Innerhalb des Property Panels lässt sich nun mittels Key-Value Paaren
+der Service Task definieren.
 
 In unserem Fall soll der `Fetch Data` Task einen `GET - request` auf der
 angegebenen URL ausführen. Die Antwort wird anschließend als aktueller Token
@@ -42,9 +38,8 @@ Zum Vergleich, so sollte das aussehen:
 
 <img src="../images/getting-started/http-rest-api/configure-fetch-data-service-task.png" width="100%" />
 
-Zum Schluss muss der
-[User Task](../../GLOSSARY.md#user-task)
-(`Show Data`) konfiguriert werden, um die korrekte Anzeige zu erreichen.
+Zum Schluss muss der User Task (`Show Data`) konfiguriert werden, um
+die korrekte Anzeige zu erreichen.
 
 Dies geschieht wieder über das Property Panel.
 
@@ -78,12 +73,8 @@ Zusammengefasst sieht dergesamte Konfigurationsvorgang so aus:
 
 In diesem Tutorial haben wir:
 
-1. Einen
-   [Service Task](../../GLOSSARY.md#service-task)
-   zum Ausführen des HTTP GET Requests definiert.
-1. Einen
-   [User Task](../../GLOSSARY.md#user-task)
-   angelegt, der uns den gewünschten Umrechnungskurs anschaulich darstellt
+1. Einen Service Task zum Ausführen des HTTP GET Requests definiert.
+1. Einen User Task angelegt, der uns den gewünschten Umrechnungskurs anschaulich darstellt
 
 Es ist nun Zeit, den Prozess auszuführen:
 
