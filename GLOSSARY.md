@@ -173,15 +173,15 @@ verschiedenen Typen siehe: https://camunda.com/bpmn/reference/#activities-task
 ## Token
 
 Der Token beschreibt ein Objekt, welches beim Prozessablauf über die
-Sequenzflüsse hinweg von Knoten zu Knoten mitgereicht wird.  Die
+Sequenzflüsse hinweg von Knoten zu Knoten mitgereicht wird. Die
 durchwanderten Knoten können den Token anreichern und Informationen
 von ihm abfragen.
 
 Beim Prozessstart wird automatisch ein leerer Token
-generiert. Prozesse können auch mit bereits angereichten Tokens
+generiert. Prozesse können auch mit bereits angereichten Token
 gestartet werden (etwa über Call Activities).
 
-Tokens bieten die Möglichkeit des Transports von Informationen über
+Token bieten die Möglichkeit des Transports von Informationen über
 Elemente innerhalb eines Diagramms und auch zu anderen Prozessen.
 
 ## User Task
