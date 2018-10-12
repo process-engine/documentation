@@ -35,7 +35,7 @@ Die Schnittstelle hat keine optionalen Parameter.
 
 ## Ergebnis/Rückgabewerte
 
-Im Erfolgsfall wird kein Ergebnis zurück gegeben.
+War der Request erfolgreich, wird kein Ergebnis zurück gegeben.
 
 ## Fehler, die erwartet werden müssen
 
@@ -67,9 +67,9 @@ Es wird ein Post Body in folgendem Format erwartet:
 }
 ```
 
-## IExternalTaskApiService Schnittstelle
+## IExternalTaskApi Schnittstelle
 
-Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
+Die `IExternalTaskApi` Schnittstelle implementiert diesen UseCase
 über die Methode `extendLock`.
 
 Die Methode erwartet die oben beschriebenen Parameter.

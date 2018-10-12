@@ -42,7 +42,7 @@ Die Funktion hat keine optionalen Parameter.
 
 ## Ergebnis/Rückgabewerte
 
-Bei Erfolg ist das Ergebnis leer.
+War der Request erfolgreich, wird kein Ergebnis zurück gegeben.
 
 ## Fehler, die erwartet werden müssen
 
@@ -85,9 +85,9 @@ Alternativ kann `result` auch ein JSON Objekt sein:
 }
 ```
 
-## IExternalTaskApiService Schnittstelle
+## IExternalTaskApi Schnittstelle
 
-Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
+Die `IExternalTaskApi` Schnittstelle implementiert diesen UseCase
 über die Methode `finishExternalTask`.
 
 Die Methode erwartet die oben beschriebenen Parameter.

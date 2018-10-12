@@ -40,11 +40,11 @@ informiert
 
 ### Optionale Parameter
 
-- `errorDetails`: Weiterführende Details über den aufgetretenen Fehler.
+- `errorDetails`: Weitere Details zu dem aufgetretenen Fehler.
 
 ## Ergebnis/Rückgabewerte
 
-Bei Erfolg ist das Ergebnis leer.
+War der Request erfolgreich, wird kein Ergebnis zurück gegeben.
 
 ## Fehler, die erwartet werden müssen
 
@@ -77,9 +77,9 @@ Es wird ein Post Body in folgendem Format erwartet:
 }
 ```
 
-## IExternalTaskApiService Schnittstelle
+## IExternalTaskApi Schnittstelle
 
-Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
+Die `IExternalTaskApi` Schnittstelle implementiert diesen UseCase
 über die Methode `handleSystemError`.
 
 Die Methode erwartet die oben beschriebenen Parameter.

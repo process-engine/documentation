@@ -44,7 +44,7 @@ Die Funktion hat keine optionalen Parameter.
 
 ## Ergebnis/Rückgabewerte
 
-Bei Erfolg ist das Ergebnis leer.
+War der Request erfolgreich, wird kein Ergebnis zurück gegeben.
 
 ## Fehler, die erwartet werden müssen
 
@@ -76,9 +76,9 @@ Es wird ein Post Body in folgendem Format erwartet:
 }
 ```
 
-## IExternalTaskApiService Schnittstelle
+## IExternalTaskApi Schnittstelle
 
-Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
+Die `IExternalTaskApi` Schnittstelle implementiert diesen UseCase
 über die Methode `handleBpmnError`.
 
 Die Methode erwartet die oben beschriebenen Parameter.

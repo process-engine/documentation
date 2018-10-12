@@ -108,9 +108,9 @@ Es wird ein Post Body in folgendem Format erwartet:
 }
 ```
 
-## IExternalTaskApiService Schnittstelle
+## IExternalTaskApi Schnittstelle
 
-Die `IExternalTaskApiService` Schnittstelle implementiert diesen UseCase
+Die `IExternalTaskApi` Schnittstelle implementiert diesen UseCase
 über die Methode `fetchAndLockExternalTasks`.
 
 Die Methode erwartet die oben beschriebenen Parameter.
