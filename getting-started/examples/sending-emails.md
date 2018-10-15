@@ -5,8 +5,15 @@ Das fertige Diagramm kann
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/SendEmail)
 heruntergeladen werden.
 
-Dazu muss der Prozess um die folgenden drei
-Tasks erweitert werden:
+## Motivation
+
+Wir wollen mit diesem Beispiel zeigen, wie:
+
+* der interne Email-Services der ProcessEngine verwendet wird.
+* Benutzer zur Interaktion aufgefordert werden.
+* eine Bestätigung des Benutzers zur Ablaufsteuerung verwendet wird.
+
+## Prozessschritte anlegen
 
 Wir erstellen ein Diagramm mit folgenden Bestandteilen:
 
