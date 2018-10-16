@@ -1,4 +1,4 @@
-# User Guide
+# Leitfäden
 
 In dieser Sektion befinden sich Erklärungen zur Verwendung des BPMN-Studio.
 Hier sollen Konzepte erklärt und Tipps für die Benutzung gegeben werden.
