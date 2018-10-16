@@ -3,18 +3,35 @@
 ## Intro Process-Engine.io
 
 1. [Motivation](think-design-inspect/README.md#)
+<!-- Alles, was wir am 10.10 vorgestellt haben in dem Abschnitt -->
+1. [Warum eine weitere Workflow-Engine?](think-design-inspect/README.md#Warum)
+<!-- Reduzierung der Translationskosten -->
+1. [Mehrwert](think-design-inspect/README.md#Mehrwert)
+<!-- Projektspezifische VS unsere PE -->
+1. [Unterschiede](think-design-inspect/README.md#Unterschiede)
 
-   1. [Mehrwert](think-design-inspect/README.md#Mehrwert)
+<!-- Warum will man unsere PE benutzen?! -->
+1. [Facts to Know](README.md)
 
-1. [Denken-Malen-Messen](think-design-inspect/README.md)
 1. [Zielpersonen](think-design-inspect/README.md#Zielpersonen)
+
+   <!-- TODO: Links korrekt setzen -->
+   1. [Prozess-Ersteller](README.md)
+   1. [Prozess-Beteiligte](README.md)
+   1. [Laufzeitumgebung](README.md)
+
 1. [Bestandteile Process-Engine.io](README.md#process-engine)
 
+   1. [APIs](README.md#apis)
+   1. [Process-Engine](README.md#??)
    1. [Vorgehensmodell](README.md#??)
-   1. [APIs -> Rename to Dömänen](README.md#apis)
-   1. [Process-Engine.ts](README.md#??)
-   1. [Process-Engine.NET](README.md#??)
    1. [BPMN-Studio](README.md#bpmn-studio)
+
+1. [Denken-Malen-Messen](think-design-inspect/README.md)
+
+   1. [Developer](README.md)
+   1. [Operator](README.md)
+   1. [Boss](README.md)
 
 ## Getting-Started
 
@@ -29,24 +46,22 @@
 
 1. [Überblick](bpmn-studio/ueberblick.md)
 
-   1. Think
-   1. Design
-   1. Inspect
+   1. [Think](think-design-inspect/README.md)
+   1. [Design](think-design-inspect/README.md)
+   1. [Inspect](think-design-inspect/README.md)
 
 1. [Komponenten](bpmn-studio/components/README.md)
 
-   1. Think
+   1. [Think](bpmn-studio/components/plan-view/plan-view.md)
       1. [Solution Explorer](bpmn-studio/components/solution-explorer/solution-explorer.md)
 
-   <!-- 1. [Think-Ansicht](bpmn-studio/components/plan-view/plan-view.md) -->
-
-   1. [Design-Ansicht](bpmn-studio/components/design-view/design-view.md)
+   1. [Design](bpmn-studio/components/design-view/design-view.md)
 
       1. [Diff-Ansicht](bpmn-studio/components/diff-view/diff-view.md)
       1. [XML-Ansicht](bpmn-studio/components/xml-view/xml-view.md)
       1. [Waiting Room](bpmn-studio/components/waiting-room/waiting-room.md)
 
-   1. [Inspect-Ansicht](bpmn-studio/components/dashboard/dashboard.md)
+   1. [Inspect](bpmn-studio/components/dashboard/dashboard.md)
 
    1. [Settings](bpmn-studio/components/settings/settings.md)
    1. [Login](bpmn-studio/components/login/login.md)
@@ -64,13 +79,14 @@
 
 1. [Auto Updater](bpmn-studio/auto-updater.md)
 
-## ProcessEngine Domänen
+## Process-Engine.io Domänen
 
+1. Motivation
 1. Management Domäne
 1. Consumer Domäne
 1. Runtime Domäne
 
-## APIs in den Domänen
+## APIs
 
 1. [ConsumerAPI](api/consumer_api/README.md)
 
@@ -119,6 +135,7 @@
 
 1. [ManagementAPI](api/management-api.md)
 
+<!-- TODO: Check if the whole section can be removed -->
 ## ProcessEngine
 
 1. [TypeScript](processengine/typescript/README.md)

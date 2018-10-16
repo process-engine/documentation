@@ -1,5 +1,7 @@
 # Einleitung
 
+<!-- TODO: Eine Einleitung schreiben -->
+
 ## Was ist ProcessEngine.io?
 
 Das Ziel von ProcessEngine.io ist die Gestaltung von Software-Projekten mit
@@ -34,9 +36,9 @@ Das BPMN-Studio ist die integrierte Entwicklungsumgebung für Geschäftsprozesse
 
 Mit dieser Software lassen sich:
 
-* Geschäftsprozesse modellieren
-* Prozesse für die Ausführung deployen
-* Prozesse analysieren und optimieren
+* Geschäftsprozesse modellieren,
+* Prozesse für die Ausführung deployen und
+* Prozesse analysieren und optimieren.
 
 #### Weiterführende Links
 
