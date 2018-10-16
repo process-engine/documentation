@@ -38,6 +38,8 @@
    1. [Login](bpmn-studio/components/login/login.md)
    1. [Waiting Room](bpmn-studio/components/waiting-room/waiting-room.md)
 1. [User Guide](bpmn-studio/user-guide/README.md)
+   1. [Think](bpmn-studio/user-guide/think/think.md)
+   1. [Design](bpmn-studio/user-guide/design/design.md)
    1. [Basic Editing](bpmn-studio/user-guide/basic-editing/basic-editing.md)
    1. [Deployment of ProcessModels](bpmn-studio/user-guide/deploy/deploy.md)
    1. [Starting a Process](bpmn-studio/user-guide/start/start.md)
