@@ -8,7 +8,7 @@
 
 ## Zielpersonen
 
-1. Prozess-Ersteller
+### Prozess-Ersteller
 
 * entwirft die Prozesslandschaft
 * designed und deployed die Prozessmodelle
@@ -22,7 +22,7 @@ Sie designen und deployen die Prozessmodelle.
 Wenn die Prozesse dann in der ProcessEngine ablaufen, beobachten sie die
 Ausführung.
 
-1. Prozess-Beteiligte
+### Prozess-Beteiligte
 
 * Prozesse starten/beenden
 * Benutzer Tasks bearbeiten
@@ -38,8 +38,7 @@ BPMN-Standard) bearbeitet.
 Vielleicht sogar ein Programm, welches externe Task bearbeitet oder Prozesse
 mit Events benachrichtigt.
 
-
-1. Laufzeitumgebung
+### Laufzeitumgebung
 
 * Unterstützung für die Ausführung der ProcessEngine
 
