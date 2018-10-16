@@ -1,24 +1,26 @@
 # Summary
 
-## Intro Process-Engine.io
-
-1. [Motivation](think-design-inspect/README.md#)
-<!-- Alles, was wir am 10.10 vorgestellt haben in dem Abschnitt -->
-1. [Warum eine weitere Workflow-Engine?](think-design-inspect/README.md#Warum)
-<!-- Reduzierung der Translationskosten -->
-1. [Mehrwert](think-design-inspect/README.md#Mehrwert)
-<!-- Projektspezifische VS unsere PE -->
-1. [Unterschiede](think-design-inspect/README.md#Unterschiede)
+## ProcessEngine
 
 <!-- Warum will man unsere PE benutzen?! -->
 1. [Facts to Know](README.md)
 
-1. [Zielpersonen](think-design-inspect/README.md#Zielpersonen)
+## Intro Process-Engine.io
 
+1. [Motivation](think-design-inspect/README.md)
+<!-- Alles, was wir am 10.10 vorgestellt haben in dem Abschnitt -->
+   1. [Warum eine weitere Workflow-Engine?](think-design-inspect/README.md#Warum)
+<!-- Reduzierung der Translationskosten -->
+   1. [Mehrwert](think-design-inspect/README.md#Mehrwert)
+   1. [Ziele](think-design-inspect/README.md#Ziele)
+<!-- Projektspezifische VS unsere PE -->
+<!-- 1. [Unterschiede](think-design-inspect/README.md#Unterschiede) -->
+<!-- Wen sprechen wir an? -->
+1. [Zielgruppen](think-design-inspect/README.md#Zielpersonen)
    <!-- TODO: Links korrekt setzen -->
-   1. [Prozess-Ersteller](README.md)
-   1. [Prozess-Beteiligte](README.md)
-   1. [Laufzeitumgebung](README.md)
+   1. [Prozess-Ersteller](think-design-inspect/README.md#Prozess-Ersteller)
+   1. [Prozess-Beteiligte](think-design-inspect/README.md#Prozess-Beteligte)
+   1. [Laufzeitumgebung](think-design-inspect/README.md#Laufzeitumgebung)
 
 1. [Bestandteile Process-Engine.io](README.md#process-engine)
 
@@ -29,9 +31,9 @@
 
 1. [Denken-Malen-Messen](think-design-inspect/README.md)
 
-   1. [Developer](README.md)
-   1. [Operator](README.md)
-   1. [Boss](README.md)
+   <!-- 1. [Developer](README.md) -->
+   <!-- 1. [Operator](README.md) -->
+   <!-- 1. [Boss](README.md) -->
 
 ## Getting-Started
 
@@ -69,24 +71,33 @@
 ## Leitfäden
 
 1. [User Guide](bpmn-studio/user-guide/README.md)
-
    1. [Think](bpmn-studio/user-guide/think/think.md)
+      1. Organisation von Prozess Modellen
    1. [Design](bpmn-studio/user-guide/design/design.md)
+      1. [Basic Editing](bpmn-studio/user-guide/basic-editing/basic-editing.md)
+      1. [Deployment eines Prozess-Modells](bpmn-studio/user-guide/deploy/deploy.md)
+      1. [Start eines Prozess-Modells](bpmn-studio/user-guide/start/start.md)
+   1. [Inspect](bpmn-studio/user-guide/inspect/inspect.md)
+      1. Debuggen eines Prozesses
+      1. Heatmap
+      1. Auflisten aller UserTasks
+      1. Fortführen eines UserTasks
+   1. IAM
+   1. Allgemein
+      1. [Auto Updater](bpmn-studio/auto-updater.md)
 
-   1. [Basic Editing](bpmn-studio/user-guide/basic-editing/basic-editing.md)
-   1. [Deployment of ProcessModels](bpmn-studio/user-guide/deploy/deploy.md)
-   1. [Starting a Process](bpmn-studio/user-guide/start/start.md)
-
-1. [Auto Updater](bpmn-studio/auto-updater.md)
-
-## Process-Engine.io Domänen
+## API Domänen
 
 1. Motivation
 1. Management Domäne
 1. Consumer Domäne
 1. Runtime Domäne
 
-## APIs
+## Management Domäne APIs
+
+1. [ManagementAPI](api/management-api.md)
+
+## Consumer Domäne APIs
 
 1. [ConsumerAPI](api/consumer_api/README.md)
 
@@ -124,6 +135,8 @@
       * [Erhalten von SystemEvents](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
       * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
 
+## Runtime Domäne APIs
+
 1. [ExternalTaskAPI](api/external_task_api/README.md)
 
    * [Technischer Aufbau](api/external_task_api/technical-specifications.md)
@@ -132,8 +145,6 @@
    * [Handling von BPMN-Fehlern](api/external_task_api/tasks/handle-bpmn-errors.md)
    * [Handling von Systemfehlern](api/external_task_api/tasks/handle-system-errors.md)
    * [Abschließen eines ExternalTasks](api/external_task_api/tasks/finish-external-task.md)
-
-1. [ManagementAPI](api/management-api.md)
 
 <!-- TODO: Check if the whole section can be removed -->
 ## ProcessEngine
