@@ -17,10 +17,20 @@ umgesetzt und Bausteine heben die Qualität und fördern Nachhaltigkeit.
 ## Inspect (Inspect)
 
 Performance zu analysieren und Leistung der Prozesse zu validieren ist
-essentiell. Dashboards unterstützen bei der Identifikation von Engpässen; Heatmaps helfen Hot-Spots zu erkennen; wir finden das optimale Design.
+essentiell. Dashboards unterstützen bei der Identifikation von Engpässen;
+Heatmaps helfen Hot-Spots zu erkennen; wir finden das optimale Design.
 
 Die gewonnenen Erkenntnisse liefern eine wertvolle Grundlage für die optimale
-Ausnutzung der Wertschöpfungskette; indem auf der Basis von Metriken neu gedacht wird.
+Ausnutzung der Wertschöpfungskette; indem auf der Basis von Metriken neu
+gedacht wird.
+
+## Gesamtbild
+
+Ganzheitlich betrachtet kann der Vorteil einer Prozessbasierten
+Entwicklung darauf reduziert werden, dass ein Unternehmen nachhaltig
+transformiert wird; Es wird zur Gewohnheit iterativ das Geschäft selbst zu
+Messen, zu bewerten und evtl. neu auszurichten. Alle Unternehmensbereiche sind
+damit Teil der Wertschöpfungskette.
 
 ## Zielpersonen
 
