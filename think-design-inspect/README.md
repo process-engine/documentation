@@ -1,12 +1,43 @@
 # Motivation und Hintergründe
 
-## Think
+## Denken (Think)
 
-## Design
+Eine Übersicht der Prozesslandschaft und Zusammenspiel aller Prozesse ist
+essentiell um geschäftskritische Schnittstellen zu identifizieren und steuernd
+eingreifen zu können. Wir denken, überlegen und legen den besten
+Domänenzuschnitt fest.
 
-## Inspect
+## Design (Design)
+
+Prozessverantwortliche und Techniker gestalten gemeinsam in dieser Phase: ein
+Bild sagt mehr als tausend Worte. Missverständnisse werden minimiert, denn es
+wird eine gemeinsame Sprache entwickelt; iterativ wird die geplante Vision
+umgesetzt und Bausteine heben die Qualität und fördern Nachhaltigkeit.
+
+## Inspect (Inspect)
+
+Performance zu analysieren und Leistung der Prozesse zu validieren ist
+essentiell. Dashboards unterstützen bei der Identifikation von Engpässen; Heatmaps helfen Hot-Spots zu erkennen; wir finden das optimale Design.
+
+Die gewonnenen Erkenntnisse liefern eine wertvolle Grundlage für die optimale
+Ausnutzung der Wertschöpfungskette; indem auf der Basis von Metriken neu gedacht wird.
 
 ## Zielpersonen
+
+Als Dienstleister haben wir viele Erfahrungen mit diesem Vorgehen und haben
+drei Personengruppen identifiziert, die wir mit den Ideen ansprechen wollen:
+
+1. Prozess-Ersteller
+
+   Verantwortliche und Entwickler.
+
+1. Prozess-Beteiligte
+
+   Akteure Rund um den Prozess.
+
+1. Laufzeitumgebung
+
+   Technische Helfer für Prozesse.
 
 ### Prozess-Ersteller
 
