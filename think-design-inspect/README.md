@@ -13,22 +13,25 @@ ProcessEngine Realität. Moderne Software besteht aus APIs und gliedert sich aus
 Microservices; BPMN bildet aus unserer Sicht die ideale Grundlage für die
 Erfüllung des Nachhaltigkeitsversprechens.
 
-## Zielpersonen
+## Zielgruppen
 
-Als Dienstleister haben wir viele Erfahrungen mit diesem Vorgehen und haben
-drei Personengruppen identifiziert, die wir mit den Ideen ansprechen wollen:
+Wir entwickeln die Ideen von process-engine.io für drei Personengruppen, deren
+Probleme wir lösen wollen:
 
 1. Prozess-Ersteller
 
-   Verantwortliche und Entwickler.
+   Wir verstehen darunter Verantwortliche und Entwickler.
 
 1. Prozess-Beteiligte
 
-   Akteure Rund um den Prozess.
+   Das sind Akteure Rund um den Prozess.
 
 1. Laufzeitumgebung
 
-   Technische Helfer für Prozesse.
+   Technische Helfer für Prozesse bilden diese Gruppe.
+
+Im Folgenden wird diese grobe Übersicht verfeinert und die von uns verstandene
+Rolle der jeweiligen Gruppe erklärt.
 
 ### Prozess-Ersteller
 
@@ -70,6 +73,7 @@ Beispielsweise:
 
 * Anbindung an die Datenbank oder
 * Anschluss an einen MessageBus.
+
 ## Denken (Think)
 
 Eine Übersicht der Prozesslandschaft und Zusammenspiel aller Prozesse ist
