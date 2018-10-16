@@ -5,6 +5,8 @@
 <!-- Warum will man unsere PE benutzen?! -->
 1. [Facts to Know](README.md)
 
+---
+
 ## Intro Process-Engine.io
 
 1. [Motivation](think-design-inspect/README.md)
@@ -35,14 +37,18 @@
    <!-- 1. [Operator](README.md) -->
    <!-- 1. [Boss](README.md) -->
 
+---
+
 ## Getting-Started
 
-1. [Installation](getting-started/installation.md)
+1. [Installation](getting-started/README.md)
 1. [Beispiele](getting-started/examples/README.md)
 
    * [Hello BPMN World](getting-started/examples/hello-bpmn-world.md)
    * [Konsumieren einer HTTP REST API](getting-started/examples/http-rest-api.md)
    * [Versenden von E-Mails](getting-started/examples/sending-emails.md)
+
+---
 
 ## BPMN-Studio
 
@@ -68,6 +74,8 @@
    1. [Settings](bpmn-studio/components/settings/settings.md)
    1. [Login](bpmn-studio/components/login/login.md)
 
+---
+
 ## Leitfäden
 
 1. [User Guide](bpmn-studio/user-guide/README.md)
@@ -86,6 +94,8 @@
    1. Allgemein
       1. [Auto Updater](bpmn-studio/auto-updater.md)
 
+---
+
 ## API Domänen
 
 1. Motivation
@@ -93,11 +103,15 @@
 1. Consumer Domäne
 1. Runtime Domäne
 
-## Management Domäne APIs
+---
+
+## APIs der Management Domäne
 
 1. [ManagementAPI](api/management-api.md)
 
-## Consumer Domäne APIs
+---
+
+## APIs der Consumer Domäne
 
 1. [ConsumerAPI](api/consumer_api/README.md)
 
@@ -135,7 +149,9 @@
       * [Erhalten von SystemEvents](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-system-events)
       * [Erhalten von BPMN-Signalen](api/consumer_api/tasks/receive-process-notifiations.md#erhalten-von-bpmn-signalen)
 
-## Runtime Domäne APIs
+---
+
+## APIs der Runtime Domäne
 
 1. [ExternalTaskAPI](api/external_task_api/README.md)
 
@@ -146,73 +162,76 @@
    * [Handling von Systemfehlern](api/external_task_api/tasks/handle-system-errors.md)
    * [Abschließen eines ExternalTasks](api/external_task_api/tasks/finish-external-task.md)
 
+---
+
 <!-- TODO: Check if the whole section can be removed -->
-## ProcessEngine
+<!-- ## ProcessEngine -->
 
-1. [TypeScript](processengine/typescript/README.md)
+<!-- 1. [TypeScript](processengine/typescript/README.md) -->
 
-   1. [Setup](processengine/typescript/setup/README.md)
+<!--    1. [Setup](processengine/typescript/setup/README.md) -->
 
-      * [Konfiguration](processengine/typescript/setup/konfiguration.md)
+<!--       * [Konfiguration](processengine/typescript/setup/konfiguration.md) -->
 
-   1. [Konzepte](processengine/typescript/konzepte/README.md)
+<!--    1. [Konzepte](processengine/typescript/konzepte/README.md) -->
 
-      * [Konfiguration](processengine/typescript/konzepte/configuration.md)
+<!--       * [Konfiguration](processengine/typescript/konzepte/configuration.md) -->
 
-   1. [Architektur](processengine/typescript/architektur/README.md)
+<!--    1. [Architektur](processengine/typescript/architektur/README.md) -->
 
-      * [Dependency Injection](processengine/typescript/architektur/dependendy-injection.md)
-      * [Discovery](processengine/typescript/architektur/discovery.md)
-      * [Struktur](processengine/typescript/architektur/structure.md)
-      * [Adapter](processengine/typescript/architektur/adapters.md)
-      * [Bridges](processengine/typescript/architektur/bridges.md)
-      * [Contracts](processengine/typescript/architektur/contracts.md)
-      * [Extensions](processengine/typescript/architektur/extensions.md)
+<!--       * [Dependency Injection](processengine/typescript/architektur/dependendy-injection.md) -->
+<!--       * [Discovery](processengine/typescript/architektur/discovery.md) -->
+<!--       * [Struktur](processengine/typescript/architektur/structure.md) -->
+<!--       * [Adapter](processengine/typescript/architektur/adapters.md) -->
+<!--       * [Bridges](processengine/typescript/architektur/bridges.md) -->
+<!--       * [Contracts](processengine/typescript/architektur/contracts.md) -->
+<!--       * [Extensions](processengine/typescript/architektur/extensions.md) -->
 
-   1. [ConsumerAPI](processengine/typescript/consumer_api/README.md)
+<!--    1. [ConsumerAPI](processengine/typescript/consumer_api/README.md) -->
 
-      * [Setup](processengine/typescript/consumer_api/setup/README.md)
+<!--       * [Setup](processengine/typescript/consumer_api/setup/README.md) -->
 
-         * [Einrichtung mit integrierter ProcessEngine](processengine/typescript/consumer_api/setup/setup-internal-process-engine.md)
-         * [Einrichtung mit externer ProcessEngine](processengine/typescript/consumer_api/setup/setup-external-process-engine.md)
-         * [Konfigurieren des ConsumerApiClients](processengine/typescript/consumer_api/setup/setup-consumer-api-client.md)
+<!--          * [Einrichtung mit integrierter ProcessEngine](processengine/typescript/consumer_api/setup/setup-internal-process-engine.md) -->
+<!--          * [Einrichtung mit externer ProcessEngine](processengine/typescript/consumer_api/setup/setup-external-process-engine.md) -->
+<!--          * [Konfigurieren des ConsumerApiClients](processengine/typescript/consumer_api/setup/setup-consumer-api-client.md) -->
 
-      * [Hands-On](processengine/typescript/consumer_api/hands_on/README.md)
-      * [Aufgaben](processengine/typescript/consumer_api/tasks/README.md)
+<!--       * [Hands-On](processengine/typescript/consumer_api/hands_on/README.md) -->
+<!--       * [Aufgaben](processengine/typescript/consumer_api/tasks/README.md) -->
 
-         * [Abfragen startbarer Prozessmodelle](processengine/typescript/consumer_api/tasks/list-startable-process-models.md)
+<!--          * [Abfragen startbarer Prozessmodelle](processengine/typescript/consumer_api/tasks/list-startable-process-models.md) -->
 
-            * [Alle Prozessmodelle abfragen](processengine/typescript/consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen)
-            * [Einzelnes Prozessmodell abfragen](processengine/typescript/consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen)
+<!--             * [Alle Prozessmodelle abfragen](processengine/typescript/consumer_api/tasks/list-startable-process-models.md#alle-prozessmodelle-abfragen) -->
+<!--             * [Einzelnes Prozessmodell abfragen](processengine/typescript/consumer_api/tasks/list-startable-process-models.md#einzelnes-prozessmodell-abfragen) -->
 
-         * [Starten von Prozessinstanzen](processengine/typescript/consumer_api/tasks/start-process-instance.md)
-         * [Auflisten wartender UserTasks](processengine/typescript/consumer_api/tasks/list-waiting-usertasks.md)
-         * [Abschließen eines UserTasks](processengine/typescript/consumer_api/tasks/finish-user-task.md)
-         * [Ergebnis einer Prozesskorrelation abfragen](processengine/typescript/consumer_api/tasks/get-correlation-result.md)
+<!--          * [Starten von Prozessinstanzen](processengine/typescript/consumer_api/tasks/start-process-instance.md) -->
+<!--          * [Auflisten wartender UserTasks](processengine/typescript/consumer_api/tasks/list-waiting-usertasks.md) -->
+<!--          * [Abschließen eines UserTasks](processengine/typescript/consumer_api/tasks/finish-user-task.md) -->
+<!--          * [Ergebnis einer Prozesskorrelation abfragen](processengine/typescript/consumer_api/tasks/get-correlation-result.md) -->
 
-      * [Public API](processengine/typescript/consumer_api/public_api.md)
+<!--       * [Public API](processengine/typescript/consumer_api/public_api.md) -->
 
-         * [IConsumerApiService](processengine/typescript/consumer_api/public_api.md#iconsumerapiservice)
-         * [ConsumerContext](processengine/typescript/consumer_api/public_api.md#consumercontext)
-         * [ProcessModelList](processengine/typescript/consumer_api/public_api.md#processmodellist)
-         * [ProcessModel](processengine/typescript/consumer_api/public_api.md#processmodel)
-         * [Event](processengine/typescript/consumer_api/public_api.md#event)
-         * [StartCallbackType](processengine/typescript/consumer_api/public_api.md#startcallbacktype)
-         * [ProcessStartRequestPayload](processengine/typescript/consumer_api/public_api.md#processstartrequestpayload)
-         * [ProcessStartResponsePayload](processengine/typescript/consumer_api/public_api.md#processstartresponsepayload)
-         * [UserTasks](processengine/typescript/consumer_api/public_api.md#usertasks)
-         * [UserTaskList](processengine/typescript/consumer_api/public_api.md#usertasklist)
-         * [UserTask](processengine/typescript/consumer_api/public_api.md#usertask)
-         * [UserTaskConfig](processengine/typescript/consumer_api/public_api.md#usertaskconfig)
-         * [UserTaskResult](processengine/typescript/consumer_api/public_api.md#usertaskresult)
+<!--          * [IConsumerApiService](processengine/typescript/consumer_api/public_api.md#iconsumerapiservice) -->
+<!--          * [ConsumerContext](processengine/typescript/consumer_api/public_api.md#consumercontext) -->
+<!--          * [ProcessModelList](processengine/typescript/consumer_api/public_api.md#processmodellist) -->
+<!--          * [ProcessModel](processengine/typescript/consumer_api/public_api.md#processmodel) -->
+<!--          * [Event](processengine/typescript/consumer_api/public_api.md#event) -->
+<!--          * [StartCallbackType](processengine/typescript/consumer_api/public_api.md#startcallbacktype) -->
+<!--          * [ProcessStartRequestPayload](processengine/typescript/consumer_api/public_api.md#processstartrequestpayload) -->
+<!--          * [ProcessStartResponsePayload](processengine/typescript/consumer_api/public_api.md#processstartresponsepayload) -->
+<!--          * [UserTasks](processengine/typescript/consumer_api/public_api.md#usertasks) -->
+<!--          * [UserTaskList](processengine/typescript/consumer_api/public_api.md#usertasklist) -->
+<!--          * [UserTask](processengine/typescript/consumer_api/public_api.md#usertask) -->
+<!--          * [UserTaskConfig](processengine/typescript/consumer_api/public_api.md#usertaskconfig) -->
+<!--          * [UserTaskResult](processengine/typescript/consumer_api/public_api.md#usertaskresult) -->
 
 <!-- TODO: Check why this is here! -->
-   1. [Management API](processengine/typescript/management_api/README.md)
+   <!-- 1. [Management API](processengine/typescript/management_api/README.md) -->
+
+---
 
 ## Anlagen
 
 1. [BPMN Basics](bpmn-standard/bpmn-basics/README.md)
-
 <!-- Move this to 5Minds -->
 1. [5Minds BPMN-Styleguide](bpmn-standard/styleguide.md)
 1. [BPMN ProcessEngine](bpmn-standard/bpmn-process-engine/README.md)
