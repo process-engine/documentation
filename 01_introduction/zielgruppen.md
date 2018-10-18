@@ -20,9 +20,11 @@ Rolle der jeweiligen Gruppe erklärt.
 
 ### Prozess-Ersteller {#prozessersteller}
 
-* entwirft die Prozesslandschaft
-* designed und deployed die Prozessmodelle
-* beobachtet die Ausführung
+Eine Person dieser Gruppe:
+
+* **entwirft** die Prozesslandschaft.
+* **designed** und deployed die Prozessmodelle.
+* **beobachtet** die Ausführung.
 
 Die Prozess-Ersteller entwerfen die Prozesslandschaft.
 Sie haben eine High-Level-Sicht auf die Prozesse.
@@ -36,18 +38,19 @@ Ausführung.
 
 Diese Personengruppe hat folgende Interessen:
 
-* Prozesse starten/beenden
-* Benutzer Tasks bearbeiten
-* Service Tasks bearbeiten
+* Prozesse **starten/beenden**
+* **Benutzer Tasks** bearbeiten
+* **Service Tasks** bearbeiten
 
-Genau zu diesem Zeitpunkt kommen auch die Prozess-Beteiligten ins Spiel.
-Die kann z.B. die Fachanwendung sein, die den Prozess startet.
+Ein Prozess-Beteiligter, dass kann z.B.:
 
-Oder ein Sachbearbeiter welcher Benutzer Aufgaben (genannt UserTasks im
-BPMN-Standard) bearbeitet.
-
-Vielleicht sogar ein Programm, welches externe Task bearbeitet oder Prozesse
-mit Events benachrichtigt.
+* die Fachanwendung sein, die den Prozess startet.
+* ein Kunde sein, der Waren kaufen will.
+* ein einfacher Dienst sein, der Daten des Prozess verarbeitet.
+* ein Sachbearbeiter welcher Benutzer Aufgaben (genannt UserTasks im
+  BPMN-Standard) bearbeitet.
+* ein Programm, welches externe Task bearbeitet oder Prozesse mit Events
+  benachrichtigt.
 
 ### Laufzeitumgebung {#laufzeitumgebung}
 
@@ -56,7 +59,7 @@ zusammengefasst. Kurzgesagt verstehen darunter alles was:
 
 * Unterstützung für die Ausführung der ProcessEngine
 
-beinhaltet. Darunter fällt alles, was die ProcessEngine zur Ausführung
+bietet. Darunter fällt alles, was die ProcessEngine zur Ausführung
 benötigt, beispielsweise:
 
 * Anbindung an die Datenbank oder
@@ -66,4 +69,3 @@ Die Anbindung verschiedener unterstützende Dienste sind denkbar, wie:
 
 * externe Logging Mechanismen und
 * Metriken.
-
