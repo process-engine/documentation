@@ -10,6 +10,12 @@ Wir wollen erklären:
 1. warum die ProcessEngine das richtige Produkt und
 1. warum Denken-Malen-Messen das richtige Vorgehen ist.
 
+Unser oberstes Ziel, lautet:
+
+> Software nie wieder wegwerfen müssen.
+
+Dafür stehen alle unsere Ideen und Software.
+
 ## Was CEOs wissen müssen
 
 1. Wir haben bewiesen, dass sich durch den Einsatz der ProcessEngine die
@@ -26,7 +32,7 @@ Wir wollen erklären:
 
 ## Was CTOs wissen müssen
 
-1. Wir halten unser Stabilitätsversprechen:
+1. Wir geben **und** halten ein Stabilitätsversprechen:
 
    Drei API Domänen kapseln unsere Use-Cases-- für eine bessere Kommunikation;
    Stabilität wird durch Semantic Versioning unterstützt;
