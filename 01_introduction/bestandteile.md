@@ -9,6 +9,22 @@ Die Marke process-engine.io besteht aus vier Bestandteilen:
 
 ## Vorgehensmodell {#vorgehensmodell}
 
+Innerhalb der letzten zwei Jahre, hat sich aus unseren Beratungserfolgen ein
+Vorgehensmodell entwickelt, dass schlussendlich zu der Entwicklung von
+process-engine.io geführt hat.
+
+Wir wollen alle Beteiligte an einem Prozess adressieren und:
+
+1. die verantwortlichen Fachanwender,
+1. umsetzende Softwareentwickler und
+1. den Betrieb
+
+an einen Tisch bringen, denn wir sind überzeugt nur so nachhaltig Software
+entwickeln zu können. Der Erfolg der letzten Jahren bestärkt uns in diesem Weg.
+
+Zu diesem Vorgehensmodell haben wir einen *Dreiklang* entwickelt, der im
+Folgenden erklärt werden soll.
+
 ### Denken-Malen-Messen {#denkenmalenmessen}
 
 <!-- TODO: Inhalt -->
