@@ -7,7 +7,8 @@
     "start": "npm run serve",
     "serve": "gitbook serve",
     "render_api_doc": "node spectacle.js --app-dir spectacle_app --config-file spectacle_config.js swagger.json",
-    "build-prod": "bash build_prod.sh"
+    "build-prod": "bash build_prod.sh",
+    "rebuild": "rm -rf node_modules && npm install && npm run start"
   },
   "author": "",
   "license": "MIT",
