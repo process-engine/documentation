@@ -63,12 +63,55 @@ damit Teil der Wertschöpfungskette.
 
 ## BPMN-Studio {#bpmnstudio}
 
-lorem ipsum
+### BPMN-Studio {#bpmn-studio}
+
+<img src="./images/bpmn-studio-icon.png" width="256" height="256" />
+
+Das BPMN-Studio ist die integrierte Entwicklungsumgebung für Geschäftsprozesse.
+
+Mit dieser Software lassen sich:
+
+* Geschäftsprozesse modellieren,
+* Prozesse für die Ausführung deployen und
+* Prozesse analysieren und optimieren.
 
 ## API Domänen {#apis}
 
-lorem ipsum
+Wir wollen eine stabile Software liefern, die sich flexibel in Lösungen
+integriert.
+
+Dafür liefern wir drei API-Domänen:
+
+1. Management Domäne,
+1. Consumer Domäne und
+1. Runtime Domäne,
+
+die stabile Zusicherungen für die Verwendung darstellen.
+
+Jeder Domäne, ordnen wir eine Anwendergruppe zu:
+
+1. Prozess-Ersteller - der Management Domäne
+1. Prozess-Beteiligte - der Consumer Domäne
+1. Laufzeitumgebung - der Runtime Domäne
+
+Die APIs, die wir in diesen Domänen zusammenfassen, richten sich an diese
+Personen bzw. an ihr Bedürfnisse.
 
 ## ProcessEngine {#processengine}
 
-lorem ipsum
+Die ProcessEngine selbst, stellt die Ausführungsumgebung für BPMN-Diagramme dar.
+
+Sie implementiert im Standard alle API-Domänen. Die ProcessEngine ist in zwei
+Technologien verfügbar:
+
+1. TypeScript
+1. .NET
+
+TypeScript ist aktuell als Open-Source verfügbar, die .NET Variante ist
+speziell für ein Kundenprojekt entstanden und (noch) nicht Open-Source
+verfügbar. Wir haben bewiesen, dass die Ideen hinter unserer ProcessEngine sich
+in beliebigen Technologien umsetzen lassen und so die Vorteile der
+jeweiligen Platform optimal zu nutzen.
+
+Die TypeScript ProcessEngine ist aktuell die einzige Engine, die sich
+vollständig im Browser ausführen lässt.
