@@ -5,6 +5,9 @@
 <!-- IMPORTANT: The first document you reference NEEDS TO BE the top-level README -->
 1. [Facts-to-Know](README.md)
 
+   * [Für CEOs](README.md#for_ceos)
+   * [Für CTOs](README.md#for_ctos)
+
 ---
 
 ## Intro Process-Engine.io
@@ -31,7 +34,7 @@
       * [Gesamtbild](01_introduction/bestandteile.md#gesamtbild)
 
    * [BPMN-Studio](01_introduction/bestandteile.md#bpmnstudio)
-   * [APIs](01_introduction/bestandteile.md#apis)
+   * [API Domänen](01_introduction/bestandteile.md#apis)
    * [ProcessEngine](01_introduction/bestandteile.md#processengine)
 
 ---
