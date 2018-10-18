@@ -1,1 +1,0 @@
-# DENKEN - THINK

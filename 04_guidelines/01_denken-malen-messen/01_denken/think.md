@@ -1,3 +1,0 @@
-# Think
-
-![Think](./think.png)
