@@ -231,11 +231,11 @@
 
 ## Anlagen
 
-1. [BPMN Basics](bpmn-standard/bpmn-basics/README.md)
+1. [BPMN Basics](99_appendix/bpmn-basics/README.md)
 <!-- Move this to 5Minds -->
-1. [5Minds BPMN-Styleguide](bpmn-standard/styleguide.md)
-1. [BPMN ProcessEngine](bpmn-standard/bpmn-process-engine/README.md)
+1. [5Minds BPMN-Styleguide](99_appendix/styleguide.md)
+1. [BPMN ProcessEngine](99_appendix/bpmn-process-engine/README.md)
 
-    * [TerminateEndEvent](bpmn-standard/bpmn-process-engine/terminate-end-event.md)
+    * [TerminateEndEvent](99_appendix/bpmn-process-engine/terminate-end-event.md)
 
 1. [Glossar](GLOSSARY.md)
