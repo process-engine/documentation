@@ -1,6 +1,6 @@
 # Facts to Know
 
-Diese Übersicht richtet sich an folgenede Personen:
+Diese Übersicht richtet sich an folgende Personen:
 
 1. CEOs
 1. CTOs
@@ -26,9 +26,14 @@ Dafür stehen alle unsere Ideen und Software.
    drastisch reduzieren lassen.
 
 1. Verbesserung der Kommunikation über alle Unternehmensbereiche.
+
+   Klassische Pflichten- und Lastenhefte (können) entfallen;
+   Anforderungen werden klarer Kommuniziert.
+
 1. Der Beitrag zur Wertschöpfung jedes Unternehmensteils wird offensichtlich.
-1. ProcessEngine Software ist Open-Source
-1. BPMN-Studio ist Open-Source
+1. Ganzheitliche Entwicklung an den Prozessen eines Partners ist unser Ziel.
+1. ProcessEngine-Software ist Open-Source
+1. BPMN-Studio Desktop ist Open-Source
 
 ## Was CTOs wissen müssen
 
@@ -39,6 +44,9 @@ Dafür stehen alle unsere Ideen und Software.
    es wird sorgfältigst Released und getestet.
 
 1. Die ProcessEngine ist vollständig in TypeScript entwickelt.
+1. Läuft vollständig im Browser, als stand-alone Backend **und** als Bibliothek.
+1. Unterstützung gängiger SQL-Datenbanken.
+1. Implementierung in Technologien sind verfügbar, z.B. .NET und Java.
 1. Das BPMN-Studio ist eine integrierte Entwicklungsumgebung für Prozesse.
 1. Alle Software der Marke process-engine.io ist unter MIT Lizenz verfügbar.
 1. Kommerzieller Support ist über 5Minds IT-Solutions GmbH & Co. KG beziehbar.
