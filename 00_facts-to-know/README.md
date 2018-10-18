@@ -21,9 +21,7 @@ Dafür stehen alle unsere Ideen und Software.
 1. Wir haben bewiesen, dass sich durch den Einsatz der ProcessEngine die
 
    * Translationskosten und
-   * Wartungskosten für Software
-
-   drastisch reduzieren lassen.
+   * Wartungskosten für Software drastisch reduzieren lassen.
 
 1. Verbesserung der Kommunikation über alle Unternehmensbereiche.
 
@@ -50,5 +48,5 @@ Dafür stehen alle unsere Ideen und Software.
 1. Unterstützung gängiger SQL-Datenbanken.
 1. Implementierung in Technologien sind verfügbar, z.B. .NET und Java.
 1. Das BPMN-Studio ist eine integrierte Entwicklungsumgebung für Prozesse.
-1. Alle Software der Marke process-engine.io ist unter MIT Lizenz verfügbar.
+1. Alle Open-Source Software der Marke process-engine.io ist unter MIT Lizenz verfügbar.
 1. Kommerzieller Support ist über 5Minds IT-Solutions GmbH & Co. KG beziehbar.
