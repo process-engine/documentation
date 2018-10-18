@@ -32,6 +32,7 @@ Dafür stehen alle unsere Ideen und Software.
 
 1. Der Beitrag zur Wertschöpfung jedes Unternehmensteils wird offensichtlich.
 1. Ganzheitliche Entwicklung an den Prozessen eines Partners ist unser Ziel.
+1. BPMN und Workflow-Engines sind ein Schlüssel zur digitalen Transformation.
 1. ProcessEngine-Software ist Open-Source
 1. BPMN-Studio Desktop ist Open-Source
 
@@ -45,6 +46,7 @@ Dafür stehen alle unsere Ideen und Software.
 
 1. Die ProcessEngine ist vollständig in TypeScript entwickelt.
 1. Läuft vollständig im Browser, als stand-alone Backend **und** als Bibliothek.
+1. Ideal integrierbar in Microservice Landschaften.
 1. Unterstützung gängiger SQL-Datenbanken.
 1. Implementierung in Technologien sind verfügbar, z.B. .NET und Java.
 1. Das BPMN-Studio ist eine integrierte Entwicklungsumgebung für Prozesse.
