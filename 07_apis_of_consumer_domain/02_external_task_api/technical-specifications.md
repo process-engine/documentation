@@ -1,6 +1,6 @@
 ## Technischer Aufbau
 
-![Aufbau](./images/external_task_api_architecture.png)
+![](./images/external_task_api_architecture.png)
 
 Wie im Diagramm zu erkennen, unterscheidet man zwischen zwei Anwendungsfällen:
 
