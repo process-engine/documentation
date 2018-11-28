@@ -27,7 +27,7 @@ Folgenden erklärt werden soll.
 
 ### Denken-Malen-Messen {#denkenmalenmessen}
 
-<!-- TODO: Inhalt -->
+<img src="./images/Think-Design-Inspect.png" />
 
 #### Denken (Think)
 
@@ -98,6 +98,8 @@ Die APIs, die wir in diesen Domänen zusammenfassen, richten sich an diese
 Personen bzw. an ihr Bedürfnisse.
 
 ## ProcessEngine {#processengine}
+
+<img src="images/process-engine-icon.png" width="256" height="256" />
 
 Die ProcessEngine selbst, stellt die Ausführungsumgebung für BPMN-Diagramme dar.
 

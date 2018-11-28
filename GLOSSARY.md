@@ -1,7 +1,3 @@
-## Adapter
-
-Siehe [Adapter](processengine/typescript/architektur/adapters.md).
-
 ## Addict-IoC
 
 Addict-IoC ist der IoC Container, den wir als Plattform für unseren Stack
@@ -46,7 +42,7 @@ Ausführung und Auswertung von BPMN-Prozessen. Es setzt auf
 [bpmn-js](https://github.com/bpmn-io/bpmn-js)
 auf und unterstützt Digramme, die den BPMN-Standard 2 verwenden.
 
-[Dokumentation zum BPMN-Studio](bpmn-studio/ueberblick.md)
+[Dokumentation zum BPMN-Studio](03_bpmn-studio/ueberblick.md)
 
 ## Consumer
 

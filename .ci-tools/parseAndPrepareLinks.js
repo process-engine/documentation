@@ -12,11 +12,11 @@ const localLinks = parsedLinks.filter((link) => !link.isHttpLink);
 
 for (const link of parsedLinks) {
   if (link.isHttpLink) {
-    console.log(link.linkTarget);
+    console.log(`${link.file};${link.linkTarget}`)
   } else {
     const relativePathResolved = resolveRelativePath(link);
     const fragmentRemoved = removeFragment(relativePathResolved);
-    console.log(`${fragmentRemoved}`)
+    console.log(`${link.file};${fragmentRemoved}`)
   }
 }
 
