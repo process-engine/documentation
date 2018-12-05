@@ -7,4 +7,6 @@ und der
 
 1. [Hello BPMN World](./hello-bpmn-world.md)
 1. [Aufruf einer HTTP REST API](./http-rest-api.md)
-1. [Senden einer E-Mail](./sending-emails.md)
+<!-- BPMN-Studio does not support ServiceTasks using Emails right now. see:
+https://github.com/process-engine/bpmn-studio/issues/1083 -->
+<!-- 1. [Senden einer E-Mail](./sending-emails.md) -->
