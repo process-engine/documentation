@@ -6,7 +6,7 @@ Das fertige Diagramm kann
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/HelloWorld)
 heruntergeladen werden.
 
-Ziel ist es, ein BPMN-Diagramm mit einem User Task zur `Hello
+Ziel ist es, ein BPMN-Diagramm mit einem User-Task zur `Hello
 World`-Ausgabe zu erstellen.
 
 User Tasks erlauben das Erstellen von Formularen und
@@ -17,7 +17,7 @@ zu präsentieren.
 ## Lernziele
 
 - Anlegen eines Diagramms
-- Erstellen und Konfigurieren eines Confirm User Task
+- Erstellen und Konfigurieren eines Confirm-User-Task
 - Ausführen des Prozesses
 
 ## Aufbau

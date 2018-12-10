@@ -4,7 +4,7 @@ Die ProcessEngine bietet die Möglichkeit des Emailversands. Emails
 sind eine wertvolle Kommunikationsmöglichkeit bei der
 Prozessmodellierung.
 
-Dieser Prozess demonstriert den Nutzen des MailService.
+Dieser Prozess demonstriert den Nutzen des internen MailService.
 
 Das Ergebnis einer Nutzereingabe bestätigt oder verhindert den
 Emailversand. Mit dem Einführen der Entscheidungspfade lehrt das
