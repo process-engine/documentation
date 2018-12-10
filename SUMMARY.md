@@ -47,6 +47,9 @@
    1. [Hello BPMN World](02_getting_started/examples/hello-bpmn-world.md)
    1. [Konsumieren einer HTTP REST API](02_getting_started/examples/http-rest-api.md)
    1. [Versenden von E-Mails](02_getting_started/examples/sending-emails.md)
+   1. [Erstellen eines Chatbots](02_getting_started/examples/chatbot.md)
+      * [Prozessmodellierung](02_getting_started/examples/chatbot_modeller.md)
+      * [Programmierung eines ExternalTask](02_getting_started/examples/chatbot_programmer.md)
 
 ---
 
