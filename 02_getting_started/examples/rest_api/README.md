@@ -4,10 +4,10 @@ In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
 
 REST beschreibt ein Paradigma für die Kommunikation zwischen
-verteilten Systemen. Mit HTTP-Requests an REST APIs können wir auf
+verteilten Systemen. Mit HTTP-Requests an REST-APIs können wir auf
 externe Dienste zugreifen.
 
-Das REST API Beispiel zeigt, wie wir solche APIs in BPMN ansprechen
+Das REST-API-Beispiel zeigt, wie wir solche APIs in BPMN ansprechen
 können und somit neue Anwendungsmöglichkeiten für die
 Diagrammmodellierung gewinnen.
 
