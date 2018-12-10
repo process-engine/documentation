@@ -25,9 +25,8 @@ zu präsentieren.
 Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
-Bei Ausführung wird der User Task
 
-folgende Elemente enthalten:
+Bei Ausführung wird der User Task folgende Elemente enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
