@@ -1,25 +1,38 @@
 # Hello BPMN-World
 
-Um den Umgang der ProcessEngine und des BPMN-Studios zu demonstrieren,
-wird die schrittweise Anleitung für ein einfaches Beispieldiagramm
-gezeigt. Das fertige Diagramm kann
+Um den Umgang der ProcessEngine und des BPMN-Studios zu demonstrieren, wird ein
+einfaches Beispieldiagramm erstellt.
+Das fertige Diagramm kann
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/HelloWorld)
 heruntergeladen werden.
 
+Ziel ist es, ein BPMN-Diagramm mit einem User Task zur `Hello
+World`-Ausgabe zu erstellen.
 
-Ziel ist es, ein BPMN-Diagramm mit einem Single User Task zu
-erstellen.
+User Tasks erlauben das Erstellen von Formularen und
+Bestätigungsdialogen. Wir verwenden sie um Prozesse durch
+Nutzereingaben zu steuern oder dem Anwender Ausgaben eines Prozesses
+zu präsentieren.
+
+## Lernziele
+
+- Anlegen eines Diagramms
+- Erstellen und Konfigurieren eines Confirm User Task
+- Ausführen des Prozesses
+
+## Aufbau
 
 Das Diagramm sieht folgendermaßen aus:
 
 <img src="../images/getting-started/hello-world/hello-world-diagram.svg" width="100%" />
+Bei Ausführung wird der User Task
 
-Dieser User Task wird die folgenden Elemente enthalten:
+folgende Elemente enthalten:
 
 1. die Nachricht `Hello World`
 2. eine Schaltfläche zum Bestätigen
 
-Letzteres dient dazu, den Task zu beenden.
+Die Schaltfläche dient dazu, den Task zu beenden.
 
 ## Erstellung eines neuen Diagramms
 
