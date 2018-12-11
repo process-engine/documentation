@@ -1,0 +1,1555 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Debugging API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions-extended/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="deployment-api.html" />
+    
+    
+    <link rel="prev" href="../05_api_domains/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">ProcessEngine</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Facts-to-Know
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../">
+            
+                <a href="../#for_ceos">
+            
+                    
+                    Für CEOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../">
+            
+                <a href="../#for_ctos">
+            
+                    
+                    Für CTOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Intro Process-Engine.io</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01_introduction/">
+            
+                <a href="../01_introduction/">
+            
+                    
+                    Einführung
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../01_introduction/motivation.html">
+            
+                <a href="../01_introduction/motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../01_introduction/motivation.html">
+            
+                <a href="../01_introduction/motivation.html#warum">
+            
+                    
+                    Warum?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../01_introduction/motivation.html">
+            
+                <a href="../01_introduction/motivation.html#mehrwert">
+            
+                    
+                    Mehrwert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../01_introduction/motivation.html">
+            
+                <a href="../01_introduction/motivation.html#ziele">
+            
+                    
+                    Ziele
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../01_introduction/zielgruppen.html">
+            
+                <a href="../01_introduction/zielgruppen.html">
+            
+                    
+                    Zielgruppen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../01_introduction/zielgruppen.html">
+            
+                <a href="../01_introduction/zielgruppen.html#prozessersteller">
+            
+                    
+                    Prozess-Ersteller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../01_introduction/zielgruppen.html">
+            
+                <a href="../01_introduction/zielgruppen.html#prozessbeteiligte">
+            
+                    
+                    Prozess-Beteiligte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../01_introduction/zielgruppen.html">
+            
+                <a href="../01_introduction/zielgruppen.html#laufzeitumgebung">
+            
+                    
+                    Laufzeitumgebung
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html">
+            
+                    
+                    Bestandteile process-engine.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html#vorgehensmodell">
+            
+                    
+                    Vorgehensmodell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1.1" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html#denkenmalenmessen">
+            
+                    
+                    Denken-Malen-Messen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.2" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html#gesamtbild">
+            
+                    
+                    Gesamtbild
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html#bpmnstudio">
+            
+                    
+                    BPMN-Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html#apis">
+            
+                    
+                    API Domänen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../01_introduction/bestandteile.html">
+            
+                <a href="../01_introduction/bestandteile.html#processengine">
+            
+                    
+                    ProcessEngine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Getting-Started</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../02_getting_started/">
+            
+                <a href="../02_getting_started/">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../02_getting_started/examples/">
+            
+                <a href="../02_getting_started/examples/">
+            
+                    
+                    Beispiele
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../02_getting_started/examples/hello-bpmn-world.html">
+            
+                <a href="../02_getting_started/examples/hello-bpmn-world.html">
+            
+                    
+                    Hello BPMN World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../02_getting_started/examples/http-rest-api.html">
+            
+                <a href="../02_getting_started/examples/http-rest-api.html">
+            
+                    
+                    Konsumieren einer HTTP REST API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">BPMN-Studio</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../03_bpmn-studio/components/">
+            
+                <a href="../03_bpmn-studio/components/">
+            
+                    
+                    Komponenten
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../03_bpmn-studio/components/plan-view/plan-view.html">
+            
+                <a href="../03_bpmn-studio/components/plan-view/plan-view.html">
+            
+                    
+                    Think
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="../03_bpmn-studio/components/solution-explorer/solution-explorer.html">
+            
+                <a href="../03_bpmn-studio/components/solution-explorer/solution-explorer.html">
+            
+                    
+                    Solution Explorer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../03_bpmn-studio/components/design-view/design-view.html">
+            
+                <a href="../03_bpmn-studio/components/design-view/design-view.html">
+            
+                    
+                    Design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="../04_guidelines/basic-editing/basic-editing.html">
+            
+                <a href="../04_guidelines/basic-editing/basic-editing.html">
+            
+                    
+                    Basic Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="../04_guidelines/deploy/deploy.html">
+            
+                <a href="../04_guidelines/deploy/deploy.html">
+            
+                    
+                    Deployment eines Prozess-Modells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.3" data-path="../04_guidelines/start/start.html">
+            
+                <a href="../04_guidelines/start/start.html">
+            
+                    
+                    Start eines Prozess-Modells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.4" data-path="../03_bpmn-studio/components/diff-view/diff-view.html">
+            
+                <a href="../03_bpmn-studio/components/diff-view/diff-view.html">
+            
+                    
+                    Diff-Ansicht
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.5" data-path="../03_bpmn-studio/components/xml-view/xml-view.html">
+            
+                <a href="../03_bpmn-studio/components/xml-view/xml-view.html">
+            
+                    
+                    XML-Ansicht
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.6" data-path="../03_bpmn-studio/components/waiting-room/waiting-room.html">
+            
+                <a href="../03_bpmn-studio/components/waiting-room/waiting-room.html">
+            
+                    
+                    Waiting Room
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../03_bpmn-studio/components/dashboard/dashboard.html">
+            
+                <a href="../03_bpmn-studio/components/dashboard/dashboard.html">
+            
+                    
+                    Inspect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../03_bpmn-studio/components/settings/settings.html">
+            
+                <a href="../03_bpmn-studio/components/settings/settings.html">
+            
+                    
+                    Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../03_bpmn-studio/components/login/login.html">
+            
+                <a href="../03_bpmn-studio/components/login/login.html">
+            
+                    
+                    Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">API Domänen</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../05_api_domains/">
+            
+                <a href="../05_api_domains/">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../05_api_domains/">
+            
+                <a href="../05_api_domains/">
+            
+                    
+                    Management Domäne
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../05_api_domains/">
+            
+                <a href="../05_api_domains/">
+            
+                    
+                    Consumer API Domäne
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../05_api_domains/">
+            
+                <a href="../05_api_domains/">
+            
+                    
+                    Runtime Domäne
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">APIs der Management Domäne</li>
+        
+        
+    
+        <li class="chapter active" data-level="6.1" data-path="debugging-api.html">
+            
+                <a href="debugging-api.html">
+            
+                    
+                    Debugging API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="deployment-api.html">
+            
+                <a href="deployment-api.html">
+            
+                    
+                    Deployment API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="kpi-api.html">
+            
+                <a href="kpi-api.html">
+            
+                    
+                    KPI API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">APIs der Consumer Domäne</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../07_apis_of_consumer_domain/02_external_task_api/">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/">
+            
+                    
+                    ExternalTaskAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../07_apis_of_consumer_domain/02_external_task_api/technical-specifications.html">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/technical-specifications.html">
+            
+                    
+                    Technischer Aufbau
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../07_apis_of_consumer_domain/02_external_task_api/tasks/fetch-and-lock.html">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/tasks/fetch-and-lock.html">
+            
+                    
+                    ExternalTasks abrufen und sperren
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" data-path="../07_apis_of_consumer_domain/02_external_task_api/tasks/extend-lock.html">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/tasks/extend-lock.html">
+            
+                    
+                    Sperrzeit eines ExternalTasks verlängern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4" data-path="../07_apis_of_consumer_domain/02_external_task_api/tasks/handle-bpmn-errors.html">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/tasks/handle-bpmn-errors.html">
+            
+                    
+                    Handling von BPMN-Fehlern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" data-path="../07_apis_of_consumer_domain/02_external_task_api/tasks/handle-system-errors.html">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/tasks/handle-system-errors.html">
+            
+                    
+                    Handling von Systemfehlern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6" data-path="../07_apis_of_consumer_domain/02_external_task_api/tasks/finish-external-task.html">
+            
+                <a href="../07_apis_of_consumer_domain/02_external_task_api/tasks/finish-external-task.html">
+            
+                    
+                    Abschließen eines ExternalTasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../07_apis_of_consumer_domain/01_consumer_api/">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/">
+            
+                    
+                    ConsumerAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.1" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                    
+                    Getting started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.1.1" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#einstieg">
+            
+                    
+                    Einstieg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.2" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#routen">
+            
+                    
+                    Routen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.3" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#alle-prozessmodelle-abfragen">
+            
+                    
+                    Alle Prozessmodelle abfragen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.4" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#prozessmodell-abfragen">
+            
+                    
+                    Prozessmodell abfragen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.5" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#events-anzeigen">
+            
+                    
+                    Events anzeigen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.6" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#usertasks-anzeigen">
+            
+                    
+                    UserTasks anzeigen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.7" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#prozesse-starten">
+            
+                    
+                    Prozesse starten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.8" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#ergebnisse-anzeigen">
+            
+                    
+                    Ergebnisse anzeigen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.9" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#events-von-ergebnissen-anzeigen">
+            
+                    
+                    Events von Ergebnissen anzeigen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.10" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#events-von-ergebnissen-triggern">
+            
+                    
+                    Events von Ergebnissen triggern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.1.11" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/getting-started.html#usertasks-fertigstellen">
+            
+                    
+                    UserTasks fertigstellen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.2" data-path="../07_apis_of_consumer_domain/01_consumer_api/technical-specifications.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/technical-specifications.html">
+            
+                    
+                    Technischer Aufbau
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.3" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-startable-process-models.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-startable-process-models.html">
+            
+                    
+                    Auflisten startbarer Prozessmodelle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.3.1" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-startable-process-models.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-startable-process-models.html#alle-prozessmodelle-abfragen">
+            
+                    
+                    Alle Prozessmodelle abfragen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.3.2" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-startable-process-models.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-startable-process-models.html#einzelnes-prozessmodell-abfragen">
+            
+                    
+                    Einzelnes Prozessmodell abfragen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.4" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/start-process-instance.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/start-process-instance.html">
+            
+                    
+                    Starten von Prozessinstanzen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.5" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-triggerable-events.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-triggerable-events.html">
+            
+                    
+                    Abfragen von BPMN-Ereignissen auf die der Prozess wartet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.6" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/trigger-event.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/trigger-event.html">
+            
+                    
+                    Auslösen von Ereignissen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.7" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-waiting-usertasks.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/list-waiting-usertasks.html">
+            
+                    
+                    Auflisten wartender UserTasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.8" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/finish-user-task.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/finish-user-task.html">
+            
+                    
+                    Abschließen eines UserTasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.9" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/get-correlation-result.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/get-correlation-result.html">
+            
+                    
+                    Ergebnis einer Prozesskorrelation abfragen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.10" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                    
+                    Erhalten von Prozessbenachrichtigungen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.10.1" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html#arten-von-prozessbenachrichtigungen">
+            
+                    
+                    Arten von Prozessbenachrichtigungen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.10.2" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html#erhalten-von-bpmn-events">
+            
+                    
+                    Erhalten von BPMN-Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.10.3" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html#erhalten-von-infos-zu-start-und-ende-von-aktivitäten">
+            
+                    
+                    Erhalten von Infos zu Dtart und Ende von Aktivitäten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.10.4" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html#erhalten-von-system-events">
+            
+                    
+                    Erhalten von SystemEvents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.10.5" data-path="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html">
+            
+                <a href="../07_apis_of_consumer_domain/01_consumer_api/tasks/receive-process-notifiations.html#erhalten-von-bpmn-signalen">
+            
+                    
+                    Erhalten von BPMN-Signalen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../07_apis_of_consumer_domain/usertask-api.html">
+            
+                <a href="../07_apis_of_consumer_domain/usertask-api.html">
+            
+                    
+                    UserTask API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../07_apis_of_consumer_domain/event-api.html">
+            
+                <a href="../07_apis_of_consumer_domain/event-api.html">
+            
+                    
+                    Event API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">APIs der Runtime Domäne</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../08_apis_of_runtime_domain/logging-api.html">
+            
+                <a href="../08_apis_of_runtime_domain/logging-api.html">
+            
+                    
+                    Logging API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../08_apis_of_runtime_domain/messagebus-api.html">
+            
+                <a href="../08_apis_of_runtime_domain/messagebus-api.html">
+            
+                    
+                    MessageBus API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../08_apis_of_runtime_domain/metrics-api.html">
+            
+                <a href="../08_apis_of_runtime_domain/metrics-api.html">
+            
+                    
+                    Metrics API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../08_apis_of_runtime_domain/persistence-api.html">
+            
+                <a href="../08_apis_of_runtime_domain/persistence-api.html">
+            
+                    
+                    Persistence API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Anlagen</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../99_appendix/bpmn-basics/">
+            
+                <a href="../99_appendix/bpmn-basics/">
+            
+                    
+                    BPMN Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../99_appendix/styleguide.html">
+            
+                <a href="../99_appendix/styleguide.html">
+            
+                    
+                    5Minds BPMN-Styleguide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../99_appendix/bpmn-process-engine/">
+            
+                <a href="../99_appendix/bpmn-process-engine/">
+            
+                    
+                    BPMN ProcessEngine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.3.1" data-path="../99_appendix/bpmn-process-engine/terminate-end-event.html">
+            
+                <a href="../99_appendix/bpmn-process-engine/terminate-end-event.html">
+            
+                    
+                    TerminateEndEvent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../GLOSSARY.html">
+            
+                <a href="../GLOSSARY.html">
+            
+                    
+                    Glossar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Debugging API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="debugging-api">Debugging API</h1>
+<p>&#x1F3D7; Wir bauen gerade um; sollten wir Ihr Interesse mit den Themen geweckt haben,
+schreiben Sie uns eine <a href="mailto:hello@process-engine.io" target="_blank">E-Mail</a>!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../05_api_domains/" class="navigation navigation-prev " aria-label="Previous page: Runtime Domäne">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="deployment-api.html" class="navigation navigation-next " aria-label="Next page: Deployment API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Debugging API","level":"6.1","depth":1,"next":{"title":"Deployment API","level":"6.2","depth":1,"path":"06_apis_of_management_domain/deployment-api.md","ref":"06_apis_of_management_domain/deployment-api.md","articles":[]},"previous":{"title":"Runtime Domäne","level":"5.4","depth":1,"path":"05_api_domains/README.md","ref":"05_api_domains/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"_pictures":[{"backlink":"02_getting_started/index.html#fig3.1.1","level":"3.1","align":"left","list_caption":"Figure: BPMN-Studio","alt":"BPMN-Studio","nro":1,"url":"images/bpmn-studio.png","index":1,"caption_template":"_CAPTION_","label":"BPMN-Studio","attributes":{},"skip":false,"key":"3.1.1"},{"backlink":"03_bpmn-studio/components/plan-view/plan-view.html#fig4.1.1.1","level":"4.1.1","align":"left","list_caption":"Figure: Think-Ansicht","alt":"Think-Ansicht","nro":2,"url":"plan-view.png","index":1,"caption_template":"_CAPTION_","label":"Think-Ansicht","attributes":{},"skip":false,"key":"4.1.1.1"},{"backlink":"03_bpmn-studio/components/solution-explorer/solution-explorer.html#fig4.1.1.1.1","level":"4.1.1.1","align":"left","list_caption":"Figure: Solution Explorer beim ersten öffnen","alt":"Solution Explorer beim ersten öffnen","nro":3,"url":"./first_opening.png","index":1,"caption_template":"_CAPTION_","label":"Solution Explorer beim ersten öffnen","attributes":{},"skip":false,"key":"4.1.1.1.1"},{"backlink":"03_bpmn-studio/components/solution-explorer/solution-explorer.html#fig4.1.1.1.2","level":"4.1.1.1","align":"left","list_caption":"Figure: Öffnen der Dateisystemansicht","alt":"Öffnen der Dateisystemansicht","nro":4,"url":"./first_opening_file_system.png","index":2,"caption_template":"_CAPTION_","label":"Öffnen der Dateisystemansicht","attributes":{},"skip":false,"key":"4.1.1.1.2"},{"backlink":"03_bpmn-studio/components/solution-explorer/solution-explorer.html#fig4.1.1.1.3","level":"4.1.1.1","align":"left","list_caption":"Figure: Öffnen einer Solution","alt":"Öffnen einer Solution","nro":5,"url":"./open_solution_dialog.png","index":3,"caption_template":"_CAPTION_","label":"Öffnen einer Solution","attributes":{},"skip":false,"key":"4.1.1.1.3"},{"backlink":"03_bpmn-studio/components/solution-explorer/solution-explorer.html#fig4.1.1.1.4","level":"4.1.1.1","align":"left","list_caption":"Figure: Geöffnete FileSystem Solution","alt":"Geöffnete FileSystem Solution","nro":6,"url":"./opened_file_system_solution.png","index":4,"caption_template":"_CAPTION_","label":"Geöffnete FileSystem Solution","attributes":{},"skip":false,"key":"4.1.1.1.4"},{"backlink":"03_bpmn-studio/components/solution-explorer/solution-explorer.html#fig4.1.1.1.5","level":"4.1.1.1","align":"left","list_caption":"Figure: Solution Explorer in der Dateisystemansicht","alt":"Solution Explorer in der Dateisystemansicht","nro":7,"url":"./solution_explorer_file_system.png","index":5,"caption_template":"_CAPTION_","label":"Solution Explorer in der Dateisystemansicht","attributes":{},"skip":false,"key":"4.1.1.1.5"},{"backlink":"03_bpmn-studio/components/solution-explorer/solution-explorer.html#fig4.1.1.1.6","level":"4.1.1.1","align":"left","list_caption":"Figure: Geöffnete FileSystem Solution im Solution Explorer","alt":"Geöffnete FileSystem Solution im Solution Explorer","nro":8,"url":"./filesystem_solution.png","index":6,"caption_template":"_CAPTION_","label":"Geöffnete FileSystem Solution im Solution Explorer","attributes":{},"skip":false,"key":"4.1.1.1.6"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.1","level":"4.1.2","align":"left","list_caption":"Figure: Design-Ansicht","alt":"Design-Ansicht","nro":9,"url":"design-view.png","index":1,"caption_template":"_CAPTION_","label":"Design-Ansicht","attributes":{},"skip":false,"key":"4.1.2.1"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.2","level":"4.1.2","align":"left","list_caption":"Figure: Modellierungsfläche","alt":"Modellierungsfläche","nro":10,"url":"design-view-modeler.png","index":2,"caption_template":"_CAPTION_","label":"Modellierungsfläche","attributes":{},"skip":false,"key":"4.1.2.2"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.3","level":"4.1.2","align":"left","list_caption":"Figure: Minimap geschlossen","alt":"Minimap geschlossen","nro":11,"url":"design-view-minimap-closed.png","index":3,"caption_template":"_CAPTION_","label":"Minimap geschlossen","attributes":{},"skip":false,"key":"4.1.2.3"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.4","level":"4.1.2","align":"left","list_caption":"Figure: Minimap geöffnet","alt":"Minimap geöffnet","nro":12,"url":"design-view-minimap-opened.png","index":4,"caption_template":"_CAPTION_","label":"Minimap geöffnet","attributes":{},"skip":false,"key":"4.1.2.4"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.5","level":"4.1.2","align":"left","list_caption":"Figure: Property Panel","alt":"Property Panel","nro":13,"url":"design-view-propertypanel.png","index":5,"caption_template":"_CAPTION_","label":"Property Panel","attributes":{},"skip":false,"key":"4.1.2.5"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.6","level":"4.1.2","align":"left","list_caption":"Figure: Menü","alt":"Menü","nro":14,"url":"design-view-menu.png","index":6,"caption_template":"_CAPTION_","label":"Menü","attributes":{},"skip":false,"key":"4.1.2.6"},{"backlink":"03_bpmn-studio/components/design-view/design-view.html#fig4.1.2.7","level":"4.1.2","align":"left","list_caption":"Figure: Statusleiste","alt":"Statusleiste","nro":15,"url":"design-view-xml-diff.png","index":7,"caption_template":"_CAPTION_","label":"Statusleiste","attributes":{},"skip":false,"key":"4.1.2.7"},{"backlink":"03_bpmn-studio/components/diff-view/diff-view.html#fig4.1.2.4.1","level":"4.1.2.4","align":"left","list_caption":"Figure: Diff-Ansicht Startansicht","alt":"Diff-Ansicht Startansicht","nro":16,"url":"./images/diff-view-start.png","index":1,"caption_template":"_CAPTION_","label":"Diff-Ansicht Startansicht","attributes":{},"skip":false,"key":"4.1.2.4.1"},{"backlink":"03_bpmn-studio/components/diff-view/diff-view.html#fig4.1.2.4.2","level":"4.1.2.4","align":"left","list_caption":"Figure: Vorher zu Nachher","alt":"Vorher zu Nachher","nro":17,"url":"./images/diff-view-vorher.png","index":2,"caption_template":"_CAPTION_","label":"Vorher zu Nachher","attributes":{},"skip":false,"key":"4.1.2.4.2"},{"backlink":"03_bpmn-studio/components/diff-view/diff-view.html#fig4.1.2.4.3","level":"4.1.2.4","align":"left","list_caption":"Figure: Nachher zu Vorher","alt":"Nachher zu Vorher","nro":18,"url":"./images/diff-view-nachher.png","index":3,"caption_template":"_CAPTION_","label":"Nachher zu Vorher","attributes":{},"skip":false,"key":"4.1.2.4.3"},{"backlink":"03_bpmn-studio/components/diff-view/diff-view.html#fig4.1.2.4.4","level":"4.1.2.4","align":"left","list_caption":"Figure: Listenansicht","alt":"Listenansicht","nro":19,"url":"./images/diff-view-change-list.png","index":4,"caption_template":"_CAPTION_","label":"Listenansicht","attributes":{},"skip":false,"key":"4.1.2.4.4"},{"backlink":"03_bpmn-studio/components/xml-view/xml-view.html#fig4.1.2.5.1","level":"4.1.2.5","align":"left","list_caption":"Figure: Öffnen der XML-Ansicht","alt":"Öffnen der XML-Ansicht","nro":20,"url":"open-xml-view.png","index":1,"caption_template":"_CAPTION_","label":"Öffnen der XML-Ansicht","attributes":{},"skip":false,"key":"4.1.2.5.1"},{"backlink":"03_bpmn-studio/components/xml-view/xml-view.html#fig4.1.2.5.2","level":"4.1.2.5","align":"left","list_caption":"Figure: Die geöffnete XML-Ansicht","alt":"Die geöffnete XML-Ansicht","nro":21,"url":"xml-view.png","index":2,"caption_template":"_CAPTION_","label":"Die geöffnete XML-Ansicht","attributes":{},"skip":false,"key":"4.1.2.5.2"},{"backlink":"03_bpmn-studio/components/waiting-room/waiting-room.html#fig4.1.2.6.1","level":"4.1.2.6","align":"left","list_caption":"Figure: Waiting Room","alt":"Waiting Room","nro":22,"url":"waiting-room.png","index":1,"caption_template":"_CAPTION_","label":"Waiting Room","attributes":{},"skip":false,"key":"4.1.2.6.1"},{"backlink":"03_bpmn-studio/components/dashboard/dashboard.html#fig4.1.3.1","level":"4.1.3","align":"left","list_caption":"Figure: Inspect","alt":"Inspect","nro":23,"url":"dashboard.png","index":1,"caption_template":"_CAPTION_","label":"Inspect","attributes":{},"skip":false,"key":"4.1.3.1"},{"backlink":"03_bpmn-studio/components/settings/settings.html#fig4.1.4.1","level":"4.1.4","align":"left","list_caption":"Figure: Settings Aufruf","alt":"Settings Aufruf","nro":24,"url":"settings-open.png","index":1,"caption_template":"_CAPTION_","label":"Settings Aufruf","attributes":{},"skip":false,"key":"4.1.4.1"},{"backlink":"03_bpmn-studio/components/settings/settings.html#fig4.1.4.2","level":"4.1.4","align":"left","list_caption":"Figure: Settings","alt":"Settings","nro":25,"url":"settings.png","index":2,"caption_template":"_CAPTION_","label":"Settings","attributes":{},"skip":false,"key":"4.1.4.2"},{"backlink":"03_bpmn-studio/components/settings/settings.html#fig4.1.4.3","level":"4.1.4","align":"left","list_caption":"Figure: Einstellungen für die ProcessEngine","alt":"Einstellungen für die ProcessEngine","nro":26,"url":"settings-processengine.png","index":3,"caption_template":"_CAPTION_","label":"Einstellungen für die ProcessEngine","attributes":{},"skip":false,"key":"4.1.4.3"},{"backlink":"03_bpmn-studio/components/settings/settings.html#fig4.1.4.4","level":"4.1.4","align":"left","list_caption":"Figure: Interne ProcessEngine wird vorgeschlagen","alt":"Interne ProcessEngine wird vorgeschlagen","nro":27,"url":"settings-processengine-use-internal.png","index":4,"caption_template":"_CAPTION_","label":"Interne ProcessEngine wird vorgeschlagen","attributes":{},"skip":false,"key":"4.1.4.4"},{"backlink":"03_bpmn-studio/components/settings/settings.html#fig4.1.4.5","level":"4.1.4","align":"left","list_caption":"Figure: Einstellungen für OpenId Connect","alt":"Einstellungen für OpenId Connect","nro":28,"url":"settings-open-id.png","index":5,"caption_template":"_CAPTION_","label":"Einstellungen für OpenId Connect","attributes":{},"skip":false,"key":"4.1.4.5"},{"backlink":"03_bpmn-studio/components/login/login.html#fig4.1.5.1","level":"4.1.5","align":"left","list_caption":"Figure: Login Button","alt":"Login Button","nro":29,"url":"login-button.png","index":1,"caption_template":"_CAPTION_","label":"Login Button","attributes":{},"skip":false,"key":"4.1.5.1"},{"backlink":"03_bpmn-studio/components/login/login.html#fig4.1.5.2","level":"4.1.5","align":"left","list_caption":"Figure: Anmeldeseite","alt":"Anmeldeseite","nro":30,"url":"identity-server-login.png","index":2,"caption_template":"_CAPTION_","label":"Anmeldeseite","attributes":{},"skip":false,"key":"4.1.5.2"},{"backlink":"03_bpmn-studio/components/login/login.html#fig4.1.5.3","level":"4.1.5","align":"left","list_caption":"Figure: Benutzername und Logout","alt":"Benutzername und Logout","nro":31,"url":"username-logout.png","index":3,"caption_template":"_CAPTION_","label":"Benutzername und Logout","attributes":{},"skip":false,"key":"4.1.5.3"},{"backlink":"07_apis_of_consumer_domain/01_consumer_api/technical-specifications.html#fig7.2.2.1","level":"7.2.2","align":"left","list_caption":"Figure: Aufbau","alt":"Aufbau","nro":32,"url":"./images/consumer_api_architecture.png","index":1,"caption_template":"_CAPTION_","label":"Aufbau","attributes":{},"skip":false,"key":"7.2.2.1"},{"backlink":"99_appendix/bpmn-basics/index.html#fig9.1.1","level":"9.1","align":"left","list_caption":"Figure: Beispiel für ein Prozessmodell","nro":33,"url":"./muedigkeit.svg","index":1,"caption_template":"_CAPTION_","label":"Beispiel für ein Prozessmodell","attributes":{},"title":"Beispiel für ein Prozessmodell","skip":false,"key":"9.1.1"},{"backlink":"99_appendix/bpmn-basics/index.html#fig9.1.2","level":"9.1","align":"left","list_caption":"Figure: Symbol einer Aktivität","alt":"Symbol einer Aktivität","nro":34,"url":"./activity.svg","index":2,"caption_template":"_CAPTION_","label":"Symbol einer Aktivität","attributes":{},"skip":false,"key":"9.1.2"},{"backlink":"99_appendix/bpmn-basics/index.html#fig9.1.3","level":"9.1","align":"left","list_caption":"Figure: Symbol eines Sequenzflusses","alt":"Symbol eines Sequenzflusses","nro":35,"url":"./flow.svg","index":3,"caption_template":"_CAPTION_","label":"Symbol eines Sequenzflusses","attributes":{},"skip":false,"key":"9.1.3"},{"backlink":"99_appendix/bpmn-basics/index.html#fig9.1.4","level":"9.1","align":"left","list_caption":"Figure: Beispielprozess zur Demonstration von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.","alt":"Beispielprozess zur Demonstration von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.","nro":36,"url":"./pool_mit_lanes.svg","index":4,"caption_template":"_CAPTION_","label":"Beispielprozess zur Demonstration von Pools und Lanes. Die Abteilungen und der Kunde sind Pools, Techniker und Telefonist sind Lanes.","attributes":{},"skip":false,"key":"9.1.4"},{"backlink":"99_appendix/bpmn-basics/index.html#fig9.1.5","level":"9.1","align":"left","list_caption":"Figure: Eine alleinstehende Anmerkung","alt":"Eine alleinstehende Anmerkung","nro":37,"url":"./comment.svg","index":5,"caption_template":"_CAPTION_","label":"Eine alleinstehende Anmerkung","attributes":{},"skip":false,"key":"9.1.5"},{"backlink":"99_appendix/bpmn-basics/index.html#fig9.1.6","level":"9.1","align":"left","list_caption":"Figure: Eine Anmerkung zu einer Aktivität","alt":"Eine Anmerkung zu einer Aktivität","nro":38,"url":"./comment_on_activity.svg","index":6,"caption_template":"_CAPTION_","label":"Eine Anmerkung zu einer Aktivität","attributes":{},"skip":false,"key":"9.1.6"},{"backlink":"99_appendix/styleguide.html#fig9.2.1","level":"9.2","align":"left","list_caption":"Figure: Beispiel Design","alt":"Beispiel Design","nro":39,"url":"./assets/example_design.svg","index":1,"caption_template":"_CAPTION_","label":"Beispiel Design","attributes":{},"skip":false,"key":"9.2.1"},{"backlink":"99_appendix/styleguide.html#fig9.2.2","level":"9.2","align":"left","list_caption":"Figure: Typisierte Aktivitäten","alt":"Typisierte Aktivitäten","nro":40,"url":"./assets/typisierung.svg","index":2,"caption_template":"_CAPTION_","label":"Typisierte Aktivitäten","attributes":{},"skip":false,"key":"9.2.2"},{"backlink":"99_appendix/styleguide.html#fig9.2.3","level":"9.2","align":"left","list_caption":"Figure: Beispiel Split Gateway","alt":"Beispiel Split Gateway","nro":41,"url":"./assets/example_split_gateway.svg","index":3,"caption_template":"_CAPTION_","label":"Beispiel Split Gateway","attributes":{},"skip":false,"key":"9.2.3"},{"backlink":"99_appendix/styleguide.html#fig9.2.4","level":"9.2","align":"left","list_caption":"Figure: Beispiel Split Join Gateway","alt":"Beispiel Split Join Gateway","nro":42,"url":"./assets/example_split_join_gateway.svg","index":4,"caption_template":"_CAPTION_","label":"Beispiel Split Join Gateway","attributes":{},"skip":false,"key":"9.2.4"},{"backlink":"99_appendix/styleguide.html#fig9.2.5","level":"9.2","align":"left","list_caption":"Figure: Beispiel Pool und Lanes","alt":"Beispiel Pool und Lanes","nro":43,"url":"./assets/example_pool_lanes.svg","index":5,"caption_template":"_CAPTION_","label":"Beispiel Pool und Lanes","attributes":{},"skip":false,"key":"9.2.5"}]},"plugins":["collapsible-menu","html5-video","image-captions-extended","editlink","livereload"],"pluginsConfig":{"collapsible-menu":{},"editlink":{"label":"Improve this page","multilingual":false,"base":"https://github.com/process-engine/documentation/edit/develop/"},"livereload":{},"image-captions-extended":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"html5-video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"image-captions":{"caption":"_CAPTION_","align":"left","variable_name":"_pictures"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06_apis_of_management_domain/debugging-api.md","mtime":"2018-11-29T12:02:48.676Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-11T12:35:41.592Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

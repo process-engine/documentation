@@ -1,0 +1,25 @@
+{
+  "name": "ProcessEngine.io-Documentation",
+  "version": "4.3.0",
+  "description": "This is the User Handbook of the ProcessEngine Project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "gitbook serve",
+    "render_api_doc": "node spectacle.js --app-dir spectacle_app --config-file spectacle_config.js swagger.json",
+    "build-prod": "bash build_prod.sh",
+    "rebuild": "rm -rf node_modules && npm install && npm run start"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-collapsible-menu": "^1.0.3",
+    "gitbook-plugin-editlink": "^1.0.2",
+    "gitbook-plugin-html5-video": "^1.0.0",
+    "gitbook-plugin-image-captions-extended": "0.0.3"
+  },
+  "devDependencies": {
+    "spectacle-docs": "^0.9.12"
+  }
+}
