@@ -46,9 +46,7 @@
 
    1. [Hello BPMN World](02_getting_started/examples/hello-bpmn-world.md)
    1. [Konsumieren einer HTTP REST API](02_getting_started/examples/http-rest-api.md)
-   <!-- BPMN-Studio does not support ServiceTasks using Emails right now. see:
-        https://github.com/process-engine/bpmn-studio/issues/1083 -->
-   <!-- 1. [Versenden von E-Mails](02_getting_started/examples/sending-emails.md) -->
+   1. [Versenden von E-Mails](02_getting_started/examples/sending-emails.md)
 
 ---
 
