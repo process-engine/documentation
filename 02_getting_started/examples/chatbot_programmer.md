@@ -3,7 +3,7 @@
 Es liegt im Aufgabenbereich des Softwareentwicklers, die benötigten
 Dienste für das Diagramm bereitzustellen.
 
-Prozessmodellierer können ExternalTasks in die Diagramme einbauen um
+Prozessmodellierer können ExternalTasks in den Diagrammen verwenden um
 auf Dienste der Softwareentwickler zuzugreifen. Doch damit dies
 möglichst ist, müssen zunächst diese Dienste bereitgestellt werden.
 
@@ -12,7 +12,7 @@ In diesem Beispiel wird ein minimaler Task definiert und registriert.
 Von Seiten der Prozessmodellierung kommen folgende Anforderungen:
 
 - der Task soll unter dem Topic `Chatbot` verfügbar sein,
-- als Payload erhält der Task die menschliche Nutzereingabe
+- als Payload erhält der Task die menschliche Nutzereingabe,
 - auf diese Eingabe reagiert der Chatbot,
 - der Chatbot soll eine Antwort generieren und zurückgeben.
 
