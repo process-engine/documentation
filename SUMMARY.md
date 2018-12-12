@@ -44,12 +44,12 @@
 1. [Installation](02_getting_started/README.md)
 1. [Beispiele](02_getting_started/examples/README.md)
 
-   1. [Hello BPMN World](02_getting_started/examples/hello-bpmn-world.md)
-   1. [Konsumieren einer HTTP REST API](02_getting_started/examples/http-rest-api.md)
-   1. [Versenden von E-Mails](02_getting_started/examples/sending-emails.md)
-   1. [Erstellen eines Chatbots](02_getting_started/examples/chatbot.md)
-      * [Prozessmodellierung](02_getting_started/examples/chatbot_modeller.md)
-      * [Programmierung eines ExternalTask](02_getting_started/examples/chatbot_programmer.md)
+   1. [Hello BPMN World](02_getting_started/examples/hello_world/README.md)
+   1. [Konsumieren einer HTTP REST API](02_getting_started/examples/rest_api/README.md)
+   1. [Versenden von E-Mails](02_getting_started/examples/send_email/README.md)
+   1. [Erstellen eines Chatbots](02_getting_started/examples/chatbot/README.md)
+      * [Prozessmodellierung](02_getting_started/examples/chatbot/chatbot_modeller.md)
+      * [Programmierung eines ExternalTask](02_getting_started/examples/chatbot/chatbot_programmer.md)
 
 ---
 
