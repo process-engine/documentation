@@ -32,4 +32,4 @@ Anleitung geteilt in:
 
 Hier eine kurze Aufnahme vom Chatbot in Aktion:
 
-{% video controls="controls"%}../images/getting-started/chatbot/chatbot.mp4{% endvideo %}
+{% video controls="controls"%}./images/chatbot.mp4{% endvideo %}
