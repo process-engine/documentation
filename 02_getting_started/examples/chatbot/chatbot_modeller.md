@@ -17,14 +17,14 @@ Modellierern und Programmierern.
 
 Das fertige Diagramm sieht so aus:
 
-<img src="../images/getting-started/chatbot/finished_diagram.png" width="100%" />
+<img src="./images/finished_diagram.png" width="100%" />
 
 Im Folgenden werden die Elemente des Diagramms und ihre Konfiguration
 vorgestellt.
 
 ### UserTask (Anfrage formulieren)
 
-<img src="../images/getting-started/chatbot/anfrage_formulieren_config.png" width="50%" />
+<img src="./images/anfrage_formulieren_config.png" width="50%" />
 
 In diesem UserTask wird der Anwender um eine Anfrage gebeten. Wir
 erstellen ein Formular mit einem Feld vom Typ `Text` und der ID
@@ -50,7 +50,7 @@ verbunden.
 
 Nun verbinden wir das ExclusiveGateway mit dem Verabschiedungstask.
 
-<img src="../images/getting-started/chatbot/flow_finished.png" width="80%" />
+<img src="./images/flow_finished.png" width="80%" />
 
 Der verbindende Sequenz-Flow erhält die Condition
 `token.current.form_fields.request.toLowerCase().match('bye|goodbye|quit|exit')`.
@@ -65,7 +65,7 @@ Zudem beschriften wir den Pfad mit der Antwort `Ja` auf die Frage des Gateways.
 Wir erstellen einen ServiceTask mit dem Namen `Chatbot ansprechen`.
 Hierbei handelt es sich um die Schnittstelle zu dem bereitgestellten Dienst.
 
-<img src="../images/getting-started/chatbot/external_task_config.png" width="50%" />
+<img src="./images/external_task_config.png" width="50%" />
 
 Wir stellen ein, dass es sich um einen ExternalTask handelt. Zudem
 setzen wir als Topic `Chatbot` und übergeben als Payload

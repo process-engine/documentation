@@ -35,7 +35,7 @@ Erstelle dann:
 
 Das Ganze sollte so aussehen:
 
-{% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
+{% video controls="controls"%}./images/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
 Innerhalb des Property Panels lässt sich nun mittels Key-Value Paaren
 der Service Task definieren.
@@ -55,7 +55,7 @@ params    ['http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compac
 
 Zum Vergleich, so sollte das aussehen:
 
-<img src="../images/getting-started/http-rest-api/configure-fetch-data-service-task.png" width="100%" />
+<img src="./images/configure-fetch-data-service-task.png" width="100%" />
 
 Zum Schluss muss der User Task (`Show Data`) konfiguriert werden, um
 die korrekte Anzeige zu erreichen.
@@ -82,11 +82,11 @@ Dazu erstellen wir:
 
 Das Ganze sieht so aus:
 
-<img src="../images/getting-started/http-rest-api/configure-show-data-user-task.png" width="100%" />
+<img src="./images/configure-show-data-user-task.png" width="100%" />
 
 Zusammengefasst sieht dergesamte Konfigurationsvorgang so aus:
 
-{% video controls="controls"%}../images/getting-started/http-rest-api/complete-task-configuration.mp4{% endvideo %}
+{% video controls="controls"%}./images/complete-task-configuration.mp4{% endvideo %}
 
 **Zusammenfassung**
 
@@ -97,4 +97,4 @@ In diesem Tutorial haben wir:
 
 Es ist nun Zeit, den Prozess auszuführen:
 
-{% video controls="controls"%}../images/getting-started/http-rest-api/run-final-process.mp4{% endvideo %}
+{% video controls="controls"%}./images/run-final-process.mp4{% endvideo %}

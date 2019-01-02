@@ -50,11 +50,11 @@ das Verstehen, der Zugriffe auf Prozessdaten.
 Bei dem Formularfeld fügen wir ein Label hinzu mit dem Inhalt:
 `Please enter your Email address:`.
 
-{% video controls="controls"%}../images/getting-started/sending-emails/create_task_get_email_address.mp4{% endvideo %}
+{% video controls="controls"%}./images/create_task_get_email_address.mp4{% endvideo %}
 
 Es ergibt sich folgende Konfiguration:
 
-<img src="../images/getting-started/sending-emails/create_task_get_email_address.png" width="70%" />
+<img src="./images/create_task_get_email_address.png" width="70%" />
 
 ### User-Task für Bestätigungsdialog (Confirm)
 
@@ -79,7 +79,7 @@ den Wert, den der Nutzer in dem vorherigen User-Task mit der Id
 
 Mit dem `+`-Zeichen kann dieser Wert mit Zeichenketten verbunden werden.
 
-{% video controls="controls"%}../images/getting-started/sending-emails/create_task_confirm_data.mp4{% endvideo %}
+{% video controls="controls"%}./images/create_task_confirm_data.mp4{% endvideo %}
 
 ### Exclusive Gateway (Exklusiver Pfad)
 
@@ -104,7 +104,7 @@ Der andere Fluss trägt die Condition:
 
 und führt zu dem Service-Task zum Versand der Mail.
 
-{% video controls="controls"%}../images/getting-started/sending-emails/create_gateway.mp4{% endvideo %}
+{% video controls="controls"%}./images/create_gateway.mp4{% endvideo %}
 
 ### Service-Task für den Versand der Email
 
@@ -122,10 +122,10 @@ Email-Versand. Durch die Auswahl der `method` wird die Aktion bestimmt, die der
 Service ausführt; `send`, also den Versand der Email, in unserem Fall.
 Die Angabe der `params` enthält, die Angaben, die für den Versand der Email notwendig sind.
 
-{% video controls="controls"%}../images/getting-started/sending-emails/create_service_task.mp4{% endvideo %}
+{% video controls="controls"%}./images/create_service_task.mp4{% endvideo %}
 
 ## Vollständige Konfiguration
 
 Hier ist eine Aufnahme der kompletten Konfiguration des Prozesses:
 
-{% video controls="controls"%}../images/getting-started/sending-emails/complete_configuration.mp4{% endvideo %}
+{% video controls="controls"%}./images/complete_configuration.mp4{% endvideo %}
