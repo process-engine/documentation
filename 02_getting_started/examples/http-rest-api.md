@@ -3,9 +3,28 @@
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
 
-Es folgt eine Anleitung zur schrittweisen Erstellung des Diagramms. Das fertige Diagramm kann
+REST beschreibt ein Paradigma für die Kommunikation zwischen
+verteilten Systemen. Mit HTTP-Requests an REST-APIs können wir auf
+externe Dienste zugreifen.
+
+Das REST-API-Beispiel zeigt, wie wir solche APIs in BPMN ansprechen
+können und somit neue Anwendungsmöglichkeiten für die
+Diagrammmodellierung gewinnen.
+
+Da in der Darstellung auf das vorherige Ergebnis zugegriffen wird,
+lernen wir zudem, wie beim Prozessablauf Informationen transportiert
+werden.
+
+Das fertige Diagramm kann
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/RestAPI)
 heruntergeladen werden.
+
+## Lernziele
+
+- Erstellung und Konfiguration eines Service Tasks
+- Zugriff auf Werte des Tokens
+
+## Aufbau
 
 Erstelle dazu ein neues Diagramm, analog zum Hello World Beispiel.
 
