@@ -65,12 +65,12 @@ Die Design-Ansicht ist in vier Bereiche aufgeteilt:
 
    Die anderen Buttons haben immer die selbe Funktionalität.
 
-   |                                              |                                                          |
-   |----------------------------------------------|----------------------------------------------------------|
-   | <img width="64" src="icons/back_icon.png">   | Navigiert eine Seite zurück                              |
-   | <img width="64" src="icons/save_icon.png">   | Speichert den Prozess.                                   |
-   | <img width="64" src="icons/export_icon.png"> | Exportiert das Diagramm (.bpmn, .svg, .jpeg, oder .png). |
-   | <img width="64" src="icons/print_icon.png">  | Öffnet einen Drucken Dialog.                             |
+|                                              |                                                          |
+|----------------------------------------------|----------------------------------------------------------|
+| <img width="64" src="icons/back_icon.png">   | Navigiert eine Seite zurück                              |
+| <img width="64" src="icons/save_icon.png">   | Speichert den Prozess.                                   |
+| <img width="64" src="icons/export_icon.png"> | Exportiert das Diagramm (.bpmn, .svg, .jpeg, oder .png). |
+| <img width="64" src="icons/print_icon.png">  | Öffnet einen Drucken Dialog.                             |
 
 4. Statusleiste
 
