@@ -99,12 +99,12 @@ muss der UserTask folgendermaßen konfiguriert werden:
 
    <img src="./images/extensions-selection.png" width="100%" />
 
-1. Ein FormField mit dem Typ Boolean wird benötigt.
+1. Ein FormField mit dem Typ `Truth Value` wird benötigt.
 
    Das Label stellt die Nachricht, die nur bestätigt werden soll, dar.
 
    **Wichtig:** Wenn der UserTask eine Confirm Ansicht anzeigen soll, muss
-   immer das **ERSTE** FormField vom Typ `boolean` sein.
+   immer das **ERSTE** FormField vom Typ `Truth Value` sein.
    Die Id spielt dabei keine Rolle.
 
    <img src="./images/confirm-form-field.png" width="50%" />

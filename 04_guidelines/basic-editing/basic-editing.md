@@ -127,20 +127,21 @@ In der `Form Field Section` gibt es die Möglichkeit festzulegen
 
 Es stehen folgende Typen als Auswahl zur Verfügung:
 
-1. `string`
-1. `long`
-1. `boolean`
-1. `date`
-1. `enum`
-1. `custom type`
+1. `Text`
+1. `Integer`
+1. `Decimal`
+1. `Truth Value`
+1. `Date`
+1. `Enum`
+1. `Custom`
 
 **Info**:
 
-Wenn der Typ `enum` ausgewählt ist, erscheint eine weitere Section,
+Wenn der Typ `Enum` ausgewählt ist, erscheint eine weitere Section,
 in der anhand von Key-Value-Paaren angegeben wird, welche Einträge
 die Enum-Auswahl beinhalten soll.
 
-Im BPMN-Studio wird ein UserTask vom Typ `enum` während der Ausführung als
+Im BPMN-Studio wird ein UserTask vom Typ `Enum` während der Ausführung als
 Dropdown dargestellt.
 
 #### Dynamische Werte für Formularfelder
@@ -206,11 +207,11 @@ preferredControl      confirm
 
 ausgewählt. Dabei ist wichtig, dass `confirm` klein geschrieben wird.
 
-Dieser Dialog besitzt die Besonderheit, dass ein Form Field vom Typ `boolean`
+Dieser Dialog besitzt die Besonderheit, dass ein Form Field vom Typ `Truth Value`
 benötigt wird, welches beim Ausführen bestätigt werden soll. Das Label dieses
 Form Fields wird als Nachricht zum Bestätigen genutzt.
 
-Dazu wird das erste Form Field vom Typ `boolean` verwendet.
+Dazu wird das erste Form Field vom Typ `Truth Value` verwendet.
 Alle anderen Form Fields, werden normal angezeigt, wie auch bei dem Formular.
 
 Bestätigungsdialoge haben drei Button:
@@ -224,15 +225,15 @@ Bestätigungsdialoge haben drei Button:
 
    Der `Confirm`-Button bestätigt den Dialog und schließt den User Task mit
    den eingegebenen Daten ab.
-   
-   Das erste `boolean` Form Field bekommt als Wert `true` gesetzt.
+
+   Das erste `Truth Value` Form Field bekommt als Wert `true` gesetzt.
 
 1. `Decline`-Button
 
    Der `Decline`-Button lehnt den Dialog ab und schließt den User Task mit
    den eingegebenen Daten ab.
-   
-   Das erste `boolean` Form Field bekommt als Wert `false` gesetzt.
+
+   Das erste `Truth Value` Form Field bekommt als Wert `false` gesetzt.
 
 ### Message, Escalation, Error, Signal
 
