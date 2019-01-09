@@ -20,10 +20,15 @@ und der
    - Formulare
    - Entscheidungspfade
    - MailService
-  
+
 1. [Erstellung eines Chatbots](./chatbot/README.md)
 
    - Erstellung, Registrierung und Verwendung von External-Tasks
+
+1. [Turmstapel-Problem](./towers/README.md)
+
+   - Komplexität auf mehrere Diagramme verteilen
+   - Einbinden von Scripts
 
 Die Diagramme (und ggf. Zusatzprogramme) kann man
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions)
