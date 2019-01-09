@@ -3,16 +3,11 @@
 set -e
 
 # {{{ VERSION
-MAJOR="0"
+MAJOR="1"
 MINOR="0"
-PATCH="3"
+PATCH="0"
 
 __script_version="$MAJOR.$MINOR.$PATCH"
-# }}}
-
-# {{{ Global Variables
-GIT_SOURCE_BRANCH='master'
-GIT_TARGET_BRANCH='gh-pages'
 # }}}
 
 function usage ()
@@ -29,21 +24,9 @@ function usage ()
 function on_exit()
 {
 # {{{
-  #Place everything that absolutely need to be cleaned up here.
+  #Place everything to be cleaned up here.
   return 0
 # }}}
-}
-
-function prepare_git()
-{
-  # make the gh-pages-branch be identical to master
-  git checkout ${GIT_TARGET_BRANCH}
-  git pull
-  git checkout ${GIT_SOURCE_BRANCH}
-  git pull
-  git merge --strategy=ours ${GIT_TARGET_BRANCH}
-  git checkout ${GIT_TARGET_BRANCH}
-  git merge ${GIT_SOURCE_BRANCH}
 }
 
 function build_gitbook()
@@ -63,20 +46,23 @@ function move_index_to_apidoc()
   mv -f ${DOC_SOURCE_FILE} ${DOC_TARGET_FILE}
 }
 
-function move_gitbook_to_root()
+function move_gitbook_to_docs_folder()
 {
   # make the root contain only the built gitbook and nothing else
-  TEMP_DIR=$(mktemp -d)
   GITBOOK_FOLDER='_book'
-  EVERYTHING_FROM_GITBOOK_FOLDER="${TEMP_DIR}/${GITBOOK_FOLDER}/*"
+  DOCS_FOLDER='docs'
+  EVERYTHING_TO_DOCS_FOLDER=${GITBOOK_FOLDER}
 
-  mv * ${TEMP_DIR}
-  mv ${EVERYTHING_FROM_GITBOOK_FOLDER} ./
+  mv ${EVERYTHING_TO_DOCS_FOLDER} ${DOCS_FOLDER}
+
+  # Cleanup; TODO: This could be done nicer
+  cd ${DOCS_FOLDER} && rm -rf .ci-tools/ .github/ && cd -
+  cd ${DOCS_FOLDER} && rm .editorconfig .gitignore Jenkinsfile LICENSE build_prod.sh package.json swagger.json apidoc.md && cd -
 }
 
 function cleanup()
 {
-  rm -rf $TEMP_DIR
+  rm _book || true
 }
 
 #
@@ -110,13 +96,13 @@ function main()
   shift $(($OPTIND-1))
   # }}}
 
-  prepare_git
+  rm -rf node_modules || true
+  rm -rf docs || true
+  rm -rf _book || true
 
-  npm install
+  npm install && build_gitbook
 
-  build_gitbook
-
-  move_gitbook_to_root
+  move_gitbook_to_docs_folder
 
   return 0
 # }}}
