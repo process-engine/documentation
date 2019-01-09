@@ -106,7 +106,7 @@ Der ScriptTask erhält den Namen `Return towers`.
 
 Wir fügen zudem einen Flow vom Gateway zum ScriptTask mit der Condition
 `token.history.servicetask_check_if_done === true` und dem Namen `yes`
-(als Antwort auf die Frage, ob der Turm leer ist) zu.
+(als Antwort auf die Frage, ob der Turm leer ist) hinzu.
 
 Der ScriptTask wird mit einem EndEvent verbunden.
 
