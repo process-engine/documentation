@@ -2,7 +2,7 @@
 
 Einer der wichtigsten Faktoren von BPMN ist die Modularität. Indem wir
 komplexe Vorgänge auf mehrere Diagramme verteilen, erreichen wir mehr
-Ordnung und Austauschbarkeit.
+Ordnung, Übersicht und Austauschbarkeit.
 
 Das hier vorgestellte Beispiel demonstriert das Zusammensetzen
 mehrerer Diagramme zur Lösung eines Problems.
@@ -108,6 +108,6 @@ Die Modellierung der Diagramme wird getrennt erklärt:
 
 # Ausführung
 
-Und hier sehen wir die Prozesse in Ausführung:
+Hier sehen wir die Prozesse in Ausführung:
 
 {% video controls="controls"%}./images/execution.mp4{% endvideo %}

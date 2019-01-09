@@ -36,7 +36,8 @@ Wir möchten dem Anwender gerne den Startzustand präsentieren.  Wir
 erreichen dies mit einem Confirm-UserTask und dem Wert
 `${JSON.stringify(token.current)}` als Label fürs Formfield.
 
-> Das **Hello World**-Beispiel zeigt Confirm-UserTasks im Detail.
+> Das [Hello World-Beispiel](../hello_world/README.md) zeigt
+> Confirm-UserTasks im Detail.
 
 ## Turm umdrehen
 

@@ -30,7 +30,7 @@ Expects:
 ```
 
 Um komfortabel auf diese Startparameter zugreifen zu können, vergeben
-wir eine neue ID `startevent_arguments`.
+wir eine neue ID `startevent_arguments` an das StartEvent.
 
 
 ## ScriptTask `Take element of one tower`
