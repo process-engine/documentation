@@ -50,6 +50,10 @@
    1. [Erstellen eines Chatbots](02_getting_started/examples/chatbot/README.md)
       * [Prozessmodellierung](02_getting_started/examples/chatbot/chatbot_modeller.md)
       * [Programmierung eines ExternalTask](02_getting_started/examples/chatbot/chatbot_programmer.md)
+   1. [Turmstapel-Problem](02_getting_started/examples/towers/README.md)
+      * [Move Element](02_getting_started/examples/towers/move_element.md)
+      * [Flip Tower](02_getting_started/examples/towers/flip_tower.md)
+      * [Move Tower](02_getting_started/examples/towers/move_tower.md)
 
 ---
 
