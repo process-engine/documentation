@@ -3,8 +3,8 @@
 Nach dem Deployen des Diagramms, können wir es auf der verbundenen
 ProcessEngine starten.
 
-Das Diagramm zu starten bedeutet, das alle Tasks- die im Diagramm definiert
-sind- von der ProcessEngine bearbeitet werden.
+Das Diagramm zu starten bedeutet, dass alle Tasks - die im Diagramm
+definiert sind - von der ProcessEngine bearbeitet werden.
 
 UserTasks nehmen dabei eine Sonderrolle ein, da sie auf eine Rückmeldung eines
 Nutzers warten. Die entsprechenden Oberflächen werden beim Ausführen von
@@ -53,4 +53,4 @@ Sollte der Nutzer sich entscheiden nicht weiter im Waiting Room auf die
 weitere Ausführung oder auf das Ende des Prozesses zu warten, ist es jederzeit
 möglich den UserTask aus der
 [Inspect Ansicht](../../components/dashboard/dashboard.md)
-heraus, wieder aufzunehmen.
+heraus wieder aufzunehmen.

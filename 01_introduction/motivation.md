@@ -17,17 +17,17 @@ Erfüllung des Nachhaltigkeitsversprechens.
 
 Die Frage:
 
-> Warum eine weiter Workflow-Engine entwickeln?
+> Warum eine weitere Workflow-Engine entwickeln?
 
 beantworten wir wie folgt.
 
 Die Entwicklung hinter der ProcessEngine begann aus der Idee, BPMN als Dokumentation für Prozesse einzusetzen.
 Aus der Verwendung als Dokumentation, wurde schnell die Notwendigkeit die Diagramme auszuführen.
-Wir durchsuchten am Markt befindliche Lösungen und Workflow-Engines erkannten:
+Nach Analyse der am Markt befindlichen Lösungen und Workflow-Engines erkannten wir:
 
 **Es gibt keine Engine auf _unserem_ Stack!**
 
-Dieser Stack ist etwas, auf dem wir stolz sind und wir verwenden
+Dieser Stack ist etwas, auf das wir stolz sind und wir verwenden
 state-of-the-art Technologien, wie TypeScript und Electron um den Erfolg
 unserer Produkte zu sichern.
 

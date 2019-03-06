@@ -24,7 +24,7 @@ Probleme wir lösen wollen:
 
 1. Prozess-Beteiligte
 
-   Das sind Akteure Rund um den Prozess.
+   Das sind Akteure rund um den Prozess.
 
 1. Laufzeitumgebung
 
@@ -57,7 +57,7 @@ Genau zu diesem Zeitpunkt kommen auch die Prozess-Beteiligten ins Spiel.
 
 Die kann z.B. die Fachanwendung sein, die den Prozess startet.
 
-Oder ein Sachbearbeiter welcher Benutzer Aufgaben (genannt UserTasks im
+Oder ein Sachbearbeiter, welcher Benutzeraufgaben (genannt UserTasks im
 BPMN-Standard) bearbeitet.
 
 Vielleicht sogar ein Programm, welches externe Task bearbeitet oder Prozesse
@@ -100,8 +100,8 @@ gedacht wird.
 
 ## Gesamtbild
 
-Ganzheitlich betrachtet kann der Vorteil einer Prozessbasierten
+Ganzheitlich betrachtet kann der Vorteil einer prozessbasierten
 Entwicklung darauf reduziert werden, dass ein Unternehmen nachhaltig
 transformiert wird; Es wird zur Gewohnheit iterativ das Geschäft selbst zu
-Messen, zu bewerten und evtl. neu auszurichten. Alle Unternehmensbereiche sind
+messen, zu bewerten und evtl. neu auszurichten. Alle Unternehmensbereiche sind
 damit Teil der Wertschöpfungskette.
