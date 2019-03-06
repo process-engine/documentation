@@ -25,13 +25,10 @@ eine Design-Ansicht, die uns erlaubt das Diagramm mit einem Klick auf den
 
 **Wichtig:**
 
-Um ein Prozess ausführbar zu machen muss das Häkchen bei dem Feld `Executable`
-gesetzt sein. Das findet man in der
-[Process Section](../../components/design-view/design-view.md)
-des Property Panels.
+Vor dem Starten eines Prozesses, muss das Diagramm mithilfe des
+`Executable`-Feldes als ausführbar gekennzeichnet werden.
 
-Allerdings muss der Prozess vorher als ausführbar markiert werden.
-Wie das funktioniert ist [hier](../basic-editing/basic-editing.md#process) beschrieben.
+Die Konfiguration ist [hier](../basic-editing/basic-editing.md#process) beschrieben.
 
 ## Der Waiting Room
 
