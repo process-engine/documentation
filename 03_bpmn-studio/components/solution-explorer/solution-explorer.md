@@ -18,7 +18,7 @@ Eine Solution stellt in unserer Philosophie einen Teil der Projektstruktur dar.
 **Beispiel**
 
 Innerhalb eines Projekts gibt es Solutions für die Rechnungserstellung
-und Autorisierung von Benutzern. Diese Solutions orientieren sich den
+und Autorisierung von Benutzern. Diese Solutions orientieren sich an den
 Domänen, die das Projekt berührt.
 
 In einer Solution werden alle Diagramme, die zur Lösung eines Problems

@@ -6,7 +6,7 @@ verbundene ProcessEngine hochzuladen.
 Erst wenn ein Diagramm auf eine ProcessEngine hochgeladen wurde, ist es
 möglich das besagte Diagramm auszuführen.
 
-Der einfachste Weg, das zu erreichen, ist der folgende Ablauf!
+Der einfachste Weg, das zu erreichen, ist der folgende Ablauf:
 
 ## Erstellen eines Diagramms
 
