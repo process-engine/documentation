@@ -68,7 +68,7 @@ Installation ist das BPMN-Studio startbereit.
 
 ### Linux
 
-Es wird zusätzlich eine Linux-Variante als Snap bereitgestellt, die Windows-
+Es wird zusätzlich eine Linux-Variante als Snap bereitgestellt. Die Windows-
 und macOS-Versionen werden jedoch zurzeit intensiver gepflegt.
 
 ### Nach der Installation
