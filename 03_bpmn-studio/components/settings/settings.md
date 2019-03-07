@@ -2,7 +2,7 @@
 
 ## Aufgaben und Motivation
 
-Die Settings dienen dazu, allgemeine Einstellungen an der in BPMN-Studio
+Die Settings dienen dazu, allgemeine Einstellungen an der im BPMN-Studio
 integrierten ProcessEngine vorzunehmen.
 
 ## Aufbau und Strukturierung
