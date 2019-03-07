@@ -3,9 +3,28 @@
 In diesem Beispiel werden Wechselkurse von einer REST API geladen und
 dargestellt.
 
-Es folgt eine Anleitung zur schrittweisen Erstellung des Diagramms. Das fertige Diagramm kann
+REST beschreibt ein Paradigma für die Kommunikation zwischen
+verteilten Systemen. Mit HTTP-Requests an REST-APIs können wir auf
+externe Dienste zugreifen.
+
+Das REST-API-Beispiel zeigt, wie wir solche APIs in BPMN ansprechen
+können und somit neue Anwendungsmöglichkeiten für die
+Diagrammmodellierung gewinnen.
+
+Da in der Darstellung auf das vorherige Ergebnis zugegriffen wird,
+lernen wir zudem, wie beim Prozessablauf Informationen transportiert
+werden.
+
+Das fertige Diagramm kann
 [hier](https://github.com/process-engine/example_processes/tree/develop/solutions/RestAPI)
 heruntergeladen werden.
+
+## Lernziele
+
+- Erstellung und Konfiguration eines Service Tasks
+- Zugriff auf Werte des Tokens
+
+## Aufbau
 
 Erstelle dazu ein neues Diagramm, analog zum Hello World Beispiel.
 
@@ -16,7 +35,7 @@ Erstelle dann:
 
 Das Ganze sollte so aussehen:
 
-{% video controls="controls"%}../images/getting-started/http-rest-api/create-rest-api-consumer-diagram.mp4{% endvideo %}
+{% video controls="controls"%}./images/create-rest-api-consumer-diagram.mp4{% endvideo %}
 
 Innerhalb des Property Panels lässt sich nun mittels Key-Value Paaren
 der Service Task definieren.
@@ -36,7 +55,7 @@ params    ['http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compac
 
 Zum Vergleich, so sollte das aussehen:
 
-<img src="../images/getting-started/http-rest-api/configure-fetch-data-service-task.png" width="100%" />
+<img src="./images/configure-fetch-data-service-task.png" width="100%" />
 
 Zum Schluss muss der User Task (`Show Data`) konfiguriert werden, um
 die korrekte Anzeige zu erreichen.
@@ -63,11 +82,11 @@ Dazu erstellen wir:
 
 Das Ganze sieht so aus:
 
-<img src="../images/getting-started/http-rest-api/configure-show-data-user-task.png" width="100%" />
+<img src="./images/configure-show-data-user-task.png" width="100%" />
 
 Zusammengefasst sieht dergesamte Konfigurationsvorgang so aus:
 
-{% video controls="controls"%}../images/getting-started/http-rest-api/complete-task-configuration.mp4{% endvideo %}
+{% video controls="controls"%}./images/complete-task-configuration.mp4{% endvideo %}
 
 **Zusammenfassung**
 
@@ -78,4 +97,4 @@ In diesem Tutorial haben wir:
 
 Es ist nun Zeit, den Prozess auszuführen:
 
-{% video controls="controls"%}../images/getting-started/http-rest-api/run-final-process.mp4{% endvideo %}
+{% video controls="controls"%}./images/run-final-process.mp4{% endvideo %}

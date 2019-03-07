@@ -17,9 +17,9 @@ Eine Solution stellt in unserer Philosophie einen Teil der Projektstruktur dar.
 
 **Beispiel**
 
-Innerhalb Projekts: Entwicklung einer Web-Platform, gibt es Solutions für die
-Rechnungserstellung oder Autorisierung von Benutzern. Diese Solutions
-orientieren sich den Domänen, die ein Projekt berührt.
+Innerhalb eines Projekts gibt es Solutions für die Rechnungserstellung
+und Autorisierung von Benutzern. Diese Solutions orientieren sich an den
+Domänen, die das Projekt berührt.
 
 In einer Solution werden alle Diagramme, die zur Lösung eines Problems
 notwendig sind, gebündelt und organisiert. Auf einem Dateisystem ist eine
@@ -44,7 +44,7 @@ In seinem Startzustand, also beim erstmaligen Öffnen des BPMN-Studios, zeigt de
 Solution Explorer alle verfügbaren Diagramme auf der aktuell angebundenen
 ProcessEngine untereinander an.
 
-![Solution Explorer beim ersten öffnen](./first_opening.png)
+![Solution Explorer beim ersten Öffnen](./first_opening.png)
 
 Schon hier kann der Nutzer mit einem einzigen Klick in die Design-Ansicht des
 angeklickten Diagramms gelangen und dieses editieren.
@@ -52,7 +52,7 @@ angeklickten Diagramms gelangen und dieses editieren.
 Mit einem Klick auf das Ordnersymbol im Reiter des Solution Explorers kann
 die Anzeige für Solutions, die sich auf dem Dateisystem des Benutzers befinden
 geöffnet werden. Beim ersten Öffnen des Reiters werden nur die Grundfunktionen
-und ein Button zum öffnen einer Solution angezeigt.
+und ein Button zum Öffnen einer Solution angezeigt.
 
 ![Öffnen der Dateisystemansicht](./first_opening_file_system.png)
 
