@@ -12,7 +12,7 @@ der internen ProcessEngine-Solution geöffnet werden.
 
 ![Settings Aufruf](settings-open.png)
 
-Mit einem Klick öffnet sich die Settings Ansicht.
+Mit einem Klick öffnet sich die Settings-Ansicht.
 
 ![Settings](settings.png)
 
