@@ -15,12 +15,6 @@ und der
    - Verwenden einer API mittels HTTP-Service
    - Zugriff auf Token
 
-1. [Senden einer E-Mail](./send_email/README.md)
-
-   - Formulare
-   - Entscheidungspfade
-   - MailService
-
 1. [Erstellung eines Chatbots](./chatbot/README.md)
 
    - Erstellung, Registrierung und Verwendung von External-Tasks
