@@ -1,1 +1,0 @@
-# APIs der Management Domäne
